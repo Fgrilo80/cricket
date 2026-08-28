@@ -405,8 +405,7 @@
             </div>
             
             <div class="text-[10px] text-slate-500 bg-slate-950 p-3 rounded-2xl font-mono">
-                URL padrão: https://raw.githubusercontent.com/cisco-quiz-master/db/main/questions-v2.json<br>
-                (Configure no código para o seu repositório GitHub privado ou público)
+                URL da base: https://raw.githubusercontent.com/Fgrilo80/cricket/main/cricket.json
             </div>
         </div>
 
@@ -1141,9 +1140,9 @@
             const url = prompt(
                 '📥 Atualizar Base de Dados\n\n' +
                 'Cole aqui a URL completa de um ficheiro JSON público.\n' +
-                'Exemplo: https://raw.githubusercontent.com/seu-usuario/seu-repo/main/perguntas.json\n\n' +
+                'Exemplo: https://raw.githubusercontent.com/Fgrilo80/cricket/main/cricket.json\n\n' +
                 '(Deixe em branco para cancelar)',
-                ''
+                'https://raw.githubusercontent.com/Fgrilo80/cricket/main/cricket.json'
             );
             
             if (!url || url.trim() === '') return;
