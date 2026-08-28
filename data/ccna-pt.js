@@ -120,18 +120,6 @@ window.QUIZ_BANK = [
     "difficulty": "Difícil"
   },
   {
-    "question": "O que é 'frame tagging' em switches?",
-    "options": [
-      "Etiquetagem de frames para identificação de VLAN",
-      "Criptografia de frames",
-      "Fragmentação de frames",
-      "Priorização de frames"
-    ],
-    "correct": 0,
-    "explanation": "Frame tagging (802.1Q) adiciona uma tag ao frame para identificar a qual VLAN ele pertence.",
-    "difficulty": "Médio"
-  },
-  {
     "question": "Qual é a principal diferença entre router e switch L3?",
     "options": [
       "Router é mais rápido",
@@ -608,7 +596,7 @@ window.QUIZ_BANK = [
       "ip routing"
     ],
     "correct": 1,
-    "explanation": "switchport access vlan 20 (com mode access) põe a porta na VLAN 20.",
+    "explanation": "switchport access vlan 20 (com mode access) PoE a porta na VLAN 20.",
     "difficulty": "Fácil"
   },
   {
@@ -624,30 +612,6 @@ window.QUIZ_BANK = [
     "difficulty": "Médio"
   },
   {
-    "question": "Em STP, o root bridge é eleito por:",
-    "options": [
-      "Maior prioridade numérica",
-      "Menor Bridge ID (prioridade + MAC)",
-      "Maior número de VLANs",
-      "Maior uptime"
-    ],
-    "correct": 1,
-    "explanation": "Ganha o menor Bridge ID: prioridade (default 32768) depois MAC.",
-    "difficulty": "Médio"
-  },
-  {
-    "question": "PortFast numa porta de acesso serve para:",
-    "options": [
-      "Desligar STP",
-      "Passar já para forwarding, evitando atraso em PCs",
-      "Eleger o root",
-      "Negociar trunk"
-    ],
-    "correct": 1,
-    "explanation": "PortFast salta listening/learning em portas de extremo.",
-    "difficulty": "Médio"
-  },
-  {
     "question": "OSPFv2 usa que endereços para hellos em Ethernet?",
     "options": [
       "Broadcast 255.255.255.255",
@@ -657,30 +621,6 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Hellos AllSPFRouters 224.0.0.5; DR/BDR também 224.0.0.6.",
-    "difficulty": "Médio"
-  },
-  {
-    "question": "Uma rota estática default em Cisco é:",
-    "options": [
-      "ip route 0.0.0.0 0.0.0.0 <next-hop ou exit>",
-      "ip default-network 0.0.0.0",
-      "ip route 255.255.255.255",
-      "router default"
-    ],
-    "correct": 0,
-    "explanation": "A default route é 0.0.0.0/0 para next-hop ou interface.",
-    "difficulty": "Fácil"
-  },
-  {
-    "question": "NAT overload (PAT) faz o que?",
-    "options": [
-      "Um IP público por cada privado, 1:1",
-      "Muitos privados partilham um ou poucos IPs públicos via portas",
-      "Traduz só IPv6",
-      "Desliga o firewall"
-    ],
-    "correct": 1,
-    "explanation": "PAT usa portas L4 para multiplexar muitos internos num IP público.",
     "difficulty": "Médio"
   },
   {
@@ -696,18 +636,6 @@ window.QUIZ_BANK = [
     "difficulty": "Médio"
   },
   {
-    "question": "Uma ACL estendida filtra com base em:",
-    "options": [
-      "Só IP de origem",
-      "Origem, destino, protocolo e portas",
-      "Só MAC",
-      "Só VLAN"
-    ],
-    "correct": 1,
-    "explanation": "ACLs extended permitem critérios L3/L4 finos.",
-    "difficulty": "Médio"
-  },
-  {
     "question": "Onde se deve colocar uma ACL estendida, em regra?",
     "options": [
       "O mais perto do destino",
@@ -717,18 +645,6 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Perto da origem evita tráfego indesejado a atravessar a rede.",
-    "difficulty": "Médio"
-  },
-  {
-    "question": "HSRP oferece o que aos hosts?",
-    "options": [
-      "Um MAC/IP virtual de gateway redundante",
-      "Balanceamento por fluxo OSPF",
-      "Tradução NAT",
-      "Um servidor DHCP"
-    ],
-    "correct": 0,
-    "explanation": "HSRP partilha um VIP; um router e active, outro standby.",
     "difficulty": "Médio"
   },
   {
@@ -752,7 +668,7 @@ window.QUIZ_BANK = [
       "Reinicia a interface"
     ],
     "correct": 1,
-    "explanation": "GET consulta o agente; SET altera; traps são notificacoes.",
+    "explanation": "GET consulta o agente; SET altera; traps são notificações.",
     "difficulty": "Médio"
   },
   {
@@ -806,7 +722,7 @@ window.QUIZ_BANK = [
   {
     "question": "JSON distingue-se de XML por:",
     "options": [
-      "Ser binario",
+      "Ser binário",
       "Ser mais leve, com pares chave-valor",
       "Não suportar arrays",
       "Exigir DTD"
@@ -828,30 +744,6 @@ window.QUIZ_BANK = [
     "difficulty": "Médio"
   },
   {
-    "question": "Dynamic ARP Inspection usa que base de dados?",
-    "options": [
-      "A tabela OSPF",
-      "A binding table do DHCP snooping",
-      "O arquivo VTP",
-      "O CAM aging"
-    ],
-    "correct": 1,
-    "explanation": "DAI valida ARP contra as bindings DHCP snooping.",
-    "difficulty": "Difícil"
-  },
-  {
-    "question": "BPDU Guard numa porta PortFast:",
-    "options": [
-      "Ignora BPDUs",
-      "Errdisable a porta se receber uma BPDU",
-      "Elege o root",
-      "Ativa LACP"
-    ],
-    "correct": 1,
-    "explanation": "Um switch ligado por engano desliga a porta de extremo.",
-    "difficulty": "Médio"
-  },
-  {
     "question": "A wildcard mask 0.0.0.255 equivale a:",
     "options": [
       "/16",
@@ -864,15 +756,15 @@ window.QUIZ_BANK = [
     "difficulty": "Médio"
   },
   {
-    "question": "OSPF cost de FastEthernet 100 Mb/s com referência 100000 é:",
+    "question": "Com auto-cost reference-bandwidth 100000 (Mb/s), qual é o custo OSPF de uma FastEthernet 100 Mb/s?",
     "options": [
       "1",
       "10",
       "100",
       "1000"
     ],
-    "correct": 0,
-    "explanation": "Custo = ref/bw = 100000/100000 = 1.",
+    "correct": 3,
+    "explanation": "Custo = reference-bandwidth / bandwidth da interface. 100000 / 100 = 1000. O custo clássico 1 só se aplica com a referência omissa de 100 Mb/s.",
     "difficulty": "Médio"
   },
   {
@@ -881,7 +773,7 @@ window.QUIZ_BANK = [
       "Uma só VLAN",
       "Várias VLANs com tag, exceto a nativa sem tag",
       "Apenas a VLAN 1",
-      "Só tráfego de gestao"
+      "Só tráfego de gestão"
     ],
     "correct": 1,
     "explanation": "dot1q etiqueta VLANs; a native vai untagged.",
@@ -1168,7 +1060,7 @@ window.QUIZ_BANK = [
     "options": [
       "Todas as portas de acesso de PCs",
       "Portas rumo a servidores DHCP legitimos e uplinks/trunks para esses servidores",
-      "Nenhuma; o snooping nao usa trust",
+      "Nenhuma; o snooping não usa trust",
       "Apenas portas com PortFast"
     ],
     "correct": 1,
@@ -1184,37 +1076,37 @@ window.QUIZ_BANK = [
       "Na native VLAN"
     ],
     "correct": 1,
-    "explanation": "DAI intercepta ARP em portas untrusted e compara IP/MAC com a base do snooping. ARP spoofing e descartado.",
+    "explanation": "DAI intercepta ARP em portas untrusted e compara IP/MAC com a base do snooping. ARP spoofing é descartado.",
     "difficulty": "Difícil"
   },
   {
-    "question": "No 802.1X, qual e o papel do switch de acesso?",
+    "question": "No 802.1X, qual é o papel do switch de acesso?",
     "options": [
       "Supplicant",
-      "Authenticator, que rele EAPOL e envia RADIUS ao servidor de autenticacao (ex.: ISE)",
+      "Authenticator, que rele EAPOL e envia RADIUS ao servidor de autenticação (ex.: ISE)",
       "Servidor RADIUS em si",
       "Somente DHCP relay"
     ],
     "correct": 1,
-    "explanation": "O PC e o supplicant, o switch o authenticator e o ISE/NPS o authentication server. Ate autenticar, a porta pode ficar restrita.",
+    "explanation": "O PC e o supplicant, o switch o authenticator e o ISE/NPS o authentication server. Até autenticar, a porta pode ficar restrita.",
     "difficulty": "Médio"
   },
   {
-    "question": "Qual afirmacao distingue VRRP de HSRP?",
+    "question": "Qual afirmação distingue VRRP de HSRP?",
     "options": [
-      "VRRP e so IPv6",
-      "VRRP e padrao IETF; HSRP e proprietario Cisco; ambos fornecem gateway virtual",
-      "HSRP nao tem prioridade",
-      "VRRP nao elege master"
+      "VRRP e só IPv6",
+      "VRRP e padrão IETF; HSRP e proprietario Cisco; ambos fornecem gateway virtual",
+      "HSRP não tem prioridade",
+      "VRRP não elege master"
     ],
     "correct": 1,
     "explanation": "HSRP usa MAC 0000.0c07.acXX; VRRP usa 0000.5e00.01XX e pode partilhar o IP real do master como virtual.",
     "difficulty": "Médio"
   },
   {
-    "question": "Como um host IPv6 obtem endereco com SLAAC?",
+    "question": "Como um host IPv6 obtém endereço com SLAAC?",
     "options": [
-      "So com DHCPv4",
+      "Só com DHCPv4",
       "Recebe RA (ICMPv6) com prefixo; gera o Interface ID e faz DAD via Neighbor Solicitation",
       "O router atribui a porta TCP",
       "Usa ARP classico"
@@ -1226,9 +1118,9 @@ window.QUIZ_BANK = [
   {
     "question": "No EUI-64, o que se faz ao MAC de 48 bits para formar o Interface ID?",
     "options": [
-      "Copia-se sem alteracao",
+      "Copia-se sem alteração",
       "Insere-se FFFE no meio e inverte-se o bit U/L (7.o bit do primeiro octeto)",
-      "Acrescenta-se so ::1",
+      "Acrescenta-se só ::1",
       "Usa-se o IPv4 embebido"
     ],
     "correct": 1,
@@ -1236,10 +1128,10 @@ window.QUIZ_BANK = [
     "difficulty": "Difícil"
   },
   {
-    "question": "Qual prefixo identifica enderecos IPv6 Unique Local (ULA)?",
+    "question": "Qual prefixo identifica endereços IPv6 Unique Local (ULA)?",
     "options": [
       "2000::/3",
-      "FC00::/7 (na pratica fd00::/8)",
+      "FC00::/7 (na prática fd00::/8)",
       "FE80::/10",
       "FF00::/8"
     ],
@@ -1248,19 +1140,19 @@ window.QUIZ_BANK = [
     "difficulty": "Médio"
   },
   {
-    "question": "Porque e que todas as areas OSPF devem ligar-se a area 0?",
+    "question": "Porque é que todas as áreas OSPF devem ligar-se a área 0?",
     "options": [
-      "Porque a area 0 tem prioridade STP",
-      "Para garantir um grafo sem loops de sumarizacao; o SPF inter-area passa sempre pelo backbone",
-      "A area 0 e a unica que corre Hello",
-      "Nao e obrigatorio em NSSA"
+      "Porque a área 0 tem prioridade STP",
+      "Para garantir um grafo sem loops de sumarização; o SPF inter-área passa sempre pelo backbone",
+      "A área 0 e a única que corre Hello",
+      "Não e obrigatório em NSSA"
     ],
     "correct": 1,
-    "explanation": "ABRs ligam areas nao-backbone a area 0. Virtual-links existem para remendar topologias que quebram esta regra.",
+    "explanation": "ABRs ligam áreas não-backbone a área 0. Virtual-links existem para remendar topologias que quebram esta regra.",
     "difficulty": "Difícil"
   },
   {
-    "question": "Qual e a distancia administrativa predefinida de uma rota estatica no IOS?",
+    "question": "Qual é a distância administrativa predefinida de uma rota estática no IOS?",
     "options": [
       "0",
       "1",
@@ -1268,11 +1160,11 @@ window.QUIZ_BANK = [
       "110"
     ],
     "correct": 1,
-    "explanation": "Connected=0, static=1, eBGP=20, EIGRP=90, OSPF=110, RIP=120, iBGP=200. Uma estatica ganha a OSPF para o mesmo prefixo salvo floating AD.",
+    "explanation": "Connected=0, static=1, eBGP=20, EIGRP=90, OSPF=110, RIP=120, iBGP=200. Uma estática ganha a OSPF para o mesmo prefixo salvo floating AD.",
     "difficulty": "Fácil"
   },
   {
-    "question": "No syslog Cisco, que numero de severity corresponde a warnings?",
+    "question": "No syslog Cisco, que número de severity corresponde a warnings?",
     "options": [
       "0",
       "4",
@@ -1287,56 +1179,44 @@ window.QUIZ_BANK = [
     "question": "O que significa um servidor NTP stratum 1?",
     "options": [
       "Esta 15 saltos abaixo da UTC",
-      "Esta ligado a uma referencia de tempo autoritativa (GPS, relogio atomico) e serve os stratum 2",
+      "Esta ligado a uma referência de tempo autoritativa (GPS, relogio atomico) e serve os stratum 2",
       "E um cliente Windows",
-      "Nao pode autenticar NTP"
+      "Não pode autenticar NTP"
     ],
     "correct": 1,
-    "explanation": "Stratum 0 e a fonte (GPS/atomico). Stratum 1 sincroniza com stratum 0. Stratum 16 significa nao sincronizado.",
+    "explanation": "Stratum 0 e a fonte (GPS/atomico). Stratum 1 sincroniza com stratum 0. Stratum 16 significa não sincronizado.",
     "difficulty": "Médio"
   },
   {
-    "question": "Qual diferenca chave entre TACACS+ e RADIUS no acesso a CLI?",
+    "question": "Qual diferença chave entre TACACS+ e RADIUS no acesso a CLI?",
     "options": [
-      "RADIUS usa TCP 49 e separa autorizacao",
-      "TACACS+ usa TCP 49 e separa autenticacao, autorizacao e accounting; RADIUS usa UDP e combina auth+authz",
-      "Nao ha diferenca",
-      "TACACS+ nao cifra a password"
+      "RADIUS usa TCP 49 e separa autorização",
+      "TACACS+ usa TCP 49 e separa autenticação, autorização e accounting; RADIUS usa UDP e combina auth+authz",
+      "Não há diferença",
+      "TACACS+ não cifra a password"
     ],
     "correct": 1,
-    "explanation": "Para administracao de dispositivos Cisco prefere-se TACACS+ (autorizacao comando a comando). RADIUS e o padrao em 802.1X/Wi-Fi/VPN.",
+    "explanation": "Para administração de dispositivos Cisco prefere-se TACACS+ (autorização comando a comando). RADIUS e o padrão em 802.1X/Wi-Fi/VPN.",
     "difficulty": "Médio"
   },
   {
-    "question": "Em APIs REST usadas na automacao CCNA, o que descreve melhor JSON?",
-    "options": [
-      "Uma linguagem de programacao",
-      "Um formato textual de dados com objectos chave/valor, arrays e tipos simples, muito usado em RESTCONF e controladores",
-      "Um protocolo de transporte",
-      "Um tipo de ACL"
-    ],
-    "correct": 1,
-    "explanation": "JSON e o payload tipico de REST. Chaves entre aspas, objectos {}, listas []. XML continua em NETCONF classico.",
-    "difficulty": "Fácil"
-  },
-  {
-    "question": "Qual e a diferenca central entre rede tradicional e rede controller-based (SDN)?",
+    "question": "Qual é a diferença central entre rede tradicional e rede controller-based (SDN)?",
     "options": [
       "SDN elimina todos os switches",
       "O plano de controlo e logicamente centralizado no controlador; os dispositivos ficam sobretudo no plano de dados, com APIs northbound/southbound",
-      "SDN nao usa IP",
+      "SDN não usa IP",
       "O controlador substitui o cabeamento"
     ],
     "correct": 1,
-    "explanation": "Southbound (NETCONF, OpenFlow, gNMI) programa os nos; northbound (REST) oferece intencao as aplicacoes. Catalyst Center e o exemplo campus no CCNA.",
+    "explanation": "Southbound (NETCONF, OpenFlow, gNMI) programa os nos; northbound (REST) oferece intenção as aplicações. Catalyst Center e o exemplo campus no CCNA.",
     "difficulty": "Médio"
   },
   {
     "question": "Num fabric spine-leaf, como se ligam os switches?",
     "options": [
       "Em anel STP classico",
-      "Cada leaf liga-se a todos os spines; leafs nao se ligam entre si; ECMP no underlay",
-      "So um uplink por leaf",
+      "Cada leaf liga-se a todos os spines; leafs não se ligam entre si; ECMP no underlay",
+      "Só um uplink por leaf",
       "Spines ligam-se a servidores"
     ],
     "correct": 1,
@@ -1344,19 +1224,19 @@ window.QUIZ_BANK = [
     "difficulty": "Médio"
   },
   {
-    "question": "Qual e a diferenca entre hipervisor Tipo 1 e Tipo 2?",
+    "question": "Qual é a diferença entre hipervisor Tipo 1 e Tipo 2?",
     "options": [
-      "Nao existe Tipo 1",
-      "Tipo 1 (bare-metal, ex.: ESXi, Hyper-V, KVM) corre no hardware; Tipo 2 (hosted, ex.: VirtualBox) corre sobre um SO anfitriao",
-      "Tipo 2 e sempre mais rapido em datacenter",
-      "Tipo 1 so virtualiza redes"
+      "Não existe Tipo 1",
+      "Tipo 1 (bare-metal, ex.: ESXi, Hyper-V, KVM) corre no hardware; Tipo 2 (hosted, ex.: VirtualBox) corre sobre um SO anfitrião",
+      "Tipo 2 e sempre mais rápido em datacenter",
+      "Tipo 1 só virtualiza redes"
     ],
     "correct": 1,
-    "explanation": "Tipo 1 e o padrao de datacenter/NFV (CSR, CAT8000v, ASAv). Tipo 2 serve labs no portatil.",
+    "explanation": "Tipo 1 e o padrão de datacenter/NFV (CSR, CAT8000v, ASAv). Tipo 2 serve labs no portátil.",
     "difficulty": "Fácil"
   },
   {
-    "question": "Qual DSCP e o PHB Expedited Forwarding (EF), tipico de voz?",
+    "question": "Qual DSCP é o PHB Expedited Forwarding (EF), típico de voz?",
     "options": [
       "CS0 / 0",
       "EF / 46 (101110)",
@@ -1364,15 +1244,15 @@ window.QUIZ_BANK = [
       "CS6 / 48"
     ],
     "correct": 1,
-    "explanation": "EF (DSCP 46) pede baixa latencia e jitter: LLQ na WAN. AF e four-class assurance; CS6/CS7 sao controlo de rede.",
+    "explanation": "EF (DSCP 46) pede baixa latência e jitter: LLQ na WAN. AF e four-class assurance; CS6/CS7 são controlo de rede.",
     "difficulty": "Médio"
   },
   {
-    "question": "Qual e a diferenca entre policing e shaping em QoS?",
+    "question": "Qual é a diferença entre policing e shaping em QoS?",
     "options": [
-      "Sao sinonimos",
-      "Policing descarta ou re-marca trafego acima da taxa; shaping enfileira o excesso para suavizar bursts, introduzindo atraso",
-      "Shaping so existe em STP",
+      "São sinonimos",
+      "Policing descarta ou re-marca tráfego acima da taxa; shaping enfileira o excesso para suavizar bursts, introduzindo atraso",
+      "Shaping só existe em STP",
       "Policing aumenta a largura de banda"
     ],
     "correct": 1,
@@ -1380,15 +1260,601 @@ window.QUIZ_BANK = [
     "difficulty": "Médio"
   },
   {
-    "question": "O que e um ataque de overflow da CAM (MAC flooding) e como se mitiga?",
+    "question": "O que é um ataque de overflow da CAM (MAC flooding) e como se mitiga?",
     "options": [
       "Envenenar DNS",
-      "Encher a tabela MAC com enderecos falsos para o switch floodar unicast como broadcast; mitiga-se com port-security",
+      "Encher a tabela MAC com endereços falsos para o switch floodar unicast como broadcast; mitiga-se com port-security",
       "Desligar OSPF",
       "Usar NAT"
     ],
     "correct": 1,
     "explanation": "Ferramentas tipo macof saturam a TCAM. O switch passa a floodar frames unicast para todas as portas da VLAN. Port-security limita o abuso.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Observe este show ip route. Qual é o próximo salto para 10.2.2.0/24 e de que protocolo vem a rota?",
+    "options": [
+      "10.1.1.3, estática",
+      "10.1.1.2, OSPF (AD 110)",
+      "203.0.113.1, default",
+      "conectado em Gi0/0"
+    ],
+    "correct": 1,
+    "explanation": "A linha O 10.2.2.0/24 [110/2] via 10.1.1.2 é OSPF (código O), AD 110, métrica 2. 10.3.3.0/24 é estática via 10.1.1.3. A default S* vai para 203.0.113.1.",
+    "difficulty": "Médio",
+    "cli": "R1# show ip route\nCodes: L - local, C - connected, S - static, R - RIP, B - BGP\n       D - EIGRP, O - OSPF, IA - OSPF inter area\n       E1 - OSPF external type 1, E2 - OSPF external type 2\nGateway of last resort is 203.0.113.1 to network 0.0.0.0\n\n      10.0.0.0/8 is variably subnetted, 5 subnets, 3 masks\nC        10.1.1.0/24 is directly connected, GigabitEthernet0/0\nL        10.1.1.1/32 is directly connected, GigabitEthernet0/0\nO        10.2.2.0/24 [110/2] via 10.1.1.2, 00:12:44, GigabitEthernet0/0\nS        10.3.3.0/24 [1/0] via 10.1.1.3\nS*    0.0.0.0/0 [1/0] via 203.0.113.1"
+  },
+  {
+    "question": "Observe este show ip ospf neighbor. O que indica o estado 2WAY/DROTHER do vizinho 4.4.4.4?",
+    "options": [
+      "A adjacência FULL falhou e o link está down",
+      "Em Ethernet multiacesso, vizinhos DROTHER ficam 2-Way entre si; FULL só com DR/BDR",
+      "O Hello está mismatched e a sessão vai resetar",
+      "É o estado normal em point-to-point serial"
+    ],
+    "correct": 1,
+    "explanation": "No broadcast, só se forma FULL com o DR e o BDR. Dois DROTHER permanecem 2-Way (viram hellos, não pedem LSA database um ao outro). No serial, FULL/ - sem DR, pri 0.",
+    "difficulty": "Difícil",
+    "cli": "R1# show ip ospf neighbor\nNeighbor ID     Pri   State           Dead Time   Address         Interface\n1.1.1.1           1   FULL/DR         00:00:38    10.1.1.1        GigabitEthernet0/0\n2.2.2.2           1   FULL/BDR        00:00:35    10.1.1.2        GigabitEthernet0/0\n4.4.4.4           1   2WAY/DROTHER    00:00:32    10.1.1.4        GigabitEthernet0/0\n3.3.3.3           0   FULL/  -        00:00:39    10.1.2.2        Serial0/0/0"
+  },
+  {
+    "question": "Observe este show vlan brief. Qual VLAN definida pelo utilizador ainda não tem portas de acesso?",
+    "options": [
+      "VLAN 10 USERS",
+      "VLAN 20 VOICE",
+      "VLAN 30 SERVERS",
+      "VLAN 1 default"
+    ],
+    "correct": 2,
+    "explanation": "SERVERS (30) está active mas a coluna Ports está vazia. VLAN 10 tem Gi1/0/1-3, VLAN 20 tem Gi1/0/4, VLAN 1 tem Gi1/0/5-6. VLAN 100 NATIVE também está vazia, mas a pergunta pede a de servidores; 30 é a resposta listada como SERVERS.",
+    "difficulty": "Fácil",
+    "cli": "SW1# show vlan brief\nVLAN Name                             Status    Ports\n---- -------------------------------- --------- -------------------------------\n1    default                          active    Gi1/0/5, Gi1/0/6\n10   USERS                            active    Gi1/0/1, Gi1/0/2, Gi1/0/3\n20   VOICE                            active    Gi1/0/4\n30   SERVERS                          active\n100  NATIVE                           active\n1002 fddi-default                     act/unsup"
+  },
+  {
+    "question": "Observe este show etherchannel summary. O que se pode concluir sobre Po1?",
+    "options": [
+      "O canal está down (flag D) e usa PAgP",
+      "É um EtherChannel L2 em uso (SU), protocolo LACP, com 2 portas bundled (P)",
+      "Só uma porta está ativa; a outra é Hot-standby",
+      "É um port-channel L3 (flag R) sem protocolo"
+    ],
+    "correct": 1,
+    "explanation": "Po1(SU): S = Layer 2, U = in use. Protocol LACP. Gi1/0/1(P) e Gi1/0/2(P) estão bundled. PAgP apareceria como PAgP na coluna Protocol.",
+    "difficulty": "Médio",
+    "cli": "SW1# show etherchannel summary\nFlags:  D - down        P - bundled in port-channel\n        I - stand-alone s - suspended\n        H - Hot-standby (LACP only)\n        R - Layer3      S - Layer2\n        U - in use\nNumber of channel-groups in use: 1\nNumber of aggregators:           1\n\nGroup  Port-channel  Protocol    Ports\n------+-------------+-----------+-----------------------------------------------\n1      Po1(SU)         LACP      Gi1/0/1(P)   Gi1/0/2(P)"
+  },
+  {
+    "question": "Observe este show ip nat translations. Qual é o Inside local do fluxo TCP para 192.0.2.80:443?",
+    "options": [
+      "203.0.113.5:40221",
+      "10.10.10.8:44352",
+      "192.0.2.80:443",
+      "10.10.10.9:51100"
+    ],
+    "correct": 1,
+    "explanation": "Inside local é o IP:porta reais do host interno (10.10.10.8:44352). Inside global é o IP público:porta após PAT (203.0.113.5:40221). Outside local/global coincidem aqui com o servidor público.",
+    "difficulty": "Médio",
+    "cli": "R1# show ip nat translations\nPro Inside global      Inside local       Outside local      Outside global\ntcp 203.0.113.5:40221  10.10.10.8:44352   192.0.2.80:443     192.0.2.80:443\ntcp 203.0.113.5:40222  10.10.10.9:51100   198.51.100.10:80   198.51.100.10:80\nicmp 203.0.113.5:3     10.10.10.8:3       8.8.8.8:3          8.8.8.8:3"
+  },
+  {
+    "question": "Observe este show spanning-tree vlan 10. Qual papel tem este switch, e o que indica Gi1/0/24 P2p Edge?",
+    "options": [
+      "É root secondary; Edge significa blocking",
+      "Este switch é o root; P2p Edge é porta de extremo (PortFast) em forwarding",
+      "Não participa no STP; Edge é trunk nativo",
+      "É backup root; Edge significa loop-inconsistent"
+    ],
+    "correct": 1,
+    "explanation": "'This bridge is the root' e Root ID = Bridge ID. Priority 24586 = 24576 + sys-id-ext 10. Gi1/0/24 Type P2p Edge = RSTP edge (PortFast) designada e FWD.",
+    "difficulty": "Médio",
+    "cli": "SW1# show spanning-tree vlan 10\nVLAN0010\n  Spanning tree enabled protocol rstp\n  Root ID    Priority    24586\n             Address     0011.2233.4455\n             This bridge is the root\n             Hello Time  2 sec  Max Age 20 sec  Forward Delay 15 sec\n  Bridge ID  Priority    24586  (priority 24576 sys-id-ext 10)\n             Address     0011.2233.4455\nInterface           Role Sts Cost      Prio.Nbr Type\nGi1/0/1             Desg FWD 4         128.1    P2p\nGi1/0/24            Desg FWD 4         128.24   P2p Edge"
+  },
+  {
+    "question": "Observe este show ip interface brief. Qual é o estado de GigabitEthernet0/1 e o de GigabitEthernet0/2?",
+    "options": [
+      "Ambas up/up",
+      "Gi0/1 administratively down/down (shutdown); Gi0/2 up/down (L1/L2 em falta no outro extremo)",
+      "Gi0/1 up/down; Gi0/2 shutdown",
+      "Ambas administratively down"
+    ],
+    "correct": 1,
+    "explanation": "administratively down = comando shutdown. up/down = interface enabled mas protocol down (cabo, relógio, keepalives, protocolo de linha). Loopback0 e Gi0/0 estão up/up.",
+    "difficulty": "Médio",
+    "cli": "R1# show ip interface brief\nInterface              IP-Address      OK? Method Status                Protocol\nGigabitEthernet0/0     10.1.1.1        YES NVRAM  up                    up\nGigabitEthernet0/1     10.2.2.1        YES NVRAM  administratively down down\nGigabitEthernet0/2     10.3.3.1        YES NVRAM  up                    down\nLoopback0              1.1.1.1         YES NVRAM  up                    up"
+  },
+  {
+    "question": "Observe este show access-lists. Um host 10.1.1.50 abre HTTPS para 8.8.8.8. O que acontece?",
+    "options": [
+      "É permitido pela ACE 10 (SSH)",
+      "É negado pela ACE 30 (deny tcp eq 443) e conta no hit-count dessa linha",
+      "É permitido pela ACE 40 antes das denies",
+      "A ACL ignora HTTPS porque não tem UDP"
+    ],
+    "correct": 1,
+    "explanation": "As ACEs são avaliadas top-down. 10 só permite SSH para 10.9.9.9. 20 nega HTTP, 30 nega HTTPS para any — casa com 10.1.1.50→8.8.8.8:443. A 40 permit ip any any nunca é alcançada para este fluxo. Há implicit deny no fim, mas a 30 já decide.",
+    "difficulty": "Difícil",
+    "cli": "R1# show access-lists\nExtended IP access list BLOCK_WEB\n    10 permit tcp 10.1.1.0 0.0.0.255 host 10.9.9.9 eq 22\n    20 deny   tcp 10.1.1.0 0.0.0.255 any eq 80\n    30 deny   tcp 10.1.1.0 0.0.0.255 any eq 443\n    40 permit ip any any"
+  },
+  {
+    "question": "Observe este show standby brief. Qual é o IP virtual HSRP e o estado deste router?",
+    "options": [
+      "10.1.1.3, Standby",
+      "10.1.1.1, Active com preempt (Pri 110)",
+      "10.1.1.1, Listen",
+      "local, Init"
+    ],
+    "correct": 1,
+    "explanation": "Virtual IP 10.1.1.1, State Active, P = preempt, prioridade 110. O Standby é 10.1.1.3. Hosts usam 10.1.1.1 como gateway.",
+    "difficulty": "Médio",
+    "cli": "R1# show standby brief\n                     P indicates configured to preempt\n                     |\nInterface   Grp  Pri P State   Active          Standby         Virtual IP\nGi0/0       1    110 P Active  local           10.1.1.3        10.1.1.1"
+  },
+  {
+    "question": "Observe este show ip dhcp snooping binding. Para que serve esta tabela no switch?",
+    "options": [
+      "Lista de vizinhos OSPF",
+      "Bindings IP-MAC-VLAN-porta aprendidos de DHCP; base para DAI e IP Source Guard",
+      "A CAM de unicast desconhecidos",
+      "Traduções NAT"
+    ],
+    "correct": 1,
+    "explanation": "DHCP snooping grava leases vistos em portas untrusted (e estáticos opcionais). DAI e IPSG consultam esta binding table para filtrar ARP e IP spoofing.",
+    "difficulty": "Médio",
+    "cli": "SW1# show ip dhcp snooping binding\nMacAddress          IpAddress        Lease(sec)  Type           VLAN  Interface\n00:11:22:33:44:55   10.10.10.20      86234       dhcp-snooping  10    GigabitEthernet1/0/8\n00:AA:BB:CC:DD:EE   10.10.10.21      85012       dhcp-snooping  10    GigabitEthernet1/0/9\nTotal number of bindings: 2"
+  },
+  {
+    "question": "Num tronco 802.1Q, o que acontece ao tráfego da native VLAN?",
+    "options": [
+      "É sempre descartado",
+      "Atravessa sem tag 802.1Q (untagged), ao contrário das outras VLANs permitidas",
+      "Usa obrigatoriamente VLAN 1 mesmo se a nativa for 99",
+      "É encapsulado ISL"
+    ],
+    "correct": 1,
+    "explanation": "Frames da native VLAN vão untagged. As restantes VLANs permitidas levam tag de 4 bytes. Native VLANs diferentes nos dois extremos causam VLAN hopping / mis-mapping. Cisco recomenda native VLAN unused + vlan dot1q tag native.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Para que serve a voice VLAN (switchport voice vlan) numa porta de acesso?",
+    "options": [
+      "Substituir o 802.1X",
+      "Permitir que o telefone IP fique numa VLAN tagged (tipicamente 802.1Q) e o PC na access VLAN untagged",
+      "Desligar o PoE",
+      "Criar um EtherChannel com o telefone"
+    ],
+    "correct": 1,
+    "explanation": "O telefone atua como mini-switch: frames de voz saem tagged na voice VLAN; o PC na mesma porta usa a access VLAN untagged. CDP/LLDP pode avisar o telefone da VLAN de voz.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No RSTP (802.1w), o estado que substitui o blocking do 802.1D clássico é:",
+    "options": [
+      "Listening",
+      "Discarding",
+      "Learning apenas",
+      "Disabled apenas"
+    ],
+    "correct": 1,
+    "explanation": "RSTP tem Discarding, Learning e Forwarding. Discarding cobre disabled/blocking/listening do 802.1D: não reencaminha frames. A convergência usa sync/proposal em vez de timers longos.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Dois switches com PAgP em modo auto em ambas as pontas formam EtherChannel?",
+    "options": [
+      "Sim, auto/auto é a combinação recomendada",
+      "Não: auto/auto não inicia a negociação; precisa desirable num extremo (ou on/on sem protocolo)",
+      "Sim, mas só com LACP",
+      "Não, porque PAgP exige MST"
+    ],
+    "correct": 1,
+    "explanation": "PAgP: desirable inicia, auto espera. auto+auto = sem canal. LACP: active inicia, passive espera; active+active ou active+passive funcionam, passive+passive não. mode on/on força canal sem LACP/PAgP (perigoso se configs divergem).",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual combinação LACP estabelece um canal?",
+    "options": [
+      "passive + passive",
+      "active + active, ou active + passive",
+      "auto + auto",
+      "desirable + auto apenas em LACP"
+    ],
+    "correct": 1,
+    "explanation": "LACP active envia PDUs; passive só responde. Pelo menos um extremo tem de ser active. auto/desirable são modos PAgP, não LACP.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que faz o comando passive-interface GigabitEthernet0/0 em OSPF?",
+    "options": [
+      "Desliga a interface no sentido L3",
+      "Anuncia a rede dessa interface mas não envia hellos nem forma adjacências nela",
+      "Torna o router DR obrigatório",
+      "Filtra LSA tipo 5"
+    ],
+    "correct": 1,
+    "explanation": "Útil em LANs de utilizadores: a sub-rede aparece no OSPF mas um PC não tenta adjacência. passive-interface default + no passive-interface nos links de transit é um padrão comum.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Como se origina uma default route no OSPF a partir de um ASBR que já tem rota default na RIB?",
+    "options": [
+      "ip route 0.0.0.0 0.0.0.0 null0 apenas",
+      "default-information originate (e optionally always se a default não estiver na RIB)",
+      "network 0.0.0.0 255.255.255.255 área 0",
+      "ip ospf priority 0"
+    ],
+    "correct": 1,
+    "explanation": "default-information originate injeta LSA Type-5 (ou Type-7 em NSSA) de 0.0.0.0/0 se existir uma default na RIB. A keyword always origina mesmo sem essa rota.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a diferença prática entre inter-VLAN routing por SVI e router-on-a-stick?",
+    "options": [
+      "SVI só funciona com IPv6",
+      "SVI: o switch L3 encaminha nas SVIs do próprio chassis; ROAS: um router externo usa subinterfaces num tronco",
+      "ROAS não precisa de 802.1Q",
+      "Não há diferença de encaminhamento"
+    ],
+    "correct": 1,
+    "explanation": "SVI (interface vlan X) + ip routing no MLS é o desenho campus atual. ROAS usa um tronco 802.1Q para um router com subinterfaces encapsulation dot1Q. Ambos separam broadcast domains; o SVI escala melhor.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Onde se deve colocar, em regra, uma ACL standard numerada?",
+    "options": [
+      "O mais perto da origem, porque filtra só o destino",
+      "O mais perto do destino, porque filtra apenas o IP de origem",
+      "Sempre no ASBR OSPF",
+      "Só no servidor NTP"
+    ],
+    "correct": 1,
+    "explanation": "Standard ACL (1-99, 1300-1999) casa só origem. Perto da origem cortaria tráfego a mais destinos. Extended (100-199) filtra origem+destino+L4 e coloca-se perto da origem.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Toda a ACL IPv4 no IOS termina com que regra implícita?",
+    "options": [
+      "permit ip any any",
+      "deny ip any any (implicit deny)",
+      "permit icmp any any",
+      "deny tcp any any eq 80"
+    ],
+    "correct": 1,
+    "explanation": "Se nenhuma ACE casar, o pacote é descartado. Por isso uma ACL de 'bloqueio pontual' precisa de um permit ip any any no fim. ACLs vazias aplicadas a uma interface podem bloquear tudo.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Em NAT Cisco, que interfaces se marcam com ip nat inside e ip nat outside?",
+    "options": [
+      "Inside = Internet pública; outside = LAN",
+      "Inside = domínio da rede interna (IPs a traduzir); outside = lado público/externo",
+      "Ambas as keywords são sinónimos de shutdown",
+      "Só se usam em IPv6"
+    ],
+    "correct": 1,
+    "explanation": "Inside local/global e outside local/global derivam destas marcas. PAT típico: LAN = inside, WAN = outside, ip nat inside source list ... interface <WAN> overload.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que faz um NAT estático 1:1 (ip nat inside source static)?",
+    "options": [
+      "Muitos privados partilham um público via portas",
+      "Mapeia um inside local fixo para um inside global fixo, sempre",
+      "Traduz só o MAC",
+      "Substitui o ARP"
+    ],
+    "correct": 1,
+    "explanation": "Static NAT é bidirecional e previsível — típico para publicar um servidor. PAT/overload multiplexa muitos internos num IP. Dynamic pool traduz 1:1 a partir de um conjunto, sem garantia do mesmo global.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a diferença entre os violation modes de port-security: protect, restrict e shutdown?",
+    "options": [
+      "São idênticos",
+      "protect descarta silenciosamente; restrict descarta e incrementa contadores/snmp; shutdown PoE a porta em err-disabled",
+      "shutdown só gera syslog e não fecha a porta",
+      "protect elege o root STP"
+    ],
+    "correct": 1,
+    "explanation": "O default é shutdown (err-disabled até shutdown/no shutdown ou errdisable recovery). restrict notifica; protect é o mais silencioso e pior para troubleshooting.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que faz errdisable recovery cause psecure-violation?",
+    "options": [
+      "Desativa port-security para sempre",
+      "Reabilita automaticamente portas err-disabled por port-security após um intervalo (omissão 300 s)",
+      "Converte a porta em tronco",
+      "Limpa a tabela NAT"
+    ],
+    "correct": 1,
+    "explanation": "Útil para não deixar PCs eternamente down após um flap de MAC. O intervalo configura-se com errdisable recovery interval. A causa tem de estar na lista de recovery.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No 802.1X, quais são os três papéis clássicos?",
+    "options": [
+      "Root, designated, blocked",
+      "Supplicant (cliente), authenticator (switch/AP), authentication server (RADIUS/ISE)",
+      "DR, BDR, DROTHER",
+      "ITR, ETR, MS"
+    ],
+    "correct": 1,
+    "explanation": "O switch é authenticator EAP (EAPoL na porta, RADIUS no backend). O PC é supplicant. ISE/NPS é o servidor. MAB cobre dispositivos sem 802.1X.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Numa arquitetura Cisco lightweight, o que é o split MAC do CAPWAP?",
+    "options": [
+      "O AP e o WLC partilham funções MAC: o AP trata tempo-real (beacon/ACK) e o WLC gestão/associação/802.1X",
+      "O MAC do cliente é dividido ao meio",
+      "Substitui o 802.11 por Ethernet puro",
+      "É um tipo de EtherChannel"
+    ],
+    "correct": 1,
+    "explanation": "CAPWAP (UDP 5246 controlo, 5247 dados) tunela entre AP e WLC. Split MAC deixa o AP com funções time-sensitive e centraliza policy no WLC. FlexConnect pode comutar dados localmente.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual diferença chave entre AP autónomo e AP lightweight?",
+    "options": [
+      "Autónomo não tem rádio",
+      "Autónomo tem a config/SSID no próprio AP; lightweight obtém config do WLC via CAPWAP",
+      "Lightweight não pode usar 802.1X",
+      "Autónomo exige sempre DNA Center"
+    ],
+    "correct": 1,
+    "explanation": "Autonomous IOS AP gere-se um a um. Lightweight (CAPWAP) escala com WLC: SSID, RF, roaming e AAA centralizados. Mobility Express/embedded WLC é um meio-termo.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual endereço IPv6 multicast representa all-nodes no link local?",
+    "options": [
+      "FF02::2",
+      "FF02::1",
+      "FF02::5",
+      "FF02::9"
+    ],
+    "correct": 1,
+    "explanation": "FF02::1 = all nodes (como 224.0.0.1). FF02::2 = all routers. FF02::5/6 = OSPFv3. FF02::9 = RIPng. FF02::1:2 = DHCPv6 relay. Não existe broadcast IPv6.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No NDP IPv6, para que servem Neighbor Solicitation e Neighbor Advertisement?",
+    "options": [
+      "Substituem o OSPF Hello",
+      "Resolvem IPv6→MAC (equivalente ao ARP) e detetam duplicados (DAD)",
+      "Atribuem o prefixo GUA sozinhos sem RA",
+      "Cifram o tráfego do link"
+    ],
+    "correct": 1,
+    "explanation": "NS (ICMPv6 type 135) pergunta quem tem um IPv6; NA (136) responde. DAD envia NS para o próprio endereço tentado. RS/RA (133/134) servem SLAAC e default gateway.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "SNMPv3 authPriv oferece o quê, relativamente a SNMPv2c?",
+    "options": [
+      "Só community strings em claro, como v2c",
+      "Autenticação e cifração das mensagens (utilizador + priv)",
+      "Substitui o NTP",
+      "Só traps, nunca GET"
+    ],
+    "correct": 1,
+    "explanation": "v2c usa community (noAuthNoPriv de facto). v3: noAuthNoPriv, authNoPriv (MD5/SHA) e authPriv (mais AES). Preferir authPriv e views restritas. Informs (v2/v3) têm ACK; traps não.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a diferença entre SNMP trap e SNMP inform?",
+    "options": [
+      "Trap usa TCP; inform usa UDP sempre",
+      "Trap é não confirmado; inform espera ACK e é retransmitido se falhar",
+      "Inform só existe em SNMPv1",
+      "Trap cifra e inform não"
+    ],
+    "correct": 1,
+    "explanation": "Ambos são notificações do agente para o NMS. Inform (v2c/v3) é fiável; trap pode perder-se. O custo é mais carga no agente e no NMS.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No syslog Cisco, o severity 7 corresponde a quê?",
+    "options": [
+      "emergencies",
+      "alerts",
+      "debugging",
+      "critical"
+    ],
+    "correct": 2,
+    "explanation": "0 emergencies, 1 alerts, 2 critical, 3 errors, 4 warnings, 5 notifications, 6 informational, 7 debugging. logging trap/debugging aumenta volume; não se deixa 7 em produção sem filtro.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a diferença entre DSCP e CoS no marking de QoS?",
+    "options": [
+      "São o mesmo campo de 3 bits",
+      "CoS são 3 bits no tag 802.1Q (L2); DSCP são 6 bits no IP (L3) e atravessam routers",
+      "DSCP só existe em frames ISL",
+      "CoS substitui o IP precedence em IPv6 apenas"
+    ],
+    "correct": 1,
+    "explanation": "CoS (PCP) perde-se quando o tag 802.1Q é retirado. DSCP (p.ex. EF 46, AF41) vai no cabeçalho IP. Trust boundary: classificar/marcar o mais perto da origem e confiar DSCP no núcleo.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "RESTCONF no IOS-XE usa tipicamente que transporte e URI base?",
+    "options": [
+      "Telnet e /soap",
+      "HTTPS (TCP 443) e /restconf (YANG em JSON ou XML)",
+      "TFTP e /rpc",
+      "SNMP e /mib"
+    ],
+    "correct": 1,
+    "explanation": "RESTCONF mapeia HTTP GET/POST/PUT/PATCH/DELETE em datastores YANG. NETCONF usa SSH 830 e XML RPC. AAA e certificados protegem ambos.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Numa rede controller-based (SDN), a API northbound liga o quê?",
+    "options": [
+      "O controlador aos dispositivos via OpenFlow/NETCONF apenas",
+      "Aplicações/orquestração ao controlador (pedido de intent)",
+      "Dois spines entre si",
+      "O CAPWAP do AP ao WLC apenas"
+    ],
+    "correct": 1,
+    "explanation": "Northbound: apps → controller (REST). Southbound: controller → network devices (NETCONF, RESTCONF, OpenFlow, CLI/SSH). O plano de dados continua nos switches.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual endereço multicast e MAC virtual usa o HSRP versão 2 (IPv4)?",
+    "options": [
+      "224.0.0.2 e 0000.0c07.acXX",
+      "224.0.0.102 e 0000.0c9f.fXXX",
+      "224.0.0.18 e 0000.5e00.01XX",
+      "224.0.0.10 e 0000.0c07.acXX"
+    ],
+    "correct": 1,
+    "explanation": "HSRPv1: 224.0.0.2 e MAC 0000.0c07.acXX (XX = grupo 0-255). HSRPv2: 224.0.0.102 e MAC 0000.0c9f.fXXX (grupos até 4095) + hello IPv6. VRRP: 224.0.0.18 e 0000.5e00.01XX.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Uma característica do VRRP que o distingue do HSRP clássico é:",
+    "options": [
+      "Só Cisco o implementa",
+      "O VIP pode ser o IP real de um dos routers (master dono do endereço); é padrão IETF",
+      "Não elege master",
+      "Usa sempre GLBP AVG"
+    ],
+    "correct": 1,
+    "explanation": "HSRP é Cisco proprietary e o VIP é sempre um IP extra. VRRP (RFC) permite que o master use o seu IP de interface como VIP. GLBP (Cisco) faz load-share com vários AVF.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "No GLBP, qual é o papel do AVG versus AVF?",
+    "options": [
+      "AVG só faz NAT; AVF só faz STP",
+      "AVG responde ARP do VIP e atribui MACs virtuais; AVFs encaminham o tráfego dos hosts",
+      "AVF elege o root; AVG é backup STP",
+      "Não há diferença"
+    ],
+    "correct": 1,
+    "explanation": "Active Virtual Gateway (um) gere o VIP e distribui virtual MACs por round-robin/weighted. Active Virtual Forwarders (vários) encaminham. Assim há load balancing por host, não só standby passivo.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Como o Cisco IOS escolhe entre duas rotas OSPF de igual prefixo e igual custo?",
+    "options": [
+      "Usa só a mais antiga",
+      "Instala ambas e faz equal-cost load balancing (CEF), até ao máximo de paths",
+      "Prefere sempre a de maior Router ID",
+      "Descarta-as e usa RIP"
+    ],
+    "correct": 1,
+    "explanation": "ECMP: várias entradas na RIB/FIB com o mesmo prefixo/custo. maximum-paths limita o número. Se os custos diferem, fica só a de menor custo. AD só desempata protocolos diferentes.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Quais são as distâncias administrativas predefinidas de eBGP, EIGRP interno, OSPF, RIP e iBGP?",
+    "options": [
+      "20, 90, 110, 120, 200",
+      "110, 90, 20, 120, 200",
+      "90, 20, 110, 120, 1",
+      "20, 110, 90, 200, 120"
+    ],
+    "correct": 0,
+    "explanation": "eBGP 20, EIGRP interno 90, IGRP 100, OSPF 110, IS-IS 115, RIP 120, EIGRP externo 170, iBGP 200, unknown 255. Estática 1, connected 0. Menor AD ganha na RIB.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Se a RIB tem 10.1.0.0/16 via OSPF e 10.1.1.0/24 via estática, um pacote para 10.1.1.50 usa qual rota?",
+    "options": [
+      "A OSPF /16, porque AD 110 é irrelevante aqui",
+      "A estática /24, por longest-match (prefixo mais específico)",
+      "Load-balance entre as duas",
+      "Descarta, conflito de rotas"
+    ],
+    "correct": 1,
+    "explanation": "Longest prefix match é o primeiro critério de encaminhamento. AD e métrica só se aplicam a rotas do mesmo prefixo. /24 ganha a /16 para 10.1.1.50.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é uma rota estática recursiva no IOS?",
+    "options": [
+      "Uma rota com next-hop IP que o router ainda tem de resolver via outra rota da RIB (não aponta para interface)",
+      "Uma rota que se apaga sozinha",
+      "Uma default originada no OSPF",
+      "Uma rota NAT"
+    ],
+    "correct": 0,
+    "explanation": "ip route 10.0.0.0 255.0.0.0 192.0.2.1 exige que 192.0.2.1 seja alcançável (tipicamente via connected ou IGP). Fully specified: ip route ... 192.0.2.1 GigabitEthernet0/0 resolve também a interface de saída.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "WPA3-Personal usa que mecanismo em vez do PSK handshake clássico do WPA2?",
+    "options": [
+      "WEP de 40 bits",
+      "SAE (Simultaneous Authentication of Equals), resistente a ataques offline de dicionário",
+      "Só Open System",
+      "TKIP obrigatório"
+    ],
+    "correct": 1,
+    "explanation": "SAE (Dragonfly) faz handshake de palavra-passe sem expor um hash atacável offline como o 4-way PSK. WPA3-Enterprise usa 192-bit suite opcional. WPA2-Enterprise continua 802.1X/EAP.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Como se distinguem o data plane, o control plane e o management plane num router?",
+    "options": [
+      "São a mesma CPU queue",
+      "Data: encaminhamento de pacotes (CEF/TCAM); control: protocolos (OSPF/BGP/ARP); management: SSH/SNMP/NETCONF",
+      "Control plane só existe em switches L2",
+      "Management plane é o EtherChannel"
+    ],
+    "correct": 1,
+    "explanation": "CoPP protege o control plane. Fora de banda (mgmt VRF) isola o management. O data plane deve continuar mesmo se o SSH falhar. Confundir os planos é um erro clássico de desenho.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O hashing de EtherChannel (src-dst-ip, por exemplo) serve para quê?",
+    "options": [
+      "Eleger o DR OSPF",
+      "Escolher em que membro do bundle cada fluxo é enviado, mantendo a ordem dos pacotes do fluxo",
+      "Substituir o STP no bundle",
+      "Traduzir NAT"
+    ],
+    "correct": 1,
+    "explanation": "Um fluxo (mesmo hash) fica numa porta para não reordenar TCP. Sem diversidade de IP/porta, um único membro pode saturar. L3/L4 hashing espalha melhor que só src-mac.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a diferença entre Root Guard e BPDU Guard?",
+    "options": [
+      "Não há diferença",
+      "BPDU Guard err-disable a porta de extremo se receber qualquer BPDU; Root Guard impede que essa porta se torne root port (superior BPDU)",
+      "Root Guard só funciona com LACP",
+      "BPDU Guard elege o root"
+    ],
+    "correct": 1,
+    "explanation": "BPDU Guard: access/PortFast — um switch não autorizado desliga a porta. Root Guard: uplinks para a borda — BPDUs superiores são ignoradas e a porta vai root-inconsistent, preservando a root designada.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Ansible aplica playbooks a dispositivos Cisco sobretudo de que forma?",
+    "options": [
+      "Agente permanente em cada IOS",
+      "Agentless via SSH/NETCONF a partir de um control node, com inventário e módulos ios_*",
+      "Somente SNMP SET",
+      "Somente Telnet sem inventário"
+    ],
+    "correct": 1,
+    "explanation": "Ansible não instala agente no IOS. O inventário lista hosts; os módulos (ios_config, ios_command, ios_facts) usam SSH. Puppet/Chef clássicos usam agente. YAML descreve o estado desejado.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "NTP autenticado (ntp authenticate / ntp trusted-key) serve para quê?",
+    "options": [
+      "Aumentar o stratum para 16",
+      "Garantir que o router só aceita tempo de servidores com chave simétrica válida, evitando relógio falso",
+      "Substituir o DNS",
+      "Cifrar todo o tráfego de utilizador"
+    ],
+    "correct": 1,
+    "explanation": "Um NTP falso pode falhar certs, logs e Kerberos. Chaves simétricas (ou NTPv4 Autokey, raro) autenticam o servidor. Stratum 16 = unsynchronized. Prefira fontes internas stratum 1/2.",
     "difficulty": "Médio"
   }
 ];

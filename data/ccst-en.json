@@ -144,18 +144,6 @@
     "difficulty": "Easy"
   },
   {
-    "question": "What does full duplex mean?",
-    "options": [
-      "Communication in one direction only",
-      "Simultaneous communication in both directions",
-      "Half-duplex communication",
-      "No communication"
-    ],
-    "correct": 1,
-    "explanation": "Full-duplex allows devices to transmit and receive data simultaneously, eliminating collisions.",
-    "difficulty": "Medium"
-  },
-  {
     "question": "What is the function of the ARP protocol?",
     "options": [
       "Resolve name to IP",
@@ -178,18 +166,6 @@
     "correct": 1,
     "explanation": "The default gateway is the device (usually a router) that forwards packets destined for external networks.",
     "difficulty": "Easy"
-  },
-  {
-    "question": "Which command shows active interfaces on a Cisco router?",
-    "options": [
-      "show running-config",
-      "show ip interface brief",
-      "show version",
-      "show clock"
-    ],
-    "correct": 1,
-    "explanation": "The 'show ip interface brief' command displays a quick summary of the status of all interfaces.",
-    "difficulty": "Medium"
   },
   {
     "question": "What is a collision in an Ethernet network?",
@@ -444,6 +420,18 @@
     "difficulty": "Easy"
   },
   {
+    "question": "What does the command 'show interfaces status' do?",
+    "options": [
+      "Show status of all interfaces",
+      "Show VLAN configuration",
+      "Restart the switch",
+      "Clear logs"
+    ],
+    "correct": 0,
+    "explanation": "The 'show interfaces status' command displays the operational status of all switch ports.",
+    "difficulty": "Medium"
+  },
+  {
     "question": "What is the difference between half-duplex and full-duplex?",
     "options": [
       "Half-duplex allows simultaneous communication",
@@ -514,18 +502,6 @@
     "correct": 1,
     "explanation": "CDP allows Cisco devices to discover information about directly connected neighboring devices.",
     "difficulty": "Medium"
-  },
-  {
-    "question": "What is the /24 subnet mask in decimal notation?",
-    "options": [
-      "255.255.255.0",
-      "255.255.0.0",
-      "255.0.0.0",
-      "255.255.255.255"
-    ],
-    "correct": 0,
-    "explanation": "/24 corresponds to the mask 255.255.255.0.",
-    "difficulty": "Easy"
   },
   {
     "question": "What happens when you use the 'no shutdown' command on an interface?",
@@ -612,18 +588,6 @@
     "difficulty": "Medium"
   },
   {
-    "question": "What does the command 'show interfaces status' do?",
-    "options": [
-      "Show status of all interfaces",
-      "Show VLAN configuration",
-      "Restart the switch",
-      "Clear logs"
-    ],
-    "correct": 0,
-    "explanation": "The 'show interfaces status' command displays the operational status of all switch ports.",
-    "difficulty": "Medium"
-  },
-  {
     "question": "Which Ethernet cable uses an RJ-45 connector?",
     "options": [
       "RG-59 coaxial",
@@ -633,18 +597,6 @@
     ],
     "correct": 1,
     "explanation": "Copper Ethernet uses twisted pair with RJ-45.",
-    "difficulty": "Easy"
-  },
-  {
-    "question": "What does ping do?",
-    "options": [
-      "Shows the MAC table",
-      "Tests ICMP reachability to a destination",
-      "Opens Telnet",
-      "Lists OSPF routes"
-    ],
-    "correct": 1,
-    "explanation": "ping sends ICMP Echo Requests and waits for replies.",
     "difficulty": "Easy"
   },
   {
@@ -660,30 +612,6 @@
     "difficulty": "Easy"
   },
   {
-    "question": "What mask is /24?",
-    "options": [
-      "255.255.0.0",
-      "255.255.255.0",
-      "255.255.255.252",
-      "255.0.0.0"
-    ],
-    "correct": 1,
-    "explanation": "/24 means 24 network bits: 255.255.255.0.",
-    "difficulty": "Easy"
-  },
-  {
-    "question": "What is DHCP for?",
-    "options": [
-      "Name resolution",
-      "Assigning IP, mask, gateway, and DNS",
-      "Encrypting HTTP",
-      "MAC filtering"
-    ],
-    "correct": 1,
-    "explanation": "DHCP auto-configures IP clients.",
-    "difficulty": "Easy"
-  },
-  {
     "question": "Which protocol maps hostnames to IPs?",
     "options": [
       "DHCP",
@@ -696,18 +624,6 @@
     "difficulty": "Easy"
   },
   {
-    "question": "What does ARP discover?",
-    "options": [
-      "A route to another network",
-      "The MAC for an IP on the local LAN",
-      "The NTP server",
-      "The native VLAN"
-    ],
-    "correct": 1,
-    "explanation": "ARP maps a local IP to a MAC.",
-    "difficulty": "Medium"
-  },
-  {
     "question": "Can an unmanaged switch create VLANs?",
     "options": [
       "Yes, via CLI",
@@ -717,54 +633,6 @@
     ],
     "correct": 1,
     "explanation": "Unmanaged switches have no config and no VLANs.",
-    "difficulty": "Easy"
-  },
-  {
-    "question": "Which tool shows the hop-by-hop path to a destination?",
-    "options": [
-      "ipconfig",
-      "traceroute / tracert",
-      "netstat -a",
-      "arp -a"
-    ],
-    "correct": 1,
-    "explanation": "traceroute (tracert on Windows) lists hops to the destination.",
-    "difficulty": "Easy"
-  },
-  {
-    "question": "What is a PC default gateway?",
-    "options": [
-      "A public DNS",
-      "The LAN router used to reach other networks",
-      "The print server",
-      "The loopback address"
-    ],
-    "correct": 1,
-    "explanation": "The default gateway is the local router for off-net traffic.",
-    "difficulty": "Easy"
-  },
-  {
-    "question": "Wi-Fi 6 maps to which IEEE standard?",
-    "options": [
-      "802.11n",
-      "802.11ac",
-      "802.11ax",
-      "802.3af"
-    ],
-    "correct": 2,
-    "explanation": "Wi-Fi 6 is 802.11ax.",
-    "difficulty": "Medium"
-  },
-  {
-    "question": "Which TCP port does HTTPS use?",
-    "options": [
-      "80",
-      "443",
-      "22",
-      "25"
-    ],
-    "correct": 1,
-    "explanation": "HTTPS uses TCP 443.",
     "difficulty": "Easy"
   },
   {
@@ -780,18 +648,6 @@
     "difficulty": "Easy"
   },
   {
-    "question": "What is a firewall for?",
-    "options": [
-      "Assigning IPs",
-      "Filtering traffic according to security rules",
-      "DNS translation",
-      "PoE power"
-    ],
-    "correct": 1,
-    "explanation": "Firewalls allow or deny traffic based on policy.",
-    "difficulty": "Easy"
-  },
-  {
     "question": "Which cable transmits data with light?",
     "options": [
       "Cat6 UTP",
@@ -801,42 +657,6 @@
     ],
     "correct": 1,
     "explanation": "Fiber uses light pulses and is immune to EMI.",
-    "difficulty": "Easy"
-  },
-  {
-    "question": "What is 127.0.0.1 used for?",
-    "options": [
-      "Internet gateway",
-      "Testing the local TCP/IP stack (loopback)",
-      "DHCP server",
-      "APIPA address"
-    ],
-    "correct": 1,
-    "explanation": "Loopback tests the host own IP stack.",
-    "difficulty": "Easy"
-  },
-  {
-    "question": "A 169.254.x.x address on Windows usually means?",
-    "options": [
-      "A public IP",
-      "APIPA: DHCP failed",
-      "A multicast address",
-      "Loopback"
-    ],
-    "correct": 1,
-    "explanation": "APIPA (169.254/16) is used when DHCP does not answer.",
-    "difficulty": "Medium"
-  },
-  {
-    "question": "What does PoE do?",
-    "options": [
-      "Encrypt traffic",
-      "Power devices over the Ethernet cable",
-      "Aggregate links",
-      "Translate VLANs"
-    ],
-    "correct": 1,
-    "explanation": "PoE powers APs, cameras, and phones over UTP.",
     "difficulty": "Easy"
   },
   {
@@ -864,18 +684,6 @@
     "difficulty": "Medium"
   },
   {
-    "question": "What is an access point for?",
-    "options": [
-      "WAN routing",
-      "Connecting Wi-Fi clients to the wired LAN",
-      "Assigning AS numbers",
-      "Terminating MPLS"
-    ],
-    "correct": 1,
-    "explanation": "An AP bridges wireless clients onto Ethernet.",
-    "difficulty": "Easy"
-  },
-  {
     "question": "Which is a good password habit?",
     "options": [
       "Reuse one password everywhere",
@@ -888,30 +696,6 @@
     "difficulty": "Easy"
   },
   {
-    "question": "What does a patch panel do?",
-    "options": [
-      "Runs OSPF",
-      "Organizes and terminates cabling at a central point",
-      "Encrypts Wi-Fi",
-      "Auto-assigns VLANs"
-    ],
-    "correct": 1,
-    "explanation": "Patch panels concentrate structured cabling.",
-    "difficulty": "Easy"
-  },
-  {
-    "question": "How many bits are in IPv6?",
-    "options": [
-      "32",
-      "64",
-      "128",
-      "256"
-    ],
-    "correct": 2,
-    "explanation": "IPv6 addresses are 128 bits.",
-    "difficulty": "Easy"
-  },
-  {
     "question": "Which Windows command shows the machine IP?",
     "options": [
       "ping",
@@ -921,30 +705,6 @@
     ],
     "correct": 1,
     "explanation": "ipconfig or ipconfig /all shows Windows addresses.",
-    "difficulty": "Easy"
-  },
-  {
-    "question": "Compared with a switch, an Ethernet hub:",
-    "options": [
-      "Is more secure",
-      "Shares one collision domain; a switch splits it per port",
-      "Routes IP",
-      "Runs OSPF"
-    ],
-    "correct": 1,
-    "explanation": "Hubs are L1 and share collisions; L2 switches isolate per port.",
-    "difficulty": "Medium"
-  },
-  {
-    "question": "Which protocol uses UDP port 53?",
-    "options": [
-      "HTTP",
-      "DNS",
-      "SMTP",
-      "FTP"
-    ],
-    "correct": 1,
-    "explanation": "DNS uses UDP/TCP 53.",
     "difficulty": "Easy"
   },
   {
@@ -970,18 +730,6 @@
     "correct": 1,
     "explanation": "UTP categories define performance.",
     "difficulty": "Medium"
-  },
-  {
-    "question": "Which is a private RFC 1918 IPv4 address?",
-    "options": [
-      "8.8.8.8",
-      "192.168.1.10",
-      "1.1.1.1",
-      "255.255.255.255"
-    ],
-    "correct": 1,
-    "explanation": "192.168.0.0/16 is private, along with 10/8 and 172.16/12.",
-    "difficulty": "Easy"
   },
   {
     "question": "What is the recommended maximum length of a copper twisted-pair (UTP) Ethernet cable?",
@@ -1534,5 +1282,571 @@
     "correct": 1,
     "explanation": "A successful IP ping proves Layers 1–3 to the server. Using the name requires DNS (port 53). Checking ipconfig/ifconfig, the configured DNS server, and nslookup/dig isolates the issue in seconds.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "A straight-through Ethernet cable typically connects which devices?",
+    "options": [
+      "PC to PC, or switch to switch, without Auto-MDIX",
+      "PC to switch, or router to switch (MDI to MDI-X)",
+      "Cisco consoles only",
+      "Multimode fiber only"
+    ],
+    "correct": 1,
+    "explanation": "A straight-through cable keeps the same pinout on both ends and connects MDI (NIC/router) to MDI-X (switch/hub). Classic PC-PC or switch-switch links used crossovers; modern Auto-MDIX makes the cable type almost irrelevant.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "How many collision domains does a 24-port Ethernet switch create in full duplex?",
+    "options": [
+      "1",
+      "2",
+      "12",
+      "24"
+    ],
+    "correct": 3,
+    "explanation": "Each switch port is its own collision domain. Full duplex eliminates actual collisions, but the per-port isolation remains: 24 ports = 24 domains. A 24-port hub would be a single collision domain.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What bounds an IPv4 broadcast domain on a classic LAN?",
+    "options": [
+      "Each copper cable",
+      "A VLAN or a router (L3) interface",
+      "Each hub port",
+      "The source MAC address"
+    ],
+    "correct": 1,
+    "explanation": "Layer-2 broadcasts (ff:ff:ff:ff:ff:ff) stay inside a VLAN. A router (or SVI/L3) does not forward them between networks, so each VLAN/subnet is one broadcast domain.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In the OSI model, what are the PDUs of the Transport, Network, Data Link, and Physical layers called?",
+    "options": [
+      "Packet, frame, segment, bit",
+      "Segment, packet, frame, bits",
+      "Frame, segment, packet, cell",
+      "Datagram, cell, frame, segment"
+    ],
+    "correct": 1,
+    "explanation": "Common convention: L4 segment (TCP) or datagram (UDP), L3 packet, L2 frame, L1 bits. Encapsulation adds headers as data moves down the stack.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which OSI layer is responsible for HTTP, DNS, and SMTP?",
+    "options": [
+      "Transport",
+      "Application",
+      "Network",
+      "Data Link"
+    ],
+    "correct": 1,
+    "explanation": "HTTP, DNS, and SMTP are application protocols. In TCP/IP the Application layer also covers OSI session and presentation functions.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "The Internet layer of the TCP/IP model maps mainly to which OSI layer?",
+    "options": [
+      "Physical",
+      "Data Link",
+      "Network",
+      "Transport"
+    ],
+    "correct": 2,
+    "explanation": "The Internet layer handles IP, ICMP, and routing — OSI Network (L3) functions. Data Link plus Physical map to Network Access/Link.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "How many usable IPv4 host addresses are in a /30 subnet?",
+    "options": [
+      "0",
+      "2",
+      "4",
+      "6"
+    ],
+    "correct": 1,
+    "explanation": "A /30 has 2 host bits: 4 addresses total. Subtract network and broadcast and 2 hosts remain — typical on router-to-router point-to-point links.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Why is an IPv4 /31 sometimes used on point-to-point links?",
+    "options": [
+      "To provide 30 user hosts",
+      "To use both addresses without reserving network/broadcast (RFC 3021)",
+      "Only on Wi-Fi",
+      "It replaces IPv6 link-local"
+    ],
+    "correct": 1,
+    "explanation": "RFC 3021 allows /31 on point-to-point links: both addresses are usable, avoiding the waste of a /30. It is not for broadcast LANs.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Which prefix identifies a typical IPv6 global unicast (GUA) address?",
+    "options": [
+      "FE80::/10",
+      "FF00::/8",
+      "2000::/3",
+      "FC00::/7"
+    ],
+    "correct": 2,
+    "explanation": "Current GUAs sit in 2000::/3 (often starting with 2 or 3). FE80::/10 is link-local, FF00::/8 multicast, FC00::/7 unique-local (practically fd00::/8).",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which prefix identifies IPv6 multicast?",
+    "options": [
+      "2000::/3",
+      "FE80::/10",
+      "FF00::/8",
+      "::1/128"
+    ],
+    "correct": 2,
+    "explanation": "All IPv6 multicast starts with FF. Examples: FF02::1 all-nodes link-local, FF02::2 all-routers. IPv6 has no broadcast; multicast is used instead.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does the IPv6 address :: (two colons only) represent?",
+    "options": [
+      "Loopback",
+      "Link-local all-nodes",
+      "The unspecified address",
+      "All-routers multicast"
+    ],
+    "correct": 2,
+    "explanation": ":: is the unspecified address (::/128), used as a source before a host has an address. Loopback is ::1. Do not assign :: to an interface.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Wi-Fi 5 corresponds to which IEEE standard?",
+    "options": [
+      "802.11n",
+      "802.11ac",
+      "802.11ax",
+      "802.11be"
+    ],
+    "correct": 1,
+    "explanation": "Wi-Fi 4 = 802.11n, Wi-Fi 5 = 802.11ac (mainly 5 GHz), Wi-Fi 6 = 802.11ax, Wi-Fi 7 = 802.11be.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Which 20 MHz channels in 2.4 GHz are the classic non-overlapping set?",
+    "options": [
+      "1, 2, and 3",
+      "1, 6, and 11",
+      "3, 8, and 13",
+      "5, 10, and 14"
+    ],
+    "correct": 1,
+    "explanation": "On 2.4 GHz, channels 1, 6, and 11 (25 MHz apart) are the classic choice to minimize overlap. Adjacent channels interfere with each other.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "A kitchen microwave usually degrades which Wi-Fi band the most?",
+    "options": [
+      "5 GHz",
+      "6 GHz",
+      "2.4 GHz",
+      "Optical fiber"
+    ],
+    "correct": 2,
+    "explanation": "Many microwave ovens radiate noise around 2.4 GHz. The 5/6 GHz bands sit elsewhere and suffer less from this interference (but have shorter range).",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is the main risk of an open (no password) Wi-Fi network?",
+    "options": [
+      "DHCP stops working",
+      "Others on the same BSS can capture unencrypted traffic",
+      "Channels 1, 6, and 11 shut down",
+      "The AP stops sending beacons"
+    ],
+    "correct": 1,
+    "explanation": "With no Layer-2 encryption, anyone associated (and sometimes even a passive listener) can read frames. Use WPA2/WPA3 and, on public Wi-Fi, a VPN.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What characterizes a ransomware attack?",
+    "options": [
+      "It sends DNS spam",
+      "It encrypts the victim's files and demands a ransom for the key",
+      "It only changes the SSID",
+      "It is always an unplugged cable"
+    ],
+    "correct": 1,
+    "explanation": "Ransomware is malware that encrypts data and demands payment. Mitigation: offline backups, patching, mail filtering, and not opening untrusted attachments. Paying is not the recommended fix.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "An unknown 'technician' calls the help desk asking for the administrator password. This is mainly:",
+    "options": [
+      "An STP failure",
+      "Social engineering",
+      "A PoE problem",
+      "NAT overload"
+    ],
+    "correct": 1,
+    "explanation": "Social engineering targets people, not protocol bugs. Never give credentials over the phone without a verification procedure. Report the incident.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Leaving the factory password on a home router is dangerous because:",
+    "options": [
+      "NAT stops translating",
+      "Public default credentials let anyone on the network reach admin access",
+      "Cat6 can no longer negotiate Gigabit",
+      "DHCP can only offer APIPA"
+    ],
+    "correct": 1,
+    "explanation": "Vendors publish defaults (admin/admin, and similar). Any Wi-Fi client or exposed WAN can use them. Change them at install time and disable weak WPS.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Look at this ping output. What does the result indicate?",
+    "options": [
+      "The destination is unreachable at Layer 3",
+      "There is IP connectivity to 8.8.8.8, with low RTT and 0% loss",
+      "DNS failed",
+      "The cable is in half duplex"
+    ],
+    "correct": 1,
+    "explanation": "Four successful ICMP echoes, 0% loss, and ~12 ms RTT show IP reachability to the destination. It does not prove HTTP or DNS; it only tests ICMP echo.",
+    "difficulty": "Easy",
+    "cli": "PC> ping 8.8.8.8\nPinging 8.8.8.8 with 32 bytes of data:\nReply from 8.8.8.8: bytes=32 time=12ms TTL=117\nReply from 8.8.8.8: bytes=32 time=11ms TTL=117\nReply from 8.8.8.8: bytes=32 time=13ms TTL=117\nReply from 8.8.8.8: bytes=32 time=12ms TTL=117\n\nPing statistics for 8.8.8.8:\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\nApproximate round trip times in milli-seconds:\n    Minimum = 11ms, Maximum = 13ms, Average = 12ms"
+  },
+  {
+    "question": "Look at this traceroute. What do the asterisks at hop 4 mean?",
+    "options": [
+      "The destination replied successfully",
+      "That hop did not return ICMP Time Exceeded in time (filter, loss, or no reply)",
+      "The PC cable is broken",
+      "Traceroute always uses TCP port 80"
+    ],
+    "correct": 1,
+    "explanation": "Each hop is probed with an increasing TTL. If the router does not send Time Exceeded (ICMP policy, firewall, or loss), you see * * *. Later hops may still reach the destination.",
+    "difficulty": "Medium",
+    "cli": "PC> tracert 203.0.113.10\nTracing route to 203.0.113.10 over a maximum of 30 hops\n\n  1    <1 ms    <1 ms    <1 ms  192.168.1.1\n  2     4 ms     4 ms     5 ms  10.20.0.1\n  3    12 ms    11 ms    12 ms  198.51.100.1\n  4     *        *        *\n  5    28 ms    27 ms    29 ms  203.0.113.10\n\nTrace complete."
+  },
+  {
+    "question": "A user can ping the LAN gateway but cannot ping 8.8.8.8. What is the most likely cause?",
+    "options": [
+      "A hidden SSID",
+      "WAN/NAT forwarding failure or a missing/wrong default route on the path",
+      "The switch has no MAC table",
+      "The cable is Cat6 instead of Cat5e"
+    ],
+    "correct": 1,
+    "explanation": "A ping to the gateway proves local L2/L3. Failure to a public IP points to WAN, NAT, an edge firewall, or a missing default route — not DNS (an IP was used).",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Two PCs in the same VLAN share the same IPv4 address. What symptom is typical?",
+    "options": [
+      "STP elects two roots",
+      "Intermittent loss, duplicate-IP messages, and unstable ARP",
+      "PoE turns off",
+      "The trunk becomes half duplex"
+    ],
+    "correct": 1,
+    "explanation": "Duplicate IPs cause ARP conflicts: traffic flaps between the two MACs. Windows reports an IP address conflict. Each host in the VLAN needs a unique IPv4 address.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "A switch-port link LED is dark. What should the help desk check first?",
+    "options": [
+      "Reformat the PC",
+      "Check the cable, connector seating, and whether the far end has power/link",
+      "Change spanning tree to MST",
+      "Enable BGP"
+    ],
+    "correct": 1,
+    "explanation": "No link light means Layer 1 is down. Confirm cable, port, and only then speed/duplex. Layer-3 issues (IP/DNS) come after a link exists.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "When a switch receives a unicast frame whose destination MAC is not yet in the CAM table, what does it do?",
+    "options": [
+      "Always drops the frame",
+      "Floods the frame out the VLAN's ports except the incoming port",
+      "Converts the frame to multicast 224.0.0.1",
+      "Sends it only to the default gateway"
+    ],
+    "correct": 1,
+    "explanation": "Unknown unicast flooding: the switch treats an unknown destination as needing to reach the whole VLAN. Once it sees the source MAC on a reply, it records the port in the CAM.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which DNS record maps a hostname to an IPv6 address?",
+    "options": [
+      "A",
+      "AAAA",
+      "MX",
+      "PTR"
+    ],
+    "correct": 1,
+    "explanation": "A maps name→IPv4; AAAA (quad-A) maps name→IPv6; MX is mail; PTR is reverse (IP→name).",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is nslookup (or dig) used for in troubleshooting?",
+    "options": [
+      "To negotiate EtherChannel",
+      "To query DNS and see whether a name resolves to the expected IP",
+      "To encrypt HTTPS traffic",
+      "To assign VLANs to ports"
+    ],
+    "correct": 1,
+    "explanation": "nslookup/dig query a DNS resolver. If ping to an IP works but the name fails, the problem is DNS, not the WAN.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "A PC can reach others in the same VLAN but not the Internet, and the default gateway field is empty. What is missing?",
+    "options": [
+      "A second SSID",
+      "The default gateway/route to leave the local subnet",
+      "A crossover cable to the switch",
+      "Disabling ARP"
+    ],
+    "correct": 1,
+    "explanation": "Intra-VLAN traffic needs no gateway. For other networks the host sends to the default gateway (the VLAN's router/SVI). With no gateway, only the local subnet is reachable.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the essential difference between running-config and startup-config on a Cisco device?",
+    "options": [
+      "There is no difference",
+      "Running is in RAM (active); startup is in NVRAM and is applied at boot",
+      "Startup always lives in the IOS flash image",
+      "Running exists only on switches, not routers"
+    ],
+    "correct": 1,
+    "explanation": "RAM changes are lost on reload unless you copy running-config startup-config. show running-config is the live config; show startup-config is the saved one.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Compared with Cat6, Cat6A cabling is mainly intended for what?",
+    "options": [
+      "Analog telephony only",
+      "10GBASE-T up to 100 m with better alien-crosstalk control",
+      "Always replacing single-mode fiber in the WAN",
+      "PoE power without data pairs"
+    ],
+    "correct": 1,
+    "explanation": "Cat6 often limits 10 Gb/s to short channels (~55 m in some cases). Cat6A is designed for 10GBASE-T at 100 m. Cat5e typically tops out at 1 Gb/s over 100 m.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "IPv4 address 255.255.255.255 is:",
+    "options": [
+      "A loopback unicast",
+      "The limited broadcast of the local subnet",
+      "All-routers multicast",
+      "The first host of every /24"
+    ],
+    "correct": 1,
+    "explanation": "255.255.255.255 is not forwarded by routers. It is the local limited broadcast. A /24 directed broadcast would be, for example, 192.168.1.255.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "IPv4 address 224.0.0.1 is used as:",
+    "options": [
+      "Directed broadcast",
+      "All-hosts multicast on the local segment",
+      "The RFC 1918 default gateway",
+      "APIPA"
+    ],
+    "correct": 1,
+    "explanation": "224.0.0.0/24 are link-local multicasts (not forwarded). 224.0.0.1 = all hosts; 224.0.0.2 = all routers; 224.0.0.5/6 = OSPF; 224.0.0.10 = EIGRP.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which metric describes delay variation between packets and is critical for voice?",
+    "options": [
+      "Bandwidth",
+      "Jitter",
+      "MTU",
+      "OUI"
+    ],
+    "correct": 1,
+    "explanation": "Jitter is latency variation. Voice is sensitive to jitter and loss; use a jitter buffer and QoS (EF). Bandwidth is capacity; latency is average delay.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What do the first 24 bits of an IEEE MAC address identify?",
+    "options": [
+      "The native VLAN",
+      "The manufacturer's OUI (organizationally unique identifier)",
+      "The default gateway",
+      "The cable type"
+    ],
+    "correct": 1,
+    "explanation": "A 48-bit MAC splits into a 24-bit OUI (vendor) and a 24-bit device identifier. The U/L and I/G bits in the first octet have special meaning.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is a denial-of-service (DoS) attack on a network?",
+    "options": [
+      "Encrypting files for ransom",
+      "Exhausting resources (CPU, bandwidth, sessions) so legitimate service fails",
+      "Translating private IPs to public ones",
+      "Electing the root bridge"
+    ],
+    "correct": 1,
+    "explanation": "DoS (and distributed DDoS) makes a service unavailable by overload. Mitigation: ACLs, rate-limit, edge anti-DDoS, CoPP on routers. It is not ransomware.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Least privilege for help-desk access means:",
+    "options": [
+      "Everyone shares the enable secret",
+      "Each account has only the permissions required for the role",
+      "Always disable the firewall",
+      "Use Telnet instead of SSH"
+    ],
+    "correct": 1,
+    "explanation": "Least privilege reduces the blast radius of a compromised account. On Cisco devices use AAA (RADIUS/TACACS+) with per-user privileges, not a shared enable password.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "On Windows, ipconfig /all shows the DHCP server. Why is that useful?",
+    "options": [
+      "To compute OSPF cost",
+      "To see who issued the lease and whether the address is static or dynamic",
+      "To view the switch MAC table",
+      "To enable PortFast"
+    ],
+    "correct": 1,
+    "explanation": "DHCP Server plus lease obtained/expires distinguish a dynamic IP from a static one. An unexpected server can indicate rogue DHCP.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "About how many watts does classic IEEE 802.3af PoE deliver at the PD?",
+    "options": [
+      "4 W",
+      "15.4 W at the PSE / ~12.95 W at the PD",
+      "60 W",
+      "90 W"
+    ],
+    "correct": 1,
+    "explanation": "802.3af (PoE): 15.4 W at the PSE, about 12.95 W at the PD after cable loss. 802.3at (PoE+) ~30/25.5 W. 802.3bt (Type 3/4) rises to 60/90 W.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "When do you prefer traceroute over a simple ping?",
+    "options": [
+      "To encrypt traffic",
+      "To see which hops the path fails at or where latency jumps",
+      "To assign VLANs",
+      "To negotiate duplex"
+    ],
+    "correct": 1,
+    "explanation": "Ping tests one destination. Traceroute lists the path (expired TTL) and shows whether the failure is LAN, ISP WAN, or the remote server.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Is hiding the SSID (not broadcasting the network name) a strong defense?",
+    "options": [
+      "Yes, it equals WPA3-Enterprise",
+      "No: the SSID still appears in data frames and gives a false sense of security",
+      "Yes, it blocks all association",
+      "It only works on 6 GHz"
+    ],
+    "correct": 1,
+    "explanation": "SSID-less beacons do not hide the network from anyone capturing probes or data. Use WPA2/WPA3 and 802.1X for real control. A hidden SSID still annoys legitimate clients.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "A DHCP Discover is sent as:",
+    "options": [
+      "Unicast to 8.8.8.8",
+      "Broadcast (source 0.0.0.0, destination 255.255.255.255) because the client has no IP yet",
+      "OSPF multicast 224.0.0.5",
+      "IPv6 anycast"
+    ],
+    "correct": 1,
+    "explanation": "In DORA, Discover and Request are broadcasts. The client uses 0.0.0.0 as the source. Offer and Ack come from the server (sometimes also as broadcasts).",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Why do DHCP, DNS queries, and NTP use UDP instead of TCP?",
+    "options": [
+      "UDP always guarantees retransmission",
+      "They are short transactions that do not need a reliable session; less overhead",
+      "UDP encrypts automatically",
+      "TCP cannot use port 53"
+    ],
+    "correct": 1,
+    "explanation": "UDP is connectionless with low overhead. The application handles retries (DHCP re-sends Discover; DNS can retry or query another server). DNS zone transfers may use TCP.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which statement best describes encapsulation going down the OSI model?",
+    "options": [
+      "Each layer strips the lower-layer header",
+      "Each layer adds its header (and sometimes a trailer) to the upper-layer data",
+      "Only the physical layer adds headers",
+      "The switch always strips IP and the router always strips MAC"
+    ],
+    "correct": 1,
+    "explanation": "The application hands data to L4, which adds TCP/UDP, L3 adds IP, L2 adds the Ethernet header and FCS, L1 serializes bits. On the way up, headers are removed.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "On a 10.0.0.0/8, 172.16.0.0/12, or 192.168.0.0/16 network, traffic to the public Internet normally requires:",
+    "options": [
+      "A hub only",
+      "NAT/PAT or publicly routable addresses, plus a default gateway",
+      "Disabling ARP",
+      "Changing every MAC to FF:FF:FF:FF:FF:FF"
+    ],
+    "correct": 1,
+    "explanation": "RFC 1918 is not routable on the Internet. The CPE/router performs PAT to a public IP, or you use IPv6 GUA. Without a gateway and without translation, private addresses do not leave.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Wi-Fi 4 corresponds to which IEEE standard?",
+    "options": [
+      "802.11a",
+      "802.11g",
+      "802.11n",
+      "802.11ac"
+    ],
+    "correct": 2,
+    "explanation": "802.11n (Wi-Fi 4) introduced MIMO and 40 MHz and operates on 2.4 and 5 GHz. 802.11g is 2.4 GHz-only at 54 Mb/s; 802.11ac is Wi-Fi 5.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "A toner/cable tester at the help desk is mainly used to:",
+    "options": [
+      "Configure OSPF",
+      "Identify the pair/port on the patch panel and detect opens, shorts, or crossed pairs",
+      "Upgrade IOS",
+      "Generate SSH keys"
+    ],
+    "correct": 1,
+    "explanation": "Layer-1 tools: a toner/probe finds the cable in the panel; a tester checks continuity and wire map. It does not replace ping/DNS, but it avoids hours chasing the wrong pair.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "On public networks (cafe, airport), which habit reduces interception risk?",
+    "options": [
+      "Disable the laptop firewall",
+      "Use VPN/HTTPS and avoid sensitive work on open portals without encryption",
+      "Change the MAC to ff:ff:ff:ff:ff:ff",
+      "Force half duplex"
+    ],
+    "correct": 1,
+    "explanation": "Public Wi-Fi may be open or shared. VPNs encrypt to the concentrator; HTTPS protects the site. Avoid banking on captive portals without visible TLS.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "A ping to an IPv6 fe80:: address on Windows fails without a zone. What is missing?",
+    "options": [
+      "An APIPA address",
+      "The zone/interface identifier (fe80::x%eth0 / %13), because link-local is not unique on the node",
+      "A GRE tunnel",
+      "Disabling NDP"
+    ],
+    "correct": 1,
+    "explanation": "Link-local exists on every interface. Without %zone the OS does not know which NIC to use. ping fe80::1%Ethernet or -6 with a zone id.",
+    "difficulty": "Hard"
   }
 ]

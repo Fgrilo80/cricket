@@ -60,18 +60,6 @@ window.QUIZ_BANK = [
     "difficulty": "Difícil"
   },
   {
-    "question": "O que é 'FlexVPN'?",
-    "options": [
-      "VPN estática",
-      "Framework flexível baseado em IKEv2 para VPNs site-to-site e remote access com alta escalabilidade",
-      "Tipo de firewall",
-      "Protocolo de backup"
-    ],
-    "correct": 1,
-    "explanation": "FlexVPN é uma solução baseada em IKEv2 que unifica diferentes tipos de VPN em uma única configuração flexível.",
-    "difficulty": "Difícil"
-  },
-  {
     "question": "Qual é a diferença entre 'PIM-SM' e 'PIM-DM'?",
     "options": [
       "PIM-SM é dense mode, PIM-DM é sparse mode",
@@ -147,7 +135,7 @@ window.QUIZ_BANK = [
     "question": "Qual é a função do 'Wireless LAN Controller (WLC)'?",
     "options": [
       "Router wireless",
-      "Dispositivo centralizado que gerencia múltiplos Access Points, roaming, segurança e RF",
+      "Dispositivo centralizado que gerência múltiplos Access Points, roaming, segurança e RF",
       "Tipo de switch",
       "Firewall"
     ],
@@ -192,18 +180,6 @@ window.QUIZ_BANK = [
     "difficulty": "Difícil"
   },
   {
-    "question": "Qual é a função do 'RESTCONF' e 'NETCONF'?",
-    "options": [
-      "Protocolos de encaminhamento",
-      "APIs e protocolos para automação e configuração programática de dispositivos de rede",
-      "Tipo de firewall",
-      "Método de backup"
-    ],
-    "correct": 1,
-    "explanation": "NETCONF/RESTCONF permitem configuração e gerenciamento programático de dispositivos usando YANG models.",
-    "difficulty": "Difícil"
-  },
-  {
     "question": "O que é 'Ansible' na automação de rede Cisco?",
     "options": [
       "Linguagem de programação",
@@ -216,18 +192,6 @@ window.QUIZ_BANK = [
     "difficulty": "Médio"
   },
   {
-    "question": "Qual é a diferença entre 'PBR' (Policy Based Routing) e encaminhamento normal?",
-    "options": [
-      "PBR é mais rápido",
-      "PBR permite rotear tráfego com base em políticas (ACL, QoS, aplicação) em vez de apenas destino",
-      "Não há diferença",
-      "PBR é menos seguro"
-    ],
-    "correct": 1,
-    "explanation": "PBR permite decisões de encaminhamento baseadas em critérios além do IP de destino, como origem, aplicação ou marcação.",
-    "difficulty": "Difícil"
-  },
-  {
     "question": "O que é 'MPLS L3 VPN'?",
     "options": [
       "VPN ponto a ponto",
@@ -237,18 +201,6 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "MPLS L3 VPN usa VRFs no PE para isolar rotas de diferentes clientes enquanto compartilham a infraestrutura MPLS.",
-    "difficulty": "Difícil"
-  },
-  {
-    "question": "Qual é a função do 'BFD' (Bidirectional Forwarding Detection)?",
-    "options": [
-      "Protocolo de encaminhamento",
-      "Mecanismo rápido de detecção de falhas em links para acelerar convergência de protocolos de encaminhamento",
-      "Tipo de ACL",
-      "Método de NAT"
-    ],
-    "correct": 1,
-    "explanation": "BFD fornece detecção de falhas em milissegundos, permitindo que protocolos de encaminhamento reajam muito mais rápido.",
     "difficulty": "Difícil"
   },
   {
@@ -286,18 +238,6 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "Secure Firewall é um NGFW com inspeção profunda, IPS, controle de aplicações e integração com outras soluções de segurança Cisco.",
     "difficulty": "Difícil"
-  },
-  {
-    "question": "Qual é a função do ' ThousandEyes'?",
-    "options": [
-      "Monitoramento local",
-      "Plataforma de observabilidade de internet que monitora performance de aplicações e rede de ponta a ponta",
-      "Tipo de firewall",
-      "Método de backup"
-    ],
-    "correct": 1,
-    "explanation": "ThousandEyes fornece visibilidade de ponta a ponta da experiência do usuário e performance de rede/internet.",
-    "difficulty": "Médio"
   },
   {
     "question": "O que é 'Intent-Based Networking'?",
@@ -588,18 +528,6 @@ window.QUIZ_BANK = [
     "difficulty": "Médio"
   },
   {
-    "question": "Em OSPF, o LSA tipo 1 descreve:",
-    "options": [
-      "Rotas externas",
-      "O router e os seus links intra-área",
-      "A summary de área",
-      "O ASBR noutro AS"
-    ],
-    "correct": 1,
-    "explanation": "Type 1 Router LSA descreve links do router na área.",
-    "difficulty": "Médio"
-  },
-  {
     "question": "OSPF LSA tipo 3 é gerado por:",
     "options": [
       "Todos os routers",
@@ -646,18 +574,6 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "Successor é a melhor rota (feasible distance).",
     "difficulty": "Médio"
-  },
-  {
-    "question": "Feasible successor EIGRP exige:",
-    "options": [
-      "AD > FD do successor",
-      "Advertised Distance < FD do successor (condicao de viabilidade)",
-      "Mesmo AS BGP",
-      "LSA tipo 5"
-    ],
-    "correct": 1,
-    "explanation": "AD do candidato tem de ser menor que a FD da rota em uso.",
-    "difficulty": "Difícil"
   },
   {
     "question": "BGP path selection: depois de Weight e Local Pref, o próximo critério comum é:",
@@ -840,18 +756,6 @@ window.QUIZ_BANK = [
     "difficulty": "Difícil"
   },
   {
-    "question": "VXLAN VNI identifica:",
-    "options": [
-      "Uma VLAN local só",
-      "O segmento overlay (L2/L3) no fabric",
-      "O ASN BGP",
-      "O DSCP"
-    ],
-    "correct": 1,
-    "explanation": "VNI é o identificador do overlay VXLAN.",
-    "difficulty": "Médio"
-  },
-  {
     "question": "ISE no acesso usa 802.1X para:",
     "options": [
       "Cifrar OSPF",
@@ -912,18 +816,6 @@ window.QUIZ_BANK = [
     "difficulty": "Difícil"
   },
   {
-    "question": "GETVPN (GDOI) é pensado para:",
-    "options": [
-      "Internet pública com NAT",
-      "WAN privada (MPLS) com grupo IPsec e headers originais preservados",
-      "Só Wi-Fi",
-      "IPv6 link-local"
-    ],
-    "correct": 1,
-    "explanation": "GETVPN usa key server; não muda IPs, bom em MPLS.",
-    "difficulty": "Difícil"
-  },
-  {
     "question": "FlexVPN no IOS-XE baseia-se em:",
     "options": [
       "L2TP só",
@@ -941,7 +833,7 @@ window.QUIZ_BANK = [
       "O data plane de utilizador",
       "O CPU do control plane limitando tráfego a processos (ex. SSH, routing)",
       "Só o CAM",
-      "O Põe"
+      "O PoE"
     ],
     "correct": 1,
     "explanation": "CoPP aplica QoS/ACL ao tráfego destined-to-box.",
@@ -975,36 +867,12 @@ window.QUIZ_BANK = [
     "question": "Anycast RP (MSDP) resolve:",
     "options": [
       "Um só RP sem redundância",
-      "Redundância/load-share de RPs multicast entre dominios ou boxes",
+      "Redundância/load-share de RPs multicast entre domínios ou boxes",
       "Só IPv6 ND",
       "VTP pruning"
     ],
     "correct": 1,
     "explanation": "Vários RPs com o mesmo IP; MSDP sincroniza source-active.",
-    "difficulty": "Difícil"
-  },
-  {
-    "question": "QoS LLQ (Low Latency Queue) e tipicamente para:",
-    "options": [
-      "Bulk backup",
-      "Voz/vídeo em tempo real (priority queue)",
-      "Best-effort HTTP",
-      "Routing updates só"
-    ],
-    "correct": 1,
-    "explanation": "priority command = LLQ, com policer para não esgotar o link.",
-    "difficulty": "Médio"
-  },
-  {
-    "question": "WRED evita:",
-    "options": [
-      "Blackholing BGP",
-      "Tail drop global, descendo probabilístico segundo DSCP antes da fila cheia",
-      "Loops RIP",
-      "Falha de NTP"
-    ],
-    "correct": 1,
-    "explanation": "WRED faz early drop ponderado; protege fluxos TCP.",
     "difficulty": "Difícil"
   },
   {
@@ -1136,23 +1004,23 @@ window.QUIZ_BANK = [
       "Elege o root"
     ],
     "correct": 1,
-    "explanation": "Se BPDUs cessam, STP classico assume que o designated desapareceu e a porta pode forwarding. Loop Guard poe loop-inconsistent ate os BPDUs regressarem.",
+    "explanation": "Se BPDUs cessam, STP classico assume que o designated desapareceu e a porta pode forwarding. Loop Guard poe loop-inconsistent até os BPDUs regressarem.",
     "difficulty": "Difícil"
   },
   {
-    "question": "Qual e a relacao entre SSO e NSF num chassis Cisco com dual RP?",
+    "question": "Qual é a relação entre SSO e NSF num chassis Cisco com dual RP?",
     "options": [
-      "NSF grava a config; SSO nao",
+      "NSF grava a config; SSO não",
       "SSO replica o estado do control plane ao RP standby; NSF mantem CEF forwarding durante o switchover com graceful restart",
-      "Sao o mesmo feature de NAT",
+      "São o mesmo feature de NAT",
       "SSO desliga a FIB"
     ],
     "correct": 1,
-    "explanation": "SSO + NSF/GR permitem failover de supervisor em segundos sem perder adjacencias se o peer entender GR. ISSU apoia-se nisto.",
+    "explanation": "SSO + NSF/GR permitem failover de supervisor em segundos sem perder adjacências se o peer entender GR. ISSU apoia-se nisto.",
     "difficulty": "Difícil"
   },
   {
-    "question": "O que e LLQ (Low Latency Queuing) num policy-map de QoS?",
+    "question": "O que é LLQ (Low Latency Queuing) num policy-map de QoS?",
     "options": [
       "WRED em todas as classes",
       "Uma priority queue (normalmente EF/voz) servida primeiro, combinada com CBWFQ nas demais classes",
@@ -1160,11 +1028,11 @@ window.QUIZ_BANK = [
       "Um tipo de STP"
     ],
     "correct": 1,
-    "explanation": "priority reserva um policer implicito para nao esgotar o link. As outras classes usam bandwidth (CBWFQ). Nao se poe bulk na priority.",
+    "explanation": "priority reserva um policer implicito para não esgotar o link. As outras classes usam bandwidth (CBWFQ). Não se poe bulk na priority.",
     "difficulty": "Médio"
   },
   {
-    "question": "O valor DSCP EF 46 em binario de 6 bits e?",
+    "question": "O valor DSCP EF 46 em binário de 6 bits é?",
     "options": [
       "001010",
       "101110",
@@ -1184,15 +1052,15 @@ window.QUIZ_BANK = [
       "Substituir LLQ"
     ],
     "correct": 1,
-    "explanation": "Tail drop enche a fila e varios TCP entram em slow start ao mesmo tempo. WRED comeca a descartar cedo nos fluxos menos prioritarios. Nao se aplica a voz.",
+    "explanation": "Tail drop enche a fila e varios TCP entram em slow start ao mesmo tempo. WRED comeca a descartar cedo nos fluxos menos prioritarios. Não se aplica a voz.",
     "difficulty": "Médio"
   },
   {
-    "question": "Qual e a diferenca fundamental entre um tunel GRE puro e GRE over IPsec?",
+    "question": "Qual é a diferença fundamental entre um túnel GRE puro e GRE over IPsec?",
     "options": [
       "GRE puro cifra com AES",
       "GRE encapsula qualquer protocolo mas vai em claro; IPsec acrescenta confidencialidade/integridade, normalmente em modo tunnel",
-      "IPsec nao pode transportar OSPF",
+      "IPsec não pode transportar OSPF",
       "GRE exige certificados sempre"
     ],
     "correct": 1,
@@ -1204,27 +1072,27 @@ window.QUIZ_BANK = [
     "options": [
       "IKEv2 exige mais mensagens",
       "Menos round-trips, NAT traversal nativo, EAP, MOBIKE e melhor rekey; o IKEv1 e o modelo legado",
-      "IKEv2 nao autentica",
-      "IKEv1 suporta EAP e o IKEv2 nao"
+      "IKEv2 não autentica",
+      "IKEv1 suporta EAP e o IKEv2 não"
     ],
     "correct": 1,
     "explanation": "IKEv2 usa 4 mensagens contra 9 do main mode. FlexVPN da Cisco assenta em IKEv2.",
     "difficulty": "Médio"
   },
   {
-    "question": "O que distingue GETVPN das VPNs de tunel tipo DMVPN?",
+    "question": "O que distingue GETVPN das VPNs de túnel tipo DMVPN?",
     "options": [
-      "GETVPN usa GRE obrigatorio",
-      "GETVPN cifra trafego nativo (sem overlay de tunel) com chaves de grupo GDOI; preserva o cabecalho IP original",
-      "GETVPN nao usa IPsec",
-      "GETVPN e so para Internet publica sem IGP"
+      "GETVPN usa GRE obrigatório",
+      "GETVPN cifra tráfego nativo (sem overlay de túnel) com chaves de grupo GDOI; preserva o cabeçalho IP original",
+      "GETVPN não usa IPsec",
+      "GETVPN e só para Internet pública sem IGP"
     ],
     "correct": 1,
-    "explanation": "Key server distribui KEKs/TEKs via GDOI. Os GMs cifram ESP mas mantem src/dst originais. Ideal em WAN privada; nao atravessa NAT como DMVPN.",
+    "explanation": "Key server distribui KEKs/TEKs via GDOI. Os GMs cifram ESP mas mantem src/dst originais. Ideal em WAN privada; não atravessa NAT como DMVPN.",
     "difficulty": "Difícil"
   },
   {
-    "question": "O que e MACsec (IEEE 802.1AE)?",
+    "question": "O que é MACsec (IEEE 802.1AE)?",
     "options": [
       "Cifra de camada 3 ponta-a-ponta",
       "Cifra hop-by-hop da camada 2 entre portas, com chaves via MKA (802.1X)",
@@ -1232,35 +1100,35 @@ window.QUIZ_BANK = [
       "Substitui BGP"
     ],
     "correct": 1,
-    "explanation": "Util em links entre switches do datacenter/campus para confidencialidade no cabo. Nao substitui IPsec WAN.",
+    "explanation": "Util em links entre switches do datacenter/campus para confidencialidade no cabo. Não substitui IPsec WAN.",
     "difficulty": "Médio"
   },
   {
-    "question": "O que e MAB (MAC Authentication Bypass) no acesso 802.1X?",
+    "question": "O que é MAB (MAC Authentication Bypass) no acesso 802.1X?",
     "options": [
       "Um tipo de EtherChannel",
-      "Fallback que autentica o dispositivo pelo MAC via RADIUS quando nao ha supplicant 802.1X",
-      "Cifra MACsec obrigatoria",
+      "Fallback que autentica o dispositivo pelo MAC via RADIUS quando não há supplicant 802.1X",
+      "Cifra MACsec obrigatória",
       "Um protocolo de routing"
     ],
     "correct": 1,
-    "explanation": "A ordem tipica: 802.1X, depois MAB, depois WebAuth. MAB e fraco (MAC spoofable); usa-se com profiling e dACL/SGT.",
+    "explanation": "A ordem típica: 802.1X, depois MAB, depois WebAuth. MAB e fraco (MAC spoofable); usa-se com profiling e dACL/SGT.",
     "difficulty": "Médio"
   },
   {
-    "question": "O que e ERSPAN relativamente a SPAN/RSPAN?",
+    "question": "O que é ERSPAN relativamente a SPAN/RSPAN?",
     "options": [
-      "E SPAN so local",
-      "Encapsula trafego monitorizado em GRE/IP para um analisador em outra rede L3, atravessando routers",
+      "E SPAN só local",
+      "Encapsula tráfego monitorizado em GRE/IP para um analisador em outra rede L3, atravessando routers",
       "E exclusivo de hubs",
       "Substitui NetFlow"
     ],
     "correct": 1,
-    "explanation": "SPAN: mesma switch. RSPAN: VLAN dedicada atraves de trunks L2. ERSPAN: GRE/IP, chega a um destination em outro subnet.",
+    "explanation": "SPAN: mesma switch. RSPAN: VLAN dedicada através de trunks L2. ERSPAN: GRE/IP, chega a um destination em outro subnet.",
     "difficulty": "Médio"
   },
   {
-    "question": "O que e model-driven telemetry em IOS-XE/NX-OS?",
+    "question": "O que é model-driven telemetry em IOS-XE/NX-OS?",
     "options": [
       "Polling SNMP a cada 5 minutos apenas",
       "Streaming de dados YANG (periodic ou on-change) via gRPC/gNMI/NETCONF para colectores, em vez de pull SNMP",
@@ -1268,38 +1136,38 @@ window.QUIZ_BANK = [
       "Somente CLI accounting"
     ],
     "correct": 1,
-    "explanation": "Subscricoes apontam a paths YANG. Cadencia de segundos e notificacoes on-change dao visibilidade que o SNMP nao escala.",
+    "explanation": "Subscrições apontam a paths YANG. Cadencia de segundos e notificações on-change dão visibilidade que o SNMP não escala.",
     "difficulty": "Médio"
   },
   {
-    "question": "O que e YANG no contexto de programabilidade de rede?",
+    "question": "O que é YANG no contexto de programabilidade de rede?",
     "options": [
       "Um protocolo de transporte",
-      "Uma linguagem de modelacao de dados (config e estado) usada por NETCONF/RESTCONF/gNMI",
+      "Uma linguagem de modelação de dados (config e estado) usada por NETCONF/RESTCONF/gNMI",
       "Um cipher IPsec",
       "Um tipo de LSA OSPF"
     ],
     "correct": 1,
-    "explanation": "Modulos Cisco-IOS-XE-native e openconfig-interfaces descrevem folhas e tipos. O encoding pode ser XML ou JSON. Sem YANG, NETCONF nao tem schema.",
+    "explanation": "Modulos Cisco-IOS-XE-native e openconfig-interfaces descrevem folhas e tipos. O encoding pode ser XML ou JSON. Sem YANG, NETCONF não tem schema.",
     "difficulty": "Médio"
   },
   {
-    "question": "Qual contraste pratico entre NETCONF e RESTCONF?",
+    "question": "Qual contraste prático entre NETCONF e RESTCONF?",
     "options": [
-      "RESTCONF usa so SSH e XML datastore lock sempre",
+      "RESTCONF usa só SSH e XML datastore lock sempre",
       "NETCONF corre sobre SSH com datastores (running/candidate) e RPC XML; RESTCONF mapeia YANG para HTTP/HTTPS com JSON ou XML",
       "NETCONF e HTTP nativo",
-      "RESTCONF nao autentica"
+      "RESTCONF não autentica"
     ],
     "correct": 1,
     "explanation": "NETCONF: edit-config, locks, candidate+commit. RESTCONF: GET /restconf/data/... mais simples para apps web. gNMI e a terceira via.",
     "difficulty": "Médio"
   },
   {
-    "question": "No LISP, o que sao EID e RLOC?",
+    "question": "No LISP, o que são EID e RLOC?",
     "options": [
-      "O mesmo endereco WAN",
-      "EID e a identidade do host/prefixo; RLOC e a localizacao (loopback do xTR) usada para encapsular no underlay",
+      "O mesmo endereço WAN",
+      "EID e a identidade do host/prefixo; RLOC e a localização (loopback do xTR) usada para encapsular no underlay",
       "RLOC e a VLAN nativa",
       "EID substitui o DNS"
     ],
@@ -1311,7 +1179,7 @@ window.QUIZ_BANK = [
     "question": "O que identifica um segmento VXLAN no data plane?",
     "options": [
       "O VLAN ID de 12 bits apenas",
-      "O VNI (VXLAN Network Identifier) de 24 bits no cabecalho VXLAN, UDP destino 4789",
+      "O VNI (VXLAN Network Identifier) de 24 bits no cabeçalho VXLAN, UDP destino 4789",
       "O DSCP EF",
       "O Router ID OSPF"
     ],
@@ -1320,11 +1188,11 @@ window.QUIZ_BANK = [
     "difficulty": "Médio"
   },
   {
-    "question": "O que e anycast gateway num fabric VXLAN/EVPN ou SD-Access?",
+    "question": "O que é anycast gateway num fabric VXLAN/EVPN ou SD-Access?",
     "options": [
       "Um HSRP classico com dois IPs diferentes",
       "O mesmo IP e MAC de SVI configurados em todos os leafs, para o default gateway estar sempre no leaf local",
-      "Um servidor DNS anycast so",
+      "Um servidor DNS anycast só",
       "Um RR BGP"
     ],
     "correct": 1,
@@ -1332,15 +1200,15 @@ window.QUIZ_BANK = [
     "difficulty": "Difícil"
   },
   {
-    "question": "Qual diferenca de temporizadores e DR entre OSPF point-to-point e broadcast?",
+    "question": "Qual diferença de temporizadores e DR entre OSPF point-to-point e broadcast?",
     "options": [
       "Ambos elegem DR e Hello 30",
-      "P2P: sem DR/BDR, Hello 10 s, adjacencia FULL directa; broadcast: elege DR/BDR, Hello 10 s, FULL so com DR/BDR",
-      "Broadcast nao envia Hello",
+      "P2P: sem DR/BDR, Hello 10 s, adjacência FULL directa; broadcast: elege DR/BDR, Hello 10 s, FULL só com DR/BDR",
+      "Broadcast não envia Hello",
       "P2P usa Hello 30 s"
     ],
     "correct": 1,
-    "explanation": "ip ospf network point-to-point em Ethernet p2p (links /31) evita eleicao inutil. Mismatch de network type impede adjacencia.",
+    "explanation": "ip ospf network point-to-point em Ethernet p2p (links /31) evita eleição inútil. Mismatch de network type impede adjacência.",
     "difficulty": "Médio"
   },
   {
@@ -1356,63 +1224,683 @@ window.QUIZ_BANK = [
     "difficulty": "Médio"
   },
   {
-    "question": "O que e Loop-Free Alternate (LFA) em IP FRR?",
+    "question": "O que é Loop-Free Alternate (LFA) em IP FRR?",
     "options": [
       "Um tipo de LSA 5",
-      "Um next-hop de backup pre-computado que nao reintroduce o prefixo no router protegido, permitindo convergir em menos de 50 ms",
+      "Um next-hop de backup pre-computado que não reintroduce o prefixo no router protegido, permitindo convergir em menos de 50 ms",
       "Uma community BGP",
       "Um modo STP"
     ],
     "correct": 1,
-    "explanation": "O IGP calcula um vizinho cujo caminho para o prefixo nao passa pelo primary. Remote LFA/TI-LFA cobre os casos sem LFA local. BFD detecta a falha.",
+    "explanation": "O IGP calcula um vizinho cujo caminho para o prefixo não passa pelo primary. Remote LFA/TI-LFA cobre os casos sem LFA local. BFD detecta a falha.",
     "difficulty": "Difícil"
   },
   {
     "question": "Como se organizam Private VLANs (PVLAN)?",
     "options": [
       "Uma VLAN por MAC apenas",
-      "Uma VLAN primaria e VLANs secundarias isolated (so com o promiscuous) ou community (falam entre si e com o promiscuous)",
-      "Todas as portas sao promiscuous",
+      "Uma VLAN primaria e VLANs secundarias isolated (só com o promiscuous) ou community (falam entre si e com o promiscuous)",
+      "Todas as portas são promiscuous",
       "PVLAN substitui VXLAN"
     ],
     "correct": 1,
-    "explanation": "O porto promiscuous (gateway/firewall) ve todos. Isolated nao falam entre hosts. Community isola grupos. Util em alojamento partilhado.",
+    "explanation": "O porto promiscuous (gateway/firewall) ve todos. Isolated não falam entre hosts. Community isola grupos. Util em alojamento partilhado.",
     "difficulty": "Médio"
   },
   {
     "question": "O que caracteriza um AP em modo FlexConnect vs Local mode?",
     "options": [
-      "FlexConnect obriga todo o trafego a ir ao WLC",
+      "FlexConnect obriga todo o tráfego a ir ao WLC",
       "Em FlexConnect o AP pode comutar SSID localmente e sobreviver se o CAPWAP ao WLC cair; Local mode faz central switching no WLC",
-      "Local mode nao usa CAPWAP",
-      "FlexConnect nao autentica"
+      "Local mode não usa CAPWAP",
+      "FlexConnect não autentica"
     ],
     "correct": 1,
-    "explanation": "Filiais com WAN fraca usam FlexConnect: DHCP/data locais. Local/centrally switched e o campus. O WLC continua a gerir RRM quando o tunel esta up.",
+    "explanation": "Filiais com WAN fraca usam FlexConnect: DHCP/data locais. Local/centrally switched e o campus. O WLC continua a gerir RRM quando o túnel esta up.",
     "difficulty": "Médio"
   },
   {
-    "question": "Quais funcoes principais o RRM executa num WLC?",
+    "question": "Quais funções principais o RRM executa num WLC?",
     "options": [
-      "So cifra WPA3",
-      "TPC (potencia), DCA (escolha de canal) e coverage hole detection, ajustando a RF do grupo de APs",
+      "Só cifra WPA3",
+      "TPC (potência), DCA (escolha de canal) e coverage hole detection, ajustando a RF do grupo de APs",
       "Atribui IPs DHCP",
       "Substitui o ISE"
     ],
     "correct": 1,
-    "explanation": "O WLC mede neighbours (NDP), evita co-channel interference, sobe/baixa dBm e cobre buracos. Sem RRM, canais e potencia ficam estaticos.",
+    "explanation": "O WLC mede neighbours (NDP), evita co-channel interference, sobe/baixa dBm e cobre buracos. Sem RRM, canais e potência ficam estáticos.",
     "difficulty": "Médio"
   },
   {
     "question": "O que faz IGMP snooping num switch?",
     "options": [
       "Bloqueia todo o multicast",
-      "Observa joins/leaves IGMP e encaminha multicast IP so para as portas com recetores (e o router/querier)",
+      "Observa joins/leaves IGMP e encaminha multicast IP só para as portas com recetores (e o router/querier)",
       "Converte multicast em GRE",
       "Activa PIM-DM em todas as portas"
     ],
     "correct": 1,
     "explanation": "Sem snooping o switch trata multicast como broadcast na VLAN. Com snooping mais querier poupa-se uplink. MLD snooping e o equivalente IPv6.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Observe este show ip bgp. Porque é 10.1.1.2 o best path de 172.16.0.0 e não 10.1.1.3?",
+    "options": [
+      "AS-path mais longo ganha",
+      "Local Preference 200 > 150 (depois de Weight, que está 0 em ambos)",
+      "MED mais alto ganha",
+      "O origin e é preferido a i"
+    ],
+    "correct": 1,
+    "explanation": "Cisco best path: Weight (maior, local) → Local Pref (maior) → locally originated → AS-path (mais curto) → origin (i < e < ?) → MED (menor)... Aqui Weight empata em 0; LocPrf 200 vence 150. Os dois são iBGP (i).",
+    "difficulty": "Difícil",
+    "cli": "R1# show ip bgp\nBGP table version is 84, local router ID is 192.0.2.1\nStatus codes: s suppressed, d damped, h history, * valid, > best, i - internal\nOrigin codes: i - IGP, e - EGP, ? - incomplete\n\n   Network          Next Hop            Metric LocPrf Weight Path\n*> 10.0.0.0         203.0.113.2              0             0 65001 i\n*  10.0.0.0         198.51.100.2             0             0 65002 65001 i\n*>i172.16.0.0       10.1.1.2                 0    200      0 65010 i\n* i172.16.0.0       10.1.1.3                 0    150      0 65010 i"
+  },
+  {
+    "question": "Observe este show ip ospf database. O LSA 10.2.0.0 em Summary Net Link States é de que tipo e quem o origina?",
+    "options": [
+      "Type 1 Router LSA de 1.1.1.1",
+      "Type 3 summary, originado pelo ABR 2.2.2.2 para anunciar uma rede de outra área",
+      "Type 5 externo de 9.9.9.9",
+      "Type 4 ASBR-summary"
+    ],
+    "correct": 1,
+    "explanation": "Summary Net Link States = Type 3, gerados por ABRs. Type-5 AS External são os externos (aqui 8.8.8.0 de 9.9.9.9). Router Link States = Type 1. Type 4 descreveria um ASBR, não uma rede 10.2.0.0.",
+    "difficulty": "Médio",
+    "cli": "R1# show ip ospf database\n            OSPF Router with ID (1.1.1.1) (Process ID 1)\n\n                Router Link States (Area 0)\nLink ID         ADV Router      Age         Seq#       Checksum Link count\n1.1.1.1         1.1.1.1         412         0x8000001a 0x00A1B2 2\n2.2.2.2         2.2.2.2         388         0x80000018 0x00C3D4 3\n\n                Summary Net Link States (Area 0)\nLink ID         ADV Router      Age         Seq#       Checksum\n10.2.0.0        2.2.2.2         201         0x80000005 0x001122\n\n                Type-5 AS External Link States\nLink ID         ADV Router      Age         Seq#       Checksum Tag\n8.8.8.0         9.9.9.9         155         0x80000002 0x00ABCD 0"
+  },
+  {
+    "question": "Observe este show ip eigrp topology. O caminho via 10.1.3.2 é feasible successor?",
+    "options": [
+      "Não, porque 3328 > 3072 (FD)",
+      "Sim, porque a advertised distance 2816 é menor que a FD do successor (3072)",
+      "Não, porque está Active",
+      "Sim, porque a métrica reportada 3328 é menor que 2816"
+    ],
+    "correct": 1,
+    "explanation": "Successor: via 10.1.1.2, FD=3072 (feasible distance = métrica até ao destino). Candidato via 10.1.3.2: (RD/AD reported=2816, FD total=3328). Feasibility: AD 2816 < successor FD 3072 → é FS, mas não está instalado (1 successor; variance 1). P = Passive, DUAL estável.",
+    "difficulty": "Difícil",
+    "cli": "R1# show ip eigrp topology\nEIGRP-IPv4 Topology Table for AS(100)/ID(1.1.1.1)\nCodes: P - Passive, A - Active, U - Update, Q - Query, R - Reply,\n       r - reply Status, s - sia Status\n\nP 10.2.2.0/24, 1 successors, FD is 3072\n        via 10.1.1.2 (3072/2816), GigabitEthernet0/0\n        via 10.1.3.2 (3328/2816), GigabitEthernet0/1"
+  },
+  {
+    "question": "Observe este show bfd neighbors. O que indica State Up / RH/RS Up?",
+    "options": [
+      "O IGP está down mas o BFD ficou residual",
+      "A sessão BFD está estabelecida e o forwarding para esses next-hops é considerado vivo",
+      "BFD só corre em IPv6",
+      "LD/RD 1/1 significa loop detetado"
+    ],
+    "correct": 1,
+    "explanation": "BFD Up permite ao OSPF/EIGRP/BGP reagir em milissegundos sem esperar dead timers. LD/RD são discriminators locais/remotos. Int = interface da sessão. Sem BFD, Gi0/0 usaria hellos de 10 s / dead 40 s em OSPF broadcast.",
+    "difficulty": "Médio",
+    "cli": "R1# show bfd neighbors\nIPv4 Sessions\nNeighAddr                              LD/RD         RH/RS     State     Int\n10.1.1.2                             1/1             Up        Up        Gi0/0\n10.1.2.2                             2/5             Up        Up        Gi0/1"
+  },
+  {
+    "question": "Observe este show ip vrf. O que se pode concluir?",
+    "options": [
+      "Há um único espaço de encaminhamento partilhado",
+      "Dois VRF-Lite (CUST_A e CUST_B) com RDs distintos e interfaces não sobrepostas",
+      "MPLS TE está ativo em Lo10",
+      "Os dois VRFs têm de usar o mesmo RD"
+    ],
+    "correct": 1,
+    "explanation": "Cada VRF tem a sua RIB/FIB. RD 65000:10 vs 65000:20 distingue prefixos se forem exportados para VPNv4; em VRF-Lite puro o RD ainda identifica o VRF. Gi0/0 não pode pertencer aos dois VRFs ao mesmo tempo.",
+    "difficulty": "Médio",
+    "cli": "R1# show ip vrf\n  Name                             Default RD          Protocols   Interfaces\n  CUST_A                           65000:10            ipv4        Gi0/0\n                                                               Lo10\n  CUST_B                           65000:20            ipv4        Gi0/1\n                                                               Lo20"
+  },
+  {
+    "question": "Observe este show mpls forwarding-table. O que significa Pop Label para 10.1.1.0/24?",
+    "options": [
+      "O prefixo não está no LFIB",
+      "PHP: este router (penúltimo) remove a etiqueta de transporte antes de entregar ao último hop",
+      "O pacote é descartado",
+      "Há um serviço de TE obrigatório"
+    ],
+    "correct": 1,
+    "explanation": "Penultimate Hop Popping evita que o egress PE tenha de olhar para um label e para o IP. Outgoing 22 = swap para a etiqueta 22. No Label = encaminhamento IP nativo (sem MPLS nesse prefixo).",
+    "difficulty": "Médio",
+    "cli": "R1# show mpls forwarding-table\nLocal      Outgoing   Prefix           Bytes Label   Outgoing   Next Hop\nLabel      Label      or Tunnel Id     Switched      interface\n16         Pop Label  10.1.1.0/24      0             Gi0/0      192.168.1.1\n17         22         10.2.2.0/24      18244         Gi0/1      192.168.2.1\n18         22         10.3.3.0/24      0             Gi0/1      192.168.2.1\n19         No Label   10.9.9.1/32      0             Gi0/0      192.168.1.1"
+  },
+  {
+    "question": "Observe este show ip bgp summary. Qual vizinho não tem sessão Established e porquê se infere Idle?",
+    "options": [
+      "10.1.1.2, porque PfxRcd é 6",
+      "198.51.100.2, State Idle e Up/Down never — TCP/BGP nunca estabeleceu (ACL, AS, reachability ou neighbor em falta)",
+      "203.0.113.2, porque AS 65001 é eBGP",
+      "Todos estão Established"
+    ],
+    "correct": 1,
+    "explanation": "Coluna State/PfxRcd mostra o número de prefixos se Established, ou o estado FSM (Idle, Active, OpenSent...). Idle + never = sem sessão. 10.1.1.2 é iBGP (AS 65000=local) com 6 prefixos; 203.0.113.2 é eBGP com 4.",
+    "difficulty": "Médio",
+    "cli": "R1# show ip bgp summary\nBGP router identifier 192.0.2.1, local AS number 65000\nBGP table version is 84, main routing table version 84\n10 network entries using 1440 bytes of memory\n\nNeighbor        V         AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd\n10.1.1.2        4      65000    1204    1198       84    0    0 00:18:22        6\n203.0.113.2     4      65001     880     872       84    0    0 00:14:01        4\n198.51.100.2    4      65002       0       0        0    0    0 never    Idle"
+  },
+  {
+    "question": "Observe este show ip pim rp mapping. Como foi eleito o RP de 239.1.0.0/16?",
+    "options": [
+      "BSR",
+      "Auto-RP",
+      "Anycast RP MSDP apenas",
+      "IGMPv2 querier"
+    ],
+    "correct": 1,
+    "explanation": "Info source elected via Auto-RP para 239.1.0.0/16 (RP 10.9.9.9). O grupo 224.0.0.0/4 usa BSR com RP 10.8.8.8. Auto-RP usa 224.0.1.39/40; BSR usa o candidato BSR no PIM. Estático seria 'static' na linha.",
+    "difficulty": "Médio",
+    "cli": "R1# show ip pim rp mapping\nPIM Group-to-RP Mappings\n\nGroup(s) 239.1.0.0/16\n  RP 10.9.9.9 (?), v2\n    Info source: 10.9.9.9 (?), elected via Auto-RP\n         Uptime: 02:14:11, expires: 00:02:44\nGroup(s) 224.0.0.0/4\n  RP 10.8.8.8 (?), v2\n    Info source: 10.8.8.8 (?), elected via BSR\n         Uptime: 01:02:09, expires: 00:01:58"
+  },
+  {
+    "question": "O LSA OSPFv2 Type 2 (Network) é gerado por quem e descreve o quê?",
+    "options": [
+      "Cada router, os seus links P2P",
+      "O DR do segmento multiacesso, a lista de routers no segmento e a máscara",
+      "O ASBR, prefixos externos",
+      "O ABR, um default Type-7"
+    ],
+    "correct": 1,
+    "explanation": "Type 2 só existe onde há DR (broadcast/NBMA). O Link ID é o IP da interface do DR. Em point-to-point não há Type 2. Type 1 descreve os links do próprio router.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Para que serve o LSA Type 4 (ASBR-summary)?",
+    "options": [
+      "Anunciar um prefixo intra-área",
+      "Permitir que routers noutras áreas saibam como alcançar um ASBR (Router ID do ASBR, gerado pelo ABR)",
+      "Substituir o Type 5 dentro da NSSA",
+      "Descrever o DR"
+    ],
+    "correct": 1,
+    "explanation": "Type 5 tem o prefixo externo mas o next-hop de forwarding pode ser um ASBR noutra área. Type 4 dá o custo até esse ASBR. Em NSSAs o Type 5 não entra: usa-se Type 7, traduzido para 5 no ABR.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Uma área OSPF totally stubby (no-summary) bloqueia o quê, relativamente a uma stub simples?",
+    "options": [
+      "Só Type 1",
+      "Além dos Type 4/5, também os Type 3 de summary; o ABR injeta apenas um default Type 3",
+      "Só hellos",
+      "LSA Type 2 obrigatórios"
+    ],
+    "correct": 1,
+    "explanation": "Stub: sem Type 5 (nem Type 4). Totally stubby: também sem Type 3 específicos, só default. NSSA: permite Type 7 redistribuídos. Totally NSSA: NSSA + no-summary. Área de transit (0) nunca é stub.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Quando se usa um virtual-link OSPF?",
+    "options": [
+      "Para cifrar LSA Type 5",
+      "Para ligar uma área discontiguous à área 0 (ou costurar área 0 partida) através de uma área de transit não-stub",
+      "Para substituir BFD",
+      "Só em NSSAs"
+    ],
+    "correct": 1,
+    "explanation": "Toda a área deve tocar na backbone. Virtual-link é um túnel lógico entre ABRs através de uma área regular. Não atravessa stub/NSSA. A solução limpa é redesenhar para que a área 0 seja contígua.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é Stuck-in-Active (SIA) no EIGRP?",
+    "options": [
+      "Um successor com FD 0",
+      "O router ficou Active à espera de replies a um Query e o SIA-timer expirou sem resposta de um vizinho",
+      "O estado normal Passive",
+      "Uma adjacência OSPF 2-Way"
+    ],
+    "correct": 1,
+    "explanation": "Sem FS, DUAL envia Queries. Se um vizinho não responde (WAN má, MTU, CPU), o router declara SIA e reset a adjacência com esse peer. Mitigação: stub, summarization, SIA-timer, boa estabilidade de links.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que faz um router EIGRP configurado como stub connected summary?",
+    "options": [
+      "Torna-se ASBR OSPF",
+      "Anuncia apenas connected e summary e não é consultado com Queries para destinos além do stub (reduz SIA)",
+      "Desliga o DUAL",
+      "Obriga variance 128"
+    ],
+    "correct": 1,
+    "explanation": "EIGRP stub é para sucursais: o hub não envia Queries para o stub a perguntar por redes do core. receive-only/static/redistributed são variantes. Não é o mesmo que OSPF stub.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Os K-values EIGRP têm de coincidir entre vizinhos. O default clássico usa quais K?",
+    "options": [
+      "K1 a K5 todos a 1",
+      "K1=1 (bandwidth) e K3=1 (delay); K2=K4=K5=0",
+      "Só K5=1",
+      "K4=1 para MTU"
+    ],
+    "correct": 1,
+    "explanation": "Métrica clássica ≈ 256 * (10^7/min_bw + sum_delay). K2 (load) e K4/K5 (reliability) não entram no default. Wide metrics (named mode) usam 64 bits. K mismatch = sem adjacência.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No BGP, um MED (metric) menor significa o quê, e onde se compara?",
+    "options": [
+      "Pior caminho; compara-se sempre entre ASes diferentes sem exceção",
+      "Melhor caminho; compara-se entre rotas do mesmo AS vizinho (salvo bgp always-compare-med)",
+      "Substitui o Weight",
+      "Não entra no best path"
+    ],
+    "correct": 1,
+    "explanation": "MED é opcional non-transitive. O default Cisco só compara MED de paths do mesmo neighbor AS. always-compare-med compara entre ASes (pode causar loops se não for consistente). Missing MED trata-se como 0 por omissão (bgp bestpath med missing-as-worst inverte).",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Para que serve AS-path prepend no BGP?",
+    "options": [
+      "Encurtar o path para ganhar sempre",
+      "Anunciar o prefixo com o próprio AS repetido, tornando o path mais longo para os vizinhos e desviando entrada",
+      "Apagar o AS-path",
+      "Forçar iBGP full mesh"
+    ],
+    "correct": 1,
+    "explanation": "Prepend é engenharia de tráfego inbound barata. Local Pref/Weight controlam saída. Communities (no-export, local-AS) são mais limpas em escala. Não viola o AS, só alonga.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Porque se configura neighbor x.x.x.x next-hop-self em iBGP num PE/edge?",
+    "options": [
+      "Para cifrar o UPDATE",
+      "Para que o next-hop dos prefixos eBGP passados a iBGP seja um endereço alcançável no IGP do AS (o próprio speaker)",
+      "Para desligar o RR",
+      "Para igualar o MED a 0"
+    ],
+    "correct": 1,
+    "explanation": "eBGP deixa o next-hop no peer externo, muitas vezes não resolvível no core. next-hop-self reescreve para o peering iBGP (loopback). Em RR aplica-se aos clientes. Alternativa: anunciar o /32 do next-hop externo no IGP (não costuma ser desejável).",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "A community well-known no-export significa o quê?",
+    "options": [
+      "Não anunciar o prefixo a nenhum iBGP",
+      "Não anunciar o prefixo para fora do AS (nem confederação para eBGP 'verdadeiro')",
+      "Prefira sempre este path",
+      "Igual a Weight 65535"
+    ],
+    "correct": 1,
+    "explanation": "no-export: fica no AS. no-advertise: não anunciar a nenhum peer. local-AS: não sair da sub-AS de confederação. Internet (default) pode ir a toda a gente. Communities são o gancho de policy do ISP.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a diferença entre um route reflector e uma confederação BGP?",
+    "options": [
+      "Não há diferença",
+      "RR relaxa o split-horizon iBGP num cluster (clientes/non-clients); confederação parte o AS em sub-ASes com eBGP especial entre elas",
+      "Confederação só funciona com OSPF",
+      "RR exige MPLS"
+    ],
+    "correct": 1,
+    "explanation": "Ambos evitam o full mesh iBGP. RR é mais simples (cluster-id, originator-id contra loops). Confederação (64512-65534 privadas) isola policy por sub-AS e usa next-hop/MED como eBGP entre sub-ASes. Podem combinar-se.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é eBGP multihop?",
+    "options": [
+      "iBGP com TTL 1",
+      "Permitir sessão eBGP entre endereços que não são diretamente adjacentes, subindo o TTL (omissão eBGP TTL=1)",
+      "Um tipo de LSA",
+      "PHP no MPLS"
+    ],
+    "correct": 1,
+    "explanation": "Típico: peering entre loopbacks através de um IGP/connected compartilhado, ou peering por vários hops. disable-connected-check cobre o caso loopback no mesmo link. Risco: TTL grande alarga a superfície; BFD ainda é recomendado.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Numa MPLS L3VPN, PHP (penultimate hop popping) ocorre onde?",
+    "options": [
+      "No CE de origem",
+      "No router imediatamente antes do PE de egress, que faz pop da etiqueta de transporte (LDP/SR)",
+      "Só no RR BGP",
+      "No cliente IPsec"
+    ],
+    "correct": 1,
+    "explanation": "O LSP de transporte é LDP (ou SR). O penúltimo hop faz pop para o PE de egress olhar só para a etiqueta VPN (ou IP em PHP+explicit-null variações). explicit-null preserva EXP/TTL até ao egress.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "LDP vs RSVP-TE em MPLS: qual contraste correto?",
+    "options": [
+      "LDP estabelece LSPs segundo a RIB IGP, hop-by-hop; RSVP-TE sinaliza tunnels com restrições de banda/caminho",
+      "RSVP-TE substitui o IGP",
+      "LDP exige sempre TE",
+      "Ambos usam apenas UDP 179"
+    ],
+    "correct": 0,
+    "explanation": "LDP anda ao lado do IGP (lib/hello UDP 646, sessão TCP 646). RSVP-TE (e SR-TE) serve engenharia: bandwidth, affinity, fast reroute. Muitos cores misturam LDP no access e TE no backbone, ou passam a Segment Routing.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "BFD echo mode versus asynchronous: qual a ideia?",
+    "options": [
+      "Echo não existe em Cisco",
+      "Async: os dois peers enviam control packets; Echo: o peer faz loopback do pacote echo do iniciador na forwarding path",
+      "Echo substitui o IGP por completo",
+      "Async só corre em IPv6"
+    ],
+    "correct": 1,
+    "explanation": "Echo testa o data plane do vizinho com menos CPU no peer. Nem todos os hardware/IOS suportam echo. Timers 50x3 ms são comuns em LAN; WAN usa valores mais conservadores. BFD e IGP/BGP ligam-se com 'fall-over bfd' / 'bfd all-interfaces'.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Em PBR, qual é a diferença entre set ip next-hop e set interface?",
+    "options": [
+      "Não há diferença",
+      "set ip next-hop usa um IP (com fallback para routing normal se inalcançável, salvo default); set interface força a saída por essa iface (perigoso em multiacesso sem ARP)",
+      "set interface só funciona com BGP",
+      "set ip next-hop ignora a ACL do route-map"
+    ],
+    "correct": 1,
+    "explanation": "PBR (ip policy route-map) casa ACLs/length/DSCP e desvia antes da RIB. set ip next-hop verify-availability + tracking/BFD evita blackhole. set ip default next-hop só se a RIB não tiver rota (exceto default).",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num vPC Nexus, para que servem o peer-link e o peer-keepalive?",
+    "options": [
+      "São o mesmo cabo",
+      "Peer-link sincroniza estado (MCS, LACP, IGMP, BPDUs) entre os dois peers; keepalive (link separado, mgmt) deteta dual-active se o peer-link falhar",
+      "Keepalive encaminha o tráfego de data plane dos servidores",
+      "Peer-link substitui o routing IGP"
+    ],
+    "correct": 1,
+    "explanation": "Os servers veem um EtherChannel para dois chassis. Sem keepalive, um peer-link down pode levar a split-brain (ambos active). Orphan ports são portas que só ligam a um peer. STP é filtrado de forma especial no vPC.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é uma orphan port num vPC?",
+    "options": [
+      "Uma porta LACP bundled nos dois peers",
+      "Uma porta que liga um dispositivo apenas a um dos switches vPC, não ao par",
+      "O peer-keepalive",
+      "A VLAN nativa do peer-link"
+    ],
+    "correct": 1,
+    "explanation": "Se o peer onde a orphan está falha, o dispositivo perde conectividade mesmo que o vPC do outro lado esteja up. Mitigação: dual-attach (vPC) ou orphan-port suspend. Peer-gateway / orphan-port podem ser necessários para routed traffic.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "No LISP usado pelo SD-Access, o Map-Server/Map-Resolver faz o quê?",
+    "options": [
+      "Encapsula VXLAN no data plane de todos os edges",
+      "Control plane: guarda mapeamentos EID→RLOC e responde a Map-Requests dos ITR/ETR (edges)",
+      "Substitui o ISE",
+      "É o vManage"
+    ],
+    "correct": 1,
+    "explanation": "ITR pergunta 'onde está este EID?'; MS/MR (control plane node) responde o RLOC do ETR. Data plane é VXLAN (UDP 4789) entre RLOCs. Border nodes ligam o fabric ao resto da rede.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual porta UDP usa o VXLAN no data plane?",
+    "options": [
+      "4789",
+      "5246",
+      "179",
+      "646"
+    ],
+    "correct": 0,
+    "explanation": "VXLAN usa UDP 4789 (IANA). CAPWAP usa 5246/5247. BGP 179. LDP 646. O VNI de 24 bits identifica o segmento no header VXLAN; EVPN (BGP AF) distribui MAC/IP (RT-2) e prefixos (RT-5).",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "SGT inline versus SXP no TrustSec/ISE: qual a diferença?",
+    "options": [
+      "SXP encapsula VXLAN; inline usa RADIUS",
+      "Inline transporta o tag no CMD/Cisco Meta Data do frame hop-by-hop; SXP (TCP 64999) propaga IP-SGT out-of-band onde o média não carrega o tag",
+      "Ambos exigem MPLS",
+      "Inline só existe em Wi-Fi"
+    ],
+    "correct": 1,
+    "explanation": "ISE classifica o utilizador e manda o SGT ao NAD (802.1X). Switches capable reencaminham o tag. SXP preenche gaps (WAN, terceiros). Enforcement: SGACL no destino. pxGrid partilha contexto com firewalls.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O datastore candidate do NETCONF serve para quê?",
+    "options": [
+      "Substituir o running imediatamente sem lock",
+      "Editar uma config proposta (edit-config) e depois commit atómico para running, com lock e rollback",
+      "Só ler MIBs SNMP",
+      "Guardar o IOS.bin"
+    ],
+    "correct": 1,
+    "explanation": "candidate + commit permite validar e aplicar tudo-ou-nada (confirmed-commit com rollback automático). running-only devices editam direto. RESTCONF tem o mesmo modelo YANG mas HTTP. Confirmed commit é o antídoto a lockouts de AAA/ACL.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "DMVPN Phase 1 versus Phase 3: qual contraste correto?",
+    "options": [
+      "Phase 1 já tem spoke-to-spoke direto",
+      "Phase 1 é hub-and-spoke (spokes não constroem túneis entre si); Phase 3 usa NHRP redirect/shortcut para spoke-to-spoke",
+      "Phase 3 desliga o NHRP",
+      "Phase 1 exige GETVPN"
+    ],
+    "correct": 1,
+    "explanation": "Phase 2 permite spoke-to-spoke mas com tabelas de routing full nos spokes (summaries no hub quebram). Phase 3: hub manda NHRP redirect, spokes instalam shortcut; summaries no hub funcionam. IPsec profile + mGRE + NHRP são comuns às fases.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No GETVPN, quais são os papéis de Key Server (KS) e Group Member (GM)?",
+    "options": [
+      "KS encaminha o data plane; GM só faz IGP",
+      "KS distribui SA de grupo (GDOI/IKEv1) aos GMs; os GMs cifram o tráfego original preservando IP header (tunnel-less) na WAN privada",
+      "GM é o RR BGP",
+      "KS é um spoke DMVPN"
+    ],
+    "correct": 1,
+    "explanation": "GETVPN (GDOI) serve WANs MPLS/privadas onde o header IP original deve permanecer para routing. TBAR (time-based anti-replay) e COOP KS (redundância) são típicos. Não substitui DMVPN na Internet pública (não há túnel/NAT traversal de grupo).",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "CoPP versus CPPr (Control Plane Protection): qual a nuance?",
+    "options": [
+      "São nomes do mesmo feature sem diferença",
+      "CoPP aplica um policy-map à interface lógica control-plane (agregado); CPPr (host/transit/cef-exception) subdivide o CEF para granularidade extra no IOS clássico",
+      "CPPr substitui o data plane",
+      "CoPP só existe em NX-OS"
+    ],
+    "correct": 1,
+    "explanation": "Ambos protegem a CPU de floods (TTL expiry, ICMP, SSH). Comece por copiar a policy Cisco-recommended e afinar. Undercopping quebra BGP/OSPF; overpermitting deixa o DoS entrar. NX-OS usa copp profile.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "uRPF strict versus loose: qual a diferença?",
+    "options": [
+      "Loose exige que a origem case a interface de entrada; strict só pede existência na FIB",
+      "Strict: o reverse path da origem tem de apontar para a interface de entrada; loose: basta a origem existir na FIB (qualquer iface), útil em assimetria",
+      "Strict só para IPv6",
+      "Loose descarta always the default"
+    ],
+    "correct": 1,
+    "explanation": "ip verify unicast source reachable-via rx = strict; reachable-via any = loose. Strict é o anti-spoofing forte em access; loose no edge com routing assimétrico. allow-default e ACL de exceção afinam o comportamento.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Em PIM-SM num segmento multiacesso, o Designated Router (DR) serve para quê?",
+    "options": [
+      "Eleger o STP root",
+      "Enviar Register para o RP (fontes) e Join/Prune em nome dos receivers locais (IGMP)",
+      "Substituir o BSR",
+      "Cifrar o multicast"
+    ],
+    "correct": 1,
+    "explanation": "O DR PIM (maior IP, ou prioridade) é o único a registar fontes e a enviar joins para o RP. Não confundir com DR OSPF. Assert elege o forwarder quando há vários routers com o mesmo grupo na LAN.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é o contraste entre Auto-RP e BSR para descoberta de RP?",
+    "options": [
+      "BSR é Cisco-only; Auto-RP é IETF",
+      "Auto-RP (Cisco, 224.0.1.39/40) anuncia RPs via mapping agent; BSR (RFC, mensagens PIM) elege um Bootstrap Router que difunde o RP-set",
+      "Ambos exigem MSDP",
+      "Auto-RP só funciona com PIM-DM"
+    ],
+    "correct": 1,
+    "explanation": "Auto-RP precisa que os sparse-dense ou auto-rp listener permitam os grupos 39/40. BSR é padrão e atravessa PIM-SM nativo. Anycast-RP (MSDP ou RFC 4610) dá redundância geográfica do RP.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é o SPT switchover no PIM-SM?",
+    "options": [
+      "Mudar de PIM-DM para BIDIR",
+      "Depois de receber o primeiro pacote via shared tree (*,G) rumo ao RP, o last-hop DR pode enviar (S,G) Join direto à fonte, abandonando o RP no caminho",
+      "Desligar IGMP snooping",
+      "Eleger um novo BSR"
+    ],
+    "correct": 1,
+    "explanation": "O default Cisco faz switchover imediato (spt-threshold 0). spt-threshold infinity mantém o tráfego no shared tree (útil se a fonte é breve). SSM (IGMPv3, 232/8) vai direto (S,G) sem RP.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "IS-IS em campus/WAN ENCOR: L1 versus L2 significa o quê?",
+    "options": [
+      "L1 é eBGP; L2 é iBGP",
+      "L1 é intra-área (estação); L2 é backbone entre áreas; L1/L2 vive na fronteira e faz route leaking do default",
+      "L2 só corre IPv6",
+      "L1 substitui o BFD"
+    ],
+    "correct": 1,
+    "explanation": "IS-IS não usa área 0 à la OSPF: o backbone é o conjunto de routers L2 contíguos. NET (área + SysID + NSEL). Métrica wide é obrigatória em redes modernas. IS-IS é base habitual de SR/LDP em SP.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "OSPFv3 Address Families (AF) no IOS-XE permitem o quê?",
+    "options": [
+      "Só um processo IPv6 clássico sem IPv4",
+      "Um processo OSPFv3 a transportar IPv6 e/ou IPv4 (AFs), com adjacências ainda em link-local",
+      "Substituir o BGP VPNv4",
+      "LSA Type 8 apenas"
+    ],
+    "correct": 1,
+    "explanation": "OSPFv3 clássico era só IPv6. AF (RFC 5838) leva IPv4 sobre OSPFv3. Adjacências continuam IPv6 link-local; router-id ainda é IPv4 de 32 bits. Instance ID separa AFs.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "IPv6 RA Guard no acesso serve para quê?",
+    "options": [
+      "Bloquear DHCPv4",
+      "Impedir que um host malicioso anuncie Router Advertisements e se faça passar por gateway IPv6",
+      "Substituir o NDP",
+      "Ativar IS-IS"
+    ],
+    "correct": 1,
+    "explanation": "RA Guard (e DHCPv6 Guard, ND inspection) são First-Hop Security. Portas de acesso: host-mode (RAs drop). Uplinks para routers: router-mode. Sem isto, um RA falso desvia o tráfego IPv6.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "IP Source Guard (ip verify source) apoia-se em quê?",
+    "options": [
+      "Na tabela BGP",
+      "Na binding table do DHCP snooping (e statics) para permitir só o IP/MAC aprendido naquela porta",
+      "No NAT overload",
+      "No VTP"
+    ],
+    "correct": 1,
+    "explanation": "IPSG filtra no data plane o que DAI filtra no ARP. Port-security cobre o MAC; juntos fecham spoofing na borda. Exige snooping ativo e portas trusted rumo ao servidor DHCP.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num fabric SD-Access, qual é o papel do border node versus do edge node?",
+    "options": [
+      "Border só faz Wi-Fi; edge só faz MPLS",
+      "Edge conecta endpoints (LISP ETR/ITR, anycast SVI); border liga o fabric ao mundo exterior (fusion, DC, WAN, Internet)",
+      "Ambos são vManage",
+      "Edge é o ISE"
+    ],
+    "correct": 1,
+    "explanation": "Control plane node = MS/MR LISP. Edge = access. Border = exit. WLC/FN liga APs. ISE dá SGT. Underlay é IGP/IS-IS + VXLAN; overlay são VN (macro-segmentação) + SGTs (micro).",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No Cisco SD-WAN, o que é um TLOC e quem distribui as rotas OMP?",
+    "options": [
+      "TLOC é um VLAN tag; OMP corre no vBond apenas",
+      "TLOC (Transport Locator) identifica a ligação de um WAN Edge a um transport; o vSmart distribui OMP (rotas, TLOCs, políticas) aos edges",
+      "OMP substitui o DTLS",
+      "TLOC é o vManage GUI"
+    ],
+    "correct": 1,
+    "explanation": "vBond faz orquestração/STUN inicial. vManage = config/analytics. vSmart = control plane OMP. WAN Edge (vEdge/cEdge) forma túneis IPsec/GRE por TLOC (cor, encaps, system-ip). App-aware routing usa SLA dos túneis.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "MST (802.1s): o que é a IST (instance 0)?",
+    "options": [
+      "Uma instância por VLAN como no PVST+",
+      "A instância que corre BPDUs para a região e mapeia VLANs não noutros instances; liga a região ao CST exterior",
+      "Um EtherChannel",
+      "O root guard"
+    ],
+    "correct": 1,
+    "explanation": "MST agrupa VLANs em poucas instâncias (carga de CPU). Todos os switches da região partilham nome, revisão e mapa VLAN-instance. IST (instance 0) é o 'CIST' dentro da região. PVST simulation nas fronteiras.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Storm control num switch de acesso serve para quê?",
+    "options": [
+      "Eleger o DR",
+      "Rate-limitar unicast desconhecido, multicast ou broadcast na porta, evitando que um loop/storm esgote o domínio",
+      "Substituir o CoPP no core",
+      "Traduzir VXLAN"
+    ],
+    "correct": 1,
+    "explanation": "storm-control broadcast/multicast/unicast level X. Pode shutdown ou trap. Complementa BPDU Guard e loop guard mas não substitui STP. Nível em pps ou % da interface.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "NBAR/AVC em QoS ENCOR classifica tráfego como?",
+    "options": [
+      "Só por porta TCP 80",
+      "Por aplicação (DPI/signatures, PDLM/NAR), permitindo marking/queuing de apps que usam portas dinâmicas",
+      "Só no MPLS EXP",
+      "Apenas em frames ISL"
+    ],
+    "correct": 1,
+    "explanation": "match protocol na MQC usa NBAR. Útil para SaaS, voice RTP, e apps que não cabem numa ACL. Performance: offload em hardware recente. Não substitui a classificação na trust boundary quando o DSCP já vem correto.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Hierarchical QoS (H-QoS) parent/child serve tipicamente para quê?",
+    "options": [
+      "Desligar o LLQ",
+      "O parent faz shape da interface/túnel (CIR do ISP); o child faz LLQ/CBWFQ dentro dessa fatia",
+      "Só marcar CoS",
+      "Substituir o BFD"
+    ],
+    "correct": 1,
+    "explanation": "Numa subinterface ou DMVPN, o parent shaper evita burst contra o policer do ISP; o child dá prioridade à voz (priority) e bandwidth às classes. Sem parent, o TX da interface física (1G) ignora o contrato de 100M.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "MPLS EXP (Traffic Class) de 3 bits mapeia QoS no núcleo como?",
+    "options": [
+      "Substitui o IP TTL",
+      "Carrega uma classe de serviço no label; o PE copia/mapeia DSCP↔EXP na entrada e o núcleo faz PHB sem olhar para o IP",
+      "É o VNI VXLAN",
+      "Só existe em LDP IPv6"
+    ],
+    "correct": 1,
+    "explanation": "Pipe vs uniform vs short-pipe models definem se o DSCP original se restaura no egress. PHP com implicit-null perde EXP no último hop — daí explicit-null quando o PHB no PE de egress importa.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "OSPF max-metric router-lsa (on-startup) usa-se para quê?",
+    "options": [
+      "Forçar o router a DR",
+      "Anunciar o LSA Type 1 com métrica máxima durante o boot/reload, desviando o trânsito até os iBGP/MPLS estarem prontos",
+      "Desligar o BFD",
+      "Converter a área em NSSA"
+    ],
+    "correct": 1,
+    "explanation": "Evita blackholes de transito quando o IGP converge antes do BGP (wait-for-bgp). Alternativas: iBGP IGP delay, prefix-suppression, BFD. É o análogo ISIS overload bit.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "A sincronização BGP (synchronization) no IOS moderno está:",
+    "options": [
+      "Obrigatória e ligada",
+      "Desligada por omissão; quando ligada, um prefixo iBGP só entra na RIB se também for conhecido via IGP",
+      "Um substituto do RR",
+      "Aplicável só a eBGP"
+    ],
+    "correct": 1,
+    "explanation": "A regra antiga evitava blackholes em cores que não corriam BGP em todos os hops. Com MPLS/full-mesh/RR e forwarding por labels ou full BGP, synchronization é obsoleta (no synchronization default).",
     "difficulty": "Médio"
   }
 ];
