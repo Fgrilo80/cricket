@@ -982,5 +982,557 @@
     "correct": 1,
     "explanation": "192.168.0.0/16 e bloco privado, com 10/8 e 172.16/12.",
     "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual é o comprimento máximo recomendado de um cabo de par trançado de cobre (UTP) em Ethernet?",
+    "options": [
+      "10 metros",
+      "100 metros",
+      "500 metros",
+      "2 quilômetros"
+    ],
+    "correct": 1,
+    "explanation": "A norma Ethernet limita o canal de cobre a 100 m (90 m de horizontal + 10 m de patch cords) para manter o orçamento de atenuação e o tempo de ida e volta. Distâncias maiores exigem fibra ou um repetidor/switch intermediário.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual é a principal diferença prática entre as pinagens T568A e T568B?",
+    "options": [
+      "T568A é só para fibra",
+      "Os pares laranja e verde trocam de posição nos pinos 1-2 e 3-6",
+      "T568B não funciona em Gigabit",
+      "Não há qualquer diferença elétrica"
+    ],
+    "correct": 1,
+    "explanation": "Ambos os padrões usam os mesmos quatro pares; apenas os pares laranja e verde estão invertidos. Um cabo com T568A numa ponta e T568B na outra é crossover. Em instalações modernas o T568B é o mais comum nos EUA.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Quando se deve preferir fibra monomodo em vez de multimodo?",
+    "options": [
+      "Sempre em LANs de escritório curtas",
+      "Para longas distâncias (campus/WAN) com laser de comprimento de onda longo",
+      "Apenas para PoE",
+      "Nunca; multimodo chega a qualquer distância"
+    ],
+    "correct": 1,
+    "explanation": "Fibra monomodo tem núcleo estreito (~9 µm) e usa laser; a dispersão é baixa, permitindo dezenas de km. Multimodo (50/62,5 µm) é mais barata em transceivers de curta distância (até algumas centenas de metros) mas não escala bem em longas ligações.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que faz a função Auto-MDIX numa porta Ethernet?",
+    "options": [
+      "Negocia a velocidade PoE",
+      "Deteta e corrige internamente cabo straight-through vs crossover",
+      "Desativa o STP",
+      "Atribui um endereço IP"
+    ],
+    "correct": 1,
+    "explanation": "Auto-MDIX cruza eletronicamente os pares de TX/RX quando necessário, pelo que um cabo straight-through funciona entre switch-switch, PC-PC ou switch-PC. Em equipamento moderno o Auto-MDIX está normalmente ativo com auto-negociação.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Um PC sem DHCP mostra o endereço 169.254.23.10. O que isso indica?",
+    "options": [
+      "O gateway padrão foi configurado",
+      "O host atribuiu um endereço APIPA porque não recebeu lease DHCP",
+      "É um endereço público válido",
+      "O cabo está em loopback"
+    ],
+    "correct": 1,
+    "explanation": "169.254.0.0/16 é a gama APIPA (Automatic Private IP Addressing). O sistema operacional escolhe um endereço nessa gama quando o DHCP falha, permitindo comunicação local limitada mas sem encaminhamento para outras redes.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Quantos endereços de host utilizáveis existem numa sub-rede IPv4 /26?",
+    "options": [
+      "64",
+      "62",
+      "30",
+      "126"
+    ],
+    "correct": 1,
+    "explanation": "Uma máscara /26 deixa 6 bits de host: 2^6 = 64 endereços no total. Reservam-se o endereço de rede e o de broadcast, restando 62 hosts utilizáveis.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual prefixo identifica um endereço IPv6 link-local?",
+    "options": [
+      "2000::/3",
+      "FE80::/10",
+      "FF00::/8",
+      "::1/128"
+    ],
+    "correct": 1,
+    "explanation": "Endereços link-local começam por FE80::/10 e são obrigatórios em cada interface IPv6. Servem para NDP e comunicação no mesmo enlace; os routers não os encaminham para outros links.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é o endereço de loopback IPv6?",
+    "options": [
+      "127.0.0.1",
+      "::1",
+      "FE80::1",
+      "::"
+    ],
+    "correct": 1,
+    "explanation": "::1/128 é o loopback IPv6, equivalente a 127.0.0.1 em IPv4. Pacotes para ::1 nunca saem da máquina e servem para testar a stack IPv6 local.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual é a função principal do ICMP?",
+    "options": [
+      "Atribuir endereços IP",
+      "Transportar mensagens de controlo e diagnóstico da camada de rede (ex.: echo, unreachable)",
+      "Criptografar sessões web",
+      "Negociar VLANs"
+    ],
+    "correct": 1,
+    "explanation": "ICMP (e ICMPv6) transporta sinalização da camada 3: echo request/reply (ping), destination unreachable, time exceeded (usado pelo traceroute), redirect, etc. Não atribui endereços nem cifra dados de aplicação.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Como é que o traceroute descobre cada salto até ao destino?",
+    "options": [
+      "Consulta o DNS reverso de todos os routers",
+      "Envia sondas com TTL crescente e lê as respostas ICMP Time Exceeded",
+      "Usa ARP em cada hop da Internet",
+      "Abre uma sessão TCP porta 80 em cada router"
+    ],
+    "correct": 1,
+    "explanation": "Cada sonda parte com TTL 1, 2, 3… Quando o TTL chega a zero, o router descarta o pacote e devolve ICMP Time Exceeded. O endereço de origem dessa mensagem identifica o salto. No destino chega uma resposta (porta unreachable ou echo reply).",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a porta padrão do DNS?",
+    "options": [
+      "22",
+      "53",
+      "67",
+      "80"
+    ],
+    "correct": 1,
+    "explanation": "DNS usa a porta 53/UDP para consultas típicas e 53/TCP para transferências de zona e respostas grandes. Confundi-la com 67 (DHCP servidor), 22 (SSH) ou 80 (HTTP) é um erro comum de troubleshooting.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "O que define um domínio de colisão em Ethernet?",
+    "options": [
+      "Todos os dispositivos que partilham o mesmo endereço IP",
+      "O conjunto de portas/meios onde uma transmissão pode colidir com outra",
+      "Uma VLAN inteira",
+      "Apenas o segmento Wi-Fi"
+    ],
+    "correct": 1,
+    "explanation": "Num hub, todas as portas formam um único domínio de colisão. Um switch cria um domínio de colisão por porta (full-duplex elimina colisões). Isto é distinto do domínio de broadcast, que coincide tipicamente com a VLAN.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é CSMA/CD?",
+    "options": [
+      "Um protocolo de routing",
+      "Método de acesso ao meio em Ethernet half-duplex: escuta, transmite e deteta colisões",
+      "Criptografia wireless",
+      "Um tipo de fibra"
+    ],
+    "correct": 1,
+    "explanation": "Carrier Sense Multiple Access with Collision Detection era usado em Ethernet partilhada (hubs, half-duplex). Hoje as redes switched full-duplex não precisam de CSMA/CD porque cada lado transmite em pares/canais distintos.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Quais são as três gamas de endereços IPv4 privados definidas no RFC 1918?",
+    "options": [
+      "1.0.0.0/8, 2.0.0.0/8 e 3.0.0.0/8",
+      "10.0.0.0/8, 172.16.0.0/12 e 192.168.0.0/16",
+      "127.0.0.0/8, 169.254.0.0/16 e 224.0.0.0/4",
+      "8.8.8.0/24, 1.1.1.0/24 e 9.9.9.0/24"
+    ],
+    "correct": 1,
+    "explanation": "RFC 1918 reserva 10.0.0.0/8, 172.16.0.0/12 (172.16–172.31) e 192.168.0.0/16 para uso interno. Estes prefixos não são encaminhados na Internet pública; a saída usa NAT ou um proxy.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que significa CIDR?",
+    "options": [
+      "Cisco Internal Device Register",
+      "Classless Inter-Domain Routing — prefixos com máscara variável em vez de classes A/B/C rígidas",
+      "Um tipo de cabo coaxial",
+      "Protocolo de autenticação wireless"
+    ],
+    "correct": 1,
+    "explanation": "CIDR abandonou as classes fixas (/8, /16, /24) e permite prefixos como /22 ou /13. Isso torna o endereçamento e o sumarização na Internet (e nas LANs) muito mais eficientes.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Para que serve o endereço IPv4 127.0.0.1?",
+    "options": [
+      "Gateway padrão da Internet",
+      "Loopback do próprio host, para testar a stack TCP/IP local",
+      "Broadcast da LAN",
+      "Primeiro endereço APIPA"
+    ],
+    "correct": 1,
+    "explanation": "Toda a gama 127.0.0.0/8 é loopback; 127.0.0.1 é o mais usado. Um ping a 127.0.0.1 confirma que a stack IP da máquina está operacional, independentemente do cabo ou do NIC.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual afirmação descreve corretamente unicast, broadcast e multicast?",
+    "options": [
+      "Unicast vai para todos; broadcast só para um",
+      "Unicast: um destino; broadcast: todos no domínio; multicast: um grupo inscrito",
+      "Multicast substitui o ARP",
+      "Broadcast só existe em IPv6"
+    ],
+    "correct": 1,
+    "explanation": "Unicast entrega a um único endereço. Broadcast (255.255.255.255 ou o broadcast da sub-rede) chega a todos os nós do domínio de broadcast. Multicast (224.0.0.0/4 ou FF00::/8) entrega apenas aos recetores que aderiram ao grupo.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a vantagem do cabo STP (Shielded Twisted Pair) face ao UTP?",
+    "options": [
+      "Suporta sempre 100 km",
+      "A malha/folha metálica reduz interferência eletromagnética (EMI)",
+      "É obrigatório para Fast Ethernet",
+      "Não precisa de conector RJ-45"
+    ],
+    "correct": 1,
+    "explanation": "STP adiciona blindagem que rejeita EMI em ambientes industriais, junto a motores ou elevadores. Exige ligação correta à terra; caso contrário a blindagem pode piorar o ruído. UTP basta na maioria dos escritórios.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual é a potência aproximada disponível em PoE+ (IEEE 802.3at) na porta PD?",
+    "options": [
+      "cerca de 4 W",
+      "cerca de 15 W (802.3af) vs cerca de 25–30 W em 802.3at",
+      "100 W apenas em Fast Ethernet",
+      "PoE+ não fornece energia"
+    ],
+    "correct": 1,
+    "explanation": "802.3af (PoE) entrega até 15,4 W no PSE (~12,95 W no PD). 802.3at (PoE+) sobe para 30 W no PSE (~25,5 W no PD), o bastante para APs e câmaras PTZ. 802.3bt (PoE++) vai ainda mais alto.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual comando Cisco dá um resumo rápido do estado IP de todas as interfaces?",
+    "options": [
+      "show vlan brief",
+      "show ip interface brief",
+      "show mac address-table",
+      "show spanning-tree"
+    ],
+    "correct": 1,
+    "explanation": "show ip interface brief lista cada interface com IP, estado de linha (up/down) e protocolo (up/down). É o primeiro comando de troubleshooting de Camada 3 numa caixa Cisco.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Um link Ethernet está up mas com muitos CRC errors e desempenho baixo. Qual causa é mais provável?",
+    "options": [
+      "ACL a bloquear ICMP",
+      "Mismatch de duplex (um lado half, outro full) ou cabo danificado",
+      "DNS em falta",
+      "VLAN nativa diferente no PC"
+    ],
+    "correct": 1,
+    "explanation": "Duplex mismatch gera colisões tardias, CRC e throughput péssimo porque um lado transmite quando o outro não espera. Cabo mau, SFP sujo ou EMI também produzem CRC. DNS ou ACLs não incrementam contadores CRC.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual camada do modelo OSI trata de bits, voltagens, conectores e meios físicos?",
+    "options": [
+      "Camada 3 — Rede",
+      "Camada 1 — Física",
+      "Camada 4 — Transporte",
+      "Camada 7 — Aplicação"
+    ],
+    "correct": 1,
+    "explanation": "A Camada Física define o meio (cobre, fibra, rádio), conectores, sinalização elétrica/ótica e bit timing. Problemas de cabo, SFP ou potência PoE são quase sempre Camada 1.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual é a sequência correta do three-way handshake TCP?",
+    "options": [
+      "ACK, SYN, FIN",
+      "SYN, SYN-ACK, ACK",
+      "FIN, ACK, SYN",
+      "RST, SYN, ACK"
+    ],
+    "correct": 1,
+    "explanation": "O cliente envia SYN, o servidor responde SYN-ACK e o cliente fecha o handshake com ACK. Só depois começa a transferência de dados. FIN inicia o encerramento; RST aborta a sessão.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Porque se prefere 'enable secret' a 'enable password' no IOS?",
+    "options": [
+      "enable password usa AES-256 de raiz",
+      "enable secret guarda um hash (MD5/tipo 5 ou mais forte); enable password fica em texto fraco ou tipo 7 reversível",
+      "São sinónimos",
+      "enable secret só funciona com Telnet"
+    ],
+    "correct": 1,
+    "explanation": "enable password é legado e pode aparecer em claro ou com cifração tipo 7 (reversível). enable secret armazena um hash unidirecional. Em IOS recente usa-se ainda type 8/9 (scrypt/PBKDF2) via 'enable algorithm-type'.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a VLAN predefinida nas portas de acesso de um switch Cisco não configurado?",
+    "options": [
+      "VLAN 100",
+      "VLAN 1",
+      "VLAN 999",
+      "VLAN 4094"
+    ],
+    "correct": 1,
+    "explanation": "Por omissão todas as portas pertencem à VLAN 1, que também é a native VLAN de trunks 802.1Q. Boas práticas movem dados e gestão para fora da VLAN 1 para reduzir risco de hopping e tráfego de controlo misturado.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "O que caracteriza uma porta de acesso (access port) num switch?",
+    "options": [
+      "Transporta todas as VLANs com tags 802.1Q",
+      "Pertence a uma única VLAN e envia tráfego untagged para o host",
+      "Só funciona com routers",
+      "Desativa o MAC learning"
+    ],
+    "correct": 1,
+    "explanation": "Uma access port mapeia para uma VLAN (switchport access vlan X). O frame para o PC não leva tag 802.1Q. Trunks, pelo contrário, marcam as VLANs para o vizinho (exceto a native).",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é o LLDP?",
+    "options": [
+      "Protocolo de routing Cisco",
+      "Protocolo aberto (IEEE 802.1AB) para anunciar identidade e capacidades a vizinhos",
+      "Um tipo de ACL",
+      "Cifra de wireless"
+    ],
+    "correct": 1,
+    "explanation": "LLDP é o equivalente aberto ao CDP. Permite descobrir fabricante, hostname, port ID e capacidades (incluindo LLDP-MED para telefones). Útil em ambientes multi-vendor onde o CDP não existe.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é o MTU Ethernet clássico (payload) em bytes?",
+    "options": [
+      "576",
+      "1500",
+      "9000",
+      "64"
+    ],
+    "correct": 1,
+    "explanation": "O MTU padrão de Ethernet é 1500 bytes de payload IP. Frames menores que 64 bytes são runts; frames jumbo (~9000) exigem suporte ponta-a-ponta. 576 é o IPv4 minimum reassembly MTU, não o Ethernet.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Porque é que cabos de cobre mal afastados de motores elétricos falham mais vezes?",
+    "options": [
+      "O cobre derrete com 5 V",
+      "Interferência eletromagnética (EMI) induz ruído que aumenta CRC e retransmissões",
+      "Motores consomem todos os endereços MAC",
+      "STP deixa de funcionar"
+    ],
+    "correct": 1,
+    "explanation": "Campos eletromagnéticos induzem tensão nos pares. Isso corrompe bits, sobe CRC/input errors e pode derrubar o link. A mitigação é afastamento, cabo blindado, fibra (imune a EMI) e boa terra.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Quantos bits tem um endereço MAC IEEE e como se escreve habitualmente?",
+    "options": [
+      "32 bits em decimal pontuado",
+      "48 bits em hexadecimal, frequentemente 6 octetos (ex.: 00:1A:2B:3C:4D:5E)",
+      "128 bits como IPv6",
+      "16 bits em binário"
+    ],
+    "correct": 1,
+    "explanation": "O MAC clássico tem 48 bits: 24 bits de OUI (fabricante) + 24 bits de série. Representa-se em hex. Endereços MAC-64 existem em alguns contextos IEEE, mas Ethernet usa 48 bits.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual é o tamanho de um endereço IPv4 e de um endereço IPv6?",
+    "options": [
+      "IPv4 16 bits, IPv6 32 bits",
+      "IPv4 32 bits, IPv6 128 bits",
+      "Ambos 64 bits",
+      "IPv4 128 bits, IPv6 32 bits"
+    ],
+    "correct": 1,
+    "explanation": "IPv4 usa 32 bits (notação decimal pontuada). IPv6 usa 128 bits (oito grupos hexadecimais). O espaço IPv6 é o que permite SLAAC, múltiplos endereços por interface e o fim prático do esgotamento de IPv4 público.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual é a máscara de sub-rede predefinida de uma rede Classe A?",
+    "options": [
+      "255.255.255.0",
+      "255.0.0.0",
+      "255.255.0.0",
+      "255.255.255.255"
+    ],
+    "correct": 1,
+    "explanation": "Classe A (1.0.0.0–126.0.0.0) usa /8, ou 255.0.0.0. Classe B é /16 e Classe C /24. Em redes modernas pensa-se em CIDR, mas as máscaras de classe ainda aparecem em exames e em equipamento legado.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual porta TCP usa o SMTP para envio clássico de correio entre servidores?",
+    "options": [
+      "110",
+      "25",
+      "143",
+      "443"
+    ],
+    "correct": 1,
+    "explanation": "SMTP usa a porta 25 entre MTAs. Submissão autenticada de clientes costuma ser 587 (submission) ou 465 (SMTPS). 110 é POP3, 143 é IMAP e 443 é HTTPS.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual é a ordem correta do processo DORA do DHCP?",
+    "options": [
+      "Request, Offer, Discover, Ack",
+      "Discover, Offer, Request, Ack",
+      "Ack, Discover, Offer, Request",
+      "Offer, Ack, Discover, Request"
+    ],
+    "correct": 1,
+    "explanation": "O cliente faz broadcast DHCPDISCOVER; o servidor responde DHCPOFFER; o cliente escolhe com DHCPREQUEST; o servidor confirma com DHCPACK e o lease fica ativo. Sem este diálogo o host cai em APIPA.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Porque é que Wi-Fi usa CSMA/CA em vez de CSMA/CD?",
+    "options": [
+      "Porque o rádio é full-duplex por natureza",
+      "Estações não conseguem transmitir e detetar colisão ao mesmo tempo no mesmo canal; por isso evitam colisões (NAV, RTS/CTS, backoff)",
+      "CSMA/CD é exclusivo de IPv6",
+      "Apenas porque a IEEE o proibiu sem razão"
+    ],
+    "correct": 1,
+    "explanation": "Num meio half-duplex partilhado, o recetor do próprio emissor fica saturado — não dá para 'ouvir a colisão' como no cobre partilhado. 802.11 usa collision avoidance: carrier sense, intervalos IFS, backoff aleatório e opcionalmente RTS/CTS.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é uma diferença típica entre 2,4 GHz e 5 GHz em Wi-Fi?",
+    "options": [
+      "5 GHz atravessa paredes sempre melhor",
+      "2,4 GHz propaga-se mais longe e atravessa obstáculos melhor, mas tem menos canais não sobrepostos e mais interferência",
+      "2,4 GHz só existe em 802.11ac",
+      "Não há diferença de alcance"
+    ],
+    "correct": 1,
+    "explanation": "Frequências mais baixas penetram melhor e chegam mais longe; 2,4 GHz só tem três canais não sobrepostos (1, 6, 11) e sofre de Bluetooth/micro-ondas. 5 GHz (e 6 GHz) oferece mais espectro e débito, com menor alcance.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O padrão 802.11ax é comercialmente conhecido como?",
+    "options": [
+      "Wi-Fi 4",
+      "Wi-Fi 6",
+      "Wi-Fi 5",
+      "Bluetooth 5"
+    ],
+    "correct": 1,
+    "explanation": "802.11ax = Wi-Fi 6 (e 6E na banda de 6 GHz). Introduz OFDMA, TWT e 1024-QAM para melhor eficiência em ambientes densos. Wi-Fi 5 é 802.11ac; Wi-Fi 4 é 802.11n.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Numa avaria de conectividade, qual deve ser o primeiro ponto a verificar segundo a abordagem por camadas?",
+    "options": [
+      "Configuração BGP",
+      "Camada 1: cabo, LEDs, SFP, energia e estado físico da interface",
+      "Políticas de QoS",
+      "Certificados 802.1X"
+    ],
+    "correct": 1,
+    "explanation": "Sem sinal físico (LED apagado, cabo partido, SFP ausente, interface administratively down) nada nas camadas superiores funciona. Confirmar Camada 1 evita horas a depurar OSPF ou DNS em vão.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Em que cenário a fibra ótica é claramente preferível ao cobre UTP?",
+    "options": [
+      "Patch de 1 metro entre PC e switch",
+      "Ligação longa, entre edifícios, ou ambiente com forte EMI, onde o cobre excede 100 m ou capta ruído",
+      "Alimentação PoE de um telefone",
+      "Console de um router"
+    ],
+    "correct": 1,
+    "explanation": "Fibra ignora EMI, não conduz eletricidade (evita loops de terra entre edifícios) e alcança km. Cobre continua certo para PoE e runs curtos até 100 m. A consola usa cabo série/USB, não Ethernet.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual comando mostra a configuração atualmente ativa na RAM de um dispositivo Cisco?",
+    "options": [
+      "show startup-config",
+      "show running-config",
+      "show flash:",
+      "show version apenas"
+    ],
+    "correct": 1,
+    "explanation": "running-config é a configuração em RAM, a que o dispositivo está a usar. startup-config está em NVRAM e só é lida no boot. Alterações em running-config perdem-se no reload se não forem gravadas com copy run start.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Como se distingue o modo User EXEC do Privilege EXEC no IOS?",
+    "options": [
+      "User usa '#', Privilege usa '>'",
+      "User EXEC mostra '>' e comandos limitados; Privilege EXEC mostra '#' após 'enable' e permite show/debug avançados e configuração",
+      "Não existe diferença",
+      "Privilege EXEC só existe em firewalls"
+    ],
+    "correct": 1,
+    "explanation": "O prompt '>' é User EXEC (pings, alguns shows). O comando enable (com secret) sobe para '#' Privilege EXEC, de onde se entra em configuration terminal. Separar estes níveis é a base do controlo de acesso CLI.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual é a porta padrão do HTTPS e o que o distingue do HTTP?",
+    "options": [
+      "80, e usa Telnet",
+      "443, e cifra a sessão com TLS; HTTP na 80 vai em claro",
+      "22, e usa SSH",
+      "53, e usa DNSSEC"
+    ],
+    "correct": 1,
+    "explanation": "HTTPS encapsula HTTP sobre TLS na porta 443, protegendo confidencialidade e integridade. HTTP na 80 não cifra — credenciais e cookies viajam visíveis. Em gestão de equipamento deve preferir-se HTTPS/SSH a HTTP/Telnet.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Numa sub-rede 192.168.10.0/24, qual é o endereço de broadcast?",
+    "options": [
+      "192.168.10.0",
+      "192.168.10.255",
+      "192.168.10.1",
+      "192.168.255.255"
+    ],
+    "correct": 1,
+    "explanation": "Com /24 os 8 bits de host a 1 dão .255. O .0 é o endereço de rede; .1–.254 são hosts. Enviar para 192.168.10.255 entrega o frame a todos os nós desse domínio de broadcast.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O cabo Cat6, relativamente ao Cat5e, destina-se sobretudo a quê?",
+    "options": [
+      "Apenas consola série",
+      "Melhor imunidade a diafonia e suporte a 10GBASE-T em distâncias curtas (tipicamente até 55 m)",
+      "Substituir toda a fibra metropolitana",
+      "Alimentar 100 W sem PoE"
+    ],
+    "correct": 1,
+    "explanation": "Cat6 tem especificações mais apertadas de crosstalk até 250 MHz e permite 10GBASE-T em canais curtos. Cat5e chega bem a 1 Gb/s em 100 m. Cat6A estende 10 Gb/s aos 100 m.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual conetor ótico é o mais comum em transceivers SFP/SFP+ modernos?",
+    "options": [
+      "BNC coaxial",
+      "LC (Lucent Connector), pequeno e com trava",
+      "DB-9 série",
+      "RJ-11 telefónico"
+    ],
+    "correct": 1,
+    "explanation": "SFP usa quase sempre duplex LC. SC é mais antigo e maior (ainda visto em GBIC/patch panels). ST é baioneta legado. BNC é coaxial; DB-9 é consola série; RJ-11 é telefone.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um utilizador faz ping ao IP do servidor com sucesso mas o browser não abre o site pelo nome. Qual é a causa mais provável?",
+    "options": [
+      "O cabo está partido",
+      "Falha de DNS (servidor DNS em falta, errado ou filtrado)",
+      "O switch não tem PoE",
+      "STP bloqueou o ICMP"
+    ],
+    "correct": 1,
+    "explanation": "Ping por IP prova Camadas 1–3 até ao servidor. Resolver o nome exige DNS (porta 53). Verificar ipconfig/ifconfig, o servidor DNS configurado e um nslookup/dig isola o problema em segundos.",
+    "difficulty": "Médio"
   }
 ]

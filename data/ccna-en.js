@@ -982,5 +982,413 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "Access ports expect untagged frames of the assigned VLAN.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "What is the default administrative distance of OSPF in Cisco IOS?",
+    "options": [
+      "90",
+      "110",
+      "120",
+      "20"
+    ],
+    "correct": 1,
+    "explanation": "Internal OSPF has AD 110. Internal EIGRP is 90, RIP 120, eBGP 20, static 1, and connected 0. IOS prefers the lowest AD when the prefix is identical.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is a floating static route?",
+    "options": [
+      "A route with a lower AD than the primary so it always wins",
+      "A backup route with a higher AD than the primary, used only if the primary disappears",
+      "An OSPF route in the table",
+      "A mandatory default route"
+    ],
+    "correct": 1,
+    "explanation": "You configure the same prefix with a backup next hop and a high AD (for example 250). While the primary exists, the floating route stays out of the RIB.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "How does a router choose among several routes to the same destination?",
+    "options": [
+      "Always the oldest route",
+      "Longest prefix match; if tied, lowest AD; if still tied, best metric",
+      "Always OSPF",
+      "The route with the longer mask always loses"
+    ],
+    "correct": 1,
+    "explanation": "IP lookup uses longest-prefix match first. Only then do AD and metric matter. A /24 beats a /16 even if the /16 comes from a protocol with a better AD.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "On an OSPF multiaccess Ethernet network, who is elected DR?",
+    "options": [
+      "Always the router with the lowest Router ID",
+      "The router with the highest OSPF priority; if tied, the highest Router ID",
+      "Whoever booted first never loses",
+      "Whoever has the most Loopbacks"
+    ],
+    "correct": 1,
+    "explanation": "Priority (0–255, default 1) decides; priority 0 makes a router ineligible. A tie uses the highest Router ID. The DR originates the Type 2 LSA.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What are the default OSPF Hello and Dead timers on broadcast Ethernet?",
+    "options": [
+      "Hello 30 s, Dead 120 s",
+      "Hello 10 s, Dead 40 s",
+      "Hello 1 s, Dead 3 s",
+      "Hello 60 s, Dead 180 s"
+    ],
+    "correct": 1,
+    "explanation": "On broadcast and point-to-point, Hello is 10 s and Dead is 4×Hello (40 s). On NBMA the default Hello is 30 s. Neighbors must agree on these values.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "How is default OSPF cost calculated in classic IOS?",
+    "options": [
+      "Cost = bandwidth in kb/s",
+      "Cost = reference bandwidth / interface bandwidth (default 100 Mb/s)",
+      "Cost = EIGRP delay",
+      "Cost = hop count"
+    ],
+    "correct": 1,
+    "explanation": "With a 100 Mb/s reference, FastEthernet costs 1. Modern networks raise auto-cost reference-bandwidth so 1/10/40 Gb/s links differ.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which wildcard mask matches subnet 172.16.8.0/22 in an OSPF network statement?",
+    "options": [
+      "0.0.0.255",
+      "0.0.3.255",
+      "255.255.252.0",
+      "0.0.7.255"
+    ],
+    "correct": 1,
+    "explanation": "A /22 mask is 255.255.252.0; the wildcard is the bitwise inverse: 0.0.3.255. 0.0.0.255 is /24 and 0.0.7.255 is /21.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "How is the OSPF Router ID chosen if router-id is not configured?",
+    "options": [
+      "The MAC of Gi0/0",
+      "Manual router-id; else highest IPv4 on an up Loopback; else highest IPv4 on an up physical interface",
+      "Always 1.1.1.1",
+      "The management VLAN address"
+    ],
+    "correct": 1,
+    "explanation": "The RID is a 32-bit IPv4 value. Setting router-id is recommended. Changing it requires clear ip ospf process.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "How is the STP/RSTP root bridge elected?",
+    "options": [
+      "Highest priority, then highest MAC",
+      "Lowest Bridge ID: priority (default 32768) plus MAC; the lowest value wins",
+      "The switch with the most VLANs",
+      "The first switch to send a BPDU"
+    ],
+    "correct": 1,
+    "explanation": "Priority is set in steps of 4096. spanning-tree vlan X root primary lowers priority so this switch wins.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which extra roles does RSTP (802.1w) add versus classic STP (802.1D)?",
+    "options": [
+      "Only root and designated",
+      "Alternate and backup, discarding roles that can transition without 30–50 s timers",
+      "DR and BDR",
+      "Listen and learn as final roles"
+    ],
+    "correct": 1,
+    "explanation": "RSTP uses root, designated, alternate, and backup. Convergence is in seconds (proposal/agreement), not the 50 s of 802.1D.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does Root Guard do on a port?",
+    "options": [
+      "Disables PortFast",
+      "Puts the port in root-inconsistent if a superior BPDU arrives, stopping a downstream switch from becoming root",
+      "Forces the port to be the root port",
+      "Enables Loop Guard"
+    ],
+    "correct": 1,
+    "explanation": "Use it on edge ports toward the core where a user switch must not win the election. It complements BPDU Guard.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "How do you disable DTP negotiation on a Cisco trunk?",
+    "options": [
+      "switchport mode access",
+      "switchport nonegotiate (with a static trunk or access mode)",
+      "no spanning-tree",
+      "shutdown vlan 1"
+    ],
+    "correct": 1,
+    "explanation": "DTP (dynamic auto/desirable) can form unwanted trunks. Best practice is static trunk or access mode plus nonegotiate.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What happens if the two ends of an 802.1Q trunk use different native VLANs?",
+    "options": [
+      "Nothing; tagged traffic fixes it",
+      "Untagged traffic is interpreted in different VLANs and CDP reports a native VLAN mismatch",
+      "The trunk always goes down immediately",
+      "STP turns itself off"
+    ],
+    "correct": 1,
+    "explanation": "Native-VLAN frames are untagged. If one side assumes VLAN 1 and the other VLAN 99, untagged traffic crosses VLANs.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Which command limits the VLANs allowed on a trunk?",
+    "options": [
+      "switchport access vlan 10",
+      "switchport trunk allowed vlan 10,20,30",
+      "vlan dot1q tag native",
+      "spanning-tree vlan 10"
+    ],
+    "correct": 1,
+    "explanation": "By default a trunk allows 1-4094. Pruning the list reduces flooding and risk. Use allowed vlan add/remove to adjust.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is an SVI (Switch Virtual Interface) on a Layer 3 switch?",
+    "options": [
+      "A router-on-a-stick subinterface only",
+      "interface vlan X, an internal Layer 3 endpoint for that VLAN, used for inter-VLAN routing on the switch",
+      "A Port-channel",
+      "An SFP"
+    ],
+    "correct": 1,
+    "explanation": "interface vlan 10 with an IP, plus ip routing, lets the switch route between VLANs without router-on-a-stick.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "With DHCP snooping, which ports should be trusted?",
+    "options": [
+      "Every PC access port",
+      "Ports toward legitimate DHCP servers and the uplinks/trunks to those servers",
+      "None; snooping does not use trust",
+      "Only PortFast ports"
+    ],
+    "correct": 1,
+    "explanation": "Enable ip dhcp snooping vlan X; on server/uplink ports set ip dhcp snooping trust. Untrusted ports drop fake DHCPOFFER/ACK.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does Dynamic ARP Inspection (DAI) validate ARP against?",
+    "options": [
+      "The OSPF table",
+      "The DHCP snooping binding table (IP-MAC-port-VLAN)",
+      "DNS",
+      "The native VLAN"
+    ],
+    "correct": 1,
+    "explanation": "DAI intercepts ARP on untrusted ports and checks IP/MAC against the snooping database. Spoofed ARP is dropped.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "In 802.1X, what role does the access switch play?",
+    "options": [
+      "Supplicant",
+      "Authenticator, which relays EAPOL and sends RADIUS to the authentication server (e.g. ISE)",
+      "The RADIUS server itself",
+      "DHCP relay only"
+    ],
+    "correct": 1,
+    "explanation": "The PC is the supplicant, the switch is the authenticator, and ISE/NPS is the authentication server. Until then the port may stay restricted.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which statement distinguishes VRRP from HSRP?",
+    "options": [
+      "VRRP is IPv6-only",
+      "VRRP is an IETF standard; HSRP is Cisco proprietary; both provide a virtual gateway",
+      "HSRP has no priority",
+      "VRRP does not elect a master"
+    ],
+    "correct": 1,
+    "explanation": "HSRP uses MAC 0000.0c07.acXX; VRRP uses 0000.5e00.01XX and may share the master's real IP as the virtual IP.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "How does an IPv6 host get an address with SLAAC?",
+    "options": [
+      "Only with DHCPv4",
+      "It receives an RA (ICMPv6) with a prefix, builds an Interface ID, and runs DAD via Neighbor Solicitation",
+      "The router assigns a TCP port",
+      "It uses classic ARP"
+    ],
+    "correct": 1,
+    "explanation": "The RA carries prefix, MTU, and lifetime. The host builds a GUA, runs DAD, and may still use DHCPv6 depending on the RA M/O flags.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In EUI-64, what is done to a 48-bit MAC to form the Interface ID?",
+    "options": [
+      "It is copied unchanged",
+      "FFFE is inserted in the middle and the U/L bit (7th bit of the first octet) is flipped",
+      "::1 is simply appended",
+      "Embedded IPv4 is used"
+    ],
+    "correct": 1,
+    "explanation": "00:1A:2B:3C:4D:5E becomes 021A:2BFF:FE3C:4D5E (U/L bit flipped). Many OSes prefer random privacy addresses.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Which prefix identifies IPv6 Unique Local Addresses (ULA)?",
+    "options": [
+      "2000::/3",
+      "FC00::/7 (in practice fd00::/8)",
+      "FE80::/10",
+      "FF00::/8"
+    ],
+    "correct": 1,
+    "explanation": "ULA (RFC 4193) is the private analogue of RFC 1918. Global unicast is 2000::/3, link-local is FE80::/10, and multicast is FF00::/8.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Why must every OSPF area connect to area 0?",
+    "options": [
+      "Because area 0 has STP priority",
+      "To keep summarization loop-free; inter-area SPF always transits the backbone",
+      "Area 0 is the only area that sends Hellos",
+      "It is not required for NSSA"
+    ],
+    "correct": 1,
+    "explanation": "ABRs attach non-backbone areas to area 0. Virtual links exist to patch topologies that break this rule.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is the default administrative distance of a static route in IOS?",
+    "options": [
+      "0",
+      "1",
+      "90",
+      "110"
+    ],
+    "correct": 1,
+    "explanation": "Connected=0, static=1, eBGP=20, EIGRP=90, OSPF=110, RIP=120, iBGP=200. A static therefore beats OSPF for the same prefix unless you raise its AD.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "In Cisco syslog, which severity number is warnings?",
+    "options": [
+      "0",
+      "4",
+      "7",
+      "6"
+    ],
+    "correct": 1,
+    "explanation": "0 emergencies, 1 alerts, 2 critical, 3 errors, 4 warnings, 5 notifications, 6 informational, 7 debugging. logging trap 4 sends warning and worse.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does an NTP stratum 1 server mean?",
+    "options": [
+      "It is 15 hops below UTC",
+      "It is attached to an authoritative time reference (GPS, atomic clock) and serves stratum 2 clients",
+      "It is a Windows client",
+      "It cannot authenticate NTP"
+    ],
+    "correct": 1,
+    "explanation": "Stratum 0 is the reference (GPS/atomic). Stratum 1 syncs to stratum 0. Stratum 16 means unsynchronized.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is a key difference between TACACS+ and RADIUS for CLI access?",
+    "options": [
+      "RADIUS uses TCP 49 and separates authorization",
+      "TACACS+ uses TCP 49 and separates authentication, authorization, and accounting; RADIUS uses UDP and combines auth+authz",
+      "There is no difference",
+      "TACACS+ does not encrypt the password"
+    ],
+    "correct": 1,
+    "explanation": "Cisco device administration prefers TACACS+ (per-command authorization). RADIUS is the standard for 802.1X/Wi-Fi/VPN.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In REST APIs used in CCNA automation, what best describes JSON?",
+    "options": [
+      "A programming language",
+      "A textual data format of key/value objects, arrays, and simple types, widely used with RESTCONF and controllers",
+      "A transport protocol",
+      "A type of ACL"
+    ],
+    "correct": 1,
+    "explanation": "JSON is the typical REST payload. Keys are quoted, objects use {}, lists use []. XML remains common in classic NETCONF.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is the core difference between traditional networking and controller-based (SDN) networking?",
+    "options": [
+      "SDN eliminates every switch",
+      "The control plane is logically centralized in a controller; devices are mostly data-plane, with northbound/southbound APIs",
+      "SDN does not use IP",
+      "The controller replaces cabling"
+    ],
+    "correct": 1,
+    "explanation": "Southbound (NETCONF, OpenFlow, gNMI) programs the nodes; northbound (REST) exposes intent to applications. Catalyst Center is the campus example in CCNA.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In a spine-leaf fabric, how are switches connected?",
+    "options": [
+      "In a classic STP ring",
+      "Every leaf connects to every spine; leafs do not connect to each other; ECMP in the underlay",
+      "Only one uplink per leaf",
+      "Spines connect to servers"
+    ],
+    "correct": 1,
+    "explanation": "Any leaf reaches any other in two hops with no underlay L2 loops (L3). Servers and APs attach to leafs.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the difference between Type 1 and Type 2 hypervisors?",
+    "options": [
+      "Type 1 does not exist",
+      "Type 1 (bare-metal, e.g. ESXi, Hyper-V, KVM) runs on hardware; Type 2 (hosted, e.g. VirtualBox) runs on a host OS",
+      "Type 2 is always faster in the datacenter",
+      "Type 1 only virtualizes networks"
+    ],
+    "correct": 1,
+    "explanation": "Type 1 is the datacenter/NFV standard (CSR, CAT8000v, ASAv). Type 2 is for laptop labs.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Which DSCP is the Expedited Forwarding (EF) PHB, typical for voice?",
+    "options": [
+      "CS0 / 0",
+      "EF / 46 (101110)",
+      "AF41 / 34",
+      "CS6 / 48"
+    ],
+    "correct": 1,
+    "explanation": "EF (DSCP 46) asks for low latency and jitter: LLQ on the WAN. AF is four-class assurance; CS6/CS7 are network control.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the difference between policing and shaping in QoS?",
+    "options": [
+      "They are synonyms",
+      "Policing drops or re-marks traffic above the rate; shaping queues the excess to smooth bursts, adding delay",
+      "Shaping exists only in STP",
+      "Policing increases bandwidth"
+    ],
+    "correct": 1,
+    "explanation": "At the WAN edge, shaping avoids drops in the ISP. Policing protects the core but may drop. Both use a token bucket.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is a CAM (MAC flooding) overflow attack and how is it mitigated?",
+    "options": [
+      "DNS poisoning",
+      "Filling the MAC table with fake addresses so the switch floods unicast as broadcast; mitigate with port-security",
+      "Disabling OSPF",
+      "Using NAT"
+    ],
+    "correct": 1,
+    "explanation": "Tools such as macof saturate TCAM. The switch then floods unicast frames out every port in the VLAN. Port-security limits the abuse.",
+    "difficulty": "Medium"
   }
 ];

@@ -982,5 +982,557 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "192.168.0.0/16 is private, along with 10/8 and 172.16/12.",
     "difficulty": "Easy"
+  },
+  {
+    "question": "What is the recommended maximum length of a copper twisted-pair (UTP) Ethernet cable?",
+    "options": [
+      "10 meters",
+      "100 meters",
+      "500 meters",
+      "2 kilometers"
+    ],
+    "correct": 1,
+    "explanation": "Ethernet standards limit a copper channel to 100 m (typically 90 m horizontal plus 10 m of patch cords) so attenuation and round-trip timing stay within spec. Longer runs need fiber or an intermediate switch.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is the practical difference between T568A and T568B pinouts?",
+    "options": [
+      "T568A is only for fiber",
+      "The orange and green pairs swap positions on pins 1-2 and 3-6",
+      "T568B does not work at Gigabit speeds",
+      "There is no electrical difference of any kind"
+    ],
+    "correct": 1,
+    "explanation": "Both standards use the same four pairs; only the orange and green pairs are swapped. A cable terminated T568A on one end and T568B on the other is a crossover. T568B is the more common commercial choice in the US.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "When should single-mode fiber be preferred over multimode?",
+    "options": [
+      "Always in short office LANs",
+      "For long-distance campus or WAN links using long-wavelength lasers",
+      "Only when delivering PoE",
+      "Never; multimode works at any distance"
+    ],
+    "correct": 1,
+    "explanation": "Single-mode has a ~9 µm core and is driven by lasers, so chromatic dispersion stays low over tens of kilometers. Multimode (50/62.5 µm) is cheaper for short runs of a few hundred meters but is not the right choice for long-haul links.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does Auto-MDIX do on an Ethernet port?",
+    "options": [
+      "Negotiates PoE power class",
+      "Internally detects and corrects straight-through versus crossover cabling",
+      "Disables Spanning Tree",
+      "Assigns an IP address"
+    ],
+    "correct": 1,
+    "explanation": "Auto-MDIX electronically crosses TX/RX pairs when needed, so a straight-through cable works for switch-to-switch, PC-to-PC, or switch-to-PC. On modern gear it is typically enabled together with speed/duplex autonegotiation.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "A PC without DHCP shows the address 169.254.23.10. What does that indicate?",
+    "options": [
+      "The default gateway was configured",
+      "The host self-assigned an APIPA address because it did not receive a DHCP lease",
+      "It is a valid public Internet address",
+      "The cable is in loopback"
+    ],
+    "correct": 1,
+    "explanation": "169.254.0.0/16 is the APIPA (Automatic Private IP Addressing) range. The OS picks an address there when DHCP fails, which allows limited local communication but no forwarding to other networks.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "How many usable host addresses are in an IPv4 /26 subnet?",
+    "options": [
+      "64",
+      "62",
+      "30",
+      "126"
+    ],
+    "correct": 1,
+    "explanation": "A /26 mask leaves 6 host bits: 2^6 = 64 total addresses. Subtract the network and broadcast addresses and 62 usable hosts remain.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which prefix identifies an IPv6 link-local address?",
+    "options": [
+      "2000::/3",
+      "FE80::/10",
+      "FF00::/8",
+      "::1/128"
+    ],
+    "correct": 1,
+    "explanation": "Link-local addresses start with FE80::/10 and are required on every IPv6 interface. They are used for NDP and same-link communication; routers do not forward them to other links.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the IPv6 loopback address?",
+    "options": [
+      "127.0.0.1",
+      "::1",
+      "FE80::1",
+      "::"
+    ],
+    "correct": 1,
+    "explanation": "::1/128 is the IPv6 loopback, equivalent to 127.0.0.1 in IPv4. Packets to ::1 never leave the host and are used to test the local IPv6 stack.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is the primary function of ICMP?",
+    "options": [
+      "Assign IP addresses",
+      "Carry network-layer control and diagnostic messages (echo, unreachable, and similar)",
+      "Encrypt web sessions",
+      "Negotiate VLANs"
+    ],
+    "correct": 1,
+    "explanation": "ICMP (and ICMPv6) carries Layer 3 signaling: echo request/reply (ping), destination unreachable, time exceeded (used by traceroute), redirects, and more. It does not assign addresses or encrypt application data.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "How does traceroute discover each hop to the destination?",
+    "options": [
+      "It queries reverse DNS for every router",
+      "It sends probes with increasing TTL and reads ICMP Time Exceeded replies",
+      "It uses ARP at every hop across the Internet",
+      "It opens a TCP port 80 session on each router"
+    ],
+    "correct": 1,
+    "explanation": "Each probe starts with TTL 1, 2, 3, and so on. When TTL hits zero the router drops the packet and returns ICMP Time Exceeded; that source address identifies the hop. The destination typically answers with port unreachable or echo reply.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the default port used by DNS?",
+    "options": [
+      "22",
+      "53",
+      "67",
+      "80"
+    ],
+    "correct": 1,
+    "explanation": "DNS uses port 53/UDP for typical queries and 53/TCP for zone transfers and large responses. Mixing it up with 67 (DHCP server), 22 (SSH), or 80 (HTTP) is a common troubleshooting mistake.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What defines a collision domain in Ethernet?",
+    "options": [
+      "Every device that shares the same IP address",
+      "The set of ports or media where one transmission can collide with another",
+      "An entire VLAN",
+      "Only the Wi-Fi segment"
+    ],
+    "correct": 1,
+    "explanation": "On a hub, all ports share one collision domain. A switch creates a collision domain per port, and full duplex removes collisions altogether. That is different from a broadcast domain, which typically matches a VLAN.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is CSMA/CD?",
+    "options": [
+      "A routing protocol",
+      "A half-duplex Ethernet media-access method: listen, transmit, and detect collisions",
+      "A wireless encryption suite",
+      "A type of optical fiber"
+    ],
+    "correct": 1,
+    "explanation": "Carrier Sense Multiple Access with Collision Detection was used on shared Ethernet (hubs, half duplex). Switched full-duplex networks no longer need CSMA/CD because each side transmits on separate pairs or channels.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What are the three RFC 1918 private IPv4 address ranges?",
+    "options": [
+      "1.0.0.0/8, 2.0.0.0/8, and 3.0.0.0/8",
+      "10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16",
+      "127.0.0.0/8, 169.254.0.0/16, and 224.0.0.0/4",
+      "8.8.8.0/24, 1.1.1.0/24, and 9.9.9.0/24"
+    ],
+    "correct": 1,
+    "explanation": "RFC 1918 reserves 10.0.0.0/8, 172.16.0.0/12 (172.16–172.31), and 192.168.0.0/16 for internal use. Those prefixes are not forwarded on the public Internet; outbound access uses NAT or a proxy.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does CIDR stand for?",
+    "options": [
+      "Cisco Internal Device Register",
+      "Classless Inter-Domain Routing — prefixes with variable masks instead of rigid A/B/C classes",
+      "A type of coaxial cable",
+      "A wireless authentication protocol"
+    ],
+    "correct": 1,
+    "explanation": "CIDR dropped fixed classes (/8, /16, /24) and allows prefixes such as /22 or /13. That makes addressing and route summarization on the Internet and in LANs far more efficient.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is IPv4 address 127.0.0.1 used for?",
+    "options": [
+      "The Internet default gateway",
+      "The host's own loopback, to test the local TCP/IP stack",
+      "The LAN broadcast address",
+      "The first APIPA address"
+    ],
+    "correct": 1,
+    "explanation": "The entire 127.0.0.0/8 range is loopback; 127.0.0.1 is the address people actually use. Pinging it confirms the host IP stack works, regardless of cabling or the NIC.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Which statement correctly describes unicast, broadcast, and multicast?",
+    "options": [
+      "Unicast goes to everyone; broadcast goes to one host",
+      "Unicast: one destination; broadcast: everyone in the domain; multicast: a subscribed group",
+      "Multicast replaces ARP",
+      "Broadcast exists only in IPv6"
+    ],
+    "correct": 1,
+    "explanation": "Unicast delivers to a single address. Broadcast (255.255.255.255 or the subnet broadcast) reaches every node in the broadcast domain. Multicast (224.0.0.0/4 or FF00::/8) is received only by hosts that joined the group.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the advantage of STP (Shielded Twisted Pair) over UTP?",
+    "options": [
+      "It always supports 100 km runs",
+      "The foil or braid reduces electromagnetic interference (EMI)",
+      "It is mandatory for Fast Ethernet",
+      "It does not use an RJ-45 connector"
+    ],
+    "correct": 1,
+    "explanation": "STP adds shielding that rejects EMI in industrial spaces, near motors, or next to elevators. It must be grounded correctly or the shield can make noise worse. UTP is sufficient in most offices.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Approximately how much power does PoE+ (IEEE 802.3at) deliver at the PD?",
+    "options": [
+      "About 4 W",
+      "About 15 W for 802.3af versus about 25–30 W for 802.3at",
+      "100 W, but only on Fast Ethernet",
+      "PoE+ does not deliver power"
+    ],
+    "correct": 1,
+    "explanation": "802.3af (PoE) supplies up to 15.4 W at the PSE (~12.95 W at the PD). 802.3at (PoE+) raises that to 30 W at the PSE (~25.5 W at the PD), enough for many APs and PTZ cameras. 802.3bt (PoE++) goes higher still.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which Cisco command gives a quick summary of the IP status of every interface?",
+    "options": [
+      "show vlan brief",
+      "show ip interface brief",
+      "show mac address-table",
+      "show spanning-tree"
+    ],
+    "correct": 1,
+    "explanation": "show ip interface brief lists each interface with its IP, line status (up/down), and protocol status (up/down). It is the first Layer 3 troubleshooting command on a Cisco box.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "An Ethernet link is up but shows many CRC errors and poor performance. What is the most likely cause?",
+    "options": [
+      "An ACL blocking ICMP",
+      "A duplex mismatch (one side half, the other full) or a damaged cable",
+      "Missing DNS",
+      "A different native VLAN on the PC"
+    ],
+    "correct": 1,
+    "explanation": "A duplex mismatch causes late collisions, CRCs, and terrible throughput because one side transmits while the other is not expecting it. Bad cable, dirty SFPs, or EMI also produce CRCs. DNS or ACLs do not increment CRC counters.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which OSI layer deals with bits, voltages, connectors, and physical media?",
+    "options": [
+      "Layer 3 — Network",
+      "Layer 1 — Physical",
+      "Layer 4 — Transport",
+      "Layer 7 — Application"
+    ],
+    "correct": 1,
+    "explanation": "The Physical layer defines the medium (copper, fiber, radio), connectors, electrical or optical signaling, and bit timing. Cable, SFP, and PoE power problems are almost always Layer 1.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is the correct TCP three-way handshake sequence?",
+    "options": [
+      "ACK, SYN, FIN",
+      "SYN, SYN-ACK, ACK",
+      "FIN, ACK, SYN",
+      "RST, SYN, ACK"
+    ],
+    "correct": 1,
+    "explanation": "The client sends SYN, the server replies SYN-ACK, and the client completes the handshake with ACK. Data transfer starts only after that. FIN begins teardown; RST aborts the session.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Why is 'enable secret' preferred over 'enable password' in IOS?",
+    "options": [
+      "enable password uses AES-256 by default",
+      "enable secret stores a one-way hash (MD5/type 5 or stronger); enable password is weak clear text or reversible type 7",
+      "They are synonyms",
+      "enable secret works only with Telnet"
+    ],
+    "correct": 1,
+    "explanation": "enable password is legacy and may appear in clear text or type 7 (reversible). enable secret stores a one-way hash. Current IOS can use type 8/9 (scrypt/PBKDF2) with 'enable algorithm-type'.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the default VLAN on access ports of an unconfigured Cisco switch?",
+    "options": [
+      "VLAN 100",
+      "VLAN 1",
+      "VLAN 999",
+      "VLAN 4094"
+    ],
+    "correct": 1,
+    "explanation": "By default every port belongs to VLAN 1, which is also the native VLAN on 802.1Q trunks. Best practice moves user and management traffic off VLAN 1 to reduce hopping risk and mixed control traffic.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What characterizes an access port on a switch?",
+    "options": [
+      "It carries every VLAN with 802.1Q tags",
+      "It belongs to a single VLAN and sends untagged traffic to the host",
+      "It works only when connected to routers",
+      "It disables MAC learning"
+    ],
+    "correct": 1,
+    "explanation": "An access port maps to one VLAN (switchport access vlan X). Frames toward the PC are untagged. Trunks, by contrast, tag VLANs for the neighbor (except the native VLAN).",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is LLDP?",
+    "options": [
+      "A Cisco routing protocol",
+      "An open IEEE 802.1AB protocol that advertises identity and capabilities to neighbors",
+      "A type of ACL",
+      "A wireless cipher"
+    ],
+    "correct": 1,
+    "explanation": "LLDP is the open equivalent of CDP. It advertises chassis ID, port ID, hostname, and capabilities (including LLDP-MED for phones). It is the right choice in mixed-vendor plants where CDP is absent.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the classic Ethernet MTU (payload) in bytes?",
+    "options": [
+      "576",
+      "1500",
+      "9000",
+      "64"
+    ],
+    "correct": 1,
+    "explanation": "The standard Ethernet MTU is 1500 bytes of IP payload. Frames under 64 bytes are runts; jumbo frames (~9000) need end-to-end support. 576 is the IPv4 minimum reassembly MTU, not Ethernet.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Why do copper cables routed next to electric motors fail more often?",
+    "options": [
+      "Copper melts at 5 V",
+      "Electromagnetic interference (EMI) induces noise that raises CRCs and retransmissions",
+      "Motors consume every MAC address",
+      "Spanning Tree stops working"
+    ],
+    "correct": 1,
+    "explanation": "Electromagnetic fields induce voltage on the pairs. That corrupts bits, increases CRC/input errors, and can drop the link. Mitigation is separation, shielded cable, fiber (immune to EMI), and proper grounding.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "How many bits are in an IEEE MAC address and how is it usually written?",
+    "options": [
+      "32 bits in dotted decimal",
+      "48 bits in hexadecimal, typically six octets (for example 00:1A:2B:3C:4D:5E)",
+      "128 bits like IPv6",
+      "16 bits in binary"
+    ],
+    "correct": 1,
+    "explanation": "The classic MAC is 48 bits: a 24-bit OUI (vendor) plus a 24-bit serial. It is written in hex. 64-bit MACs exist in some IEEE contexts, but Ethernet uses 48 bits.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is the size of an IPv4 address and an IPv6 address?",
+    "options": [
+      "IPv4 16 bits, IPv6 32 bits",
+      "IPv4 32 bits, IPv6 128 bits",
+      "Both are 64 bits",
+      "IPv4 128 bits, IPv6 32 bits"
+    ],
+    "correct": 1,
+    "explanation": "IPv4 uses 32 bits (dotted decimal). IPv6 uses 128 bits (eight hexadecimal groups). That space is what enables SLAAC, multiple addresses per interface, and a practical end to public IPv4 exhaustion.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is the default subnet mask of a Class A network?",
+    "options": [
+      "255.255.255.0",
+      "255.0.0.0",
+      "255.255.0.0",
+      "255.255.255.255"
+    ],
+    "correct": 1,
+    "explanation": "Class A (1.0.0.0–126.0.0.0) uses /8, or 255.0.0.0. Class B is /16 and Class C is /24. Modern networks think in CIDR, but classful masks still show up on exams and legacy gear.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Which TCP port does classic SMTP use for mail transfer between servers?",
+    "options": [
+      "110",
+      "25",
+      "143",
+      "443"
+    ],
+    "correct": 1,
+    "explanation": "SMTP uses port 25 between MTAs. Authenticated client submission is usually 587 (submission) or 465 (SMTPS). 110 is POP3, 143 is IMAP, and 443 is HTTPS.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is the correct order of the DHCP DORA process?",
+    "options": [
+      "Request, Offer, Discover, Ack",
+      "Discover, Offer, Request, Ack",
+      "Ack, Discover, Offer, Request",
+      "Offer, Ack, Discover, Request"
+    ],
+    "correct": 1,
+    "explanation": "The client broadcasts DHCPDISCOVER; the server answers with DHCPOFFER; the client commits with DHCPREQUEST; the server confirms with DHCPACK and the lease becomes active. Without that exchange the host falls back to APIPA.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Why does Wi-Fi use CSMA/CA instead of CSMA/CD?",
+    "options": [
+      "Because radio is inherently full duplex",
+      "Stations cannot transmit and detect a collision at the same time on one channel, so they avoid collisions (NAV, RTS/CTS, backoff)",
+      "CSMA/CD is IPv6-only",
+      "Only because IEEE banned CSMA/CD for no reason"
+    ],
+    "correct": 1,
+    "explanation": "On a shared half-duplex medium the sender's own radio is saturated, so it cannot 'hear a collision' the way shared copper can. 802.11 uses collision avoidance: carrier sense, IFS gaps, random backoff, and optionally RTS/CTS.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is a typical difference between 2.4 GHz and 5 GHz Wi-Fi?",
+    "options": [
+      "5 GHz always goes through walls better",
+      "2.4 GHz travels farther and handles obstacles better, but has fewer non-overlapping channels and more interference",
+      "2.4 GHz exists only in 802.11ac",
+      "Range is identical"
+    ],
+    "correct": 1,
+    "explanation": "Lower frequencies penetrate better and reach farther; 2.4 GHz has only three non-overlapping channels (1, 6, 11) and suffers Bluetooth/microwave noise. 5 GHz (and 6 GHz) offers more spectrum and throughput at shorter range.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "IEEE 802.11ax is commercially known as which Wi-Fi generation?",
+    "options": [
+      "Wi-Fi 4",
+      "Wi-Fi 6",
+      "Wi-Fi 5",
+      "Bluetooth 5"
+    ],
+    "correct": 1,
+    "explanation": "802.11ax is Wi-Fi 6 (and 6E in the 6 GHz band). It adds OFDMA, TWT, and 1024-QAM for better efficiency in dense environments. Wi-Fi 5 is 802.11ac; Wi-Fi 4 is 802.11n.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "When connectivity fails, what should you check first in a layered approach?",
+    "options": [
+      "BGP policy",
+      "Layer 1: cable, LEDs, SFP, power, and physical interface state",
+      "QoS policies",
+      "802.1X certificates"
+    ],
+    "correct": 1,
+    "explanation": "Without a physical signal (dark LED, broken cable, missing SFP, administratively down interface) nothing above it works. Confirming Layer 1 avoids hours of pointless OSPF or DNS debugging.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "In which scenario is optical fiber clearly preferable to copper UTP?",
+    "options": [
+      "A 1-meter patch from PC to switch",
+      "A long run, a between-building link, or a high-EMI environment where copper would exceed 100 m or pick up noise",
+      "PoE power for a desk phone",
+      "A router console connection"
+    ],
+    "correct": 1,
+    "explanation": "Fiber ignores EMI, does not conduct electricity (avoiding building-to-building ground loops), and spans kilometers. Copper remains right for PoE and short runs up to 100 m. The console uses serial/USB, not Ethernet.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Which command displays the currently active configuration in RAM on a Cisco device?",
+    "options": [
+      "show startup-config",
+      "show running-config",
+      "show flash:",
+      "show version only"
+    ],
+    "correct": 1,
+    "explanation": "running-config is the RAM copy the device is actually using. startup-config lives in NVRAM and is read at boot. Changes to running-config are lost on reload unless you save them with copy run start.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "How do you tell User EXEC from Privilege EXEC in IOS?",
+    "options": [
+      "User uses '#', Privilege uses '>'",
+      "User EXEC shows '>' and limited commands; Privilege EXEC shows '#' after 'enable' and allows advanced show/debug and configuration",
+      "There is no difference",
+      "Privilege EXEC exists only on firewalls"
+    ],
+    "correct": 1,
+    "explanation": "The '>' prompt is User EXEC (ping, some shows). The enable command (with the secret) raises you to '#' Privilege EXEC, from which you enter configuration terminal. Splitting these levels is the basis of CLI access control.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is the default HTTPS port and how does it differ from HTTP?",
+    "options": [
+      "80, and it uses Telnet",
+      "443, and it encrypts the session with TLS; HTTP on 80 is clear text",
+      "22, and it uses SSH",
+      "53, and it uses DNSSEC"
+    ],
+    "correct": 1,
+    "explanation": "HTTPS wraps HTTP in TLS on port 443, protecting confidentiality and integrity. HTTP on 80 is unencrypted — credentials and cookies travel in the clear. Device management should prefer HTTPS/SSH over HTTP/Telnet.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "In subnet 192.168.10.0/24, what is the broadcast address?",
+    "options": [
+      "192.168.10.0",
+      "192.168.10.255",
+      "192.168.10.1",
+      "192.168.255.255"
+    ],
+    "correct": 1,
+    "explanation": "With /24, all 8 host bits set to 1 yield .255. .0 is the network address; .1–.254 are hosts. Traffic to 192.168.10.255 is delivered to every node in that broadcast domain.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Compared with Cat5e, Cat6 cabling is mainly intended for what?",
+    "options": [
+      "Serial console only",
+      "Better crosstalk immunity and 10GBASE-T support over short runs (typically up to 55 m)",
+      "Replacing all metro fiber",
+      "Delivering 100 W without PoE"
+    ],
+    "correct": 1,
+    "explanation": "Cat6 has tighter crosstalk specs through 250 MHz and supports 10GBASE-T on short channels. Cat5e is fine for 1 Gb/s at 100 m. Cat6A extends 10 Gb/s to a full 100 m.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which optical connector is most common on modern SFP/SFP+ transceivers?",
+    "options": [
+      "Coaxial BNC",
+      "LC (Lucent Connector), small and latched",
+      "Serial DB-9",
+      "Telephone RJ-11"
+    ],
+    "correct": 1,
+    "explanation": "SFPs almost always use duplex LC. SC is older and larger (still seen on GBICs and some panels). ST is a legacy bayonet. BNC is coaxial; DB-9 is a serial console; RJ-11 is analog phone.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "A user can ping the server by IP but the browser cannot open the site by name. What is the most likely cause?",
+    "options": [
+      "The cable is broken",
+      "DNS failure (missing, wrong, or filtered DNS server)",
+      "The switch has no PoE",
+      "STP blocked ICMP"
+    ],
+    "correct": 1,
+    "explanation": "A successful IP ping proves Layers 1–3 to the server. Using the name requires DNS (port 53). Checking ipconfig/ifconfig, the configured DNS server, and nslookup/dig isolates the issue in seconds.",
+    "difficulty": "Medium"
   }
 ];

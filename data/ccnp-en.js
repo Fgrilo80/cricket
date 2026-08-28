@@ -1006,5 +1006,413 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "WRED is weighted early drop; it protects TCP flows.",
     "difficulty": "Hard"
+  },
+  {
+    "question": "Which OSPFv2 LSA describes a router's links inside the area?",
+    "options": [
+      "Type 5 AS-external",
+      "Type 1 Router LSA",
+      "Type 4 ASBR-summary",
+      "Type 3 Network-summary"
+    ],
+    "correct": 1,
+    "explanation": "Type 1 is originated by every router and flooded only in the area. Type 2 is from the DR, Type 3 from the ABR, Type 5 from the ASBR.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the difference between an OSPF stub area and an NSSA?",
+    "options": [
+      "None",
+      "Stub blocks Type 5 LSAs and the ABR injects a default; NSSA allows Type 7 (externals from the area) which the ABR translates to Type 5",
+      "Stub allows native BGP",
+      "NSSA has no ABR"
+    ],
+    "correct": 1,
+    "explanation": "Totally stubby also blocks Type 3 except a default. Choose NSSA when an ASBR (redistribution) sits inside the edge area.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is the initial Cisco BGP Best Path order after next-hop reachability?",
+    "options": [
+      "MED, then Weight",
+      "Highest Weight; then highest Local Preference; locally originated; shortest AS-PATH; origin; lowest MED",
+      "Always the peer with the highest IP",
+      "Only AS-PATH matters"
+    ],
+    "correct": 1,
+    "explanation": "Weight (local to the router) is Cisco's first tie-breaker. Local Pref (default 100) is the first attribute advertised in iBGP.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Which BGP attribute is not advertised to other routers?",
+    "options": [
+      "Local Preference",
+      "Weight",
+      "AS-PATH",
+      "MED"
+    ],
+    "correct": 1,
+    "explanation": "Weight is local to the Cisco box and never leaves in an UPDATE. Local Pref travels in iBGP. AS-PATH and MED travel in eBGP.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In an MPLS L3VPN, what are RD and RT for?",
+    "options": [
+      "They are the same community value",
+      "RD makes the prefix unique in VPNv4 BGP; RT (extended community) controls import/export among VRFs",
+      "RD encrypts the payload",
+      "RT replaces the IGP"
+    ],
+    "correct": 1,
+    "explanation": "The same IPv4 in two customers needs different RDs. RTs define import/export policy. A VRF can import several RTs (extranet).",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "How does VRF-lite differ from MPLS VPN?",
+    "options": [
+      "It always requires LDP",
+      "It separates forwarding tables on the same box without MPLS labels; inter-box links carry one subinterface/VLAN per VRF",
+      "It forbids overlapping IPs",
+      "It works only with BGP"
+    ],
+    "correct": 1,
+    "explanation": "VRF-lite is campus/WAN multi-VRF: vrf definition, ip vrf forwarding on the SVI, per-VRF routing, no MPLS core. Overlapping IPs are allowed.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In EIGRP, what is a Feasible Successor?",
+    "options": [
+      "Always the route in the FIB",
+      "A backup route that passes the Feasibility Condition (neighbor AD < successor FD) and can be installed without a DUAL recomputation",
+      "A neighbor in INIT",
+      "A route with AD 255"
+    ],
+    "correct": 1,
+    "explanation": "Successor = the path in use (lowest FD). Without an FS, a failure goes active and queries. Variance allows unequal-cost load balancing with FS.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What does the EIGRP variance command do?",
+    "options": [
+      "It changes K-values",
+      "It allows unequal-cost load balancing among the successor and feasible successors whose FD fits in FD_min × variance",
+      "It disables split horizon",
+      "It changes the AS"
+    ],
+    "correct": 1,
+    "explanation": "Variance 1 (default) is equal-cost only. Variance 2 installs FS routes with metric up to 2× the successor. K-values must match on neighbors.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the main advantage of MST (802.1s) over Rapid PVST+?",
+    "options": [
+      "MST always runs one tree per VLAN",
+      "MST maps many VLANs onto a few instances, cutting BPDUs and CPU when hundreds of VLANs exist",
+      "MST has no root",
+      "MST only works with hubs"
+    ],
+    "correct": 1,
+    "explanation": "Rapid PVST+ = one instance per VLAN. MST groups VLANs into IST/MSTI with a region (name, revision, map). The digest must match in the region.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does UDLD detect?",
+    "options": [
+      "Always STP loops on copper",
+      "A unidirectional link (TX on one side with no RX on the other) that STP may miss, creating a forwarding loop",
+      "OSPF Hello failures only",
+      "CRC on jumbo frames"
+    ],
+    "correct": 1,
+    "explanation": "UDLD sends frames and expects the peer to echo them. Normal mode syslogs; aggressive errdisables. It complements STP Loop Guard. Typical on fiber.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does STP Loop Guard do?",
+    "options": [
+      "The same as BPDU Guard",
+      "It prevents a non-designated port from becoming designated forwarding if BPDUs stop, avoiding a unidirectional loop",
+      "It forces PortFast",
+      "It elects the root"
+    ],
+    "correct": 1,
+    "explanation": "If BPDUs stop, classic STP assumes the designated bridge is gone and may forward. Loop Guard puts the port loop-inconsistent until BPDUs return.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "How do SSO and NSF relate on a Cisco chassis with dual RP?",
+    "options": [
+      "NSF saves the config; SSO does not",
+      "SSO replicates control-plane state to the standby RP; NSF keeps CEF forwarding during switchover with graceful restart",
+      "They are the same NAT feature",
+      "SSO disables the FIB"
+    ],
+    "correct": 1,
+    "explanation": "SSO + NSF/GR allow supervisor failover in seconds without dropping adjacencies if the peer understands GR. ISSU builds on this.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is LLQ (Low Latency Queuing) in a QoS policy-map?",
+    "options": [
+      "WRED on every class",
+      "A priority queue (usually EF/voice) served first, combined with CBWFQ for the other classes",
+      "Default-class policing only",
+      "A type of STP"
+    ],
+    "correct": 1,
+    "explanation": "priority implies a policer so voice cannot starve the link. Other classes use bandwidth (CBWFQ). Do not put bulk traffic in priority.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "DSCP EF 46 as a 6-bit binary value is?",
+    "options": [
+      "001010",
+      "101110",
+      "111000",
+      "000000"
+    ],
+    "correct": 1,
+    "explanation": "EF = 101110 = 46 decimal. Voice 802.1p CoS is usually 5, mapped to EF at the edge.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is WRED (Weighted Random Early Detection) for?",
+    "options": [
+      "Always increasing the TCP window",
+      "Dropping packets probabilistically before the queue fills, by precedence/DSCP, avoiding synchronized TCP tail drops",
+      "Encrypting the queue",
+      "Replacing LLQ"
+    ],
+    "correct": 1,
+    "explanation": "Tail drop fills the queue and many TCPs hit slow start together. WRED starts dropping earlier on lower-priority flows. Do not apply it to voice.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the fundamental difference between plain GRE and GRE over IPsec?",
+    "options": [
+      "Plain GRE encrypts with AES",
+      "GRE encapsulates any protocol but is clear text; IPsec adds confidentiality/integrity, usually in tunnel mode",
+      "IPsec cannot carry OSPF",
+      "GRE always requires certificates"
+    ],
+    "correct": 1,
+    "explanation": "GRE alone is protocol 47 with no crypto. IPsec (ESP proto 50) encrypts. For IGP over VPN use GRE/IPsec, VTI, FlexVPN or DMVPN. Lower MTU/MSS.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the main advantage of IKEv2 over IKEv1?",
+    "options": [
+      "IKEv2 needs more messages",
+      "Fewer round-trips, native NAT traversal, EAP, MOBIKE, and better rekey; IKEv1 is the legacy model",
+      "IKEv2 does not authenticate",
+      "IKEv1 supports EAP and IKEv2 does not"
+    ],
+    "correct": 1,
+    "explanation": "IKEv2 uses 4 messages versus 9 in main mode. Cisco FlexVPN is built on IKEv2.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What distinguishes GETVPN from tunnel VPNs such as DMVPN?",
+    "options": [
+      "GETVPN requires GRE",
+      "GETVPN encrypts native traffic (no tunnel overlay) with GDOI group keys; it preserves the original IP header",
+      "GETVPN does not use IPsec",
+      "GETVPN is only for public Internet without an IGP"
+    ],
+    "correct": 1,
+    "explanation": "A key server distributes KEKs/TEKs via GDOI. GMs encapsulate ESP but keep original src/dst. Ideal on a private WAN; it does not traverse NAT like DMVPN.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is MACsec (IEEE 802.1AE)?",
+    "options": [
+      "End-to-end Layer 3 encryption",
+      "Hop-by-hop Layer 2 encryption between ports, with keys via MKA (802.1X)",
+      "A type of GRE",
+      "A BGP replacement"
+    ],
+    "correct": 1,
+    "explanation": "Useful on datacenter/campus switch links for confidentiality on the wire. It does not replace WAN IPsec.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is MAB (MAC Authentication Bypass) in 802.1X access?",
+    "options": [
+      "A type of EtherChannel",
+      "A fallback that authenticates the device by MAC via RADIUS when no 802.1X supplicant is present",
+      "Mandatory MACsec encryption",
+      "A routing protocol"
+    ],
+    "correct": 1,
+    "explanation": "Typical order: 802.1X, then MAB, then WebAuth. MAB is weak (MACs are spoofable); combine it with profiling and dACL/SGT.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is ERSPAN compared with SPAN/RSPAN?",
+    "options": [
+      "It is local SPAN only",
+      "It encapsulates monitored traffic in GRE/IP toward an analyzer on another L3 network, crossing routers",
+      "It is hub-only",
+      "It replaces NetFlow"
+    ],
+    "correct": 1,
+    "explanation": "SPAN: same switch. RSPAN: a dedicated VLAN across L2 trunks. ERSPAN: GRE/IP, reaches a destination in another subnet.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is model-driven telemetry on IOS-XE/NX-OS?",
+    "options": [
+      "SNMP polling every 5 minutes only",
+      "Streaming of YANG data (periodic or on-change) via gRPC/gNMI/NETCONF to collectors, instead of SNMP pull",
+      "An ASCII syslog substitute",
+      "CLI accounting only"
+    ],
+    "correct": 1,
+    "explanation": "Subscriptions target YANG paths. Second-level cadence and on-change notifications give visibility SNMP cannot scale.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is YANG in network programmability?",
+    "options": [
+      "A transport protocol",
+      "A data modeling language (config and state) used by NETCONF/RESTCONF/gNMI",
+      "An IPsec cipher",
+      "A type of OSPF LSA"
+    ],
+    "correct": 1,
+    "explanation": "Modules such as Cisco-IOS-XE-native and openconfig-interfaces describe leaves and types. Encoding may be XML or JSON. Without YANG, NETCONF has no schema.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is a practical contrast between NETCONF and RESTCONF?",
+    "options": [
+      "RESTCONF uses only SSH and always XML datastore lock",
+      "NETCONF runs over SSH with datastores (running/candidate) and XML RPCs; RESTCONF maps YANG to HTTP/HTTPS with JSON or XML",
+      "NETCONF is native HTTP",
+      "RESTCONF does not authenticate"
+    ],
+    "correct": 1,
+    "explanation": "NETCONF: edit-config, locks, candidate+commit. RESTCONF: GET /restconf/data/... is simpler for web apps. gNMI is the third path.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In LISP, what are EID and RLOC?",
+    "options": [
+      "The same WAN address",
+      "EID is the host/prefix identity; RLOC is the location (xTR loopback) used to encapsulate on the underlay",
+      "RLOC is the native VLAN",
+      "EID replaces DNS"
+    ],
+    "correct": 1,
+    "explanation": "Map-resolver/map-server resolve EID to RLOC. xTRs encapsulate. This is the SD-Access control plane with VXLAN as the data plane.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What identifies a VXLAN segment in the data plane?",
+    "options": [
+      "The 12-bit VLAN ID only",
+      "The 24-bit VNI (VXLAN Network Identifier) in the VXLAN header, destination UDP 4789",
+      "DSCP EF",
+      "The OSPF Router ID"
+    ],
+    "correct": 1,
+    "explanation": "24 bits ~ 16 million segments (versus 4094 VLANs). VTEPs encapsulate Ethernet in UDP/IP. EVPN distributes MAC/IP to VTEP mappings.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is an anycast gateway in a VXLAN/EVPN or SD-Access fabric?",
+    "options": [
+      "Classic HSRP with two different IPs",
+      "The same SVI IP and MAC configured on every leaf, so the default gateway is always on the local leaf",
+      "An anycast DNS server only",
+      "A BGP RR"
+    ],
+    "correct": 1,
+    "explanation": "The host ARPs the gateway and the local leaf answers. That avoids trombone routing through a central HSRP pair. The underlay provides leaf-to-leaf reachability.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What timer and DR difference exists between OSPF point-to-point and broadcast?",
+    "options": [
+      "Both elect a DR and use Hello 30",
+      "P2P: no DR/BDR, Hello 10 s, direct FULL adjacency; broadcast: elects DR/BDR, Hello 10 s, FULL only with DR/BDR",
+      "Broadcast sends no Hellos",
+      "P2P uses Hello 30 s"
+    ],
+    "correct": 1,
+    "explanation": "ip ospf network point-to-point on Ethernet p2p (/31 links) avoids a useless election. A network-type mismatch blocks adjacency.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What are BGP communities used for?",
+    "options": [
+      "Replacing AS-PATH",
+      "Optional tags that travel with the route so policy (local-pref, filter, no-export) can be applied elsewhere in the AS or at a peering",
+      "Encrypting UPDATEs",
+      "Electing the RR"
+    ],
+    "correct": 1,
+    "explanation": "Well-known: no-export, no-advertise, internet, local-AS. Route-maps set/match community. This is the transit and customer policy tool.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is a Loop-Free Alternate (LFA) in IP FRR?",
+    "options": [
+      "A Type 5 LSA",
+      "A precomputed backup next hop that does not reconverge the prefix through the protected router, allowing sub-50 ms repair",
+      "A BGP community",
+      "An STP mode"
+    ],
+    "correct": 1,
+    "explanation": "The IGP finds a neighbor whose path to the prefix does not go through the primary. Remote LFA/TI-LFA covers cases with no local LFA. BFD detects the failure.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "How are Private VLANs (PVLAN) organized?",
+    "options": [
+      "One VLAN per MAC only",
+      "One primary VLAN plus secondary isolated VLANs (talk only to promiscuous) or community VLANs (talk among themselves and to promiscuous)",
+      "Every port is promiscuous",
+      "PVLAN replaces VXLAN"
+    ],
+    "correct": 1,
+    "explanation": "The promiscuous port (gateway/firewall) sees everyone. Isolated hosts do not talk to each other. Community groups hosts. Useful in shared hosting.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What characterizes a FlexConnect AP versus Local mode?",
+    "options": [
+      "FlexConnect forces all traffic to the WLC",
+      "In FlexConnect the AP can switch an SSID locally and survive if CAPWAP to the WLC dies; Local mode uses central switching at the WLC",
+      "Local mode does not use CAPWAP",
+      "FlexConnect does not authenticate"
+    ],
+    "correct": 1,
+    "explanation": "Branches with a weak WAN use FlexConnect: local DHCP/data. Local/centrally switched is the campus model. The WLC still manages RRM while the tunnel is up.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which main functions does RRM run on a WLC?",
+    "options": [
+      "It only encrypts WPA3",
+      "TPC (power), DCA (channel selection), and coverage hole detection, tuning RF across the AP group",
+      "It assigns DHCP addresses",
+      "It replaces ISE"
+    ],
+    "correct": 1,
+    "explanation": "The WLC measures neighbors (NDP), avoids co-channel interference, raises/lowers dBm, and covers holes. Without RRM, channels and power stay static.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does IGMP snooping do on a switch?",
+    "options": [
+      "It blocks all multicast",
+      "It watches IGMP joins/leaves and forwards IP multicast only to ports with receivers (and the router/querier)",
+      "It converts multicast to GRE",
+      "It enables PIM-DM on every port"
+    ],
+    "correct": 1,
+    "explanation": "Without snooping the switch treats multicast as VLAN broadcast. With snooping plus a querier you save the uplink. MLD snooping is the IPv6 equivalent.",
+    "difficulty": "Medium"
   }
 ];

@@ -984,6 +984,558 @@ window.CRICKET_DB = {
         "correct": 1,
         "explanation": "192.168.0.0/16 e bloco privado, com 10/8 e 172.16/12.",
         "difficulty": "Fácil"
+      },
+      {
+        "question": "Qual é o comprimento máximo recomendado de um cabo de par trançado de cobre (UTP) em Ethernet?",
+        "options": [
+          "10 metros",
+          "100 metros",
+          "500 metros",
+          "2 quilômetros"
+        ],
+        "correct": 1,
+        "explanation": "A norma Ethernet limita o canal de cobre a 100 m (90 m de horizontal + 10 m de patch cords) para manter o orçamento de atenuação e o tempo de ida e volta. Distâncias maiores exigem fibra ou um repetidor/switch intermediário.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Qual é a principal diferença prática entre as pinagens T568A e T568B?",
+        "options": [
+          "T568A é só para fibra",
+          "Os pares laranja e verde trocam de posição nos pinos 1-2 e 3-6",
+          "T568B não funciona em Gigabit",
+          "Não há qualquer diferença elétrica"
+        ],
+        "correct": 1,
+        "explanation": "Ambos os padrões usam os mesmos quatro pares; apenas os pares laranja e verde estão invertidos. Um cabo com T568A numa ponta e T568B na outra é crossover. Em instalações modernas o T568B é o mais comum nos EUA.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Quando se deve preferir fibra monomodo em vez de multimodo?",
+        "options": [
+          "Sempre em LANs de escritório curtas",
+          "Para longas distâncias (campus/WAN) com laser de comprimento de onda longo",
+          "Apenas para PoE",
+          "Nunca; multimodo chega a qualquer distância"
+        ],
+        "correct": 1,
+        "explanation": "Fibra monomodo tem núcleo estreito (~9 µm) e usa laser; a dispersão é baixa, permitindo dezenas de km. Multimodo (50/62,5 µm) é mais barata em transceivers de curta distância (até algumas centenas de metros) mas não escala bem em longas ligações.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que faz a função Auto-MDIX numa porta Ethernet?",
+        "options": [
+          "Negocia a velocidade PoE",
+          "Deteta e corrige internamente cabo straight-through vs crossover",
+          "Desativa o STP",
+          "Atribui um endereço IP"
+        ],
+        "correct": 1,
+        "explanation": "Auto-MDIX cruza eletronicamente os pares de TX/RX quando necessário, pelo que um cabo straight-through funciona entre switch-switch, PC-PC ou switch-PC. Em equipamento moderno o Auto-MDIX está normalmente ativo com auto-negociação.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Um PC sem DHCP mostra o endereço 169.254.23.10. O que isso indica?",
+        "options": [
+          "O gateway padrão foi configurado",
+          "O host atribuiu um endereço APIPA porque não recebeu lease DHCP",
+          "É um endereço público válido",
+          "O cabo está em loopback"
+        ],
+        "correct": 1,
+        "explanation": "169.254.0.0/16 é a gama APIPA (Automatic Private IP Addressing). O sistema operacional escolhe um endereço nessa gama quando o DHCP falha, permitindo comunicação local limitada mas sem encaminhamento para outras redes.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Quantos endereços de host utilizáveis existem numa sub-rede IPv4 /26?",
+        "options": [
+          "64",
+          "62",
+          "30",
+          "126"
+        ],
+        "correct": 1,
+        "explanation": "Uma máscara /26 deixa 6 bits de host: 2^6 = 64 endereços no total. Reservam-se o endereço de rede e o de broadcast, restando 62 hosts utilizáveis.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual prefixo identifica um endereço IPv6 link-local?",
+        "options": [
+          "2000::/3",
+          "FE80::/10",
+          "FF00::/8",
+          "::1/128"
+        ],
+        "correct": 1,
+        "explanation": "Endereços link-local começam por FE80::/10 e são obrigatórios em cada interface IPv6. Servem para NDP e comunicação no mesmo enlace; os routers não os encaminham para outros links.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual é o endereço de loopback IPv6?",
+        "options": [
+          "127.0.0.1",
+          "::1",
+          "FE80::1",
+          "::"
+        ],
+        "correct": 1,
+        "explanation": "::1/128 é o loopback IPv6, equivalente a 127.0.0.1 em IPv4. Pacotes para ::1 nunca saem da máquina e servem para testar a stack IPv6 local.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Qual é a função principal do ICMP?",
+        "options": [
+          "Atribuir endereços IP",
+          "Transportar mensagens de controlo e diagnóstico da camada de rede (ex.: echo, unreachable)",
+          "Criptografar sessões web",
+          "Negociar VLANs"
+        ],
+        "correct": 1,
+        "explanation": "ICMP (e ICMPv6) transporta sinalização da camada 3: echo request/reply (ping), destination unreachable, time exceeded (usado pelo traceroute), redirect, etc. Não atribui endereços nem cifra dados de aplicação.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Como é que o traceroute descobre cada salto até ao destino?",
+        "options": [
+          "Consulta o DNS reverso de todos os routers",
+          "Envia sondas com TTL crescente e lê as respostas ICMP Time Exceeded",
+          "Usa ARP em cada hop da Internet",
+          "Abre uma sessão TCP porta 80 em cada router"
+        ],
+        "correct": 1,
+        "explanation": "Cada sonda parte com TTL 1, 2, 3… Quando o TTL chega a zero, o router descarta o pacote e devolve ICMP Time Exceeded. O endereço de origem dessa mensagem identifica o salto. No destino chega uma resposta (porta unreachable ou echo reply).",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual é a porta padrão do DNS?",
+        "options": [
+          "22",
+          "53",
+          "67",
+          "80"
+        ],
+        "correct": 1,
+        "explanation": "DNS usa a porta 53/UDP para consultas típicas e 53/TCP para transferências de zona e respostas grandes. Confundi-la com 67 (DHCP servidor), 22 (SSH) ou 80 (HTTP) é um erro comum de troubleshooting.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "O que define um domínio de colisão em Ethernet?",
+        "options": [
+          "Todos os dispositivos que partilham o mesmo endereço IP",
+          "O conjunto de portas/meios onde uma transmissão pode colidir com outra",
+          "Uma VLAN inteira",
+          "Apenas o segmento Wi-Fi"
+        ],
+        "correct": 1,
+        "explanation": "Num hub, todas as portas formam um único domínio de colisão. Um switch cria um domínio de colisão por porta (full-duplex elimina colisões). Isto é distinto do domínio de broadcast, que coincide tipicamente com a VLAN.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que é CSMA/CD?",
+        "options": [
+          "Um protocolo de routing",
+          "Método de acesso ao meio em Ethernet half-duplex: escuta, transmite e deteta colisões",
+          "Criptografia wireless",
+          "Um tipo de fibra"
+        ],
+        "correct": 1,
+        "explanation": "Carrier Sense Multiple Access with Collision Detection era usado em Ethernet partilhada (hubs, half-duplex). Hoje as redes switched full-duplex não precisam de CSMA/CD porque cada lado transmite em pares/canais distintos.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Quais são as três gamas de endereços IPv4 privados definidas no RFC 1918?",
+        "options": [
+          "1.0.0.0/8, 2.0.0.0/8 e 3.0.0.0/8",
+          "10.0.0.0/8, 172.16.0.0/12 e 192.168.0.0/16",
+          "127.0.0.0/8, 169.254.0.0/16 e 224.0.0.0/4",
+          "8.8.8.0/24, 1.1.1.0/24 e 9.9.9.0/24"
+        ],
+        "correct": 1,
+        "explanation": "RFC 1918 reserva 10.0.0.0/8, 172.16.0.0/12 (172.16–172.31) e 192.168.0.0/16 para uso interno. Estes prefixos não são encaminhados na Internet pública; a saída usa NAT ou um proxy.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que significa CIDR?",
+        "options": [
+          "Cisco Internal Device Register",
+          "Classless Inter-Domain Routing — prefixos com máscara variável em vez de classes A/B/C rígidas",
+          "Um tipo de cabo coaxial",
+          "Protocolo de autenticação wireless"
+        ],
+        "correct": 1,
+        "explanation": "CIDR abandonou as classes fixas (/8, /16, /24) e permite prefixos como /22 ou /13. Isso torna o endereçamento e o sumarização na Internet (e nas LANs) muito mais eficientes.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Para que serve o endereço IPv4 127.0.0.1?",
+        "options": [
+          "Gateway padrão da Internet",
+          "Loopback do próprio host, para testar a stack TCP/IP local",
+          "Broadcast da LAN",
+          "Primeiro endereço APIPA"
+        ],
+        "correct": 1,
+        "explanation": "Toda a gama 127.0.0.0/8 é loopback; 127.0.0.1 é o mais usado. Um ping a 127.0.0.1 confirma que a stack IP da máquina está operacional, independentemente do cabo ou do NIC.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Qual afirmação descreve corretamente unicast, broadcast e multicast?",
+        "options": [
+          "Unicast vai para todos; broadcast só para um",
+          "Unicast: um destino; broadcast: todos no domínio; multicast: um grupo inscrito",
+          "Multicast substitui o ARP",
+          "Broadcast só existe em IPv6"
+        ],
+        "correct": 1,
+        "explanation": "Unicast entrega a um único endereço. Broadcast (255.255.255.255 ou o broadcast da sub-rede) chega a todos os nós do domínio de broadcast. Multicast (224.0.0.0/4 ou FF00::/8) entrega apenas aos recetores que aderiram ao grupo.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual é a vantagem do cabo STP (Shielded Twisted Pair) face ao UTP?",
+        "options": [
+          "Suporta sempre 100 km",
+          "A malha/folha metálica reduz interferência eletromagnética (EMI)",
+          "É obrigatório para Fast Ethernet",
+          "Não precisa de conector RJ-45"
+        ],
+        "correct": 1,
+        "explanation": "STP adiciona blindagem que rejeita EMI em ambientes industriais, junto a motores ou elevadores. Exige ligação correta à terra; caso contrário a blindagem pode piorar o ruído. UTP basta na maioria dos escritórios.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Qual é a potência aproximada disponível em PoE+ (IEEE 802.3at) na porta PD?",
+        "options": [
+          "cerca de 4 W",
+          "cerca de 15 W (802.3af) vs cerca de 25–30 W em 802.3at",
+          "100 W apenas em Fast Ethernet",
+          "PoE+ não fornece energia"
+        ],
+        "correct": 1,
+        "explanation": "802.3af (PoE) entrega até 15,4 W no PSE (~12,95 W no PD). 802.3at (PoE+) sobe para 30 W no PSE (~25,5 W no PD), o bastante para APs e câmaras PTZ. 802.3bt (PoE++) vai ainda mais alto.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual comando Cisco dá um resumo rápido do estado IP de todas as interfaces?",
+        "options": [
+          "show vlan brief",
+          "show ip interface brief",
+          "show mac address-table",
+          "show spanning-tree"
+        ],
+        "correct": 1,
+        "explanation": "show ip interface brief lista cada interface com IP, estado de linha (up/down) e protocolo (up/down). É o primeiro comando de troubleshooting de Camada 3 numa caixa Cisco.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Um link Ethernet está up mas com muitos CRC errors e desempenho baixo. Qual causa é mais provável?",
+        "options": [
+          "ACL a bloquear ICMP",
+          "Mismatch de duplex (um lado half, outro full) ou cabo danificado",
+          "DNS em falta",
+          "VLAN nativa diferente no PC"
+        ],
+        "correct": 1,
+        "explanation": "Duplex mismatch gera colisões tardias, CRC e throughput péssimo porque um lado transmite quando o outro não espera. Cabo mau, SFP sujo ou EMI também produzem CRC. DNS ou ACLs não incrementam contadores CRC.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual camada do modelo OSI trata de bits, voltagens, conectores e meios físicos?",
+        "options": [
+          "Camada 3 — Rede",
+          "Camada 1 — Física",
+          "Camada 4 — Transporte",
+          "Camada 7 — Aplicação"
+        ],
+        "correct": 1,
+        "explanation": "A Camada Física define o meio (cobre, fibra, rádio), conectores, sinalização elétrica/ótica e bit timing. Problemas de cabo, SFP ou potência PoE são quase sempre Camada 1.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Qual é a sequência correta do three-way handshake TCP?",
+        "options": [
+          "ACK, SYN, FIN",
+          "SYN, SYN-ACK, ACK",
+          "FIN, ACK, SYN",
+          "RST, SYN, ACK"
+        ],
+        "correct": 1,
+        "explanation": "O cliente envia SYN, o servidor responde SYN-ACK e o cliente fecha o handshake com ACK. Só depois começa a transferência de dados. FIN inicia o encerramento; RST aborta a sessão.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Porque se prefere 'enable secret' a 'enable password' no IOS?",
+        "options": [
+          "enable password usa AES-256 de raiz",
+          "enable secret guarda um hash (MD5/tipo 5 ou mais forte); enable password fica em texto fraco ou tipo 7 reversível",
+          "São sinónimos",
+          "enable secret só funciona com Telnet"
+        ],
+        "correct": 1,
+        "explanation": "enable password é legado e pode aparecer em claro ou com cifração tipo 7 (reversível). enable secret armazena um hash unidirecional. Em IOS recente usa-se ainda type 8/9 (scrypt/PBKDF2) via 'enable algorithm-type'.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual é a VLAN predefinida nas portas de acesso de um switch Cisco não configurado?",
+        "options": [
+          "VLAN 100",
+          "VLAN 1",
+          "VLAN 999",
+          "VLAN 4094"
+        ],
+        "correct": 1,
+        "explanation": "Por omissão todas as portas pertencem à VLAN 1, que também é a native VLAN de trunks 802.1Q. Boas práticas movem dados e gestão para fora da VLAN 1 para reduzir risco de hopping e tráfego de controlo misturado.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "O que caracteriza uma porta de acesso (access port) num switch?",
+        "options": [
+          "Transporta todas as VLANs com tags 802.1Q",
+          "Pertence a uma única VLAN e envia tráfego untagged para o host",
+          "Só funciona com routers",
+          "Desativa o MAC learning"
+        ],
+        "correct": 1,
+        "explanation": "Uma access port mapeia para uma VLAN (switchport access vlan X). O frame para o PC não leva tag 802.1Q. Trunks, pelo contrário, marcam as VLANs para o vizinho (exceto a native).",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que é o LLDP?",
+        "options": [
+          "Protocolo de routing Cisco",
+          "Protocolo aberto (IEEE 802.1AB) para anunciar identidade e capacidades a vizinhos",
+          "Um tipo de ACL",
+          "Cifra de wireless"
+        ],
+        "correct": 1,
+        "explanation": "LLDP é o equivalente aberto ao CDP. Permite descobrir fabricante, hostname, port ID e capacidades (incluindo LLDP-MED para telefones). Útil em ambientes multi-vendor onde o CDP não existe.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual é o MTU Ethernet clássico (payload) em bytes?",
+        "options": [
+          "576",
+          "1500",
+          "9000",
+          "64"
+        ],
+        "correct": 1,
+        "explanation": "O MTU padrão de Ethernet é 1500 bytes de payload IP. Frames menores que 64 bytes são runts; frames jumbo (~9000) exigem suporte ponta-a-ponta. 576 é o IPv4 minimum reassembly MTU, não o Ethernet.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Porque é que cabos de cobre mal afastados de motores elétricos falham mais vezes?",
+        "options": [
+          "O cobre derrete com 5 V",
+          "Interferência eletromagnética (EMI) induz ruído que aumenta CRC e retransmissões",
+          "Motores consomem todos os endereços MAC",
+          "STP deixa de funcionar"
+        ],
+        "correct": 1,
+        "explanation": "Campos eletromagnéticos induzem tensão nos pares. Isso corrompe bits, sobe CRC/input errors e pode derrubar o link. A mitigação é afastamento, cabo blindado, fibra (imune a EMI) e boa terra.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Quantos bits tem um endereço MAC IEEE e como se escreve habitualmente?",
+        "options": [
+          "32 bits em decimal pontuado",
+          "48 bits em hexadecimal, frequentemente 6 octetos (ex.: 00:1A:2B:3C:4D:5E)",
+          "128 bits como IPv6",
+          "16 bits em binário"
+        ],
+        "correct": 1,
+        "explanation": "O MAC clássico tem 48 bits: 24 bits de OUI (fabricante) + 24 bits de série. Representa-se em hex. Endereços MAC-64 existem em alguns contextos IEEE, mas Ethernet usa 48 bits.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Qual é o tamanho de um endereço IPv4 e de um endereço IPv6?",
+        "options": [
+          "IPv4 16 bits, IPv6 32 bits",
+          "IPv4 32 bits, IPv6 128 bits",
+          "Ambos 64 bits",
+          "IPv4 128 bits, IPv6 32 bits"
+        ],
+        "correct": 1,
+        "explanation": "IPv4 usa 32 bits (notação decimal pontuada). IPv6 usa 128 bits (oito grupos hexadecimais). O espaço IPv6 é o que permite SLAAC, múltiplos endereços por interface e o fim prático do esgotamento de IPv4 público.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Qual é a máscara de sub-rede predefinida de uma rede Classe A?",
+        "options": [
+          "255.255.255.0",
+          "255.0.0.0",
+          "255.255.0.0",
+          "255.255.255.255"
+        ],
+        "correct": 1,
+        "explanation": "Classe A (1.0.0.0–126.0.0.0) usa /8, ou 255.0.0.0. Classe B é /16 e Classe C /24. Em redes modernas pensa-se em CIDR, mas as máscaras de classe ainda aparecem em exames e em equipamento legado.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Qual porta TCP usa o SMTP para envio clássico de correio entre servidores?",
+        "options": [
+          "110",
+          "25",
+          "143",
+          "443"
+        ],
+        "correct": 1,
+        "explanation": "SMTP usa a porta 25 entre MTAs. Submissão autenticada de clientes costuma ser 587 (submission) ou 465 (SMTPS). 110 é POP3, 143 é IMAP e 443 é HTTPS.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Qual é a ordem correta do processo DORA do DHCP?",
+        "options": [
+          "Request, Offer, Discover, Ack",
+          "Discover, Offer, Request, Ack",
+          "Ack, Discover, Offer, Request",
+          "Offer, Ack, Discover, Request"
+        ],
+        "correct": 1,
+        "explanation": "O cliente faz broadcast DHCPDISCOVER; o servidor responde DHCPOFFER; o cliente escolhe com DHCPREQUEST; o servidor confirma com DHCPACK e o lease fica ativo. Sem este diálogo o host cai em APIPA.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Porque é que Wi-Fi usa CSMA/CA em vez de CSMA/CD?",
+        "options": [
+          "Porque o rádio é full-duplex por natureza",
+          "Estações não conseguem transmitir e detetar colisão ao mesmo tempo no mesmo canal; por isso evitam colisões (NAV, RTS/CTS, backoff)",
+          "CSMA/CD é exclusivo de IPv6",
+          "Apenas porque a IEEE o proibiu sem razão"
+        ],
+        "correct": 1,
+        "explanation": "Num meio half-duplex partilhado, o recetor do próprio emissor fica saturado — não dá para 'ouvir a colisão' como no cobre partilhado. 802.11 usa collision avoidance: carrier sense, intervalos IFS, backoff aleatório e opcionalmente RTS/CTS.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual é uma diferença típica entre 2,4 GHz e 5 GHz em Wi-Fi?",
+        "options": [
+          "5 GHz atravessa paredes sempre melhor",
+          "2,4 GHz propaga-se mais longe e atravessa obstáculos melhor, mas tem menos canais não sobrepostos e mais interferência",
+          "2,4 GHz só existe em 802.11ac",
+          "Não há diferença de alcance"
+        ],
+        "correct": 1,
+        "explanation": "Frequências mais baixas penetram melhor e chegam mais longe; 2,4 GHz só tem três canais não sobrepostos (1, 6, 11) e sofre de Bluetooth/micro-ondas. 5 GHz (e 6 GHz) oferece mais espectro e débito, com menor alcance.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O padrão 802.11ax é comercialmente conhecido como?",
+        "options": [
+          "Wi-Fi 4",
+          "Wi-Fi 6",
+          "Wi-Fi 5",
+          "Bluetooth 5"
+        ],
+        "correct": 1,
+        "explanation": "802.11ax = Wi-Fi 6 (e 6E na banda de 6 GHz). Introduz OFDMA, TWT e 1024-QAM para melhor eficiência em ambientes densos. Wi-Fi 5 é 802.11ac; Wi-Fi 4 é 802.11n.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Numa avaria de conectividade, qual deve ser o primeiro ponto a verificar segundo a abordagem por camadas?",
+        "options": [
+          "Configuração BGP",
+          "Camada 1: cabo, LEDs, SFP, energia e estado físico da interface",
+          "Políticas de QoS",
+          "Certificados 802.1X"
+        ],
+        "correct": 1,
+        "explanation": "Sem sinal físico (LED apagado, cabo partido, SFP ausente, interface administratively down) nada nas camadas superiores funciona. Confirmar Camada 1 evita horas a depurar OSPF ou DNS em vão.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Em que cenário a fibra ótica é claramente preferível ao cobre UTP?",
+        "options": [
+          "Patch de 1 metro entre PC e switch",
+          "Ligação longa, entre edifícios, ou ambiente com forte EMI, onde o cobre excede 100 m ou capta ruído",
+          "Alimentação PoE de um telefone",
+          "Console de um router"
+        ],
+        "correct": 1,
+        "explanation": "Fibra ignora EMI, não conduz eletricidade (evita loops de terra entre edifícios) e alcança km. Cobre continua certo para PoE e runs curtos até 100 m. A consola usa cabo série/USB, não Ethernet.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Qual comando mostra a configuração atualmente ativa na RAM de um dispositivo Cisco?",
+        "options": [
+          "show startup-config",
+          "show running-config",
+          "show flash:",
+          "show version apenas"
+        ],
+        "correct": 1,
+        "explanation": "running-config é a configuração em RAM, a que o dispositivo está a usar. startup-config está em NVRAM e só é lida no boot. Alterações em running-config perdem-se no reload se não forem gravadas com copy run start.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Como se distingue o modo User EXEC do Privilege EXEC no IOS?",
+        "options": [
+          "User usa '#', Privilege usa '>'",
+          "User EXEC mostra '>' e comandos limitados; Privilege EXEC mostra '#' após 'enable' e permite show/debug avançados e configuração",
+          "Não existe diferença",
+          "Privilege EXEC só existe em firewalls"
+        ],
+        "correct": 1,
+        "explanation": "O prompt '>' é User EXEC (pings, alguns shows). O comando enable (com secret) sobe para '#' Privilege EXEC, de onde se entra em configuration terminal. Separar estes níveis é a base do controlo de acesso CLI.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Qual é a porta padrão do HTTPS e o que o distingue do HTTP?",
+        "options": [
+          "80, e usa Telnet",
+          "443, e cifra a sessão com TLS; HTTP na 80 vai em claro",
+          "22, e usa SSH",
+          "53, e usa DNSSEC"
+        ],
+        "correct": 1,
+        "explanation": "HTTPS encapsula HTTP sobre TLS na porta 443, protegendo confidencialidade e integridade. HTTP na 80 não cifra — credenciais e cookies viajam visíveis. Em gestão de equipamento deve preferir-se HTTPS/SSH a HTTP/Telnet.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Numa sub-rede 192.168.10.0/24, qual é o endereço de broadcast?",
+        "options": [
+          "192.168.10.0",
+          "192.168.10.255",
+          "192.168.10.1",
+          "192.168.255.255"
+        ],
+        "correct": 1,
+        "explanation": "Com /24 os 8 bits de host a 1 dão .255. O .0 é o endereço de rede; .1–.254 são hosts. Enviar para 192.168.10.255 entrega o frame a todos os nós desse domínio de broadcast.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O cabo Cat6, relativamente ao Cat5e, destina-se sobretudo a quê?",
+        "options": [
+          "Apenas consola série",
+          "Melhor imunidade a diafonia e suporte a 10GBASE-T em distâncias curtas (tipicamente até 55 m)",
+          "Substituir toda a fibra metropolitana",
+          "Alimentar 100 W sem PoE"
+        ],
+        "correct": 1,
+        "explanation": "Cat6 tem especificações mais apertadas de crosstalk até 250 MHz e permite 10GBASE-T em canais curtos. Cat5e chega bem a 1 Gb/s em 100 m. Cat6A estende 10 Gb/s aos 100 m.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual conetor ótico é o mais comum em transceivers SFP/SFP+ modernos?",
+        "options": [
+          "BNC coaxial",
+          "LC (Lucent Connector), pequeno e com trava",
+          "DB-9 série",
+          "RJ-11 telefónico"
+        ],
+        "correct": 1,
+        "explanation": "SFP usa quase sempre duplex LC. SC é mais antigo e maior (ainda visto em GBIC/patch panels). ST é baioneta legado. BNC é coaxial; DB-9 é consola série; RJ-11 é telefone.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Um utilizador faz ping ao IP do servidor com sucesso mas o browser não abre o site pelo nome. Qual é a causa mais provável?",
+        "options": [
+          "O cabo está partido",
+          "Falha de DNS (servidor DNS em falta, errado ou filtrado)",
+          "O switch não tem PoE",
+          "STP bloqueou o ICMP"
+        ],
+        "correct": 1,
+        "explanation": "Ping por IP prova Camadas 1–3 até ao servidor. Resolver o nome exige DNS (porta 53). Verificar ipconfig/ifconfig, o servidor DNS configurado e um nslookup/dig isola o problema em segundos.",
+        "difficulty": "Médio"
       }
     ],
     "en": [
@@ -1970,6 +2522,558 @@ window.CRICKET_DB = {
         "correct": 1,
         "explanation": "192.168.0.0/16 is private, along with 10/8 and 172.16/12.",
         "difficulty": "Easy"
+      },
+      {
+        "question": "What is the recommended maximum length of a copper twisted-pair (UTP) Ethernet cable?",
+        "options": [
+          "10 meters",
+          "100 meters",
+          "500 meters",
+          "2 kilometers"
+        ],
+        "correct": 1,
+        "explanation": "Ethernet standards limit a copper channel to 100 m (typically 90 m horizontal plus 10 m of patch cords) so attenuation and round-trip timing stay within spec. Longer runs need fiber or an intermediate switch.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "What is the practical difference between T568A and T568B pinouts?",
+        "options": [
+          "T568A is only for fiber",
+          "The orange and green pairs swap positions on pins 1-2 and 3-6",
+          "T568B does not work at Gigabit speeds",
+          "There is no electrical difference of any kind"
+        ],
+        "correct": 1,
+        "explanation": "Both standards use the same four pairs; only the orange and green pairs are swapped. A cable terminated T568A on one end and T568B on the other is a crossover. T568B is the more common commercial choice in the US.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "When should single-mode fiber be preferred over multimode?",
+        "options": [
+          "Always in short office LANs",
+          "For long-distance campus or WAN links using long-wavelength lasers",
+          "Only when delivering PoE",
+          "Never; multimode works at any distance"
+        ],
+        "correct": 1,
+        "explanation": "Single-mode has a ~9 µm core and is driven by lasers, so chromatic dispersion stays low over tens of kilometers. Multimode (50/62.5 µm) is cheaper for short runs of a few hundred meters but is not the right choice for long-haul links.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What does Auto-MDIX do on an Ethernet port?",
+        "options": [
+          "Negotiates PoE power class",
+          "Internally detects and corrects straight-through versus crossover cabling",
+          "Disables Spanning Tree",
+          "Assigns an IP address"
+        ],
+        "correct": 1,
+        "explanation": "Auto-MDIX electronically crosses TX/RX pairs when needed, so a straight-through cable works for switch-to-switch, PC-to-PC, or switch-to-PC. On modern gear it is typically enabled together with speed/duplex autonegotiation.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "A PC without DHCP shows the address 169.254.23.10. What does that indicate?",
+        "options": [
+          "The default gateway was configured",
+          "The host self-assigned an APIPA address because it did not receive a DHCP lease",
+          "It is a valid public Internet address",
+          "The cable is in loopback"
+        ],
+        "correct": 1,
+        "explanation": "169.254.0.0/16 is the APIPA (Automatic Private IP Addressing) range. The OS picks an address there when DHCP fails, which allows limited local communication but no forwarding to other networks.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "How many usable host addresses are in an IPv4 /26 subnet?",
+        "options": [
+          "64",
+          "62",
+          "30",
+          "126"
+        ],
+        "correct": 1,
+        "explanation": "A /26 mask leaves 6 host bits: 2^6 = 64 total addresses. Subtract the network and broadcast addresses and 62 usable hosts remain.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Which prefix identifies an IPv6 link-local address?",
+        "options": [
+          "2000::/3",
+          "FE80::/10",
+          "FF00::/8",
+          "::1/128"
+        ],
+        "correct": 1,
+        "explanation": "Link-local addresses start with FE80::/10 and are required on every IPv6 interface. They are used for NDP and same-link communication; routers do not forward them to other links.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is the IPv6 loopback address?",
+        "options": [
+          "127.0.0.1",
+          "::1",
+          "FE80::1",
+          "::"
+        ],
+        "correct": 1,
+        "explanation": "::1/128 is the IPv6 loopback, equivalent to 127.0.0.1 in IPv4. Packets to ::1 never leave the host and are used to test the local IPv6 stack.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "What is the primary function of ICMP?",
+        "options": [
+          "Assign IP addresses",
+          "Carry network-layer control and diagnostic messages (echo, unreachable, and similar)",
+          "Encrypt web sessions",
+          "Negotiate VLANs"
+        ],
+        "correct": 1,
+        "explanation": "ICMP (and ICMPv6) carries Layer 3 signaling: echo request/reply (ping), destination unreachable, time exceeded (used by traceroute), redirects, and more. It does not assign addresses or encrypt application data.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "How does traceroute discover each hop to the destination?",
+        "options": [
+          "It queries reverse DNS for every router",
+          "It sends probes with increasing TTL and reads ICMP Time Exceeded replies",
+          "It uses ARP at every hop across the Internet",
+          "It opens a TCP port 80 session on each router"
+        ],
+        "correct": 1,
+        "explanation": "Each probe starts with TTL 1, 2, 3, and so on. When TTL hits zero the router drops the packet and returns ICMP Time Exceeded; that source address identifies the hop. The destination typically answers with port unreachable or echo reply.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is the default port used by DNS?",
+        "options": [
+          "22",
+          "53",
+          "67",
+          "80"
+        ],
+        "correct": 1,
+        "explanation": "DNS uses port 53/UDP for typical queries and 53/TCP for zone transfers and large responses. Mixing it up with 67 (DHCP server), 22 (SSH), or 80 (HTTP) is a common troubleshooting mistake.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "What defines a collision domain in Ethernet?",
+        "options": [
+          "Every device that shares the same IP address",
+          "The set of ports or media where one transmission can collide with another",
+          "An entire VLAN",
+          "Only the Wi-Fi segment"
+        ],
+        "correct": 1,
+        "explanation": "On a hub, all ports share one collision domain. A switch creates a collision domain per port, and full duplex removes collisions altogether. That is different from a broadcast domain, which typically matches a VLAN.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is CSMA/CD?",
+        "options": [
+          "A routing protocol",
+          "A half-duplex Ethernet media-access method: listen, transmit, and detect collisions",
+          "A wireless encryption suite",
+          "A type of optical fiber"
+        ],
+        "correct": 1,
+        "explanation": "Carrier Sense Multiple Access with Collision Detection was used on shared Ethernet (hubs, half duplex). Switched full-duplex networks no longer need CSMA/CD because each side transmits on separate pairs or channels.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What are the three RFC 1918 private IPv4 address ranges?",
+        "options": [
+          "1.0.0.0/8, 2.0.0.0/8, and 3.0.0.0/8",
+          "10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16",
+          "127.0.0.0/8, 169.254.0.0/16, and 224.0.0.0/4",
+          "8.8.8.0/24, 1.1.1.0/24, and 9.9.9.0/24"
+        ],
+        "correct": 1,
+        "explanation": "RFC 1918 reserves 10.0.0.0/8, 172.16.0.0/12 (172.16–172.31), and 192.168.0.0/16 for internal use. Those prefixes are not forwarded on the public Internet; outbound access uses NAT or a proxy.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What does CIDR stand for?",
+        "options": [
+          "Cisco Internal Device Register",
+          "Classless Inter-Domain Routing — prefixes with variable masks instead of rigid A/B/C classes",
+          "A type of coaxial cable",
+          "A wireless authentication protocol"
+        ],
+        "correct": 1,
+        "explanation": "CIDR dropped fixed classes (/8, /16, /24) and allows prefixes such as /22 or /13. That makes addressing and route summarization on the Internet and in LANs far more efficient.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is IPv4 address 127.0.0.1 used for?",
+        "options": [
+          "The Internet default gateway",
+          "The host's own loopback, to test the local TCP/IP stack",
+          "The LAN broadcast address",
+          "The first APIPA address"
+        ],
+        "correct": 1,
+        "explanation": "The entire 127.0.0.0/8 range is loopback; 127.0.0.1 is the address people actually use. Pinging it confirms the host IP stack works, regardless of cabling or the NIC.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "Which statement correctly describes unicast, broadcast, and multicast?",
+        "options": [
+          "Unicast goes to everyone; broadcast goes to one host",
+          "Unicast: one destination; broadcast: everyone in the domain; multicast: a subscribed group",
+          "Multicast replaces ARP",
+          "Broadcast exists only in IPv6"
+        ],
+        "correct": 1,
+        "explanation": "Unicast delivers to a single address. Broadcast (255.255.255.255 or the subnet broadcast) reaches every node in the broadcast domain. Multicast (224.0.0.0/4 or FF00::/8) is received only by hosts that joined the group.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is the advantage of STP (Shielded Twisted Pair) over UTP?",
+        "options": [
+          "It always supports 100 km runs",
+          "The foil or braid reduces electromagnetic interference (EMI)",
+          "It is mandatory for Fast Ethernet",
+          "It does not use an RJ-45 connector"
+        ],
+        "correct": 1,
+        "explanation": "STP adds shielding that rejects EMI in industrial spaces, near motors, or next to elevators. It must be grounded correctly or the shield can make noise worse. UTP is sufficient in most offices.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "Approximately how much power does PoE+ (IEEE 802.3at) deliver at the PD?",
+        "options": [
+          "About 4 W",
+          "About 15 W for 802.3af versus about 25–30 W for 802.3at",
+          "100 W, but only on Fast Ethernet",
+          "PoE+ does not deliver power"
+        ],
+        "correct": 1,
+        "explanation": "802.3af (PoE) supplies up to 15.4 W at the PSE (~12.95 W at the PD). 802.3at (PoE+) raises that to 30 W at the PSE (~25.5 W at the PD), enough for many APs and PTZ cameras. 802.3bt (PoE++) goes higher still.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Which Cisco command gives a quick summary of the IP status of every interface?",
+        "options": [
+          "show vlan brief",
+          "show ip interface brief",
+          "show mac address-table",
+          "show spanning-tree"
+        ],
+        "correct": 1,
+        "explanation": "show ip interface brief lists each interface with its IP, line status (up/down), and protocol status (up/down). It is the first Layer 3 troubleshooting command on a Cisco box.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "An Ethernet link is up but shows many CRC errors and poor performance. What is the most likely cause?",
+        "options": [
+          "An ACL blocking ICMP",
+          "A duplex mismatch (one side half, the other full) or a damaged cable",
+          "Missing DNS",
+          "A different native VLAN on the PC"
+        ],
+        "correct": 1,
+        "explanation": "A duplex mismatch causes late collisions, CRCs, and terrible throughput because one side transmits while the other is not expecting it. Bad cable, dirty SFPs, or EMI also produce CRCs. DNS or ACLs do not increment CRC counters.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Which OSI layer deals with bits, voltages, connectors, and physical media?",
+        "options": [
+          "Layer 3 — Network",
+          "Layer 1 — Physical",
+          "Layer 4 — Transport",
+          "Layer 7 — Application"
+        ],
+        "correct": 1,
+        "explanation": "The Physical layer defines the medium (copper, fiber, radio), connectors, electrical or optical signaling, and bit timing. Cable, SFP, and PoE power problems are almost always Layer 1.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "What is the correct TCP three-way handshake sequence?",
+        "options": [
+          "ACK, SYN, FIN",
+          "SYN, SYN-ACK, ACK",
+          "FIN, ACK, SYN",
+          "RST, SYN, ACK"
+        ],
+        "correct": 1,
+        "explanation": "The client sends SYN, the server replies SYN-ACK, and the client completes the handshake with ACK. Data transfer starts only after that. FIN begins teardown; RST aborts the session.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Why is 'enable secret' preferred over 'enable password' in IOS?",
+        "options": [
+          "enable password uses AES-256 by default",
+          "enable secret stores a one-way hash (MD5/type 5 or stronger); enable password is weak clear text or reversible type 7",
+          "They are synonyms",
+          "enable secret works only with Telnet"
+        ],
+        "correct": 1,
+        "explanation": "enable password is legacy and may appear in clear text or type 7 (reversible). enable secret stores a one-way hash. Current IOS can use type 8/9 (scrypt/PBKDF2) with 'enable algorithm-type'.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is the default VLAN on access ports of an unconfigured Cisco switch?",
+        "options": [
+          "VLAN 100",
+          "VLAN 1",
+          "VLAN 999",
+          "VLAN 4094"
+        ],
+        "correct": 1,
+        "explanation": "By default every port belongs to VLAN 1, which is also the native VLAN on 802.1Q trunks. Best practice moves user and management traffic off VLAN 1 to reduce hopping risk and mixed control traffic.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "What characterizes an access port on a switch?",
+        "options": [
+          "It carries every VLAN with 802.1Q tags",
+          "It belongs to a single VLAN and sends untagged traffic to the host",
+          "It works only when connected to routers",
+          "It disables MAC learning"
+        ],
+        "correct": 1,
+        "explanation": "An access port maps to one VLAN (switchport access vlan X). Frames toward the PC are untagged. Trunks, by contrast, tag VLANs for the neighbor (except the native VLAN).",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is LLDP?",
+        "options": [
+          "A Cisco routing protocol",
+          "An open IEEE 802.1AB protocol that advertises identity and capabilities to neighbors",
+          "A type of ACL",
+          "A wireless cipher"
+        ],
+        "correct": 1,
+        "explanation": "LLDP is the open equivalent of CDP. It advertises chassis ID, port ID, hostname, and capabilities (including LLDP-MED for phones). It is the right choice in mixed-vendor plants where CDP is absent.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is the classic Ethernet MTU (payload) in bytes?",
+        "options": [
+          "576",
+          "1500",
+          "9000",
+          "64"
+        ],
+        "correct": 1,
+        "explanation": "The standard Ethernet MTU is 1500 bytes of IP payload. Frames under 64 bytes are runts; jumbo frames (~9000) need end-to-end support. 576 is the IPv4 minimum reassembly MTU, not Ethernet.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "Why do copper cables routed next to electric motors fail more often?",
+        "options": [
+          "Copper melts at 5 V",
+          "Electromagnetic interference (EMI) induces noise that raises CRCs and retransmissions",
+          "Motors consume every MAC address",
+          "Spanning Tree stops working"
+        ],
+        "correct": 1,
+        "explanation": "Electromagnetic fields induce voltage on the pairs. That corrupts bits, increases CRC/input errors, and can drop the link. Mitigation is separation, shielded cable, fiber (immune to EMI), and proper grounding.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "How many bits are in an IEEE MAC address and how is it usually written?",
+        "options": [
+          "32 bits in dotted decimal",
+          "48 bits in hexadecimal, typically six octets (for example 00:1A:2B:3C:4D:5E)",
+          "128 bits like IPv6",
+          "16 bits in binary"
+        ],
+        "correct": 1,
+        "explanation": "The classic MAC is 48 bits: a 24-bit OUI (vendor) plus a 24-bit serial. It is written in hex. 64-bit MACs exist in some IEEE contexts, but Ethernet uses 48 bits.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "What is the size of an IPv4 address and an IPv6 address?",
+        "options": [
+          "IPv4 16 bits, IPv6 32 bits",
+          "IPv4 32 bits, IPv6 128 bits",
+          "Both are 64 bits",
+          "IPv4 128 bits, IPv6 32 bits"
+        ],
+        "correct": 1,
+        "explanation": "IPv4 uses 32 bits (dotted decimal). IPv6 uses 128 bits (eight hexadecimal groups). That space is what enables SLAAC, multiple addresses per interface, and a practical end to public IPv4 exhaustion.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "What is the default subnet mask of a Class A network?",
+        "options": [
+          "255.255.255.0",
+          "255.0.0.0",
+          "255.255.0.0",
+          "255.255.255.255"
+        ],
+        "correct": 1,
+        "explanation": "Class A (1.0.0.0–126.0.0.0) uses /8, or 255.0.0.0. Class B is /16 and Class C is /24. Modern networks think in CIDR, but classful masks still show up on exams and legacy gear.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "Which TCP port does classic SMTP use for mail transfer between servers?",
+        "options": [
+          "110",
+          "25",
+          "143",
+          "443"
+        ],
+        "correct": 1,
+        "explanation": "SMTP uses port 25 between MTAs. Authenticated client submission is usually 587 (submission) or 465 (SMTPS). 110 is POP3, 143 is IMAP, and 443 is HTTPS.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "What is the correct order of the DHCP DORA process?",
+        "options": [
+          "Request, Offer, Discover, Ack",
+          "Discover, Offer, Request, Ack",
+          "Ack, Discover, Offer, Request",
+          "Offer, Ack, Discover, Request"
+        ],
+        "correct": 1,
+        "explanation": "The client broadcasts DHCPDISCOVER; the server answers with DHCPOFFER; the client commits with DHCPREQUEST; the server confirms with DHCPACK and the lease becomes active. Without that exchange the host falls back to APIPA.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Why does Wi-Fi use CSMA/CA instead of CSMA/CD?",
+        "options": [
+          "Because radio is inherently full duplex",
+          "Stations cannot transmit and detect a collision at the same time on one channel, so they avoid collisions (NAV, RTS/CTS, backoff)",
+          "CSMA/CD is IPv6-only",
+          "Only because IEEE banned CSMA/CD for no reason"
+        ],
+        "correct": 1,
+        "explanation": "On a shared half-duplex medium the sender's own radio is saturated, so it cannot 'hear a collision' the way shared copper can. 802.11 uses collision avoidance: carrier sense, IFS gaps, random backoff, and optionally RTS/CTS.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is a typical difference between 2.4 GHz and 5 GHz Wi-Fi?",
+        "options": [
+          "5 GHz always goes through walls better",
+          "2.4 GHz travels farther and handles obstacles better, but has fewer non-overlapping channels and more interference",
+          "2.4 GHz exists only in 802.11ac",
+          "Range is identical"
+        ],
+        "correct": 1,
+        "explanation": "Lower frequencies penetrate better and reach farther; 2.4 GHz has only three non-overlapping channels (1, 6, 11) and suffers Bluetooth/microwave noise. 5 GHz (and 6 GHz) offers more spectrum and throughput at shorter range.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "IEEE 802.11ax is commercially known as which Wi-Fi generation?",
+        "options": [
+          "Wi-Fi 4",
+          "Wi-Fi 6",
+          "Wi-Fi 5",
+          "Bluetooth 5"
+        ],
+        "correct": 1,
+        "explanation": "802.11ax is Wi-Fi 6 (and 6E in the 6 GHz band). It adds OFDMA, TWT, and 1024-QAM for better efficiency in dense environments. Wi-Fi 5 is 802.11ac; Wi-Fi 4 is 802.11n.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "When connectivity fails, what should you check first in a layered approach?",
+        "options": [
+          "BGP policy",
+          "Layer 1: cable, LEDs, SFP, power, and physical interface state",
+          "QoS policies",
+          "802.1X certificates"
+        ],
+        "correct": 1,
+        "explanation": "Without a physical signal (dark LED, broken cable, missing SFP, administratively down interface) nothing above it works. Confirming Layer 1 avoids hours of pointless OSPF or DNS debugging.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "In which scenario is optical fiber clearly preferable to copper UTP?",
+        "options": [
+          "A 1-meter patch from PC to switch",
+          "A long run, a between-building link, or a high-EMI environment where copper would exceed 100 m or pick up noise",
+          "PoE power for a desk phone",
+          "A router console connection"
+        ],
+        "correct": 1,
+        "explanation": "Fiber ignores EMI, does not conduct electricity (avoiding building-to-building ground loops), and spans kilometers. Copper remains right for PoE and short runs up to 100 m. The console uses serial/USB, not Ethernet.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "Which command displays the currently active configuration in RAM on a Cisco device?",
+        "options": [
+          "show startup-config",
+          "show running-config",
+          "show flash:",
+          "show version only"
+        ],
+        "correct": 1,
+        "explanation": "running-config is the RAM copy the device is actually using. startup-config lives in NVRAM and is read at boot. Changes to running-config are lost on reload unless you save them with copy run start.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "How do you tell User EXEC from Privilege EXEC in IOS?",
+        "options": [
+          "User uses '#', Privilege uses '>'",
+          "User EXEC shows '>' and limited commands; Privilege EXEC shows '#' after 'enable' and allows advanced show/debug and configuration",
+          "There is no difference",
+          "Privilege EXEC exists only on firewalls"
+        ],
+        "correct": 1,
+        "explanation": "The '>' prompt is User EXEC (ping, some shows). The enable command (with the secret) raises you to '#' Privilege EXEC, from which you enter configuration terminal. Splitting these levels is the basis of CLI access control.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "What is the default HTTPS port and how does it differ from HTTP?",
+        "options": [
+          "80, and it uses Telnet",
+          "443, and it encrypts the session with TLS; HTTP on 80 is clear text",
+          "22, and it uses SSH",
+          "53, and it uses DNSSEC"
+        ],
+        "correct": 1,
+        "explanation": "HTTPS wraps HTTP in TLS on port 443, protecting confidentiality and integrity. HTTP on 80 is unencrypted — credentials and cookies travel in the clear. Device management should prefer HTTPS/SSH over HTTP/Telnet.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "In subnet 192.168.10.0/24, what is the broadcast address?",
+        "options": [
+          "192.168.10.0",
+          "192.168.10.255",
+          "192.168.10.1",
+          "192.168.255.255"
+        ],
+        "correct": 1,
+        "explanation": "With /24, all 8 host bits set to 1 yield .255. .0 is the network address; .1–.254 are hosts. Traffic to 192.168.10.255 is delivered to every node in that broadcast domain.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Compared with Cat5e, Cat6 cabling is mainly intended for what?",
+        "options": [
+          "Serial console only",
+          "Better crosstalk immunity and 10GBASE-T support over short runs (typically up to 55 m)",
+          "Replacing all metro fiber",
+          "Delivering 100 W without PoE"
+        ],
+        "correct": 1,
+        "explanation": "Cat6 has tighter crosstalk specs through 250 MHz and supports 10GBASE-T on short channels. Cat5e is fine for 1 Gb/s at 100 m. Cat6A extends 10 Gb/s to a full 100 m.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Which optical connector is most common on modern SFP/SFP+ transceivers?",
+        "options": [
+          "Coaxial BNC",
+          "LC (Lucent Connector), small and latched",
+          "Serial DB-9",
+          "Telephone RJ-11"
+        ],
+        "correct": 1,
+        "explanation": "SFPs almost always use duplex LC. SC is older and larger (still seen on GBICs and some panels). ST is a legacy bayonet. BNC is coaxial; DB-9 is a serial console; RJ-11 is analog phone.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "A user can ping the server by IP but the browser cannot open the site by name. What is the most likely cause?",
+        "options": [
+          "The cable is broken",
+          "DNS failure (missing, wrong, or filtered DNS server)",
+          "The switch has no PoE",
+          "STP blocked ICMP"
+        ],
+        "correct": 1,
+        "explanation": "A successful IP ping proves Layers 1–3 to the server. Using the name requires DNS (port 53). Checking ipconfig/ifconfig, the configured DNS server, and nslookup/dig isolates the issue in seconds.",
+        "difficulty": "Medium"
       }
     ]
   },
@@ -2958,6 +4062,414 @@ window.CRICKET_DB = {
         "correct": 1,
         "explanation": "Access ports esperam frames untagged da VLAN atribuída.",
         "difficulty": "Médio"
+      },
+      {
+        "question": "Qual é a distância administrativa predefinida do OSPF no Cisco IOS?",
+        "options": [
+          "90",
+          "110",
+          "120",
+          "20"
+        ],
+        "correct": 1,
+        "explanation": "OSPF interno tem AD 110. EIGRP interno é 90, RIP 120, eBGP 20, estática 1 e connected 0. O IOS prefere a menor AD quando o prefixo é igual.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que é uma rota estática flutuante?",
+        "options": [
+          "Uma rota com AD menor que a primária para ganhar sempre",
+          "Uma rota de backup com AD maior que a primária, usada só se a primária desaparecer",
+          "Uma rota OSPF na tabela",
+          "Um default route obrigatório"
+        ],
+        "correct": 1,
+        "explanation": "Configura-se o mesmo prefixo com next-hop de backup e AD elevado (ex.: 250). Enquanto a rota primária existir, a flutuante fica fora da RIB.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Como o router escolhe entre várias rotas para o mesmo destino?",
+        "options": [
+          "Sempre a rota mais antiga",
+          "A correspondência de prefixo mais longa; se empatar, menor AD; se empatar, melhor métrica",
+          "Sempre OSPF",
+          "A rota com maior máscara perde"
+        ],
+        "correct": 1,
+        "explanation": "O lookup IP usa longest-prefix match. Só depois entra AD e métrica. Uma /24 ganha a uma /16 mesmo que a /16 venha de um protocolo com melhor AD.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Numa rede OSPF multiacesso Ethernet, quem é eleito DR?",
+        "options": [
+          "O router com o Router ID mais baixo sempre",
+          "O de maior prioridade OSPF; em empate, o de maior Router ID",
+          "O primeiro a arrancar nunca perde",
+          "O que tiver mais Loopbacks"
+        ],
+        "correct": 1,
+        "explanation": "A prioridade (0–255, omissão 1) decide; prioridade 0 impede DR/BDR. Empate usa o Router ID mais alto. O DR origina o LSA Type 2.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Quais são os temporizadores Hello e Dead predefinidos do OSPF em Ethernet broadcast?",
+        "options": [
+          "Hello 30 s, Dead 120 s",
+          "Hello 10 s, Dead 40 s",
+          "Hello 1 s, Dead 3 s",
+          "Hello 60 s, Dead 180 s"
+        ],
+        "correct": 1,
+        "explanation": "Em broadcast e ponto-a-ponto o Hello é 10 s e o Dead é 4×Hello (40 s). Em NBMA o Hello predefinido é 30 s. Os vizinhos têm de concordar nestes valores.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Como se calcula o custo OSPF predefinido no IOS clássico?",
+        "options": [
+          "Custo = bandwidth em kb/s",
+          "Custo = reference-bandwidth / bandwidth da interface (omissão 100 Mb/s)",
+          "Custo = delay EIGRP",
+          "Custo = hop count"
+        ],
+        "correct": 1,
+        "explanation": "Com reference-bandwidth 100 Mb/s, FastEthernet custa 1. Em redes modernas sobe-se auto-cost reference-bandwidth para distinguir 1/10/40 Gb/s.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual wildcard mask corresponde à sub-rede 172.16.8.0/22 num network statement OSPF?",
+        "options": [
+          "0.0.0.255",
+          "0.0.3.255",
+          "255.255.252.0",
+          "0.0.7.255"
+        ],
+        "correct": 1,
+        "explanation": "Máscara /22 = 255.255.252.0; a wildcard é o inverso bit a bit: 0.0.3.255. 0.0.0.255 é /24 e 0.0.7.255 é /21.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Qual é a ordem de escolha do OSPF Router ID se router-id não estiver configurado?",
+        "options": [
+          "MAC da porta Gi0/0",
+          "Router-id manual; senão o IPv4 mais alto de uma Loopback up; senão o IPv4 mais alto de uma interface física up",
+          "Sempre 1.1.1.1",
+          "O endereço da management VLAN"
+        ],
+        "correct": 1,
+        "explanation": "O RID é um IPv4 de 32 bits. Configurar router-id é a prática recomendada. Mudar o RID exige clear ip ospf process.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Como é eleita a root bridge no STP/RSTP?",
+        "options": [
+          "Maior prioridade, depois maior MAC",
+          "Menor Bridge ID: prioridade (omissão 32768) + MAC; o valor mais baixo ganha",
+          "O switch com mais VLANs",
+          "O primeiro a enviar BPDU"
+        ],
+        "correct": 1,
+        "explanation": "Priority configurável em passos de 4096. spanning-tree vlan X root primary ajusta a prioridade para este switch ganhar.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual papel extra o RSTP (802.1w) introduz face ao STP clássico (802.1D)?",
+        "options": [
+          "Apenas root e designated",
+          "Alternate e backup, papéis de descarte prontos a transitar sem timers de 30–50 s",
+          "DR e BDR",
+          "Listen e learn como papéis finais"
+        ],
+        "correct": 1,
+        "explanation": "RSTP usa root, designated, alternate e backup. A convergência é em segundos (proposal/agreement), não nos 50 s do 802.1D.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que faz Root Guard numa porta?",
+        "options": [
+          "Desliga PortFast",
+          "Coloca a porta em root-inconsistent se chegar um BPDU superior, impedindo que um switch a jusante se torne root",
+          "Força a porta a ser root port",
+          "Activa Loop Guard"
+        ],
+        "correct": 1,
+        "explanation": "Usa-se em portas de edge para a core onde um switch de utilizador não deve ganhar a eleição. É complementar ao BPDU Guard.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Como se desactiva a negociação DTP num trunk Cisco?",
+        "options": [
+          "switchport mode access",
+          "switchport nonegotiate (com modo trunk ou access estático)",
+          "no spanning-tree",
+          "shutdown vlan 1"
+        ],
+        "correct": 1,
+        "explanation": "DTP (dynamic auto/desirable) pode formar trunks indesejados. A prática é modo trunk ou access estático mais nonegotiate.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que acontece se dois extremos de um trunk 802.1Q tiverem native VLANs diferentes?",
+        "options": [
+          "Nada; o tráfego tagged resolve tudo",
+          "Tráfego untagged é interpretado em VLANs distintas e o CDP reporta native VLAN mismatch",
+          "O trunk cai imediatamente sempre",
+          "O STP desliga-se"
+        ],
+        "correct": 1,
+        "explanation": "Frames da native VLAN vão sem tag. Se um lado pensa VLAN 1 e o outro VLAN 99, o untagged cruza VLANs.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Qual comando limita as VLANs permitidas num trunk?",
+        "options": [
+          "switchport access vlan 10",
+          "switchport trunk allowed vlan 10,20,30",
+          "vlan dot1q tag native",
+          "spanning-tree vlan 10"
+        ],
+        "correct": 1,
+        "explanation": "Por omissão um trunk permite 1-4094. Restringir reduz flooding e risco. Use allowed vlan add/remove para ajustar.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "O que é uma SVI (Switch Virtual Interface) num switch L3?",
+        "options": [
+          "Uma subinterface de router-on-a-stick apenas",
+          "A interface vlan X, um endpoint L3 interno para a VLAN, usada em encaminhamento inter-VLAN no switch",
+          "Um Port-channel",
+          "Um SFP"
+        ],
+        "correct": 1,
+        "explanation": "interface vlan 10 com IP, mais ip routing, permite que o switch encaminhe entre VLANs sem router-on-a-stick.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Em DHCP snooping, que portas devem ser trusted?",
+        "options": [
+          "Todas as portas de acesso de PCs",
+          "Portas rumo a servidores DHCP legitimos e uplinks/trunks para esses servidores",
+          "Nenhuma; o snooping nao usa trust",
+          "Apenas portas com PortFast"
+        ],
+        "correct": 1,
+        "explanation": "ip dhcp snooping vlan X; nas portas de servidor/uplink: ip dhcp snooping trust. Portas untrusted bloqueiam DHCPOFFER/ACK falsos.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O Dynamic ARP Inspection (DAI) valida ARP com base em que?",
+        "options": [
+          "Na tabela OSPF",
+          "Na binding table do DHCP snooping (IP-MAC-porta-VLAN)",
+          "No DNS",
+          "Na native VLAN"
+        ],
+        "correct": 1,
+        "explanation": "DAI intercepta ARP em portas untrusted e compara IP/MAC com a base do snooping. ARP spoofing e descartado.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "No 802.1X, qual e o papel do switch de acesso?",
+        "options": [
+          "Supplicant",
+          "Authenticator, que rele EAPOL e envia RADIUS ao servidor de autenticacao (ex.: ISE)",
+          "Servidor RADIUS em si",
+          "Somente DHCP relay"
+        ],
+        "correct": 1,
+        "explanation": "O PC e o supplicant, o switch o authenticator e o ISE/NPS o authentication server. Ate autenticar, a porta pode ficar restrita.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual afirmacao distingue VRRP de HSRP?",
+        "options": [
+          "VRRP e so IPv6",
+          "VRRP e padrao IETF; HSRP e proprietario Cisco; ambos fornecem gateway virtual",
+          "HSRP nao tem prioridade",
+          "VRRP nao elege master"
+        ],
+        "correct": 1,
+        "explanation": "HSRP usa MAC 0000.0c07.acXX; VRRP usa 0000.5e00.01XX e pode partilhar o IP real do master como virtual.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Como um host IPv6 obtem endereco com SLAAC?",
+        "options": [
+          "So com DHCPv4",
+          "Recebe RA (ICMPv6) com prefixo; gera o Interface ID e faz DAD via Neighbor Solicitation",
+          "O router atribui a porta TCP",
+          "Usa ARP classico"
+        ],
+        "correct": 1,
+        "explanation": "O RA traz prefixo, MTU e lifetime. O host monta o GUA, testa DAD e pode ainda usar DHCPv6 consoante os flags M/O do RA.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "No EUI-64, o que se faz ao MAC de 48 bits para formar o Interface ID?",
+        "options": [
+          "Copia-se sem alteracao",
+          "Insere-se FFFE no meio e inverte-se o bit U/L (7.o bit do primeiro octeto)",
+          "Acrescenta-se so ::1",
+          "Usa-se o IPv4 embebido"
+        ],
+        "correct": 1,
+        "explanation": "00:1A:2B:3C:4D:5E vira 021A:2BFF:FE3C:4D5E (bit U/L flipped). Muitos SO preferem privacy addresses aleatorios.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Qual prefixo identifica enderecos IPv6 Unique Local (ULA)?",
+        "options": [
+          "2000::/3",
+          "FC00::/7 (na pratica fd00::/8)",
+          "FE80::/10",
+          "FF00::/8"
+        ],
+        "correct": 1,
+        "explanation": "ULA (RFC 4193) e o analogo privado do RFC 1918. Global unicast e 2000::/3, link-local FE80::/10 e multicast FF00::/8.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Porque e que todas as areas OSPF devem ligar-se a area 0?",
+        "options": [
+          "Porque a area 0 tem prioridade STP",
+          "Para garantir um grafo sem loops de sumarizacao; o SPF inter-area passa sempre pelo backbone",
+          "A area 0 e a unica que corre Hello",
+          "Nao e obrigatorio em NSSA"
+        ],
+        "correct": 1,
+        "explanation": "ABRs ligam areas nao-backbone a area 0. Virtual-links existem para remendar topologias que quebram esta regra.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Qual e a distancia administrativa predefinida de uma rota estatica no IOS?",
+        "options": [
+          "0",
+          "1",
+          "90",
+          "110"
+        ],
+        "correct": 1,
+        "explanation": "Connected=0, static=1, eBGP=20, EIGRP=90, OSPF=110, RIP=120, iBGP=200. Uma estatica ganha a OSPF para o mesmo prefixo salvo floating AD.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "No syslog Cisco, que numero de severity corresponde a warnings?",
+        "options": [
+          "0",
+          "4",
+          "7",
+          "6"
+        ],
+        "correct": 1,
+        "explanation": "0 emergencies, 1 alerts, 2 critical, 3 errors, 4 warnings, 5 notifications, 6 informational, 7 debugging. logging trap 4 envia warning e pior.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que significa um servidor NTP stratum 1?",
+        "options": [
+          "Esta 15 saltos abaixo da UTC",
+          "Esta ligado a uma referencia de tempo autoritativa (GPS, relogio atomico) e serve os stratum 2",
+          "E um cliente Windows",
+          "Nao pode autenticar NTP"
+        ],
+        "correct": 1,
+        "explanation": "Stratum 0 e a fonte (GPS/atomico). Stratum 1 sincroniza com stratum 0. Stratum 16 significa nao sincronizado.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual diferenca chave entre TACACS+ e RADIUS no acesso a CLI?",
+        "options": [
+          "RADIUS usa TCP 49 e separa autorizacao",
+          "TACACS+ usa TCP 49 e separa autenticacao, autorizacao e accounting; RADIUS usa UDP e combina auth+authz",
+          "Nao ha diferenca",
+          "TACACS+ nao cifra a password"
+        ],
+        "correct": 1,
+        "explanation": "Para administracao de dispositivos Cisco prefere-se TACACS+ (autorizacao comando a comando). RADIUS e o padrao em 802.1X/Wi-Fi/VPN.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Em APIs REST usadas na automacao CCNA, o que descreve melhor JSON?",
+        "options": [
+          "Uma linguagem de programacao",
+          "Um formato textual de dados com objectos chave/valor, arrays e tipos simples, muito usado em RESTCONF e controladores",
+          "Um protocolo de transporte",
+          "Um tipo de ACL"
+        ],
+        "correct": 1,
+        "explanation": "JSON e o payload tipico de REST. Chaves entre aspas, objectos {}, listas []. XML continua em NETCONF classico.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Qual e a diferenca central entre rede tradicional e rede controller-based (SDN)?",
+        "options": [
+          "SDN elimina todos os switches",
+          "O plano de controlo e logicamente centralizado no controlador; os dispositivos ficam sobretudo no plano de dados, com APIs northbound/southbound",
+          "SDN nao usa IP",
+          "O controlador substitui o cabeamento"
+        ],
+        "correct": 1,
+        "explanation": "Southbound (NETCONF, OpenFlow, gNMI) programa os nos; northbound (REST) oferece intencao as aplicacoes. Catalyst Center e o exemplo campus no CCNA.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Num fabric spine-leaf, como se ligam os switches?",
+        "options": [
+          "Em anel STP classico",
+          "Cada leaf liga-se a todos os spines; leafs nao se ligam entre si; ECMP no underlay",
+          "So um uplink por leaf",
+          "Spines ligam-se a servidores"
+        ],
+        "correct": 1,
+        "explanation": "Qualquer leaf alcanca qualquer outra em dois hops, sem loops L2 no underlay (L3). Servidores e APs ligam-se aos leafs.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual e a diferenca entre hipervisor Tipo 1 e Tipo 2?",
+        "options": [
+          "Nao existe Tipo 1",
+          "Tipo 1 (bare-metal, ex.: ESXi, Hyper-V, KVM) corre no hardware; Tipo 2 (hosted, ex.: VirtualBox) corre sobre um SO anfitriao",
+          "Tipo 2 e sempre mais rapido em datacenter",
+          "Tipo 1 so virtualiza redes"
+        ],
+        "correct": 1,
+        "explanation": "Tipo 1 e o padrao de datacenter/NFV (CSR, CAT8000v, ASAv). Tipo 2 serve labs no portatil.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Qual DSCP e o PHB Expedited Forwarding (EF), tipico de voz?",
+        "options": [
+          "CS0 / 0",
+          "EF / 46 (101110)",
+          "AF41 / 34",
+          "CS6 / 48"
+        ],
+        "correct": 1,
+        "explanation": "EF (DSCP 46) pede baixa latencia e jitter: LLQ na WAN. AF e four-class assurance; CS6/CS7 sao controlo de rede.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual e a diferenca entre policing e shaping em QoS?",
+        "options": [
+          "Sao sinonimos",
+          "Policing descarta ou re-marca trafego acima da taxa; shaping enfileira o excesso para suavizar bursts, introduzindo atraso",
+          "Shaping so existe em STP",
+          "Policing aumenta a largura de banda"
+        ],
+        "correct": 1,
+        "explanation": "Na borda da WAN o shaping evita drops no ISP. Policing protege o nucleo mas pode descartar. Ambos usam token bucket.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que e um ataque de overflow da CAM (MAC flooding) e como se mitiga?",
+        "options": [
+          "Envenenar DNS",
+          "Encher a tabela MAC com enderecos falsos para o switch floodar unicast como broadcast; mitiga-se com port-security",
+          "Desligar OSPF",
+          "Usar NAT"
+        ],
+        "correct": 1,
+        "explanation": "Ferramentas tipo macof saturam a TCAM. O switch passa a floodar frames unicast para todas as portas da VLAN. Port-security limita o abuso.",
+        "difficulty": "Médio"
       }
     ],
     "en": [
@@ -3943,6 +5455,414 @@ window.CRICKET_DB = {
         ],
         "correct": 1,
         "explanation": "Access ports expect untagged frames of the assigned VLAN.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is the default administrative distance of OSPF in Cisco IOS?",
+        "options": [
+          "90",
+          "110",
+          "120",
+          "20"
+        ],
+        "correct": 1,
+        "explanation": "Internal OSPF has AD 110. Internal EIGRP is 90, RIP 120, eBGP 20, static 1, and connected 0. IOS prefers the lowest AD when the prefix is identical.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is a floating static route?",
+        "options": [
+          "A route with a lower AD than the primary so it always wins",
+          "A backup route with a higher AD than the primary, used only if the primary disappears",
+          "An OSPF route in the table",
+          "A mandatory default route"
+        ],
+        "correct": 1,
+        "explanation": "You configure the same prefix with a backup next hop and a high AD (for example 250). While the primary exists, the floating route stays out of the RIB.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "How does a router choose among several routes to the same destination?",
+        "options": [
+          "Always the oldest route",
+          "Longest prefix match; if tied, lowest AD; if still tied, best metric",
+          "Always OSPF",
+          "The route with the longer mask always loses"
+        ],
+        "correct": 1,
+        "explanation": "IP lookup uses longest-prefix match first. Only then do AD and metric matter. A /24 beats a /16 even if the /16 comes from a protocol with a better AD.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "On an OSPF multiaccess Ethernet network, who is elected DR?",
+        "options": [
+          "Always the router with the lowest Router ID",
+          "The router with the highest OSPF priority; if tied, the highest Router ID",
+          "Whoever booted first never loses",
+          "Whoever has the most Loopbacks"
+        ],
+        "correct": 1,
+        "explanation": "Priority (0–255, default 1) decides; priority 0 makes a router ineligible. A tie uses the highest Router ID. The DR originates the Type 2 LSA.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What are the default OSPF Hello and Dead timers on broadcast Ethernet?",
+        "options": [
+          "Hello 30 s, Dead 120 s",
+          "Hello 10 s, Dead 40 s",
+          "Hello 1 s, Dead 3 s",
+          "Hello 60 s, Dead 180 s"
+        ],
+        "correct": 1,
+        "explanation": "On broadcast and point-to-point, Hello is 10 s and Dead is 4×Hello (40 s). On NBMA the default Hello is 30 s. Neighbors must agree on these values.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "How is default OSPF cost calculated in classic IOS?",
+        "options": [
+          "Cost = bandwidth in kb/s",
+          "Cost = reference bandwidth / interface bandwidth (default 100 Mb/s)",
+          "Cost = EIGRP delay",
+          "Cost = hop count"
+        ],
+        "correct": 1,
+        "explanation": "With a 100 Mb/s reference, FastEthernet costs 1. Modern networks raise auto-cost reference-bandwidth so 1/10/40 Gb/s links differ.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Which wildcard mask matches subnet 172.16.8.0/22 in an OSPF network statement?",
+        "options": [
+          "0.0.0.255",
+          "0.0.3.255",
+          "255.255.252.0",
+          "0.0.7.255"
+        ],
+        "correct": 1,
+        "explanation": "A /22 mask is 255.255.252.0; the wildcard is the bitwise inverse: 0.0.3.255. 0.0.0.255 is /24 and 0.0.7.255 is /21.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "How is the OSPF Router ID chosen if router-id is not configured?",
+        "options": [
+          "The MAC of Gi0/0",
+          "Manual router-id; else highest IPv4 on an up Loopback; else highest IPv4 on an up physical interface",
+          "Always 1.1.1.1",
+          "The management VLAN address"
+        ],
+        "correct": 1,
+        "explanation": "The RID is a 32-bit IPv4 value. Setting router-id is recommended. Changing it requires clear ip ospf process.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "How is the STP/RSTP root bridge elected?",
+        "options": [
+          "Highest priority, then highest MAC",
+          "Lowest Bridge ID: priority (default 32768) plus MAC; the lowest value wins",
+          "The switch with the most VLANs",
+          "The first switch to send a BPDU"
+        ],
+        "correct": 1,
+        "explanation": "Priority is set in steps of 4096. spanning-tree vlan X root primary lowers priority so this switch wins.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Which extra roles does RSTP (802.1w) add versus classic STP (802.1D)?",
+        "options": [
+          "Only root and designated",
+          "Alternate and backup, discarding roles that can transition without 30–50 s timers",
+          "DR and BDR",
+          "Listen and learn as final roles"
+        ],
+        "correct": 1,
+        "explanation": "RSTP uses root, designated, alternate, and backup. Convergence is in seconds (proposal/agreement), not the 50 s of 802.1D.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What does Root Guard do on a port?",
+        "options": [
+          "Disables PortFast",
+          "Puts the port in root-inconsistent if a superior BPDU arrives, stopping a downstream switch from becoming root",
+          "Forces the port to be the root port",
+          "Enables Loop Guard"
+        ],
+        "correct": 1,
+        "explanation": "Use it on edge ports toward the core where a user switch must not win the election. It complements BPDU Guard.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "How do you disable DTP negotiation on a Cisco trunk?",
+        "options": [
+          "switchport mode access",
+          "switchport nonegotiate (with a static trunk or access mode)",
+          "no spanning-tree",
+          "shutdown vlan 1"
+        ],
+        "correct": 1,
+        "explanation": "DTP (dynamic auto/desirable) can form unwanted trunks. Best practice is static trunk or access mode plus nonegotiate.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What happens if the two ends of an 802.1Q trunk use different native VLANs?",
+        "options": [
+          "Nothing; tagged traffic fixes it",
+          "Untagged traffic is interpreted in different VLANs and CDP reports a native VLAN mismatch",
+          "The trunk always goes down immediately",
+          "STP turns itself off"
+        ],
+        "correct": 1,
+        "explanation": "Native-VLAN frames are untagged. If one side assumes VLAN 1 and the other VLAN 99, untagged traffic crosses VLANs.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "Which command limits the VLANs allowed on a trunk?",
+        "options": [
+          "switchport access vlan 10",
+          "switchport trunk allowed vlan 10,20,30",
+          "vlan dot1q tag native",
+          "spanning-tree vlan 10"
+        ],
+        "correct": 1,
+        "explanation": "By default a trunk allows 1-4094. Pruning the list reduces flooding and risk. Use allowed vlan add/remove to adjust.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "What is an SVI (Switch Virtual Interface) on a Layer 3 switch?",
+        "options": [
+          "A router-on-a-stick subinterface only",
+          "interface vlan X, an internal Layer 3 endpoint for that VLAN, used for inter-VLAN routing on the switch",
+          "A Port-channel",
+          "An SFP"
+        ],
+        "correct": 1,
+        "explanation": "interface vlan 10 with an IP, plus ip routing, lets the switch route between VLANs without router-on-a-stick.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "With DHCP snooping, which ports should be trusted?",
+        "options": [
+          "Every PC access port",
+          "Ports toward legitimate DHCP servers and the uplinks/trunks to those servers",
+          "None; snooping does not use trust",
+          "Only PortFast ports"
+        ],
+        "correct": 1,
+        "explanation": "Enable ip dhcp snooping vlan X; on server/uplink ports set ip dhcp snooping trust. Untrusted ports drop fake DHCPOFFER/ACK.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What does Dynamic ARP Inspection (DAI) validate ARP against?",
+        "options": [
+          "The OSPF table",
+          "The DHCP snooping binding table (IP-MAC-port-VLAN)",
+          "DNS",
+          "The native VLAN"
+        ],
+        "correct": 1,
+        "explanation": "DAI intercepts ARP on untrusted ports and checks IP/MAC against the snooping database. Spoofed ARP is dropped.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "In 802.1X, what role does the access switch play?",
+        "options": [
+          "Supplicant",
+          "Authenticator, which relays EAPOL and sends RADIUS to the authentication server (e.g. ISE)",
+          "The RADIUS server itself",
+          "DHCP relay only"
+        ],
+        "correct": 1,
+        "explanation": "The PC is the supplicant, the switch is the authenticator, and ISE/NPS is the authentication server. Until then the port may stay restricted.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Which statement distinguishes VRRP from HSRP?",
+        "options": [
+          "VRRP is IPv6-only",
+          "VRRP is an IETF standard; HSRP is Cisco proprietary; both provide a virtual gateway",
+          "HSRP has no priority",
+          "VRRP does not elect a master"
+        ],
+        "correct": 1,
+        "explanation": "HSRP uses MAC 0000.0c07.acXX; VRRP uses 0000.5e00.01XX and may share the master's real IP as the virtual IP.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "How does an IPv6 host get an address with SLAAC?",
+        "options": [
+          "Only with DHCPv4",
+          "It receives an RA (ICMPv6) with a prefix, builds an Interface ID, and runs DAD via Neighbor Solicitation",
+          "The router assigns a TCP port",
+          "It uses classic ARP"
+        ],
+        "correct": 1,
+        "explanation": "The RA carries prefix, MTU, and lifetime. The host builds a GUA, runs DAD, and may still use DHCPv6 depending on the RA M/O flags.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "In EUI-64, what is done to a 48-bit MAC to form the Interface ID?",
+        "options": [
+          "It is copied unchanged",
+          "FFFE is inserted in the middle and the U/L bit (7th bit of the first octet) is flipped",
+          "::1 is simply appended",
+          "Embedded IPv4 is used"
+        ],
+        "correct": 1,
+        "explanation": "00:1A:2B:3C:4D:5E becomes 021A:2BFF:FE3C:4D5E (U/L bit flipped). Many OSes prefer random privacy addresses.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "Which prefix identifies IPv6 Unique Local Addresses (ULA)?",
+        "options": [
+          "2000::/3",
+          "FC00::/7 (in practice fd00::/8)",
+          "FE80::/10",
+          "FF00::/8"
+        ],
+        "correct": 1,
+        "explanation": "ULA (RFC 4193) is the private analogue of RFC 1918. Global unicast is 2000::/3, link-local is FE80::/10, and multicast is FF00::/8.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Why must every OSPF area connect to area 0?",
+        "options": [
+          "Because area 0 has STP priority",
+          "To keep summarization loop-free; inter-area SPF always transits the backbone",
+          "Area 0 is the only area that sends Hellos",
+          "It is not required for NSSA"
+        ],
+        "correct": 1,
+        "explanation": "ABRs attach non-backbone areas to area 0. Virtual links exist to patch topologies that break this rule.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "What is the default administrative distance of a static route in IOS?",
+        "options": [
+          "0",
+          "1",
+          "90",
+          "110"
+        ],
+        "correct": 1,
+        "explanation": "Connected=0, static=1, eBGP=20, EIGRP=90, OSPF=110, RIP=120, iBGP=200. A static therefore beats OSPF for the same prefix unless you raise its AD.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "In Cisco syslog, which severity number is warnings?",
+        "options": [
+          "0",
+          "4",
+          "7",
+          "6"
+        ],
+        "correct": 1,
+        "explanation": "0 emergencies, 1 alerts, 2 critical, 3 errors, 4 warnings, 5 notifications, 6 informational, 7 debugging. logging trap 4 sends warning and worse.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What does an NTP stratum 1 server mean?",
+        "options": [
+          "It is 15 hops below UTC",
+          "It is attached to an authoritative time reference (GPS, atomic clock) and serves stratum 2 clients",
+          "It is a Windows client",
+          "It cannot authenticate NTP"
+        ],
+        "correct": 1,
+        "explanation": "Stratum 0 is the reference (GPS/atomic). Stratum 1 syncs to stratum 0. Stratum 16 means unsynchronized.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is a key difference between TACACS+ and RADIUS for CLI access?",
+        "options": [
+          "RADIUS uses TCP 49 and separates authorization",
+          "TACACS+ uses TCP 49 and separates authentication, authorization, and accounting; RADIUS uses UDP and combines auth+authz",
+          "There is no difference",
+          "TACACS+ does not encrypt the password"
+        ],
+        "correct": 1,
+        "explanation": "Cisco device administration prefers TACACS+ (per-command authorization). RADIUS is the standard for 802.1X/Wi-Fi/VPN.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "In REST APIs used in CCNA automation, what best describes JSON?",
+        "options": [
+          "A programming language",
+          "A textual data format of key/value objects, arrays, and simple types, widely used with RESTCONF and controllers",
+          "A transport protocol",
+          "A type of ACL"
+        ],
+        "correct": 1,
+        "explanation": "JSON is the typical REST payload. Keys are quoted, objects use {}, lists use []. XML remains common in classic NETCONF.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "What is the core difference between traditional networking and controller-based (SDN) networking?",
+        "options": [
+          "SDN eliminates every switch",
+          "The control plane is logically centralized in a controller; devices are mostly data-plane, with northbound/southbound APIs",
+          "SDN does not use IP",
+          "The controller replaces cabling"
+        ],
+        "correct": 1,
+        "explanation": "Southbound (NETCONF, OpenFlow, gNMI) programs the nodes; northbound (REST) exposes intent to applications. Catalyst Center is the campus example in CCNA.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "In a spine-leaf fabric, how are switches connected?",
+        "options": [
+          "In a classic STP ring",
+          "Every leaf connects to every spine; leafs do not connect to each other; ECMP in the underlay",
+          "Only one uplink per leaf",
+          "Spines connect to servers"
+        ],
+        "correct": 1,
+        "explanation": "Any leaf reaches any other in two hops with no underlay L2 loops (L3). Servers and APs attach to leafs.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is the difference between Type 1 and Type 2 hypervisors?",
+        "options": [
+          "Type 1 does not exist",
+          "Type 1 (bare-metal, e.g. ESXi, Hyper-V, KVM) runs on hardware; Type 2 (hosted, e.g. VirtualBox) runs on a host OS",
+          "Type 2 is always faster in the datacenter",
+          "Type 1 only virtualizes networks"
+        ],
+        "correct": 1,
+        "explanation": "Type 1 is the datacenter/NFV standard (CSR, CAT8000v, ASAv). Type 2 is for laptop labs.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "Which DSCP is the Expedited Forwarding (EF) PHB, typical for voice?",
+        "options": [
+          "CS0 / 0",
+          "EF / 46 (101110)",
+          "AF41 / 34",
+          "CS6 / 48"
+        ],
+        "correct": 1,
+        "explanation": "EF (DSCP 46) asks for low latency and jitter: LLQ on the WAN. AF is four-class assurance; CS6/CS7 are network control.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is the difference between policing and shaping in QoS?",
+        "options": [
+          "They are synonyms",
+          "Policing drops or re-marks traffic above the rate; shaping queues the excess to smooth bursts, adding delay",
+          "Shaping exists only in STP",
+          "Policing increases bandwidth"
+        ],
+        "correct": 1,
+        "explanation": "At the WAN edge, shaping avoids drops in the ISP. Policing protects the core but may drop. Both use a token bucket.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is a CAM (MAC flooding) overflow attack and how is it mitigated?",
+        "options": [
+          "DNS poisoning",
+          "Filling the MAC table with fake addresses so the switch floods unicast as broadcast; mitigate with port-security",
+          "Disabling OSPF",
+          "Using NAT"
+        ],
+        "correct": 1,
+        "explanation": "Tools such as macof saturate TCAM. The switch then floods unicast frames out every port in the VLAN. Port-security limits the abuse.",
         "difficulty": "Medium"
       }
     ]
@@ -4956,6 +6876,414 @@ window.CRICKET_DB = {
         "correct": 1,
         "explanation": "WRED faz early drop ponderado; protege fluxos TCP.",
         "difficulty": "Difícil"
+      },
+      {
+        "question": "Qual LSA OSPFv2 descreve os links de um router dentro da área?",
+        "options": [
+          "Type 5 AS-external",
+          "Type 1 Router LSA",
+          "Type 4 ASBR-summary",
+          "Type 3 Network-summary"
+        ],
+        "correct": 1,
+        "explanation": "Type 1 é gerado por cada router e floodado só na área. Type 2 é do DR, Type 3 do ABR, Type 5 do ASBR, Type 4 aponta para o ASBR.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual é a diferença entre uma área OSPF stub e uma NSSA?",
+        "options": [
+          "Nenhuma",
+          "Stub bloqueia LSA 5 e o ABR injecta default; NSSA permite LSA 7 (externas da área) que o ABR traduz para LSA 5",
+          "Stub permite BGP nativo",
+          "NSSA não tem ABR"
+        ],
+        "correct": 1,
+        "explanation": "Totally stubby bloqueia também LSA 3 (excepto default). Escolhe-se NSSA quando há um ASBR (redistribuição) dentro da área de borda.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Qual é a ordem inicial do BGP Best Path Cisco após next-hop reachable?",
+        "options": [
+          "MED, depois Weight",
+          "Highest Weight; depois highest Local Preference; locally originated; shortest AS-PATH; origin; lowest MED",
+          "Sempre o peer com maior IP",
+          "Só AS-PATH conta"
+        ],
+        "correct": 1,
+        "explanation": "Weight (local ao router) é o primeiro desempate Cisco. Local Pref (omissão 100) é o primeiro atributo anunciado em iBGP.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Qual atributo BGP não é anunciado a outros routers?",
+        "options": [
+          "Local Preference",
+          "Weight",
+          "AS-PATH",
+          "MED"
+        ],
+        "correct": 1,
+        "explanation": "Weight é local à caixa Cisco e nunca sai em UPDATE. Local Pref viaja em iBGP. AS-PATH e MED viajam em eBGP.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Numa MPLS L3VPN, para que servem RD e RT?",
+        "options": [
+          "São o mesmo valor community",
+          "RD torna o prefixo único no BGP VPNv4; RT (extended community) controla import/export entre VRFs",
+          "RD cifra o payload",
+          "RT substitui o IGP"
+        ],
+        "correct": 1,
+        "explanation": "O mesmo IPv4 em dois clientes precisa de RDs diferentes. RTs definem a política de import/export. Um VRF pode importar vários RTs (extranet).",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "O que caracteriza VRF-lite relativamente a MPLS VPN?",
+        "options": [
+          "Exige sempre LDP",
+          "Segrega tabelas de encaminhamento no mesmo equipamento sem labels MPLS; os links levam um subinterface/VLAN por VRF",
+          "Não permite overlapping IPs",
+          "Só funciona com BGP"
+        ],
+        "correct": 1,
+        "explanation": "VRF-lite é multi-VRF de campus/WAN: vrf definition, ip vrf forwarding na SVI, routing por VRF, sem core MPLS. Overlapping IPs são permitidos.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Em EIGRP, o que é um Feasible Successor?",
+        "options": [
+          "A rota activa na FIB sempre",
+          "Uma rota de backup que passa a Feasibility Condition (AD do anunciante < FD da successor) e pode entrar sem recomputar DUAL",
+          "Um vizinho em INIT",
+          "Uma rota com AD 255"
+        ],
+        "correct": 1,
+        "explanation": "Successor = caminho usado (menor FD). Sem FS, uma falha dispara active query. Variance permite load-balance desigual com FS.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Para que serve o comando EIGRP variance?",
+        "options": [
+          "Altera os K-values",
+          "Permite load-balancing de custo desigual entre successor e feasible successors cujo FD cabe em FD_min × variance",
+          "Desliga o split horizon",
+          "Muda o AS"
+        ],
+        "correct": 1,
+        "explanation": "Variance 1 (omissão) = só equal-cost. Variance 2 instala FS com métrica até 2× a do successor. K-values têm de coincidir nos vizinhos.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual vantagem principal do MST (802.1s) face ao Rapid PVST+?",
+        "options": [
+          "MST corre um tree por VLAN sempre",
+          "MST mapeia muitas VLANs para poucos instances, reduzindo BPDUs e CPU em redes com centenas de VLANs",
+          "MST não tem root",
+          "MST só trabalha com hubs"
+        ],
+        "correct": 1,
+        "explanation": "Rapid PVST+ = uma instância por VLAN. MST agrupa VLANs em IST/MSTI com região (nome, revision, mapa). O digest tem de coincidir na região.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que detecta o UDLD?",
+        "options": [
+          "Loops de STP em cobre sempre",
+          "Um link unidireccional (TX de um lado sem RX no outro) que o STP pode não ver e criar forwarding loops",
+          "Falhas de OSPF Hello apenas",
+          "CRC em jumbo frames"
+        ],
+        "correct": 1,
+        "explanation": "UDLD envia frames e espera eco do peer. Modo normal gera syslog; aggressive errdisable. Complementa STP Loop Guard. Típico em fibra.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que faz Loop Guard no STP?",
+        "options": [
+          "Igual a BPDU Guard",
+          "Impede que uma porta non-designated passe a designated forwarding se os BPDUs pararem, evitando loop por unidireccionalidade",
+          "Forca PortFast",
+          "Elege o root"
+        ],
+        "correct": 1,
+        "explanation": "Se BPDUs cessam, STP classico assume que o designated desapareceu e a porta pode forwarding. Loop Guard poe loop-inconsistent ate os BPDUs regressarem.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Qual e a relacao entre SSO e NSF num chassis Cisco com dual RP?",
+        "options": [
+          "NSF grava a config; SSO nao",
+          "SSO replica o estado do control plane ao RP standby; NSF mantem CEF forwarding durante o switchover com graceful restart",
+          "Sao o mesmo feature de NAT",
+          "SSO desliga a FIB"
+        ],
+        "correct": 1,
+        "explanation": "SSO + NSF/GR permitem failover de supervisor em segundos sem perder adjacencias se o peer entender GR. ISSU apoia-se nisto.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "O que e LLQ (Low Latency Queuing) num policy-map de QoS?",
+        "options": [
+          "WRED em todas as classes",
+          "Uma priority queue (normalmente EF/voz) servida primeiro, combinada com CBWFQ nas demais classes",
+          "Somente policing de default class",
+          "Um tipo de STP"
+        ],
+        "correct": 1,
+        "explanation": "priority reserva um policer implicito para nao esgotar o link. As outras classes usam bandwidth (CBWFQ). Nao se poe bulk na priority.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O valor DSCP EF 46 em binario de 6 bits e?",
+        "options": [
+          "001010",
+          "101110",
+          "111000",
+          "000000"
+        ],
+        "correct": 1,
+        "explanation": "EF = 101110 = 46 decimal. CoS 802.1p de voz costuma ser 5, que mapeia para EF na borda.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Para que serve WRED (Weighted Random Early Detection)?",
+        "options": [
+          "Aumentar o window TCP sempre",
+          "Descartar probabilisticamente pacotes antes da fila encher, por precedencia/DSCP, evitando tail-drop sincronizado de fluxos TCP",
+          "Cifrar a fila",
+          "Substituir LLQ"
+        ],
+        "correct": 1,
+        "explanation": "Tail drop enche a fila e varios TCP entram em slow start ao mesmo tempo. WRED comeca a descartar cedo nos fluxos menos prioritarios. Nao se aplica a voz.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual e a diferenca fundamental entre um tunel GRE puro e GRE over IPsec?",
+        "options": [
+          "GRE puro cifra com AES",
+          "GRE encapsula qualquer protocolo mas vai em claro; IPsec acrescenta confidencialidade/integridade, normalmente em modo tunnel",
+          "IPsec nao pode transportar OSPF",
+          "GRE exige certificados sempre"
+        ],
+        "correct": 1,
+        "explanation": "GRE sozinho: protocolo 47, sem crypto. IPsec (ESP proto 50) cifra. Para IGP sobre VPN usa-se GRE/IPsec, VTI, FlexVPN ou DMVPN. Baixar MTU/MSS.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Que vantagem principal o IKEv2 tem sobre o IKEv1?",
+        "options": [
+          "IKEv2 exige mais mensagens",
+          "Menos round-trips, NAT traversal nativo, EAP, MOBIKE e melhor rekey; o IKEv1 e o modelo legado",
+          "IKEv2 nao autentica",
+          "IKEv1 suporta EAP e o IKEv2 nao"
+        ],
+        "correct": 1,
+        "explanation": "IKEv2 usa 4 mensagens contra 9 do main mode. FlexVPN da Cisco assenta em IKEv2.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que distingue GETVPN das VPNs de tunel tipo DMVPN?",
+        "options": [
+          "GETVPN usa GRE obrigatorio",
+          "GETVPN cifra trafego nativo (sem overlay de tunel) com chaves de grupo GDOI; preserva o cabecalho IP original",
+          "GETVPN nao usa IPsec",
+          "GETVPN e so para Internet publica sem IGP"
+        ],
+        "correct": 1,
+        "explanation": "Key server distribui KEKs/TEKs via GDOI. Os GMs cifram ESP mas mantem src/dst originais. Ideal em WAN privada; nao atravessa NAT como DMVPN.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "O que e MACsec (IEEE 802.1AE)?",
+        "options": [
+          "Cifra de camada 3 ponta-a-ponta",
+          "Cifra hop-by-hop da camada 2 entre portas, com chaves via MKA (802.1X)",
+          "Um tipo de GRE",
+          "Substitui BGP"
+        ],
+        "correct": 1,
+        "explanation": "Util em links entre switches do datacenter/campus para confidencialidade no cabo. Nao substitui IPsec WAN.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que e MAB (MAC Authentication Bypass) no acesso 802.1X?",
+        "options": [
+          "Um tipo de EtherChannel",
+          "Fallback que autentica o dispositivo pelo MAC via RADIUS quando nao ha supplicant 802.1X",
+          "Cifra MACsec obrigatoria",
+          "Um protocolo de routing"
+        ],
+        "correct": 1,
+        "explanation": "A ordem tipica: 802.1X, depois MAB, depois WebAuth. MAB e fraco (MAC spoofable); usa-se com profiling e dACL/SGT.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que e ERSPAN relativamente a SPAN/RSPAN?",
+        "options": [
+          "E SPAN so local",
+          "Encapsula trafego monitorizado em GRE/IP para um analisador em outra rede L3, atravessando routers",
+          "E exclusivo de hubs",
+          "Substitui NetFlow"
+        ],
+        "correct": 1,
+        "explanation": "SPAN: mesma switch. RSPAN: VLAN dedicada atraves de trunks L2. ERSPAN: GRE/IP, chega a um destination em outro subnet.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que e model-driven telemetry em IOS-XE/NX-OS?",
+        "options": [
+          "Polling SNMP a cada 5 minutos apenas",
+          "Streaming de dados YANG (periodic ou on-change) via gRPC/gNMI/NETCONF para colectores, em vez de pull SNMP",
+          "Um substitute de syslog em ASCII",
+          "Somente CLI accounting"
+        ],
+        "correct": 1,
+        "explanation": "Subscricoes apontam a paths YANG. Cadencia de segundos e notificacoes on-change dao visibilidade que o SNMP nao escala.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que e YANG no contexto de programabilidade de rede?",
+        "options": [
+          "Um protocolo de transporte",
+          "Uma linguagem de modelacao de dados (config e estado) usada por NETCONF/RESTCONF/gNMI",
+          "Um cipher IPsec",
+          "Um tipo de LSA OSPF"
+        ],
+        "correct": 1,
+        "explanation": "Modulos Cisco-IOS-XE-native e openconfig-interfaces descrevem folhas e tipos. O encoding pode ser XML ou JSON. Sem YANG, NETCONF nao tem schema.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual contraste pratico entre NETCONF e RESTCONF?",
+        "options": [
+          "RESTCONF usa so SSH e XML datastore lock sempre",
+          "NETCONF corre sobre SSH com datastores (running/candidate) e RPC XML; RESTCONF mapeia YANG para HTTP/HTTPS com JSON ou XML",
+          "NETCONF e HTTP nativo",
+          "RESTCONF nao autentica"
+        ],
+        "correct": 1,
+        "explanation": "NETCONF: edit-config, locks, candidate+commit. RESTCONF: GET /restconf/data/... mais simples para apps web. gNMI e a terceira via.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "No LISP, o que sao EID e RLOC?",
+        "options": [
+          "O mesmo endereco WAN",
+          "EID e a identidade do host/prefixo; RLOC e a localizacao (loopback do xTR) usada para encapsular no underlay",
+          "RLOC e a VLAN nativa",
+          "EID substitui o DNS"
+        ],
+        "correct": 1,
+        "explanation": "Map-resolver/map-server resolvem EID para RLOC. xTR encapsula. E o plano de controlo de SD-Access com VXLAN no data plane.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "O que identifica um segmento VXLAN no data plane?",
+        "options": [
+          "O VLAN ID de 12 bits apenas",
+          "O VNI (VXLAN Network Identifier) de 24 bits no cabecalho VXLAN, UDP destino 4789",
+          "O DSCP EF",
+          "O Router ID OSPF"
+        ],
+        "correct": 1,
+        "explanation": "24 bits ~ 16 milhoes de segmentos (face a 4094 VLANs). VTEPs encapsulam Ethernet em UDP/IP. EVPN distribui mapeamentos MAC/IP para VTEP.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que e anycast gateway num fabric VXLAN/EVPN ou SD-Access?",
+        "options": [
+          "Um HSRP classico com dois IPs diferentes",
+          "O mesmo IP e MAC de SVI configurados em todos os leafs, para o default gateway estar sempre no leaf local",
+          "Um servidor DNS anycast so",
+          "Um RR BGP"
+        ],
+        "correct": 1,
+        "explanation": "O host ARP o gateway e o leaf local responde. Evita trombone routing via um HSRP central. O underlay assegura reachability entre leafs.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Qual diferenca de temporizadores e DR entre OSPF point-to-point e broadcast?",
+        "options": [
+          "Ambos elegem DR e Hello 30",
+          "P2P: sem DR/BDR, Hello 10 s, adjacencia FULL directa; broadcast: elege DR/BDR, Hello 10 s, FULL so com DR/BDR",
+          "Broadcast nao envia Hello",
+          "P2P usa Hello 30 s"
+        ],
+        "correct": 1,
+        "explanation": "ip ospf network point-to-point em Ethernet p2p (links /31) evita eleicao inutil. Mismatch de network type impede adjacencia.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Para que servem BGP communities?",
+        "options": [
+          "Substituir o AS-PATH",
+          "Tags opcionais que viajam com a rota para aplicar politica (local-pref, filter, no-export) noutro ponto do AS ou no peering",
+          "Cifrar UPDATEs",
+          "Eleger o RR"
+        ],
+        "correct": 1,
+        "explanation": "Well-known: no-export, no-advertise, internet, local-AS. Route-maps set/match community. E o instrumento de politica de transito e de cliente.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que e Loop-Free Alternate (LFA) em IP FRR?",
+        "options": [
+          "Um tipo de LSA 5",
+          "Um next-hop de backup pre-computado que nao reintroduce o prefixo no router protegido, permitindo convergir em menos de 50 ms",
+          "Uma community BGP",
+          "Um modo STP"
+        ],
+        "correct": 1,
+        "explanation": "O IGP calcula um vizinho cujo caminho para o prefixo nao passa pelo primary. Remote LFA/TI-LFA cobre os casos sem LFA local. BFD detecta a falha.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Como se organizam Private VLANs (PVLAN)?",
+        "options": [
+          "Uma VLAN por MAC apenas",
+          "Uma VLAN primaria e VLANs secundarias isolated (so com o promiscuous) ou community (falam entre si e com o promiscuous)",
+          "Todas as portas sao promiscuous",
+          "PVLAN substitui VXLAN"
+        ],
+        "correct": 1,
+        "explanation": "O porto promiscuous (gateway/firewall) ve todos. Isolated nao falam entre hosts. Community isola grupos. Util em alojamento partilhado.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que caracteriza um AP em modo FlexConnect vs Local mode?",
+        "options": [
+          "FlexConnect obriga todo o trafego a ir ao WLC",
+          "Em FlexConnect o AP pode comutar SSID localmente e sobreviver se o CAPWAP ao WLC cair; Local mode faz central switching no WLC",
+          "Local mode nao usa CAPWAP",
+          "FlexConnect nao autentica"
+        ],
+        "correct": 1,
+        "explanation": "Filiais com WAN fraca usam FlexConnect: DHCP/data locais. Local/centrally switched e o campus. O WLC continua a gerir RRM quando o tunel esta up.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Quais funcoes principais o RRM executa num WLC?",
+        "options": [
+          "So cifra WPA3",
+          "TPC (potencia), DCA (escolha de canal) e coverage hole detection, ajustando a RF do grupo de APs",
+          "Atribui IPs DHCP",
+          "Substitui o ISE"
+        ],
+        "correct": 1,
+        "explanation": "O WLC mede neighbours (NDP), evita co-channel interference, sobe/baixa dBm e cobre buracos. Sem RRM, canais e potencia ficam estaticos.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que faz IGMP snooping num switch?",
+        "options": [
+          "Bloqueia todo o multicast",
+          "Observa joins/leaves IGMP e encaminha multicast IP so para as portas com recetores (e o router/querier)",
+          "Converte multicast em GRE",
+          "Activa PIM-DM em todas as portas"
+        ],
+        "correct": 1,
+        "explanation": "Sem snooping o switch trata multicast como broadcast na VLAN. Com snooping mais querier poupa-se uplink. MLD snooping e o equivalente IPv6.",
+        "difficulty": "Médio"
       }
     ],
     "en": [
@@ -5966,6 +8294,414 @@ window.CRICKET_DB = {
         "correct": 1,
         "explanation": "WRED is weighted early drop; it protects TCP flows.",
         "difficulty": "Hard"
+      },
+      {
+        "question": "Which OSPFv2 LSA describes a router's links inside the area?",
+        "options": [
+          "Type 5 AS-external",
+          "Type 1 Router LSA",
+          "Type 4 ASBR-summary",
+          "Type 3 Network-summary"
+        ],
+        "correct": 1,
+        "explanation": "Type 1 is originated by every router and flooded only in the area. Type 2 is from the DR, Type 3 from the ABR, Type 5 from the ASBR.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is the difference between an OSPF stub area and an NSSA?",
+        "options": [
+          "None",
+          "Stub blocks Type 5 LSAs and the ABR injects a default; NSSA allows Type 7 (externals from the area) which the ABR translates to Type 5",
+          "Stub allows native BGP",
+          "NSSA has no ABR"
+        ],
+        "correct": 1,
+        "explanation": "Totally stubby also blocks Type 3 except a default. Choose NSSA when an ASBR (redistribution) sits inside the edge area.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "What is the initial Cisco BGP Best Path order after next-hop reachability?",
+        "options": [
+          "MED, then Weight",
+          "Highest Weight; then highest Local Preference; locally originated; shortest AS-PATH; origin; lowest MED",
+          "Always the peer with the highest IP",
+          "Only AS-PATH matters"
+        ],
+        "correct": 1,
+        "explanation": "Weight (local to the router) is Cisco's first tie-breaker. Local Pref (default 100) is the first attribute advertised in iBGP.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "Which BGP attribute is not advertised to other routers?",
+        "options": [
+          "Local Preference",
+          "Weight",
+          "AS-PATH",
+          "MED"
+        ],
+        "correct": 1,
+        "explanation": "Weight is local to the Cisco box and never leaves in an UPDATE. Local Pref travels in iBGP. AS-PATH and MED travel in eBGP.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "In an MPLS L3VPN, what are RD and RT for?",
+        "options": [
+          "They are the same community value",
+          "RD makes the prefix unique in VPNv4 BGP; RT (extended community) controls import/export among VRFs",
+          "RD encrypts the payload",
+          "RT replaces the IGP"
+        ],
+        "correct": 1,
+        "explanation": "The same IPv4 in two customers needs different RDs. RTs define import/export policy. A VRF can import several RTs (extranet).",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "How does VRF-lite differ from MPLS VPN?",
+        "options": [
+          "It always requires LDP",
+          "It separates forwarding tables on the same box without MPLS labels; inter-box links carry one subinterface/VLAN per VRF",
+          "It forbids overlapping IPs",
+          "It works only with BGP"
+        ],
+        "correct": 1,
+        "explanation": "VRF-lite is campus/WAN multi-VRF: vrf definition, ip vrf forwarding on the SVI, per-VRF routing, no MPLS core. Overlapping IPs are allowed.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "In EIGRP, what is a Feasible Successor?",
+        "options": [
+          "Always the route in the FIB",
+          "A backup route that passes the Feasibility Condition (neighbor AD < successor FD) and can be installed without a DUAL recomputation",
+          "A neighbor in INIT",
+          "A route with AD 255"
+        ],
+        "correct": 1,
+        "explanation": "Successor = the path in use (lowest FD). Without an FS, a failure goes active and queries. Variance allows unequal-cost load balancing with FS.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "What does the EIGRP variance command do?",
+        "options": [
+          "It changes K-values",
+          "It allows unequal-cost load balancing among the successor and feasible successors whose FD fits in FD_min × variance",
+          "It disables split horizon",
+          "It changes the AS"
+        ],
+        "correct": 1,
+        "explanation": "Variance 1 (default) is equal-cost only. Variance 2 installs FS routes with metric up to 2× the successor. K-values must match on neighbors.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is the main advantage of MST (802.1s) over Rapid PVST+?",
+        "options": [
+          "MST always runs one tree per VLAN",
+          "MST maps many VLANs onto a few instances, cutting BPDUs and CPU when hundreds of VLANs exist",
+          "MST has no root",
+          "MST only works with hubs"
+        ],
+        "correct": 1,
+        "explanation": "Rapid PVST+ = one instance per VLAN. MST groups VLANs into IST/MSTI with a region (name, revision, map). The digest must match in the region.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What does UDLD detect?",
+        "options": [
+          "Always STP loops on copper",
+          "A unidirectional link (TX on one side with no RX on the other) that STP may miss, creating a forwarding loop",
+          "OSPF Hello failures only",
+          "CRC on jumbo frames"
+        ],
+        "correct": 1,
+        "explanation": "UDLD sends frames and expects the peer to echo them. Normal mode syslogs; aggressive errdisables. It complements STP Loop Guard. Typical on fiber.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What does STP Loop Guard do?",
+        "options": [
+          "The same as BPDU Guard",
+          "It prevents a non-designated port from becoming designated forwarding if BPDUs stop, avoiding a unidirectional loop",
+          "It forces PortFast",
+          "It elects the root"
+        ],
+        "correct": 1,
+        "explanation": "If BPDUs stop, classic STP assumes the designated bridge is gone and may forward. Loop Guard puts the port loop-inconsistent until BPDUs return.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "How do SSO and NSF relate on a Cisco chassis with dual RP?",
+        "options": [
+          "NSF saves the config; SSO does not",
+          "SSO replicates control-plane state to the standby RP; NSF keeps CEF forwarding during switchover with graceful restart",
+          "They are the same NAT feature",
+          "SSO disables the FIB"
+        ],
+        "correct": 1,
+        "explanation": "SSO + NSF/GR allow supervisor failover in seconds without dropping adjacencies if the peer understands GR. ISSU builds on this.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "What is LLQ (Low Latency Queuing) in a QoS policy-map?",
+        "options": [
+          "WRED on every class",
+          "A priority queue (usually EF/voice) served first, combined with CBWFQ for the other classes",
+          "Default-class policing only",
+          "A type of STP"
+        ],
+        "correct": 1,
+        "explanation": "priority implies a policer so voice cannot starve the link. Other classes use bandwidth (CBWFQ). Do not put bulk traffic in priority.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "DSCP EF 46 as a 6-bit binary value is?",
+        "options": [
+          "001010",
+          "101110",
+          "111000",
+          "000000"
+        ],
+        "correct": 1,
+        "explanation": "EF = 101110 = 46 decimal. Voice 802.1p CoS is usually 5, mapped to EF at the edge.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is WRED (Weighted Random Early Detection) for?",
+        "options": [
+          "Always increasing the TCP window",
+          "Dropping packets probabilistically before the queue fills, by precedence/DSCP, avoiding synchronized TCP tail drops",
+          "Encrypting the queue",
+          "Replacing LLQ"
+        ],
+        "correct": 1,
+        "explanation": "Tail drop fills the queue and many TCPs hit slow start together. WRED starts dropping earlier on lower-priority flows. Do not apply it to voice.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is the fundamental difference between plain GRE and GRE over IPsec?",
+        "options": [
+          "Plain GRE encrypts with AES",
+          "GRE encapsulates any protocol but is clear text; IPsec adds confidentiality/integrity, usually in tunnel mode",
+          "IPsec cannot carry OSPF",
+          "GRE always requires certificates"
+        ],
+        "correct": 1,
+        "explanation": "GRE alone is protocol 47 with no crypto. IPsec (ESP proto 50) encrypts. For IGP over VPN use GRE/IPsec, VTI, FlexVPN or DMVPN. Lower MTU/MSS.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is the main advantage of IKEv2 over IKEv1?",
+        "options": [
+          "IKEv2 needs more messages",
+          "Fewer round-trips, native NAT traversal, EAP, MOBIKE, and better rekey; IKEv1 is the legacy model",
+          "IKEv2 does not authenticate",
+          "IKEv1 supports EAP and IKEv2 does not"
+        ],
+        "correct": 1,
+        "explanation": "IKEv2 uses 4 messages versus 9 in main mode. Cisco FlexVPN is built on IKEv2.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What distinguishes GETVPN from tunnel VPNs such as DMVPN?",
+        "options": [
+          "GETVPN requires GRE",
+          "GETVPN encrypts native traffic (no tunnel overlay) with GDOI group keys; it preserves the original IP header",
+          "GETVPN does not use IPsec",
+          "GETVPN is only for public Internet without an IGP"
+        ],
+        "correct": 1,
+        "explanation": "A key server distributes KEKs/TEKs via GDOI. GMs encapsulate ESP but keep original src/dst. Ideal on a private WAN; it does not traverse NAT like DMVPN.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "What is MACsec (IEEE 802.1AE)?",
+        "options": [
+          "End-to-end Layer 3 encryption",
+          "Hop-by-hop Layer 2 encryption between ports, with keys via MKA (802.1X)",
+          "A type of GRE",
+          "A BGP replacement"
+        ],
+        "correct": 1,
+        "explanation": "Useful on datacenter/campus switch links for confidentiality on the wire. It does not replace WAN IPsec.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is MAB (MAC Authentication Bypass) in 802.1X access?",
+        "options": [
+          "A type of EtherChannel",
+          "A fallback that authenticates the device by MAC via RADIUS when no 802.1X supplicant is present",
+          "Mandatory MACsec encryption",
+          "A routing protocol"
+        ],
+        "correct": 1,
+        "explanation": "Typical order: 802.1X, then MAB, then WebAuth. MAB is weak (MACs are spoofable); combine it with profiling and dACL/SGT.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is ERSPAN compared with SPAN/RSPAN?",
+        "options": [
+          "It is local SPAN only",
+          "It encapsulates monitored traffic in GRE/IP toward an analyzer on another L3 network, crossing routers",
+          "It is hub-only",
+          "It replaces NetFlow"
+        ],
+        "correct": 1,
+        "explanation": "SPAN: same switch. RSPAN: a dedicated VLAN across L2 trunks. ERSPAN: GRE/IP, reaches a destination in another subnet.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is model-driven telemetry on IOS-XE/NX-OS?",
+        "options": [
+          "SNMP polling every 5 minutes only",
+          "Streaming of YANG data (periodic or on-change) via gRPC/gNMI/NETCONF to collectors, instead of SNMP pull",
+          "An ASCII syslog substitute",
+          "CLI accounting only"
+        ],
+        "correct": 1,
+        "explanation": "Subscriptions target YANG paths. Second-level cadence and on-change notifications give visibility SNMP cannot scale.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is YANG in network programmability?",
+        "options": [
+          "A transport protocol",
+          "A data modeling language (config and state) used by NETCONF/RESTCONF/gNMI",
+          "An IPsec cipher",
+          "A type of OSPF LSA"
+        ],
+        "correct": 1,
+        "explanation": "Modules such as Cisco-IOS-XE-native and openconfig-interfaces describe leaves and types. Encoding may be XML or JSON. Without YANG, NETCONF has no schema.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is a practical contrast between NETCONF and RESTCONF?",
+        "options": [
+          "RESTCONF uses only SSH and always XML datastore lock",
+          "NETCONF runs over SSH with datastores (running/candidate) and XML RPCs; RESTCONF maps YANG to HTTP/HTTPS with JSON or XML",
+          "NETCONF is native HTTP",
+          "RESTCONF does not authenticate"
+        ],
+        "correct": 1,
+        "explanation": "NETCONF: edit-config, locks, candidate+commit. RESTCONF: GET /restconf/data/... is simpler for web apps. gNMI is the third path.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "In LISP, what are EID and RLOC?",
+        "options": [
+          "The same WAN address",
+          "EID is the host/prefix identity; RLOC is the location (xTR loopback) used to encapsulate on the underlay",
+          "RLOC is the native VLAN",
+          "EID replaces DNS"
+        ],
+        "correct": 1,
+        "explanation": "Map-resolver/map-server resolve EID to RLOC. xTRs encapsulate. This is the SD-Access control plane with VXLAN as the data plane.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "What identifies a VXLAN segment in the data plane?",
+        "options": [
+          "The 12-bit VLAN ID only",
+          "The 24-bit VNI (VXLAN Network Identifier) in the VXLAN header, destination UDP 4789",
+          "DSCP EF",
+          "The OSPF Router ID"
+        ],
+        "correct": 1,
+        "explanation": "24 bits ~ 16 million segments (versus 4094 VLANs). VTEPs encapsulate Ethernet in UDP/IP. EVPN distributes MAC/IP to VTEP mappings.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is an anycast gateway in a VXLAN/EVPN or SD-Access fabric?",
+        "options": [
+          "Classic HSRP with two different IPs",
+          "The same SVI IP and MAC configured on every leaf, so the default gateway is always on the local leaf",
+          "An anycast DNS server only",
+          "A BGP RR"
+        ],
+        "correct": 1,
+        "explanation": "The host ARPs the gateway and the local leaf answers. That avoids trombone routing through a central HSRP pair. The underlay provides leaf-to-leaf reachability.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "What timer and DR difference exists between OSPF point-to-point and broadcast?",
+        "options": [
+          "Both elect a DR and use Hello 30",
+          "P2P: no DR/BDR, Hello 10 s, direct FULL adjacency; broadcast: elects DR/BDR, Hello 10 s, FULL only with DR/BDR",
+          "Broadcast sends no Hellos",
+          "P2P uses Hello 30 s"
+        ],
+        "correct": 1,
+        "explanation": "ip ospf network point-to-point on Ethernet p2p (/31 links) avoids a useless election. A network-type mismatch blocks adjacency.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What are BGP communities used for?",
+        "options": [
+          "Replacing AS-PATH",
+          "Optional tags that travel with the route so policy (local-pref, filter, no-export) can be applied elsewhere in the AS or at a peering",
+          "Encrypting UPDATEs",
+          "Electing the RR"
+        ],
+        "correct": 1,
+        "explanation": "Well-known: no-export, no-advertise, internet, local-AS. Route-maps set/match community. This is the transit and customer policy tool.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is a Loop-Free Alternate (LFA) in IP FRR?",
+        "options": [
+          "A Type 5 LSA",
+          "A precomputed backup next hop that does not reconverge the prefix through the protected router, allowing sub-50 ms repair",
+          "A BGP community",
+          "An STP mode"
+        ],
+        "correct": 1,
+        "explanation": "The IGP finds a neighbor whose path to the prefix does not go through the primary. Remote LFA/TI-LFA covers cases with no local LFA. BFD detects the failure.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "How are Private VLANs (PVLAN) organized?",
+        "options": [
+          "One VLAN per MAC only",
+          "One primary VLAN plus secondary isolated VLANs (talk only to promiscuous) or community VLANs (talk among themselves and to promiscuous)",
+          "Every port is promiscuous",
+          "PVLAN replaces VXLAN"
+        ],
+        "correct": 1,
+        "explanation": "The promiscuous port (gateway/firewall) sees everyone. Isolated hosts do not talk to each other. Community groups hosts. Useful in shared hosting.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What characterizes a FlexConnect AP versus Local mode?",
+        "options": [
+          "FlexConnect forces all traffic to the WLC",
+          "In FlexConnect the AP can switch an SSID locally and survive if CAPWAP to the WLC dies; Local mode uses central switching at the WLC",
+          "Local mode does not use CAPWAP",
+          "FlexConnect does not authenticate"
+        ],
+        "correct": 1,
+        "explanation": "Branches with a weak WAN use FlexConnect: local DHCP/data. Local/centrally switched is the campus model. The WLC still manages RRM while the tunnel is up.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Which main functions does RRM run on a WLC?",
+        "options": [
+          "It only encrypts WPA3",
+          "TPC (power), DCA (channel selection), and coverage hole detection, tuning RF across the AP group",
+          "It assigns DHCP addresses",
+          "It replaces ISE"
+        ],
+        "correct": 1,
+        "explanation": "The WLC measures neighbors (NDP), avoids co-channel interference, raises/lowers dBm, and covers holes. Without RRM, channels and power stay static.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What does IGMP snooping do on a switch?",
+        "options": [
+          "It blocks all multicast",
+          "It watches IGMP joins/leaves and forwards IP multicast only to ports with receivers (and the router/querier)",
+          "It converts multicast to GRE",
+          "It enables PIM-DM on every port"
+        ],
+        "correct": 1,
+        "explanation": "Without snooping the switch treats multicast as VLAN broadcast. With snooping plus a querier you save the uplink. MLD snooping is the IPv6 equivalent.",
+        "difficulty": "Medium"
       }
     ]
   }

@@ -982,5 +982,413 @@
     "correct": 1,
     "explanation": "Access ports esperam frames untagged da VLAN atribuída.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a distância administrativa predefinida do OSPF no Cisco IOS?",
+    "options": [
+      "90",
+      "110",
+      "120",
+      "20"
+    ],
+    "correct": 1,
+    "explanation": "OSPF interno tem AD 110. EIGRP interno é 90, RIP 120, eBGP 20, estática 1 e connected 0. O IOS prefere a menor AD quando o prefixo é igual.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é uma rota estática flutuante?",
+    "options": [
+      "Uma rota com AD menor que a primária para ganhar sempre",
+      "Uma rota de backup com AD maior que a primária, usada só se a primária desaparecer",
+      "Uma rota OSPF na tabela",
+      "Um default route obrigatório"
+    ],
+    "correct": 1,
+    "explanation": "Configura-se o mesmo prefixo com next-hop de backup e AD elevado (ex.: 250). Enquanto a rota primária existir, a flutuante fica fora da RIB.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Como o router escolhe entre várias rotas para o mesmo destino?",
+    "options": [
+      "Sempre a rota mais antiga",
+      "A correspondência de prefixo mais longa; se empatar, menor AD; se empatar, melhor métrica",
+      "Sempre OSPF",
+      "A rota com maior máscara perde"
+    ],
+    "correct": 1,
+    "explanation": "O lookup IP usa longest-prefix match. Só depois entra AD e métrica. Uma /24 ganha a uma /16 mesmo que a /16 venha de um protocolo com melhor AD.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Numa rede OSPF multiacesso Ethernet, quem é eleito DR?",
+    "options": [
+      "O router com o Router ID mais baixo sempre",
+      "O de maior prioridade OSPF; em empate, o de maior Router ID",
+      "O primeiro a arrancar nunca perde",
+      "O que tiver mais Loopbacks"
+    ],
+    "correct": 1,
+    "explanation": "A prioridade (0–255, omissão 1) decide; prioridade 0 impede DR/BDR. Empate usa o Router ID mais alto. O DR origina o LSA Type 2.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Quais são os temporizadores Hello e Dead predefinidos do OSPF em Ethernet broadcast?",
+    "options": [
+      "Hello 30 s, Dead 120 s",
+      "Hello 10 s, Dead 40 s",
+      "Hello 1 s, Dead 3 s",
+      "Hello 60 s, Dead 180 s"
+    ],
+    "correct": 1,
+    "explanation": "Em broadcast e ponto-a-ponto o Hello é 10 s e o Dead é 4×Hello (40 s). Em NBMA o Hello predefinido é 30 s. Os vizinhos têm de concordar nestes valores.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Como se calcula o custo OSPF predefinido no IOS clássico?",
+    "options": [
+      "Custo = bandwidth em kb/s",
+      "Custo = reference-bandwidth / bandwidth da interface (omissão 100 Mb/s)",
+      "Custo = delay EIGRP",
+      "Custo = hop count"
+    ],
+    "correct": 1,
+    "explanation": "Com reference-bandwidth 100 Mb/s, FastEthernet custa 1. Em redes modernas sobe-se auto-cost reference-bandwidth para distinguir 1/10/40 Gb/s.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual wildcard mask corresponde à sub-rede 172.16.8.0/22 num network statement OSPF?",
+    "options": [
+      "0.0.0.255",
+      "0.0.3.255",
+      "255.255.252.0",
+      "0.0.7.255"
+    ],
+    "correct": 1,
+    "explanation": "Máscara /22 = 255.255.252.0; a wildcard é o inverso bit a bit: 0.0.3.255. 0.0.0.255 é /24 e 0.0.7.255 é /21.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual é a ordem de escolha do OSPF Router ID se router-id não estiver configurado?",
+    "options": [
+      "MAC da porta Gi0/0",
+      "Router-id manual; senão o IPv4 mais alto de uma Loopback up; senão o IPv4 mais alto de uma interface física up",
+      "Sempre 1.1.1.1",
+      "O endereço da management VLAN"
+    ],
+    "correct": 1,
+    "explanation": "O RID é um IPv4 de 32 bits. Configurar router-id é a prática recomendada. Mudar o RID exige clear ip ospf process.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Como é eleita a root bridge no STP/RSTP?",
+    "options": [
+      "Maior prioridade, depois maior MAC",
+      "Menor Bridge ID: prioridade (omissão 32768) + MAC; o valor mais baixo ganha",
+      "O switch com mais VLANs",
+      "O primeiro a enviar BPDU"
+    ],
+    "correct": 1,
+    "explanation": "Priority configurável em passos de 4096. spanning-tree vlan X root primary ajusta a prioridade para este switch ganhar.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual papel extra o RSTP (802.1w) introduz face ao STP clássico (802.1D)?",
+    "options": [
+      "Apenas root e designated",
+      "Alternate e backup, papéis de descarte prontos a transitar sem timers de 30–50 s",
+      "DR e BDR",
+      "Listen e learn como papéis finais"
+    ],
+    "correct": 1,
+    "explanation": "RSTP usa root, designated, alternate e backup. A convergência é em segundos (proposal/agreement), não nos 50 s do 802.1D.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que faz Root Guard numa porta?",
+    "options": [
+      "Desliga PortFast",
+      "Coloca a porta em root-inconsistent se chegar um BPDU superior, impedindo que um switch a jusante se torne root",
+      "Força a porta a ser root port",
+      "Activa Loop Guard"
+    ],
+    "correct": 1,
+    "explanation": "Usa-se em portas de edge para a core onde um switch de utilizador não deve ganhar a eleição. É complementar ao BPDU Guard.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Como se desactiva a negociação DTP num trunk Cisco?",
+    "options": [
+      "switchport mode access",
+      "switchport nonegotiate (com modo trunk ou access estático)",
+      "no spanning-tree",
+      "shutdown vlan 1"
+    ],
+    "correct": 1,
+    "explanation": "DTP (dynamic auto/desirable) pode formar trunks indesejados. A prática é modo trunk ou access estático mais nonegotiate.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que acontece se dois extremos de um trunk 802.1Q tiverem native VLANs diferentes?",
+    "options": [
+      "Nada; o tráfego tagged resolve tudo",
+      "Tráfego untagged é interpretado em VLANs distintas e o CDP reporta native VLAN mismatch",
+      "O trunk cai imediatamente sempre",
+      "O STP desliga-se"
+    ],
+    "correct": 1,
+    "explanation": "Frames da native VLAN vão sem tag. Se um lado pensa VLAN 1 e o outro VLAN 99, o untagged cruza VLANs.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual comando limita as VLANs permitidas num trunk?",
+    "options": [
+      "switchport access vlan 10",
+      "switchport trunk allowed vlan 10,20,30",
+      "vlan dot1q tag native",
+      "spanning-tree vlan 10"
+    ],
+    "correct": 1,
+    "explanation": "Por omissão um trunk permite 1-4094. Restringir reduz flooding e risco. Use allowed vlan add/remove para ajustar.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "O que é uma SVI (Switch Virtual Interface) num switch L3?",
+    "options": [
+      "Uma subinterface de router-on-a-stick apenas",
+      "A interface vlan X, um endpoint L3 interno para a VLAN, usada em encaminhamento inter-VLAN no switch",
+      "Um Port-channel",
+      "Um SFP"
+    ],
+    "correct": 1,
+    "explanation": "interface vlan 10 com IP, mais ip routing, permite que o switch encaminhe entre VLANs sem router-on-a-stick.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Em DHCP snooping, que portas devem ser trusted?",
+    "options": [
+      "Todas as portas de acesso de PCs",
+      "Portas rumo a servidores DHCP legitimos e uplinks/trunks para esses servidores",
+      "Nenhuma; o snooping nao usa trust",
+      "Apenas portas com PortFast"
+    ],
+    "correct": 1,
+    "explanation": "ip dhcp snooping vlan X; nas portas de servidor/uplink: ip dhcp snooping trust. Portas untrusted bloqueiam DHCPOFFER/ACK falsos.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O Dynamic ARP Inspection (DAI) valida ARP com base em que?",
+    "options": [
+      "Na tabela OSPF",
+      "Na binding table do DHCP snooping (IP-MAC-porta-VLAN)",
+      "No DNS",
+      "Na native VLAN"
+    ],
+    "correct": 1,
+    "explanation": "DAI intercepta ARP em portas untrusted e compara IP/MAC com a base do snooping. ARP spoofing e descartado.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "No 802.1X, qual e o papel do switch de acesso?",
+    "options": [
+      "Supplicant",
+      "Authenticator, que rele EAPOL e envia RADIUS ao servidor de autenticacao (ex.: ISE)",
+      "Servidor RADIUS em si",
+      "Somente DHCP relay"
+    ],
+    "correct": 1,
+    "explanation": "O PC e o supplicant, o switch o authenticator e o ISE/NPS o authentication server. Ate autenticar, a porta pode ficar restrita.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual afirmacao distingue VRRP de HSRP?",
+    "options": [
+      "VRRP e so IPv6",
+      "VRRP e padrao IETF; HSRP e proprietario Cisco; ambos fornecem gateway virtual",
+      "HSRP nao tem prioridade",
+      "VRRP nao elege master"
+    ],
+    "correct": 1,
+    "explanation": "HSRP usa MAC 0000.0c07.acXX; VRRP usa 0000.5e00.01XX e pode partilhar o IP real do master como virtual.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Como um host IPv6 obtem endereco com SLAAC?",
+    "options": [
+      "So com DHCPv4",
+      "Recebe RA (ICMPv6) com prefixo; gera o Interface ID e faz DAD via Neighbor Solicitation",
+      "O router atribui a porta TCP",
+      "Usa ARP classico"
+    ],
+    "correct": 1,
+    "explanation": "O RA traz prefixo, MTU e lifetime. O host monta o GUA, testa DAD e pode ainda usar DHCPv6 consoante os flags M/O do RA.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No EUI-64, o que se faz ao MAC de 48 bits para formar o Interface ID?",
+    "options": [
+      "Copia-se sem alteracao",
+      "Insere-se FFFE no meio e inverte-se o bit U/L (7.o bit do primeiro octeto)",
+      "Acrescenta-se so ::1",
+      "Usa-se o IPv4 embebido"
+    ],
+    "correct": 1,
+    "explanation": "00:1A:2B:3C:4D:5E vira 021A:2BFF:FE3C:4D5E (bit U/L flipped). Muitos SO preferem privacy addresses aleatorios.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual prefixo identifica enderecos IPv6 Unique Local (ULA)?",
+    "options": [
+      "2000::/3",
+      "FC00::/7 (na pratica fd00::/8)",
+      "FE80::/10",
+      "FF00::/8"
+    ],
+    "correct": 1,
+    "explanation": "ULA (RFC 4193) e o analogo privado do RFC 1918. Global unicast e 2000::/3, link-local FE80::/10 e multicast FF00::/8.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Porque e que todas as areas OSPF devem ligar-se a area 0?",
+    "options": [
+      "Porque a area 0 tem prioridade STP",
+      "Para garantir um grafo sem loops de sumarizacao; o SPF inter-area passa sempre pelo backbone",
+      "A area 0 e a unica que corre Hello",
+      "Nao e obrigatorio em NSSA"
+    ],
+    "correct": 1,
+    "explanation": "ABRs ligam areas nao-backbone a area 0. Virtual-links existem para remendar topologias que quebram esta regra.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual e a distancia administrativa predefinida de uma rota estatica no IOS?",
+    "options": [
+      "0",
+      "1",
+      "90",
+      "110"
+    ],
+    "correct": 1,
+    "explanation": "Connected=0, static=1, eBGP=20, EIGRP=90, OSPF=110, RIP=120, iBGP=200. Uma estatica ganha a OSPF para o mesmo prefixo salvo floating AD.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "No syslog Cisco, que numero de severity corresponde a warnings?",
+    "options": [
+      "0",
+      "4",
+      "7",
+      "6"
+    ],
+    "correct": 1,
+    "explanation": "0 emergencies, 1 alerts, 2 critical, 3 errors, 4 warnings, 5 notifications, 6 informational, 7 debugging. logging trap 4 envia warning e pior.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que significa um servidor NTP stratum 1?",
+    "options": [
+      "Esta 15 saltos abaixo da UTC",
+      "Esta ligado a uma referencia de tempo autoritativa (GPS, relogio atomico) e serve os stratum 2",
+      "E um cliente Windows",
+      "Nao pode autenticar NTP"
+    ],
+    "correct": 1,
+    "explanation": "Stratum 0 e a fonte (GPS/atomico). Stratum 1 sincroniza com stratum 0. Stratum 16 significa nao sincronizado.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual diferenca chave entre TACACS+ e RADIUS no acesso a CLI?",
+    "options": [
+      "RADIUS usa TCP 49 e separa autorizacao",
+      "TACACS+ usa TCP 49 e separa autenticacao, autorizacao e accounting; RADIUS usa UDP e combina auth+authz",
+      "Nao ha diferenca",
+      "TACACS+ nao cifra a password"
+    ],
+    "correct": 1,
+    "explanation": "Para administracao de dispositivos Cisco prefere-se TACACS+ (autorizacao comando a comando). RADIUS e o padrao em 802.1X/Wi-Fi/VPN.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Em APIs REST usadas na automacao CCNA, o que descreve melhor JSON?",
+    "options": [
+      "Uma linguagem de programacao",
+      "Um formato textual de dados com objectos chave/valor, arrays e tipos simples, muito usado em RESTCONF e controladores",
+      "Um protocolo de transporte",
+      "Um tipo de ACL"
+    ],
+    "correct": 1,
+    "explanation": "JSON e o payload tipico de REST. Chaves entre aspas, objectos {}, listas []. XML continua em NETCONF classico.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual e a diferenca central entre rede tradicional e rede controller-based (SDN)?",
+    "options": [
+      "SDN elimina todos os switches",
+      "O plano de controlo e logicamente centralizado no controlador; os dispositivos ficam sobretudo no plano de dados, com APIs northbound/southbound",
+      "SDN nao usa IP",
+      "O controlador substitui o cabeamento"
+    ],
+    "correct": 1,
+    "explanation": "Southbound (NETCONF, OpenFlow, gNMI) programa os nos; northbound (REST) oferece intencao as aplicacoes. Catalyst Center e o exemplo campus no CCNA.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num fabric spine-leaf, como se ligam os switches?",
+    "options": [
+      "Em anel STP classico",
+      "Cada leaf liga-se a todos os spines; leafs nao se ligam entre si; ECMP no underlay",
+      "So um uplink por leaf",
+      "Spines ligam-se a servidores"
+    ],
+    "correct": 1,
+    "explanation": "Qualquer leaf alcanca qualquer outra em dois hops, sem loops L2 no underlay (L3). Servidores e APs ligam-se aos leafs.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual e a diferenca entre hipervisor Tipo 1 e Tipo 2?",
+    "options": [
+      "Nao existe Tipo 1",
+      "Tipo 1 (bare-metal, ex.: ESXi, Hyper-V, KVM) corre no hardware; Tipo 2 (hosted, ex.: VirtualBox) corre sobre um SO anfitriao",
+      "Tipo 2 e sempre mais rapido em datacenter",
+      "Tipo 1 so virtualiza redes"
+    ],
+    "correct": 1,
+    "explanation": "Tipo 1 e o padrao de datacenter/NFV (CSR, CAT8000v, ASAv). Tipo 2 serve labs no portatil.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual DSCP e o PHB Expedited Forwarding (EF), tipico de voz?",
+    "options": [
+      "CS0 / 0",
+      "EF / 46 (101110)",
+      "AF41 / 34",
+      "CS6 / 48"
+    ],
+    "correct": 1,
+    "explanation": "EF (DSCP 46) pede baixa latencia e jitter: LLQ na WAN. AF e four-class assurance; CS6/CS7 sao controlo de rede.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual e a diferenca entre policing e shaping em QoS?",
+    "options": [
+      "Sao sinonimos",
+      "Policing descarta ou re-marca trafego acima da taxa; shaping enfileira o excesso para suavizar bursts, introduzindo atraso",
+      "Shaping so existe em STP",
+      "Policing aumenta a largura de banda"
+    ],
+    "correct": 1,
+    "explanation": "Na borda da WAN o shaping evita drops no ISP. Policing protege o nucleo mas pode descartar. Ambos usam token bucket.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que e um ataque de overflow da CAM (MAC flooding) e como se mitiga?",
+    "options": [
+      "Envenenar DNS",
+      "Encher a tabela MAC com enderecos falsos para o switch floodar unicast como broadcast; mitiga-se com port-security",
+      "Desligar OSPF",
+      "Usar NAT"
+    ],
+    "correct": 1,
+    "explanation": "Ferramentas tipo macof saturam a TCAM. O switch passa a floodar frames unicast para todas as portas da VLAN. Port-security limita o abuso.",
+    "difficulty": "Médio"
   }
 ]
