@@ -607,8 +607,9 @@
             }
             
             currentQuiz = getRandomQuestions(cert, lang, 50);
+            const quizLen = currentQuiz.length;
             currentIndex = 0;
-            userAnswers = new Array(50).fill(null);
+            userAnswers = new Array(quizLen).fill(null);
             timeLeft = 45 * 60;
             isPaused = false;
             selectedOptionIndex = null;
@@ -643,13 +644,13 @@
             
             if (cert === 'ccst') {
                 badgeClass = 'bg-emerald-500/20 text-emerald-400';
-                badgeText = 'ENTRY • 50/' + liveCount(cert, lang);
+                badgeText = 'ENTRY • ' + quizLen + '/' + liveCount(cert, lang);
             } else if (cert === 'ccna') {
                 badgeClass = 'bg-blue-500/20 text-blue-400';
-                badgeText = 'ASSOCIATE • 50/' + liveCount(cert, lang);
+                badgeText = 'ASSOCIATE • ' + quizLen + '/' + liveCount(cert, lang);
             } else {
                 badgeClass = 'bg-violet-500/20 text-violet-400';
-                badgeText = 'PROFESSIONAL • 50/' + liveCount(cert, lang);
+                badgeText = 'PROFESSIONAL • ' + quizLen + '/' + liveCount(cert, lang);
             }
             
             badgeEl.className = `px-4 py-1.5 rounded-2xl text-sm font-bold flex items-center gap-x-2 ${badgeClass}`;
@@ -714,14 +715,14 @@
             
             document.getElementById('progress').innerHTML = `
                 <span class="font-mono">${currentIndex + 1}</span>
-                <span class="text-slate-500">/50</span>
+                <span class="text-slate-500">/${currentQuiz.length}</span>
             `;
             
             // Update next button text
             const nextBtn = document.getElementById('next-btn');
             if (nextBtn) {
                 nextBtn.innerHTML = `
-                    <span id="next-btn-text">${currentIndex === 49 ? 'Finalizar Quiz' : 'Responder e Avançar'}</span>
+                    <span id="next-btn-text">${currentIndex === currentQuiz.length - 1 ? 'Finalizar Quiz' : 'Responder e Avançar'}</span>
                     <i class="fa-solid fa-arrow-right ml-2"></i>
                 `;
             }
@@ -758,7 +759,7 @@
             
             // If feedback is showing, proceed from there
             if (!feedbackDiv.classList.contains('hidden')) {
-                proceedAfterFeedback(currentIndex === 49);
+                proceedAfterFeedback(currentIndex === currentQuiz.length - 1);
                 return;
             }
             
@@ -777,7 +778,7 @@
             const isCorrect = userAns === q.correct;
             
             // Show feedback
-            showFeedback(isCorrect, q.explanation, q.options[q.correct], currentIndex === 49);
+            showFeedback(isCorrect, q.explanation, q.options[q.correct], currentIndex === currentQuiz.length - 1);
         }
 
         function showFeedback(isCorrect, explanation, correctOptionText, isLast) {
@@ -923,7 +924,8 @@
                 if (userAnswers[i] === q.correct) correctCount++;
             });
             
-            const score = Math.round((correctCount / 50) * 100);
+            const totalQ = currentQuiz.length || 1;
+            const score = Math.round((correctCount / totalQ) * 100);
             const timeUsed = (45 * 60) - timeLeft;
             const minUsed = Math.floor(timeUsed / 60);
             const secUsed = timeUsed % 60;
@@ -955,7 +957,7 @@
                             <div class="text-xs text-slate-400">ACERTOS</div>
                         </div>
                         <div class="text-center">
-                            <div class="font-mono text-3xl font-bold text-white">${50 - correctCount}</div>
+                            <div class="font-mono text-3xl font-bold text-white">${totalQ - correctCount}</div>
                             <div class="text-xs text-slate-400">ERROS</div>
                         </div>
                         <div class="text-center">
@@ -1127,7 +1129,7 @@
                 if (e.key === 'ArrowRight' || e.key === 'Enter') {
                     const feedback = document.getElementById('feedback-div');
                     if (!feedback.classList.contains('hidden')) {
-                        proceedAfterFeedback(currentIndex === 49);
+                        proceedAfterFeedback(currentIndex === currentQuiz.length - 1);
                     } else {
                         nextQuestion();
                     }
