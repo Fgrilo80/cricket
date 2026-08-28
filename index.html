@@ -608,6 +608,7 @@
                 selectFirst: 'Seleciona uma opção antes de avançar.',
                 firstQ: 'Estás na primeira pergunta.',
                 goHome: 'Voltar ao início? O progresso atual perde-se.',
+                cancel: 'Cancelar',
                 timeUp: 'Tempo esgotado. O quiz vai ser finalizado.',
                 paused: 'Quiz Pausado', pausedHint: 'O cronómetro está parado.',
                 resume: 'Retomar', home: 'Início'
@@ -620,6 +621,7 @@
                 selectFirst: 'Pick an option before moving on.',
                 firstQ: 'You are on the first question.',
                 goHome: 'Go back home? Current progress will be lost.',
+                cancel: 'Cancel',
                 timeUp: 'Time is up. The quiz will be finished.',
                 paused: 'Quiz Paused', pausedHint: 'The timer is frozen.',
                 resume: 'Resume', home: 'Home'
@@ -1177,9 +1179,23 @@
         }
         
         function confirmGoHome() {
-            if (confirm(t('goHome'))) {
-                goHome();
-            }
+            if (document.getElementById('home-confirm-modal')) return;
+            const modal = document.createElement('div');
+            modal.id = 'home-confirm-modal';
+            modal.className = 'fixed inset-0 bg-black/70 flex items-center justify-center z-[200]';
+            modal.innerHTML = `
+                <div class="bg-slate-900 border border-slate-700 rounded-3xl p-8 max-w-md w-full mx-4 modern-shadow">
+                    <p class="text-center text-lg mb-6">${t('goHome')}</p>
+                    <div class="space-y-3">
+                        <button type="button" id="home-confirm-yes"
+                                class="w-full py-4 bg-emerald-600 hover:bg-emerald-700 font-semibold rounded-2xl">${t('home')}</button>
+                        <button type="button" id="home-confirm-no"
+                                class="w-full py-4 bg-slate-800 hover:bg-slate-700 font-semibold rounded-2xl border border-slate-700">${t('cancel')}</button>
+                    </div>
+                </div>`;
+            document.body.appendChild(modal);
+            document.getElementById('home-confirm-yes').onclick = () => { modal.remove(); goHome(); };
+            document.getElementById('home-confirm-no').onclick = () => { modal.remove(); };
         }
 
         function updateDatabase() {
