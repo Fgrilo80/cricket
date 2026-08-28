@@ -1,0 +1,30 @@
+# Cisco Quiz (CCST / CCNA / CCNP)
+
+As perguntas já não vão dentro do HTML. Cada certificação e língua é um ficheiro em `data/`.
+
+## Abrir no PC
+Abre `index.html` no browser (duplo clique). Precisas da pasta `data` ao lado do HTML.
+
+## Acrescentar perguntas
+Edita o ficheiro certo, por exemplo `data/ccna-pt.json` (e o `.js` correspondente, ou pede-me para regenerar).
+
+Formato de cada pergunta:
+```json
+{
+  "question": "Pergunta?",
+  "options": ["A", "B", "C", "D"],
+  "correct": 0,
+  "explanation": "Porque é a A.",
+  "difficulty": "Fácil"
+}
+```
+`correct` é o índice da opção certa (0, 1, 2 ou 3).
+
+Contagens atuais:
+- CCST PT 52 / EN 52
+- CCNA PT 49 / EN 49
+- CCNP PT 49 / EN 49
+- Total 300
+
+## Telemóvel
+Para abrir no telemóvel a pasta tem de estar num servidor (mesmo Wi-Fi) ou publicada na web. Sem isso o browser do telemóvel não vê os ficheiros do PC.

@@ -1,0 +1,590 @@
+[
+  {
+    "question": "Qual é a principal diferença entre OSPFv2 e OSPFv3?",
+    "options": [
+      "OSPFv3 suporta apenas IPv4",
+      "OSPFv3 é projetado para IPv6 e usa endereços link-local para adjacências",
+      "Não há diferença",
+      "OSPFv3 é mais lento"
+    ],
+    "correct": 1,
+    "explanation": "OSPFv3 foi redesenhado para IPv6, usa endereços link-local para formar adjacências e suporta múltiplos endereços por interface.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é 'BGP route reflector' e qual sua função?",
+    "options": [
+      "Dispositivo que reflete rotas BGP para reduzir sessões full-mesh",
+      "Tipo de firewall",
+      "Protocolo de backup",
+      "Servidor DNS"
+    ],
+    "correct": 0,
+    "explanation": "Route Reflector permite que um roteador reflita rotas BGP aprendidas de um cliente para outros clientes, reduzindo o número de sessões IBGP necessárias.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual é a função do 'EIGRP named mode'?",
+    "options": [
+      "Modo legado de configuração",
+      "Modo moderno que permite configuração hierárquica e named EIGRP para múltiplas instâncias",
+      "Tipo de ACL",
+      "Método de NAT"
+    ],
+    "correct": 1,
+    "explanation": "EIGRP named mode permite configuração mais organizada, suporte a múltiplas instâncias e recursos avançados como wide metrics.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é 'SD-WAN' e como difere de WAN tradicional?",
+    "options": [
+      "Mesma coisa que MPLS",
+      "Abordagem baseada em software para gerenciamento de WAN com overlay inteligente, zero-touch provisioning e otimização de tráfego",
+      "Tipo de switch",
+      "Protocolo de roteamento"
+    ],
+    "correct": 1,
+    "explanation": "SD-WAN usa overlay inteligente sobre qualquer underlay (MPLS, internet, LTE), com gerenciamento centralizado e políticas baseadas em aplicação.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual é a função do 'Cisco DNA Center'?",
+    "options": [
+      "Gerenciamento tradicional de dispositivos",
+      "Plataforma de automação e gerenciamento de rede baseada em intenção com analytics e assurance",
+      "Tipo de roteador",
+      "Servidor DHCP"
+    ],
+    "correct": 1,
+    "explanation": "DNA Center fornece automação baseada em intenção, descoberta automática, políticas e analytics para redes enterprise.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é 'FlexVPN'?",
+    "options": [
+      "VPN estática",
+      "Framework flexível baseado em IKEv2 para VPNs site-to-site e remote access com alta escalabilidade",
+      "Tipo de firewall",
+      "Protocolo de backup"
+    ],
+    "correct": 1,
+    "explanation": "FlexVPN é uma solução baseada em IKEv2 que unifica diferentes tipos de VPN em uma única configuração flexível.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual é a diferença entre 'PIM-SM' e 'PIM-DM'?",
+    "options": [
+      "PIM-SM é dense mode, PIM-DM é sparse mode",
+      "PIM-SM usa rendezvous point e é eficiente para grupos esparsos, PIM-DM inunda e poda",
+      "Não há diferença",
+      "PIM-DM é mais seguro"
+    ],
+    "correct": 1,
+    "explanation": "PIM-SM (Sparse Mode) usa RP e é eficiente para poucos receptores. PIM-DM (Dense Mode) inunda a rede e poda branches sem receptores.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é 'EVPN' (Ethernet VPN) em ambientes VXLAN?",
+    "options": [
+      "Tipo de VLAN",
+      "Tecnologia de controle plano para VXLAN que usa BGP para distribuir informações de MAC/IP",
+      "Protocolo de roteamento",
+      "Tipo de switch"
+    ],
+    "correct": 1,
+    "explanation": "EVPN usa BGP como control plane para VXLAN, permitindo distribuição eficiente de MACs, IPs e informações de VTEP.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual é a função do 'NetFlow' e 'Flexible NetFlow'?",
+    "options": [
+      "Protocolo de roteamento",
+      "Tecnologia de monitoramento de fluxo de tráfego para análise, billing e segurança",
+      "Tipo de ACL",
+      "Método de backup"
+    ],
+    "correct": 1,
+    "explanation": "NetFlow coleta dados de fluxo para análise de tráfego, detecção de anomalias e planejamento de rede.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é 'Cisco TrustSec' e 'SGT'?",
+    "options": [
+      "Protocolo de criptografia",
+      "Arquitetura de segurança baseada em tags (Security Group Tags) para controle de acesso baseado em identidade",
+      "Tipo de firewall",
+      "Método de NAT"
+    ],
+    "correct": 1,
+    "explanation": "TrustSec usa SGTs (Security Group Tags) para classificar tráfego e aplicar políticas de acesso baseadas em identidade, independentemente de IP.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual é a função do 'IPsec' em VPNs?",
+    "options": [
+      "Criptografar tráfego em nível de aplicação",
+      "Fornecer segurança em nível de rede (confidencialidade, integridade, autenticação) para VPNs",
+      "Tipo de roteamento",
+      "Protocolo de backup"
+    ],
+    "correct": 1,
+    "explanation": "IPsec opera na camada de rede, fornecendo criptografia, autenticação e integridade para túneis VPN.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é 'AnyConnect' da Cisco?",
+    "options": [
+      "Protocolo de roteamento",
+      "Cliente VPN remoto seguro com suporte a SSL/TLS e IPsec",
+      "Tipo de switch",
+      "Servidor DHCP"
+    ],
+    "correct": 1,
+    "explanation": "Cisco AnyConnect é o cliente VPN moderno que suporta SSL VPN e IPsec com recursos avançados de mobilidade.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a função do 'Wireless LAN Controller (WLC)'?",
+    "options": [
+      "Roteador wireless",
+      "Dispositivo centralizado que gerencia múltiplos Access Points, roaming, segurança e RF",
+      "Tipo de switch",
+      "Firewall"
+    ],
+    "correct": 1,
+    "explanation": "WLC centraliza o gerenciamento de APs, permite roaming rápido, políticas de segurança e otimização de RF.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é 'CAPWAP'?",
+    "options": [
+      "Protocolo de roteamento",
+      "Protocolo usado por WLC para controlar e gerenciar Access Points (substitui LWAPP)",
+      "Tipo de VLAN",
+      "Método de NAT"
+    ],
+    "correct": 1,
+    "explanation": "CAPWAP (Control and Provisioning of Wireless Access Points) é o protocolo padrão para comunicação entre WLC e APs.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a função do 'Cisco ISE' (Identity Services Engine)?",
+    "options": [
+      "Servidor DHCP",
+      "Plataforma centralizada de controle de acesso baseado em identidade, 802.1X, profiling e políticas",
+      "Tipo de roteador",
+      "Firewall"
+    ],
+    "correct": 1,
+    "explanation": "ISE fornece NAC (Network Access Control), 802.1X, guest access, profiling de dispositivos e políticas dinâmicas.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é 'SD-Access' da Cisco?",
+    "options": [
+      "Acesso tradicional",
+      "Arquitetura de rede definida por software com fabric overlay, underlay e políticas baseadas em identidade",
+      "Tipo de switch",
+      "Protocolo de backup"
+    ],
+    "correct": 1,
+    "explanation": "SD-Access cria uma fabric de rede com overlay VXLAN/EVPN, underlay automatizado e políticas baseadas em SGT.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual é a função do 'RESTCONF' e 'NETCONF'?",
+    "options": [
+      "Protocolos de roteamento",
+      "APIs e protocolos para automação e configuração programática de dispositivos de rede",
+      "Tipo de firewall",
+      "Método de backup"
+    ],
+    "correct": 1,
+    "explanation": "NETCONF/RESTCONF permitem configuração e gerenciamento programático de dispositivos usando YANG models.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é 'Ansible' na automação de rede Cisco?",
+    "options": [
+      "Linguagem de programação",
+      "Ferramenta de automação agentless que usa playbooks YAML para configurar dispositivos via SSH/NETCONF",
+      "Tipo de switch",
+      "Protocolo de VPN"
+    ],
+    "correct": 1,
+    "explanation": "Ansible é uma ferramenta open-source agentless que usa playbooks para automatizar configuração de rede de forma idempotente.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a diferença entre 'PBR' (Policy Based Routing) e roteamento normal?",
+    "options": [
+      "PBR é mais rápido",
+      "PBR permite rotear tráfego com base em políticas (ACL, QoS, aplicação) em vez de apenas destino",
+      "Não há diferença",
+      "PBR é menos seguro"
+    ],
+    "correct": 1,
+    "explanation": "PBR permite decisões de roteamento baseadas em critérios além do IP de destino, como origem, aplicação ou marcação.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é 'MPLS L3 VPN'?",
+    "options": [
+      "VPN ponto a ponto",
+      "Tecnologia que permite múltiplos clientes compartilharem infraestrutura MPLS com isolamento de rotas via VRF",
+      "Tipo de switch",
+      "Protocolo de backup"
+    ],
+    "correct": 1,
+    "explanation": "MPLS L3 VPN usa VRFs no PE para isolar rotas de diferentes clientes enquanto compartilham a infraestrutura MPLS.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual é a função do 'BFD' (Bidirectional Forwarding Detection)?",
+    "options": [
+      "Protocolo de roteamento",
+      "Mecanismo rápido de detecção de falhas em links para acelerar convergência de protocolos de roteamento",
+      "Tipo de ACL",
+      "Método de NAT"
+    ],
+    "correct": 1,
+    "explanation": "BFD fornece detecção de falhas em milissegundos, permitindo que protocolos de roteamento reajam muito mais rápido.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é 'Cisco Umbrella'?",
+    "options": [
+      "Firewall local",
+      "Serviço de segurança na nuvem que bloqueia domínios maliciosos, C2 e phishing via DNS",
+      "Tipo de roteador",
+      "Protocolo de backup"
+    ],
+    "correct": 1,
+    "explanation": "Umbrella é um serviço DNS security na nuvem que bloqueia ameaças antes que cheguem à rede.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a função do 'Stealthwatch' (agora Secure Network Analytics)?",
+    "options": [
+      "Antivírus",
+      "Solução de Network Detection and Response (NDR) que usa machine learning para detectar ameaças e anomalias",
+      "Tipo de switch",
+      "Servidor DHCP"
+    ],
+    "correct": 1,
+    "explanation": "Stealthwatch analisa fluxo de rede para detectar comportamentos anormais e ameaças avançadas.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é 'Cisco Secure Firewall' (antigo Firepower)?",
+    "options": [
+      "Roteador simples",
+      "Next-Generation Firewall (NGFW) com IPS, URL filtering, malware protection e integração com ISE",
+      "Tipo de switch",
+      "Protocolo de backup"
+    ],
+    "correct": 1,
+    "explanation": "Secure Firewall é um NGFW com inspeção profunda, IPS, controle de aplicações e integração com outras soluções de segurança Cisco.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual é a função do ' ThousandEyes'?",
+    "options": [
+      "Monitoramento local",
+      "Plataforma de observabilidade de internet que monitora performance de aplicações e rede de ponta a ponta",
+      "Tipo de firewall",
+      "Método de backup"
+    ],
+    "correct": 1,
+    "explanation": "ThousandEyes fornece visibilidade de ponta a ponta da experiência do usuário e performance de rede/internet.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é 'Intent-Based Networking'?",
+    "options": [
+      "Rede tradicional",
+      "Abordagem onde você define o 'o que' (intenção) e a rede automaticamente configura o 'como'",
+      "Tipo de switch",
+      "Protocolo de roteamento"
+    ],
+    "correct": 1,
+    "explanation": "Intent-Based Networking permite que administradores declarem intenções de negócio e a rede traduza automaticamente em políticas e configurações.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual é a função do 'Cisco DNA Assurance'?",
+    "options": [
+      "Backup de configuração",
+      "Analytics e troubleshooting proativo com machine learning e telemetria em tempo real",
+      "Tipo de roteador",
+      "Servidor DNS"
+    ],
+    "correct": 1,
+    "explanation": "DNA Assurance usa telemetria, ML e analytics para identificar problemas antes que afetem usuários e sugerir correções.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é 'Zero Trust Security' na arquitetura Cisco?",
+    "options": [
+      "Confiar em todos os dispositivos internos",
+      "Nunca confiar, sempre verificar - microsegmentação, identidade contínua e menor privilégio",
+      "Tipo de firewall",
+      "Método de backup"
+    ],
+    "correct": 1,
+    "explanation": "Zero Trust assume que nada é confiável por padrão e aplica verificação contínua, microsegmentação e políticas de menor privilégio.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual é a diferença entre 'underlay' e 'overlay' em SD-WAN/SD-Access?",
+    "options": [
+      "Underlay é o overlay físico",
+      "Underlay é a infraestrutura física (MPLS, internet), overlay é a rede virtual (VXLAN, DMVPN) construída sobre ela",
+      "Não há diferença",
+      "Overlay é mais lento"
+    ],
+    "correct": 1,
+    "explanation": "Underlay = rede física subjacente. Overlay = rede virtual lógica construída sobre o underlay para abstração e serviços.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é 'Cisco vManage' em SD-WAN?",
+    "options": [
+      "Roteador físico",
+      "Controlador centralizado de gerenciamento, políticas e orquestração de toda a solução SD-WAN",
+      "Tipo de switch",
+      "Servidor DHCP"
+    ],
+    "correct": 1,
+    "explanation": "vManage é o painel centralizado para gerenciamento, configuração, políticas e monitoramento de toda a fabric SD-WAN.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a função do 'AppQoE' em SD-WAN?",
+    "options": [
+      "Firewall",
+      "Otimização de aplicação com reconhecimento de aplicação, QoS inteligente e correção de perda de pacotes",
+      "Tipo de roteador",
+      "Protocolo de backup"
+    ],
+    "correct": 1,
+    "explanation": "AppQoE fornece otimização de performance de aplicações com reconhecimento de aplicação e técnicas de correção.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é 'Cisco Umbrella SIG'?",
+    "options": [
+      "Firewall local",
+      "Secure Internet Gateway na nuvem que combina DNS security, firewall, CASB e DLP",
+      "Tipo de switch",
+      "Método de backup"
+    ],
+    "correct": 1,
+    "explanation": "Umbrella SIG é um gateway de internet seguro na nuvem que protege usuários remotos e locais.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a função do 'Cisco Secure Access'?",
+    "options": [
+      "VPN tradicional",
+      "Solução SASE (Secure Access Service Edge) que combina networking e segurança na nuvem",
+      "Tipo de roteador",
+      "Servidor DNS"
+    ],
+    "correct": 1,
+    "explanation": "Secure Access é a solução SASE da Cisco que fornece acesso seguro a qualquer aplicação de qualquer lugar.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é 'Cisco XDR' (Extended Detection and Response)?",
+    "options": [
+      "Antivírus tradicional",
+      "Plataforma que correlaciona telemetria de múltiplas fontes (endpoint, rede, cloud, email) para detecção avançada de ameaças",
+      "Tipo de firewall",
+      "Método de backup"
+    ],
+    "correct": 1,
+    "explanation": "XDR correlaciona dados de múltiplas fontes para detecção e resposta a ameaças avançadas com automação.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual é a função do 'Cisco Talos'?",
+    "options": [
+      "Servidor DHCP",
+      "Inteligência de ameaças global da Cisco que alimenta todas as soluções de segurança",
+      "Tipo de switch",
+      "Protocolo de roteamento"
+    ],
+    "correct": 1,
+    "explanation": "Talos é a equipe de inteligência de ameaças da Cisco que fornece dados em tempo real para todas as soluções de segurança Cisco.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é 'Cisco Duo'?",
+    "options": [
+      "Protocolo de roteamento",
+      "Solução de autenticação multifator (MFA) e acesso adaptativo com verificação de dispositivo",
+      "Tipo de switch",
+      "Firewall"
+    ],
+    "correct": 1,
+    "explanation": "Duo fornece MFA, verificação de saúde do dispositivo e acesso adaptativo para proteger logins.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a função do 'Cisco Secure Endpoint' (antigo AMP for Endpoints)?",
+    "options": [
+      "Antivírus tradicional",
+      "Proteção avançada de endpoint com detecção de malware, EDR e integração com XDR",
+      "Tipo de roteador",
+      "Servidor DNS"
+    ],
+    "correct": 1,
+    "explanation": "Secure Endpoint oferece proteção em tempo real, detecção de ameaças e resposta em endpoints.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é 'Cisco Secure Email' (antigo ESA)?",
+    "options": [
+      "Cliente de e-mail",
+      "Gateway de e-mail seguro com proteção contra spam, phishing, malware e DLP",
+      "Tipo de switch",
+      "Protocolo de backup"
+    ],
+    "correct": 1,
+    "explanation": "Secure Email é o gateway de e-mail seguro da Cisco com proteção avançada contra ameaças de e-mail.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a função do 'Cisco Secure Web Appliance' (antigo WSA)?",
+    "options": [
+      "Proxy simples",
+      "Secure Web Gateway com URL filtering, malware scanning, DLP e controle de aplicações",
+      "Tipo de roteador",
+      "Firewall"
+    ],
+    "correct": 1,
+    "explanation": "Secure Web Appliance protege o tráfego web com filtragem de URL, antimalware e políticas de uso.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é 'Cisco Meraki'?",
+    "options": [
+      "Solução tradicional Cisco",
+      "Plataforma de rede gerenciada na nuvem com dashboard unificado, zero-touch e analytics",
+      "Tipo de firewall",
+      "Protocolo de roteamento"
+    ],
+    "correct": 1,
+    "explanation": "Meraki oferece switches, APs, firewalls e câmeras gerenciados 100% na nuvem com dashboard simples e poderoso.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a função do 'Cisco Intersight'?",
+    "options": [
+      "Gerenciamento de rede",
+      "Plataforma de gerenciamento de infraestrutura híbrida (data center, edge, cloud) com automação",
+      "Tipo de switch",
+      "Servidor DHCP"
+    ],
+    "correct": 1,
+    "explanation": "Intersight fornece gerenciamento unificado, automação e insights para infraestrutura Cisco UCS, HyperFlex e mais.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é 'Cisco ACI' (Application Centric Infrastructure)?",
+    "options": [
+      "Rede tradicional",
+      "Solução SDN para data center com fabric leaf-spine, políticas baseadas em aplicação e automação",
+      "Tipo de switch",
+      "Protocolo de backup"
+    ],
+    "correct": 1,
+    "explanation": "ACI é a solução SDN da Cisco para data centers com fabric VXLAN, APIC controller e políticas baseadas em aplicação.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual é a função do 'Cisco Nexus Dashboard'?",
+    "options": [
+      "Switch simples",
+      "Plataforma de gerenciamento e automação para data center com Nexus Dashboard e services",
+      "Tipo de roteador",
+      "Firewall"
+    ],
+    "correct": 1,
+    "explanation": "Nexus Dashboard fornece gerenciamento unificado, automação e serviços para fabrics ACI e NX-OS.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é 'Cisco HyperFlex'?",
+    "options": [
+      "Servidor tradicional",
+      "Solução hyperconverged infrastructure (HCI) com storage, compute e networking integrados",
+      "Tipo de switch",
+      "Protocolo de roteamento"
+    ],
+    "correct": 1,
+    "explanation": "HyperFlex é a solução HCI da Cisco com storage distribuído, alta disponibilidade e gerenciamento simplificado.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual é a função do 'Cisco UCS' (Unified Computing System)?",
+    "options": [
+      "Servidor standalone",
+      "Plataforma de servidores blade/rack com gerenciamento unificado, stateless computing e automação",
+      "Tipo de switch",
+      "Firewall"
+    ],
+    "correct": 1,
+    "explanation": "UCS integra compute, networking e storage com gerenciamento centralizado e profiles de serviço stateless.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é 'Cisco Intersight Workload Optimizer'?",
+    "options": [
+      "Ferramenta de backup",
+      "Solução de otimização de workload com AI para placement, scaling e custo em ambientes híbridos",
+      "Tipo de switch",
+      "Protocolo de roteamento"
+    ],
+    "correct": 1,
+    "explanation": "Intersight Workload Optimizer usa AI para otimizar placement, scaling e custos de workloads em nuvens híbridas.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual é a função do 'Cisco AppDynamics'?",
+    "options": [
+      "Monitoramento de rede",
+      "Plataforma de observabilidade de aplicações com APM, business transactions e analytics",
+      "Tipo de switch",
+      "Firewall"
+    ],
+    "correct": 1,
+    "explanation": "AppDynamics fornece visibilidade completa de performance de aplicações, desde código até experiência do usuário.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é 'Cisco Full-Stack Observability'?",
+    "options": [
+      "Monitoramento tradicional",
+      "Abordagem unificada que correlaciona dados de rede, aplicações, infraestrutura e experiência do usuário",
+      "Tipo de roteador",
+      "Método de backup"
+    ],
+    "correct": 1,
+    "explanation": "Full-Stack Observability correlaciona telemetria de toda a stack para troubleshooting e otimização proativa.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual é a função do 'Cisco ThousandEyes' em SD-WAN?",
+    "options": [
+      "Firewall",
+      "Monitoramento de internet e performance de aplicações para otimizar decisões de SD-WAN",
+      "Tipo de switch",
+      "Servidor DNS"
+    ],
+    "correct": 1,
+    "explanation": "ThousandEyes fornece insights de performance de internet e aplicações para que o SD-WAN tome decisões inteligentes.",
+    "difficulty": "Médio"
+  }
+]

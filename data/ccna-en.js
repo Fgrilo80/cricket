@@ -1,0 +1,590 @@
+window.QUIZ_BANK = [
+  {
+    "question": "What is the function of the Transport layer in the TCP/IP model?",
+    "options": [
+      "Logical addressing",
+      "Reliable data delivery between applications",
+      "Packet routing",
+      "Physical bit transmission"
+    ],
+    "correct": 1,
+    "explanation": "The Transport layer (TCP/UDP) provides data delivery between applications, with TCP offering reliability.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which protocol is used to resolve domain names to IP addresses?",
+    "options": [
+      "ARP",
+      "DNS",
+      "DHCP",
+      "ICMP"
+    ],
+    "correct": 1,
+    "explanation": "DNS (Domain Name System) translates human-readable domain names to IP addresses.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is a static route?",
+    "options": [
+      "Route learned automatically by a routing protocol",
+      "Route manually configured by the administrator",
+      "Default route",
+      "Backup route"
+    ],
+    "correct": 1,
+    "explanation": "Static routes are manually configured and do not change automatically.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the difference between OSPF and EIGRP?",
+    "options": [
+      "OSPF is Cisco proprietary, EIGRP is open",
+      "EIGRP uses DUAL algorithm, OSPF uses Dijkstra",
+      "There is no difference",
+      "OSPF is faster than EIGRP"
+    ],
+    "correct": 1,
+    "explanation": "EIGRP is Cisco proprietary with DUAL algorithm. OSPF is open standard and uses Dijkstra's algorithm (SPF).",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is NAT overload (PAT)?",
+    "options": [
+      "Translation of one private IP to one public IP",
+      "Multiple private IPs sharing one public IP using ports",
+      "Port translation",
+      "Traffic blocking"
+    ],
+    "correct": 1,
+    "explanation": "PAT (Port Address Translation) allows multiple internal devices to share one public IP using different ports.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does the command 'ip route 0.0.0.0 0.0.0.0 192.168.1.1' do?",
+    "options": [
+      "Configure static default route",
+      "Configure route to specific network",
+      "Delete route",
+      "Show routes"
+    ],
+    "correct": 0,
+    "explanation": "This command configures the static default route (gateway of last resort) to 192.168.1.1.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is VLAN tagging (802.1Q)?",
+    "options": [
+      "Method to encrypt VLANs",
+      "Inserting a tag into frames to identify the source VLAN",
+      "Routing protocol",
+      "Type of switch"
+    ],
+    "correct": 1,
+    "explanation": "802.1Q is the IEEE standard for inserting a 4-byte tag into Ethernet frames to identify the VLAN.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the default port for the HTTPS protocol?",
+    "options": [
+      "80",
+      "443",
+      "22",
+      "21"
+    ],
+    "correct": 1,
+    "explanation": "HTTPS (HTTP Secure) uses port 443 by default.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is an ACL (Access Control List)?",
+    "options": [
+      "MAC address list",
+      "Set of rules to permit or deny traffic",
+      "Routing table",
+      "VLAN configuration"
+    ],
+    "correct": 1,
+    "explanation": "ACLs are used to filter traffic based on criteria such as source/destination IP, ports, etc.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the function of the HSRP protocol?",
+    "options": [
+      "Dynamic routing",
+      "Provide redundant gateway with virtual IP",
+      "Load balancing",
+      "VPN"
+    ],
+    "correct": 1,
+    "explanation": "HSRP (Hot Standby Router Protocol) provides gateway redundancy with a shared virtual IP.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is 'frame tagging' in switches?",
+    "options": [
+      "Tagging frames for VLAN identification",
+      "Frame encryption",
+      "Frame fragmentation",
+      "Frame prioritization"
+    ],
+    "correct": 0,
+    "explanation": "Frame tagging (802.1Q) adds a tag to the frame to identify which VLAN it belongs to.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the main difference between a router and a Layer 3 switch?",
+    "options": [
+      "Router is faster",
+      "Layer 3 switch performs Layer 3 routing but with hardware optimized for switching",
+      "There is no difference",
+      "Router does not support VLANs"
+    ],
+    "correct": 1,
+    "explanation": "Layer 3 switches combine L2 switching with L3 routing in ASIC hardware, much faster than traditional routers.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is 'EtherChannel'?",
+    "options": [
+      "Encryption protocol",
+      "Technology to bundle multiple physical ports into a single logical link",
+      "Type of VLAN",
+      "NAT method"
+    ],
+    "correct": 1,
+    "explanation": "EtherChannel allows aggregation of physical links to increase bandwidth and provide redundancy (LACP or PAgP).",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the function of the command 'show ip ospf neighbor'?",
+    "options": [
+      "Show routing table",
+      "Show OSPF neighbors and their state",
+      "Show interface configuration",
+      "Show logs"
+    ],
+    "correct": 1,
+    "explanation": "This command displays OSPF neighbors, adjacency state, and DR/BDR information.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is a 'prefix-list' on Cisco routers?",
+    "options": [
+      "IP prefix list for route filtering",
+      "VLAN list",
+      "ACL list",
+      "User list"
+    ],
+    "correct": 0,
+    "explanation": "Prefix-lists are used to filter routes based on network prefixes and mask length.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is the difference between 'standard' and 'extended' ACL?",
+    "options": [
+      "Standard filters only by source IP, extended by source, destination, protocol and port",
+      "There is no difference",
+      "Extended is simpler",
+      "Standard is more secure"
+    ],
+    "correct": 0,
+    "explanation": "Standard ACLs (1-99) filter only by source IP. Extended ACLs (100-199) offer more granular filtering.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is 'BGP' and what is it used for?",
+    "options": [
+      "Internal routing protocol",
+      "External routing protocol used on the internet to exchange routes between AS",
+      "Backup protocol",
+      "Security protocol"
+    ],
+    "correct": 1,
+    "explanation": "BGP (Border Gateway Protocol) is the routing protocol used on the internet to exchange routes between autonomous systems.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What does the command 'ip nat inside source list 1 interface GigabitEthernet0/0 overload' do?",
+    "options": [
+      "Configure static NAT",
+      "Configure dynamic PAT using ACL and interface",
+      "Delete NAT",
+      "Show NAT"
+    ],
+    "correct": 1,
+    "explanation": "This command configures PAT (NAT overload) using ACL 1 and the interface IP as the public address.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is 'CEF' (Cisco Express Forwarding)?",
+    "options": [
+      "Routing protocol",
+      "Hardware packet forwarding technology for high performance",
+      "Type of switch",
+      "Backup method"
+    ],
+    "correct": 1,
+    "explanation": "CEF uses FIB table and adjacencies to forward packets in hardware, much faster than traditional routing.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is the default port for the Telnet protocol?",
+    "options": [
+      "21",
+      "22",
+      "23",
+      "80"
+    ],
+    "correct": 2,
+    "explanation": "Telnet uses port 23 (insecure, use SSH on port 22 instead).",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is 'VRF' (Virtual Routing and Forwarding)?",
+    "options": [
+      "Type of VLAN",
+      "Technology that allows multiple independent routing tables on the same router",
+      "VPN protocol",
+      "Type of firewall"
+    ],
+    "correct": 1,
+    "explanation": "VRF allows creating separate routing instances on the same physical device, useful for segmentation.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is the function of 'Spanning Tree PortFast'?",
+    "options": [
+      "Speed up STP convergence on access ports",
+      "Disable STP",
+      "Increase port priority",
+      "Create trunk"
+    ],
+    "correct": 0,
+    "explanation": "PortFast immediately puts access ports into forwarding state, skipping listening/learning states.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is 'Anycast' in IPv6?",
+    "options": [
+      "Unique address for multiple devices",
+      "Address that identifies the nearest device in a group",
+      "Broadcast address",
+      "Multicast address"
+    ],
+    "correct": 1,
+    "explanation": "Anycast delivers the packet to the nearest device (lowest metric) in a group sharing the same address.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is the difference between 'RIPv2' and 'OSPF'?",
+    "options": [
+      "RIPv2 is link-state, OSPF is distance-vector",
+      "RIPv2 has a 15-hop limit, OSPF is hierarchical and scalable",
+      "There is no difference",
+      "RIPv2 is more secure"
+    ],
+    "correct": 1,
+    "explanation": "RIPv2 is distance-vector with a 15-hop limit. OSPF is link-state, hierarchical (areas), and scalable for large networks.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is a 'subinterface' on Cisco routers?",
+    "options": [
+      "Physical interface",
+      "Logical interface created on a physical interface to support multiple VLANs (router-on-a-stick)",
+      "Backup interface",
+      "Wireless interface"
+    ],
+    "correct": 1,
+    "explanation": "Subinterfaces allow a single router to process traffic from multiple VLANs on one physical interface (router-on-a-stick).",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the function of the command 'show ip nat translations'?",
+    "options": [
+      "Show NAT configuration",
+      "Show active NAT translations",
+      "Delete translations",
+      "Show ACLs"
+    ],
+    "correct": 1,
+    "explanation": "This command displays the currently active NAT/PAT translations on the router.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is 'GLBP' (Gateway Load Balancing Protocol)?",
+    "options": [
+      "Routing protocol",
+      "Protocol that provides redundancy and load balancing between multiple gateways",
+      "Type of ACL",
+      "VPN protocol"
+    ],
+    "correct": 1,
+    "explanation": "GLBP provides gateway redundancy with active-active load balancing using multiple active routers.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is the function of 'ip helper-address'?",
+    "options": [
+      "Configure NAT",
+      "Forward DHCP broadcasts to a remote DHCP server",
+      "Configure static route",
+      "Enable firewall"
+    ],
+    "correct": 1,
+    "explanation": "ip helper-address allows DHCP broadcasts from clients to be forwarded to a DHCP server on another network.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is 'SDM' (Switching Database Manager) on Cisco switches?",
+    "options": [
+      "VLAN manager",
+      "Feature that optimizes hardware resource usage (TCAM) for different functions",
+      "Routing protocol",
+      "Type of memory"
+    ],
+    "correct": 1,
+    "explanation": "SDM allows optimized allocation of hardware resources (TCAM) for routing, security, etc.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is the difference between 'inside local' and 'inside global' in NAT?",
+    "options": [
+      "Inside local is public IP, inside global is private IP",
+      "Inside local is internal private IP, inside global is public IP after translation",
+      "There is no difference",
+      "Inside local is server IP"
+    ],
+    "correct": 1,
+    "explanation": "Inside local = original IP of internal host. Inside global = public IP used on the internet after NAT.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is 'BPDU Guard'?",
+    "options": [
+      "Routing protocol",
+      "Security feature that disables port if it receives a BPDU (prevents loops)",
+      "Type of VLAN",
+      "Backup method"
+    ],
+    "correct": 1,
+    "explanation": "BPDU Guard automatically disables a PortFast port if it receives a BPDU, preventing loops.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the function of the command 'debug ip packet'?",
+    "options": [
+      "Show configuration",
+      "Show IP packets processed by the router (use with caution: high impact)",
+      "Clear logs",
+      "Restart interface"
+    ],
+    "correct": 1,
+    "explanation": "debug ip packet shows details of IP packets being processed. Use with caution as it can overload the CPU.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is 'router-on-a-stick'?",
+    "options": [
+      "Single physical router",
+      "Configuration where a router uses subinterfaces to route between multiple VLANs on a single physical interface",
+      "Type of switch",
+      "NAT method"
+    ],
+    "correct": 1,
+    "explanation": "Router-on-a-stick uses one physical interface with 802.1Q subinterfaces to route between VLANs.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the default port for the FTP protocol?",
+    "options": [
+      "20/21",
+      "22",
+      "23",
+      "80"
+    ],
+    "correct": 0,
+    "explanation": "FTP uses port 21 for control and 20 for data (active mode).",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is 'PVST+' (Per-VLAN Spanning Tree Plus)?",
+    "options": [
+      "STP for all VLANs together",
+      "Cisco implementation of STP that runs one STP instance per VLAN",
+      "Load balancing protocol",
+      "Type of trunk"
+    ],
+    "correct": 1,
+    "explanation": "PVST+ runs a separate STP instance for each VLAN, allowing per-VLAN optimization.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the function of 'ip domain-lookup'?",
+    "options": [
+      "Enable DNS resolution on the router",
+      "Disable DNS",
+      "Configure DNS server",
+      "Show DNS cache"
+    ],
+    "correct": 0,
+    "explanation": "ip domain-lookup enables the router to resolve hostnames via DNS.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is 'LACP' (Link Aggregation Control Protocol)?",
+    "options": [
+      "Routing protocol",
+      "IEEE standard protocol for EtherChannel negotiation",
+      "Type of ACL",
+      "Security protocol"
+    ],
+    "correct": 1,
+    "explanation": "LACP is the IEEE 802.3ad standard protocol for dynamically forming EtherChannels.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the difference between 'active' and 'passive' in LACP?",
+    "options": [
+      "Active initiates negotiation, passive responds",
+      "There is no difference",
+      "Passive is faster",
+      "Active is insecure"
+    ],
+    "correct": 0,
+    "explanation": "Active mode initiates LACP negotiation. Passive mode only responds to negotiations.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is 'HSRP preemption'?",
+    "options": [
+      "Disable HSRP",
+      "Allow higher priority router to take over active role when available",
+      "Type of load balancing",
+      "Configuration backup"
+    ],
+    "correct": 1,
+    "explanation": "Preemption allows a higher priority router to automatically assume the active role when it becomes available again.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the function of the command 'show spanning-tree vlan 10'?",
+    "options": [
+      "Show VLAN 10 configuration",
+      "Show STP state for VLAN 10 (root bridge, ports, etc.)",
+      "Show ACLs for VLAN 10",
+      "Show NAT for VLAN 10"
+    ],
+    "correct": 1,
+    "explanation": "This command displays detailed STP information for the specified VLAN.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is a 'route-map' on Cisco routers?",
+    "options": [
+      "VLAN map",
+      "Powerful tool for route manipulation and filtering based on complex criteria",
+      "Type of ACL",
+      "VPN protocol"
+    ],
+    "correct": 1,
+    "explanation": "Route-maps are used for advanced route redistribution control, PBR, and NAT.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is the function of 'ip sla'?",
+    "options": [
+      "Configure NAT",
+      "Monitor network performance (latency, jitter, loss) with synthetic tests",
+      "Configure VPN",
+      "Manage users"
+    ],
+    "correct": 1,
+    "explanation": "IP SLA allows creating synthetic performance tests to monitor SLAs and trigger actions.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is 'uRPF' (Unicast Reverse Path Forwarding)?",
+    "options": [
+      "Routing protocol",
+      "Security mechanism that verifies if source IP is reachable via incoming interface",
+      "Type of firewall",
+      "Backup method"
+    ],
+    "correct": 1,
+    "explanation": "uRPF helps prevent spoofing by verifying that a return path to the source IP exists via the incoming interface.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is the difference between 'named' and 'numbered' ACL?",
+    "options": [
+      "Named is older",
+      "Named ACL allows easy editing and descriptive names, numbered is numeric",
+      "There is no difference",
+      "Named is less secure"
+    ],
+    "correct": 1,
+    "explanation": "Named ACLs use names and allow insertion/removal of specific lines. Numbered ACLs are more limited.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is 'MPLS' (Multiprotocol Label Switching)?",
+    "options": [
+      "Routing protocol",
+      "Label switching technology for high performance and VPNs",
+      "Type of switch",
+      "NAT method"
+    ],
+    "correct": 1,
+    "explanation": "MPLS uses short labels to forward packets at high speed and supports Layer 2/3 VPNs.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is the function of the command 'clear ip nat translation *'?",
+    "options": [
+      "Show translations",
+      "Clear all active NAT translations",
+      "Restart NAT",
+      "Configure NAT"
+    ],
+    "correct": 1,
+    "explanation": "This command clears all current NAT translations (useful after configuration changes).",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is 'sticky MAC' in port-security?",
+    "options": [
+      "MAC that never changes",
+      "Feature that dynamically learns MACs and saves them to running-config",
+      "Type of VLAN",
+      "Encryption method"
+    ],
+    "correct": 1,
+    "explanation": "Sticky MAC learns MAC addresses dynamically and adds them to the configuration as static entries.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the function of 'ip tcp window-size'?",
+    "options": [
+      "Configure MTU",
+      "Adjust TCP window size to optimize throughput",
+      "Configure port",
+      "Enable firewall"
+    ],
+    "correct": 1,
+    "explanation": "Allows adjusting the TCP window size to improve performance on high-latency links.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What is 'DMVPN' (Dynamic Multipoint VPN)?",
+    "options": [
+      "Static VPN",
+      "Cisco technology that enables dynamic hub-and-spoke VPNs with direct spoke-to-spoke tunnels",
+      "Type of firewall",
+      "Routing protocol"
+    ],
+    "correct": 1,
+    "explanation": "DMVPN creates dynamic VPNs where spokes can connect directly to each other without going through the hub.",
+    "difficulty": "Hard"
+  }
+];

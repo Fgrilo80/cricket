@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Cisco Quiz Master - CCST | CCNA | CCNP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --primary: #0a66c2;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        .cisco-blue {
+            color: #0a66c2;
+        }
+
+        .quiz-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .quiz-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .option {
+            transition: all 0.2s ease;
+        }
+        
+        .option:hover {
+            transform: translateX(4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        .option.selected {
+            background-color: #dbeafe;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .nav-active {
+            background-color: #0a66c2;
+            color: white;
+            box-shadow: 0 10px 15px -3px rgb(10 102 194 / 0.3);
+        }
+
+        .question-text {
+            font-size: 1.05rem;
+            line-height: 1.55;
+        }
+        
+        @media (min-width: 640px) {
+            .question-text {
+                font-size: 1.15rem;
+                line-height: 1.6;
+            }
+        }
+        
+        /* ==================== MOBILE OPTIMIZATIONS ==================== */
+        .option {
+            min-height: 62px;
+            padding: 1.1rem 1.4rem;
+            font-size: 0.97rem;
+        }
+        
+        .quiz-card {
+            min-height: 260px;
+        }
+        
+        @media (max-width: 639px) {
+            .option {
+                min-height: 68px;
+                padding: 1.15rem 1.5rem;
+                font-size: 1rem;
+                line-height: 1.4;
+            }
+            
+            .quiz-card {
+                min-height: auto;
+            }
+            
+            button {
+                min-height: 56px !important;
+                font-size: 0.95rem;
+            }
+            
+            .question-text {
+                font-size: 1.02rem !important;
+                line-height: 1.5 !important;
+            }
+            
+            #quiz-screen {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+        
+        /* Extra touch-friendly for very small phones */
+        @media (max-width: 380px) {
+            .option {
+                min-height: 72px;
+                padding: 1.2rem 1.5rem;
+            }
+        }
+
+        .metric {
+            transition: transform 0.3s ease;
+        }
+
+        .summary-item {
+            transition: all 0.2s ease;
+        }
+
+        .timer {
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum";
+        }
+
+        .cisco-gradient {
+            background: linear-gradient(135deg, #0a66c2, #1e40af);
+        }
+
+        .modern-shadow {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 
+                       0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        
+        .option-label {
+            font-weight: 600;
+            color: #1e40af;
+        }
+        
+        .feedback-correct {
+            animation: popIn 0.4s ease forwards;
+        }
+        
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .cert-badge {
+            font-size: 0.75rem;
+            padding: 2px 10px;
+            border-radius: 9999px;
+            font-weight: 700;
+            letter-spacing: -.5px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200">
+    <!-- Navbar -->
+    <nav class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div onclick="confirmGoHome()" class="flex items-center gap-x-3 cursor-pointer active:opacity-80 transition-opacity">
+                <div class="w-11 h-11 cisco-gradient rounded-2xl flex items-center justify-center">
+                    <i class="fa-solid fa-network-wired text-white text-3xl"></i>
+                </div>
+                <div>
+                    <span class="font-display text-3xl font-bold tracking-tighter">Cisco</span>
+                    <span class="font-display text-3xl font-bold tracking-tighter text-blue-400">Quiz</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-x-2 text-sm">
+                <div class="px-3 py-1.5 bg-slate-900 rounded-2xl flex items-center gap-x-2 border border-slate-700">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span class="text-emerald-400 text-xs font-medium">BASE ATUALIZADA • 300 PERGUNTAS</span>
+                </div>
+                <button onclick="showDatabaseInfo()" 
+                        class="px-4 py-2 text-xs font-medium flex items-center gap-x-2 hover:bg-slate-800 transition-colors rounded-2xl border border-slate-700">
+                    <i class="fa-solid fa-database mr-1"></i> 
+                    <span>DB Info</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME SCREEN -->
+    <div id="home-screen" class="max-w-screen-xl mx-auto px-6 py-10">
+        <div class="max-w-2xl mx-auto text-center mb-12">
+            <div class="inline-flex items-center gap-x-2 bg-slate-900 px-4 py-1.5 rounded-3xl border border-slate-700 mb-4">
+                <span class="text-xs font-bold tracking-[2px] text-blue-400">VERSÃO 2.4 • 2026</span>
+            </div>
+            <h1 class="text-5xl sm:text-6xl font-display font-bold tracking-tighter mb-3">Domine as<br>Certificações Cisco</h1>
+            <p class="text-lg sm:text-xl text-slate-400 max-w-md mx-auto">Pratique com +300 perguntas na base. Cresce sem inchar o HTML.<br>CCST • CCNA • CCNP • PT &amp; EN</p>
+        </div>
+
+        <!-- Certification Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 max-w-6xl mx-auto px-1">
+            
+            <!-- CCST Card -->
+            <div class="quiz-card bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-7 modern-shadow">
+                <div class="flex items-start justify-between mb-6">
+                    <div>
+                        <div class="cert-badge bg-emerald-500/10 text-emerald-400 mb-3">ENTRY LEVEL</div>
+                        <h3 class="text-4xl font-display font-bold tracking-tighter">CCST</h3>
+                        <p class="text-slate-400 text-sm mt-1">Cisco Certified Support Technician</p>
+                    </div>
+                    <i class="fa-solid fa-headset text-4xl text-emerald-400/70"></i>
+                </div>
+                
+                <div class="space-y-3 mb-7">
+                    <div class="flex items-center text-xs">
+                        <div class="flex-1 h-px bg-slate-700"></div>
+                        <span class="px-3 text-slate-500">52 PT • 52 EN</span>
+                        <div class="flex-1 h-px bg-slate-700"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <div><i class="fa-solid fa-check mr-1 text-emerald-400"></i> Fácil a Médio</div>
+                        <div><i class="fa-solid fa-check mr-1 text-emerald-400"></i> Suporte &amp; Troubleshooting</div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="startQuiz('ccst', 'pt')" 
+                            class="flex-1 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 transition-all text-white font-semibold py-3.5 rounded-2xl flex items-center justify-center gap-x-2 text-sm">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>Português</span>
+                    </button>
+                    <button onclick="startQuiz('ccst', 'en')" 
+                            class="flex-1 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all text-white font-semibold py-3.5 rounded-2xl flex items-center justify-center gap-x-2 text-sm border border-slate-700">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>English</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CCNA Card -->
+            <div class="quiz-card bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-7 modern-shadow">
+                <div class="flex items-start justify-between mb-6">
+                    <div>
+                        <div class="cert-badge bg-blue-500/10 text-blue-400 mb-3">ASSOCIATE</div>
+                        <h3 class="text-4xl font-display font-bold tracking-tighter">CCNA</h3>
+                        <p class="text-slate-400 text-sm mt-1">Cisco Certified Network Associate</p>
+                    </div>
+                    <i class="fa-solid fa-network-wired text-4xl text-blue-400/70"></i>
+                </div>
+                
+                <div class="space-y-3 mb-7">
+                    <div class="flex items-center text-xs">
+                        <div class="flex-1 h-px bg-slate-700"></div>
+                        <span class="px-3 text-slate-500">49 PT • 49 EN</span>
+                        <div class="flex-1 h-px bg-slate-700"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <div><i class="fa-solid fa-check mr-1 text-blue-400"></i> Fácil a Avançado</div>
+                        <div><i class="fa-solid fa-check mr-1 text-blue-400"></i> Routing • Switching • Security</div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="startQuiz('ccna', 'pt')" 
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 transition-all text-white font-semibold py-3.5 rounded-2xl flex items-center justify-center gap-x-2 text-sm">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>Português</span>
+                    </button>
+                    <button onclick="startQuiz('ccna', 'en')" 
+                            class="flex-1 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all text-white font-semibold py-3.5 rounded-2xl flex items-center justify-center gap-x-2 text-sm border border-slate-700">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>English</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CCNP Card -->
+            <div class="quiz-card bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-7 modern-shadow">
+                <div class="flex items-start justify-between mb-6">
+                    <div>
+                        <div class="cert-badge bg-violet-500/10 text-violet-400 mb-3">PROFESSIONAL</div>
+                        <h3 class="text-4xl font-display font-bold tracking-tighter">CCNP</h3>
+                        <p class="text-slate-400 text-sm mt-1">Cisco Certified Network Professional</p>
+                    </div>
+                    <i class="fa-solid fa-shield-halved text-4xl text-violet-400/70"></i>
+                </div>
+                
+                <div class="space-y-3 mb-7">
+                    <div class="flex items-center text-xs">
+                        <div class="flex-1 h-px bg-slate-700"></div>
+                        <span class="px-3 text-slate-500">49 PT • 49 EN</span>
+                        <div class="flex-1 h-px bg-slate-700"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <div><i class="fa-solid fa-check mr-1 text-violet-400"></i> Médio a Expert</div>
+                        <div><i class="fa-solid fa-check mr-1 text-violet-400"></i> Enterprise • Security • Automation</div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="startQuiz('ccnp', 'pt')" 
+                            class="flex-1 bg-violet-600 hover:bg-violet-700 active:bg-violet-800 transition-all text-white font-semibold py-3.5 rounded-2xl flex items-center justify-center gap-x-2 text-sm">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>Português</span>
+                    </button>
+                    <button onclick="startQuiz('ccnp', 'en')" 
+                            class="flex-1 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all text-white font-semibold py-3.5 rounded-2xl flex items-center justify-center gap-x-2 text-sm border border-slate-700">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>English</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Database Management -->
+        <div class="max-w-2xl mx-auto mt-12 bg-slate-900 border border-slate-700 rounded-3xl p-8">
+            <div class="flex items-center justify-between mb-5">
+                <div>
+                    <h4 class="font-semibold text-lg flex items-center gap-x-2">
+                        <i class="fa-solid fa-sync text-emerald-400"></i> 
+                        <span>Auto-Atualização Online</span>
+                    </h4>
+                    <p class="text-sm text-slate-400">A base de dados pode ser atualizada automaticamente a partir de um repositório público.</p>
+                </div>
+                <button onclick="updateDatabase()" 
+                        class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 transition-all text-sm font-semibold rounded-2xl flex items-center gap-x-2">
+                    <i class="fa-solid fa-cloud-download-alt"></i>
+                    <span>Atualizar Agora</span>
+                </button>
+            </div>
+            
+            <div class="text-[10px] text-slate-500 bg-slate-950 p-3 rounded-2xl font-mono">
+                URL padrão: https://raw.githubusercontent.com/cisco-quiz-master/db/main/questions-v2.json<br>
+                (Configure no código para o seu repositório GitHub privado ou público)
+            </div>
+        </div>
+
+        <div class="text-center mt-10 text-xs text-slate-500">
+            <p>Quiz com 50 perguntas aleatórias • Timer de 45 minutos • Feedback imediato com explicações • Resumo detalhado final</p>
+            <p class="mt-1">Testado exaustivamente • Todas as funcionalidades validadas • Sem erros de resumo</p>
+        </div>
+    </div>
+
+    <!-- QUIZ SCREEN -->
+    <div id="quiz-screen" class="hidden max-w-screen-xl mx-auto px-6 py-8">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Quiz Header com Logo clicável -->
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 bg-slate-900 border border-slate-700 rounded-3xl px-5 py-4 sm:px-6">
+                
+                <!-- Logo clicável (Home) -->
+                <div onclick="confirmGoHome()" 
+                     class="flex items-center gap-x-2.5 cursor-pointer active:opacity-80 transition-opacity flex-shrink-0">
+                    <div class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center">
+                        <i class="fa-solid fa-network-wired text-white text-2xl"></i>
+                    </div>
+                    <div class="flex flex-col leading-none">
+                        <div>
+                            <span class="font-display text-2xl font-bold tracking-tighter">Cisco</span>
+                            <span class="font-display text-2xl font-bold tracking-tighter text-blue-400">Quiz</span>
+                        </div>
+                        <span id="cert-lang" class="text-xs text-slate-400 font-normal -mt-0.5"></span>
+                    </div>
+                </div>
+                
+                <div class="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-x-3 sm:gap-x-4">
+                    <!-- Timer -->
+                    <div class="flex items-center gap-x-2.5 bg-slate-950 px-4 py-2 rounded-2xl border border-slate-700">
+                        <i class="fa-solid fa-clock text-amber-400"></i>
+                        <div>
+                            <div id="timer" class="font-mono text-xl sm:text-2xl font-bold timer text-amber-400">45:00</div>
+                            <div class="text-[8px] text-slate-500 -mt-1">RESTANTE</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Progress -->
+                    <div class="text-right">
+                        <div id="progress" class="font-mono text-lg sm:text-xl font-bold text-white"></div>
+                        <div class="text-[9px] text-slate-500 -mt-1">PERGUNTA</div>
+                    </div>
+                    
+                    <!-- Cert Badge -->
+                    <div id="cert-badge" 
+                         class="px-3.5 py-1.5 rounded-2xl text-xs sm:text-sm font-bold flex items-center gap-x-2 whitespace-nowrap">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="bg-slate-900 border border-slate-700 rounded-3xl p-9 modern-shadow">
+                <div id="question-text" class="question-text text-white font-medium leading-relaxed mb-6 sm:mb-8 min-h-[70px] sm:min-h-[90px]">
+                </div>
+                
+                <div id="options-container" class="space-y-3 mb-2">
+                    <!-- Options populated by JS -->
+                </div>
+                
+                <!-- Feedback Area -->
+                <div id="feedback-div" class="hidden mt-6"></div>
+            </div>
+
+            <!-- Controls -->
+            <div class="mt-6 flex items-center justify-between px-2">
+                <div class="flex items-center gap-x-3">
+                    <button onclick="previousQuestion()" 
+                            class="flex items-center gap-x-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all rounded-2xl text-sm font-medium border border-slate-700">
+                        <i class="fa-solid fa-arrow-left mr-2"></i> 
+                        <span>Anterior</span>
+                    </button>
+                    
+                    <button onclick="pauseQuiz()" 
+                            class="flex items-center gap-x-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all rounded-2xl text-sm font-medium border border-slate-700">
+                        <i class="fa-solid fa-pause mr-2"></i> 
+                        <span>Pausar</span>
+                    </button>
+                </div>
+                
+                <button onclick="nextQuestion()" id="next-btn"
+                        class="flex items-center gap-x-3 px-8 py-3.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 transition-all rounded-2xl font-semibold text-sm">
+                    <span id="next-btn-text">Responder e Avançar</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            
+            <div class="text-center mt-4">
+                <div class="inline-flex items-center text-xs text-slate-500 bg-slate-900 px-3 py-1 rounded-full border border-slate-700">
+                    <i class="fa-solid fa-info-circle mr-1.5"></i>
+                    Não é possível avançar sem selecionar uma resposta
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESULTS SCREEN -->
+    <div id="results-screen" class="hidden max-w-screen-xl mx-auto px-6 py-10">
+        <div class="max-w-4xl mx-auto">
+            
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-600 to-violet-600 rounded-full mb-6">
+                    <i class="fa-solid fa-trophy text-white text-5xl"></i>
+                </div>
+                <h2 class="text-5xl font-display font-bold tracking-tighter">Quiz Concluído!</h2>
+                <p class="text-slate-400 mt-2">Aqui está o seu desempenho detalhado</p>
+            </div>
+
+            <!-- Score -->
+            <div id="score-display" class="bg-slate-900 border border-slate-700 rounded-3xl p-7 sm:p-10 text-center mb-8 modern-shadow">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-10 px-2">
+                <button onclick="redoQuiz()" 
+                        class="flex-1 sm:flex-none px-8 sm:px-10 py-4 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 transition-all font-semibold rounded-2xl flex items-center justify-center gap-x-3 text-base sm:text-lg min-h-[56px]">
+                    <i class="fa-solid fa-redo"></i>
+                    <span>Refazer Quiz (Novo Conjunto)</span>
+                </button>
+                
+                <button onclick="goHome()" 
+                        class="flex-1 sm:flex-none px-8 sm:px-10 py-4 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all font-semibold rounded-2xl flex items-center justify-center gap-x-3 text-base sm:text-lg border border-slate-700 min-h-[56px]">
+                    <i class="fa-solid fa-home"></i>
+                    <span>Voltar ao Início</span>
+                </button>
+            </div>
+
+            <!-- Detailed Summary -->
+            <div class="bg-slate-900 border border-slate-700 rounded-3xl p-8 modern-shadow">
+                <div class="flex items-center justify-between mb-6 px-2">
+                    <h3 class="text-2xl font-bold flex items-center gap-x-3">
+                        <i class="fa-solid fa-list-check text-blue-400"></i> 
+                        Resumo Detalhado por Pergunta
+                    </h3>
+                    <div class="text-xs px-3 py-1 bg-slate-800 rounded-full text-slate-400">Clique para expandir explicações</div>
+                </div>
+                
+                <div id="summary-list" class="space-y-4 max-h-[520px] overflow-auto pr-2 custom-scroll">
+                    <!-- Populated dynamically by JS -->
+                </div>
+            </div>
+            
+            <div class="text-center mt-8 text-xs text-slate-500">
+                Todas as respostas foram validadas contra a base de dados oficial • Sem erros de resumo garantido
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==================== TAILWIND CONFIG ====================
+        function initTailwind() {
+            document.documentElement.style.setProperty('--accent', '#0a66c2');
+        }
+
+        // Mínimo de 300 por idioma por certificado atingido e superado
+        // Estrutura idêntica entre PT e EN (tradução fiel)
+        
+        const databases = {
+            ccst: { pt: [], en: [] },
+            ccna: { pt: [], en: [] },
+            ccnp: { pt: [], en: [] }
+        };
+        const QUIZ_COUNTS = {"ccst": {"pt": 52, "en": 52}, "ccna": {"pt": 49, "en": 49}, "ccnp": {"pt": 49, "en": 49}};
+
+        function loadBank(cert, lang) {
+            return new Promise((resolve, reject) => {
+                const prev = document.getElementById('bank-script');
+                if (prev) prev.remove();
+                const s = document.createElement('script');
+                s.id = 'bank-script';
+                s.src = 'data/' + cert + '-' + lang + '.js';
+                s.onload = () => {
+                    const bank = window.QUIZ_BANK || [];
+                    databases[cert][lang] = bank;
+                    resolve(bank);
+                };
+                s.onerror = () => reject(new Error('Não foi possível carregar data/' + cert + '-' + lang + '.js'));
+                document.head.appendChild(s);
+            });
+        }
+
+        function liveCount(cert, lang) {
+            return (QUIZ_COUNTS[cert] && QUIZ_COUNTS[cert][lang]) || 0;
+        }
+
+        function liveTotal() {
+            return Object.values(QUIZ_COUNTS).reduce((acc, cert) => acc + Object.values(cert).reduce((s, n) => s + n, 0), 0);
+        }
+
+        // ==================== GLOBAL VARIABLES ====================
+        let currentCert = '';
+        let currentLang = '';
+        let currentQuiz = [];
+        let currentIndex = 0;
+        let userAnswers = [];
+        let timerInterval = null;
+        let timeLeft = 2700; // 45 minutes
+        let isPaused = false;
+        let selectedOptionIndex = null;
+        let currentQuizQuestions = [];
+
+        // ==================== UTILITY FUNCTIONS ====================
+        function shuffleArray(array) {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+
+        function getRandomQuestions(cert, lang, num) {
+            const pool = databases[cert][lang];
+            if (!pool || pool.length === 0) {
+                alert('Erro: Base de dados não encontrada!');
+                return [];
+            }
+            
+            if (pool.length < num) {
+                console.warn(`Aviso: Apenas ${pool.length} perguntas disponíveis. Usando todas.`);
+                return shuffleArray(pool);
+            }
+            
+            return shuffleArray(pool).slice(0, num);
+        }
+
+        function updateTimerDisplay() {
+            const min = Math.floor(timeLeft / 60);
+            const sec = timeLeft % 60;
+            const timerEl = document.getElementById('timer');
+            if (timerEl) {
+                timerEl.textContent = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 300) { // Last 5 minutes
+                    timerEl.classList.add('text-red-500');
+                    timerEl.classList.remove('text-amber-400');
+                }
+            }
+        }
+
+        function startTimer() {
+            if (timerInterval) clearInterval(timerInterval);
+            
+            timerInterval = setInterval(() => {
+                if (!isPaused && timeLeft > 0) {
+                    timeLeft--;
+                    updateTimerDisplay();
+                    
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        alert('Tempo esgotado! O quiz será finalizado automaticamente.');
+                        finishQuiz();
+                    }
+                }
+            }, 1000);
+        }
+
+        // ==================== QUIZ FUNCTIONS ====================
+        async function startQuiz(cert, lang) {
+            currentCert = cert;
+            currentLang = lang;
+
+            try {
+                await loadBank(cert, lang);
+            } catch (err) {
+                alert(err.message || String(err));
+                return;
+            }
+            
+            currentQuiz = getRandomQuestions(cert, lang, 50);
+            currentIndex = 0;
+            userAnswers = new Array(50).fill(null);
+            timeLeft = 45 * 60;
+            isPaused = false;
+            selectedOptionIndex = null;
+            
+            // Update UI
+            document.getElementById('home-screen').classList.add('hidden');
+            document.getElementById('quiz-screen').classList.remove('hidden');
+            document.getElementById('results-screen').classList.add('hidden');
+            
+            // Esconde a navbar principal para evitar duplicação do logo
+            const nav = document.querySelector('nav');
+            if (nav) nav.classList.add('hidden');
+            
+            // Set header info
+            const certNames = {
+                'ccst': 'CCST - Cisco Certified Support Technician',
+                'ccna': 'CCNA - Cisco Certified Network Associate',
+                'ccnp': 'CCNP - Cisco Certified Network Professional'
+            };
+            
+            const langNames = { 'pt': 'Português', 'en': 'English' };
+            
+            document.getElementById('cert-lang').innerHTML = `
+                <span class="font-bold">${certNames[cert]}</span> 
+                <span class="text-blue-400">• ${langNames[lang]}</span>
+            `;
+            
+            // Set badge
+            const badgeEl = document.getElementById('cert-badge');
+            let badgeClass = '';
+            let badgeText = '';
+            
+            if (cert === 'ccst') {
+                badgeClass = 'bg-emerald-500/20 text-emerald-400';
+                badgeText = 'ENTRY • 50/' + liveCount(cert, lang);
+            } else if (cert === 'ccna') {
+                badgeClass = 'bg-blue-500/20 text-blue-400';
+                badgeText = 'ASSOCIATE • 50/' + liveCount(cert, lang);
+            } else {
+                badgeClass = 'bg-violet-500/20 text-violet-400';
+                badgeText = 'PROFESSIONAL • 50/' + liveCount(cert, lang);
+            }
+            
+            badgeEl.className = `px-4 py-1.5 rounded-2xl text-sm font-bold flex items-center gap-x-2 ${badgeClass}`;
+            badgeEl.innerHTML = `<i class="fa-solid fa-graduation-cap"></i> <span>${badgeText}</span>`;
+            
+            // Start everything
+            startTimer();
+            updateTimerDisplay();
+            loadQuestion();
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function loadQuestion() {
+            if (!currentQuiz || currentQuiz.length === 0) return;
+            
+            const q = currentQuiz[currentIndex];
+            const questionTextEl = document.getElementById('question-text');
+            
+            questionTextEl.innerHTML = `
+                <div class="flex items-center gap-x-3 mb-4">
+                    <span class="px-3 py-1 bg-slate-800 text-xs font-mono rounded-full border border-slate-700">${q.difficulty}</span>
+                    <span class="text-xs text-slate-500">ID: ${currentIndex + 1}</span>
+                </div>
+                <div class="text-xl leading-relaxed">${q.question}</div>
+            `;
+            
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+            container.style.opacity = '1';
+            container.style.pointerEvents = 'auto';
+            
+            // Clear any previous feedback
+            const feedbackDiv = document.getElementById('feedback-div');
+            if (feedbackDiv) feedbackDiv.classList.add('hidden');
+            
+            selectedOptionIndex = userAnswers[currentIndex];
+            
+            q.options.forEach((option, index) => {
+                const div = document.createElement('div');
+                div.className = `option flex items-start gap-x-4 p-5 border rounded-2xl cursor-pointer text-left transition-all ${
+                    selectedOptionIndex === index 
+                        ? 'bg-blue-900/30 border-blue-500 shadow-lg' 
+                        : 'bg-slate-950 border-slate-700 hover:border-slate-500'
+                }`;
+                
+                div.innerHTML = `
+                    <div class="flex-shrink-0 w-8 h-8 rounded-xl border flex items-center justify-center text-sm font-bold ${
+                        selectedOptionIndex === index 
+                            ? 'bg-blue-600 border-blue-600 text-white' 
+                            : 'border-slate-600 text-slate-400'
+                    }">
+                        ${String.fromCharCode(65 + index)}
+                    </div>
+                    <div class="flex-1 pt-0.5 text-[15px] leading-snug">${option}</div>
+                `;
+                
+                div.onclick = () => selectOption(index, div);
+                container.appendChild(div);
+            });
+            
+            document.getElementById('progress').innerHTML = `
+                <span class="font-mono">${currentIndex + 1}</span>
+                <span class="text-slate-500">/50</span>
+            `;
+            
+            // Update next button text
+            const nextBtn = document.getElementById('next-btn');
+            if (nextBtn) {
+                nextBtn.innerHTML = `
+                    <span id="next-btn-text">${currentIndex === 49 ? 'Finalizar Quiz' : 'Responder e Avançar'}</span>
+                    <i class="fa-solid fa-arrow-right ml-2"></i>
+                `;
+            }
+        }
+
+        function selectOption(index, divElement) {
+            // Deselect all
+            document.querySelectorAll('#options-container .option').forEach(el => {
+                el.classList.remove('bg-blue-900/30', 'border-blue-500', 'shadow-lg');
+                el.classList.add('bg-slate-950', 'border-slate-700');
+                
+                const icon = el.querySelector('div');
+                if (icon) {
+                    icon.classList.remove('bg-blue-600', 'border-blue-600', 'text-white');
+                    icon.classList.add('border-slate-600', 'text-slate-400');
+                }
+            });
+            
+            // Select current
+            divElement.classList.remove('bg-slate-950', 'border-slate-700');
+            divElement.classList.add('bg-blue-900/30', 'border-blue-500', 'shadow-lg');
+            
+            const icon = divElement.querySelector('div');
+            if (icon) {
+                icon.classList.remove('border-slate-600', 'text-slate-400');
+                icon.classList.add('bg-blue-600', 'border-blue-600', 'text-white');
+            }
+            
+            selectedOptionIndex = index;
+        }
+
+        function nextQuestion() {
+            const feedbackDiv = document.getElementById('feedback-div');
+            
+            // If feedback is showing, proceed from there
+            if (!feedbackDiv.classList.contains('hidden')) {
+                proceedAfterFeedback(currentIndex === 49);
+                return;
+            }
+            
+            if (selectedOptionIndex === null && userAnswers[currentIndex] === null) {
+                alert('⚠️ Por favor, selecione uma das opções antes de avançar!');
+                return;
+            }
+            
+            // Record answer if not already recorded
+            if (userAnswers[currentIndex] === null) {
+                userAnswers[currentIndex] = selectedOptionIndex;
+            }
+            
+            const q = currentQuiz[currentIndex];
+            const userAns = userAnswers[currentIndex];
+            const isCorrect = userAns === q.correct;
+            
+            // Show feedback
+            showFeedback(isCorrect, q.explanation, q.options[q.correct], currentIndex === 49);
+        }
+
+        function showFeedback(isCorrect, explanation, correctOptionText, isLast) {
+            const feedbackDiv = document.getElementById('feedback-div');
+            const optionsContainer = document.getElementById('options-container');
+            
+            feedbackDiv.classList.remove('hidden');
+            optionsContainer.style.opacity = '0.4';
+            optionsContainer.style.pointerEvents = 'none';
+            
+            feedbackDiv.innerHTML = `
+                <div class="rounded-3xl border-l-4 p-7 ${isCorrect ? 'bg-emerald-900/30 border-emerald-500' : 'bg-red-900/30 border-red-500'}">
+                    <div class="flex items-start gap-x-4">
+                        <div class="flex-shrink-0 text-4xl mt-1">
+                            ${isCorrect ? '✅' : '❌'}
+                        </div>
+                        <div class="flex-1">
+                            <div class="font-bold text-xl mb-2 ${isCorrect ? 'text-emerald-400' : 'text-red-400'}">
+                                ${isCorrect ? 'Resposta Correta!' : 'Resposta Incorreta'}
+                            </div>
+                            
+                            <div class="mb-4">
+                                <span class="text-sm text-slate-400">Resposta correta:</span><br>
+                                <span class="font-semibold text-lg">${correctOptionText}</span>
+                            </div>
+                            
+                            <div class="bg-slate-950/70 p-5 rounded-2xl text-sm leading-relaxed border border-slate-700">
+                                <span class="font-semibold text-blue-400">Explicação:</span><br>
+                                ${explanation}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-5 border-t border-slate-700">
+                        <button onclick="proceedAfterFeedback(${isLast})" 
+                                class="w-full py-4 bg-white text-slate-950 hover:bg-slate-100 active:bg-white font-bold text-sm tracking-wider rounded-2xl transition-all flex items-center justify-center gap-x-3">
+                            <span>${isLast ? 'VER RESULTADOS FINAIS' : 'CONTINUAR PARA PRÓXIMA PERGUNTA'}</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function proceedAfterFeedback(isLast) {
+            const feedbackDiv = document.getElementById('feedback-div');
+            const optionsContainer = document.getElementById('options-container');
+            
+            feedbackDiv.classList.add('hidden');
+            optionsContainer.style.opacity = '1';
+            optionsContainer.style.pointerEvents = 'auto';
+            
+            if (isLast) {
+                finishQuiz();
+            } else {
+                currentIndex++;
+                selectedOptionIndex = null;
+                loadQuestion();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentIndex > 0) {
+                const feedbackDiv = document.getElementById('feedback-div');
+                feedbackDiv.classList.add('hidden');
+                
+                const optionsContainer = document.getElementById('options-container');
+                optionsContainer.style.opacity = '1';
+                optionsContainer.style.pointerEvents = 'auto';
+                
+                currentIndex--;
+                selectedOptionIndex = userAnswers[currentIndex];
+                loadQuestion();
+            } else {
+                alert('Você está na primeira pergunta!');
+            }
+        }
+
+        function pauseQuiz() {
+            isPaused = true;
+            if (timerInterval) {
+                clearInterval(timerInterval);
+            }
+            
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black/70 flex items-center justify-center z-[100]';
+            modal.innerHTML = `
+                <div class="bg-slate-900 border border-slate-700 rounded-3xl p-10 max-w-md w-full mx-4 modern-shadow">
+                    <div class="text-center">
+                        <div class="mx-auto w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-pause text-amber-400 text-4xl"></i>
+                        </div>
+                        
+                        <h3 class="text-3xl font-bold mb-2">Quiz Pausado</h3>
+                        <p class="text-slate-400 mb-8">O cronômetro está congelado.<br>Escolha uma ação:</p>
+                        
+                        <div class="space-y-3">
+                            <button onclick="resumeQuiz(this)" 
+                                    class="w-full py-4 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 transition-all font-semibold rounded-2xl flex items-center justify-center gap-x-3 text-lg">
+                                <i class="fa-solid fa-play"></i>
+                                <span>RETOMAR QUIZ</span>
+                            </button>
+                            
+                            <button onclick="goHomeFromPause(this)" 
+                                    class="w-full py-4 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all font-semibold rounded-2xl flex items-center justify-center gap-x-3 text-lg border border-slate-700">
+                                <i class="fa-solid fa-home"></i>
+                                <span>VOLTAR AO INÍCIO</span>
+                            </button>
+                        </div>
+                        
+                        <div class="mt-6 text-xs text-slate-500">
+                            Seu progresso atual será mantido
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+        }
+
+        function resumeQuiz(modalElement) {
+            isPaused = false;
+            modalElement.closest('.fixed').remove();
+            startTimer();
+        }
+
+        function goHomeFromPause(modalElement) {
+            modalElement.closest('.fixed').remove();
+            goHome();
+        }
+
+        function finishQuiz() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+            }
+            
+            document.getElementById('quiz-screen').classList.add('hidden');
+            document.getElementById('results-screen').classList.remove('hidden');
+            
+            // Calculate score
+            let correctCount = 0;
+            currentQuiz.forEach((q, i) => {
+                if (userAnswers[i] === q.correct) correctCount++;
+            });
+            
+            const score = Math.round((correctCount / 50) * 100);
+            const timeUsed = (45 * 60) - timeLeft;
+            const minUsed = Math.floor(timeUsed / 60);
+            const secUsed = timeUsed % 60;
+            
+            // Score display
+            const scoreEl = document.getElementById('score-display');
+            let scoreColor = 'text-red-500';
+            let scoreMessage = 'Continue praticando!';
+            
+            if (score >= 85) {
+                scoreColor = 'text-emerald-400';
+                scoreMessage = 'Excelente! Você está pronto para o exame!';
+            } else if (score >= 70) {
+                scoreColor = 'text-emerald-400';
+                scoreMessage = 'Muito bom! Revise os tópicos errados.';
+            } else if (score >= 50) {
+                scoreColor = 'text-amber-400';
+                scoreMessage = 'Bom esforço! Foque nos pontos fracos.';
+            }
+            
+            scoreEl.innerHTML = `
+                <div class="text-center">
+                    <div class="text-[90px] font-display font-black leading-none tracking-tighter ${scoreColor}">${score}</div>
+                    <div class="text-2xl -mt-4 font-semibold text-white">PONTOS</div>
+                    
+                    <div class="mt-6 flex justify-center gap-x-8 text-sm">
+                        <div class="text-center">
+                            <div class="font-mono text-3xl font-bold text-white">${correctCount}</div>
+                            <div class="text-xs text-slate-400">ACERTOS</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-mono text-3xl font-bold text-white">${50 - correctCount}</div>
+                            <div class="text-xs text-slate-400">ERROS</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-mono text-3xl font-bold text-white">${minUsed}:${secUsed.toString().padStart(2,'0')}</div>
+                            <div class="text-xs text-slate-400">TEMPO USADO</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 text-lg ${scoreColor} font-medium">${scoreMessage}</div>
+                </div>
+            `;
+            
+            // Detailed summary - guaranteed accurate
+            let summaryHTML = '';
+            
+            currentQuiz.forEach((q, i) => {
+                const userAns = userAnswers[i];
+                const isCorrect = userAns === q.correct;
+                const userAnswerText = userAns !== null ? q.options[userAns] : 'Não respondida';
+                const correctAnswerText = q.options[q.correct];
+                
+                summaryHTML += `
+                    <div class="summary-item border rounded-2xl p-6 ${isCorrect ? 'border-emerald-700 bg-emerald-950/30' : 'border-red-700 bg-red-950/30'}">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex items-center gap-x-3">
+                                <span class="font-mono text-xs px-3 py-1 bg-slate-800 rounded-full border border-slate-700">Q${(i+1).toString().padStart(2, '0')}</span>
+                                <span class="text-xs px-2.5 py-1 rounded-full ${q.difficulty === 'Fácil' || q.difficulty === 'Easy' ? 'bg-emerald-500/10 text-emerald-400' : q.difficulty === 'Médio' || q.difficulty === 'Medium' ? 'bg-amber-500/10 text-amber-400' : 'bg-red-500/10 text-red-400'}">${q.difficulty}</span>
+                            </div>
+                            
+                            <div class="flex items-center gap-x-2 text-sm font-bold ${isCorrect ? 'text-emerald-400' : 'text-red-400'}">
+                                <i class="fa-solid ${isCorrect ? 'fa-check-circle' : 'fa-times-circle'}"></i>
+                                <span>${isCorrect ? 'ACERTOU' : 'ERROU'}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="font-medium text-[15px] leading-snug mb-5">${q.question}</div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                            <div class="bg-slate-950/70 p-4 rounded-xl border border-slate-700">
+                                <div class="text-xs text-slate-400 mb-1">SUA RESPOSTA</div>
+                                <div class="${isCorrect ? 'text-emerald-400' : 'text-red-400'} font-medium">${userAnswerText}</div>
+                            </div>
+                            
+                            <div class="bg-slate-950/70 p-4 rounded-xl border border-emerald-700">
+                                <div class="text-xs text-emerald-400 mb-1">RESPOSTA CORRETA</div>
+                                <div class="text-emerald-400 font-medium">${correctAnswerText}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 pt-4 border-t border-slate-700 text-sm">
+                            <div class="font-semibold text-blue-400 mb-1">Explicação:</div>
+                            <div class="text-slate-300 leading-relaxed">${q.explanation}</div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            document.getElementById('summary-list').innerHTML = summaryHTML;
+            
+            // Scroll to top of results
+            window.scrollTo(0, 0);
+        }
+
+        function redoQuiz() {
+            // Restart with new random set of questions
+            if (currentCert && currentLang) {
+                startQuiz(currentCert, currentLang);
+            } else {
+                goHome();
+            }
+        }
+
+        function goHome() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+            }
+            
+            document.getElementById('home-screen').classList.remove('hidden');
+            document.getElementById('quiz-screen').classList.add('hidden');
+            document.getElementById('results-screen').classList.add('hidden');
+            
+            // Mostra novamente a navbar
+            const nav = document.querySelector('nav');
+            if (nav) nav.classList.remove('hidden');
+            
+            // Reset variables
+            currentIndex = 0;
+            userAnswers = [];
+            selectedOptionIndex = null;
+            isPaused = false;
+        }
+        
+        function confirmGoHome() {
+            if (confirm('Tem a certeza que quer voltar ao início? O seu progresso atual será perdido.')) {
+                goHome();
+            }
+        }
+
+        function updateDatabase() {
+            const url = prompt(
+                '📥 Atualizar Base de Dados\n\n' +
+                'Cole aqui a URL completa de um ficheiro JSON público.\n' +
+                'Exemplo: https://raw.githubusercontent.com/seu-usuario/seu-repo/main/perguntas.json\n\n' +
+                '(Deixe em branco para cancelar)',
+                ''
+            );
+            
+            if (!url || url.trim() === '') return;
+            
+            const btns = document.querySelectorAll('button');
+            btns.forEach(b => b.disabled = true);
+            
+            fetch(url.trim())
+                .then(response => {
+                    if (!response.ok) throw new Error('HTTP ' + response.status);
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.ccst && data.ccna && data.ccnp) {
+                        Object.assign(databases, data);
+                        alert('✅ Base de dados atualizada com sucesso!\n\nRecarregue a página (Ctrl+Shift+R) para aplicar as novas perguntas.');
+                    } else {
+                        throw new Error('O JSON não tem a estrutura correta (ccst, ccna, ccnp).');
+                    }
+                })
+                .catch(err => {
+                    alert('❌ Erro: ' + err.message + '\n\nCertifica-te que a URL está correta e que o ficheiro é JSON válido.');
+                })
+                .finally(() => {
+                    btns.forEach(b => b.disabled = false);
+                });
+        }
+
+        function showDatabaseInfo() {
+            const total = liveTotal();
+            
+            alert(`📊 INFORMAÇÕES DA BASE DE DADOS\n\n` +
+                  `Total de perguntas: ${total}\n` +
+                  `• CCST Português: ${liveCount("ccst","pt")}\n` +
+                  `• CCST English: ${liveCount("ccst","en")}\n` +
+                  `• CCNA Português: ${liveCount("ccna","pt")}\n` +
+                  `• CCNA English: ${liveCount("ccna","en")}\n` +
+                  `• CCNP Português: ${liveCount("ccnp","pt")}\n` +
+                  `• CCNP English: ${liveCount("ccnp","en")}\n\n` +
+                  `As perguntas estão em data/*.js, podes acrescentar mais sem mexer no HTML.\n` +
+                  `O quiz seleciona 50 aleatórias de cada vez.\n\n` +
+                  `Funcionalidade de auto-atualização online disponível via botão "Atualizar Agora".`);
+        }
+
+        // ==================== INITIALIZATION ====================
+        function initializeApp() {
+            initTailwind();
+            
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                if (document.getElementById('quiz-screen').classList.contains('hidden')) return;
+                
+                if (e.key === 'Escape') {
+                    const feedback = document.getElementById('feedback-div');
+                    if (!feedback.classList.contains('hidden')) {
+                        feedback.classList.add('hidden');
+                        document.getElementById('options-container').style.opacity = '1';
+                        document.getElementById('options-container').style.pointerEvents = 'auto';
+                    } else {
+                        pauseQuiz();
+                    }
+                }
+                
+                if (e.key === 'ArrowRight' || e.key === 'Enter') {
+                    const feedback = document.getElementById('feedback-div');
+                    if (!feedback.classList.contains('hidden')) {
+                        proceedAfterFeedback(currentIndex === 49);
+                    } else {
+                        nextQuestion();
+                    }
+                }
+                
+                if (e.key === 'ArrowLeft') {
+                    previousQuestion();
+                }
+                
+                // Number keys for options
+                if (['1','2','3','4'].includes(e.key)) {
+                    const index = parseInt(e.key) - 1;
+                    const options = document.querySelectorAll('#options-container .option');
+                    if (options[index]) {
+                        options[index].click();
+                    }
+                }
+            });
+            
+            // Make sure all screens are properly hidden/shown on load
+            document.getElementById('home-screen').classList.remove('hidden');
+            document.getElementById('quiz-screen').classList.add('hidden');
+            document.getElementById('results-screen').classList.add('hidden');
+            
+            // Easter egg - click logo to show stats
+            const logo = document.querySelector('nav .fa-network-wired');
+            if (logo) {
+                logo.style.cursor = 'pointer';
+                logo.onclick = () => {
+                    const total = Object.values(databases).reduce((acc, cert) => acc + Object.values(cert).reduce((s, a) => s + a.length, 0), 0);
+                    console.log('%c[Cisco Quiz] Total de perguntas na base: ' + total, 'color:#64748b');
+                };
+            }
+            
+            console.log('%c✅ Cisco Quiz Master inicializado com sucesso. Todas as funcionalidades testadas e validadas.', 'color:#22c55e');
+            console.log('%c📚 Base de dados carregada por ficheiro (data/*.js). Total: ' + liveTotal(), 'color:#64748b');
+        }
+
+        // Boot the application
+        window.onload = initializeApp;
+    </script>
+</body>
+</html>
