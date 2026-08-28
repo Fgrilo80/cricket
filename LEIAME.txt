@@ -21,10 +21,10 @@ Formato de cada pergunta:
 `correct` é o índice da opção certa (0, 1, 2 ou 3).
 
 Contagens atuais:
-- CCST PT 154 / EN 154
-- CCNA PT 154 / EN 154
-- CCNP PT 158 / EN 158
-- Total 932
+- CCST PT 163 / EN 163
+- CCNA PT 157 / EN 157
+- CCNP PT 160 / EN 160
+- Total 960
 Cada exame tira 50 perguntas ao calhas.
 
 ## Telemóvel

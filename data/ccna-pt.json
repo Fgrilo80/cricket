@@ -1856,5 +1856,41 @@
     "correct": 1,
     "explanation": "Um NTP falso pode falhar certs, logs e Kerberos. Chaves simétricas (ou NTPv4 Autokey, raro) autenticam o servidor. Stratum 16 = unsynchronized. Prefira fontes internas stratum 1/2.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a diferença fundamental entre OSPFv2 e OSPFv3?",
+    "options": [
+      "OSPFv3 só corre em switches L2",
+      "OSPFv2 encaminha IPv4; OSPFv3 foi desenhado para IPv6 (e pode fazer AF para IPv4 em plataformas modernas)",
+      "OSPFv3 usa TCP em vez de IP",
+      "Não há qualquer diferença de protocolo"
+    ],
+    "correct": 1,
+    "explanation": "OSPFv2 é para IPv4. OSPFv3 (RFC 5340) transporta LSAs para IPv6; em IOS-XE, Address Families permitem também IPv4 sobre o processo OSPFv3.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Em OSPFv3, a adjacência forma-se com base em quê, de forma distinta do “network” IPv4 clássico do OSPFv2?",
+    "options": [
+      "Apenas no endereço de loopback 127.0.0.1",
+      "Ativação por interface (ipv6 ospf / ospfv3) e Router ID; não se usa o comando network com máscaras IPv4 da mesma forma",
+      "Só via BGP multiprotocol",
+      "Exclusivamente por SNMP"
+    ],
+    "correct": 1,
+    "explanation": "Em OSPFv3 configura-se o processo e ativa-se nas interfaces IPv6. O Router ID (32 bits) continua obrigatório; muitas vezes define-se manualmente se não houver interfaces IPv4.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual multicast IPv6 usa OSPFv3 para AllSPFRouters no link?",
+    "options": [
+      "FF02::1",
+      "FF02::5",
+      "FF02::A",
+      "FF02::1:2"
+    ],
+    "correct": 1,
+    "explanation": "OSPFv3 usa FF02::5 (AllSPFRouters) e FF02::6 (AllDRouters), análogos a 224.0.0.5/6 do OSPFv2, mas em IPv6 link-local multicast.",
+    "difficulty": "Difícil"
   }
 ]

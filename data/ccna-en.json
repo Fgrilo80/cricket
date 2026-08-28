@@ -1856,5 +1856,41 @@
     "correct": 1,
     "explanation": "Fake NTP can break certificates, logs, and Kerberos. Symmetric keys (or the rare NTPv4 Autokey) authenticate the server. Stratum 16 = unsynchronized. Prefer internal stratum 1/2 sources.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "What is the fundamental difference between OSPFv2 and OSPFv3?",
+    "options": [
+      "OSPFv3 only runs on L2 switches",
+      "OSPFv2 routes IPv4; OSPFv3 was designed for IPv6 (and can do IPv4 AF on modern platforms)",
+      "OSPFv3 uses TCP instead of IP",
+      "There is no protocol difference at all"
+    ],
+    "correct": 1,
+    "explanation": "OSPFv2 is for IPv4. OSPFv3 (RFC 5340) carries LSAs for IPv6; on IOS-XE, Address Families can also carry IPv4 in an OSPFv3 process.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In OSPFv3, how is adjacency enabled differently from classic OSPFv2 IPv4 “network” statements?",
+    "options": [
+      "Only via loopback 127.0.0.1",
+      "Per-interface activation (ipv6 ospf / ospfv3) plus a Router ID; not the same IPv4 network mask command style",
+      "Only via multiprotocol BGP",
+      "Only via SNMP"
+    ],
+    "correct": 1,
+    "explanation": "OSPFv3 is enabled on IPv6 interfaces under an OSPFv3 process. A 32-bit Router ID is still required and is often set manually when no IPv4 interface exists.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which IPv6 multicast does OSPFv3 use for AllSPFRouters on the link?",
+    "options": [
+      "FF02::1",
+      "FF02::5",
+      "FF02::A",
+      "FF02::1:2"
+    ],
+    "correct": 1,
+    "explanation": "OSPFv3 uses FF02::5 (AllSPFRouters) and FF02::6 (AllDRouters), the IPv6 link-local multicast analogs of OSPFv2’s 224.0.0.5/6.",
+    "difficulty": "Hard"
   }
 ]

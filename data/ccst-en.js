@@ -1848,5 +1848,113 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "Link-local exists on every interface. Without %zone the OS does not know which NIC to use. ping fe80::1%Ethernet or -6 with a zone id.",
     "difficulty": "Hard"
+  },
+  {
+    "question": "On a UTP cable wiremap, pairs 1-2 are open and pairs 3-6 are fine. Which Ethernet speed is most likely, and why?",
+    "options": [
+      "10 Gb/s, because it only needs two pairs",
+      "100 Mb/s (Fast Ethernet) may work; Gigabit needs all four pairs",
+      "Only fiber can work",
+      "No Ethernet speed works with any open pairs"
+    ],
+    "correct": 1,
+    "explanation": "10/100BASE-TX mainly uses pairs 1-2 and 3-6. 1000BASE-T requires all four pairs. A tester showing only two good pairs typically points to Fast Ethernet, not Gigabit.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "An AP advertises Wi-Fi 6E. Which extra band does it add compared with classic Wi-Fi 6?",
+    "options": [
+      "900 MHz only",
+      "The 6 GHz band (in addition to 2.4 and/or 5 GHz, depending on the radio)",
+      "Bluetooth LE only",
+      "Infrared only"
+    ],
+    "correct": 1,
+    "explanation": "Wi-Fi 6E is 802.11ax in the 6 GHz band. It adds cleaner spectrum and wide channels with less legacy 2.4/5 GHz interference, but range is often shorter and clients must be 6E-capable.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "In CCST troubleshooting, the PC has correct IP, gateway, and DNS; ping to the gateway works; HTTPS and HTTP to a site fail; ping to 8.8.8.8 fails. Which hypothesis is strongest?",
+    "options": [
+      "Only a browser TLS certificate failure",
+      "Forwarding/WAN/firewall problem upstream of the local gateway",
+      "Console cable unplugged",
+      "STP elected the PC as root"
+    ],
+    "correct": 1,
+    "explanation": "Local L3 is fine (IP/gateway/LAN ping). Failure to public IPs points to WAN path, NAT, or perimeter firewall — not DNS (an IP was used) and not TLS alone.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Which statement about IEEE 802.3bt PoE (Type 3/4) is most accurate for support techs?",
+    "options": [
+      "It tops out at 15.4 W like 802.3af",
+      "It allows higher power (about 60 W / 90 W at the PSE) for demanding APs and cameras",
+      "It only works on single-mode fiber",
+      "It always replaces an external PSU with no negotiation"
+    ],
+    "correct": 1,
+    "explanation": "802.3bt (PoE++) raises power versus af/at. PSE-PD classification/negotiation still applies; a mismatched PD or bad cable may not get enough power.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "A switch port goes err-disabled after someone cascades a cheap hub. Which CCST cause is plausible?",
+    "options": [
+      "Missing DNS on the PC",
+      "A protection feature (for example BPDU Guard, loop, or link flap) disabled the port on an error condition",
+      "Cat6 cannot carry Fast Ethernet",
+      "A fiber SFP was inserted into the RJ-45 jack"
+    ],
+    "correct": 1,
+    "explanation": "Err-disabled is a protective state. Hubs and loops can trigger unexpected BPDUs, collisions, or flaps; with BPDU Guard or storm control the port may err-disable. Fix the cause, then shutdown / no shutdown.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "In IPv6, a host has only FE80::/10, can ping on-link neighbors, but cannot open Internet sites. What is typically missing?",
+    "options": [
+      "A GUA (or ULA+NAT64) plus a default router via RA/DHCPv6",
+      "A mandatory APIPA 169.254 address",
+      "Disabling NDP",
+      "Changing the MAC to ff:ff:ff:ff:ff:ff"
+    ],
+    "correct": 0,
+    "explanation": "Link-local works on the link. Off-link traffic needs a GUA (2000::/3) or a translation mechanism, plus a default router learned from Router Advertisement or DHCPv6.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What distinguishes Wi-Fi 6E from Wi-Fi 6 (802.11ax) in terms of spectrum?",
+    "options": [
+      "6E removes the 5 GHz band and stays on 2.4 GHz only",
+      "6E adds operation in the 6 GHz band",
+      "6E is only a marketing name for 802.11ac",
+      "6E requires WEP"
+    ],
+    "correct": 1,
+    "explanation": "Wi-Fi 6 and 6E share 802.11ax PHY features; the “E” (Extension) means the 6 GHz band, with more wide channels and less legacy noise.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Can a legacy 802.11ac (Wi-Fi 5) client join a 6 GHz-only SSID on a Wi-Fi 6E AP?",
+    "options": [
+      "Yes, automatically via DFS",
+      "No: it needs a 6 GHz / 6E-capable radio and driver",
+      "Yes, if the channel is 1, 6, or 11",
+      "Only if WPA3 is disabled"
+    ],
+    "correct": 1,
+    "explanation": "The 6 GHz band requires 6E client hardware. Wi-Fi 5/6 devices without a 6 GHz radio stay on the AP’s 2.4/5 GHz radios, if present.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is a typical advantage of the 6 GHz band in dense offices?",
+    "options": [
+      "Better wall penetration than 2.4 GHz",
+      "Cleaner spectrum and wide channels with less legacy interference",
+      "No authentication needed",
+      "Works without antennas"
+    ],
+    "correct": 1,
+    "explanation": "6 GHz offers new, less crowded channels; wall penetration is usually worse than 2.4 GHz. Plan denser APs for coverage, not only peak rate.",
+    "difficulty": "Medium"
   }
 ];

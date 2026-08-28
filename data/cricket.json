@@ -1850,6 +1850,114 @@
         "correct": 1,
         "explanation": "Link-local existe em todas as interfaces. Sem %zone o SO não sabe por que NIC enviar. ping fe80::1%Ethernet  ou -6 com zone id.",
         "difficulty": "Difícil"
+      },
+      {
+        "question": "Num cabo UTP com mapa de fios 1-2 abertos e 3-6 ok, que velocidade Ethernet é mais provável e porquê?",
+        "options": [
+          "10 Gb/s, porque só precisa de dois pares",
+          "100 Mb/s (Fast Ethernet) possível; Gigabit precisa dos quatro pares",
+          "Só fibra pode funcionar",
+          "Nenhuma velocidade Ethernet funciona com pares abertos"
+        ],
+        "correct": 1,
+        "explanation": "10/100BASE-TX usa sobretudo os pares 1-2 e 3-6. 1000BASE-T exige os quatro pares. Um tester a mostrar apenas dois pares bons aponta tipicamente para Fast Ethernet, não Gigabit.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Um AP anuncia Wi-Fi 6E. Que banda adicional fica disponível relativamente ao Wi-Fi 6 clássico?",
+        "options": [
+          "Apenas 900 MHz",
+          "A banda de 6 GHz (além de 2,4 e/ou 5 GHz, conforme o rádio)",
+          "Só Bluetooth LE",
+          "Apenas infravermelho"
+        ],
+        "correct": 1,
+        "explanation": "Wi-Fi 6E é 802.11ax na banda de 6 GHz. Oferece mais espectro e canais largos com menos interferência herdada de 2,4/5 GHz, mas alcance tipicamente menor e clientes têm de ser 6E.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Em troubleshooting CCST, o PC tem IP, gateway e DNS corretos, ping ao gateway ok, mas HTTPS a um site falha e HTTP na porta 80 também. Ping a 8.8.8.8 falha. Qual hipótese é a mais sólida?",
+        "options": [
+          "Falha só de certificado TLS no browser",
+          "Problema de encaminhamento/WAN/firewall a montante do gateway local",
+          "Cabo console desligado",
+          "STP elegeu o PC como root"
+        ],
+        "correct": 1,
+        "explanation": "L3 local está ok (IP/gateway/ping LAN). Falha para IPs públicos indica caminho WAN, NAT ou firewall de perímetro — não DNS (usou-se IP) nem só TLS.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Qual afirmação sobre PoE IEEE 802.3bt (Type 3/4) é a mais correta para suporte técnico?",
+        "options": [
+          "Entrega no máximo 15,4 W como o 802.3af",
+          "Permite potências mais altas (até cerca de 60 W / 90 W na PSE) para APs e câmaras exigentes",
+          "Só funciona em fibra monomodo",
+          "Substitui sempre a fonte externa mesmo sem negociação"
+        ],
+        "correct": 1,
+        "explanation": "802.3bt (PoE++) sobe a potência face a af/at. Continua a haver classificação/negociação PSE-PD; um PD incompatível ou cabo mau pode ficar sem energia suficiente.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Um switch mostra a porta em err-disabled após ligar um hub barato em cascata. Qual causa CCST é plausível?",
+        "options": [
+          "DNS em falta no PC",
+          "Proteção (ex.: BPDU Guard / loop / link flap) desativou a porta ao detetar condição de erro",
+          "O cabo Cat6 não suporta Fast Ethernet",
+          "O SFP de fibra foi inserido na porta RJ-45"
+        ],
+        "correct": 1,
+        "explanation": "Err-disabled é estado de proteção. Hubs e loops geram BPDUs inesperados, colisões ou flaps; com BPDU Guard ou storm control a porta pode ir a err-disabled. Recupera-se com shutdown / no shutdown após corrigir a causa.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Em IPv6, um host tem só FE80::/10 e consegue pingar vizinhos no mesmo enlace, mas não abre sites na Internet. O que falta tipicamente?",
+        "options": [
+          "Um endereço GUA (ou ULA+NAT64) e um default router via RA/DHCPv6",
+          "Obrigatoriamente um endereço APIPA 169.254",
+          "Desativar o NDP",
+          "Trocar o MAC para ff:ff:ff:ff:ff:ff"
+        ],
+        "correct": 0,
+        "explanation": "Link-local serve no enlace. Tráfego off-link precisa de GUA (2000::/3) ou mecanismo de tradução, mais um router default aprendido por Router Advertisement ou DHCPv6.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "O que distingue Wi-Fi 6E de Wi-Fi 6 (802.11ax) em termos de espectro?",
+        "options": [
+          "6E remove a banda de 5 GHz e fica só em 2,4 GHz",
+          "6E acrescenta operação na banda de 6 GHz",
+          "6E é apenas um nome comercial para 802.11ac",
+          "6E obriga a usar WEP"
+        ],
+        "correct": 1,
+        "explanation": "Wi-Fi 6 e 6E partilham a física 802.11ax; o “E” (Extension) refere-se ao uso da banda de 6 GHz, com mais canais largos e menos ruído legado.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Um cliente antigo só 802.11ac (Wi-Fi 5) consegue associar-se a um SSID exclusivo 6 GHz de um AP Wi-Fi 6E?",
+        "options": [
+          "Sim, automaticamente via DFS",
+          "Não: precisa de rádio e driver compatíveis com 6 GHz / 6E",
+          "Sim, se o canal for 1, 6 ou 11",
+          "Só se desativar o WPA3"
+        ],
+        "correct": 1,
+        "explanation": "A banda de 6 GHz exige hardware 6E no cliente. Dispositivos Wi-Fi 5/6 sem rádio 6 GHz continuam nas bandas 2,4/5 GHz do AP, se existirem.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual vantagem típica da banda de 6 GHz em ambientes densos de escritório?",
+        "options": [
+          "Maior penetração em paredes espessas que 2,4 GHz",
+          "Mais espectro limpo e canais largos com menos redes legado a interferir",
+          "Elimina a necessidade de autenticação",
+          "Funciona sem antenas"
+        ],
+        "correct": 1,
+        "explanation": "6 GHz oferece canais novos e menos ocupados; a penetração é em geral pior que 2,4 GHz. Planeia-se mais APs e cobertura, não só débito de pico.",
+        "difficulty": "Médio"
       }
     ],
     "en": [
@@ -3702,6 +3810,114 @@
         "correct": 1,
         "explanation": "Link-local exists on every interface. Without %zone the OS does not know which NIC to use. ping fe80::1%Ethernet or -6 with a zone id.",
         "difficulty": "Hard"
+      },
+      {
+        "question": "On a UTP cable wiremap, pairs 1-2 are open and pairs 3-6 are fine. Which Ethernet speed is most likely, and why?",
+        "options": [
+          "10 Gb/s, because it only needs two pairs",
+          "100 Mb/s (Fast Ethernet) may work; Gigabit needs all four pairs",
+          "Only fiber can work",
+          "No Ethernet speed works with any open pairs"
+        ],
+        "correct": 1,
+        "explanation": "10/100BASE-TX mainly uses pairs 1-2 and 3-6. 1000BASE-T requires all four pairs. A tester showing only two good pairs typically points to Fast Ethernet, not Gigabit.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "An AP advertises Wi-Fi 6E. Which extra band does it add compared with classic Wi-Fi 6?",
+        "options": [
+          "900 MHz only",
+          "The 6 GHz band (in addition to 2.4 and/or 5 GHz, depending on the radio)",
+          "Bluetooth LE only",
+          "Infrared only"
+        ],
+        "correct": 1,
+        "explanation": "Wi-Fi 6E is 802.11ax in the 6 GHz band. It adds cleaner spectrum and wide channels with less legacy 2.4/5 GHz interference, but range is often shorter and clients must be 6E-capable.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "In CCST troubleshooting, the PC has correct IP, gateway, and DNS; ping to the gateway works; HTTPS and HTTP to a site fail; ping to 8.8.8.8 fails. Which hypothesis is strongest?",
+        "options": [
+          "Only a browser TLS certificate failure",
+          "Forwarding/WAN/firewall problem upstream of the local gateway",
+          "Console cable unplugged",
+          "STP elected the PC as root"
+        ],
+        "correct": 1,
+        "explanation": "Local L3 is fine (IP/gateway/LAN ping). Failure to public IPs points to WAN path, NAT, or perimeter firewall — not DNS (an IP was used) and not TLS alone.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "Which statement about IEEE 802.3bt PoE (Type 3/4) is most accurate for support techs?",
+        "options": [
+          "It tops out at 15.4 W like 802.3af",
+          "It allows higher power (about 60 W / 90 W at the PSE) for demanding APs and cameras",
+          "It only works on single-mode fiber",
+          "It always replaces an external PSU with no negotiation"
+        ],
+        "correct": 1,
+        "explanation": "802.3bt (PoE++) raises power versus af/at. PSE-PD classification/negotiation still applies; a mismatched PD or bad cable may not get enough power.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "A switch port goes err-disabled after someone cascades a cheap hub. Which CCST cause is plausible?",
+        "options": [
+          "Missing DNS on the PC",
+          "A protection feature (for example BPDU Guard, loop, or link flap) disabled the port on an error condition",
+          "Cat6 cannot carry Fast Ethernet",
+          "A fiber SFP was inserted into the RJ-45 jack"
+        ],
+        "correct": 1,
+        "explanation": "Err-disabled is a protective state. Hubs and loops can trigger unexpected BPDUs, collisions, or flaps; with BPDU Guard or storm control the port may err-disable. Fix the cause, then shutdown / no shutdown.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "In IPv6, a host has only FE80::/10, can ping on-link neighbors, but cannot open Internet sites. What is typically missing?",
+        "options": [
+          "A GUA (or ULA+NAT64) plus a default router via RA/DHCPv6",
+          "A mandatory APIPA 169.254 address",
+          "Disabling NDP",
+          "Changing the MAC to ff:ff:ff:ff:ff:ff"
+        ],
+        "correct": 0,
+        "explanation": "Link-local works on the link. Off-link traffic needs a GUA (2000::/3) or a translation mechanism, plus a default router learned from Router Advertisement or DHCPv6.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "What distinguishes Wi-Fi 6E from Wi-Fi 6 (802.11ax) in terms of spectrum?",
+        "options": [
+          "6E removes the 5 GHz band and stays on 2.4 GHz only",
+          "6E adds operation in the 6 GHz band",
+          "6E is only a marketing name for 802.11ac",
+          "6E requires WEP"
+        ],
+        "correct": 1,
+        "explanation": "Wi-Fi 6 and 6E share 802.11ax PHY features; the “E” (Extension) means the 6 GHz band, with more wide channels and less legacy noise.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Can a legacy 802.11ac (Wi-Fi 5) client join a 6 GHz-only SSID on a Wi-Fi 6E AP?",
+        "options": [
+          "Yes, automatically via DFS",
+          "No: it needs a 6 GHz / 6E-capable radio and driver",
+          "Yes, if the channel is 1, 6, or 11",
+          "Only if WPA3 is disabled"
+        ],
+        "correct": 1,
+        "explanation": "The 6 GHz band requires 6E client hardware. Wi-Fi 5/6 devices without a 6 GHz radio stay on the AP’s 2.4/5 GHz radios, if present.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is a typical advantage of the 6 GHz band in dense offices?",
+        "options": [
+          "Better wall penetration than 2.4 GHz",
+          "Cleaner spectrum and wide channels with less legacy interference",
+          "No authentication needed",
+          "Works without antennas"
+        ],
+        "correct": 1,
+        "explanation": "6 GHz offers new, less crowded channels; wall penetration is usually worse than 2.4 GHz. Plan denser APs for coverage, not only peak rate.",
+        "difficulty": "Medium"
       }
     ]
   },
@@ -5564,6 +5780,42 @@
         "correct": 1,
         "explanation": "Um NTP falso pode falhar certs, logs e Kerberos. Chaves simétricas (ou NTPv4 Autokey, raro) autenticam o servidor. Stratum 16 = unsynchronized. Prefira fontes internas stratum 1/2.",
         "difficulty": "Médio"
+      },
+      {
+        "question": "Qual é a diferença fundamental entre OSPFv2 e OSPFv3?",
+        "options": [
+          "OSPFv3 só corre em switches L2",
+          "OSPFv2 encaminha IPv4; OSPFv3 foi desenhado para IPv6 (e pode fazer AF para IPv4 em plataformas modernas)",
+          "OSPFv3 usa TCP em vez de IP",
+          "Não há qualquer diferença de protocolo"
+        ],
+        "correct": 1,
+        "explanation": "OSPFv2 é para IPv4. OSPFv3 (RFC 5340) transporta LSAs para IPv6; em IOS-XE, Address Families permitem também IPv4 sobre o processo OSPFv3.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Em OSPFv3, a adjacência forma-se com base em quê, de forma distinta do “network” IPv4 clássico do OSPFv2?",
+        "options": [
+          "Apenas no endereço de loopback 127.0.0.1",
+          "Ativação por interface (ipv6 ospf / ospfv3) e Router ID; não se usa o comando network com máscaras IPv4 da mesma forma",
+          "Só via BGP multiprotocol",
+          "Exclusivamente por SNMP"
+        ],
+        "correct": 1,
+        "explanation": "Em OSPFv3 configura-se o processo e ativa-se nas interfaces IPv6. O Router ID (32 bits) continua obrigatório; muitas vezes define-se manualmente se não houver interfaces IPv4.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Qual multicast IPv6 usa OSPFv3 para AllSPFRouters no link?",
+        "options": [
+          "FF02::1",
+          "FF02::5",
+          "FF02::A",
+          "FF02::1:2"
+        ],
+        "correct": 1,
+        "explanation": "OSPFv3 usa FF02::5 (AllSPFRouters) e FF02::6 (AllDRouters), análogos a 224.0.0.5/6 do OSPFv2, mas em IPv6 link-local multicast.",
+        "difficulty": "Difícil"
       }
     ],
     "en": [
@@ -7424,6 +7676,42 @@
         "correct": 1,
         "explanation": "Fake NTP can break certificates, logs, and Kerberos. Symmetric keys (or the rare NTPv4 Autokey) authenticate the server. Stratum 16 = unsynchronized. Prefer internal stratum 1/2 sources.",
         "difficulty": "Medium"
+      },
+      {
+        "question": "What is the fundamental difference between OSPFv2 and OSPFv3?",
+        "options": [
+          "OSPFv3 only runs on L2 switches",
+          "OSPFv2 routes IPv4; OSPFv3 was designed for IPv6 (and can do IPv4 AF on modern platforms)",
+          "OSPFv3 uses TCP instead of IP",
+          "There is no protocol difference at all"
+        ],
+        "correct": 1,
+        "explanation": "OSPFv2 is for IPv4. OSPFv3 (RFC 5340) carries LSAs for IPv6; on IOS-XE, Address Families can also carry IPv4 in an OSPFv3 process.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "In OSPFv3, how is adjacency enabled differently from classic OSPFv2 IPv4 “network” statements?",
+        "options": [
+          "Only via loopback 127.0.0.1",
+          "Per-interface activation (ipv6 ospf / ospfv3) plus a Router ID; not the same IPv4 network mask command style",
+          "Only via multiprotocol BGP",
+          "Only via SNMP"
+        ],
+        "correct": 1,
+        "explanation": "OSPFv3 is enabled on IPv6 interfaces under an OSPFv3 process. A 32-bit Router ID is still required and is often set manually when no IPv4 interface exists.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Which IPv6 multicast does OSPFv3 use for AllSPFRouters on the link?",
+        "options": [
+          "FF02::1",
+          "FF02::5",
+          "FF02::A",
+          "FF02::1:2"
+        ],
+        "correct": 1,
+        "explanation": "OSPFv3 uses FF02::5 (AllSPFRouters) and FF02::6 (AllDRouters), the IPv6 link-local multicast analogs of OSPFv2’s 224.0.0.5/6.",
+        "difficulty": "Hard"
       }
     ]
   },
@@ -9332,6 +9620,30 @@
         "correct": 1,
         "explanation": "A regra antiga evitava blackholes em cores que não corriam BGP em todos os hops. Com MPLS/full-mesh/RR e forwarding por labels ou full BGP, synchronization é obsoleta (no synchronization default).",
         "difficulty": "Médio"
+      },
+      {
+        "question": "Em OSPFv3 com Address Families no IOS-XE, o que permite um único processo?",
+        "options": [
+          "Apenas rotas estáticas IPv4",
+          "Trocar topologia/LSAs para IPv6 e IPv4 sob o mesmo framework OSPFv3, com AF separadas",
+          "Substituir totalmente o BGP na Internet",
+          "Desativar o NDP em todos os enlaces"
+        ],
+        "correct": 1,
+        "explanation": "OSPFv3 AF separa address-family ipv6 e ipv4 unicast. A sessão/adjacência é OSPFv3; os prefixos anunciados dependem da AF ativa.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Porque é comum configurar manualmente o router-id em OSPFv3 puro IPv6?",
+        "options": [
+          "Porque o Router ID OSPF continua a ser um valor de 32 bits e pode não haver interface IPv4 de onde o derivar",
+          "Porque OSPFv3 exige um IPv6 Router ID de 128 bits",
+          "Porque o Router ID tem de ser igual ao MAC",
+          "Porque sem router-id o STP não elege root"
+        ],
+        "correct": 0,
+        "explanation": "Mesmo em IPv6-only, o OSPF Router ID é 32 bits. Sem endereços IPv4, o IOS pode falhar a eleição automática do RID — define-se com router-id A.B.C.D.",
+        "difficulty": "Difícil"
       }
     ],
     "en": [
@@ -11238,6 +11550,30 @@
         "correct": 1,
         "explanation": "The old rule avoided black holes in cores that did not run BGP on every hop. With MPLS/full-mesh/RR and label or full-BGP forwarding, synchronization is obsolete (no synchronization is the default).",
         "difficulty": "Medium"
+      },
+      {
+        "question": "With OSPFv3 Address Families on IOS-XE, what can one process do?",
+        "options": [
+          "Only carry IPv4 static routes",
+          "Exchange topology/LSAs for IPv6 and IPv4 under the OSPFv3 framework, with separate AFs",
+          "Fully replace BGP on the Internet",
+          "Disable NDP on every link"
+        ],
+        "correct": 1,
+        "explanation": "OSPFv3 AF splits address-family ipv6 and ipv4 unicast. Adjacency is OSPFv3; which prefixes are advertised depends on the active AF.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "Why is a manual router-id common on pure IPv6 OSPFv3?",
+        "options": [
+          "Because the OSPF Router ID is still a 32-bit value and there may be no IPv4 interface to derive it from",
+          "Because OSPFv3 requires a 128-bit IPv6 Router ID",
+          "Because the Router ID must equal the MAC",
+          "Because without a router-id STP cannot elect a root"
+        ],
+        "correct": 0,
+        "explanation": "Even in IPv6-only networks the OSPF Router ID is 32 bits. With no IPv4 addresses, IOS may fail automatic RID election — set it with router-id A.B.C.D.",
+        "difficulty": "Hard"
       }
     ]
   }

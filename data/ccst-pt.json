@@ -1848,5 +1848,113 @@
     "correct": 1,
     "explanation": "Link-local existe em todas as interfaces. Sem %zone o SO não sabe por que NIC enviar. ping fe80::1%Ethernet  ou -6 com zone id.",
     "difficulty": "Difícil"
+  },
+  {
+    "question": "Num cabo UTP com mapa de fios 1-2 abertos e 3-6 ok, que velocidade Ethernet é mais provável e porquê?",
+    "options": [
+      "10 Gb/s, porque só precisa de dois pares",
+      "100 Mb/s (Fast Ethernet) possível; Gigabit precisa dos quatro pares",
+      "Só fibra pode funcionar",
+      "Nenhuma velocidade Ethernet funciona com pares abertos"
+    ],
+    "correct": 1,
+    "explanation": "10/100BASE-TX usa sobretudo os pares 1-2 e 3-6. 1000BASE-T exige os quatro pares. Um tester a mostrar apenas dois pares bons aponta tipicamente para Fast Ethernet, não Gigabit.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Um AP anuncia Wi-Fi 6E. Que banda adicional fica disponível relativamente ao Wi-Fi 6 clássico?",
+    "options": [
+      "Apenas 900 MHz",
+      "A banda de 6 GHz (além de 2,4 e/ou 5 GHz, conforme o rádio)",
+      "Só Bluetooth LE",
+      "Apenas infravermelho"
+    ],
+    "correct": 1,
+    "explanation": "Wi-Fi 6E é 802.11ax na banda de 6 GHz. Oferece mais espectro e canais largos com menos interferência herdada de 2,4/5 GHz, mas alcance tipicamente menor e clientes têm de ser 6E.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Em troubleshooting CCST, o PC tem IP, gateway e DNS corretos, ping ao gateway ok, mas HTTPS a um site falha e HTTP na porta 80 também. Ping a 8.8.8.8 falha. Qual hipótese é a mais sólida?",
+    "options": [
+      "Falha só de certificado TLS no browser",
+      "Problema de encaminhamento/WAN/firewall a montante do gateway local",
+      "Cabo console desligado",
+      "STP elegeu o PC como root"
+    ],
+    "correct": 1,
+    "explanation": "L3 local está ok (IP/gateway/ping LAN). Falha para IPs públicos indica caminho WAN, NAT ou firewall de perímetro — não DNS (usou-se IP) nem só TLS.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual afirmação sobre PoE IEEE 802.3bt (Type 3/4) é a mais correta para suporte técnico?",
+    "options": [
+      "Entrega no máximo 15,4 W como o 802.3af",
+      "Permite potências mais altas (até cerca de 60 W / 90 W na PSE) para APs e câmaras exigentes",
+      "Só funciona em fibra monomodo",
+      "Substitui sempre a fonte externa mesmo sem negociação"
+    ],
+    "correct": 1,
+    "explanation": "802.3bt (PoE++) sobe a potência face a af/at. Continua a haver classificação/negociação PSE-PD; um PD incompatível ou cabo mau pode ficar sem energia suficiente.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Um switch mostra a porta em err-disabled após ligar um hub barato em cascata. Qual causa CCST é plausível?",
+    "options": [
+      "DNS em falta no PC",
+      "Proteção (ex.: BPDU Guard / loop / link flap) desativou a porta ao detetar condição de erro",
+      "O cabo Cat6 não suporta Fast Ethernet",
+      "O SFP de fibra foi inserido na porta RJ-45"
+    ],
+    "correct": 1,
+    "explanation": "Err-disabled é estado de proteção. Hubs e loops geram BPDUs inesperados, colisões ou flaps; com BPDU Guard ou storm control a porta pode ir a err-disabled. Recupera-se com shutdown / no shutdown após corrigir a causa.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Em IPv6, um host tem só FE80::/10 e consegue pingar vizinhos no mesmo enlace, mas não abre sites na Internet. O que falta tipicamente?",
+    "options": [
+      "Um endereço GUA (ou ULA+NAT64) e um default router via RA/DHCPv6",
+      "Obrigatoriamente um endereço APIPA 169.254",
+      "Desativar o NDP",
+      "Trocar o MAC para ff:ff:ff:ff:ff:ff"
+    ],
+    "correct": 0,
+    "explanation": "Link-local serve no enlace. Tráfego off-link precisa de GUA (2000::/3) ou mecanismo de tradução, mais um router default aprendido por Router Advertisement ou DHCPv6.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que distingue Wi-Fi 6E de Wi-Fi 6 (802.11ax) em termos de espectro?",
+    "options": [
+      "6E remove a banda de 5 GHz e fica só em 2,4 GHz",
+      "6E acrescenta operação na banda de 6 GHz",
+      "6E é apenas um nome comercial para 802.11ac",
+      "6E obriga a usar WEP"
+    ],
+    "correct": 1,
+    "explanation": "Wi-Fi 6 e 6E partilham a física 802.11ax; o “E” (Extension) refere-se ao uso da banda de 6 GHz, com mais canais largos e menos ruído legado.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um cliente antigo só 802.11ac (Wi-Fi 5) consegue associar-se a um SSID exclusivo 6 GHz de um AP Wi-Fi 6E?",
+    "options": [
+      "Sim, automaticamente via DFS",
+      "Não: precisa de rádio e driver compatíveis com 6 GHz / 6E",
+      "Sim, se o canal for 1, 6 ou 11",
+      "Só se desativar o WPA3"
+    ],
+    "correct": 1,
+    "explanation": "A banda de 6 GHz exige hardware 6E no cliente. Dispositivos Wi-Fi 5/6 sem rádio 6 GHz continuam nas bandas 2,4/5 GHz do AP, se existirem.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual vantagem típica da banda de 6 GHz em ambientes densos de escritório?",
+    "options": [
+      "Maior penetração em paredes espessas que 2,4 GHz",
+      "Mais espectro limpo e canais largos com menos redes legado a interferir",
+      "Elimina a necessidade de autenticação",
+      "Funciona sem antenas"
+    ],
+    "correct": 1,
+    "explanation": "6 GHz oferece canais novos e menos ocupados; a penetração é em geral pior que 2,4 GHz. Planeia-se mais APs e cobertura, não só débito de pico.",
+    "difficulty": "Médio"
   }
 ]

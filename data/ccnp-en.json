@@ -1902,5 +1902,29 @@
     "correct": 1,
     "explanation": "The old rule avoided black holes in cores that did not run BGP on every hop. With MPLS/full-mesh/RR and label or full-BGP forwarding, synchronization is obsolete (no synchronization is the default).",
     "difficulty": "Medium"
+  },
+  {
+    "question": "With OSPFv3 Address Families on IOS-XE, what can one process do?",
+    "options": [
+      "Only carry IPv4 static routes",
+      "Exchange topology/LSAs for IPv6 and IPv4 under the OSPFv3 framework, with separate AFs",
+      "Fully replace BGP on the Internet",
+      "Disable NDP on every link"
+    ],
+    "correct": 1,
+    "explanation": "OSPFv3 AF splits address-family ipv6 and ipv4 unicast. Adjacency is OSPFv3; which prefixes are advertised depends on the active AF.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Why is a manual router-id common on pure IPv6 OSPFv3?",
+    "options": [
+      "Because the OSPF Router ID is still a 32-bit value and there may be no IPv4 interface to derive it from",
+      "Because OSPFv3 requires a 128-bit IPv6 Router ID",
+      "Because the Router ID must equal the MAC",
+      "Because without a router-id STP cannot elect a root"
+    ],
+    "correct": 0,
+    "explanation": "Even in IPv6-only networks the OSPF Router ID is 32 bits. With no IPv4 addresses, IOS may fail automatic RID election — set it with router-id A.B.C.D.",
+    "difficulty": "Hard"
   }
 ]
