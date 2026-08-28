@@ -83,7 +83,11 @@
         }
         body.quiz-active nav { display: none !important; }
 
-        #quiz-screen.quiz-fit {
+        #quiz-screen.hidden {
+            display: none !important;
+            pointer-events: none !important;
+        }
+        #quiz-screen.quiz-fit:not(.hidden) {
             position: fixed;
             inset: 0;
             max-width: none;
@@ -175,8 +179,30 @@
         }
         #quiz-screen.quiz-fit .quiz-fit-hint { display: none; }
 
+        @media (max-width: 639px) {
+            .brand-title { display: none !important; }
+            #cert-lang { display: none !important; }
+            #cert-badge { display: none !important; }
+            #quiz-screen.quiz-fit .quiz-fit-header {
+                gap: 0.3rem !important;
+                padding: 0.3rem 0.45rem !important;
+                overflow: hidden;
+            }
+            #quiz-screen.quiz-fit .quiz-fit-header .timer-box {
+                padding: 0.2rem 0.45rem !important;
+                gap: 0.3rem !important;
+            }
+            #quiz-screen.quiz-fit #timer { font-size: 1.05rem !important; }
+            #quiz-screen.quiz-fit #feedback-div {
+                max-height: 34%;
+                font-size: 0.75rem;
+            }
+            #quiz-screen.quiz-fit .quiz-fit-controls button span.full-label {
+                display: none;
+            }
+        }
         @media (min-width: 640px) {
-            #quiz-screen.quiz-fit {
+            #quiz-screen.quiz-fit:not(.hidden) {
                 padding: 1rem 1.25rem;
             }
             #quiz-screen.quiz-fit #question-text {
@@ -423,23 +449,23 @@
             <div class="quiz-fit-header flex items-center justify-between bg-slate-900 border border-slate-700 rounded-3xl">
                 
                 <!-- Logo clicável (Home) -->
-                <div onclick="confirmGoHome()" 
-                     class="flex items-center gap-x-2.5 cursor-pointer active:opacity-80 transition-opacity flex-shrink-0">
+                <button type="button" onclick="confirmGoHome()"
+                     class="flex items-center gap-x-2 cursor-pointer active:opacity-80 transition-opacity flex-shrink-0 bg-transparent border-0 text-inherit p-0">
                     <div class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center">
-                        <i class="fa-solid fa-network-wired text-white text-2xl"></i>
+                        <i class="fa-solid fa-network-wired text-white text-xl"></i>
                     </div>
-                    <div class="flex flex-col leading-none">
+                    <div class="brand-title flex flex-col leading-none">
                         <div>
                             <span class="font-display text-2xl font-bold tracking-tighter">Cisco</span>
                             <span class="font-display text-2xl font-bold tracking-tighter text-blue-400">Quiz</span>
                         </div>
                         <span id="cert-lang" class="text-xs text-slate-400 font-normal -mt-0.5"></span>
                     </div>
-                </div>
+                </button>
                 
-                <div class="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-x-3 sm:gap-x-4">
+                <div class="flex items-center justify-end min-w-0 flex-1 gap-x-2 sm:gap-x-4">
                     <!-- Timer -->
-                    <div class="flex items-center gap-x-2.5 bg-slate-950 px-4 py-2 rounded-2xl border border-slate-700">
+                    <div class="timer-box flex items-center gap-x-2 bg-slate-950 px-4 py-2 rounded-2xl border border-slate-700 flex-shrink-0">
                         <i class="fa-solid fa-clock text-amber-400"></i>
                         <div>
                             <div id="timer" class="font-mono text-xl sm:text-2xl font-bold timer text-amber-400">45:00</div>
@@ -477,15 +503,15 @@
             <div class="quiz-fit-controls mt-6 flex items-center justify-between px-2">
                 <div class="flex items-center gap-x-3">
                     <button onclick="previousQuestion()" 
-                            class="flex items-center gap-x-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all rounded-2xl text-sm font-medium border border-slate-700">
-                        <i class="fa-solid fa-arrow-left mr-2"></i> 
-                        <span>Anterior</span>
+                            class="flex items-center gap-x-2 px-3 sm:px-6 py-3 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all rounded-2xl text-sm font-medium border border-slate-700">
+                        <i class="fa-solid fa-arrow-left"></i> 
+                        <span id="btn-prev-label" class="full-label">Anterior</span>
                     </button>
                     
                     <button onclick="pauseQuiz()" 
-                            class="flex items-center gap-x-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all rounded-2xl text-sm font-medium border border-slate-700">
-                        <i class="fa-solid fa-pause mr-2"></i> 
-                        <span>Pausar</span>
+                            class="flex items-center gap-x-2 px-3 sm:px-6 py-3 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all rounded-2xl text-sm font-medium border border-slate-700">
+                        <i class="fa-solid fa-pause"></i> 
+                        <span id="btn-pause-label" class="full-label">Pausar</span>
                     </button>
                 </div>
                 
@@ -573,6 +599,46 @@
             ccnp: { pt: [], en: [] }
         };
         const QUIZ_COUNTS = {"ccst": {"pt": 128, "en": 128}, "ccna": {"pt": 116, "en": 116}, "ccnp": {"pt": 118, "en": 118}};
+        const I18N = {
+            pt: {
+                prev: 'Anterior', pause: 'Pausar', next: 'Responder e Avançar', finish: 'Finalizar Quiz',
+                remaining: 'RESTANTE', question: 'PERGUNTA',
+                correct: 'Resposta Correta!', incorrect: 'Resposta Incorreta',
+                correctAnswer: 'Resposta correta:', explanation: 'Explicação:',
+                selectFirst: 'Seleciona uma opção antes de avançar.',
+                firstQ: 'Estás na primeira pergunta.',
+                goHome: 'Voltar ao início? O progresso atual perde-se.',
+                timeUp: 'Tempo esgotado. O quiz vai ser finalizado.',
+                paused: 'Quiz Pausado', pausedHint: 'O cronómetro está parado.',
+                resume: 'Retomar', home: 'Início'
+            },
+            en: {
+                prev: 'Back', pause: 'Pause', next: 'Answer and Next', finish: 'Finish Quiz',
+                remaining: 'LEFT', question: 'QUESTION',
+                correct: 'Correct!', incorrect: 'Incorrect',
+                correctAnswer: 'Correct answer:', explanation: 'Explanation:',
+                selectFirst: 'Pick an option before moving on.',
+                firstQ: 'You are on the first question.',
+                goHome: 'Go back home? Current progress will be lost.',
+                timeUp: 'Time is up. The quiz will be finished.',
+                paused: 'Quiz Paused', pausedHint: 'The timer is frozen.',
+                resume: 'Resume', home: 'Home'
+            }
+        };
+        function t(key) {
+            const pack = I18N[currentLang] || I18N.pt;
+            return pack[key] || I18N.pt[key] || key;
+        }
+        function applyChrome() {
+            const rem = document.getElementById('label-remaining');
+            const qlab = document.getElementById('label-question');
+            if (rem) rem.textContent = t('remaining');
+            if (qlab) qlab.textContent = t('question');
+            const prev = document.getElementById('btn-prev-label');
+            const pause = document.getElementById('btn-pause-label');
+            if (prev) prev.textContent = t('prev');
+            if (pause) pause.textContent = t('pause');
+        }
 
         function loadBank(cert, lang) {
             return new Promise((resolve, reject) => {
@@ -660,7 +726,7 @@
                     
                     if (timeLeft <= 0) {
                         clearInterval(timerInterval);
-                        alert('Tempo esgotado! O quiz será finalizado automaticamente.');
+                        alert(t('timeUp'));
                         finishQuiz();
                     }
                 }
@@ -692,10 +758,7 @@
             document.getElementById('quiz-screen').classList.remove('hidden');
             document.getElementById('results-screen').classList.add('hidden');
             document.body.classList.add('quiz-active');
-            const rem = document.getElementById('label-remaining');
-            const qlab = document.getElementById('label-question');
-            if (rem) rem.textContent = (lang === 'en') ? 'LEFT' : 'RESTANTE';
-            if (qlab) qlab.textContent = (lang === 'en') ? 'QUESTION' : 'PERGUNTA';
+            applyChrome();
             
             // Esconde a navbar principal para evitar duplicação do logo
             const nav = document.querySelector('nav');
@@ -800,7 +863,7 @@
             const nextBtn = document.getElementById('next-btn');
             if (nextBtn) {
                 nextBtn.innerHTML = `
-                    <span id="next-btn-text">${currentIndex === currentQuiz.length - 1 ? 'Finalizar Quiz' : 'Responder e Avançar'}</span>
+                    <span id="next-btn-text">${currentIndex === currentQuiz.length - 1 ? t('finish') : t('next')}</span>
                     <i class="fa-solid fa-arrow-right ml-2"></i>
                 `;
             }
@@ -842,7 +905,7 @@
             }
             
             if (selectedOptionIndex === null && userAnswers[currentIndex] === null) {
-                alert('⚠️ Por favor, selecione uma das opções antes de avançar!');
+                alert(t('selectFirst'));
                 return;
             }
             
@@ -868,34 +931,17 @@
             optionsContainer.style.pointerEvents = 'none';
             
             feedbackDiv.innerHTML = `
-                <div class="rounded-3xl border-l-4 p-7 ${isCorrect ? 'bg-emerald-900/30 border-emerald-500' : 'bg-red-900/30 border-red-500'}">
-                    <div class="flex items-start gap-x-4">
-                        <div class="flex-shrink-0 text-4xl mt-1">
-                            ${isCorrect ? '✅' : '❌'}
-                        </div>
-                        <div class="flex-1">
-                            <div class="font-bold text-xl mb-2 ${isCorrect ? 'text-emerald-400' : 'text-red-400'}">
-                                ${isCorrect ? 'Resposta Correta!' : 'Resposta Incorreta'}
-                            </div>
-                            
-                            <div class="mb-4">
-                                <span class="text-sm text-slate-400">Resposta correta:</span><br>
-                                <span class="font-semibold text-lg">${correctOptionText}</span>
-                            </div>
-                            
-                            <div class="bg-slate-950/70 p-5 rounded-2xl text-sm leading-relaxed border border-slate-700">
-                                <span class="font-semibold text-blue-400">Explicação:</span><br>
-                                ${explanation}
-                            </div>
-                        </div>
+                <div class="rounded-2xl border-l-4 p-3 sm:p-4 ${isCorrect ? 'bg-emerald-900/30 border-emerald-500' : 'bg-red-900/30 border-red-500'}">
+                    <div class="font-bold mb-1 ${isCorrect ? 'text-emerald-400' : 'text-red-400'}">
+                        ${isCorrect ? t('correct') : t('incorrect')}
                     </div>
-                    
-                    <div class="mt-6 pt-5 border-t border-slate-700">
-                        <button onclick="proceedAfterFeedback(${isLast})" 
-                                class="w-full py-4 bg-white text-slate-950 hover:bg-slate-100 active:bg-white font-bold text-sm tracking-wider rounded-2xl transition-all flex items-center justify-center gap-x-3">
-                            <span>${isLast ? 'VER RESULTADOS FINAIS' : 'CONTINUAR PARA PRÓXIMA PERGUNTA'}</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
+                    <div class="mb-2 text-sm">
+                        <span class="text-slate-400">${t('correctAnswer')}</span>
+                        <span class="font-semibold"> ${correctOptionText}</span>
+                    </div>
+                    <div class="text-sm leading-snug text-slate-300">
+                        <span class="font-semibold text-blue-400">${t('explanation')}</span>
+                        ${explanation}
                     </div>
                 </div>
             `;
@@ -931,7 +977,7 @@
                 selectedOptionIndex = userAnswers[currentIndex];
                 loadQuestion();
             } else {
-                alert('Você está na primeira pergunta!');
+                alert(t('firstQ'));
             }
         }
 
@@ -950,20 +996,20 @@
                             <i class="fa-solid fa-pause text-amber-400 text-4xl"></i>
                         </div>
                         
-                        <h3 class="text-3xl font-bold mb-2">Quiz Pausado</h3>
-                        <p class="text-slate-400 mb-8">O cronômetro está congelado.<br>Escolha uma ação:</p>
+                        <h3 class="text-3xl font-bold mb-2">${t('paused')}</h3>
+                        <p class="text-slate-400 mb-8">${t('pausedHint')}</p>
                         
                         <div class="space-y-3">
                             <button onclick="resumeQuiz(this)" 
                                     class="w-full py-4 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 transition-all font-semibold rounded-2xl flex items-center justify-center gap-x-3 text-lg">
                                 <i class="fa-solid fa-play"></i>
-                                <span>RETOMAR QUIZ</span>
+                                <span>${t('resume')}</span>
                             </button>
                             
                             <button onclick="goHomeFromPause(this)" 
                                     class="w-full py-4 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all font-semibold rounded-2xl flex items-center justify-center gap-x-3 text-lg border border-slate-700">
                                 <i class="fa-solid fa-home"></i>
-                                <span>VOLTAR AO INÍCIO</span>
+                                <span>${t('home')}</span>
                             </button>
                         </div>
                         
@@ -1131,7 +1177,7 @@
         }
         
         function confirmGoHome() {
-            if (confirm('Tem a certeza que quer voltar ao início? O seu progresso atual será perdido.')) {
+            if (confirm(t('goHome'))) {
                 goHome();
             }
         }
