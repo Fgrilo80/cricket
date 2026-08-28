@@ -586,5 +586,401 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "DMVPN creates dynamic VPNs where spokes can connect directly to each other without going through the hub.",
     "difficulty": "Hard"
+  },
+  {
+    "question": "Which command creates VLAN 20 on a Cisco switch?",
+    "options": [
+      "vlan 20",
+      "switchport access vlan 20",
+      "interface vlan 20",
+      "encapsulation dot1q 20"
+    ],
+    "correct": 0,
+    "explanation": "In VLAN config mode, 'vlan 20' creates the VLAN.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "To put an access port in VLAN 20 use:",
+    "options": [
+      "switchport mode trunk",
+      "switchport access vlan 20",
+      "no switchport",
+      "ip routing"
+    ],
+    "correct": 1,
+    "explanation": "switchport access vlan 20 with mode access assigns VLAN 20.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Which native Cisco protocol negotiates EtherChannel?",
+    "options": [
+      "LACP",
+      "PAgP",
+      "STP",
+      "VTP"
+    ],
+    "correct": 1,
+    "explanation": "PAgP is Cisco-proprietary; LACP is IEEE 802.3ad.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In STP, the root bridge is elected by:",
+    "options": [
+      "Highest numeric priority",
+      "Lowest Bridge ID (priority + MAC)",
+      "Most VLANs",
+      "Highest uptime"
+    ],
+    "correct": 1,
+    "explanation": "Lowest Bridge ID wins: priority then MAC.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "PortFast on an access port is used to:",
+    "options": [
+      "Disable STP",
+      "Move immediately to forwarding, avoiding PC delay",
+      "Elect the root",
+      "Negotiate a trunk"
+    ],
+    "correct": 1,
+    "explanation": "PortFast skips listening/learning on edge ports.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "OSPFv2 hellos on Ethernet use which addresses?",
+    "options": [
+      "Broadcast 255.255.255.255",
+      "Multicast 224.0.0.5 and 224.0.0.6",
+      "Unicast to the DR only",
+      "FF02::5 only"
+    ],
+    "correct": 1,
+    "explanation": "Hellos go to 224.0.0.5; DR/BDR also 224.0.0.6.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "A Cisco IPv4 default static route is:",
+    "options": [
+      "ip route 0.0.0.0 0.0.0.0 <next-hop or exit>",
+      "ip default-network 0.0.0.0",
+      "ip route 255.255.255.255",
+      "router default"
+    ],
+    "correct": 0,
+    "explanation": "The default route is 0.0.0.0/0 to a next-hop or exit interface.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What does NAT overload (PAT) do?",
+    "options": [
+      "One public IP per private host, 1:1",
+      "Many privates share one or few public IPs via ports",
+      "Translates IPv6 only",
+      "Disables the firewall"
+    ],
+    "correct": 1,
+    "explanation": "PAT multiplexes many internals onto a public IP using L4 ports.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "DHCP snooping protects against:",
+    "options": [
+      "STP loops",
+      "Rogue DHCP servers",
+      "Broadcast storms",
+      "Fake OSPF routes"
+    ],
+    "correct": 1,
+    "explanation": "It marks trusted/untrusted ports and drops bogus DHCP offers.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "An extended ACL filters based on:",
+    "options": [
+      "Source IP only",
+      "Source, destination, protocol, and ports",
+      "MAC only",
+      "VLAN only"
+    ],
+    "correct": 1,
+    "explanation": "Extended ACLs allow fine L3/L4 matching.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Where should an extended ACL usually be placed?",
+    "options": [
+      "Closest to the destination",
+      "Closest to the source",
+      "Core only",
+      "On every PC"
+    ],
+    "correct": 1,
+    "explanation": "Near the source stops unwanted traffic from crossing the network.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does HSRP give hosts?",
+    "options": [
+      "A virtual MAC/IP for a redundant gateway",
+      "Per-flow OSPF balancing",
+      "NAT translation",
+      "A DHCP server"
+    ],
+    "correct": 0,
+    "explanation": "HSRP shares a VIP; one router is active, another standby.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "NTP is used to:",
+    "options": [
+      "Resolve names",
+      "Synchronize clocks across the network",
+      "Measure WAN jitter",
+      "Encrypt syslog"
+    ],
+    "correct": 1,
+    "explanation": "NTP aligns device time.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What does an SNMP GET do?",
+    "options": [
+      "Configures the device",
+      "Reads a MIB object from the agent",
+      "Sends a trap",
+      "Resets an interface"
+    ],
+    "correct": 1,
+    "explanation": "GET queries the agent; SET changes; traps notify.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Where should QoS classification happen, preferably?",
+    "options": [
+      "Only at the ISP",
+      "Closest to the source (edge)",
+      "Only in the MPLS core",
+      "On DNS"
+    ],
+    "correct": 1,
+    "explanation": "Classify at the edge so DSCP can be set early.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "CDP and LLDP are used to:",
+    "options": [
+      "Elect the OSPF DR",
+      "Discover neighbors and link capabilities",
+      "Encrypt trunks",
+      "Translate NAT"
+    ],
+    "correct": 1,
+    "explanation": "L2 discovery protocols: CDP Cisco, LLDP standard.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "An IPv6 link-local address typically starts with:",
+    "options": [
+      "2001:",
+      "fe80::/10",
+      "ff00::/8",
+      "::1"
+    ],
+    "correct": 1,
+    "explanation": "Link-local FE80::/10 is required on every IPv6 interface.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "RESTCONF often uses which data format?",
+    "options": [
+      "YAML only",
+      "JSON or XML over HTTP",
+      "CSV",
+      "Protobuf only"
+    ],
+    "correct": 1,
+    "explanation": "RESTCONF exposes YANG over HTTP, usually JSON or XML.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "JSON differs from XML by:",
+    "options": [
+      "Being binary",
+      "Being lighter, with key-value pairs",
+      "Not supporting arrays",
+      "Requiring a DTD"
+    ],
+    "correct": 1,
+    "explanation": "JSON is simple text with objects and arrays, common in APIs.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Ansible reaches Cisco devices mainly via:",
+    "options": [
+      "An agent on IOS",
+      "SSH (agentless) and sometimes NETCONF",
+      "SNMP only",
+      "Required Telnet"
+    ],
+    "correct": 1,
+    "explanation": "Ansible is agentless: SSH/NETCONF with YAML playbooks.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Dynamic ARP Inspection uses which database?",
+    "options": [
+      "The OSPF table",
+      "The DHCP snooping binding table",
+      "The VTP file",
+      "CAM aging"
+    ],
+    "correct": 1,
+    "explanation": "DAI checks ARP against DHCP snooping bindings.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "BPDU Guard on a PortFast port:",
+    "options": [
+      "Ignores BPDUs",
+      "Err-disables the port if a BPDU is received",
+      "Elects the root",
+      "Enables LACP"
+    ],
+    "correct": 1,
+    "explanation": "A rogue switch shuts the edge port.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Wildcard mask 0.0.0.255 equals:",
+    "options": [
+      "/16",
+      "/24",
+      "/8",
+      "/32"
+    ],
+    "correct": 1,
+    "explanation": "0.0.0.255 matches the last 8 bits: a /24 prefix.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "OSPF cost of 100 Mb/s FastEthernet with reference 100000 is:",
+    "options": [
+      "1",
+      "10",
+      "100",
+      "1000"
+    ],
+    "correct": 0,
+    "explanation": "Cost = ref/bw = 100000/100000 = 1.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "An 802.1Q trunk carries:",
+    "options": [
+      "Only one VLAN",
+      "Multiple tagged VLANs, except the untagged native",
+      "VLAN 1 only",
+      "Management traffic only"
+    ],
+    "correct": 1,
+    "explanation": "dot1q tags VLANs; the native VLAN is untagged.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "An SSID on a WLAN is:",
+    "options": [
+      "The WPA3 key",
+      "The wireless network name seen by clients",
+      "The DFS channel",
+      "The BSSID only"
+    ],
+    "correct": 1,
+    "explanation": "SSID names the network; BSSID is the AP radio MAC.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "WPA3-Enterprise typically authenticates with:",
+    "options": [
+      "PSK only",
+      "802.1X/EAP and a RADIUS server",
+      "128-bit WEP",
+      "Telnet"
+    ],
+    "correct": 1,
+    "explanation": "Enterprise uses 802.1X with RADIUS, not a shared PSK.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "A first LAN troubleshooting step when the site will not open is often:",
+    "options": [
+      "Replace the core",
+      "Check the client IP, mask, gateway, and DNS",
+      "Disable OSPF",
+      "Factory-reset the ISP"
+    ],
+    "correct": 1,
+    "explanation": "Host IP config catches most cases.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Syslog severity 0 means:",
+    "options": [
+      "Informational",
+      "Emergency (most severe)",
+      "Debug",
+      "Notice"
+    ],
+    "correct": 1,
+    "explanation": "0 emergency to 7 debug; lower is more severe.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "A WLC uses CAPWAP to:",
+    "options": [
+      "Replace OSPF",
+      "Tunnel and control lightweight APs",
+      "Encrypt disks",
+      "Perform NAT"
+    ],
+    "correct": 1,
+    "explanation": "CAPWAP is the control/data tunnel between WLC and APs.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "IPv6 global unicast often starts with:",
+    "options": [
+      "fe80:",
+      "2000::/3 (e.g. 2001:)",
+      "ff02:",
+      "::1"
+    ],
+    "correct": 1,
+    "explanation": "Current globals sit in 2000::/3, e.g. 2001:db8::/32.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "The show ip route code O means routes from:",
+    "options": [
+      "Static",
+      "OSPF",
+      "Connected",
+      "BGP"
+    ],
+    "correct": 1,
+    "explanation": "Code O = OSPF in the routing table.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Does switchport mode access accept 802.1Q tags?",
+    "options": [
+      "Yes, all VLANs",
+      "No: only the access VLAN, untagged",
+      "Only tagged VLAN 1",
+      "Only if PortFast is on"
+    ],
+    "correct": 1,
+    "explanation": "Access ports expect untagged frames of the assigned VLAN.",
+    "difficulty": "Medium"
   }
 ];

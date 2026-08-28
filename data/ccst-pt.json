@@ -4,7 +4,7 @@
     "options": [
       "Conectar dispositivos em diferentes redes",
       "Conectar dispositivos na mesma rede local usando endereços MAC",
-      "Roteamento de pacotes entre redes",
+      "Encaminhamento de pacotes entre redes",
       "Fornecer endereços IP dinamicamente"
     ],
     "correct": 1,
@@ -24,7 +24,7 @@
     "difficulty": "Fácil"
   },
   {
-    "question": "Qual camada do modelo OSI é responsável pelo endereçamento lógico e roteamento?",
+    "question": "Qual camada do modelo OSI é responsável pelo endereçamento lógico e encaminhamento?",
     "options": [
       "Camada de Transporte",
       "Camada de Rede",
@@ -32,7 +32,7 @@
       "Camada Física"
     ],
     "correct": 1,
-    "explanation": "A Camada de Rede (Camada 3) é responsável pelo endereçamento lógico (IP) e pelo roteamento de pacotes entre redes diferentes.",
+    "explanation": "A Camada de Rede (Camada 3) é responsável pelo endereçamento lógico (IP) e pelo encaminhamento de pacotes entre redes diferentes.",
     "difficulty": "Médio"
   },
   {
@@ -76,7 +76,7 @@
     "options": [
       "Uma rede física separada",
       "Uma rede lógica criada em um switch para segmentar tráfego",
-      "Um protocolo de roteamento",
+      "Um protocolo de encaminhamento",
       "Um tipo de cabo"
     ],
     "correct": 1,
@@ -92,7 +92,7 @@
       "10 Gbps"
     ],
     "correct": 2,
-    "explanation": "Ethernet Gigabit (1000BASE-T) opera a 1000 Mbps (1 Gbps).",
+    "explanation": "Ethernet Gigabit (1000Base-T) opera a 1000 Mbps (1 Gbps).",
     "difficulty": "Fácil"
   },
   {
@@ -120,7 +120,7 @@
     "difficulty": "Fácil"
   },
   {
-    "question": "O que é PoE (Power over Ethernet)?",
+    "question": "O que é Põe (Power over Ethernet)?",
     "options": [
       "Transmissão de dados em alta velocidade",
       "Fornecimento de energia elétrica através do cabo Ethernet",
@@ -128,7 +128,7 @@
       "Tipo de fibra óptica"
     ],
     "correct": 1,
-    "explanation": "PoE permite que dispositivos como câmeras IP e telefones IP recebam energia através do mesmo cabo Ethernet usado para dados.",
+    "explanation": "Põe permite que dispositivos como câmeras IP e telefones IP recebam energia através do mesmo cabo Ethernet usado para dados.",
     "difficulty": "Médio"
   },
   {
@@ -160,7 +160,7 @@
     "options": [
       "Resolver nome para IP",
       "Resolver IP para endereço MAC",
-      "Roteamento de pacotes",
+      "Encaminhamento de pacotes",
       "Criptografia de dados"
     ],
     "correct": 1,
@@ -171,16 +171,16 @@
     "question": "O que é um default gateway?",
     "options": [
       "O primeiro dispositivo na rede",
-      "O roteador que encaminha tráfego para fora da rede local",
+      "O router que encaminha tráfego para fora da rede local",
       "Um servidor DNS",
       "Um switch gerenciável"
     ],
     "correct": 1,
-    "explanation": "O default gateway é o dispositivo (geralmente um roteador) que encaminha pacotes destinados a redes externas.",
+    "explanation": "O default gateway é o dispositivo (geralmente um router) que encaminha pacotes destinados a redes externas.",
     "difficulty": "Fácil"
   },
   {
-    "question": "Qual comando mostra as interfaces ativas em um roteador Cisco?",
+    "question": "Qual comando mostra as interfaces ativas em um router Cisco?",
     "options": [
       "show running-config",
       "show ip interface brief",
@@ -292,7 +292,7 @@
     "options": [
       "Tradução de nomes de domínio",
       "Tradução de endereços IP privados para públicos",
-      "Protocolo de roteamento",
+      "Protocolo de encaminhamento",
       "Tipo de cabo"
     ],
     "correct": 1,
@@ -317,14 +317,14 @@
       "Porta que pertence a uma única VLAN",
       "Porta que transporta tráfego de múltiplas VLANs",
       "Porta de gerenciamento",
-      "Porta PoE"
+      "Porta Põe"
     ],
     "correct": 1,
     "explanation": "Trunk ports transportam tráfego de múltiplas VLANs entre switches usando tags 802.1Q.",
     "difficulty": "Médio"
   },
   {
-    "question": "Qual comando exibe a tabela de roteamento em um roteador Cisco?",
+    "question": "Qual comando exibe a tabela de encaminhamento em um router Cisco?",
     "options": [
       "show ip route",
       "show interfaces",
@@ -332,7 +332,7 @@
       "show clock"
     ],
     "correct": 0,
-    "explanation": "O comando 'show ip route' exibe a tabela de roteamento com todas as rotas conhecidas.",
+    "explanation": "O comando 'show ip route' exibe a tabela de encaminhamento com todas as rotas conhecidas.",
     "difficulty": "Fácil"
   },
   {
@@ -386,7 +386,7 @@
   {
     "question": "O que é um broadcast domain?",
     "options": [
-      "Grupo de dispositivos que podem se comunicar diretamente sem roteador",
+      "Grupo de dispositivos que podem se comunicar diretamente sem router",
       "Grupo de dispositivos que recebem broadcasts",
       "Rede sem fio",
       "Tipo de cabo"
@@ -410,7 +410,7 @@
   {
     "question": "O que é WPA3 em redes wireless?",
     "options": [
-      "Protocolo de roteamento",
+      "Protocolo de encaminhamento",
       "Padrão de segurança wireless mais recente e seguro",
       "Tipo de antena",
       "Canal de frequência"
@@ -436,7 +436,7 @@
     "options": [
       "Dispositivo para conexão física de cabos em um rack",
       "Tipo de switch",
-      "Roteador wireless",
+      "Router wireless",
       "Servidor DHCP"
     ],
     "correct": 0,
@@ -497,7 +497,7 @@
       "Interface normal",
       "Interface desabilitada por erro (ex: loop, violação de segurança)",
       "Interface em manutenção",
-      "Interface PoE"
+      "Interface Põe"
     ],
     "correct": 1,
     "explanation": "Err-disabled é um estado de proteção onde a interface é automaticamente desabilitada devido a erros como loops ou violação de port-security.",
@@ -506,7 +506,7 @@
   {
     "question": "Qual é a função principal de um Access Point wireless?",
     "options": [
-      "Roteamento de pacotes",
+      "Encaminhamento de pacotes",
       "Conectar dispositivos wireless à rede cabeada",
       "Atribuir endereços IP",
       "Filtrar tráfego"
@@ -518,7 +518,7 @@
   {
     "question": "O que é CDP (Cisco Discovery Protocol)?",
     "options": [
-      "Protocolo de roteamento",
+      "Protocolo de encaminhamento",
       "Protocolo proprietário Cisco para descobrir dispositivos vizinhos",
       "Protocolo de segurança",
       "Protocolo de backup"
@@ -591,7 +591,7 @@
     "question": "O que é 'port-security' em switches Cisco?",
     "options": [
       "Recurso para limitar o número de endereços MAC por porta",
-      "Protocolo de roteamento",
+      "Protocolo de encaminhamento",
       "Tipo de cabo",
       "Método de criptografia"
     ],
@@ -603,7 +603,7 @@
     "question": "Qual é a função do comando 'show cdp neighbors'?",
     "options": [
       "Mostrar vizinhos descobertos via CDP",
-      "Mostrar tabela de roteamento",
+      "Mostrar tabela de encaminhamento",
       "Mostrar configuração de VLAN",
       "Mostrar logs do sistema"
     ],
@@ -622,5 +622,365 @@
     "correct": 1,
     "explanation": "SFP (Small Form-factor Pluggable) é um módulo compacto hot-swappable para portas de fibra ou cobre.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Qual cabo Ethernet usa conector RJ-45?",
+    "options": [
+      "Coaxial RG-59",
+      "Par trançado UTP/STP",
+      "Fibra multimodo",
+      "Serial V.35"
+    ],
+    "correct": 1,
+    "explanation": "Ethernet em cobre usa par trançado terminado em RJ-45.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual dispositivo encaminha com base no IP de destino?",
+    "options": [
+      "Hub",
+      "Switch L2",
+      "Router",
+      "Repetidor"
+    ],
+    "correct": 2,
+    "explanation": "Routers ligam redes diferentes usando o endereço IP de destino.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual e a máscara de uma rede /24?",
+    "options": [
+      "255.255.0.0",
+      "255.255.255.0",
+      "255.255.255.252",
+      "255.0.0.0"
+    ],
+    "correct": 1,
+    "explanation": "/24 são 24 bits de rede: 255.255.255.0.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Para que serve o DHCP?",
+    "options": [
+      "Traduz nomes em IP",
+      "Atribui IP, máscara, gateway e DNS",
+      "Cifra HTTP",
+      "Filtra MAC"
+    ],
+    "correct": 1,
+    "explanation": "DHCP configura automaticamente os clientes IP.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual protocolo resolve nomes de host para IP?",
+    "options": [
+      "DHCP",
+      "DNS",
+      "ARP",
+      "NAT"
+    ],
+    "correct": 1,
+    "explanation": "DNS traduz nomes em endereços IP.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "O que o ARP descobre?",
+    "options": [
+      "A rota para outra rede",
+      "O MAC de um IP na mesma LAN",
+      "O servidor NTP",
+      "A VLAN nativa"
+    ],
+    "correct": 1,
+    "explanation": "ARP obtem o MAC local correspondente a um IP.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um switch unmanaged permite criar VLANs?",
+    "options": [
+      "Sim, via CLI",
+      "Não, tudo fica no mesmo dominio de broadcast",
+      "Sim, via SNMP",
+      "Só com Põe"
+    ],
+    "correct": 1,
+    "explanation": "Switches unmanaged não tem configuração nem VLANs.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual ferramenta mostra o caminho até um destino?",
+    "options": [
+      "ipconfig",
+      "traceroute / tracert",
+      "netstat -a",
+      "arp -a"
+    ],
+    "correct": 1,
+    "explanation": "traceroute ou tracert lista os saltos até ao destino.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual e o gateway predefinido de um PC?",
+    "options": [
+      "O DNS público",
+      "O router da LAN por onde sai o tráfego para outras redes",
+      "O servidor de impressao",
+      "O endereço de loopback"
+    ],
+    "correct": 1,
+    "explanation": "O default gateway e o router local para tráfego off-net.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Wi-Fi 6 corresponde a que padrão IEEE?",
+    "options": [
+      "802.11n",
+      "802.11ac",
+      "802.11ax",
+      "802.3af"
+    ],
+    "correct": 2,
+    "explanation": "Wi-Fi 6 e 802.11ax.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual porta TCP usa o HTTPS?",
+    "options": [
+      "80",
+      "443",
+      "22",
+      "25"
+    ],
+    "correct": 1,
+    "explanation": "HTTPS usa TCP 443.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "O que e phishing?",
+    "options": [
+      "Ataque de forca bruta ao Wi-Fi",
+      "Engano para obter credenciais ou dados, muitas vezes por email",
+      "Inundacao ICMP",
+      "Espelhamento de portas"
+    ],
+    "correct": 1,
+    "explanation": "Phishing usa engenharia social para roubar dados.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Para que serve um firewall?",
+    "options": [
+      "Atribuir IPs",
+      "Filtrar tráfego segundo regras de seguranca",
+      "Traduzir DNS",
+      "Alimentar Põe"
+    ],
+    "correct": 1,
+    "explanation": "Firewalls permitem ou bloqueiam tráfego com base em política.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual cabo transmite dados por luz?",
+    "options": [
+      "UTP Cat6",
+      "Fibra otica",
+      "Coaxial",
+      "USB"
+    ],
+    "correct": 1,
+    "explanation": "Fibra otica usa pulsos de luz, imune a EMI.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "O que e um dominio de broadcast?",
+    "options": [
+      "Um túnel VPN",
+      "O conjunto de dispositivos que recebem um frame de broadcast",
+      "Uma ACL",
+      "Um canal Wi-Fi"
+    ],
+    "correct": 1,
+    "explanation": "Broadcasts L2 ficam dentro do dominio VLAN/switch.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "127.0.0.1 e usado para que?",
+    "options": [
+      "Gateway da Internet",
+      "Testar a stack TCP/IP local (loopback)",
+      "Servidor DHCP",
+      "Endereço APIPA"
+    ],
+    "correct": 1,
+    "explanation": "Loopback testa a pilha IP da própria maquina.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Um endereço 169.254.x.x em Windows costuma indicar?",
+    "options": [
+      "IP público",
+      "APIPA: falhou o DHCP",
+      "Endereço de multicast",
+      "IP de loopback"
+    ],
+    "correct": 1,
+    "explanation": "APIPA (169.254/16) aparece quando o DHCP não responde.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual e a função do Põe?",
+    "options": [
+      "Cifrar o tráfego",
+      "Alimentar dispositivos pelo cabo Ethernet",
+      "Agregar links",
+      "Traduzir VLANs"
+    ],
+    "correct": 1,
+    "explanation": "Põe alimenta APs, cameras e telefones pelo UTP.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "SSH e preferivel a Telnet porque?",
+    "options": [
+      "E mais rapido",
+      "Cifra a sessão de gestao",
+      "Usa UDP",
+      "Não precisa de IP"
+    ],
+    "correct": 1,
+    "explanation": "SSH (porta 22) cifra; Telnet envia texto em claro.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual camada OSI trata de segmentos TCP/UDP?",
+    "options": [
+      "Rede",
+      "Transporte",
+      "Sessão",
+      "Enlace"
+    ],
+    "correct": 1,
+    "explanation": "A camada 4 Transporte usa TCP e UDP.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um AP (access point) serve para que?",
+    "options": [
+      "Encaminhar entre WAN",
+      "Ligar clientes Wi-Fi a LAN cablada",
+      "Atribuir AS numbers",
+      "Terminar MPLS"
+    ],
+    "correct": 1,
+    "explanation": "O AP faz a ponte entre wireless e a LAN Ethernet.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual e um bom habito de palavra-passe?",
+    "options": [
+      "Reutilizar a mesma em todos os sites",
+      "Única, longa e com MFA quando possivel",
+      "Partilhar no chat da equipa",
+      "Usar só 4 digitos"
+    ],
+    "correct": 1,
+    "explanation": "Palavras-passe unicas e MFA reduzem o impacto de fugas.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "O que faz um patch panel?",
+    "options": [
+      "Encaminha OSPF",
+      "Organiza e termina cablagem num ponto central",
+      "Cifra Wi-Fi",
+      "Atribui VLANs automaticamente"
+    ],
+    "correct": 1,
+    "explanation": "Patch panels concentram a cablagem estruturada.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "IPv6 tem quantos bits?",
+    "options": [
+      "32",
+      "64",
+      "128",
+      "256"
+    ],
+    "correct": 2,
+    "explanation": "IPv6 usa endereços de 128 bits.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual comando Windows mostra o IP da maquina?",
+    "options": [
+      "ping",
+      "ipconfig",
+      "hostname -I",
+      "show ip"
+    ],
+    "correct": 1,
+    "explanation": "ipconfig ou ipconfig /all mostra endereços no Windows.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Um hub Ethernet em relacao a um switch:",
+    "options": [
+      "E mais seguro",
+      "Partilha um dominio de colisao; o switch separa por porta",
+      "Encaminha IP",
+      "Suporta OSPF"
+    ],
+    "correct": 1,
+    "explanation": "Hubs são L1 e partilham colisoes; switches L2 isolam por porta.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual protocolo usa a porta UDP 53?",
+    "options": [
+      "HTTP",
+      "DNS",
+      "SMTP",
+      "FTP"
+    ],
+    "correct": 1,
+    "explanation": "DNS usa UDP/TCP 53.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual incidente de seguranca deves reportar?",
+    "options": [
+      "Atualizar o Windows",
+      "Email a pedir a password do chefe",
+      "Mudar o fundo do ambiente de trabalho",
+      "Abrir o browser"
+    ],
+    "correct": 1,
+    "explanation": "Pedidos de credenciais são phishing e devem ser reportados.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Cat5e/Cat6 descrevem o que?",
+    "options": [
+      "Normas de fibra",
+      "Categorias de cabo de par trançado e largura de banda",
+      "Tipos de conector de fibra",
+      "Canais Wi-Fi"
+    ],
+    "correct": 1,
+    "explanation": "Categorias UTP definem desempenho.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um endereço IPv4 privado RFC 1918 é:",
+    "options": [
+      "8.8.8.8",
+      "192.168.1.10",
+      "1.1.1.1",
+      "255.255.255.255"
+    ],
+    "correct": 1,
+    "explanation": "192.168.0.0/16 e bloco privado, com 10/8 e 172.16/12.",
+    "difficulty": "Fácil"
   }
 ]

@@ -251,7 +251,7 @@
             <div class="flex items-center gap-x-2 text-sm">
                 <div class="px-3 py-1.5 bg-slate-900 rounded-2xl flex items-center gap-x-2 border border-slate-700">
                     <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                    <span class="text-emerald-400 text-xs font-medium">BASE ATUALIZADA • 300 PERGUNTAS</span>
+                    <span class="text-emerald-400 text-xs font-medium">BASE ATUALIZADA • 496 PERGUNTAS</span>
                 </div>
                 <button onclick="showDatabaseInfo()" 
                         class="px-4 py-2 text-xs font-medium flex items-center gap-x-2 hover:bg-slate-800 transition-colors rounded-2xl border border-slate-700">
@@ -269,7 +269,7 @@
                 <span class="text-xs font-bold tracking-[2px] text-blue-400">VERSÃO 2.4 • 2026</span>
             </div>
             <h1 class="text-5xl sm:text-6xl font-display font-bold tracking-tighter mb-3">Domine as<br>Certificações Cisco</h1>
-            <p class="text-lg sm:text-xl text-slate-400 max-w-md mx-auto">Pratique com +300 perguntas na base. Cresce sem inchar o HTML.<br>CCST • CCNA • CCNP • PT &amp; EN</p>
+            <p class="text-lg sm:text-xl text-slate-400 max-w-md mx-auto">Pratique com 496 perguntas na base. Cada exame tira 50 ao calhas.<br>CCST • CCNA • CCNP • PT &amp; EN</p>
         </div>
 
         <!-- Certification Cards -->
@@ -289,7 +289,7 @@
                 <div class="space-y-3 mb-7">
                     <div class="flex items-center text-xs">
                         <div class="flex-1 h-px bg-slate-700"></div>
-                        <span class="px-3 text-slate-500">52 PT • 52 EN</span>
+                        <span id="count-ccst" class="px-3 text-slate-500">82 PT • 82 EN</span>
                         <div class="flex-1 h-px bg-slate-700"></div>
                     </div>
                     <div class="flex justify-between text-xs text-slate-400">
@@ -326,7 +326,7 @@
                 <div class="space-y-3 mb-7">
                     <div class="flex items-center text-xs">
                         <div class="flex-1 h-px bg-slate-700"></div>
-                        <span class="px-3 text-slate-500">49 PT • 49 EN</span>
+                        <span id="count-ccna" class="px-3 text-slate-500">82 PT • 82 EN</span>
                         <div class="flex-1 h-px bg-slate-700"></div>
                     </div>
                     <div class="flex justify-between text-xs text-slate-400">
@@ -363,7 +363,7 @@
                 <div class="space-y-3 mb-7">
                     <div class="flex items-center text-xs">
                         <div class="flex-1 h-px bg-slate-700"></div>
-                        <span class="px-3 text-slate-500">49 PT • 49 EN</span>
+                        <span id="count-ccnp" class="px-3 text-slate-500">84 PT • 84 EN</span>
                         <div class="flex-1 h-px bg-slate-700"></div>
                     </div>
                     <div class="flex justify-between text-xs text-slate-400">
@@ -565,7 +565,7 @@
             document.documentElement.style.setProperty('--accent', '#0a66c2');
         }
 
-        // Mínimo de 300 por idioma por certificado atingido e superado
+        // Contagens alinhadas com data/*.js (CCST 82, CCNA 82, CCNP 84 por língua)
         // Estrutura idêntica entre PT e EN (tradução fiel)
         
         const databases = {
@@ -573,7 +573,7 @@
             ccna: { pt: [], en: [] },
             ccnp: { pt: [], en: [] }
         };
-        const QUIZ_COUNTS = {"ccst": {"pt": 52, "en": 52}, "ccna": {"pt": 49, "en": 49}, "ccnp": {"pt": 49, "en": 49}};
+        const QUIZ_COUNTS = {"ccst": {"pt": 82, "en": 82}, "ccna": {"pt": 82, "en": 82}, "ccnp": {"pt": 84, "en": 84}};
 
         function loadBank(cert, lang) {
             return new Promise((resolve, reject) => {
@@ -1245,6 +1245,15 @@
                 };
             }
             
+            ['ccst','ccna','ccnp'].forEach(cert => {
+                const el = document.getElementById('count-' + cert);
+                if (el && QUIZ_COUNTS[cert]) {
+                    el.textContent = QUIZ_COUNTS[cert].pt + ' PT • ' + QUIZ_COUNTS[cert].en + ' EN';
+                }
+            });
+            const banner = document.querySelector('nav .text-emerald-400.text-xs');
+            if (banner) banner.textContent = 'BASE ATUALIZADA • ' + liveTotal() + ' PERGUNTAS';
+
             console.log('%c✅ Cisco Quiz Master inicializado com sucesso. Todas as funcionalidades testadas e validadas.', 'color:#22c55e');
             console.log('%c📚 Base de dados carregada por ficheiro (data/*.js). Total: ' + liveTotal(), 'color:#64748b');
         }

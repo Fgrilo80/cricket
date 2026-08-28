@@ -21,10 +21,11 @@ Formato de cada pergunta:
 `correct` é o índice da opção certa (0, 1, 2 ou 3).
 
 Contagens atuais:
-- CCST PT 52 / EN 52
-- CCNA PT 49 / EN 49
-- CCNP PT 49 / EN 49
-- Total 300
+- CCST PT 82 / EN 82
+- CCNA PT 82 / EN 82
+- CCNP PT 84 / EN 84
+- Total 496
+Cada exame tira 50 perguntas ao calhas.
 
 ## Telemóvel
 Para abrir no telemóvel a pasta tem de estar num servidor (mesmo Wi-Fi) ou publicada na web. Sem isso o browser do telemóvel não vê os ficheiros do PC.

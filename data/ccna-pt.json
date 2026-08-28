@@ -4,7 +4,7 @@
     "options": [
       "Endereçamento lógico",
       "Entrega confiável de dados entre aplicações",
-      "Roteamento de pacotes",
+      "Encaminhamento de pacotes",
       "Transmissão física de bits"
     ],
     "correct": 1,
@@ -26,7 +26,7 @@
   {
     "question": "O que é uma rota estática?",
     "options": [
-      "Rota aprendida automaticamente por protocolo de roteamento",
+      "Rota aprendida automaticamente por protocolo de encaminhamento",
       "Rota configurada manualmente pelo administrador",
       "Rota padrão",
       "Rota de backup"
@@ -76,7 +76,7 @@
     "options": [
       "Método para criptografar VLANs",
       "Inserção de tag em frames para identificar a VLAN de origem",
-      "Protocolo de roteamento",
+      "Protocolo de encaminhamento",
       "Tipo de switch"
     ],
     "correct": 1,
@@ -100,7 +100,7 @@
     "options": [
       "Lista de endereços MAC",
       "Conjunto de regras para permitir ou negar tráfego",
-      "Tabela de roteamento",
+      "Tabela de encaminhamento",
       "Configuração de VLAN"
     ],
     "correct": 1,
@@ -110,7 +110,7 @@
   {
     "question": "Qual é a função do protocolo HSRP?",
     "options": [
-      "Roteamento dinâmico",
+      "Encaminhamento dinâmico",
       "Fornecer gateway redundante com IP virtual",
       "Balanceamento de carga",
       "VPN"
@@ -132,15 +132,15 @@
     "difficulty": "Médio"
   },
   {
-    "question": "Qual é a principal diferença entre roteador e switch L3?",
+    "question": "Qual é a principal diferença entre router e switch L3?",
     "options": [
-      "Roteador é mais rápido",
-      "Switch L3 faz roteamento na camada 3 mas com hardware otimizado para switching",
+      "Router é mais rápido",
+      "Switch L3 faz encaminhamento na camada 3 mas com hardware otimizado para switching",
       "Não há diferença",
-      "Roteador não suporta VLANs"
+      "Router não suporta VLANs"
     ],
     "correct": 1,
-    "explanation": "Switches Layer 3 combinam funções de switching L2 com roteamento L3 em hardware ASIC, mais rápido que roteadores tradicionais.",
+    "explanation": "Switches Layer 3 combinam funções de switching L2 com encaminhamento L3 em hardware ASIC, mais rápido que roteadores tradicionais.",
     "difficulty": "Difícil"
   },
   {
@@ -158,7 +158,7 @@
   {
     "question": "Qual é a função do comando 'show ip ospf neighbor'?",
     "options": [
-      "Mostrar tabela de roteamento",
+      "Mostrar tabela de encaminhamento",
       "Mostrar vizinhos OSPF e seu estado",
       "Mostrar configuração de interface",
       "Mostrar logs"
@@ -194,13 +194,13 @@
   {
     "question": "O que é 'BGP' e para que é usado?",
     "options": [
-      "Protocolo de roteamento interno",
-      "Protocolo de roteamento externo usado na internet para troca de rotas entre AS",
+      "Protocolo de encaminhamento interno",
+      "Protocolo de encaminhamento externo usado na internet para troca de rotas entre AS",
       "Protocolo de backup",
       "Protocolo de segurança"
     ],
     "correct": 1,
-    "explanation": "BGP (Border Gateway Protocol) é o protocolo de roteamento usado na internet para trocar rotas entre sistemas autônomos.",
+    "explanation": "BGP (Border Gateway Protocol) é o protocolo de encaminhamento usado na internet para trocar rotas entre sistemas autônomos.",
     "difficulty": "Difícil"
   },
   {
@@ -218,13 +218,13 @@
   {
     "question": "O que é 'CEF' (Cisco Express Forwarding)?",
     "options": [
-      "Protocolo de roteamento",
+      "Protocolo de encaminhamento",
       "Tecnologia de encaminhamento de pacotes em hardware para alta performance",
       "Tipo de switch",
       "Método de backup"
     ],
     "correct": 1,
-    "explanation": "CEF usa tabela FIB e adjacências para encaminhar pacotes em hardware, muito mais rápido que roteamento tradicional.",
+    "explanation": "CEF usa tabela FIB e adjacências para encaminhar pacotes em hardware, muito mais rápido que encaminhamento tradicional.",
     "difficulty": "Difícil"
   },
   {
@@ -243,12 +243,12 @@
     "question": "O que é 'VRF' (Virtual Routing and Forwarding)?",
     "options": [
       "Tipo de VLAN",
-      "Tecnologia que permite múltiplas tabelas de roteamento independentes no mesmo roteador",
+      "Tecnologia que permite múltiplas tabelas de encaminhamento independentes no mesmo router",
       "Protocolo de VPN",
       "Tipo de firewall"
     ],
     "correct": 1,
-    "explanation": "VRF permite criar instâncias de roteamento separadas no mesmo dispositivo físico, útil para segmentação.",
+    "explanation": "VRF permite criar instâncias de encaminhamento separadas no mesmo dispositivo físico, útil para segmentação.",
     "difficulty": "Difícil"
   },
   {
@@ -296,7 +296,7 @@
       "Interface wireless"
     ],
     "correct": 1,
-    "explanation": "Subinterfaces permitem que um roteador único processe tráfego de múltiplas VLANs em uma única interface física (router-on-a-stick).",
+    "explanation": "Subinterfaces permitem que um router único processe tráfego de múltiplas VLANs em uma única interface física (router-on-a-stick).",
     "difficulty": "Médio"
   },
   {
@@ -308,13 +308,13 @@
       "Mostrar ACLs"
     ],
     "correct": 1,
-    "explanation": "Este comando exibe as traduções NAT/PAT atualmente ativas no roteador.",
+    "explanation": "Este comando exibe as traduções NAT/PAT atualmente ativas no router.",
     "difficulty": "Fácil"
   },
   {
     "question": "O que é 'GLBP' (Gateway Load Balancing Protocol)?",
     "options": [
-      "Protocolo de roteamento",
+      "Protocolo de encaminhamento",
       "Protocolo que fornece redundância e balanceamento de carga entre múltiplos gateways",
       "Tipo de ACL",
       "Protocolo de VPN"
@@ -340,7 +340,7 @@
     "options": [
       "Gerenciador de VLANs",
       "Recurso que otimiza o uso de recursos de hardware (TCAM) para diferentes funções",
-      "Protocolo de roteamento",
+      "Protocolo de encaminhamento",
       "Tipo de memória"
     ],
     "correct": 1,
@@ -362,7 +362,7 @@
   {
     "question": "O que é 'BPDU Guard'?",
     "options": [
-      "Protocolo de roteamento",
+      "Protocolo de encaminhamento",
       "Recurso de segurança que desabilita porta se receber BPDU (evita loops)",
       "Tipo de VLAN",
       "Método de backup"
@@ -375,7 +375,7 @@
     "question": "Qual é a função do comando 'debug ip packet'?",
     "options": [
       "Mostrar configuração",
-      "Mostrar pacotes IP processados pelo roteador (cuidado: alto impacto)",
+      "Mostrar pacotes IP processados pelo router (cuidado: alto impacto)",
       "Apagar logs",
       "Reiniciar interface"
     ],
@@ -386,8 +386,8 @@
   {
     "question": "O que é 'router-on-a-stick'?",
     "options": [
-      "Roteador físico único",
-      "Configuração onde um roteador usa subinterfaces para rotear entre múltiplas VLANs em uma única interface física",
+      "Router físico único",
+      "Configuração onde um router usa subinterfaces para rotear entre múltiplas VLANs em uma única interface física",
       "Tipo de switch",
       "Método de NAT"
     ],
@@ -422,19 +422,19 @@
   {
     "question": "Qual é a função do 'ip domain-lookup'?",
     "options": [
-      "Ativar resolução DNS no roteador",
+      "Ativar resolução DNS no router",
       "Desabilitar DNS",
       "Configurar servidor DNS",
       "Mostrar cache DNS"
     ],
     "correct": 0,
-    "explanation": "ip domain-lookup habilita o roteador a resolver nomes de host via DNS.",
+    "explanation": "ip domain-lookup habilita o router a resolver nomes de host via DNS.",
     "difficulty": "Fácil"
   },
   {
     "question": "O que é 'LACP' (Link Aggregation Control Protocol)?",
     "options": [
-      "Protocolo de roteamento",
+      "Protocolo de encaminhamento",
       "Protocolo padrão IEEE para negociação de EtherChannel",
       "Tipo de ACL",
       "Protocolo de segurança"
@@ -459,12 +459,12 @@
     "question": "O que é 'HSRP preemption'?",
     "options": [
       "Desabilitar HSRP",
-      "Permitir que roteador com prioridade mais alta assuma o papel de active quando disponível",
+      "Permitir que router com prioridade mais alta assuma o papel de active quando disponível",
       "Tipo de balanceamento",
       "Backup de configuração"
     ],
     "correct": 1,
-    "explanation": "Preemption permite que um roteador com maior prioridade assuma automaticamente o papel de active quando volta a ficar disponível.",
+    "explanation": "Preemption permite que um router com maior prioridade assuma automaticamente o papel de active quando volta a ficar disponível.",
     "difficulty": "Médio"
   },
   {
@@ -506,7 +506,7 @@
   {
     "question": "O que é 'uRPF' (Unicast Reverse Path Forwarding)?",
     "options": [
-      "Protocolo de roteamento",
+      "Protocolo de encaminhamento",
       "Mecanismo de segurança que verifica se o IP de origem é alcançável pela interface de entrada",
       "Tipo de firewall",
       "Método de backup"
@@ -530,7 +530,7 @@
   {
     "question": "O que é 'MPLS' (Multiprotocol Label Switching)?",
     "options": [
-      "Protocolo de roteamento",
+      "Protocolo de encaminhamento",
       "Tecnologia de comutação de rótulos para alta performance e VPNs",
       "Tipo de switch",
       "Método de NAT"
@@ -581,10 +581,406 @@
       "VPN estática",
       "Tecnologia Cisco que permite VPNs dinâmicas hub-and-spoke com spoke-to-spoke direto",
       "Tipo de firewall",
-      "Protocolo de roteamento"
+      "Protocolo de encaminhamento"
     ],
     "correct": 1,
     "explanation": "DMVPN cria VPNs dinâmicas onde spokes podem se conectar diretamente entre si sem passar pelo hub.",
     "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual comando cria a VLAN 20 num switch Cisco?",
+    "options": [
+      "vlan 20",
+      "switchport access vlan 20",
+      "interface vlan 20",
+      "encapsulation dot1q 20"
+    ],
+    "correct": 0,
+    "explanation": "No modo VLAN, 'vlan 20' cria a VLAN.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Para uma porta de acesso na VLAN 20 usa-se:",
+    "options": [
+      "switchport mode trunk",
+      "switchport access vlan 20",
+      "no switchport",
+      "ip routing"
+    ],
+    "correct": 1,
+    "explanation": "switchport access vlan 20 (com mode access) põe a porta na VLAN 20.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual protocolo nativo Cisco negocia EtherChannel?",
+    "options": [
+      "LACP",
+      "PAgP",
+      "STP",
+      "VTP"
+    ],
+    "correct": 1,
+    "explanation": "PAgP é Cisco; LACP é o padrão IEEE 802.3ad.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Em STP, o root bridge é eleito por:",
+    "options": [
+      "Maior prioridade numérica",
+      "Menor Bridge ID (prioridade + MAC)",
+      "Maior número de VLANs",
+      "Maior uptime"
+    ],
+    "correct": 1,
+    "explanation": "Ganha o menor Bridge ID: prioridade (default 32768) depois MAC.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "PortFast numa porta de acesso serve para:",
+    "options": [
+      "Desligar STP",
+      "Passar já para forwarding, evitando atraso em PCs",
+      "Eleger o root",
+      "Negociar trunk"
+    ],
+    "correct": 1,
+    "explanation": "PortFast salta listening/learning em portas de extremo.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "OSPFv2 usa que endereços para hellos em Ethernet?",
+    "options": [
+      "Broadcast 255.255.255.255",
+      "Multicast 224.0.0.5 e 224.0.0.6",
+      "Unicast só para o DR",
+      "FF02::5 apenas"
+    ],
+    "correct": 1,
+    "explanation": "Hellos AllSPFRouters 224.0.0.5; DR/BDR também 224.0.0.6.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Uma rota estática default em Cisco é:",
+    "options": [
+      "ip route 0.0.0.0 0.0.0.0 <next-hop ou exit>",
+      "ip default-network 0.0.0.0",
+      "ip route 255.255.255.255",
+      "router default"
+    ],
+    "correct": 0,
+    "explanation": "A default route é 0.0.0.0/0 para next-hop ou interface.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "NAT overload (PAT) faz o que?",
+    "options": [
+      "Um IP público por cada privado, 1:1",
+      "Muitos privados partilham um ou poucos IPs públicos via portas",
+      "Traduz só IPv6",
+      "Desliga o firewall"
+    ],
+    "correct": 1,
+    "explanation": "PAT usa portas L4 para multiplexar muitos internos num IP público.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "DHCP snooping protege contra:",
+    "options": [
+      "Loops STP",
+      "Servidores DHCP ilegítimos",
+      "Tempestades de broadcast",
+      "Rotas OSPF falsas"
+    ],
+    "correct": 1,
+    "explanation": "Marca portas trusted/untrusted e bloqueia ofertas DHCP falsas.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Uma ACL estendida filtra com base em:",
+    "options": [
+      "Só IP de origem",
+      "Origem, destino, protocolo e portas",
+      "Só MAC",
+      "Só VLAN"
+    ],
+    "correct": 1,
+    "explanation": "ACLs extended permitem critérios L3/L4 finos.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Onde se deve colocar uma ACL estendida, em regra?",
+    "options": [
+      "O mais perto do destino",
+      "O mais perto da origem",
+      "Só no core",
+      "Em todos os PCs"
+    ],
+    "correct": 1,
+    "explanation": "Perto da origem evita tráfego indesejado a atravessar a rede.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "HSRP oferece o que aos hosts?",
+    "options": [
+      "Um MAC/IP virtual de gateway redundante",
+      "Balanceamento por fluxo OSPF",
+      "Tradução NAT",
+      "Um servidor DHCP"
+    ],
+    "correct": 0,
+    "explanation": "HSRP partilha um VIP; um router e active, outro standby.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "NTP serve para:",
+    "options": [
+      "Traduzir nomes",
+      "Sincronizar relógios na rede",
+      "Medir jitter WAN",
+      "Cifrar syslog"
+    ],
+    "correct": 1,
+    "explanation": "NTP alinha o tempo dos dispositivos.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "SNMP GET faz o que?",
+    "options": [
+      "Configura o dispositivo",
+      "Le um objeto MIB do agente",
+      "Envia um trap",
+      "Reinicia a interface"
+    ],
+    "correct": 1,
+    "explanation": "GET consulta o agente; SET altera; traps são notificacoes.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "QoS classification acontece onde, de preferência?",
+    "options": [
+      "Só no ISP",
+      "O mais perto da origem (edge)",
+      "Apenas no core MPLS",
+      "No DNS"
+    ],
+    "correct": 1,
+    "explanation": "Classificar no edge permite marcar DSCP cedo.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "CDP e LLDP servem para:",
+    "options": [
+      "Eleger o DR OSPF",
+      "Descobrir vizinhos e capacidades no enlace",
+      "Cifrar trunks",
+      "Traduzir NAT"
+    ],
+    "correct": 1,
+    "explanation": "Protocolos de descoberta L2: CDP Cisco, LLDP padrão.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Um endereço IPv6 link-local começa tipicamente por:",
+    "options": [
+      "2001:",
+      "fe80::/10",
+      "ff00::/8",
+      "::1"
+    ],
+    "correct": 1,
+    "explanation": "Link-local FE80::/10 e obrigatório em cada interface IPv6.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "RESTCONF usa que formato de dados com frequência?",
+    "options": [
+      "YAML só",
+      "JSON ou XML sobre HTTP",
+      "CSV",
+      "Protobuf obrigatório"
+    ],
+    "correct": 1,
+    "explanation": "RESTCONF expoe YANG via HTTP, geralmente JSON ou XML.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "JSON distingue-se de XML por:",
+    "options": [
+      "Ser binario",
+      "Ser mais leve, com pares chave-valor",
+      "Não suportar arrays",
+      "Exigir DTD"
+    ],
+    "correct": 1,
+    "explanation": "JSON e texto simples com objetos e arrays, comum em APIs.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Ansible liga-se a dispositivos Cisco principalmente via:",
+    "options": [
+      "Agente instalado no IOS",
+      "SSH (agentless) e por vezes NETCONF",
+      "Só SNMP",
+      "Telnet obrigatório"
+    ],
+    "correct": 1,
+    "explanation": "Ansible e agentless: SSH/NETCONF, playbooks YAML.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Dynamic ARP Inspection usa que base de dados?",
+    "options": [
+      "A tabela OSPF",
+      "A binding table do DHCP snooping",
+      "O arquivo VTP",
+      "O CAM aging"
+    ],
+    "correct": 1,
+    "explanation": "DAI valida ARP contra as bindings DHCP snooping.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "BPDU Guard numa porta PortFast:",
+    "options": [
+      "Ignora BPDUs",
+      "Errdisable a porta se receber uma BPDU",
+      "Elege o root",
+      "Ativa LACP"
+    ],
+    "correct": 1,
+    "explanation": "Um switch ligado por engano desliga a porta de extremo.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "A wildcard mask 0.0.0.255 equivale a:",
+    "options": [
+      "/16",
+      "/24",
+      "/8",
+      "/32"
+    ],
+    "correct": 1,
+    "explanation": "0.0.0.255 casa os últimos 8 bits: prefixo /24.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "OSPF cost de FastEthernet 100 Mb/s com referência 100000 é:",
+    "options": [
+      "1",
+      "10",
+      "100",
+      "1000"
+    ],
+    "correct": 0,
+    "explanation": "Custo = ref/bw = 100000/100000 = 1.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um trunk 802.1Q transporta:",
+    "options": [
+      "Uma só VLAN",
+      "Várias VLANs com tag, exceto a nativa sem tag",
+      "Apenas a VLAN 1",
+      "Só tráfego de gestao"
+    ],
+    "correct": 1,
+    "explanation": "dot1q etiqueta VLANs; a native vai untagged.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "SSID num WLAN é:",
+    "options": [
+      "A chave WPA3",
+      "O nome da rede wireless visível aos clientes",
+      "O canal DFS",
+      "O BSSID só"
+    ],
+    "correct": 1,
+    "explanation": "SSID identifica a rede; BSSID e o MAC do AP.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "WPA3-Enterprise autentica tipicamente com:",
+    "options": [
+      "PSK só",
+      "802.1X/EAP e um servidor RADIUS",
+      "WEP de 128 bits",
+      "Telnet"
+    ],
+    "correct": 1,
+    "explanation": "Enterprise usa 802.1X com RADIUS, não um PSK partilhado.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O primeiro passo de troubleshooting quando o site não abre na LAN é muitas vezes:",
+    "options": [
+      "Trocar o core",
+      "Verificar IP, máscara, gateway e DNS no cliente",
+      "Desligar OSPF",
+      "Reset de fábrica ao ISP"
+    ],
+    "correct": 1,
+    "explanation": "Config IP do host elimina a maioria dos casos.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Syslog severity 0 significa:",
+    "options": [
+      "Informational",
+      "Emergency (mais grave)",
+      "Debug",
+      "Notice"
+    ],
+    "correct": 1,
+    "explanation": "0 emergency a 7 debug; quanto menor, mais grave.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um WLC usa CAPWAP para:",
+    "options": [
+      "Substituir OSPF",
+      "Tunelar e controlar APs lightweight",
+      "Cifrar discos",
+      "Fazer NAT"
+    ],
+    "correct": 1,
+    "explanation": "CAPWAP é o túnel de controlo/dados entre WLC e APs.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "IPv6 GUA global unicast começa frequentemente por:",
+    "options": [
+      "fe80:",
+      "2000::/3 (ex.: 2001:)",
+      "ff02:",
+      "::1"
+    ],
+    "correct": 1,
+    "explanation": "Globais atuais estão em 2000::/3, p.ex. 2001:db8::/32.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O comando show ip route O significa rotas:",
+    "options": [
+      "Estáticas",
+      "OSPF",
+      "Conectadas",
+      "BGP"
+    ],
+    "correct": 1,
+    "explanation": "Código O = OSPF na tabela de encaminhamento.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Uma porta switchport mode access aceita tags 802.1Q?",
+    "options": [
+      "Sim, todas as VLANs",
+      "Não: só a VLAN de acesso, untagged",
+      "Só a VLAN 1 tagged",
+      "Só se PortFast estiver on"
+    ],
+    "correct": 1,
+    "explanation": "Access ports esperam frames untagged da VLAN atribuída.",
+    "difficulty": "Médio"
   }
 ]

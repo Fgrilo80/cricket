@@ -20,7 +20,7 @@
       "Servidor DNS"
     ],
     "correct": 0,
-    "explanation": "Route Reflector permite que um roteador reflita rotas BGP aprendidas de um cliente para outros clientes, reduzindo o número de sessões IBGP necessárias.",
+    "explanation": "Route Reflector permite que um router reflita rotas BGP aprendidas de um cliente para outros clientes, reduzindo o número de sessões IBGP necessárias.",
     "difficulty": "Difícil"
   },
   {
@@ -41,7 +41,7 @@
       "Mesma coisa que MPLS",
       "Abordagem baseada em software para gerenciamento de WAN com overlay inteligente, zero-touch provisioning e otimização de tráfego",
       "Tipo de switch",
-      "Protocolo de roteamento"
+      "Protocolo de encaminhamento"
     ],
     "correct": 1,
     "explanation": "SD-WAN usa overlay inteligente sobre qualquer underlay (MPLS, internet, LTE), com gerenciamento centralizado e políticas baseadas em aplicação.",
@@ -52,7 +52,7 @@
     "options": [
       "Gerenciamento tradicional de dispositivos",
       "Plataforma de automação e gerenciamento de rede baseada em intenção com analytics e assurance",
-      "Tipo de roteador",
+      "Tipo de router",
       "Servidor DHCP"
     ],
     "correct": 1,
@@ -88,7 +88,7 @@
     "options": [
       "Tipo de VLAN",
       "Tecnologia de controle plano para VXLAN que usa BGP para distribuir informações de MAC/IP",
-      "Protocolo de roteamento",
+      "Protocolo de encaminhamento",
       "Tipo de switch"
     ],
     "correct": 1,
@@ -98,7 +98,7 @@
   {
     "question": "Qual é a função do 'NetFlow' e 'Flexible NetFlow'?",
     "options": [
-      "Protocolo de roteamento",
+      "Protocolo de encaminhamento",
       "Tecnologia de monitoramento de fluxo de tráfego para análise, billing e segurança",
       "Tipo de ACL",
       "Método de backup"
@@ -124,7 +124,7 @@
     "options": [
       "Criptografar tráfego em nível de aplicação",
       "Fornecer segurança em nível de rede (confidencialidade, integridade, autenticação) para VPNs",
-      "Tipo de roteamento",
+      "Tipo de encaminhamento",
       "Protocolo de backup"
     ],
     "correct": 1,
@@ -134,7 +134,7 @@
   {
     "question": "O que é 'AnyConnect' da Cisco?",
     "options": [
-      "Protocolo de roteamento",
+      "Protocolo de encaminhamento",
       "Cliente VPN remoto seguro com suporte a SSL/TLS e IPsec",
       "Tipo de switch",
       "Servidor DHCP"
@@ -146,7 +146,7 @@
   {
     "question": "Qual é a função do 'Wireless LAN Controller (WLC)'?",
     "options": [
-      "Roteador wireless",
+      "Router wireless",
       "Dispositivo centralizado que gerencia múltiplos Access Points, roaming, segurança e RF",
       "Tipo de switch",
       "Firewall"
@@ -158,7 +158,7 @@
   {
     "question": "O que é 'CAPWAP'?",
     "options": [
-      "Protocolo de roteamento",
+      "Protocolo de encaminhamento",
       "Protocolo usado por WLC para controlar e gerenciar Access Points (substitui LWAPP)",
       "Tipo de VLAN",
       "Método de NAT"
@@ -172,7 +172,7 @@
     "options": [
       "Servidor DHCP",
       "Plataforma centralizada de controle de acesso baseado em identidade, 802.1X, profiling e políticas",
-      "Tipo de roteador",
+      "Tipo de router",
       "Firewall"
     ],
     "correct": 1,
@@ -194,7 +194,7 @@
   {
     "question": "Qual é a função do 'RESTCONF' e 'NETCONF'?",
     "options": [
-      "Protocolos de roteamento",
+      "Protocolos de encaminhamento",
       "APIs e protocolos para automação e configuração programática de dispositivos de rede",
       "Tipo de firewall",
       "Método de backup"
@@ -216,7 +216,7 @@
     "difficulty": "Médio"
   },
   {
-    "question": "Qual é a diferença entre 'PBR' (Policy Based Routing) e roteamento normal?",
+    "question": "Qual é a diferença entre 'PBR' (Policy Based Routing) e encaminhamento normal?",
     "options": [
       "PBR é mais rápido",
       "PBR permite rotear tráfego com base em políticas (ACL, QoS, aplicação) em vez de apenas destino",
@@ -224,7 +224,7 @@
       "PBR é menos seguro"
     ],
     "correct": 1,
-    "explanation": "PBR permite decisões de roteamento baseadas em critérios além do IP de destino, como origem, aplicação ou marcação.",
+    "explanation": "PBR permite decisões de encaminhamento baseadas em critérios além do IP de destino, como origem, aplicação ou marcação.",
     "difficulty": "Difícil"
   },
   {
@@ -242,13 +242,13 @@
   {
     "question": "Qual é a função do 'BFD' (Bidirectional Forwarding Detection)?",
     "options": [
-      "Protocolo de roteamento",
-      "Mecanismo rápido de detecção de falhas em links para acelerar convergência de protocolos de roteamento",
+      "Protocolo de encaminhamento",
+      "Mecanismo rápido de detecção de falhas em links para acelerar convergência de protocolos de encaminhamento",
       "Tipo de ACL",
       "Método de NAT"
     ],
     "correct": 1,
-    "explanation": "BFD fornece detecção de falhas em milissegundos, permitindo que protocolos de roteamento reajam muito mais rápido.",
+    "explanation": "BFD fornece detecção de falhas em milissegundos, permitindo que protocolos de encaminhamento reajam muito mais rápido.",
     "difficulty": "Difícil"
   },
   {
@@ -256,7 +256,7 @@
     "options": [
       "Firewall local",
       "Serviço de segurança na nuvem que bloqueia domínios maliciosos, C2 e phishing via DNS",
-      "Tipo de roteador",
+      "Tipo de router",
       "Protocolo de backup"
     ],
     "correct": 1,
@@ -278,7 +278,7 @@
   {
     "question": "O que é 'Cisco Secure Firewall' (antigo Firepower)?",
     "options": [
-      "Roteador simples",
+      "Router simples",
       "Next-Generation Firewall (NGFW) com IPS, URL filtering, malware protection e integração com ISE",
       "Tipo de switch",
       "Protocolo de backup"
@@ -305,7 +305,7 @@
       "Rede tradicional",
       "Abordagem onde você define o 'o que' (intenção) e a rede automaticamente configura o 'como'",
       "Tipo de switch",
-      "Protocolo de roteamento"
+      "Protocolo de encaminhamento"
     ],
     "correct": 1,
     "explanation": "Intent-Based Networking permite que administradores declarem intenções de negócio e a rede traduza automaticamente em políticas e configurações.",
@@ -316,7 +316,7 @@
     "options": [
       "Backup de configuração",
       "Analytics e troubleshooting proativo com machine learning e telemetria em tempo real",
-      "Tipo de roteador",
+      "Tipo de router",
       "Servidor DNS"
     ],
     "correct": 1,
@@ -350,7 +350,7 @@
   {
     "question": "O que é 'Cisco vManage' em SD-WAN?",
     "options": [
-      "Roteador físico",
+      "Router físico",
       "Controlador centralizado de gerenciamento, políticas e orquestração de toda a solução SD-WAN",
       "Tipo de switch",
       "Servidor DHCP"
@@ -364,7 +364,7 @@
     "options": [
       "Firewall",
       "Otimização de aplicação com reconhecimento de aplicação, QoS inteligente e correção de perda de pacotes",
-      "Tipo de roteador",
+      "Tipo de router",
       "Protocolo de backup"
     ],
     "correct": 1,
@@ -388,7 +388,7 @@
     "options": [
       "VPN tradicional",
       "Solução SASE (Secure Access Service Edge) que combina networking e segurança na nuvem",
-      "Tipo de roteador",
+      "Tipo de router",
       "Servidor DNS"
     ],
     "correct": 1,
@@ -413,7 +413,7 @@
       "Servidor DHCP",
       "Inteligência de ameaças global da Cisco que alimenta todas as soluções de segurança",
       "Tipo de switch",
-      "Protocolo de roteamento"
+      "Protocolo de encaminhamento"
     ],
     "correct": 1,
     "explanation": "Talos é a equipe de inteligência de ameaças da Cisco que fornece dados em tempo real para todas as soluções de segurança Cisco.",
@@ -422,7 +422,7 @@
   {
     "question": "O que é 'Cisco Duo'?",
     "options": [
-      "Protocolo de roteamento",
+      "Protocolo de encaminhamento",
       "Solução de autenticação multifator (MFA) e acesso adaptativo com verificação de dispositivo",
       "Tipo de switch",
       "Firewall"
@@ -436,7 +436,7 @@
     "options": [
       "Antivírus tradicional",
       "Proteção avançada de endpoint com detecção de malware, EDR e integração com XDR",
-      "Tipo de roteador",
+      "Tipo de router",
       "Servidor DNS"
     ],
     "correct": 1,
@@ -460,7 +460,7 @@
     "options": [
       "Proxy simples",
       "Secure Web Gateway com URL filtering, malware scanning, DLP e controle de aplicações",
-      "Tipo de roteador",
+      "Tipo de router",
       "Firewall"
     ],
     "correct": 1,
@@ -473,7 +473,7 @@
       "Solução tradicional Cisco",
       "Plataforma de rede gerenciada na nuvem com dashboard unificado, zero-touch e analytics",
       "Tipo de firewall",
-      "Protocolo de roteamento"
+      "Protocolo de encaminhamento"
     ],
     "correct": 1,
     "explanation": "Meraki oferece switches, APs, firewalls e câmeras gerenciados 100% na nuvem com dashboard simples e poderoso.",
@@ -508,7 +508,7 @@
     "options": [
       "Switch simples",
       "Plataforma de gerenciamento e automação para data center com Nexus Dashboard e services",
-      "Tipo de roteador",
+      "Tipo de router",
       "Firewall"
     ],
     "correct": 1,
@@ -521,7 +521,7 @@
       "Servidor tradicional",
       "Solução hyperconverged infrastructure (HCI) com storage, compute e networking integrados",
       "Tipo de switch",
-      "Protocolo de roteamento"
+      "Protocolo de encaminhamento"
     ],
     "correct": 1,
     "explanation": "HyperFlex é a solução HCI da Cisco com storage distribuído, alta disponibilidade e gerenciamento simplificado.",
@@ -545,7 +545,7 @@
       "Ferramenta de backup",
       "Solução de otimização de workload com AI para placement, scaling e custo em ambientes híbridos",
       "Tipo de switch",
-      "Protocolo de roteamento"
+      "Protocolo de encaminhamento"
     ],
     "correct": 1,
     "explanation": "Intersight Workload Optimizer usa AI para otimizar placement, scaling e custos de workloads em nuvens híbridas.",
@@ -568,7 +568,7 @@
     "options": [
       "Monitoramento tradicional",
       "Abordagem unificada que correlaciona dados de rede, aplicações, infraestrutura e experiência do usuário",
-      "Tipo de roteador",
+      "Tipo de router",
       "Método de backup"
     ],
     "correct": 1,
@@ -586,5 +586,425 @@
     "correct": 1,
     "explanation": "ThousandEyes fornece insights de performance de internet e aplicações para que o SD-WAN tome decisões inteligentes.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Em OSPF, o LSA tipo 1 descreve:",
+    "options": [
+      "Rotas externas",
+      "O router e os seus links intra-área",
+      "A summary de área",
+      "O ASBR noutro AS"
+    ],
+    "correct": 1,
+    "explanation": "Type 1 Router LSA descreve links do router na área.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "OSPF LSA tipo 3 é gerado por:",
+    "options": [
+      "Todos os routers",
+      "ABR, como summary inter-área",
+      "ASBR só",
+      "O DR Ethernet"
+    ],
+    "correct": 1,
+    "explanation": "Type 3 Network Summary é criado pelo ABR.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "OSPF LSA tipo 5 representa:",
+    "options": [
+      "Links intra-área",
+      "Rotas externas injetadas no OSPF",
+      "Summary NSSA",
+      "Apenas IPv6"
+    ],
+    "correct": 1,
+    "explanation": "Type 5 AS-External vem do ASBR (exceto NSSA que usa tipo 7).",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Uma área OSPF stub bloqueia que LSAs?",
+    "options": [
+      "Tipo 1 e 2",
+      "Tipo 5 (externas); o ABR injeta default",
+      "Todos os LSA 3",
+      "Hello packets"
+    ],
+    "correct": 1,
+    "explanation": "Stub não recebe LSA 5; o ABR anuncia 0.0.0.0.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "EIGRP successor é:",
+    "options": [
+      "A rota de backup na topology table",
+      "A rota primária na tabela de encaminhamento (FD mínima)",
+      "O vizinho com pior métrica",
+      "Um LSA tipo 1"
+    ],
+    "correct": 1,
+    "explanation": "Successor é a melhor rota (feasible distance).",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Feasible successor EIGRP exige:",
+    "options": [
+      "AD > FD do successor",
+      "Advertised Distance < FD do successor (condicao de viabilidade)",
+      "Mesmo AS BGP",
+      "LSA tipo 5"
+    ],
+    "correct": 1,
+    "explanation": "AD do candidato tem de ser menor que a FD da rota em uso.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "BGP path selection: depois de Weight e Local Pref, o próximo critério comum é:",
+    "options": [
+      "MED",
+      "AS-Path mais curto",
+      "Oldest path",
+      "Router-ID"
+    ],
+    "correct": 1,
+    "explanation": "Ordem típica: Weight, Local Pref, locally originated, shortest AS-Path...",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "BGP Weight é:",
+    "options": [
+      "Um atributo transitivo da IETF",
+      "Cisco-proprietary, local ao router, maior e melhor (default 32768 originadas)",
+      "Igual ao MED",
+      "Enviado aos eBGP peers"
+    ],
+    "correct": 1,
+    "explanation": "Weight não sai do router; maior vence.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Local Preference no iBGP: valor maior significa:",
+    "options": [
+      "Pior caminho",
+      "Preferido para sair do AS",
+      "Só usado em eBGP",
+      "Substitui o AS-Path"
+    ],
+    "correct": 1,
+    "explanation": "Local Pref alto escolhe o exit point do AS.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "eBGP TTL de sessão por omissão é:",
+    "options": [
+      "255",
+      "1",
+      "64",
+      "15"
+    ],
+    "correct": 1,
+    "explanation": "eBGP assume peers diretamente ligados (TTL 1) salvo ebgp-multihop.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "iBGP não reanuncia prefixos iBGP a outros iBGP. A solução clássica é:",
+    "options": [
+      "AS-Path prepend",
+      "Full mesh iBGP ou route reflectors / confederations",
+      "OSPF default",
+      "LSA tipo 5"
+    ],
+    "correct": 1,
+    "explanation": "Split horizon iBGP exige malha completa ou RR.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Um route reflector cliente recebe:",
+    "options": [
+      "Só rotas eBGP",
+      "Rotas refletidas do RR, sem full mesh entre clientes",
+      "Apenas LSA 3",
+      "MED invertido"
+    ],
+    "correct": 1,
+    "explanation": "O RR relaxa a malha iBGP entre clientes.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "VRF-Lite serve para:",
+    "options": [
+      "Cifrar control plane",
+      "Separar tabelas de encaminhamento no mesmo PE/CE sem MPLS obrigatório",
+      "Substituir STP",
+      "Só IPv6"
+    ],
+    "correct": 1,
+    "explanation": "VRFs isolam routing/forwarding; Lite = sem MP-BGP/MPLS.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "MPLS label stacking: a etiqueta do topo é:",
+    "options": [
+      "A do serviço L3VPN no fundo",
+      "A que o LSR usa para o next hop (transport/IGP)",
+      "O MAC da CE",
+      "O DSCP"
+    ],
+    "correct": 1,
+    "explanation": "Top label = transporte; bottom (S=1) = serviço VPN.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "LDP distribui:",
+    "options": [
+      "Prefixos BGP",
+      "Etiquetas MPLS para prefixos IGP",
+      "VLANs",
+      "Certificados PKI"
+    ],
+    "correct": 1,
+    "explanation": "LDP mapeia FEC (prefixos) a labels.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "BFD (Bidirectional Forwarding Detection) serve para:",
+    "options": [
+      "Substituir OSPF",
+      "Detetar falhas de forwarding em milissegundos, independente do IGP",
+      "Eleger o DR",
+      "Cifrar GRE"
+    ],
+    "correct": 1,
+    "explanation": "BFD da failure detection rápida a OSPF/EIGRP/BGP.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "IP SLA num router Cisco pode:",
+    "options": [
+      "Compilar IOS",
+      "Medir latência/jitter/availability e reagir com tracking",
+      "Substituir AAA",
+      "Criar VLANs"
+    ],
+    "correct": 1,
+    "explanation": "SLA probes + object tracking para PBR/HSRP/static.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "PBR (Policy-Based Routing) desvia tráfego com base em:",
+    "options": [
+      "Só a tabela RIB",
+      "Route-maps (ACL, DSCP, comprimento) em vez da só destinação",
+      "STP root",
+      "LLDP"
+    ],
+    "correct": 1,
+    "explanation": "PBR usa set ip next-hop segundo match de políticas.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "StackWise / StackWise Virtual agrega:",
+    "options": [
+      "APs wireless",
+      "Switches num só plano de controlo lógico",
+      "Sessões BGP",
+      "VRFs MPLS"
+    ],
+    "correct": 1,
+    "explanation": "Stack cria um switch lógico com SSO/NSF.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "vPC (Nexus) permite:",
+    "options": [
+      "Dois switches a parecer um ao STP/LACP sem ser um só supervisor",
+      "Substituir OSPF",
+      "Só FCoE",
+      "Desligar BPDU Guard"
+    ],
+    "correct": 0,
+    "explanation": "vPC = port-channel multi-chassis sem stack completo.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "SD-Access control plane usa tipicamente:",
+    "options": [
+      "Só STP",
+      "LISP para mapear identidade (EID) a localização (RLOC)",
+      "RIP v1",
+      "VTP v3 só"
+    ],
+    "correct": 1,
+    "explanation": "LISP + VXLAN + ISE no fabric SDA.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "VXLAN VNI identifica:",
+    "options": [
+      "Uma VLAN local só",
+      "O segmento overlay (L2/L3) no fabric",
+      "O ASN BGP",
+      "O DSCP"
+    ],
+    "correct": 1,
+    "explanation": "VNI é o identificador do overlay VXLAN.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "ISE no acesso usa 802.1X para:",
+    "options": [
+      "Cifrar OSPF",
+      "Autenticar utilizador/dispositivo e aplicar dACL/SGT",
+      "Eleger root STP",
+      "Traduzir NAT64"
+    ],
+    "correct": 1,
+    "explanation": "ISE é o policy engine RADIUS do TrustSec/SDA.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "SGT (Scalable Group Tag) no TrustSec é:",
+    "options": [
+      "Um número OSPF",
+      "Uma etiqueta de grupo para políticas baseadas em identidade",
+      "Uma VLAN nativa",
+      "Um community BGP"
+    ],
+    "correct": 1,
+    "explanation": "SGTs classificam utilizadores; SGACL filtra entre grupos.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "NETCONF transporta YANG tipicamente sobre:",
+    "options": [
+      "Telnet",
+      "SSH (porta 830)",
+      "HTTP só",
+      "SNMP v2"
+    ],
+    "correct": 1,
+    "explanation": "NETCONF/SSH na 830; RESTCONF usa HTTPS.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um modelo YANG descreve:",
+    "options": [
+      "A topologia STP",
+      "Estrutura e constraints dos dados de configuração/estado",
+      "Só ACLs MAC",
+      "O spanning-tree"
+    ],
+    "correct": 1,
+    "explanation": "YANG é a linguagem de modelação para NETCONF/RESTCONF.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "DMVPN Phase 3 permite:",
+    "options": [
+      "Só hub-and-spoke sem atalhos",
+      "NHRP redirect/shortcut para spoke-to-spoke direto",
+      "Apenas IPsec transport sem GRE",
+      "OSPFv2 obrigatório"
+    ],
+    "correct": 1,
+    "explanation": "Phase 3: NHRP redirect cria túnel direto entre spokes.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "GETVPN (GDOI) é pensado para:",
+    "options": [
+      "Internet pública com NAT",
+      "WAN privada (MPLS) com grupo IPsec e headers originais preservados",
+      "Só Wi-Fi",
+      "IPv6 link-local"
+    ],
+    "correct": 1,
+    "explanation": "GETVPN usa key server; não muda IPs, bom em MPLS.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "FlexVPN no IOS-XE baseia-se em:",
+    "options": [
+      "L2TP só",
+      "IKEv2 (com templates virtuais)",
+      "IKEv1 agressivo só",
+      "PPTP"
+    ],
+    "correct": 1,
+    "explanation": "FlexVPN unifica DMVPN/EasyVPN/RA em IKEv2.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "CoPP (Control Plane Policing) protege:",
+    "options": [
+      "O data plane de utilizador",
+      "O CPU do control plane limitando tráfego a processos (ex. SSH, routing)",
+      "Só o CAM",
+      "O Põe"
+    ],
+    "correct": 1,
+    "explanation": "CoPP aplica QoS/ACL ao tráfego destined-to-box.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "uRPF (unicast RPF) mitiga:",
+    "options": [
+      "DHCP starvation",
+      "Spoofing de IP de origem, verificando se a origem seria encaminhável pela interface",
+      "Loops STP",
+      "Drops de BFD"
+    ],
+    "correct": 1,
+    "explanation": "Strict/loose uRPF descarta origens inconsistentes com a RIB.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "PIM Sparse Mode usa RP para:",
+    "options": [
+      "Eleger o DR OSPF",
+      "Árvore partilhada inicial (*,G) antes de SPT (S,G)",
+      "Traduzir NAT",
+      "Marcar DSCP"
+    ],
+    "correct": 1,
+    "explanation": "PIM-SM: join ao RP; depois pode mudar para shortest-path tree.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Anycast RP (MSDP) resolve:",
+    "options": [
+      "Um só RP sem redundância",
+      "Redundância/load-share de RPs multicast entre dominios ou boxes",
+      "Só IPv6 ND",
+      "VTP pruning"
+    ],
+    "correct": 1,
+    "explanation": "Vários RPs com o mesmo IP; MSDP sincroniza source-active.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "QoS LLQ (Low Latency Queue) e tipicamente para:",
+    "options": [
+      "Bulk backup",
+      "Voz/vídeo em tempo real (priority queue)",
+      "Best-effort HTTP",
+      "Routing updates só"
+    ],
+    "correct": 1,
+    "explanation": "priority command = LLQ, com policer para não esgotar o link.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "WRED evita:",
+    "options": [
+      "Blackholing BGP",
+      "Tail drop global, descendo probabilístico segundo DSCP antes da fila cheia",
+      "Loops RIP",
+      "Falha de NTP"
+    ],
+    "correct": 1,
+    "explanation": "WRED faz early drop ponderado; protege fluxos TCP.",
+    "difficulty": "Difícil"
   }
 ]

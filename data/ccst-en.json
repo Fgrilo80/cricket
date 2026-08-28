@@ -622,5 +622,365 @@
     "correct": 0,
     "explanation": "The 'show interfaces status' command displays the operational status of all switch ports.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "Which Ethernet cable uses an RJ-45 connector?",
+    "options": [
+      "RG-59 coaxial",
+      "UTP/STP twisted pair",
+      "Multimode fiber",
+      "V.35 serial"
+    ],
+    "correct": 1,
+    "explanation": "Copper Ethernet uses twisted pair with RJ-45.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What does ping do?",
+    "options": [
+      "Shows the MAC table",
+      "Tests ICMP reachability to a destination",
+      "Opens Telnet",
+      "Lists OSPF routes"
+    ],
+    "correct": 1,
+    "explanation": "ping sends ICMP Echo Requests and waits for replies.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Which device forwards based on destination IP?",
+    "options": [
+      "Hub",
+      "L2 switch",
+      "Router",
+      "Repeater"
+    ],
+    "correct": 2,
+    "explanation": "Routers connect different networks using destination IP.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What mask is /24?",
+    "options": [
+      "255.255.0.0",
+      "255.255.255.0",
+      "255.255.255.252",
+      "255.0.0.0"
+    ],
+    "correct": 1,
+    "explanation": "/24 means 24 network bits: 255.255.255.0.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is DHCP for?",
+    "options": [
+      "Name resolution",
+      "Assigning IP, mask, gateway, and DNS",
+      "Encrypting HTTP",
+      "MAC filtering"
+    ],
+    "correct": 1,
+    "explanation": "DHCP auto-configures IP clients.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Which protocol maps hostnames to IPs?",
+    "options": [
+      "DHCP",
+      "DNS",
+      "ARP",
+      "NAT"
+    ],
+    "correct": 1,
+    "explanation": "DNS translates names to IP addresses.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What does ARP discover?",
+    "options": [
+      "A route to another network",
+      "The MAC for an IP on the local LAN",
+      "The NTP server",
+      "The native VLAN"
+    ],
+    "correct": 1,
+    "explanation": "ARP maps a local IP to a MAC.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Can an unmanaged switch create VLANs?",
+    "options": [
+      "Yes, via CLI",
+      "No, everything shares one broadcast domain",
+      "Yes, via SNMP",
+      "Only with PoE"
+    ],
+    "correct": 1,
+    "explanation": "Unmanaged switches have no config and no VLANs.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Which tool shows the hop-by-hop path to a destination?",
+    "options": [
+      "ipconfig",
+      "traceroute / tracert",
+      "netstat -a",
+      "arp -a"
+    ],
+    "correct": 1,
+    "explanation": "traceroute (tracert on Windows) lists hops to the destination.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is a PC default gateway?",
+    "options": [
+      "A public DNS",
+      "The LAN router used to reach other networks",
+      "The print server",
+      "The loopback address"
+    ],
+    "correct": 1,
+    "explanation": "The default gateway is the local router for off-net traffic.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Wi-Fi 6 maps to which IEEE standard?",
+    "options": [
+      "802.11n",
+      "802.11ac",
+      "802.11ax",
+      "802.3af"
+    ],
+    "correct": 2,
+    "explanation": "Wi-Fi 6 is 802.11ax.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which TCP port does HTTPS use?",
+    "options": [
+      "80",
+      "443",
+      "22",
+      "25"
+    ],
+    "correct": 1,
+    "explanation": "HTTPS uses TCP 443.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is phishing?",
+    "options": [
+      "A Wi-Fi brute-force attack",
+      "Deception to steal credentials or data, often via email",
+      "An ICMP flood",
+      "Port mirroring"
+    ],
+    "correct": 1,
+    "explanation": "Phishing uses social engineering to steal data.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is a firewall for?",
+    "options": [
+      "Assigning IPs",
+      "Filtering traffic according to security rules",
+      "DNS translation",
+      "PoE power"
+    ],
+    "correct": 1,
+    "explanation": "Firewalls allow or deny traffic based on policy.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Which cable transmits data with light?",
+    "options": [
+      "Cat6 UTP",
+      "Fiber optic",
+      "Coaxial",
+      "USB"
+    ],
+    "correct": 1,
+    "explanation": "Fiber uses light pulses and is immune to EMI.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is 127.0.0.1 used for?",
+    "options": [
+      "Internet gateway",
+      "Testing the local TCP/IP stack (loopback)",
+      "DHCP server",
+      "APIPA address"
+    ],
+    "correct": 1,
+    "explanation": "Loopback tests the host own IP stack.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "A 169.254.x.x address on Windows usually means?",
+    "options": [
+      "A public IP",
+      "APIPA: DHCP failed",
+      "A multicast address",
+      "Loopback"
+    ],
+    "correct": 1,
+    "explanation": "APIPA (169.254/16) is used when DHCP does not answer.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does PoE do?",
+    "options": [
+      "Encrypt traffic",
+      "Power devices over the Ethernet cable",
+      "Aggregate links",
+      "Translate VLANs"
+    ],
+    "correct": 1,
+    "explanation": "PoE powers APs, cameras, and phones over UTP.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Why is SSH preferred over Telnet?",
+    "options": [
+      "It is faster",
+      "It encrypts the management session",
+      "It uses UDP",
+      "It needs no IP"
+    ],
+    "correct": 1,
+    "explanation": "SSH (port 22) is encrypted; Telnet is cleartext.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Which OSI layer handles TCP/UDP segments?",
+    "options": [
+      "Network",
+      "Transport",
+      "Session",
+      "Data link"
+    ],
+    "correct": 1,
+    "explanation": "Layer 4 Transport is TCP and UDP.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is an access point for?",
+    "options": [
+      "WAN routing",
+      "Connecting Wi-Fi clients to the wired LAN",
+      "Assigning AS numbers",
+      "Terminating MPLS"
+    ],
+    "correct": 1,
+    "explanation": "An AP bridges wireless clients onto Ethernet.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Which is a good password habit?",
+    "options": [
+      "Reuse one password everywhere",
+      "Unique, long, and MFA when possible",
+      "Share it in team chat",
+      "Use only 4 digits"
+    ],
+    "correct": 1,
+    "explanation": "Unique passwords plus MFA limit breach impact.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What does a patch panel do?",
+    "options": [
+      "Runs OSPF",
+      "Organizes and terminates cabling at a central point",
+      "Encrypts Wi-Fi",
+      "Auto-assigns VLANs"
+    ],
+    "correct": 1,
+    "explanation": "Patch panels concentrate structured cabling.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "How many bits are in IPv6?",
+    "options": [
+      "32",
+      "64",
+      "128",
+      "256"
+    ],
+    "correct": 2,
+    "explanation": "IPv6 addresses are 128 bits.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Which Windows command shows the machine IP?",
+    "options": [
+      "ping",
+      "ipconfig",
+      "hostname -I",
+      "show ip"
+    ],
+    "correct": 1,
+    "explanation": "ipconfig or ipconfig /all shows Windows addresses.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Compared with a switch, an Ethernet hub:",
+    "options": [
+      "Is more secure",
+      "Shares one collision domain; a switch splits it per port",
+      "Routes IP",
+      "Runs OSPF"
+    ],
+    "correct": 1,
+    "explanation": "Hubs are L1 and share collisions; L2 switches isolate per port.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which protocol uses UDP port 53?",
+    "options": [
+      "HTTP",
+      "DNS",
+      "SMTP",
+      "FTP"
+    ],
+    "correct": 1,
+    "explanation": "DNS uses UDP/TCP 53.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Which security incident should you report?",
+    "options": [
+      "Installing Windows updates",
+      "An email asking for the boss password",
+      "Changing the wallpaper",
+      "Opening a browser"
+    ],
+    "correct": 1,
+    "explanation": "Credential requests are phishing and must be reported.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What do Cat5e/Cat6 describe?",
+    "options": [
+      "Fiber standards",
+      "Twisted-pair cable categories and bandwidth",
+      "Fiber connector types",
+      "Wi-Fi channels"
+    ],
+    "correct": 1,
+    "explanation": "UTP categories define performance.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which is a private RFC 1918 IPv4 address?",
+    "options": [
+      "8.8.8.8",
+      "192.168.1.10",
+      "1.1.1.1",
+      "255.255.255.255"
+    ],
+    "correct": 1,
+    "explanation": "192.168.0.0/16 is private, along with 10/8 and 172.16/12.",
+    "difficulty": "Easy"
   }
 ]
