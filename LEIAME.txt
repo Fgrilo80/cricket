@@ -23,8 +23,8 @@ Formato de cada pergunta:
 Contagens atuais:
 - CCST PT 163 / EN 163
 - CCNA PT 157 / EN 157
-- CCNP PT 160 / EN 160
-- Total 960
+- CCNP PT 162 / EN 162
+- Total 986
 Cada exame tira 50 perguntas ao calhas.
 
 ## Telemóvel

@@ -1956,5 +1956,101 @@
     "correct": 1,
     "explanation": "6 GHz offers new, less crowded channels; wall penetration is usually worse than 2.4 GHz. Plan denser APs for coverage, not only peak rate.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "Access switch port Gi1/0/12 is err-disabled and syslog shows %PM-4-ERR_DISABLE: bpduguard. What is the most likely cause?",
+    "options": [
+      "The UTP cable only has 2 pairs connected",
+      "A switch/hub (or a PC bridging) sent BPDUs on an access port with BPDU Guard enabled",
+      "PoE exceeds the PSU budget",
+      "The client is missing DNS"
+    ],
+    "correct": 1,
+    "explanation": "BPDU Guard err-disables access ports that receive BPDUs — typical when someone plugs in another switch. Fix the topology, then recover with errdisable recovery or shut/no shut.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "A Wi-Fi 6E AP requires WPA3 on the 6 GHz band. The client only supports WPA2. What happens on a 6 GHz-only SSID?",
+    "options": [
+      "It associates with WEP automatically",
+      "It will not associate: 6 GHz requires WPA3 (SAE); the client must be 6E and WPA3-capable",
+      "It associates if the channel is DFS",
+      "It only works with IPv6"
+    ],
+    "correct": 1,
+    "explanation": "Wi-Fi Alliance requires WPA3 on 6 GHz. WPA2-only clients cannot join that SSID (they may still use 2.4/5 GHz SSIDs if the AP offers them).",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Cable tester: wire map OK, but certification fails with high NEXT between pairs. What is the best CCST interpretation?",
+    "options": [
+      "The switch has no PoE",
+      "Excessive crosstalk (poor twist/termination); typically fails Cat5e/Cat6 certification",
+      "DNS is wrong",
+      "It is only a VLAN problem"
+    ],
+    "correct": 1,
+    "explanation": "High NEXT means pair-to-pair interference — bad termination, untwist, or damaged cable. Re-terminate or replace; it is not a VLAN/DNS symptom.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "PC gets DHCP IP, ping to the gateway fails, and `arp -a` shows no gateway MAC. What is the most useful next troubleshooting step?",
+    "options": [
+      "Only change the Windows theme",
+      "Check L2 on the segment (cable/VLAN/err-disabled port/ARP) before blaming DNS or the Internet",
+      "Disable IPv6 on every host in the company",
+      "Update the printer firmware"
+    ],
+    "correct": 1,
+    "explanation": "No gateway ARP means no L2 path to the default gateway. Verify cable, correct VLAN, port status, and same broadcast domain — DNS/HTTP come later.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "PoE: a Class 4 (802.3at) AP will not power on a switch that is 802.3af-only. What is the best explanation?",
+    "options": [
+      "The SSID is wrong",
+      "802.3af (~15.4 W) can be insufficient for Class 4/at (~30 W); you need an at/bt PSE or a suitable injector",
+      "The AP is missing a static route",
+      "Cat6 cable cannot carry PoE"
+    ],
+    "correct": 1,
+    "explanation": "PoE type/class caps available power. at/bt PDs on af-only ports may not get enough power. Cat5e/Cat6 carry PoE fine — the PSE is the limit.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "User joins the right Wi-Fi, gets an IP, but the captive portal never opens and Internet browsing fails. Ping to 8.8.8.8 works. Which CCST hypothesis is most plausible?",
+    "options": [
+      "Complete Layer 1 failure on the AP",
+      "DNS or captive-portal HTTP redirect/name resolution issue — not basic IP forwarding",
+      "The switch lost every native VLAN",
+      "The core cable is stuck at 10 Mbps"
+    ],
+    "correct": 1,
+    "explanation": "Successful ping to a public IP means basic forwarding works. Captive portals need DNS/HTTP redirect — bad DNS, strict HTTPS, or a blocked portal domain are common causes.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Troubleshooting: `ipconfig` shows APIPA 169.254.x.x. What does this typically mean on a corporate Ethernet PC?",
+    "options": [
+      "DHCP worked and assigned a public address",
+      "The client got no DHCP lease (server/relay/VLAN/cable issue) and auto-configured IPv4 link-local",
+      "The ISP BGP session is down",
+      "Wi-Fi 6E is mandatory"
+    ],
+    "correct": 1,
+    "explanation": "169.254.0.0/16 is APIPA: the host gave up on DHCP. Check cable, access VLAN, interface up, DHCP server, and ip helper-address on the VLAN gateway.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "A PoE IP phone powers up and has voice, but the PC daisy-chained behind the phone has no network. Which check is most relevant?",
+    "options": [
+      "Only increase Wi-Fi radio power",
+      "Data VLAN on the switch (and phone), PC↔phone cable, and whether the port is access/trunk with the correct voice VLAN",
+      "Disable Spanning Tree across the whole campus",
+      "Rename the edge router hostname"
+    ],
+    "correct": 1,
+    "explanation": "Phone+PC on one cable uses voice VLAN + data VLAN (or phone multi-VLAN). Voice OK / data dead points to data VLAN, PC cable, or phone config — not Wi-Fi.",
+    "difficulty": "Hard"
   }
 ]

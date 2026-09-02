@@ -1956,5 +1956,101 @@
     "correct": 1,
     "explanation": "6 GHz oferece canais novos e menos ocupados; a penetração é em geral pior que 2,4 GHz. Planeia-se mais APs e cobertura, não só débito de pico.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Num switch de acesso, a porta Gi1/0/12 fica em estado err-disabled e o syslog mostra %PM-4-ERR_DISABLE: bpduguard. Qual é a causa mais provável?",
+    "options": [
+      "O cabo UTP tem só 2 pares ligados",
+      "Foi ligado um switch/hub (ou PC com bridging) que enviou BPDUs numa porta de acesso com BPDU Guard",
+      "O PoE excede o orçamento do PSU",
+      "O DNS do cliente está em falta"
+    ],
+    "correct": 1,
+    "explanation": "BPDU Guard desativa (err-disable) portas de acesso que recebem BPDUs — típico quando alguém liga outro switch. Recuperação: corrigir a topologia e fazer errdisable recovery ou shut/no shut.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Um AP Wi-Fi 6E exige WPA3 na banda de 6 GHz. O cliente só tem WPA2. O que acontece no SSID só-6 GHz?",
+    "options": [
+      "Associa com WEP automaticamente",
+      "Não associa: 6 GHz exige WPA3 (SAE); o cliente tem de ser 6E e WPA3",
+      "Associa se o canal for DFS",
+      "Funciona só com IPv6"
+    ],
+    "correct": 1,
+    "explanation": "Na banda de 6 GHz o Wi-Fi Alliance exige WPA3. Clientes só-WPA2 ficam de fora desse SSID (podem usar 2,4/5 GHz se o AP anunciar SSIDs nessas bandas).",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Ferramenta de cabo: mapa OK, mas certificação falha em NEXT elevado entre pares. Qual interpretação CCST é a mais correta?",
+    "options": [
+      "O switch está sem PoE",
+      "Há diafonia excessiva (pares mal torcidos/terminação má); tipicamente não passa Cat5e/Cat6",
+      "O DNS está errado",
+      "É só um problema de VLAN"
+    ],
+    "correct": 1,
+    "explanation": "NEXT (near-end crosstalk) alto indica interferência entre pares — terminacão má, destorção excessiva ou cabo danificado. Re-terminar ou substituir o cabo; não é um sintoma de VLAN/DNS.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "PC obtém IP via DHCP, ping ao gateway falha, e `arp -a` não mostra o MAC do gateway. Qual passo de troubleshooting é o mais útil a seguir?",
+    "options": [
+      "Mudar só o tema do Windows",
+      "Verificar L2 no segmento (cabo/VLAN/porta err-disabled/ARP) antes de culpar DNS ou a Internet",
+      "Desativar o IPv6 em todos os hosts da empresa",
+      "Atualizar o firmware da impressora"
+    ],
+    "correct": 1,
+    "explanation": "Sem ARP do gateway não há L2 até ao default gateway. Confirma cabo, VLAN correta, estado da porta e se o gateway está no mesmo broadcast domain — DNS/HTTP só depois.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "PoE: um AP Class 4 (802.3at) não liga num switch só 802.3af. Qual é a explicação mais correta?",
+    "options": [
+      "O SSID está errado",
+      "802.3af (~15,4 W) pode ser insuficiente para Class 4/at (~30 W); precisa de PSE at/bt ou injector adequado",
+      "Falta de rota estática no AP",
+      "O cabo Cat6 não transporta PoE"
+    ],
+    "correct": 1,
+    "explanation": "Tipo/classe PoE limita a potência. Dispositivos at/bt em portas só-af podem não negociar potência suficiente. Cat5e/Cat6 transportam PoE; o limite é o PSE.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Um utilizador liga-se ao Wi-Fi certo, recebe IP, mas o portal cativo não abre e a Internet falha. Ping a 8.8.8.8 funciona. Qual hipótese CCST é a mais plausível?",
+    "options": [
+      "Falha total de Layer 1 no AP",
+      "Problema de DNS ou de redirecionamento HTTP do portal (resolução/nome), não de encaminhamento IP básico",
+      "O switch perdeu todas as VLANs nativas",
+      "O cabo do core tem só 10 Mbps"
+    ],
+    "correct": 1,
+    "explanation": "Ping a um IP público OK indica encaminhamento básico. Portais cativos dependem de DNS/HTTP redirect — DNS errado, HTTPS estrito ou bloqueio do domínio do portal são causas típicas.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Em troubleshooting, `ipconfig` mostra APIPA 169.254.x.x. O que isto indica tipicamente num PC Ethernet corporativo?",
+    "options": [
+      "O DHCP funcionou e atribuiu um endereço público",
+      "O cliente não obteve lease DHCP (sem servidor/relay/VLAN/cabo) e auto-configurou link-local IPv4",
+      "O BGP do ISP caiu",
+      "O Wi-Fi 6E está obrigatório"
+    ],
+    "correct": 1,
+    "explanation": "169.254.0.0/16 é APIPA: o host desistiu do DHCP. Verifica cabo, VLAN de acesso, interface up, servidor DHCP e ip helper-address no gateway da VLAN.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Um telefone IP PoE liga-se, mas o PC atrás do telefone (passthrough) não tem rede. O telefone tem voz OK. Qual verificação é a mais relevante?",
+    "options": [
+      "Aumentar só a potência do rádio Wi-Fi",
+      "VLAN de dados no switch (e no telefone), cabo PC↔telefone, e se a porta está em access/trunk com voice VLAN correta",
+      "Desativar Spanning Tree em todo o campus",
+      "Mudar o hostname do router de borda"
+    ],
+    "correct": 1,
+    "explanation": "Telefone+PC no mesmo cabo usa voice VLAN + data VLAN (ou multi-VLAN no telefone). Voz OK com dados mortos aponta para VLAN de dados/cabo PC ou config do telefone — não para Wi-Fi.",
+    "difficulty": "Difícil"
   }
 ]

@@ -1892,5 +1892,44 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "OSPFv3 uses FF02::5 (AllSPFRouters) and FF02::6 (AllDRouters), the IPv6 link-local multicast analogs of OSPFv2’s 224.0.0.5/6.",
     "difficulty": "Hard"
+  },
+  {
+    "question": "`show ip interface brief` shows Serial0/0/0 as administratively down / down. What is typically missing?",
+    "options": [
+      "Only configure BGP",
+      "The interface is shut down — need `no shutdown` (plus IP/encapsulation if required)",
+      "The console cable is reversed",
+      "NTP is out of sync"
+    ],
+    "correct": 1,
+    "explanation": "administratively down means the interface is in shutdown. `no shutdown` moves it toward up/down or up/up depending on line protocol.",
+    "difficulty": "Medium",
+    "cli": true
+  },
+  {
+    "question": "In `show etherchannel summary`, a port shows as `(I)` independent. What does that mean?",
+    "options": [
+      "The EtherChannel is perfect on every member",
+      "That port is not in the bundle (LACP/PAgP mismatch or bundling failed)",
+      "Native VLAN is 1 everywhere",
+      "STP is disabled"
+    ],
+    "correct": 1,
+    "explanation": "Flags like (I) Independent mean the port did not join the port-channel — often LACP mode mismatch, VLAN, speed/duplex, or inconsistent member config.",
+    "difficulty": "Hard",
+    "cli": true
+  },
+  {
+    "question": "Which information does `show cdp neighbors detail` NOT provide directly?",
+    "options": [
+      "Neighbor hostname and platform",
+      "Neighbor management IP (if advertised)",
+      "The full remote AS BGP table",
+      "Local and remote interfaces for the link"
+    ],
+    "correct": 2,
+    "explanation": "CDP/LLDP give L2 adjacency / management identity (ID, platform, IPs, capabilities). Full BGP tables come from `show ip bgp` / BGP sessions, not CDP.",
+    "difficulty": "Medium",
+    "cli": true
   }
 ];

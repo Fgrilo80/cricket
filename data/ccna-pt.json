@@ -1892,5 +1892,44 @@
     "correct": 1,
     "explanation": "OSPFv3 usa FF02::5 (AllSPFRouters) e FF02::6 (AllDRouters), análogos a 224.0.0.5/6 do OSPFv2, mas em IPv6 link-local multicast.",
     "difficulty": "Difícil"
+  },
+  {
+    "question": "A saída de `show ip interface brief` mostra Serial0/0/0 como administratively down / down. O que falta tipicamente?",
+    "options": [
+      "Só configurar BGP",
+      "A interface está em shutdown — falta `no shutdown` (além de IP/encapsulamento se necessário)",
+      "O cabo de consola está invertido",
+      "O NTP está dessincronizado"
+    ],
+    "correct": 1,
+    "explanation": "administratively down significa shutdown na interface. `no shutdown` traz para up/down ou up/up conforme o protocolo de linha.",
+    "difficulty": "Médio",
+    "cli": true
+  },
+  {
+    "question": "Em `show etherchannel summary`, uma porta aparece como `(I)` independente. O que isto indica?",
+    "options": [
+      "O EtherChannel está perfeito em todas as portas",
+      "Essa porta não faz parte do bundle (config/mismatch LACP/PAgP ou bundling falhou)",
+      "A VLAN nativa é 1 em todo o lado",
+      "O STP está desligado"
+    ],
+    "correct": 1,
+    "explanation": "Flags como (I) Independent significam que a porta não entrou no port-channel — tipicamente mismatch de modo LACP, VLANs, velocidade/duplex ou config inconsistente.",
+    "difficulty": "Difícil",
+    "cli": true
+  },
+  {
+    "question": "Que informação `show cdp neighbors detail` NÃO fornece diretamente?",
+    "options": [
+      "Hostname e plataforma do vizinho",
+      "Endereço IP de gestão do vizinho (se anunciado)",
+      "A tabela completa de rotas BGP do AS remoto",
+      "Interface local e remota da ligação"
+    ],
+    "correct": 2,
+    "explanation": "CDP/LLDP dão adjacência L2/L3 de gestão (ID, plataforma, IPs, capabilities). Tabelas BGP completas vêm de `show ip bgp` / sessão BGP, não de CDP.",
+    "difficulty": "Médio",
+    "cli": true
   }
 ]

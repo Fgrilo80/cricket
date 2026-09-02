@@ -1926,5 +1926,29 @@ window.QUIZ_BANK = [
     "correct": 0,
     "explanation": "Mesmo em IPv6-only, o OSPF Router ID é 32 bits. Sem endereços IPv4, o IOS pode falhar a eleição automática do RID — define-se com router-id A.B.C.D.",
     "difficulty": "Difícil"
+  },
+  {
+    "question": "Em automação de rede Cisco, RESTCONF tipicamente transporta dados YANG sobre o quê?",
+    "options": [
+      "Só SNMP v1 em UDP/161",
+      "HTTP/HTTPS com payloads JSON ou XML modelados em YANG",
+      "Telnet sem autenticação",
+      "Apenas TFTP"
+    ],
+    "correct": 1,
+    "explanation": "RESTCONF expõe datastores YANG via HTTP/HTTPS (JSON/XML). NETCONF usa SSH/XML; gNMI é outro caminho. SNMP continua separado para monitorização clássica.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "QoS: numa política com policing a 10 Mbps e tráfego burst muito acima, o que acontece ao excesso tipicamente (sem shaping)?",
+    "options": [
+      "É sempre colocado em fila infinita sem perda",
+      "Pode ser dropado ou remarcado conforme a polícia (conform/exceed/violate) — policing não suaviza o burst como o shaping",
+      "Converte-se automaticamente em OSPF",
+      "Aumenta o MTU para 9000"
+    ],
+    "correct": 1,
+    "explanation": "Policing mede a taxa e dropa/remarca excesso; shaping atrasa (bufferiza) para suavizar. Burst grande com police ⇒ drops/remark, não fila infinita.",
+    "difficulty": "Difícil"
   }
 ];

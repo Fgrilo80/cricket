@@ -1926,5 +1926,29 @@
     "correct": 0,
     "explanation": "Even in IPv6-only networks the OSPF Router ID is 32 bits. With no IPv4 addresses, IOS may fail automatic RID election — set it with router-id A.B.C.D.",
     "difficulty": "Hard"
+  },
+  {
+    "question": "In Cisco network automation, RESTCONF typically carries YANG data over what?",
+    "options": [
+      "SNMPv1 on UDP/161 only",
+      "HTTP/HTTPS with JSON or XML payloads modeled in YANG",
+      "Unauthenticated Telnet",
+      "TFTP only"
+    ],
+    "correct": 1,
+    "explanation": "RESTCONF exposes YANG datastores over HTTP/HTTPS (JSON/XML). NETCONF uses SSH/XML; gNMI is another path. SNMP remains separate for classic monitoring.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "QoS: with a 10 Mbps policer and a much larger burst, what typically happens to the excess (no shaping)?",
+    "options": [
+      "It is always queued forever with no loss",
+      "It may be dropped or remarked per the policy (conform/exceed/violate) — policing does not smooth bursts like shaping",
+      "It automatically becomes OSPF",
+      "MTU increases to 9000"
+    ],
+    "correct": 1,
+    "explanation": "Policing meters rate and drops/remarks excess; shaping delays (buffers) to smooth. A large burst under a policer means drops/remarks, not an infinite queue.",
+    "difficulty": "Hard"
   }
 ]

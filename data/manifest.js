@@ -1,14 +1,14 @@
 window.QUIZ_COUNTS = {
   "ccst": {
-    "pt": 163,
-    "en": 163
+    "pt": 171,
+    "en": 171
   },
   "ccna": {
-    "pt": 157,
-    "en": 157
-  },
-  "ccnp": {
     "pt": 160,
     "en": 160
+  },
+  "ccnp": {
+    "pt": 162,
+    "en": 162
   }
 };
