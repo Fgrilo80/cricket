@@ -305,7 +305,7 @@
             <div class="flex items-center gap-x-2 text-sm">
                 <div class="px-3 py-1.5 bg-slate-900 rounded-2xl flex items-center gap-x-2 border border-slate-700">
                     <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                    <span class="text-emerald-400 text-xs font-medium">BASE ATUALIZADA • 986 PERGUNTAS</span>
+                    <span class="text-emerald-400 text-xs font-medium">BASE ATUALIZADA • 1010 PERGUNTAS</span>
                 </div>
                 <button onclick="showDatabaseInfo()" 
                         class="px-4 py-2 text-xs font-medium flex items-center gap-x-2 hover:bg-slate-800 transition-colors rounded-2xl border border-slate-700">
@@ -320,10 +320,23 @@
     <div id="home-screen" class="max-w-screen-xl mx-auto px-6 py-10">
         <div class="max-w-2xl mx-auto text-center mb-12">
             <div class="inline-flex items-center gap-x-2 bg-slate-900 px-4 py-1.5 rounded-3xl border border-slate-700 mb-4">
-                <span class="text-xs font-bold tracking-[2px] text-blue-400">VERSÃO 2.4 • 2026</span>
+                <span class="text-xs font-bold tracking-[2px] text-blue-400">VERSÃO 2.5 • 2026</span>
             </div>
             <h1 class="text-5xl sm:text-6xl font-display font-bold tracking-tighter mb-3">Domine as<br>Certificações Cisco</h1>
-            <p class="text-lg sm:text-xl text-slate-400 max-w-md mx-auto">Pratique com 986 perguntas na base. Cada exame tira 50 ao calhas.<br>CCST • CCNA • CCNP • PT &amp; EN</p>
+            <p class="text-lg sm:text-xl text-slate-400 max-w-md mx-auto">Pratique com 1010 perguntas na base. Cada exame tira 50 ao calhas.<br>CCST • CCNA • CCNP • PT &amp; EN</p>
+        </div>
+
+        <!-- Exam vs Practice (compact, above cert cards) -->
+        <div class="max-w-6xl mx-auto px-1 mb-4">
+            <div class="flex flex-col items-center gap-1">
+                <div class="inline-flex rounded-2xl border border-slate-700 bg-slate-900 p-0.5 text-sm font-semibold">
+                    <button type="button" id="mode-practice" onclick="setMode('practice')"
+                            class="px-4 py-1.5 rounded-xl min-h-[36px]">Prática</button>
+                    <button type="button" id="mode-exam" onclick="setMode('exam')"
+                            class="px-4 py-1.5 rounded-xl min-h-[36px]">Exame</button>
+                </div>
+                <p id="mode-hint" class="text-[11px] text-slate-400 text-center max-w-lg leading-snug"></p>
+            </div>
         </div>
 
         <!-- Certification Cards -->
@@ -380,7 +393,7 @@
                 <div class="space-y-3 mb-7">
                     <div class="flex items-center text-xs">
                         <div class="flex-1 h-px bg-slate-700"></div>
-                        <span id="count-ccna" class="px-3 text-slate-500">162 PT • 162 EN</span>
+                        <span id="count-ccna" class="px-3 text-slate-500">168 PT • 168 EN</span>
                         <div class="flex-1 h-px bg-slate-700"></div>
                     </div>
                     <div class="flex justify-between text-xs text-slate-400">
@@ -417,7 +430,7 @@
                 <div class="space-y-3 mb-7">
                     <div class="flex items-center text-xs">
                         <div class="flex-1 h-px bg-slate-700"></div>
-                        <span id="count-ccnp" class="px-3 text-slate-500">162 PT • 162 EN</span>
+                        <span id="count-ccnp" class="px-3 text-slate-500">166 PT • 166 EN</span>
                         <div class="flex-1 h-px bg-slate-700"></div>
                     </div>
                     <div class="flex justify-between text-xs text-slate-400">
@@ -464,7 +477,7 @@
         </div>
 
         <div class="text-center mt-10 text-xs text-slate-500">
-            <p>Quiz com 50 perguntas aleatórias • Timer de 45 minutos • Feedback imediato com explicações • Resumo detalhado final</p>
+            <p>Prática: feedback imediato • Exame: até 50 perguntas, 45 min, sem revelar até ao fim • Resumo detalhado final</p>
             <p class="mt-1">Testado exaustivamente • Todas as funcionalidades validadas • Sem erros de resumo</p>
         </div>
     </div>
@@ -493,7 +506,7 @@
                 
                 <div class="flex items-center justify-end min-w-0 flex-1 gap-x-2 sm:gap-x-4">
                     <!-- Timer -->
-                    <div class="timer-box flex items-center gap-x-2 bg-slate-950 px-4 py-2 rounded-2xl border border-slate-700 flex-shrink-0">
+                    <div id="timer-box" class="timer-box flex items-center gap-x-2 bg-slate-950 px-4 py-2 rounded-2xl border border-slate-700 flex-shrink-0">
                         <i class="fa-solid fa-clock text-amber-400"></i>
                         <div>
                             <div id="timer" class="font-mono text-xl sm:text-2xl font-bold timer text-amber-400">45:00</div>
@@ -626,10 +639,14 @@
             ccna: { pt: [], en: [] },
             ccnp: { pt: [], en: [] }
         };
-        const QUIZ_COUNTS = {"ccst": {"pt": 171, "en": 171}, "ccna": {"pt": 160, "en": 160}, "ccnp": {"pt": 162, "en": 162}};
+        const QUIZ_COUNTS = {"ccst": {"pt": 171, "en": 171}, "ccna": {"pt": 168, "en": 168}, "ccnp": {"pt": 166, "en": 166}};
         const I18N = {
             pt: {
                 prev: 'Anterior', pause: 'Pausar', next: 'Responder e Avançar', finish: 'Finalizar Quiz',
+                practiceMode: 'Prática', examMode: 'Exame',
+                practiceHint: 'Mostra certo/errado e a explicação a seguir a cada resposta.',
+                examHint: 'Até 50 perguntas, 45 minutos. Sem revelar até ao fim.',
+                nextPractice: 'Responder e Avançar', nextExam: 'Seguinte', finishExam: 'Finalizar exame',
                 remaining: 'RESTANTE', question: 'PERGUNTA',
                 correct: 'Resposta Correta!', incorrect: 'Resposta Incorreta',
                 correctAnswer: 'Resposta correta:', explanation: 'Explicação:',
@@ -659,6 +676,10 @@
             },
             en: {
                 prev: 'Back', pause: 'Pause', next: 'Answer and Next', finish: 'Finish Quiz',
+                practiceMode: 'Practice', examMode: 'Exam',
+                practiceHint: 'Shows right/wrong and the explanation after each answer.',
+                examHint: 'Up to 50 questions, 45 minutes. No reveal until the end.',
+                nextPractice: 'Answer and Next', nextExam: 'Next', finishExam: 'Finish exam',
                 remaining: 'LEFT', question: 'QUESTION',
                 correct: 'Correct!', incorrect: 'Incorrect',
                 correctAnswer: 'Correct answer:', explanation: 'Explanation:',
@@ -690,6 +711,31 @@
         function t(key) {
             const pack = I18N[currentLang] || I18N.pt;
             return pack[key] || I18N.pt[key] || key;
+        }
+        function homeLang() {
+            const lang = (document.documentElement.getAttribute('lang') || 'pt').toLowerCase();
+            return lang.startsWith('en') ? 'en' : 'pt';
+        }
+        function ht(key) {
+            const pack = I18N[homeLang()] || I18N.pt;
+            return pack[key] || I18N.pt[key] || key;
+        }
+        function setMode(mode) {
+            currentMode = mode === 'exam' ? 'exam' : 'practice';
+            const on = 'px-4 py-1.5 rounded-xl min-h-[36px] bg-blue-600 text-white';
+            const off = 'px-4 py-1.5 rounded-xl min-h-[36px] text-slate-300 hover:text-white';
+            const practiceBtn = document.getElementById('mode-practice');
+            const examBtn = document.getElementById('mode-exam');
+            if (practiceBtn) {
+                practiceBtn.className = currentMode === 'practice' ? on : off;
+                practiceBtn.textContent = ht('practiceMode');
+            }
+            if (examBtn) {
+                examBtn.className = currentMode === 'exam' ? on : off;
+                examBtn.textContent = ht('examMode');
+            }
+            const hint = document.getElementById('mode-hint');
+            if (hint) hint.textContent = currentMode === 'exam' ? ht('examHint') : ht('practiceHint');
         }
         function applyChrome() {
             const rem = document.getElementById('label-remaining');
@@ -762,11 +808,13 @@
         // ==================== GLOBAL VARIABLES ====================
         let currentCert = '';
         let currentLang = '';
+        let currentMode = 'practice';
         let currentQuiz = [];
         let currentIndex = 0;
         let userAnswers = [];
         let timerInterval = null;
-        let timeLeft = 2700; // 45 minutes
+        let timeLeft = 2700; // 45 minutes (exam)
+        let quizStartedAt = 0;
         let isPaused = false;
         let selectedOptionIndex = null;
         let currentQuizQuestions = [];
@@ -779,6 +827,15 @@
                 [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
             }
             return newArray;
+        }
+
+        function shuffleQuestionDisplay(q) {
+            const n = (q.options || []).length;
+            const order = shuffleArray([...Array(n).keys()]);
+            return Object.assign({}, q, {
+                options: order.map(i => q.options[i]),
+                correct: order.indexOf(q.correct)
+            });
         }
 
         function getRandomQuestions(cert, lang, num) {
@@ -816,6 +873,7 @@
         }
 
         function startTimer() {
+            if (currentMode !== 'exam') return;
             if (timerInterval) clearInterval(timerInterval);
             
             timerInterval = setInterval(() => {
@@ -844,11 +902,12 @@
                 return;
             }
             
-            currentQuiz = getRandomQuestions(cert, lang, 50);
+            currentQuiz = getRandomQuestions(cert, lang, 50).map(shuffleQuestionDisplay);
             const quizLen = currentQuiz.length;
             currentIndex = 0;
             userAnswers = new Array(quizLen).fill(null);
             timeLeft = 45 * 60;
+            quizStartedAt = Date.now();
             isPaused = false;
             selectedOptionIndex = null;
             
@@ -872,9 +931,11 @@
             
             const langNames = { 'pt': 'Português', 'en': 'English' };
             
+            const modeLabel = currentMode === 'exam' ? t('examMode') : t('practiceMode');
             document.getElementById('cert-lang').innerHTML = `
                 <span class="font-bold">${certNames[cert]}</span> 
                 <span class="text-blue-400">• ${langNames[lang]}</span>
+                <span class="text-slate-400"> • ${modeLabel}</span>
             `;
             
             // Set badge
@@ -897,8 +958,18 @@
             badgeEl.innerHTML = `<i class="fa-solid fa-graduation-cap"></i> <span>${badgeText}</span>`;
             
             // Start everything
-            startTimer();
-            updateTimerDisplay();
+            const timerBox = document.getElementById('timer-box');
+            if (currentMode === 'exam') {
+                if (timerBox) timerBox.classList.remove('hidden');
+                startTimer();
+                updateTimerDisplay();
+            } else {
+                if (timerInterval) {
+                    clearInterval(timerInterval);
+                    timerInterval = null;
+                }
+                if (timerBox) timerBox.classList.add('hidden');
+            }
             loadQuestion();
             
             // Scroll to top
@@ -961,11 +1032,18 @@
                 <span class="text-slate-500">/${currentQuiz.length}</span>
             `;
             
-            // Update next button text
+            // Update next button text (practice vs exam)
             const nextBtn = document.getElementById('next-btn');
             if (nextBtn) {
+                const isLast = currentIndex === currentQuiz.length - 1;
+                let nextLabel;
+                if (currentMode === 'exam') {
+                    nextLabel = isLast ? t('finishExam') : t('nextExam');
+                } else {
+                    nextLabel = isLast ? t('finish') : t('next');
+                }
                 nextBtn.innerHTML = `
-                    <span id="next-btn-text">${currentIndex === currentQuiz.length - 1 ? t('finish') : t('next')}</span>
+                    <span id="next-btn-text">${nextLabel}</span>
                     <i class="fa-solid fa-arrow-right ml-2"></i>
                 `;
             }
@@ -1000,7 +1078,7 @@
         function nextQuestion() {
             const feedbackDiv = document.getElementById('feedback-div');
             
-            // If feedback is showing, proceed from there
+            // If feedback is showing (practice), proceed from there
             if (!feedbackDiv.classList.contains('hidden')) {
                 proceedAfterFeedback(currentIndex === currentQuiz.length - 1);
                 return;
@@ -1010,8 +1088,22 @@
                 alert(t('selectFirst'));
                 return;
             }
+
+            if (currentMode === 'exam') {
+                if (selectedOptionIndex !== null) {
+                    userAnswers[currentIndex] = selectedOptionIndex;
+                }
+                if (currentIndex === currentQuiz.length - 1) {
+                    finishQuiz();
+                } else {
+                    currentIndex++;
+                    selectedOptionIndex = null;
+                    loadQuestion();
+                }
+                return;
+            }
             
-            // Record answer if not already recorded
+            // Practice: record once, then immediate feedback
             if (userAnswers[currentIndex] === null) {
                 userAnswers[currentIndex] = selectedOptionIndex;
             }
@@ -1020,7 +1112,6 @@
             const userAns = userAnswers[currentIndex];
             const isCorrect = userAns === q.correct;
             
-            // Show feedback
             showFeedback(isCorrect, q.explanation, q.options[q.correct], currentIndex === currentQuiz.length - 1);
         }
 
@@ -1154,7 +1245,9 @@
             
             const totalQ = currentQuiz.length || 1;
             const score = Math.round((correctCount / totalQ) * 100);
-            const timeUsed = (45 * 60) - timeLeft;
+            const timeUsed = quizStartedAt
+                ? Math.max(0, Math.round((Date.now() - quizStartedAt) / 1000))
+                : Math.max(0, (45 * 60) - timeLeft);
             const minUsed = Math.floor(timeUsed / 60);
             const secUsed = timeUsed % 60;
             
@@ -1407,6 +1500,8 @@
                 };
             }
             
+            setMode(currentMode);
+
             ['ccst','ccna','ccnp'].forEach(cert => {
                 const el = document.getElementById('count-' + cert);
                 if (el && QUIZ_COUNTS[cert]) {

@@ -22,10 +22,10 @@ Formato de cada pergunta:
 
 Contagens atuais:
 - CCST PT 171 / EN 171
-- CCNA PT 160 / EN 160
-- CCNP PT 162 / EN 162
-- Total 986
-Cada exame tira 50 perguntas ao calhas.
+- CCNA PT 168 / EN 168
+- CCNP PT 166 / EN 166
+- Total 1010
+Prática: feedback imediato após cada resposta. Exame: até 50 perguntas, 45 minutos, sem revelar até ao fim.
 
 ## Telemóvel
 Para abrir no telemóvel a pasta tem de estar num servidor (mesmo Wi-Fi) ou publicada na web. Sem isso o browser do telemóvel não vê os ficheiros do PC.

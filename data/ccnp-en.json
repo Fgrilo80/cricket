@@ -1950,5 +1950,53 @@
     "correct": 1,
     "explanation": "Policing meters rate and drops/remarks excess; shaping delays (buffers) to smooth. A large burst under a policer means drops/remarks, not an infinite queue.",
     "difficulty": "Hard"
+  },
+  {
+    "question": "In a Zero Trust architecture for enterprise network access, which statement is most accurate?",
+    "options": [
+      "Never trust by location: continuously authenticate/authorize and segment (least privilege), instead of ‘intranet = trusted’",
+      "Automatically trust any host inside the firewall perimeter",
+      "Disable 802.1X and use hubs only",
+      "Replace BGP with static routes across the entire core"
+    ],
+    "correct": 0,
+    "explanation": "Zero Trust removes implicit trust based on network location. It needs continuous identity, policy and segmentation — not ‘everything behind the firewall is safe’.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "SASE (Secure Access Service Edge) typically combines what?",
+    "options": [
+      "Only L2 switching at campus access",
+      "WAN networking functions (e.g. SD-WAN) with security services preferably delivered from the cloud (SSE)",
+      "Only single-mode fiber cables",
+      "Only MST Spanning Tree"
+    ],
+    "correct": 1,
+    "explanation": "SASE joins connectivity (often SD-WAN) and cloud security (SSE: SWG, CASB, ZTNA, etc.). It is not an STP protocol.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "RRM on a Cisco WLC — main goal?",
+    "options": [
+      "Compute the best BGP path using AS-path",
+      "Replace OSPF in the campus core",
+      "Dynamically tune AP channels/power (and related RF) to cut interference and improve RF",
+      "Encrypt the control plane with MACsec between WAN routers"
+    ],
+    "correct": 2,
+    "explanation": "Radio Resource Management optimizes RF (channel, TX power, etc.). It does not forward IP in the core or replace OSPF/BGP.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Network assurance on ENCOR: Flexible NetFlow + IP SLA together mainly help with what?",
+    "options": [
+      "Only configuring LACP EtherChannel",
+      "Removing any need for syslog",
+      "Disabling CoPP on the control plane",
+      "Flow visibility (NetFlow) plus active performance/availability tests (IP SLA) for diagnostics and baselines"
+    ],
+    "correct": 3,
+    "explanation": "NetFlow/FNF = flow telemetry; IP SLA = active probes. Complementary for assurance; they do not replace logging or CoPP.",
+    "difficulty": "Hard"
   }
 ]

@@ -1931,5 +1931,101 @@ window.QUIZ_BANK = [
     "explanation": "CDP/LLDP give L2 adjacency / management identity (ID, platform, IPs, capabilities). Full BGP tables come from `show ip bgp` / BGP sessions, not CDP.",
     "difficulty": "Medium",
     "cli": true
+  },
+  {
+    "question": "In the CCNA 200-301 v1.1 blueprint, Generative AI and Predictive AI mainly fall under which knowledge domain?",
+    "options": [
+      "Automation and Programmability (and AI-assisted ops/management concepts)",
+      "Security Fundamentals only (15%)",
+      "IP Connectivity only (25%)",
+      "Network Access only (STP)"
+    ],
+    "correct": 0,
+    "explanation": "Cisco places AI/ML with Automation and Programmability (~10%). It does not replace OSPF/STP fundamentals.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is a practical contrast between Generative AI and Predictive AI in network operations?",
+    "options": [
+      "Generative AI works only offline; Predictive AI only in public cloud",
+      "Predictive AI estimates trends/anomalies from data; Generative AI creates new text/code/suggestions from prompts",
+      "They are absolute synonyms in the Cisco blueprint",
+      "Generative AI fully replaces the OSPF protocol"
+    ],
+    "correct": 1,
+    "explanation": "Predictive: forecasting and anomaly detection. Generative: creating content/configs/explanations. Neither replaces routing protocols.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Machine Learning on a network assurance platform (e.g. telemetry analysis) is typically used to:",
+    "options": [
+      "Replace spanning tree on the access layer",
+      "Automatically assign public IPv4 addresses to every host",
+      "Learn baseline patterns and flag deviations/anomalies earlier than static thresholds alone",
+      "Encrypt switch-to-switch frames with WEP"
+    ],
+    "correct": 2,
+    "explanation": "ML builds baselines and spots anomalies (latency, drops, Wi-Fi clients). It does not change L2/L3 forwarding or replace STP/OSPF.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "On current CCNA, Terraform appears under Infrastructure as Code. How does it typically differ from Ansible at a conceptual exam level?",
+    "options": [
+      "Terraform only manages Windows; Ansible only routers",
+      "Terraform uses only Telnet; Ansible uses only SNMP",
+      "Chef and Puppet are mandatory again and replace Terraform",
+      "Terraform declares desired infrastructure state (often cloud/API); Ansible is mainly procedural device configuration automation"
+    ],
+    "correct": 3,
+    "explanation": "Recent blueprints emphasize Terraform and dropped Chef/Puppet name-dropping. Terraform = declarative IaC; Ansible = playbooks, often agentless over SSH/API.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "BPDU Filter on an access port — typical effect?",
+    "options": [
+      "Stops sending/receiving BPDUs on that port (behavior distinct from BPDU Guard)",
+      "Forces the port to always become root bridge",
+      "Automatically enables PortFast on every trunk",
+      "Permanently converts the native VLAN to VLAN 1"
+    ],
+    "correct": 0,
+    "explanation": "BPDU Filter suppresses BPDUs on the interface. BPDU Guard err-disables on received BPDUs. Different features — a classic exam trap.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Northbound API of an SDN controller: which authentication approach is common for modern REST (CCNA concept)?",
+    "options": [
+      "Static ARP only on the client",
+      "Tokens (e.g. Bearer/OAuth2) or API keys over HTTPS — not cleartext credentials over HTTP",
+      "Public SNMP community only",
+      "Shared WEP between controller and switch"
+    ],
+    "correct": 1,
+    "explanation": "Controller REST APIs use HTTPS plus tokens/OAuth/API keys. SNMP communities and WEP are not the modern northbound auth model.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Containers and VRFs on CCNA: which statement is most accurate?",
+    "options": [
+      "A container is the same thing as a VRF in IOS",
+      "VRFs exist only on L2 switches with no IP",
+      "Containers isolate processes/apps on a host; VRFs isolate forwarding tables on a device — virtualization at different layers",
+      "Containers necessarily replace the BGP protocol"
+    ],
+    "correct": 2,
+    "explanation": "Blueprint virtualization covers hosts (VMs/containers) and network (VRF). Different technologies; BGP remains independent.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Cloud device management on CCNA typically means what for an admin?",
+    "options": [
+      "Spanning tree is no longer needed on campus",
+      "Every switch becomes a Layer 1 hub",
+      "IPv6 is forbidden on the LAN",
+      "Centralized management/monitoring off-site (needing connectivity and access control to the cloud console), without removing the need for correct local L2/L3"
+    ],
+    "correct": 3,
+    "explanation": "Cloud management centralizes inventory/config/telemetry, but local VLANs, routing, STP and security still must work.",
+    "difficulty": "Easy"
   }
 ];
