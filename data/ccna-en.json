@@ -2027,5 +2027,113 @@
     "correct": 3,
     "explanation": "Cloud management centralizes inventory/config/telemetry, but local VLANs, routing, STP and security still must work.",
     "difficulty": "Easy"
+  },
+  {
+    "question": "In STP, the root bridge is elected by:",
+    "options": [
+      "Highest numeric priority",
+      "Lowest Bridge ID (priority + MAC)",
+      "Most VLANs",
+      "Highest uptime"
+    ],
+    "correct": 1,
+    "explanation": "Lowest Bridge ID wins: priority then MAC.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "PortFast on an access port is used to:",
+    "options": [
+      "Disable STP",
+      "Move immediately to forwarding, avoiding PC delay",
+      "Elect the root",
+      "Negotiate a trunk"
+    ],
+    "correct": 1,
+    "explanation": "PortFast skips listening/learning on edge ports.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "A Cisco IPv4 default static route is:",
+    "options": [
+      "ip route 0.0.0.0 0.0.0.0 <next-hop or exit>",
+      "ip default-network 0.0.0.0",
+      "ip route 255.255.255.255",
+      "router default"
+    ],
+    "correct": 0,
+    "explanation": "The default route is 0.0.0.0/0 to a next-hop or exit interface.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What does NAT overload (PAT) do?",
+    "options": [
+      "One public IP per private host, 1:1",
+      "Many privates share one or few public IPs via ports",
+      "Translates IPv6 only",
+      "Disables the firewall"
+    ],
+    "correct": 1,
+    "explanation": "PAT multiplexes many internals onto a public IP using L4 ports.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "An extended ACL filters based on:",
+    "options": [
+      "Source IP only",
+      "Source, destination, protocol, and ports",
+      "MAC only",
+      "VLAN only"
+    ],
+    "correct": 1,
+    "explanation": "Extended ACLs allow fine L3/L4 matching.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does HSRP give hosts?",
+    "options": [
+      "A virtual MAC/IP for a redundant gateway",
+      "Per-flow OSPF balancing",
+      "NAT translation",
+      "A DHCP server"
+    ],
+    "correct": 0,
+    "explanation": "HSRP shares a VIP; one router is active, another standby.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Dynamic ARP Inspection uses which database?",
+    "options": [
+      "The OSPF table",
+      "The DHCP snooping binding table",
+      "The VTP file",
+      "CAM aging"
+    ],
+    "correct": 1,
+    "explanation": "DAI checks ARP against DHCP snooping bindings.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "BPDU Guard on a PortFast port:",
+    "options": [
+      "Ignores BPDUs",
+      "Err-disables the port if a BPDU is received",
+      "Elects the root",
+      "Enables LACP"
+    ],
+    "correct": 1,
+    "explanation": "A rogue switch shuts the edge port.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "OSPF cost of 100 Mb/s FastEthernet with reference 100000 is:",
+    "options": [
+      "1",
+      "10",
+      "100",
+      "1000"
+    ],
+    "correct": 0,
+    "explanation": "Cost = ref/bw = 100000/100000 = 1.",
+    "difficulty": "Medium"
   }
 ]

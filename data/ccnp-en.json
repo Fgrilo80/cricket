@@ -1998,5 +1998,77 @@
     "correct": 3,
     "explanation": "NetFlow/FNF = flow telemetry; IP SLA = active probes. Complementary for assurance; they do not replace logging or CoPP.",
     "difficulty": "Hard"
+  },
+  {
+    "question": "In OSPF, LSA type 1 describes:",
+    "options": [
+      "External routes",
+      "The router and its intra-area links",
+      "The area summary",
+      "An ASBR in another AS"
+    ],
+    "correct": 1,
+    "explanation": "Type 1 Router LSA describes the router's links in the area.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "An EIGRP feasible successor requires:",
+    "options": [
+      "AD > successor FD",
+      "Advertised Distance < successor FD (feasibility condition)",
+      "The same BGP AS",
+      "LSA type 5"
+    ],
+    "correct": 1,
+    "explanation": "The candidate's AD must be less than the current route's FD.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "A VXLAN VNI identifies:",
+    "options": [
+      "A local VLAN only",
+      "The overlay (L2/L3) segment in the fabric",
+      "The BGP ASN",
+      "DSCP"
+    ],
+    "correct": 1,
+    "explanation": "VNI is the VXLAN overlay identifier.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "GETVPN (GDOI) is designed for:",
+    "options": [
+      "The public Internet with NAT",
+      "Private WAN (MPLS) with group IPsec while preserving original headers",
+      "Wi-Fi only",
+      "IPv6 link-local"
+    ],
+    "correct": 1,
+    "explanation": "GETVPN uses a key server; IPs stay the same, good on MPLS.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "QoS LLQ (Low Latency Queue) is typically for:",
+    "options": [
+      "Bulk backup",
+      "Real-time voice/video (priority queue)",
+      "Best-effort HTTP",
+      "Routing updates only"
+    ],
+    "correct": 1,
+    "explanation": "The priority command is LLQ, with a policer so it cannot starve the link.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "WRED avoids:",
+    "options": [
+      "BGP blackholing",
+      "Global tail drop by dropping probabilistically by DSCP before the queue is full",
+      "RIP loops",
+      "NTP failure"
+    ],
+    "correct": 1,
+    "explanation": "WRED is weighted early drop; it protects TCP flows.",
+    "difficulty": "Hard"
   }
 ]

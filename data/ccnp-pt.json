@@ -1998,5 +1998,77 @@
     "correct": 3,
     "explanation": "NetFlow/FNF = telemetria de fluxos; IP SLA = probes ativos (latência/jitter/reachability). Complementares em assurance; não substituem logging nem CoPP.",
     "difficulty": "Difícil"
+  },
+  {
+    "question": "Em OSPF, o LSA tipo 1 descreve:",
+    "options": [
+      "Rotas externas",
+      "O router e os seus links intra-area",
+      "A summary de area",
+      "O ASBR noutro AS"
+    ],
+    "correct": 1,
+    "explanation": "Type 1 Router LSA descreve links do router na area.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Feasible successor EIGRP exige:",
+    "options": [
+      "AD > FD do successor",
+      "Advertised Distance < FD do successor (condicao de viabilidade)",
+      "Mesmo AS BGP",
+      "LSA tipo 5"
+    ],
+    "correct": 1,
+    "explanation": "AD do candidato tem de ser menor que a FD da rota em uso.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "VXLAN VNI identifica:",
+    "options": [
+      "Uma VLAN local so",
+      "O segmento overlay (L2/L3) no fabric",
+      "O ASN BGP",
+      "O DSCP"
+    ],
+    "correct": 1,
+    "explanation": "VNI e o identificador do overlay VXLAN.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "GETVPN (GDOI) e pensado para:",
+    "options": [
+      "Internet publica com NAT",
+      "WAN privada (MPLS) com grupo IPsec e headers originais preservados",
+      "So Wi-Fi",
+      "IPv6 link-local"
+    ],
+    "correct": 1,
+    "explanation": "GETVPN usa key server; nao muda IPs, bom em MPLS.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "QoS LLQ (Low Latency Queue) e tipicamente para:",
+    "options": [
+      "Bulk backup",
+      "Voz/video em tempo real (priority queue)",
+      "Best-effort HTTP",
+      "Routing updates so"
+    ],
+    "correct": 1,
+    "explanation": "priority command = LLQ, com policer para nao esgotar o link.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "WRED evita:",
+    "options": [
+      "Blackholing BGP",
+      "Tail drop global, descendo probabilistico segundo DSCP antes da fila cheia",
+      "Loops RIP",
+      "Falha de NTP"
+    ],
+    "correct": 1,
+    "explanation": "WRED faz early drop ponderado; protege fluxos TCP.",
+    "difficulty": "Difícil"
   }
 ]

@@ -22,9 +22,9 @@ Formato de cada pergunta:
 
 Contagens atuais:
 - CCST PT 171 / EN 171
-- CCNA PT 168 / EN 168
-- CCNP PT 166 / EN 166
-- Total 1010
+- CCNA PT 177 / EN 177
+- CCNP PT 172 / EN 172
+- Total 1040
 Prática: feedback imediato após cada resposta. Exame: até 50 perguntas, 45 minutos, sem revelar até ao fim.
 
 ## Telemóvel

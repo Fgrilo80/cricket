@@ -2027,5 +2027,113 @@
     "correct": 3,
     "explanation": "Gestão cloud centraliza inventário/config/telemetria, mas a rede local (VLANs, routing, STP, segurança) continua a ter de funcionar. Não desliga fundamentos.",
     "difficulty": "Fácil"
+  },
+  {
+    "question": "Em STP, o root bridge e eleito por:",
+    "options": [
+      "Maior prioridade numerica",
+      "Menor Bridge ID (prioridade + MAC)",
+      "Maior numero de VLANs",
+      "Maior uptime"
+    ],
+    "correct": 1,
+    "explanation": "Ganha o menor Bridge ID: prioridade (default 32768) depois MAC.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "PortFast numa porta de acesso serve para:",
+    "options": [
+      "Desligar STP",
+      "Passar ja para forwarding, evitando atraso em PCs",
+      "Eleger o root",
+      "Negociar trunk"
+    ],
+    "correct": 1,
+    "explanation": "PortFast salta listening/learning em portas de extremo.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Uma rota estatica default em Cisco e:",
+    "options": [
+      "ip route 0.0.0.0 0.0.0.0 <next-hop ou exit>",
+      "ip default-network 0.0.0.0",
+      "ip route 255.255.255.255",
+      "router default"
+    ],
+    "correct": 0,
+    "explanation": "A default route e 0.0.0.0/0 para next-hop ou interface.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "NAT overload (PAT) faz o que?",
+    "options": [
+      "Um IP publico por cada privado, 1:1",
+      "Muitos privados partilham um ou poucos IPs publicos via portas",
+      "Traduz so IPv6",
+      "Desliga o firewall"
+    ],
+    "correct": 1,
+    "explanation": "PAT usa portas L4 para multiplexar muitos internos num IP publico.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Uma ACL estendida filtra com base em:",
+    "options": [
+      "So IP de origem",
+      "Origem, destino, protocolo e portas",
+      "So MAC",
+      "So VLAN"
+    ],
+    "correct": 1,
+    "explanation": "ACLs extended permitem criterios L3/L4 finos.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "HSRP oferece o que aos hosts?",
+    "options": [
+      "Um MAC/IP virtual de gateway redundante",
+      "Balanceamento por fluxo OSPF",
+      "Traducao NAT",
+      "Um servidor DHCP"
+    ],
+    "correct": 0,
+    "explanation": "HSRP partilha um VIP; um router e active, outro standby.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Dynamic ARP Inspection usa que base de dados?",
+    "options": [
+      "A tabela OSPF",
+      "A binding table do DHCP snooping",
+      "O arquivo VTP",
+      "O CAM aging"
+    ],
+    "correct": 1,
+    "explanation": "DAI valida ARP contra as bindings DHCP snooping.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "BPDU Guard numa porta PortFast:",
+    "options": [
+      "Ignora BPDUs",
+      "Errdisable a porta se receber uma BPDU",
+      "Elege o root",
+      "Ativa LACP"
+    ],
+    "correct": 1,
+    "explanation": "Um switch ligado por engano desliga a porta de extremo.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "OSPF cost de FastEthernet 100 Mb/s com referencia 100000 e:",
+    "options": [
+      "1",
+      "10",
+      "100",
+      "1000"
+    ],
+    "correct": 0,
+    "explanation": "Custo = ref/bw = 100000/100000 = 1.",
+    "difficulty": "Médio"
   }
 ]
