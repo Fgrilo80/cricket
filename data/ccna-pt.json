@@ -20,7 +20,7 @@
       "ICMP"
     ],
     "correct": 1,
-    "explanation": "DNS (Domain Name System) traduz nomes de domínio legíveis para endereços IP.",
+    "explanation": "Uma rota por omissão (0.0.0.0/0) é usada quando nenhuma rota mais específica corresponde; costuma ser estática ou aprendida como gateway of last resort.",
     "difficulty": "Fácil"
   },
   {
@@ -32,7 +32,7 @@
       "Rota de backup"
     ],
     "correct": 1,
-    "explanation": "Rotas estáticas são configuradas manualmente e não mudam automaticamente.",
+    "explanation": "Rotas estáticas são configuradas manualmente e mantêm-se até serem alteradas ou removidas; não recalculam sozinhas como OSPF/EIGRP quando a topologia muda.",
     "difficulty": "Médio"
   },
   {
@@ -92,7 +92,7 @@
       "21"
     ],
     "correct": 1,
-    "explanation": "HTTPS (HTTP Secure) usa a porta 443 por padrão.",
+    "explanation": "HTTPS usa TCP 443 com TLS para cifrar HTTP. HTTP simples é 80; não confundir com SSH (22) nem com portas DNS/SMTP comuns.",
     "difficulty": "Fácil"
   },
   {
@@ -224,7 +224,7 @@
       "80"
     ],
     "correct": 2,
-    "explanation": "Telnet usa a porta 23 (inseguro, use SSH na 22).",
+    "explanation": "Telnet usa TCP 23 e é texto claro; prefira SSH na TCP 22 para gestão. A porta 23 não é HTTP nem HTTPS.",
     "difficulty": "Fácil"
   },
   {
@@ -296,7 +296,7 @@
       "Mostrar ACLs"
     ],
     "correct": 1,
-    "explanation": "Este comando exibe as traduções NAT/PAT atualmente ativas no router.",
+    "explanation": "show ip nat translations mostra a tabela ativa de traduções NAT/PAT (bindings inside↔outside). Não é a tabela de encaminhamento.",
     "difficulty": "Fácil"
   },
   {
@@ -392,7 +392,7 @@
       "80"
     ],
     "correct": 0,
-    "explanation": "FTP usa porta 21 para controle e 20 para dados (modo ativo).",
+    "explanation": "O controlo FTP é TCP 21; em modo ativo os dados usam frequentemente TCP 20. Em ambientes atuais é comum modo passivo com portas de dados dinâmicas.",
     "difficulty": "Fácil"
   },
   {
@@ -416,7 +416,7 @@
       "Mostrar cache DNS"
     ],
     "correct": 0,
-    "explanation": "ip domain-lookup habilita o router a resolver nomes de host via DNS.",
+    "explanation": "ip domain-lookup permite ao router resolver nomes via DNS (servidor configurado). no ip domain-lookup desativa esse comportamento.",
     "difficulty": "Fácil"
   },
   {
@@ -428,7 +428,7 @@
       "Protocolo de segurança"
     ],
     "correct": 1,
-    "explanation": "LACP é o protocolo padrão IEEE 802.3ad para formar EtherChannels dinamicamente.",
+    "explanation": "Uma ACL standard corresponde só ao IP de origem; coloca-se perto do destino quando possível. ACLs extended fazem match L3/L4 e costumam ir perto da origem.",
     "difficulty": "Médio"
   },
   {
@@ -464,7 +464,7 @@
       "Mostrar NAT da VLAN 10"
     ],
     "correct": 1,
-    "explanation": "Este comando exibe informações detalhadas do STP para a VLAN especificada.",
+    "explanation": "show spanning-tree vlan <id> mostra papel/estado STP, root bridge e custos dessa VLAN. Não é a tabela de endereços MAC.",
     "difficulty": "Médio"
   },
   {
@@ -584,7 +584,7 @@
       "encapsulation dot1q 20"
     ],
     "correct": 0,
-    "explanation": "No modo VLAN, 'vlan 20' cria a VLAN.",
+    "explanation": "Em configuração global, vlan 20 cria (ou entra) a VLAN 20 na base de VLANs. A atribuição à porta access é um comando switchport separado.",
     "difficulty": "Fácil"
   },
   {
@@ -596,7 +596,7 @@
       "ip routing"
     ],
     "correct": 1,
-    "explanation": "switchport access vlan 20 (com mode access) PoE a porta na VLAN 20.",
+    "explanation": "switchport mode access e switchport access vlan 20 colocam a porta na VLAN 20 sem tag. O modo trunk transporta várias VLANs com tags.",
     "difficulty": "Fácil"
   },
   {
@@ -608,7 +608,7 @@
       "VTP"
     ],
     "correct": 1,
-    "explanation": "PAgP é Cisco; LACP é o padrão IEEE 802.3ad.",
+    "explanation": "PAgP é proprietário Cisco para negociar EtherChannel; LACP (IEEE 802.3ad/802.1AX) é a alternativa standard. on força o bundle sem negociação.",
     "difficulty": "Médio"
   },
   {
@@ -620,7 +620,7 @@
       "FF02::5 apenas"
     ],
     "correct": 1,
-    "explanation": "Hellos AllSPFRouters 224.0.0.5; DR/BDR também 224.0.0.6.",
+    "explanation": "Hellos OSPF vão para AllSPFRouters 224.0.0.5; DR/BDR também escutam AllDRouters 224.0.0.6. Não é o mesmo que 224.0.0.10 do EIGRP.",
     "difficulty": "Médio"
   },
   {
@@ -632,7 +632,7 @@
       "Rotas OSPF falsas"
     ],
     "correct": 1,
-    "explanation": "Marca portas trusted/untrusted e bloqueia ofertas DHCP falsas.",
+    "explanation": "DHCP Snooping constrói uma tabela de bindings e marca portas trusted/untrusted para descartar ofertas DHCP falsas vindas de clientes.",
     "difficulty": "Médio"
   },
   {
@@ -644,7 +644,7 @@
       "Em todos os PCs"
     ],
     "correct": 1,
-    "explanation": "Perto da origem evita tráfego indesejado a atravessar a rede.",
+    "explanation": "Coloque ACLs extended perto da origem para descartar tráfego indesejado cedo e poupar largura de banda; ACLs standard costumam ir perto do destino.",
     "difficulty": "Médio"
   },
   {
@@ -656,7 +656,7 @@
       "Cifrar syslog"
     ],
     "correct": 1,
-    "explanation": "NTP alinha o tempo dos dispositivos.",
+    "explanation": "O NTP (Network Time Protocol) sincroniza os relógios entre dispositivos para que logs, certificados e autenticação (ex.: Kerberos) partilhem uma base temporal comum. Não é DNS, não é sonda de jitter, nem encriptação para syslog.",
     "difficulty": "Fácil"
   },
   {
@@ -668,7 +668,7 @@
       "Reinicia a interface"
     ],
     "correct": 1,
-    "explanation": "GET consulta o agente; SET altera; traps são notificações.",
+    "explanation": "SNMP GET lê objetos MIB no agente; SET altera-os; traps/informs notificam o NMS. Não é exportação NetFlow.",
     "difficulty": "Médio"
   },
   {
@@ -680,7 +680,7 @@
       "No DNS"
     ],
     "correct": 1,
-    "explanation": "Classificar no edge permite marcar DSCP cedo.",
+    "explanation": "Classifique/marque o tráfego o mais perto possível da borda (acesso) para o DSCP/CoS ser definido cedo e respeitado no caminho.",
     "difficulty": "Médio"
   },
   {
@@ -692,7 +692,7 @@
       "Traduzir NAT"
     ],
     "correct": 1,
-    "explanation": "Protocolos de descoberta L2: CDP Cisco, LLDP padrão.",
+    "explanation": "CDP é descoberta de vizinhos proprietária Cisco; LLDP é o standard IEEE 802.1AB. Ambos anunciam identidade de dispositivo/porta em L2.",
     "difficulty": "Fácil"
   },
   {
@@ -704,7 +704,7 @@
       "::1"
     ],
     "correct": 1,
-    "explanation": "Link-local FE80::/10 e obrigatório em cada interface IPv6.",
+    "explanation": "Endereços IPv6 link-local em FE80::/10 são obrigatórios em cada interface IPv6 para neighbor discovery e vários protocolos de controlo.",
     "difficulty": "Médio"
   },
   {
@@ -716,7 +716,7 @@
       "Protobuf obrigatório"
     ],
     "correct": 1,
-    "explanation": "RESTCONF expoe YANG via HTTP, geralmente JSON ou XML.",
+    "explanation": "RESTCONF expõe dados modelados em YANG sobre HTTP(S), tipicamente em JSON ou XML—alternativa amigável a HTTP face a NETCONF/SSH.",
     "difficulty": "Médio"
   },
   {
@@ -728,7 +728,7 @@
       "Exigir DTD"
     ],
     "correct": 1,
-    "explanation": "JSON e texto simples com objetos e arrays, comum em APIs.",
+    "explanation": "JSON é um formato de texto leve com objetos e arrays, muito usado em APIs REST. Não é um protocolo de encaminhamento nem o próprio YANG.",
     "difficulty": "Fácil"
   },
   {
@@ -740,7 +740,7 @@
       "Telnet obrigatório"
     ],
     "correct": 1,
-    "explanation": "Ansible e agentless: SSH/NETCONF, playbooks YAML.",
+    "explanation": "Ansible é tipicamente agentless: o nó de controlo envia playbooks YAML via SSH/WinRM/NETCONF. Não é sobretudo um poller SNMP.",
     "difficulty": "Médio"
   },
   {
@@ -752,7 +752,7 @@
       "/32"
     ],
     "correct": 1,
-    "explanation": "0.0.0.255 casa os últimos 8 bits: prefixo /24.",
+    "explanation": "O wildcard 0.0.0.255 significa ‘corresponder o último octeto’—equivalente a um prefixo /24 em match OSPF/ACL.",
     "difficulty": "Médio"
   },
   {
@@ -776,7 +776,7 @@
       "Só tráfego de gestão"
     ],
     "correct": 1,
-    "explanation": "dot1q etiqueta VLANs; a native vai untagged.",
+    "explanation": "802.1Q etiqueta tramas com VLAN ID nos trunks; a VLAN nativa vai/recebe sem tag. ISL é uma alternativa Cisco antiga.",
     "difficulty": "Médio"
   },
   {
@@ -788,7 +788,7 @@
       "O BSSID só"
     ],
     "correct": 1,
-    "explanation": "SSID identifica a rede; BSSID e o MAC do AP.",
+    "explanation": "O SSID é o nome legível da WLAN; o BSSID é o MAC da rádio do AP que identifica aquele BSS.",
     "difficulty": "Fácil"
   },
   {
@@ -800,7 +800,7 @@
       "Telnet"
     ],
     "correct": 1,
-    "explanation": "Enterprise usa 802.1X com RADIUS, não um PSK partilhado.",
+    "explanation": "WPA2/WPA3-Enterprise usa 802.1X com servidor RADIUS por utilizador; PSK (personal) partilha uma passphrase para todos os clientes.",
     "difficulty": "Médio"
   },
   {
@@ -812,7 +812,7 @@
       "Reset de fábrica ao ISP"
     ],
     "correct": 1,
-    "explanation": "Config IP do host elimina a maioria dos casos.",
+    "explanation": "Quando um host não alcança nada, verifique primeiro IP, máscara, gateway e DNS locais—a maioria das falhas é má configuração no host.",
     "difficulty": "Fácil"
   },
   {
@@ -824,7 +824,7 @@
       "Notice"
     ],
     "correct": 1,
-    "explanation": "0 emergency a 7 debug; quanto menor, mais grave.",
+    "explanation": "A severidade syslog vai de 0 (emergencies) a 7 (debugging); números mais baixos são mais graves. O filtro usa muitas vezes um limiar de severidade.",
     "difficulty": "Médio"
   },
   {
@@ -836,7 +836,7 @@
       "Fazer NAT"
     ],
     "correct": 1,
-    "explanation": "CAPWAP é o túnel de controlo/dados entre WLC e APs.",
+    "explanation": "CAPWAP cria o túnel de controlo (e muitas vezes de dados) entre AP lightweight e WLC. Substituiu o LWAPP antigo nas arquiteturas Cisco.",
     "difficulty": "Médio"
   },
   {
@@ -848,7 +848,7 @@
       "::1"
     ],
     "correct": 1,
-    "explanation": "Globais atuais estão em 2000::/3, p.ex. 2001:db8::/32.",
+    "explanation": "Unicast global IPv6 atual está em 2000::/3 (ex.: prefixo de documentação 2001:db8::/32). FE80::/10 é link-local, não global.",
     "difficulty": "Médio"
   },
   {
@@ -860,7 +860,7 @@
       "BGP"
     ],
     "correct": 1,
-    "explanation": "Código O = OSPF na tabela de encaminhamento.",
+    "explanation": "Em show ip route, o código O marca rotas aprendidas por OSPF. S é estática, C ligada, B BGP, D EIGRP—não confundir as letras.",
     "difficulty": "Fácil"
   },
   {
@@ -872,7 +872,7 @@
       "Só se PortFast estiver on"
     ],
     "correct": 1,
-    "explanation": "Access ports esperam frames untagged da VLAN atribuída.",
+    "explanation": "Portas access pertencem a uma VLAN e esperam tramas sem tag. Tramas etiquetadas costumam pertencer a trunks.",
     "difficulty": "Médio"
   },
   {
@@ -2037,7 +2037,7 @@
       "Maior uptime"
     ],
     "correct": 1,
-    "explanation": "Ganha o menor Bridge ID: prioridade (default 32768) depois MAC.",
+    "explanation": "O STP elege o root pelo Bridge ID mais baixo: prioridade (omissão 32768) e depois MAC. Prioridade mais baixa ganha face a só um MAC menor.",
     "difficulty": "Médio"
   },
   {
@@ -2049,7 +2049,7 @@
       "Negociar trunk"
     ],
     "correct": 1,
-    "explanation": "PortFast salta listening/learning em portas de extremo.",
+    "explanation": "PortFast faz a porta de extremo (access) ir para forwarding sem esperar os timers completos de listening/learning—use com BPDU Guard.",
     "difficulty": "Médio"
   },
   {
@@ -2061,7 +2061,7 @@
       "router default"
     ],
     "correct": 0,
-    "explanation": "A default route e 0.0.0.0/0 para next-hop ou interface.",
+    "explanation": "A rota por omissão 0.0.0.0/0 corresponde a qualquer destino sem prefixo melhor; o next-hop ou interface de saída aponta para o gateway of last resort.",
     "difficulty": "Fácil"
   },
   {
@@ -2073,7 +2073,7 @@
       "Desliga o firewall"
     ],
     "correct": 1,
-    "explanation": "PAT usa portas L4 para multiplexar muitos internos num IP publico.",
+    "explanation": "PAT (NAT overload) mapeia muitos hosts internos para um (ou poucos) IP(s) público(s) traduzindo portas L4. Não é só NAT estático 1:1.",
     "difficulty": "Médio"
   },
   {
@@ -2085,7 +2085,7 @@
       "So VLAN"
     ],
     "correct": 1,
-    "explanation": "ACLs extended permitem criterios L3/L4 finos.",
+    "explanation": "ACLs extended podem corresponder a protocolo, IP origem/destino e portas L4—mais granulares que ACLs standard (só IP de origem).",
     "difficulty": "Médio"
   },
   {
@@ -2097,7 +2097,7 @@
       "Um servidor DHCP"
     ],
     "correct": 0,
-    "explanation": "HSRP partilha um VIP; um router e active, outro standby.",
+    "explanation": "HSRP fornece um IP/MAC virtual; um router é Active a encaminhar e outro Standby pronto a assumir em falha.",
     "difficulty": "Médio"
   },
   {
@@ -2109,7 +2109,7 @@
       "O CAM aging"
     ],
     "correct": 1,
-    "explanation": "DAI valida ARP contra as bindings DHCP snooping.",
+    "explanation": "Dynamic ARP Inspection valida ARP contra a tabela de bindings do DHCP Snooping para impedir spoofing ARP em portas untrusted.",
     "difficulty": "Difícil"
   },
   {
@@ -2121,7 +2121,7 @@
       "Ativa LACP"
     ],
     "correct": 1,
-    "explanation": "Um switch ligado por engano desliga a porta de extremo.",
+    "explanation": "BPDU Guard põe a porta PortFast em err-disable se receber uma BPDU—protege contra um switch indevido. Não elege o root STP.",
     "difficulty": "Médio"
   },
   {
@@ -2133,7 +2133,31 @@
       "1000"
     ],
     "correct": 0,
-    "explanation": "Custo = ref/bw = 100000/100000 = 1.",
+    "explanation": "Com bandwidth de referência OSPF 100 Mbps (histórico), um link a 100 Mbps tem custo 1 (ref/bw). Velocidades maiores exigem subir a referência.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Numa política de QoS numa interface de saída, o que faz o comando `priority` numa class-map de voz?",
+    "options": [
+      "Garante largura de banda proporcional a todas as classes",
+      "Cria uma fila de prioridade estrita (LLQ) para essa classe, com limite policed",
+      "Desativa o WRED nessa interface",
+      "Marca todos os pacotes como DSCP EF independentemente da classe"
+    ],
+    "correct": 1,
+    "explanation": "O `priority` ativa Low Latency Queuing (LLQ): fila prioritária para a classe (tipicamente voz), normalmente com um policer para não esgotar a interface.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Entre um AP lightweight e um WLC, qual afirmação sobre CAPWAP está correta?",
+    "options": [
+      "O tráfego de dados do cliente nunca passa pelo WLC em modo local",
+      "CAPWAP usa DTLS para o túnel de controlo entre AP e WLC",
+      "CAPWAP só funciona em Layer 2 e não atravessa routers",
+      "O AP guarda localmente todas as políticas WLAN sem contacto com o WLC"
+    ],
+    "correct": 1,
+    "explanation": "CAPWAP estabelece um túnel de controlo protegido com DTLS entre o AP lightweight e o WLC; o túnel de dados pode ser encapsulado à parte conforme o modo.",
     "difficulty": "Médio"
   }
 ]

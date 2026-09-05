@@ -32,7 +32,7 @@ window.QUIZ_BANK = [
       "Backup route"
     ],
     "correct": 1,
-    "explanation": "Static routes are manually configured and do not change automatically.",
+    "explanation": "Static routes are entered manually and stay until changed or withdrawn; they do not recalculate like OSPF/EIGRP when topology changes.",
     "difficulty": "Medium"
   },
   {
@@ -92,7 +92,7 @@ window.QUIZ_BANK = [
       "21"
     ],
     "correct": 1,
-    "explanation": "HTTPS (HTTP Secure) uses port 443 by default.",
+    "explanation": "HTTPS uses TCP 443 with TLS to encrypt HTTP. Plain HTTP is 80; do not confuse with SSH (22) or well-known DNS/SMTP ports.",
     "difficulty": "Easy"
   },
   {
@@ -152,7 +152,7 @@ window.QUIZ_BANK = [
       "Show logs"
     ],
     "correct": 1,
-    "explanation": "This command displays OSPF neighbors, adjacency state, and DR/BDR information.",
+    "explanation": "show ip ospf neighbor lists OSPF neighbors, adjacency state (FULL, etc.), and DR/BDR roles on multi-access segments—not the full LSDB.",
     "difficulty": "Medium"
   },
   {
@@ -224,7 +224,7 @@ window.QUIZ_BANK = [
       "80"
     ],
     "correct": 2,
-    "explanation": "Telnet uses port 23 (insecure, use SSH on port 22 instead).",
+    "explanation": "Telnet uses TCP 23 and is cleartext; prefer SSH on TCP 22 for device management. Port 23 is not HTTP or HTTPS.",
     "difficulty": "Easy"
   },
   {
@@ -296,7 +296,7 @@ window.QUIZ_BANK = [
       "Show ACLs"
     ],
     "correct": 1,
-    "explanation": "This command displays the currently active NAT/PAT translations on the router.",
+    "explanation": "show ip nat translations displays the active NAT/PAT translation table (inside↔outside bindings). It is not the routing table.",
     "difficulty": "Easy"
   },
   {
@@ -392,7 +392,7 @@ window.QUIZ_BANK = [
       "80"
     ],
     "correct": 0,
-    "explanation": "FTP uses port 21 for control and 20 for data (active mode).",
+    "explanation": "FTP control is TCP 21; in active mode data often uses TCP 20. Modern deployments frequently use passive mode with dynamic data ports.",
     "difficulty": "Easy"
   },
   {
@@ -416,7 +416,7 @@ window.QUIZ_BANK = [
       "Show DNS cache"
     ],
     "correct": 0,
-    "explanation": "ip domain-lookup enables the router to resolve hostnames via DNS.",
+    "explanation": "ip domain-lookup lets the router resolve hostnames via DNS (or the configured name server). no ip domain-lookup disables that behavior.",
     "difficulty": "Easy"
   },
   {
@@ -464,7 +464,7 @@ window.QUIZ_BANK = [
       "Show NAT for VLAN 10"
     ],
     "correct": 1,
-    "explanation": "This command displays detailed STP information for the specified VLAN.",
+    "explanation": "show spanning-tree vlan <id> shows STP role/state, root bridge, and costs for that VLAN. It is not the MAC address table.",
     "difficulty": "Medium"
   },
   {
@@ -476,7 +476,7 @@ window.QUIZ_BANK = [
       "VPN protocol"
     ],
     "correct": 1,
-    "explanation": "Route-maps are used for advanced route redistribution control, PBR, and NAT.",
+    "explanation": "Route-maps provide match/set logic for redistribution, PBR, and NAT control—more flexible than a simple distribute-list alone.",
     "difficulty": "Hard"
   },
   {
@@ -584,7 +584,7 @@ window.QUIZ_BANK = [
       "encapsulation dot1q 20"
     ],
     "correct": 0,
-    "explanation": "In VLAN config mode, 'vlan 20' creates the VLAN.",
+    "explanation": "In global config, vlan 20 creates (or enters) VLAN 20 in the VLAN database. Access-port assignment is a separate switchport command.",
     "difficulty": "Easy"
   },
   {
@@ -596,7 +596,7 @@ window.QUIZ_BANK = [
       "ip routing"
     ],
     "correct": 1,
-    "explanation": "switchport access vlan 20 with mode access assigns VLAN 20.",
+    "explanation": "switchport mode access plus switchport access vlan 20 puts the port in VLAN 20 untagged. Trunk mode carries multiple tagged VLANs.",
     "difficulty": "Easy"
   },
   {
@@ -608,7 +608,7 @@ window.QUIZ_BANK = [
       "VTP"
     ],
     "correct": 1,
-    "explanation": "PAgP is Cisco-proprietary; LACP is IEEE 802.3ad.",
+    "explanation": "PAgP is Cisco proprietary for EtherChannel negotiation; LACP (IEEE 802.3ad/802.1AX) is the standards-based alternative. On means force without negotiation.",
     "difficulty": "Medium"
   },
   {
@@ -620,7 +620,7 @@ window.QUIZ_BANK = [
       "FF02::5 only"
     ],
     "correct": 1,
-    "explanation": "Hellos go to 224.0.0.5; DR/BDR also 224.0.0.6.",
+    "explanation": "OSPF Hellos go to AllSPFRouters 224.0.0.5; DR/BDR also listen on AllDRouters 224.0.0.6. These are not the same as EIGRP’s 224.0.0.10.",
     "difficulty": "Medium"
   },
   {
@@ -632,7 +632,7 @@ window.QUIZ_BANK = [
       "Fake OSPF routes"
     ],
     "correct": 1,
-    "explanation": "It marks trusted/untrusted ports and drops bogus DHCP offers.",
+    "explanation": "DHCP Snooping builds a binding table and marks ports trusted/untrusted so rogue DHCP offers from clients are dropped.",
     "difficulty": "Medium"
   },
   {
@@ -644,7 +644,7 @@ window.QUIZ_BANK = [
       "On every PC"
     ],
     "correct": 1,
-    "explanation": "Near the source stops unwanted traffic from crossing the network.",
+    "explanation": "Place extended ACLs near the source to drop unwanted traffic early and save bandwidth; standard ACLs often go near the destination.",
     "difficulty": "Medium"
   },
   {
@@ -656,7 +656,7 @@ window.QUIZ_BANK = [
       "Encrypt syslog"
     ],
     "correct": 1,
-    "explanation": "NTP aligns device time.",
+    "explanation": "NTP (Network Time Protocol) synchronizes clocks across devices so logs, certificates, and auth (e.g. Kerberos) share a common timebase. It is not DNS, not a jitter probe, and not encryption for syslog.",
     "difficulty": "Easy"
   },
   {
@@ -668,7 +668,7 @@ window.QUIZ_BANK = [
       "Resets an interface"
     ],
     "correct": 1,
-    "explanation": "GET queries the agent; SET changes; traps notify.",
+    "explanation": "SNMP GET reads MIB objects from the agent; SET writes them; traps/informs notify the NMS of events. It is not NetFlow export.",
     "difficulty": "Medium"
   },
   {
@@ -680,7 +680,7 @@ window.QUIZ_BANK = [
       "On DNS"
     ],
     "correct": 1,
-    "explanation": "Classify at the edge so DSCP can be set early.",
+    "explanation": "Mark/classify traffic as close to the edge (access) as practical so DSCP/CoS is set early and honored through the path.",
     "difficulty": "Medium"
   },
   {
@@ -692,7 +692,7 @@ window.QUIZ_BANK = [
       "Translate NAT"
     ],
     "correct": 1,
-    "explanation": "L2 discovery protocols: CDP Cisco, LLDP standard.",
+    "explanation": "CDP is Cisco proprietary neighbor discovery; LLDP is the IEEE 802.1AB standard. Both advertise device/port identity at L2.",
     "difficulty": "Easy"
   },
   {
@@ -704,7 +704,7 @@ window.QUIZ_BANK = [
       "::1"
     ],
     "correct": 1,
-    "explanation": "Link-local FE80::/10 is required on every IPv6 interface.",
+    "explanation": "IPv6 link-local addresses in FE80::/10 are required on every IPv6-enabled interface for neighbor discovery and many control protocols.",
     "difficulty": "Medium"
   },
   {
@@ -716,7 +716,7 @@ window.QUIZ_BANK = [
       "Protobuf only"
     ],
     "correct": 1,
-    "explanation": "RESTCONF exposes YANG over HTTP, usually JSON or XML.",
+    "explanation": "RESTCONF exposes YANG-modeled data over HTTP(S), typically with JSON or XML payloads—an HTTP-friendly alternative to NETCONF/SSH.",
     "difficulty": "Medium"
   },
   {
@@ -728,7 +728,7 @@ window.QUIZ_BANK = [
       "Requiring a DTD"
     ],
     "correct": 1,
-    "explanation": "JSON is simple text with objects and arrays, common in APIs.",
+    "explanation": "JSON is a lightweight text format of objects and arrays widely used in REST APIs. It is not a routing protocol and not YANG itself.",
     "difficulty": "Easy"
   },
   {
@@ -740,7 +740,7 @@ window.QUIZ_BANK = [
       "Required Telnet"
     ],
     "correct": 1,
-    "explanation": "Ansible is agentless: SSH/NETCONF with YAML playbooks.",
+    "explanation": "Ansible is typically agentless: the control node pushes YAML playbooks over SSH/WinRM/NETCONF. It is not primarily an SNMP poller.",
     "difficulty": "Medium"
   },
   {
@@ -752,7 +752,7 @@ window.QUIZ_BANK = [
       "/32"
     ],
     "correct": 1,
-    "explanation": "0.0.0.255 matches the last 8 bits: a /24 prefix.",
+    "explanation": "Wildcard 0.0.0.255 means ‘match the last octet’—equivalent to a /24 prefix mask when used in OSPF/ACL matching.",
     "difficulty": "Medium"
   },
   {
@@ -776,7 +776,7 @@ window.QUIZ_BANK = [
       "Management traffic only"
     ],
     "correct": 1,
-    "explanation": "dot1q tags VLANs; the native VLAN is untagged.",
+    "explanation": "802.1Q tags frames with a VLAN ID on trunks; the native VLAN is sent/received untagged. ISL is an older Cisco alternative.",
     "difficulty": "Medium"
   },
   {
@@ -788,7 +788,7 @@ window.QUIZ_BANK = [
       "The BSSID only"
     ],
     "correct": 1,
-    "explanation": "SSID names the network; BSSID is the AP radio MAC.",
+    "explanation": "The SSID is the human-readable WLAN name; the BSSID is the AP radio’s MAC that uniquely identifies that BSS.",
     "difficulty": "Easy"
   },
   {
@@ -800,7 +800,7 @@ window.QUIZ_BANK = [
       "Telnet"
     ],
     "correct": 1,
-    "explanation": "Enterprise uses 802.1X with RADIUS, not a shared PSK.",
+    "explanation": "WPA2/WPA3-Enterprise uses 802.1X with a RADIUS server per user; PSK (personal) shares one passphrase for all clients.",
     "difficulty": "Medium"
   },
   {
@@ -812,7 +812,7 @@ window.QUIZ_BANK = [
       "Factory-reset the ISP"
     ],
     "correct": 1,
-    "explanation": "Host IP config catches most cases.",
+    "explanation": "When a host cannot reach anything, first verify its own IP, mask, gateway, and DNS—most failures are local misconfiguration.",
     "difficulty": "Easy"
   },
   {
@@ -824,7 +824,7 @@ window.QUIZ_BANK = [
       "Notice"
     ],
     "correct": 1,
-    "explanation": "0 emergency to 7 debug; lower is more severe.",
+    "explanation": "Syslog severity runs from 0 (emergencies) to 7 (debugging); lower numbers are more severe. Filtering often uses a severity threshold.",
     "difficulty": "Medium"
   },
   {
@@ -836,7 +836,7 @@ window.QUIZ_BANK = [
       "Perform NAT"
     ],
     "correct": 1,
-    "explanation": "CAPWAP is the control/data tunnel between WLC and APs.",
+    "explanation": "CAPWAP tunnels control (and often data) between a lightweight AP and the WLC. It replaced older LWAPP in Cisco architectures.",
     "difficulty": "Medium"
   },
   {
@@ -848,7 +848,7 @@ window.QUIZ_BANK = [
       "::1"
     ],
     "correct": 1,
-    "explanation": "Current globals sit in 2000::/3, e.g. 2001:db8::/32.",
+    "explanation": "Global unicast IPv6 currently sits in 2000::/3 (e.g. documentation prefix 2001:db8::/32). FE80::/10 is link-local, not global.",
     "difficulty": "Medium"
   },
   {
@@ -860,7 +860,7 @@ window.QUIZ_BANK = [
       "BGP"
     ],
     "correct": 1,
-    "explanation": "Code O = OSPF in the routing table.",
+    "explanation": "In show ip route, code O marks OSPF-learned routes. S is static, C connected, B BGP, D EIGRP—do not confuse the letter codes.",
     "difficulty": "Easy"
   },
   {
@@ -872,7 +872,7 @@ window.QUIZ_BANK = [
       "Only if PortFast is on"
     ],
     "correct": 1,
-    "explanation": "Access ports expect untagged frames of the assigned VLAN.",
+    "explanation": "Access ports belong to one VLAN and expect untagged frames (native for that VLAN). Tagged frames usually belong on trunks.",
     "difficulty": "Medium"
   },
   {
@@ -2037,7 +2037,7 @@ window.QUIZ_BANK = [
       "Highest uptime"
     ],
     "correct": 1,
-    "explanation": "Lowest Bridge ID wins: priority then MAC.",
+    "explanation": "STP elects the root by lowest Bridge ID: priority (default 32768) then MAC address. Lower priority wins over a higher MAC alone.",
     "difficulty": "Medium"
   },
   {
@@ -2049,7 +2049,7 @@ window.QUIZ_BANK = [
       "Negotiate a trunk"
     ],
     "correct": 1,
-    "explanation": "PortFast skips listening/learning on edge ports.",
+    "explanation": "PortFast moves an edge (access) port toward forwarding without waiting the full listening/learning timers—use with BPDU Guard.",
     "difficulty": "Medium"
   },
   {
@@ -2061,7 +2061,7 @@ window.QUIZ_BANK = [
       "router default"
     ],
     "correct": 0,
-    "explanation": "The default route is 0.0.0.0/0 to a next-hop or exit interface.",
+    "explanation": "The default route 0.0.0.0/0 matches any destination with no better prefix; next-hop or exit-interface points to the gateway of last resort.",
     "difficulty": "Easy"
   },
   {
@@ -2073,7 +2073,7 @@ window.QUIZ_BANK = [
       "Disables the firewall"
     ],
     "correct": 1,
-    "explanation": "PAT multiplexes many internals onto a public IP using L4 ports.",
+    "explanation": "PAT (NAT overload) maps many inside hosts to one (or few) public IP(s) by translating L4 ports. It is not 1:1 static NAT alone.",
     "difficulty": "Medium"
   },
   {
@@ -2085,7 +2085,7 @@ window.QUIZ_BANK = [
       "VLAN only"
     ],
     "correct": 1,
-    "explanation": "Extended ACLs allow fine L3/L4 matching.",
+    "explanation": "Extended ACLs can match protocol, source/destination IP, and L4 ports—finer control than standard ACLs (source IP only).",
     "difficulty": "Medium"
   },
   {
@@ -2097,7 +2097,7 @@ window.QUIZ_BANK = [
       "A DHCP server"
     ],
     "correct": 0,
-    "explanation": "HSRP shares a VIP; one router is active, another standby.",
+    "explanation": "HSRP provides a virtual IP/MAC; one router is Active forwarding, another Standby ready to take over on failure.",
     "difficulty": "Medium"
   },
   {
@@ -2109,7 +2109,7 @@ window.QUIZ_BANK = [
       "CAM aging"
     ],
     "correct": 1,
-    "explanation": "DAI checks ARP against DHCP snooping bindings.",
+    "explanation": "Dynamic ARP Inspection validates ARP against the DHCP Snooping binding table to stop ARP spoofing on untrusted ports.",
     "difficulty": "Hard"
   },
   {
@@ -2121,7 +2121,7 @@ window.QUIZ_BANK = [
       "Enables LACP"
     ],
     "correct": 1,
-    "explanation": "A rogue switch shuts the edge port.",
+    "explanation": "BPDU Guard err-disables a PortFast edge port if a BPDU appears—protecting against a rogue switch. It does not elect the STP root.",
     "difficulty": "Medium"
   },
   {
@@ -2133,7 +2133,31 @@ window.QUIZ_BANK = [
       "1000"
     ],
     "correct": 0,
-    "explanation": "Cost = ref/bw = 100000/100000 = 1.",
+    "explanation": "With OSPF reference bandwidth 100 Mbps (default historical), a 100 Mbps link has cost 1 (ref/bw). Higher speed needs auto-cost reference bump.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In an outbound QoS policy, what does the `priority` command do for a voice class-map?",
+    "options": [
+      "Guarantees proportional bandwidth to every class",
+      "Creates a strict-priority (LLQ) queue for that class, usually policed",
+      "Disables WRED on the interface",
+      "Marks all packets DSCP EF regardless of class"
+    ],
+    "correct": 1,
+    "explanation": "`priority` enables Low Latency Queuing (LLQ): a strict-priority queue for the class (typically voice), usually with a policer so it cannot starve the link.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Between a lightweight AP and a WLC, which statement about CAPWAP is correct?",
+    "options": [
+      "Client data traffic never goes through the WLC in local mode",
+      "CAPWAP uses DTLS for the control tunnel between AP and WLC",
+      "CAPWAP works only at Layer 2 and cannot cross routers",
+      "The AP stores all WLAN policies locally with no WLC contact"
+    ],
+    "correct": 1,
+    "explanation": "CAPWAP builds a DTLS-protected control tunnel between the lightweight AP and the WLC; a separate data tunnel may carry client traffic depending on mode.",
     "difficulty": "Medium"
   }
 ];

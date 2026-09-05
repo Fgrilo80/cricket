@@ -92,7 +92,7 @@
       "10 Gbps"
     ],
     "correct": 2,
-    "explanation": "Gigabit Ethernet (1000BASE-T) operates at 1000 Mbps (1 Gbps).",
+    "explanation": "Gigabit Ethernet over copper (1000BASE-T) runs at 1000 Mbps (1 Gbps) on Cat5e/Cat6. It is not Fast Ethernet (100 Mbps) and not 10 Gbps.",
     "difficulty": "Easy"
   },
   {
@@ -116,7 +116,7 @@
       "255.255.255.255"
     ],
     "correct": 2,
-    "explanation": "Class C networks use the default mask 255.255.255.0 (/24).",
+    "explanation": "IPv4 Class C defaults to mask 255.255.255.0 (/24): 24 network bits and 8 host bits. Class A is /8 and Class B is /16.",
     "difficulty": "Easy"
   },
   {
@@ -236,7 +236,7 @@
       "443"
     ],
     "correct": 2,
-    "explanation": "HTTP uses port 80 by default. HTTPS uses port 443.",
+    "explanation": "HTTP uses TCP port 80 by default; HTTPS (HTTP over TLS) uses TCP 443. Do not confuse with DNS (53), SSH (22), or Telnet (23).",
     "difficulty": "Easy"
   },
   {
@@ -308,7 +308,7 @@
       "show clock"
     ],
     "correct": 0,
-    "explanation": "The 'show ip route' command displays the routing table with all known routes.",
+    "explanation": "show ip route lists the IP routing table: connected, static, and dynamic routes with codes, next hops, and metrics. It is not the ARP or MAC table.",
     "difficulty": "Easy"
   },
   {
@@ -356,7 +356,7 @@
       "80"
     ],
     "correct": 1,
-    "explanation": "SSH uses port 22 by default.",
+    "explanation": "SSH listens on TCP port 22 by default and encrypts management sessions. Telnet uses 23 in cleartext; HTTPS is 443.",
     "difficulty": "Easy"
   },
   {
@@ -512,7 +512,7 @@
       "Erases the configuration"
     ],
     "correct": 1,
-    "explanation": "The 'no shutdown' command enables an interface that was administratively down.",
+    "explanation": "no shutdown administratively enables an interface that was shut down (status administratively down). It does not configure IP or speed by itself.",
     "difficulty": "Easy"
   },
   {
@@ -524,7 +524,7 @@
       "Show logs"
     ],
     "correct": 1,
-    "explanation": "The 'reload' command restarts the Cisco device.",
+    "explanation": "reload reboots the Cisco device (IOS). It is not write memory, not erase startup-config, and not a soft interface reset.",
     "difficulty": "Easy"
   },
   {
@@ -596,7 +596,7 @@
       "V.35 serial"
     ],
     "correct": 1,
-    "explanation": "Copper Ethernet uses twisted pair with RJ-45.",
+    "explanation": "Copper Ethernet typically uses twisted-pair cabling terminated on RJ-45. Fiber uses optical connectors (e.g. LC/SC), not RJ-45 for the optical path.",
     "difficulty": "Easy"
   },
   {
@@ -608,7 +608,7 @@
       "Repeater"
     ],
     "correct": 2,
-    "explanation": "Routers connect different networks using destination IP.",
+    "explanation": "Routers forward between different IP networks using the destination IP in the routing table. Switches forward within a LAN using MAC addresses.",
     "difficulty": "Easy"
   },
   {
@@ -620,7 +620,7 @@
       "NAT"
     ],
     "correct": 1,
-    "explanation": "DNS translates names to IP addresses.",
+    "explanation": "DNS resolves human-readable names to IP addresses (and reverse lookups). It is not DHCP (address assignment) and not NAT (address translation).",
     "difficulty": "Easy"
   },
   {
@@ -632,7 +632,7 @@
       "Only with PoE"
     ],
     "correct": 1,
-    "explanation": "Unmanaged switches have no config and no VLANs.",
+    "explanation": "Unmanaged switches are plug-and-play: no CLI/GUI config, no VLANs or STP tuning. Managed switches support VLANs, security, and monitoring.",
     "difficulty": "Easy"
   },
   {
@@ -644,7 +644,7 @@
       "Port mirroring"
     ],
     "correct": 1,
-    "explanation": "Phishing uses social engineering to steal data.",
+    "explanation": "Phishing tricks users (social engineering) into revealing credentials or clicking malicious links. It is not a buffer overflow exploit by itself.",
     "difficulty": "Easy"
   },
   {
@@ -656,7 +656,7 @@
       "USB"
     ],
     "correct": 1,
-    "explanation": "Fiber uses light pulses and is immune to EMI.",
+    "explanation": "Optical fiber carries data as light pulses and is immune to electromagnetic interference (EMI). Copper can pick up EMI; wireless can suffer RF noise.",
     "difficulty": "Easy"
   },
   {
@@ -668,7 +668,7 @@
       "It needs no IP"
     ],
     "correct": 1,
-    "explanation": "SSH (port 22) is encrypted; Telnet is cleartext.",
+    "explanation": "SSH (TCP 22) encrypts remote CLI sessions; Telnet (TCP 23) sends credentials and traffic in cleartext and should be avoided on production gear.",
     "difficulty": "Easy"
   },
   {
@@ -680,7 +680,7 @@
       "Data link"
     ],
     "correct": 1,
-    "explanation": "Layer 4 Transport is TCP and UDP.",
+    "explanation": "OSI Layer 4 (Transport) provides end-to-end segments via TCP (reliable) and UDP (connectionless). Layer 3 is IP routing; Layer 2 is frames/MAC.",
     "difficulty": "Medium"
   },
   {
@@ -692,7 +692,7 @@
       "Use only 4 digits"
     ],
     "correct": 1,
-    "explanation": "Unique passwords plus MFA limit breach impact.",
+    "explanation": "Unique strong passwords plus MFA reduce the blast radius of credential theft. Sharing one password or disabling updates increases risk.",
     "difficulty": "Easy"
   },
   {
@@ -704,7 +704,7 @@
       "show ip"
     ],
     "correct": 1,
-    "explanation": "ipconfig or ipconfig /all shows Windows addresses.",
+    "explanation": "On Windows, ipconfig (or ipconfig /all) shows IP, mask, gateway, and DNS. On Linux/macOS you typically use ip addr or ifconfig.",
     "difficulty": "Easy"
   },
   {
@@ -716,7 +716,7 @@
       "Opening a browser"
     ],
     "correct": 1,
-    "explanation": "Credential requests are phishing and must be reported.",
+    "explanation": "Unexpected credential requests in email/chat are classic phishing: verify independently and report to IT/SOC. Do not reply with passwords.",
     "difficulty": "Easy"
   },
   {
@@ -728,7 +728,7 @@
       "Wi-Fi channels"
     ],
     "correct": 1,
-    "explanation": "UTP categories define performance.",
+    "explanation": "UTP category (Cat5e, Cat6, etc.) defines cable performance limits (speed/frequency). Connector type alone does not set the category rating.",
     "difficulty": "Medium"
   },
   {
@@ -2052,5 +2052,29 @@
     "correct": 1,
     "explanation": "Phone+PC on one cable uses voice VLAN + data VLAN (or phone multi-VLAN). Voice OK / data dead points to data VLAN, PC cable, or phone config — not Wi-Fi.",
     "difficulty": "Hard"
+  },
+  {
+    "question": "How does an IPv6 host typically learn its network prefix with SLAAC?",
+    "options": [
+      "Only via DHCPv4 relaying",
+      "From Router Advertisement (RA) messages sent by the router",
+      "Only via reverse DNS lookups",
+      "Through broadcast ARP requests"
+    ],
+    "correct": 1,
+    "explanation": "With SLAAC, the host learns the prefix and parameters from the local router's Router Advertisement (ICMPv6); it may combine that with EUI-64/privacy addressing.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Which practice best reduces phishing risk on corporate email?",
+    "options": [
+      "Disable all OS updates",
+      "Verify sender/URL and use MFA; report suspicious messages",
+      "Share passwords only on internal chat",
+      "Open every .exe attachment in a user sandbox"
+    ],
+    "correct": 1,
+    "explanation": "Phishing targets human trust: verify sender and links, use MFA, and report to IT/SOC are practical first-line controls.",
+    "difficulty": "Easy"
   }
 ]

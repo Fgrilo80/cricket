@@ -536,7 +536,7 @@ window.QUIZ_BANK = [
       "O DR Ethernet"
     ],
     "correct": 1,
-    "explanation": "Type 3 Network Summary é criado pelo ABR.",
+    "explanation": "LSAs OSPFv2 Type 3 (Network Summary) são gerados pelos ABR para anunciar prefixos inter-área. Não são LSA Type 1 de router.",
     "difficulty": "Médio"
   },
   {
@@ -548,7 +548,7 @@ window.QUIZ_BANK = [
       "Apenas IPv6"
     ],
     "correct": 1,
-    "explanation": "Type 5 AS-External vem do ASBR (exceto NSSA que usa tipo 7).",
+    "explanation": "LSAs Type 5 AS-External são originados por ASBRs para rotas redistribuídas no OSPF; NSSA usa Type 7 traduzido para Type 5 pelo ABR.",
     "difficulty": "Médio"
   },
   {
@@ -560,7 +560,7 @@ window.QUIZ_BANK = [
       "Hello packets"
     ],
     "correct": 1,
-    "explanation": "Stub não recebe LSA 5; o ABR anuncia 0.0.0.0.",
+    "explanation": "Uma área stub bloqueia externas Type 5; o ABR injeta uma default (0.0.0.0) para os routers stub alcançarem o exterior.",
     "difficulty": "Difícil"
   },
   {
@@ -572,7 +572,7 @@ window.QUIZ_BANK = [
       "Um LSA tipo 1"
     ],
     "correct": 1,
-    "explanation": "Successor é a melhor rota (feasible distance).",
+    "explanation": "No EIGRP, o successor é o melhor caminho (menor feasible distance) instalado na RIB; feasible successors são backups sem loop.",
     "difficulty": "Médio"
   },
   {
@@ -584,7 +584,7 @@ window.QUIZ_BANK = [
       "Router-ID"
     ],
     "correct": 1,
-    "explanation": "Ordem típica: Weight, Local Pref, locally originated, shortest AS-Path...",
+    "explanation": "A ordem clássica BGP best-path começa pelo Weight mais alto, depois Local Preference, originadas localmente, AS_PATH mais curto, etc.",
     "difficulty": "Difícil"
   },
   {
@@ -596,7 +596,7 @@ window.QUIZ_BANK = [
       "Enviado aos eBGP peers"
     ],
     "correct": 1,
-    "explanation": "Weight não sai do router; maior vence.",
+    "explanation": "O Weight BGP é específico Cisco, local ao router e nunca anunciado; um Weight mais alto ganha primeiro na seleção de caminho.",
     "difficulty": "Difícil"
   },
   {
@@ -608,7 +608,7 @@ window.QUIZ_BANK = [
       "Substitui o AS-Path"
     ],
     "correct": 1,
-    "explanation": "Local Pref alto escolhe o exit point do AS.",
+    "explanation": "Local Preference mais alta influencia o caminho preferido para sair do AS local; é anunciada no iBGP, ao contrário do Weight.",
     "difficulty": "Médio"
   },
   {
@@ -620,7 +620,7 @@ window.QUIZ_BANK = [
       "15"
     ],
     "correct": 1,
-    "explanation": "eBGP assume peers diretamente ligados (TTL 1) salvo ebgp-multihop.",
+    "explanation": "Peers eBGP assumem TTL 1 (diretamente ligados). ebgp-multihop (ou TTL Security) é necessário para sessões eBGP multihop.",
     "difficulty": "Médio"
   },
   {
@@ -632,7 +632,7 @@ window.QUIZ_BANK = [
       "LSA tipo 5"
     ],
     "correct": 1,
-    "explanation": "Split horizon iBGP exige malha completa ou RR.",
+    "explanation": "iBGP não reanuncia a outros peers iBGP rotas aprendidas via iBGP (split horizon); por isso precisa de full mesh ou route reflectors/confederações.",
     "difficulty": "Difícil"
   },
   {
@@ -644,7 +644,7 @@ window.QUIZ_BANK = [
       "MED invertido"
     ],
     "correct": 1,
-    "explanation": "O RR relaxa a malha iBGP entre clientes.",
+    "explanation": "Um route reflector reflete rotas iBGP entre clientes para o AS evitar full mesh iBGP, mantendo atributos de prevenção de loops.",
     "difficulty": "Difícil"
   },
   {
@@ -656,7 +656,7 @@ window.QUIZ_BANK = [
       "Só IPv6"
     ],
     "correct": 1,
-    "explanation": "VRFs isolam routing/forwarding; Lite = sem MP-BGP/MPLS.",
+    "explanation": "VRFs separam tabelas de encaminhamento por tenant; VRF-Lite faz isso sem exigir MP-BGP/MPLS no núcleo.",
     "difficulty": "Difícil"
   },
   {
@@ -668,7 +668,7 @@ window.QUIZ_BANK = [
       "O DSCP"
     ],
     "correct": 1,
-    "explanation": "Top label = transporte; bottom (S=1) = serviço VPN.",
+    "explanation": "Em MPLS VPN, o rótulo de cima é tipicamente de transporte (IGP/LDP/SR) e o de baixo (S=1) é o rótulo de serviço VPN.",
     "difficulty": "Difícil"
   },
   {
@@ -680,7 +680,7 @@ window.QUIZ_BANK = [
       "Certificados PKI"
     ],
     "correct": 1,
-    "explanation": "LDP mapeia FEC (prefixos) a labels.",
+    "explanation": "O LDP distribui rótulos ligados a FECs (normalmente prefixos IPv4) para os LSR construírem LSPs.",
     "difficulty": "Médio"
   },
   {
@@ -692,7 +692,7 @@ window.QUIZ_BANK = [
       "Cifrar GRE"
     ],
     "correct": 1,
-    "explanation": "BFD da failure detection rápida a OSPF/EIGRP/BGP.",
+    "explanation": "O BFD deteta falhas no plano de encaminhamento em subsegundo; OSPF, EIGRP ou BGP usam-no para derrubar vizinhos depressa.",
     "difficulty": "Médio"
   },
   {
@@ -704,7 +704,7 @@ window.QUIZ_BANK = [
       "Criar VLANs"
     ],
     "correct": 1,
-    "explanation": "SLA probes + object tracking para PBR/HSRP/static.",
+    "explanation": "Probes IP SLA medem alcançabilidade/latência; object tracking pode conduzir PBR, prioridade HSRP/VRRP ou resiliência de rotas estáticas.",
     "difficulty": "Médio"
   },
   {
@@ -716,7 +716,7 @@ window.QUIZ_BANK = [
       "LLDP"
     ],
     "correct": 1,
-    "explanation": "PBR usa set ip next-hop segundo match de políticas.",
+    "explanation": "Policy-Based Routing (PBR) pode definir ip next-hop (ou interface) com base em matches de route-map em vez de só o lookup da RIB.",
     "difficulty": "Médio"
   },
   {
@@ -728,7 +728,7 @@ window.QUIZ_BANK = [
       "VRFs MPLS"
     ],
     "correct": 1,
-    "explanation": "Stack cria um switch lógico com SSO/NSF.",
+    "explanation": "Um stack de switches opera como um switch lógico com plano de controlo sincronizado (muitas vezes SSO/NSF) e IP de gestão partilhado.",
     "difficulty": "Médio"
   },
   {
@@ -740,7 +740,7 @@ window.QUIZ_BANK = [
       "Desligar BPDU Guard"
     ],
     "correct": 0,
-    "explanation": "vPC = port-channel multi-chassis sem stack completo.",
+    "explanation": "vPC (Nexus) apresenta um EtherChannel multi-chassis aos dispositivos a jusante sem exigir um domínio clássico de stack.",
     "difficulty": "Difícil"
   },
   {
@@ -752,7 +752,7 @@ window.QUIZ_BANK = [
       "VTP v3 só"
     ],
     "correct": 1,
-    "explanation": "LISP + VXLAN + ISE no fabric SDA.",
+    "explanation": "A fabric Cisco SD-Access combina tipicamente LISP no controlo, VXLAN no overlay de dados e ISE para política/identidade.",
     "difficulty": "Difícil"
   },
   {
@@ -764,7 +764,7 @@ window.QUIZ_BANK = [
       "Traduzir NAT64"
     ],
     "correct": 1,
-    "explanation": "ISE é o policy engine RADIUS do TrustSec/SDA.",
+    "explanation": "O Cisco ISE é o motor RADIUS/política para 802.1X, TrustSec e SDA—autoriza utilizadores/dispositivos e entrega política.",
     "difficulty": "Médio"
   },
   {
@@ -776,7 +776,7 @@ window.QUIZ_BANK = [
       "Um community BGP"
     ],
     "correct": 1,
-    "explanation": "SGTs classificam utilizadores; SGACL filtra entre grupos.",
+    "explanation": "Security Group Tags (SGTs) classificam utilizadores/dispositivos; SGACLs aplicam regras entre grupos independentemente só do IP.",
     "difficulty": "Difícil"
   },
   {
@@ -788,7 +788,7 @@ window.QUIZ_BANK = [
       "SNMP v2"
     ],
     "correct": 1,
-    "explanation": "NETCONF/SSH na 830; RESTCONF usa HTTPS.",
+    "explanation": "NETCONF corre tipicamente sobre SSH na TCP 830; RESTCONF usa HTTPS. Ambos gerem configuração/estado modelado em YANG.",
     "difficulty": "Médio"
   },
   {
@@ -800,7 +800,7 @@ window.QUIZ_BANK = [
       "O spanning-tree"
     ],
     "correct": 1,
-    "explanation": "YANG é a linguagem de modelação para NETCONF/RESTCONF.",
+    "explanation": "YANG é a linguagem de modelação de dados usada por NETCONF/RESTCONF para descrever configuração e estado—não é um transporte.",
     "difficulty": "Médio"
   },
   {
@@ -812,7 +812,7 @@ window.QUIZ_BANK = [
       "OSPFv2 obrigatório"
     ],
     "correct": 1,
-    "explanation": "Phase 3: NHRP redirect cria túnel direto entre spokes.",
+    "explanation": "No DMVPN Phase 3, NHRP redirect/shortcut permite aos spokes criar túneis diretos spoke-to-spoke em vez de passar pelo hub.",
     "difficulty": "Difícil"
   },
   {
@@ -824,7 +824,7 @@ window.QUIZ_BANK = [
       "PPTP"
     ],
     "correct": 1,
-    "explanation": "FlexVPN unifica DMVPN/EasyVPN/RA em IKEv2.",
+    "explanation": "FlexVPN é a framework Cisco baseada em IKEv2 que unifica VPN site-to-site, estilos tipo DMVPN e remote-access.",
     "difficulty": "Difícil"
   },
   {
@@ -836,7 +836,7 @@ window.QUIZ_BANK = [
       "O PoE"
     ],
     "correct": 1,
-    "explanation": "CoPP aplica QoS/ACL ao tráfego destined-to-box.",
+    "explanation": "Control Plane Policing (CoPP) aplica políticas QoS/ACL ao tráfego destinado ao route processor, protegendo protocolos que consomem CPU.",
     "difficulty": "Difícil"
   },
   {
@@ -848,7 +848,7 @@ window.QUIZ_BANK = [
       "Drops de BFD"
     ],
     "correct": 1,
-    "explanation": "Strict/loose uRPF descarta origens inconsistentes com a RIB.",
+    "explanation": "uRPF (strict ou loose) descarta pacotes cuja origem é inconsistente com a RIB/FIB—mitiga origens falsificadas.",
     "difficulty": "Difícil"
   },
   {
@@ -860,7 +860,7 @@ window.QUIZ_BANK = [
       "Marcar DSCP"
     ],
     "correct": 1,
-    "explanation": "PIM-SM: join ao RP; depois pode mudar para shortest-path tree.",
+    "explanation": "Em PIM-SM os recetores fazem join via Rendezvous Point primeiro; o tráfego pode depois mudar para a shortest-path tree (SPT) até à fonte.",
     "difficulty": "Difícil"
   },
   {
@@ -872,7 +872,7 @@ window.QUIZ_BANK = [
       "VTP pruning"
     ],
     "correct": 1,
-    "explanation": "Vários RPs com o mesmo IP; MSDP sincroniza source-active.",
+    "explanation": "Anycast RP permite a vários RPs partilharem um endereço para redundância; o MSDP troca frequentemente estado source-active entre RPs.",
     "difficulty": "Difícil"
   },
   {
@@ -1076,7 +1076,7 @@ window.QUIZ_BANK = [
       "IKEv1 suporta EAP e o IKEv2 não"
     ],
     "correct": 1,
-    "explanation": "IKEv2 usa 4 mensagens contra 9 do main mode. FlexVPN da Cisco assenta em IKEv2.",
+    "explanation": "IKEv2 usa menos mensagens que o main mode IKEv1 (comummente 4 vs 9) e é a base do FlexVPN Cisco. Por si só não é L2TP.",
     "difficulty": "Médio"
   },
   {
@@ -2008,7 +2008,7 @@ window.QUIZ_BANK = [
       "O ASBR noutro AS"
     ],
     "correct": 1,
-    "explanation": "Type 1 Router LSA descreve links do router na area.",
+    "explanation": "LSAs OSPFv2 Type 1 (Router) descrevem os links do router dentro da área e são inundados só nessa área.",
     "difficulty": "Médio"
   },
   {
@@ -2020,7 +2020,7 @@ window.QUIZ_BANK = [
       "LSA tipo 5"
     ],
     "correct": 1,
-    "explanation": "AD do candidato tem de ser menor que a FD da rota em uso.",
+    "explanation": "Feasible successor EIGRP: a advertised distance do vizinho tem de ser menor que a feasible distance do successor (condição de feasibility).",
     "difficulty": "Difícil"
   },
   {
@@ -2032,7 +2032,7 @@ window.QUIZ_BANK = [
       "O DSCP"
     ],
     "correct": 1,
-    "explanation": "VNI e o identificador do overlay VXLAN.",
+    "explanation": "O VXLAN Network Identifier (VNI) identifica o segmento overlay L2/L3 no fabric—não é só o ID de VLAN local nem um ASN BGP.",
     "difficulty": "Médio"
   },
   {
@@ -2044,7 +2044,7 @@ window.QUIZ_BANK = [
       "IPv6 link-local"
     ],
     "correct": 1,
-    "explanation": "GETVPN usa key server; nao muda IPs, bom em MPLS.",
+    "explanation": "GETVPN usa um key server para distribuir chaves; os cabeçalhos IP originais mantêm-se visíveis, o que serve núcleos MPLS que encaminham pelo IP real.",
     "difficulty": "Difícil"
   },
   {
@@ -2056,7 +2056,7 @@ window.QUIZ_BANK = [
       "Routing updates so"
     ],
     "correct": 1,
-    "explanation": "priority command = LLQ, com policer para nao esgotar o link.",
+    "explanation": "Numa policy-map, priority ativa LLQ (prioridade estrita) para uma classe e costuma ter policer para a voz não esgotar as outras filas.",
     "difficulty": "Médio"
   },
   {
@@ -2068,7 +2068,31 @@ window.QUIZ_BANK = [
       "Falha de NTP"
     ],
     "correct": 1,
-    "explanation": "WRED faz early drop ponderado; protege fluxos TCP.",
+    "explanation": "WRED descarta pacotes cedo com limiares por classe/peso para sinalizar congestão TCP antes de a fila fazer tail-drop total.",
     "difficulty": "Difícil"
+  },
+  {
+    "question": "Numa fabric Cisco SD-WAN, o que identifica um TLOC?",
+    "options": [
+      "Apenas o system-IP do vEdge",
+      "A combinação de system-IP, cor (color) e encapsulamento (ex.: ipsec/gre)",
+      "Só o site-ID configurado no vManage",
+      "O endereço MAC da interface de transport"
+    ],
+    "correct": 1,
+    "explanation": "Um TLOC (Transport Locator) é identificado por system-IP + color + encapsulation; é assim que o controlo/ overlay referencia um transport.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Numa rede iBGP com route reflectors, qual é o efeito principal de configurar um cliente sob um RR?",
+    "options": [
+      "O cliente deixa de precisar de sessiones eBGP",
+      "O RR pode refletir rotas iBGP entre clientes sem full-mesh iBGP",
+      "O RR desativa automaticamente route aggregation",
+      "Os clientes passam a preferir sempre rotas eBGP do RR"
+    ],
+    "correct": 1,
+    "explanation": "Route reflectors permitem escalar iBGP: o RR reflete rotas aprendidas de clientes para outros clientes/não-clientes, evitando o full-mesh.",
+    "difficulty": "Médio"
   }
 ];

@@ -92,7 +92,7 @@ window.QUIZ_BANK = [
       "10 Gbps"
     ],
     "correct": 2,
-    "explanation": "Ethernet Gigabit (1000Base-T) opera a 1000 Mbps (1 Gbps).",
+    "explanation": "Ethernet Gigabit em cobre (1000BASE-T) opera a 1000 Mbps (1 Gbps) em Cat5e/Cat6. Não é Fast Ethernet (100 Mbps) nem 10 Gbps.",
     "difficulty": "Fácil"
   },
   {
@@ -116,7 +116,7 @@ window.QUIZ_BANK = [
       "255.255.255.255"
     ],
     "correct": 2,
-    "explanation": "Redes Classe C usam máscara padrão 255.255.255.0 (/24).",
+    "explanation": "Redes IPv4 Classe C usam máscara padrão 255.255.255.0 (/24): 24 bits de rede e 8 de host. Classe A é /8 e Classe B é /16.",
     "difficulty": "Fácil"
   },
   {
@@ -236,7 +236,7 @@ window.QUIZ_BANK = [
       "443"
     ],
     "correct": 2,
-    "explanation": "HTTP usa a porta 80 por padrão. HTTPS usa a porta 443.",
+    "explanation": "HTTP usa a porta TCP 80 por padrão; HTTPS (HTTP sobre TLS) usa a 443. Não confundir com DNS (53), SSH (22) ou Telnet (23).",
     "difficulty": "Fácil"
   },
   {
@@ -356,7 +356,7 @@ window.QUIZ_BANK = [
       "80"
     ],
     "correct": 1,
-    "explanation": "SSH usa a porta 22 por padrão.",
+    "explanation": "O SSH usa a porta TCP 22 por padrão e cifra a sessão de gestão. Telnet usa 23 em claro; HTTPS é 443.",
     "difficulty": "Fácil"
   },
   {
@@ -524,7 +524,7 @@ window.QUIZ_BANK = [
       "Mostrar logs"
     ],
     "correct": 1,
-    "explanation": "O comando 'reload' reinicia o dispositivo Cisco.",
+    "explanation": "O comando reload reinicia o dispositivo Cisco (IOS). Não é write memory, não apaga a startup-config e não é só um reset de interface.",
     "difficulty": "Fácil"
   },
   {
@@ -596,7 +596,7 @@ window.QUIZ_BANK = [
       "Serial V.35"
     ],
     "correct": 1,
-    "explanation": "Ethernet em cobre usa par trançado terminado em RJ-45.",
+    "explanation": "Ethernet em cobre usa tipicamente par trançado terminado em RJ-45. Fibra usa conectores óticos (ex.: LC/SC), não RJ-45 no caminho ótico.",
     "difficulty": "Fácil"
   },
   {
@@ -608,7 +608,7 @@ window.QUIZ_BANK = [
       "Repetidor"
     ],
     "correct": 2,
-    "explanation": "Routers ligam redes diferentes usando o endereço IP de destino.",
+    "explanation": "Os routers encaminham entre redes IP diferentes com base no IP de destino na tabela de rotas. Switches encaminham na LAN com base no MAC.",
     "difficulty": "Fácil"
   },
   {
@@ -620,7 +620,7 @@ window.QUIZ_BANK = [
       "NAT"
     ],
     "correct": 1,
-    "explanation": "DNS traduz nomes em endereços IP.",
+    "explanation": "O DNS traduz nomes legíveis em endereços IP (e o inverso). Não é DHCP (atribuição de endereços) nem NAT (tradução de endereços).",
     "difficulty": "Fácil"
   },
   {
@@ -632,7 +632,7 @@ window.QUIZ_BANK = [
       "Só com PoE"
     ],
     "correct": 1,
-    "explanation": "Switches unmanaged não tem configuração nem VLANs.",
+    "explanation": "Switches unmanaged são plug-and-play: sem CLI/GUI, sem VLANs nem afinação de STP. Switches managed suportam VLANs, segurança e monitorização.",
     "difficulty": "Fácil"
   },
   {
@@ -644,7 +644,7 @@ window.QUIZ_BANK = [
       "Espelhamento de portas"
     ],
     "correct": 1,
-    "explanation": "Phishing usa engenharia social para roubar dados.",
+    "explanation": "Phishing usa engenharia social para induzir a revelar credenciais ou abrir links maliciosos. Por si só não é um exploit de buffer overflow.",
     "difficulty": "Fácil"
   },
   {
@@ -656,7 +656,7 @@ window.QUIZ_BANK = [
       "USB"
     ],
     "correct": 1,
-    "explanation": "Fibra ótica usa pulsos de luz, imune a EMI.",
+    "explanation": "A fibra ótica transporta dados em pulsos de luz e é imune a interferência eletromagnética (EMI). Cobre pode sofrer EMI; wireless sofre ruído RF.",
     "difficulty": "Fácil"
   },
   {
@@ -668,7 +668,7 @@ window.QUIZ_BANK = [
       "Não precisa de IP"
     ],
     "correct": 1,
-    "explanation": "SSH (porta 22) cifra; Telnet envia texto em claro.",
+    "explanation": "SSH (TCP 22) cifra sessões CLI remotas; Telnet (TCP 23) envia credenciais e tráfego em claro e deve evitar-se em produção.",
     "difficulty": "Fácil"
   },
   {
@@ -680,7 +680,7 @@ window.QUIZ_BANK = [
       "Enlace"
     ],
     "correct": 1,
-    "explanation": "A camada 4 Transporte usa TCP e UDP.",
+    "explanation": "A camada OSI 4 (Transporte) trata segmentos extremo-a-extremo com TCP (fiável) e UDP (sem conexão). A 3 é encaminhamento IP; a 2 são tramas/MAC.",
     "difficulty": "Médio"
   },
   {
@@ -692,7 +692,7 @@ window.QUIZ_BANK = [
       "Usar só 4 digitos"
     ],
     "correct": 1,
-    "explanation": "Palavras-passe únicas e MFA reduzem o impacto de fugas.",
+    "explanation": "Passwords únicas e fortes mais MFA reduzem o impacto de roubo de credenciais. Partilhar uma password ou desativar atualizações aumenta o risco.",
     "difficulty": "Fácil"
   },
   {
@@ -704,7 +704,7 @@ window.QUIZ_BANK = [
       "show ip"
     ],
     "correct": 1,
-    "explanation": "ipconfig ou ipconfig /all mostra endereços no Windows.",
+    "explanation": "No Windows, ipconfig (ou ipconfig /all) mostra IP, máscara, gateway e DNS. Em Linux/macOS usa-se tipicamente ip addr ou ifconfig.",
     "difficulty": "Fácil"
   },
   {
@@ -716,7 +716,7 @@ window.QUIZ_BANK = [
       "Abrir o browser"
     ],
     "correct": 1,
-    "explanation": "Pedidos de credenciais são phishing e devem ser reportados.",
+    "explanation": "Pedidos inesperados de credenciais por email/chat são phishing clássico: verificar por outro canal e reportar ao IT/SOC. Não enviar passwords.",
     "difficulty": "Fácil"
   },
   {
@@ -728,7 +728,7 @@ window.QUIZ_BANK = [
       "Canais Wi-Fi"
     ],
     "correct": 1,
-    "explanation": "Categorias UTP definem desempenho.",
+    "explanation": "A categoria UTP (Cat5e, Cat6, etc.) define os limites de desempenho do cabo (velocidade/frequência). O conector sozinho não define a categoria.",
     "difficulty": "Médio"
   },
   {
@@ -2052,5 +2052,29 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "Telefone+PC no mesmo cabo usa voice VLAN + data VLAN (ou multi-VLAN no telefone). Voz OK com dados mortos aponta para VLAN de dados/cabo PC ou config do telefone — não para Wi-Fi.",
     "difficulty": "Difícil"
+  },
+  {
+    "question": "Como um host IPv6 tipicamente obtém o prefixo de rede com SLAAC?",
+    "options": [
+      "Apenas via DHCPv4 relaying",
+      "A partir do Router Advertisement (RA) enviado pelo router",
+      "Só com consulta DNS inversa",
+      "Através de ARP requests em broadcast"
+    ],
+    "correct": 1,
+    "explanation": "Com SLAAC, o host usa informações do Router Advertisement (ICMPv6) do router local para saber o prefixo e parâmetros; pode combinar com EUI-64/privacy.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual prática reduz melhor o risco de phishing no email corporativo?",
+    "options": [
+      "Desativar todas as atualizações do SO",
+      "Verificar remetente/URL e usar MFA; reportar mensagens suspeitas",
+      "Partilhar passwords só por chat interno",
+      "Abrir todos os anexos .exe em sandbox do utilizador"
+    ],
+    "correct": 1,
+    "explanation": "Phishing explora confiança humana: validar remetente e links, MFA e reportar ao SOC/IT são controlos práticos de primeira linha.",
+    "difficulty": "Fácil"
   }
 ];
