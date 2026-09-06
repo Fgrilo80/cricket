@@ -2094,5 +2094,29 @@
     "correct": 1,
     "explanation": "Route reflectors permitem escalar iBGP: o RR reflete rotas aprendidas de clientes para outros clientes/não-clientes, evitando o full-mesh.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Como é que LLQ difere de CBWFQ simples para voz em tempo real?",
+    "options": [
+      "LLQ remove todo o policing da rede",
+      "LLQ acrescenta uma fila strict-priority para a voz sair à frente das classes CBWFQ (muitas vezes com policer a limitar a banda priority)",
+      "CBWFQ prefere sempre a voz em relação a LLQ",
+      "LLQ só funciona em Frame Relay"
+    ],
+    "correct": 1,
+    "explanation": "LLQ = CBWFQ mais uma fila priority. Voz/vídeo ficam com baixa latência; um policer na priority evita que a classe priority esgote as outras filas.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "No Cisco Catalyst Center (DNA Center) Assurance, os client health scores servem sobretudo para:",
+    "options": [
+      "Substituir OSPF por rotas estáticas automaticamente",
+      "Ver problemas de onboarding, conectividade e experiência de aplicações de clientes wired/wireless ao longo do tempo",
+      "Desativar coletores NetFlow",
+      "Forçar todos os APs para Monitor Mode"
+    ],
+    "correct": 1,
+    "explanation": "Assurance agrega telemetria (onboarding, RSSI, DHCP/AAA, app experience) em health de cliente/dispositivo para troubleshooting de tendências e falhas — não para reescrever routing.",
+    "difficulty": "Médio"
   }
 ]

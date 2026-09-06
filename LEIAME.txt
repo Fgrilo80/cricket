@@ -21,10 +21,10 @@ Formato de cada pergunta:
 `correct` é o índice da opção certa (0, 1, 2 ou 3).
 
 Contagens atuais:
-- CCST PT 173 / EN 173
-- CCNA PT 179 / EN 179
-- CCNP PT 174 / EN 174
-- Total 1052
+- CCST PT 175 / EN 175
+- CCNA PT 181 / EN 181
+- CCNP PT 176 / EN 176
+- Total 1064
 Prática: feedback imediato após cada resposta. Exame: até 50 perguntas, 45 minutos, sem revelar até ao fim.
 
 ## Telemóvel

@@ -2159,5 +2159,29 @@
     "correct": 1,
     "explanation": "CAPWAP estabelece um túnel de controlo protegido com DTLS entre o AP lightweight e o WLC; o túnel de dados pode ser encapsulado à parte conforme o modo.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "No EIGRP, um feasible successor é uma rota de backup que:",
+    "options": [
+      "Tem o AD mais alto na tabela de topologia",
+      "Cumpre a condição de viabilidade (reported distance < feasible distance do successor) e pode substituir o successor sem query",
+      "Tem de ser aprendida sempre via OSPF",
+      "Só é usada depois da convergência BGP"
+    ],
+    "correct": 1,
+    "explanation": "Feasible successors cumprem RD < FD do successor atual, por isso são backups free-loop e assumem de imediato sem queries DUAL.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O estado de interface `Administratively down / down` significa na maioria das vezes:",
+    "options": [
+      "Só o cabo desligado",
+      "A interface foi desligada com o comando `shutdown`",
+      "O STP bloqueou a porta como alternate",
+      "Uma ACL negou todo o tráfego"
+    ],
+    "correct": 1,
+    "explanation": "Administratively down significa shutdown na interface. Protocolo down com falha up/up é cabo, speed ou problemas L1/L2 — não é o mesmo que admin down.",
+    "difficulty": "Fácil"
   }
 ]

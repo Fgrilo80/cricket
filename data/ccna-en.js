@@ -2159,5 +2159,29 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "CAPWAP builds a DTLS-protected control tunnel between the lightweight AP and the WLC; a separate data tunnel may carry client traffic depending on mode.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "In EIGRP, a feasible successor is a backup route that:",
+    "options": [
+      "Has the highest AD in the topology table",
+      "Meets the feasibility condition (reported distance < feasible distance of the successor) and can replace the successor without a query",
+      "Must always be learned via OSPF",
+      "Is only used after BGP convergence"
+    ],
+    "correct": 1,
+    "explanation": "Feasible successors satisfy RD < FD of the current successor, so they are loop-free backups and can take over immediately without DUAL queries.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Interface status `Administratively down / down` most often means:",
+    "options": [
+      "Cable unplugged only",
+      "The interface was shut down with the `shutdown` command",
+      "STP blocked the port as alternate",
+      "ACL denied all traffic"
+    ],
+    "correct": 1,
+    "explanation": "Administratively down means the interface is in shutdown. Line protocol down with up/up failure is cabling, speed, or Layer-1/2 issues — not the same as admin down.",
+    "difficulty": "Easy"
   }
 ];

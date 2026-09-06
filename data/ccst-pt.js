@@ -2076,5 +2076,29 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "Phishing explora confiança humana: validar remetente e links, MFA e reportar ao SOC/IT são controlos práticos de primeira linha.",
     "difficulty": "Fácil"
+  },
+  {
+    "question": "Porque ativar STP PortFast numa porta de acesso para um PC ou impressora?",
+    "options": [
+      "Para eleger essa porta como root bridge STP",
+      "Para saltar listening/learning, passar a forwarding mais depressa e evitar atrasos de DHCP/arranque",
+      "Para desativar BPDU filtering em todo o campus",
+      "Para forçar o link a half duplex"
+    ],
+    "correct": 1,
+    "explanation": "PortFast (edge) salta listening/learning em portas de host para forwarding imediato. Combina com BPDU Guard; nunca uses PortFast em links para switches.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um link de cobre mostra erros CRC/input e late collisions depois de um lado ficar em 100/full manual. Qual é a causa mais provável?",
+    "options": [
+      "Mismatch de área OSPF",
+      "TTL de DNS demasiado baixo",
+      "Mismatch de duplex (o outro lado ainda em auto/half)",
+      "Community SNMP errada"
+    ],
+    "correct": 2,
+    "explanation": "Fixar speed/duplex num extremo enquanto o outro faz auto-negociação costuma criar mismatch de duplex: CRC, runts e late collisions sob carga.",
+    "difficulty": "Médio"
   }
 ];

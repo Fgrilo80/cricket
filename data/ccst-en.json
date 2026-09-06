@@ -2076,5 +2076,29 @@
     "correct": 1,
     "explanation": "Phishing targets human trust: verify sender and links, use MFA, and report to IT/SOC are practical first-line controls.",
     "difficulty": "Easy"
+  },
+  {
+    "question": "Why enable STP PortFast on an access port facing a PC or printer?",
+    "options": [
+      "To elect that port as the STP root bridge",
+      "To skip listening/learning so the port goes forwarding faster and avoid DHCP/boot delays",
+      "To disable all BPDU filtering campus-wide",
+      "To force the link to half duplex"
+    ],
+    "correct": 1,
+    "explanation": "PortFast (edge) skips listening/learning on end-host ports so they forward immediately. Pair with BPDU Guard; never use PortFast on links to switches.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "A copper link shows CRC/input errors and late collisions after one side was set to 100/full manually. What is the most likely cause?",
+    "options": [
+      "OSPF area mismatch",
+      "DNS TTL too low",
+      "Duplex mismatch (other side still auto/half)",
+      "Wrong SNMP community"
+    ],
+    "correct": 2,
+    "explanation": "Hard-setting speed/duplex on one end while the other auto-negotiates often yields duplex mismatch: CRCs, runts, and late collisions under load.",
+    "difficulty": "Medium"
   }
 ]

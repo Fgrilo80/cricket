@@ -2094,5 +2094,29 @@
     "correct": 1,
     "explanation": "Route reflectors scale iBGP: the RR reflects routes learned from clients to other clients/nonclients, avoiding a full mesh.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "How does LLQ differ from plain CBWFQ for real-time voice?",
+    "options": [
+      "LLQ removes all policing from the network",
+      "LLQ adds a strict-priority queue so voice can dequeue ahead of CBWFQ classes (often with a policer to limit priority bandwidth)",
+      "CBWFQ always prefers voice over LLQ",
+      "LLQ only works on Frame Relay"
+    ],
+    "correct": 1,
+    "explanation": "LLQ = CBWFQ plus a priority queue. Voice/video get low latency; a priority policer prevents the priority class from starving other queues.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "In Cisco Catalyst Center (DNA Center) Assurance, client health scores primarily help you:",
+    "options": [
+      "Replace OSPF with static routes automatically",
+      "See onboarding, connectivity, and application experience issues for wired/wireless clients over time",
+      "Disable NetFlow collectors",
+      "Force all APs into Monitor Mode"
+    ],
+    "correct": 1,
+    "explanation": "Assurance aggregates telemetry (onboarding, RSSI, DHCP/AAA, app experience) into client/device health so you can troubleshoot trends and failures, not rewrite routing.",
+    "difficulty": "Medium"
   }
 ]
