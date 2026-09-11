@@ -2118,5 +2118,29 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "Assurance aggregates telemetry (onboarding, RSSI, DHCP/AAA, app experience) into client/device health so you can troubleshoot trends and failures, not rewrite routing.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "Model-Driven Telemetry (MDT) with gRPC/dial-out is preferred over classic SNMP polling mainly because it:",
+    "options": [
+      "Streams subscribed YANG-modeled data continuously (push) with lower overhead and richer structured updates than repeated SNMP GETs",
+      "Works only on Frame Relay interfaces",
+      "Replaces BGP with YANG notifications on the control plane",
+      "Removes the need for any collector or subscription"
+    ],
+    "correct": 0,
+    "explanation": "MDT uses YANG models and subscriptions (often gRPC dial-out or dial-in) to push telemetry to collectors. Compared with SNMP polling, you get continuous, structured updates with less chatter and better scale for modern assurance.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "IEEE 802.11ax (Wi-Fi 6) improves high-density WLAN efficiency primarily with:",
+    "options": [
+      "Disabling DFS channels in all regulatory domains",
+      "Replacing CAPWAP with plain Layer-2 bridging only",
+      "OFDMA, MU-MIMO enhancements, BSS coloring, and Target Wake Time to serve more clients with less airtime contention",
+      "Mandatory WEP encryption on every SSID"
+    ],
+    "correct": 2,
+    "explanation": "802.11ax focuses on efficiency in dense environments: OFDMA schedules multi-user resource units, improved MU-MIMO, BSS coloring reduces co-channel interference impact, and TWT saves client power. It is not about dropping CAPWAP or using WEP.",
+    "difficulty": "Medium"
   }
 ];

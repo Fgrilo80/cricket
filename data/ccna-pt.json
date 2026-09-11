@@ -2183,5 +2183,29 @@
     "correct": 1,
     "explanation": "Administratively down significa shutdown na interface. Protocolo down com falha up/up é cabo, speed ou problemas L1/L2 — não é o mesmo que admin down.",
     "difficulty": "Fácil"
+  },
+  {
+    "question": "Em comparação com HSRP, qual é uma característica definidora do VRRP em routers Cisco?",
+    "options": [
+      "O VRRP exige sempre weighting GLBP em cada grupo",
+      "O VRRP substitui por completo o OSPF na LAN",
+      "O VRRP só corre em switches L2, nunca em routers",
+      "O VRRP é um protocolo FHRP open standard (RFC); o IP virtual pode ser um IP real da interface do master"
+    ],
+    "correct": 3,
+    "explanation": "VRRP (RFC) é FHRP baseado em standard. Ao contrário do HSRP clássico, o IP virtual VRRP pode ser um IP do router master. HSRP é proprietário Cisco; GLBP acrescenta balanceamento ativo-ativo.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Uma área OSPF stub é configurada para que:",
+    "options": [
+      "Communities BGP substituam todos os LSAs OSPF dentro da área",
+      "LSAs externas Type 5 sejam bloqueadas e o ABR injete tipicamente uma rota default em alternativa",
+      "Só sejam inundadas externas Type 5 e todos os LSA Type 1/2 sejam descartados",
+      "A área tenha de conter o ASBR que origina todas as rotas externas"
+    ],
+    "correct": 1,
+    "explanation": "Áreas stub mantêm a LSDB mais pequena: sem LSA Type 5 (externas). O ABR costuma injetar default para os routers internos chegarem ao exterior. Totally stubby também bloqueia Type 3 inter-área (Cisco).",
+    "difficulty": "Difícil"
   }
 ]

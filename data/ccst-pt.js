@@ -2100,5 +2100,29 @@ window.QUIZ_BANK = [
     "correct": 2,
     "explanation": "Fixar speed/duplex num extremo enquanto o outro faz auto-negociação costuma criar mismatch de duplex: CRC, runts e late collisions sob carga.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "O que é que o `switchport port-security` protege principalmente numa porta de acesso?",
+    "options": [
+      "AS-path prepending BGP por peers upstream",
+      "Flaps de vizinhos OSPF por mismatch de MTU",
+      "Endereços MAC não autorizados nessa porta (limite/learn sticky e ação de violação)",
+      "Envenenamento de cache DNS no resolver"
+    ],
+    "correct": 2,
+    "explanation": "Port security limita quais MACs podem usar uma porta de acesso (estático, dinâmico ou sticky). Em violação pode protect, restrict ou shutdown — controlo L2 básico para hosts finais.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "O DHCP snooping num switch de acesso serve principalmente para:",
+    "options": [
+      "Aceitar ofertas DHCP só de portas trusted (normalmente uplinks para o servidor real) e descartar respostas DHCP rogue",
+      "Substituir DHCP por endereçamento estático em todo o campus",
+      "Forçar automaticamente todos os clientes para private VLAN",
+      "Encriptar todos os pacotes DHCP com IPsec"
+    ],
+    "correct": 0,
+    "explanation": "DHCP snooping cria uma binding table e só trata portas trusted configuradas como servidores DHCP válidos. Ofertas rogue em portas untrusted são descartadas, reduzindo MITM e gateway errado.",
+    "difficulty": "Médio"
   }
 ];

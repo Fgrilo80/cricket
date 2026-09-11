@@ -2100,5 +2100,29 @@
     "correct": 2,
     "explanation": "Hard-setting speed/duplex on one end while the other auto-negotiates often yields duplex mismatch: CRCs, runts, and late collisions under load.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "What does switchport port-security primarily protect against on an access port?",
+    "options": [
+      "BGP AS-path prepending by upstream peers",
+      "OSPF neighbor flaps caused by MTU mismatch",
+      "Unauthorized MAC addresses connecting to that port (limit/learn sticky MACs and violate action)",
+      "DNS cache poisoning on the resolver"
+    ],
+    "correct": 2,
+    "explanation": "Port security limits which MAC addresses may use an access port (static, dynamic, or sticky). On violation it can protect, restrict, or shut down the port — a basic Layer-2 access control for end hosts.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "DHCP snooping on an access switch is mainly used to:",
+    "options": [
+      "Accept DHCP offers only from trusted ports (usually uplinks to the real server) and drop rogue DHCP replies",
+      "Replace DHCP with static addressing campus-wide",
+      "Force every client into a private VLAN automatically",
+      "Encrypt all DHCP packets with IPsec"
+    ],
+    "correct": 0,
+    "explanation": "DHCP snooping builds a binding table and treats only configured trusted ports as valid DHCP servers. Rogue offers from untrusted access ports are dropped, reducing MITM and wrong-gateway attacks.",
+    "difficulty": "Medium"
   }
 ]
