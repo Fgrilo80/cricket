@@ -2207,5 +2207,29 @@
     "correct": 1,
     "explanation": "Áreas stub mantêm a LSDB mais pequena: sem LSA Type 5 (externas). O ABR costuma injetar default para os routers internos chegarem ao exterior. Totally stubby também bloqueia Type 3 inter-área (Cisco).",
     "difficulty": "Difícil"
+  },
+  {
+    "question": "Na Camada 3, que campo se usa habitualmente para marcar pacotes para classificação QoS ponta a ponta?",
+    "options": [
+      "Apenas os bits CoS 802.1Q (sobrevivem inalterados em cada hop routed)",
+      "O tamanho da janela TCP",
+      "O opcode ARP",
+      "DSCP no cabeçalho IP (ToS/Traffic Class); CoS é Camada 2 em trunks 802.1Q"
+    ],
+    "correct": 3,
+    "explanation": "O DSCP (Differentiated Services Code Point) no cabeçalho IP marca pacotes para QoS em redes routed. O CoS 802.1Q (PCP) é marcação L2 no trunk e não se preserva depois do frame ser routed.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Como se relaciona o IPFIX com o NetFlow clássico nas plataformas Cisco?",
+    "options": [
+      "IPFIX é só uma extensão CDP de Camada 2 e não exporta flows",
+      "IPFIX (RFC 7011) é a evolução padronizada IETF da exportação de flows; o NetFlow v9 inspirou-o e muitos exporters falam ambos",
+      "IPFIX substitui LSAs OSPF por registos de flow",
+      "IPFIX desativa o CEF para process-switching de todos os pacotes"
+    ],
+    "correct": 1,
+    "explanation": "IPFIX é o standard IETF para exportar informação de flows, muito baseado nos templates do NetFlow v9. Os vendors costumam suportar coletores NetFlow e IPFIX; ambos exportam metadados das conversas, não o payload completo.",
+    "difficulty": "Médio"
   }
 ]

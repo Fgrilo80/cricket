@@ -2142,5 +2142,29 @@
     "correct": 2,
     "explanation": "802.11ax foca eficiência em ambientes densos: OFDMA agenda resource units multi-utilizador, MU-MIMO melhorado, BSS coloring reduz impacto de interferência co-canal e TWT poupa energia nos clientes. Não é abandonar CAPWAP nem usar WEP.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a principal razão operacional para usar ERSPAN em vez de SPAN local?",
+    "options": [
+      "Encapsular o tráfego espelhado em GRE e enviá-lo pela rede IP até um analisador remoto",
+      "Encriptar o plano de controlo com IPsec por omissão",
+      "Substituir completamente a amostragem NetFlow",
+      "Desativar o STP na VLAN monitorizada"
+    ],
+    "correct": 0,
+    "explanation": "ERSPAN (Encapsulated Remote SPAN) encapsula frames espelhados em GRE para um analisador central receber cópias de switches noutros pontos do fabric IP. SPAN local fica no mesmo switch; RSPAN usa uma VLAN.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "No FlexConnect wireless Cisco, o que consegue o local switching num AP de branch remoto?",
+    "options": [
+      "Obriga todos os frames do utilizador a voltar ao WLC antes de chegar à LAN local",
+      "Desativa todos os SSIDs quando o túnel CAPWAP cai",
+      "Faz bridge do tráfego de cliente para a VLAN wired local no AP (quando configurado), mesmo com caminho ao WLC limitado",
+      "Converte o AP num route reflector BGP completo"
+    ],
+    "correct": 2,
+    "explanation": "FlexConnect (H-REAP) com local switching deixa o AP fazer bridge do tráfego de cliente para uma VLAN local do branch, evitando hairpin no WAN até ao controller. Central switching envia os dados ao WLC; há opções locais para falha de WAN.",
+    "difficulty": "Difícil"
   }
 ]

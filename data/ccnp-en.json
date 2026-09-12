@@ -2142,5 +2142,29 @@
     "correct": 2,
     "explanation": "802.11ax focuses on efficiency in dense environments: OFDMA schedules multi-user resource units, improved MU-MIMO, BSS coloring reduces co-channel interference impact, and TWT saves client power. It is not about dropping CAPWAP or using WEP.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "What is the main operational reason to use ERSPAN instead of local SPAN?",
+    "options": [
+      "To encapsulate mirrored traffic in GRE and send it across an IP network to a remote analyzer",
+      "To encrypt the control plane with IPsec by default",
+      "To replace NetFlow sampling entirely",
+      "To disable STP on the monitored VLAN"
+    ],
+    "correct": 0,
+    "explanation": "ERSPAN (Encapsulated Remote SPAN) GRE-encapsulates mirrored frames so a central packet analyzer can receive copies from switches elsewhere in the IP fabric. Local SPAN stays on the same switch; RSPAN uses a VLAN.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "In Cisco wireless FlexConnect, what does local switching achieve at a remote branch AP?",
+    "options": [
+      "Forces every user frame back to the WLC before it can reach the local LAN",
+      "Disables all SSIDs when the CAPWAP tunnel drops",
+      "Bridges client data to the local wired VLAN at the AP when configured, even if the WLC path is constrained",
+      "Converts the AP into a full BGP route reflector"
+    ],
+    "correct": 2,
+    "explanation": "FlexConnect (H-REAP) local switching lets the AP bridge client traffic onto a local branch VLAN, reducing WAN hairpinning to the controller. Central switching tunnels user data to the WLC; local auth/switching options cover WAN failure modes.",
+    "difficulty": "Hard"
   }
 ]

@@ -2207,5 +2207,29 @@
     "correct": 1,
     "explanation": "Stub areas keep the LSDB smaller: no Type 5 (external) LSAs. The ABR usually injects a default route so internal routers still reach external destinations. Totally stubby also blocks inter-area Type 3 summaries (Cisco).",
     "difficulty": "Hard"
+  },
+  {
+    "question": "At Layer 3, which field is commonly used to mark packets for QoS classification end-to-end?",
+    "options": [
+      "The 802.1Q CoS bits only (they survive every routed hop unchanged)",
+      "The TCP window size",
+      "The ARP opcode",
+      "DSCP in the IP header (ToS/Traffic Class); CoS is Layer-2 on 802.1Q trunks"
+    ],
+    "correct": 3,
+    "explanation": "DSCP (Differentiated Services Code Point) in the IP header marks packets for QoS across routed networks. 802.1Q CoS (PCP) is a Layer-2 trunk marking and is not preserved once the frame is routed.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "How does IPFIX relate to classic NetFlow on Cisco platforms?",
+    "options": [
+      "IPFIX is only a Layer-2 CDP extension and cannot export flows",
+      "IPFIX (RFC 7011) is the IETF standardized evolution of flow export; NetFlow v9 inspired it and many exporters speak both",
+      "IPFIX replaces OSPF LSAs with flow records",
+      "IPFIX disables CEF so every packet is process-switched"
+    ],
+    "correct": 1,
+    "explanation": "IPFIX is the IETF standard for flow information export, heavily based on NetFlow v9 templates. Vendors often support NetFlow and IPFIX collectors; both export metadata about conversations, not full payloads.",
+    "difficulty": "Medium"
   }
 ]

@@ -2124,5 +2124,29 @@ window.QUIZ_BANK = [
     "correct": 0,
     "explanation": "DHCP snooping cria uma binding table e só trata portas trusted configuradas como servidores DHCP válidos. Ofertas rogue em portas untrusted são descartadas, reduzindo MITM e gateway errado.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "No VTP clássico da Cisco, o que faz o modo Transparent?",
+    "options": [
+      "Apaga todas as VLANs e força todos os switches para Client",
+      "Só anuncia VLANs aprendidas via RADIUS",
+      "Reencaminha anúncios VTP mas não atualiza a sua própria base de VLANs com eles",
+      "Encripta automaticamente todos os trunks VLAN com MACsec"
+    ],
+    "correct": 2,
+    "explanation": "Um switch VTP Transparent retransmite mensagens VTP nos trunks, mas mantém a base de VLANs local e não aprende nem propaga alterações no domínio VTP. Server cria/altera; Client sincroniza a partir do Server.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No STP, que bridge se torna a root bridge da spanning tree?",
+    "options": [
+      "O switch com o Bridge ID mais baixo (prioridade + MAC), após comparar Bridge IDs",
+      "Sempre o switch com mais portas",
+      "O primeiro switch a arrancar na VLAN",
+      "Só um router multilayer pode ser root"
+    ],
+    "correct": 0,
+    "explanation": "O STP elege a root pelo Bridge ID mais baixo: prioridade configurada (default 32768) mais o MAC do switch. Prioridade mais baixa ganha; em empate, o MAC mais baixo. As root ports apontam para essa root.",
+    "difficulty": "Fácil"
   }
 ];
