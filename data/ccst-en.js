@@ -2148,5 +2148,29 @@ window.QUIZ_BANK = [
     "correct": 0,
     "explanation": "STP elects the root by lowest Bridge ID: configured priority (default 32768) plus the switch MAC. Lower priority wins; if tied, the lower MAC wins. Root ports then point toward that root.",
     "difficulty": "Easy"
+  },
+  {
+    "question": "On Cisco devices, what is TFTP most commonly used for?",
+    "options": [
+      "Encrypting management sessions end-to-end like SSH",
+      "Replacing OSPF as the interior routing protocol",
+      "Authenticating wireless clients with certificates",
+      "Simple transfer of IOS images and configuration files (UDP 69), without built-in authentication or encryption"
+    ],
+    "correct": 3,
+    "explanation": "TFTP (Trivial File Transfer Protocol) uses UDP 69 and is widely used to copy IOS images and running/startup configs to or from a server. It is lightweight but has no authentication or encryption; use it only on trusted management networks. FTP adds login and TCP reliability; SCP/SFTP are safer when available.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What does configuring ip helper-address on a router interface typically enable?",
+    "options": [
+      "It turns the router into a DHCP server that invents leases locally",
+      "DHCP relay: it forwards DHCP broadcasts from clients as unicast to a remote DHCP server",
+      "It disables all broadcasts on that VLAN permanently",
+      "It only translates IPv6 Neighbor Discovery to IPv4 ARP"
+    ],
+    "correct": 1,
+    "explanation": "ip helper-address enables DHCP relay (among other UDP helpers): the router receives a client DHCP broadcast on the LAN and forwards it as unicast to the configured DHCP server IP, so clients and the server can sit on different subnets. The router is not inventing leases unless it is also configured as a DHCP server.",
+    "difficulty": "Medium"
   }
 ];

@@ -2166,5 +2166,29 @@
     "correct": 2,
     "explanation": "FlexConnect (H-REAP) com local switching deixa o AP fazer bridge do tráfego de cliente para uma VLAN local do branch, evitando hairpin no WAN até ao controller. Central switching envia os dados ao WLC; há opções locais para falha de WAN.",
     "difficulty": "Difícil"
+  },
+  {
+    "question": "Contra o que protege o IPv6 RA Guard num switch de acesso?",
+    "options": [
+      "Bloqueia para sempre todo o tráfego IPv6 exceto DHCPv6",
+      "Filtra Router Advertisements rogue nas portas de acesso para só portas trusted poderem anunciar prefixos/gateways",
+      "Substitui o SLAAC por endereçamento estático obrigatório em todos os hosts",
+      "Encripta automaticamente o Neighbor Discovery com IPsec"
+    ],
+    "correct": 1,
+    "explanation": "O RA Guard (IPv6 First Hop Security) descarta Router Advertisements inesperados em portas de acesso untrusted, impedindo dispositivos rogue de anunciar prefixos ou gateways falsos. Portas trusted (uplink/router) podem enviar RAs. Complementa DHCPv6 Guard e ND inspection.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "No Cisco SD-WAN, qual é o papel principal do orquestrador vBond?",
+    "options": [
+      "É o único que reencaminha todos os pacotes de dados do utilizador no underlay",
+      "Substitui todos os routers de edge WAN por bridges de Camada 2",
+      "Só guarda registos NetFlow para compliance",
+      "Autentica e apresenta os WAN Edge ao overlay (vSmart/vManage), permitindo o onboarding seguro"
+    ],
+    "correct": 3,
+    "explanation": "O vBond é o orquestrador: os WAN Edges autenticam-se primeiro nele; depois o vBond indica como chegar ao vSmart (controlo) e ao vManage (gestão). O data plane fica entre edges (muitas vezes com IPsec); o vSmart distribui política de controlo via OMP. O vBond é crítico no bring-up zero-touch e na ajuda com NAT.",
+    "difficulty": "Difícil"
   }
 ]

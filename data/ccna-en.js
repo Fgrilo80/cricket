@@ -2231,5 +2231,29 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "IPFIX is the IETF standard for flow information export, heavily based on NetFlow v9 templates. Vendors often support NetFlow and IPFIX collectors; both export metadata about conversations, not full payloads.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "What is a floating static route used for?",
+    "options": [
+      "A backup static route with a higher administrative distance than the primary path, installed only if the preferred route fails",
+      "A static route that always beats OSPF because static AD is infinite",
+      "A route that load-balances equally with every dynamic protocol by default",
+      "A host route that can only point to a null0 interface"
+    ],
+    "correct": 0,
+    "explanation": "A floating static is configured with an administrative distance higher than the primary route (for example static AD 1 raised to 210 so OSPF AD 110 wins). It stays out of the routing table until the preferred route disappears, then becomes the backup path. It does not beat OSPF unless you keep the default static AD of 1.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "On an OSPF multi-access segment (Ethernet), how are the Designated Router (DR) and Backup DR (BDR) chosen?",
+    "options": [
+      "Always the router with the lowest OSPF process ID",
+      "Only the router that has a static default route",
+      "Highest OSPF interface priority wins; if tied, highest Router ID wins (BDR is next)",
+      "Round-robin among all neighbors every Hello interval"
+    ],
+    "correct": 2,
+    "explanation": "On broadcast multi-access networks OSPF elects a DR and BDR to reduce adjacency flooding. Highest interface priority (0–255; 0 means ineligible) wins; ties break on highest Router ID. Other routers form full adjacency mainly with DR/BDR (DROTHER).",
+    "difficulty": "Medium"
   }
 ];

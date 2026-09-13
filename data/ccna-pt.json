@@ -2231,5 +2231,29 @@
     "correct": 1,
     "explanation": "IPFIX é o standard IETF para exportar informação de flows, muito baseado nos templates do NetFlow v9. Os vendors costumam suportar coletores NetFlow e IPFIX; ambos exportam metadados das conversas, não o payload completo.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Para que serve uma floating static route?",
+    "options": [
+      "Rota estática de backup com administrative distance maior que o caminho principal, instalada só se a rota preferida falhar",
+      "Rota estática que ganha sempre ao OSPF porque o AD estático é infinito",
+      "Rota que faz load-balance igual com todos os protocolos dinâmicos por omissão",
+      "Host route que só pode apontar para uma interface null0"
+    ],
+    "correct": 0,
+    "explanation": "Uma floating static configura-se com administrative distance maior que a rota principal (ex.: AD estático 1 elevado para 210 para o OSPF AD 110 ganhar). Fica fora da tabela até a rota preferida desaparecer e então assume o backup. Não ganha ao OSPF se mantiveres o AD estático default de 1.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num segmento OSPF multi-access (Ethernet), como se escolhem o Designated Router (DR) e o Backup DR (BDR)?",
+    "options": [
+      "Sempre o router com o process ID OSPF mais baixo",
+      "Só o router que tem uma default route estática",
+      "Ganha a maior prioridade de interface OSPF; em empate, o Router ID mais alto (o BDR é o seguinte)",
+      "Round-robin entre todos os vizinhos a cada intervalo Hello"
+    ],
+    "correct": 2,
+    "explanation": "Em redes broadcast multi-access o OSPF elege DR e BDR para reduzir flooding de adjacências. Ganha a maior prioridade de interface (0–255; 0 = inelegível); empates resolvem-se com o Router ID mais alto. Os outros routers formam full adjacency sobretudo com DR/BDR (DROTHER).",
+    "difficulty": "Médio"
   }
 ]
