@@ -1,8 +1,8 @@
 {
   "version": "1.2.6",
   "build": 8,
-  "apkUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/latest",
-  "releasesUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases",
+  "apkUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/download/v1.2.6/CiscoQuiz-1.2.6-arm64.apk",
+  "releasesUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/tag/v1.2.6",
   "bankTotal": 1100,
   "windowsNote": "No PC Windows: flutter build windows --release a partir da branch app (1.2.6+8). O banco de perguntas atualiza-se na app sem reinstalar.",
   "notes": "Bank auto-refresh + app version check. Questions: 1100 (CCST 181, CCNA 187, CCNP 182 × PT/EN)."
