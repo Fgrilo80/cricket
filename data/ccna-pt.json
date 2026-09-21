@@ -2255,5 +2255,173 @@
     "correct": 2,
     "explanation": "Em redes broadcast multi-access o OSPF elege DR e BDR para reduzir flooding de adjacências. Ganha a maior prioridade de interface (0–255; 0 = inelegível); empates resolvem-se com o Router ID mais alto. Os outros routers formam full adjacency sobretudo com DR/BDR (DROTHER).",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Na máquina de estados do vizinho BGP, que estado significa que a sessão está totalmente ativa e se podem trocar rotas?",
+    "options": [
+      "Idle — o BGP desativou permanentemente o vizinho",
+      "Active — o BGP só escuta e nunca envia mensagens Open",
+      "Connect — o TCP está em baixo, por isso as mensagens UPDATE são inundadas para todos os peers",
+      "Established — a sessão TCP e a troca BGP Open tiveram sucesso; seguem-se KEEPALIVE/UPDATE"
+    ],
+    "correct": 3,
+    "explanation": "Os vizinhos BGP avançam Idle → Connect → OpenSent → OpenConfirm → Established (Active é um caminho de retry/listen quando o Connect falha). Só Established significa que o peering está ativo e se podem anunciar prefixos. Em show ip bgp summary, um número em State/PfxRcd costuma significar Established; Idle/Active/OpenSent indicam que ainda não está up.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é o objetivo da Duplicate Address Detection (DAD) em IPv6 antes de um host usar um endereço unicast?",
+    "options": [
+      "Encriptar o Neighbor Discovery com IPsec por omissão em todas as LANs",
+      "Verificar que nenhum outro nó no link já usa o endereço candidato, enviando um Neighbor Solicitation para esse endereço",
+      "Pedir um prefixo global exclusivamente a um servidor DHCPv6 e ignorar Router Advertisements",
+      "Converter todos os endereços link-local em anycast públicos na Internet"
+    ],
+    "correct": 1,
+    "explanation": "A DAD envia um NS (ICMPv6 tipo 135) para o endereço tentativo com origem não especificada (::). Se outro nó responder com NA, o endereço está duplicado e não deve ser usado. A DAD aplica-se a link-local e a endereços globalmente únicos (incluindo SLAAC ou DHCPv6). Por si só não encripta o ND nem substitui os RAs.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Porque é que um operador usa AS-path prepending nos anúncios BGP para um ISP?",
+    "options": [
+      "Para cifrar por omissão as mensagens BGP UPDATE com IPsec",
+      "Para forçar o vizinho permanentemente para o estado Idle",
+      "Para substituir métricas OSPF por hop count dentro da LAN",
+      "Para fazer um caminho parecer mais longo (menos preferido) e influenciar engenharia de tráfego de entrada / como os outros chegam até si"
+    ],
+    "correct": 3,
+    "explanation": "O AS-path prepending repete o teu número de AS no AS_PATH para que ASes externos vejam um caminho mais longo e tipicamente prefiram outro link. Influencia a seleção de caminho de entrada; não é encriptação, não põe o peer em Idle por si e não tem a ver com métricas OSPF na LAN. Local Preference e MED cobrem outras necessidades de engenharia de tráfego.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é que o Unicast Reverse Path Forwarding (uRPF) verifica numa interface de router?",
+    "options": [
+      "Que o MAC de destino é igual ao BIA do router antes do hello OSPF",
+      "Que o IP de origem dos pacotes de entrada seria alcançável por essa mesma interface (anti-spoofing), usando o modo de verificação FIB/RPF",
+      "Que todos os pacotes têm marcação DSCP EF",
+      "Que os peers BGP estão em Established antes de encaminhar qualquer tráfego LAN"
+    ],
+    "correct": 1,
+    "explanation": "O uRPF descarta (ou alerta sobre) pacotes cujo endereço de origem não seria encaminhado de volta pela interface de chegada—mitiga spoofing de IP. O modo strict exige o melhor caminho por essa interface; o loose só exige que a origem exista na FIB. Não é um filtro de DSCP, MAC nem de estado BGP para o encaminhamento LAN.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Porque é que os engenheiros de rede configuram redistribuição de rotas entre dois protocolos de encaminhamento (por exemplo OSPF e EIGRP)?",
+    "options": [
+      "Para substituir a tabela MAC de cada router por LSAs OSPF",
+      "Para forçar o BGP a usar só a distância administrativa por omissão do RIP",
+      "Para cifrar automaticamente todas as atualizações de routing com IPsec sempre que dois IGPs se encontram",
+      "Para injetar rotas aprendidas num domínio de routing noutro, para os prefixos serem alcançáveis através das fronteiras de protocolo (com cuidado com loops, métricas e filtragem)"
+    ],
+    "correct": 3,
+    "explanation": "A redistribuição copia/transforma rotas de um protocolo para outro (ex. OSPF ↔ EIGRP, ou um IGP para BGP) para redes em domínios diferentes ficarem alcançáveis. É preciso controlar métricas iniciais (seed), distância administrativa, route-maps/filtros e risco de loops (incluindo redistribuição mútua). Não reescreve tabelas CAM, não força o AD do BGP para o do RIP, nem cifra magicamente as atualizações.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No routing distance-vector (por exemplo RIP clássico), o que é que a regra de split-horizon evita?",
+    "options": [
+      "Usar mais do que um caminho de custo igual ao mesmo tempo (ECMP)",
+      "Anunciar uma rota de volta pela mesma interface pela qual foi aprendida, o que ajuda a limitar loops de routing simples",
+      "Enviar quaisquer pacotes Hello em segmentos broadcast",
+      "Aprender rotas por omissão via DHCP em interfaces LAN"
+    ],
+    "correct": 1,
+    "explanation": "O split-horizon diz: não anuncies uma rota de volta para o vizinho/interface que te ensinou essa rota. Isso bloqueia um padrão comum de loop entre dois routers em protocolos distance-vector. Poison reverse é uma técnica relacionada (anunciar a rota de volta como inalcançável). Split-horizon não tem a ver com ECMP, Hellos estilo OSPF nem defaults DHCP.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num EtherChannel de um switch Cisco, o que é que o algoritmo de load-balancing (hash) decide principalmente?",
+    "options": [
+      "Qual membro do bundle encaminha um determinado fluxo, com base em campos como MAC ou IP de origem/destino (e opcionalmente portas), para distribuir o tráfego pelo canal",
+      "Se o EtherChannel negoceia exclusivamente com LACP ou com PAgP",
+      "A prioridade de root bridge STP de todas as VLANs no canal",
+      "O ID da VLAN nativa que tem de ser usada em todas as portas membro"
+    ],
+    "correct": 0,
+    "explanation": "O load-balancing do EtherChannel faz hash de campos selecionados do pacote (muitas vezes MAC src/dst, IP src/dst ou portas L4) para escolher um membro físico por fluxo. Não escolhe LACP vs PAgP, não define a prioridade de root STP nem a VLAN nativa — isso é configuração aparte.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No EIGRP, qual é a relação entre Reported Distance (RD), Feasible Distance (FD) e um feasible successor?",
+    "options": [
+      "A Reported Distance é sempre igual à largura de banda da interface em kb/s; a Feasible Distance só é usada pelo OSPF",
+      "Um feasible successor é qualquer vizinho que anuncia métrica infinita (poison reverse)",
+      "Um vizinho só pode ser feasible successor se a sua Reported Distance for menor do que a Feasible Distance do successor (condição de viabilidade), fornecendo um caminho de backup sem loops",
+      "A Feasible Distance é o hop count do RIP; a Reported Distance é o valor MED do BGP copiado para o EIGRP"
+    ],
+    "correct": 2,
+    "explanation": "A FD é a melhor métrica conhecida para chegar a um prefixo via o successor. A RD é a métrica que um vizinho anuncia para esse prefixo (a distância dele ao destino). A condição de viabilidade (RD < FD do successor) garante um backup sem loops—o feasible successor—utilizável de imediato se o successor falhar. A RD não é só bandwidth, e a FD não é hop count do RIP nem MED do BGP.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Em IPsec, qual é a diferença principal entre tunnel mode e transport mode?",
+    "options": [
+      "O tunnel mode só funciona com AH; o transport mode só funciona com ESP",
+      "O transport mode cifra todo o pacote IP original incluindo o cabeçalho exterior usado para o encaminhamento na Internet",
+      "Ambos os modos acrescentam sempre um cabeçalho GRE extra antes do ESP",
+      "O tunnel mode encapsula o pacote IP original (novo cabeçalho IP exterior); o transport mode protege sobretudo o payload e deixa o cabeçalho IP original no sítio para o encaminhamento"
+    ],
+    "correct": 3,
+    "explanation": "O tunnel mode embrulha o pacote IP original e acrescenta um novo cabeçalho IP exterior (típico em VPN site-to-site). O transport mode protege o payload (e normalmente deixa o cabeçalho IP original visível para o routing), o que é comum em proteção host-to-host. Tanto AH como ESP podem usar-se em qualquer modo; nenhum modo exige GRE por definição.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num Cisco wireless LAN controller, qual é o objetivo do Band Select (band steering)?",
+    "options": [
+      "Forçar todos os clientes apenas para a banda de 6 GHz, mesmo que o cliente seja 802.11n",
+      "Incentivar clientes dual-band a preferir 5 GHz (quando adequado) em vez de congestionar os 2,4 GHz, atrasando as respostas a probes em 2,4 GHz",
+      "Substituir o CAPWAP por uma bridge Ethernet de Camada 2 entre AP e WLC",
+      "Desativar OFDM em 5 GHz para que só clientes DSSS se associem"
+    ],
+    "correct": 1,
+    "explanation": "O Band Select (band steering) empurra clientes dual-band para 5 GHz, respondendo mais lentamente (ou não de imediato) a probes em 2,4 GHz, reduzindo a congestão nessa banda. Não coloca clientes legacy em 6 GHz, não substitui o CAPWAP e não desativa OFDM em 5 GHz.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num EtherChannel Cisco, que combinação de modos LACP forma com sucesso um canal entre dois switches?",
+    "options": [
+      "Um lado active e o outro passive (ou ambos active); o LACP negoceia o bundle",
+      "Um lado on (estático) e o outro desirable (palavra-chave só PAgP numa porta LACP)",
+      "Um lado auto e o outro auto sem troca de PDUs LACP",
+      "Um lado passive e o outro passive, porque ambos esperam indefinidamente que o peer inicie"
+    ],
+    "correct": 0,
+    "explanation": "O LACP (IEEE 802.3ad/802.1AX) usa active (inicia) e passive (responde). Active+passive ou active+active formam canal; passive+passive não. A palavra-chave on é EtherChannel estático sem negociação LACP. desirable/auto são modos PAgP, não LACP.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Em que se baseia o Path MTU Discovery (PMTUD) para descobrir o menor MTU ao longo de um caminho IPv4?",
+    "options": [
+      "ICMP Echo Request periódicos com exatamente 1500 bytes a partir de cada hop de router",
+      "O TCP anunciar sempre uma window de 536 bytes para nunca ser necessária fragmentação",
+      "Enviar pacotes com o bit DF (Don't Fragment) e usar mensagens ICMP Fragmentation Needed quando um hop tiver de os descartar",
+      "Forçar todas as interfaces de túnel a fazer clamp do TCP MSS para 40 bytes abaixo do MTU físico"
+    ],
+    "correct": 2,
+    "explanation": "O PMTUD clássico em IPv4 envia pacotes com DF. Se um hop tiver MTU menor, descarta o pacote e deve devolver ICMP Type 3 Code 4 (Fragmentation Needed) com o next-hop MTU para o emissor baixar o path MTU. Reduzir a window TCP ou fazer sempre clamp MSS para valores minúsculos não é o mecanismo do PMTUD (embora o clamp de MSS seja um workaround operacional quando o ICMP é filtrado).",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Em OSPF multi-área, porque é que a Area 0 (backbone) tem de existir e estar corretamente ligada?",
+    "options": [
+      "Porque o OSPF recusa eleger Designated Router fora da Area 0 em qualquer segmento multi-acesso",
+      "Porque a Area 0 é o único sítio onde são permitidas chaves de autenticação OSPF",
+      "Porque as LSA Type 1 (Router) só são inundadas dentro da Area 0 e nunca noutras áreas",
+      "Porque as áreas não-backbone trocam rotas inter-área através da Area 0 (ou de um virtual-link); sem um backbone contíguo, as áreas podem ficar particionadas do resto do domínio OSPF"
+    ],
+    "correct": 3,
+    "explanation": "O desenho hierárquico OSPF exige que todas as áreas se liguem (diretamente ou via virtual link) à Area 0 para as rotas inter-área resumidas pelos ABR permanecerem sem loops e alcançáveis. Um backbone em falta ou partido isola áreas umas das outras. A eleição DR/BDR é comportamento de segmento multi-acesso, não “só na Area 0”; a autenticação não está limitada à Area 0; as LSA Type 1 ficam intra-área em todas as áreas — isso não explica sozinho a necessidade do backbone.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "No Hot Standby Router Protocol (HSRP), que papéis têm os routers Active e Standby para um IP virtual usado como default gateway?",
+    "options": [
+      "Ambos encaminham tráfego de utilizador em ECMP active-active, partilhando sempre o mesmo MAC virtual em igualdade",
+      "O router Active detém o IP/MAC virtual e encaminha o tráfego desse grupo; o Standby está pronto a assumir se o Active falhar, após deteção baseada em Hellos",
+      "O Standby faz sempre NAT dos endereços dos clientes enquanto o Active só responde a ARP",
+      "O HSRP elege um Designated Router e um Backup Designated Router exatamente como o OSPF numa LAN"
+    ],
+    "correct": 1,
+    "explanation": "O HSRP clássico é redundância first-hop active/standby: um Active encaminha para o IP virtual (e MAC virtual associado), enquanto um Standby monitoriza Hellos e assume o papel active em falha. Por omissão não é ECMP active-active (isso aproxima-se mais do modelo do GLBP), não é uma divisão de funções NAT, e não é a eleição DR/BDR do OSPF.",
+    "difficulty": "Easy"
   }
 ]

@@ -1,4 +1,4 @@
-# Cisco Quiz (CCST / CCNA / CCNP)
+# Cisco Quiz (CCST / CCNA / CCNP / Cybersegurança)
 
 As perguntas já não vão dentro do HTML. Cada certificação e língua é um ficheiro em `data/`.
 
@@ -6,10 +6,10 @@ As perguntas já não vão dentro do HTML. Cada certificação e língua é um f
 Abre `index.html` no browser (duplo clique). Precisas da pasta `data` ao lado do HTML.
 
 ## Acrescentar perguntas
-Edita o ficheiro certo, por exemplo `data/ccna-pt.json` (e o `.js` correspondente, ou pede-me para regenerar).
+Edita o ficheiro certo, por exemplo `data/ccna-pt.json` (e o `.js` correspondente).
+Também existe `data/cyber-pt.json` / `data/cyber-en.json` para o 4.º trilho.
 
 Formato de cada pergunta:
-```json
 {
   "question": "Pergunta?",
   "options": ["A", "B", "C", "D"],
@@ -17,15 +17,17 @@ Formato de cada pergunta:
   "explanation": "Porque é a A.",
   "difficulty": "Fácil"
 }
-```
 `correct` é o índice da opção certa (0, 1, 2 ou 3).
 
-Contagens atuais:
-- CCST PT 181 / EN 181
-- CCNA PT 187 / EN 187
-- CCNP PT 182 / EN 182
-- Total 1100
+Contagens atuais (v3.2):
+- CCST PT 195 / EN 195
+- CCNA PT 201 / EN 201
+- CCNP PT 196 / EN 196
+- Classic total 1184
+- Cyber PT 12 / EN 12 (starters)
+- Grand total 1208
+
 Prática: feedback imediato após cada resposta. Exame: até 50 perguntas, 45 minutos, sem revelar até ao fim.
 
 ## Telemóvel
-Para abrir no telemóvel a pasta tem de estar num servidor (mesmo Wi-Fi) ou publicada na web. Sem isso o browser do telemóvel não vê os ficheiros do PC.
+Para abrir no telemóvel a pasta tem de estar num servidor (mesmo Wi-Fi) ou publicada na web.

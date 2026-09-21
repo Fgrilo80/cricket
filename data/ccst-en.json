@@ -2172,5 +2172,173 @@
     "correct": 1,
     "explanation": "ip helper-address enables DHCP relay (among other UDP helpers): the router receives a client DHCP broadcast on the LAN and forwards it as unicast to the configured DHCP server IP, so clients and the server can sit on different subnets. The router is not inventing leases unless it is also configured as a DHCP server.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "What is a rogue access point (rogue AP) in a wireless environment?",
+    "options": [
+      "An official Cisco WLC that only serves guest SSIDs",
+      "A licensed AP that always uses WPA3-Enterprise",
+      "An unauthorized AP connected to the wired network (or broadcasting nearby), which can create security and interference risks",
+      "Any AP that uses the 2.4 GHz band instead of 5 GHz"
+    ],
+    "correct": 2,
+    "explanation": "A rogue AP is an unauthorized wireless access point—often plugged into a corporate switch by a user, or an attacker’s evil twin. It can bypass NAC/802.1X, expose traffic, and interfere with the RF plan. Controllers and WIDS/WIPS help detect and contain rogues; hiding the SSID does not stop them.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "In 802.1X wireless (WPA2/WPA3-Enterprise), how does EAP-TLS typically authenticate the client compared with PEAP?",
+    "options": [
+      "EAP-TLS uses a client (and usually server) certificate; PEAP commonly tunnels an inner password method (e.g. MSCHAPv2) inside a TLS tunnel to the RADIUS server",
+      "EAP-TLS only shares one PSK for the whole SSID, like classic WPA2-Personal",
+      "PEAP requires a client certificate while EAP-TLS never uses certificates",
+      "Both methods disable RADIUS and authenticate only with the AP’s local user database"
+    ],
+    "correct": 0,
+    "explanation": "EAP-TLS is certificate-based: the client presents a cert (and validates the server). PEAP builds a TLS tunnel to the authentication server and usually runs an inner password method such as MSCHAPv2, so clients need credentials more often than certificates. Both still use 802.1X with a RADIUS backend (e.g. ISE); neither is a shared PSK.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does Cisco CleanAir primarily help a wireless network do?",
+    "options": [
+      "Replace CAPWAP with proprietary mesh only on 900 MHz",
+      "Disable all non-Wi-Fi clients permanently without an AP",
+      "Detect and classify non-Wi-Fi RF interferers (microwaves, Bluetooth, rogue jammers) so RRM/IT can mitigate them",
+      "Encrypt every management frame with WEP by default"
+    ],
+    "correct": 2,
+    "explanation": "CleanAir uses spectrum analysis on capable APs to identify non-Wi-Fi interference sources that degrade Wi-Fi. Controllers/Catalyst Center can show interferers and drive RRM changes (channel/power). It is not a substitute for WPA3, CAPWAP, or hiding the SSID.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the main goal of IEEE 802.11r (Fast Transition / Fast BSS Transition) for Wi-Fi clients?",
+    "options": [
+      "Speed up roaming between APs by reducing the time spent re-authenticating during a BSS transition",
+      "Force every SSID to use only the 2.4 GHz band",
+      "Replace DHCP with static APIPA addresses on roam",
+      "Turn off encryption whenever the client changes AP"
+    ],
+    "correct": 0,
+    "explanation": "802.11r (FT) lets a client complete key handshake steps in a way that shortens roam time between APs in the same mobility domain—important for voice/video. It does not remove encryption, change DHCP behaviour, or limit the band to 2.4 GHz. 802.11k/v often complement FT with neighbor reports and assisted roaming.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In a Cisco guest wireless design with auto-anchor (guest anchor), what is the role of the foreign controller versus the anchor controller?",
+    "options": [
+      "The foreign controller terminates the guest SSID locally and never tunnels anything; the anchor only stores DHCP leases offline",
+      "Both controllers must be in the same building and share one management IP, or guests cannot associate",
+      "The foreign controller is where the client associates; guest traffic is tunneled (typically CAPWAP/EoIP) to the anchor in the DMZ, which applies the guest VLAN/policy and often Internet egress",
+      "The anchor controller only handles 2.4 GHz; the foreign controller only handles 5 GHz"
+    ],
+    "correct": 2,
+    "explanation": "Auto-anchor (guest anchor) keeps guest clients associated to APs/WLCs in the campus (foreign) while tunneling their traffic to an anchor WLC in a DMZ/firewall zone. The anchor places guests on the guest VLAN and typically provides Internet access without letting them reach the internal LAN. It is not a band split, and the foreign side does not simply terminate guest traffic locally.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is a DHCP starvation attack trying to achieve on a LAN, and which switch feature commonly mitigates it?",
+    "options": [
+      "Exhaust the DHCP server’s available IP pool by requesting many leases (often with spoofed MACs) so legitimate clients get no address; mitigate with DHCP snooping (and often port-security / rate limits)",
+      "Flood the switch CAM table with fake MACs until the switch acts like a hub; mitigate only with spanning-tree PortFast",
+      "Encrypt all DHCP Offer messages with WEP so clients cannot renew; mitigate by disabling DHCP relay",
+      "Force every client to use APIPA 169.254.x.x permanently; mitigate by turning off ARP"
+    ],
+    "correct": 0,
+    "explanation": "DHCP starvation floods Discover/Request traffic (frequently with many spoofed client MACs) so the server’s pool runs out and real users cannot get leases. DHCP snooping limits untrusted ports and builds a binding table; port-security and DHCP rate limiting also help. CAM overflow is a different attack (MAC flooding). Disabling DHCP relay or ARP is not the fix.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is a practical difference between CDP and LLDP when discovering neighbors on a switch or router?",
+    "options": [
+      "CDP works only on fiber links; LLDP works only on copper",
+      "CDP is Cisco-proprietary and enabled by default on many Cisco devices; LLDP is an open IEEE 802.1AB standard used for multivendor neighbor discovery",
+      "LLDP elects the OSPF DR; CDP elects the STP root",
+      "Both protocols encrypt the entire neighbor table with IPsec, so they cannot be captured on a span port"
+    ],
+    "correct": 1,
+    "explanation": "CDP (Cisco Discovery Protocol) is proprietary and commonly on by default on Cisco gear. LLDP (IEEE 802.1AB) is vendor-neutral and preferred in mixed environments. Both advertise identity and capabilities over the link; neither elects OSPF/STP roles nor encrypts the neighbor database with IPsec by default.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "A technician builds a copper Ethernet straight-through patch cord using TIA-568 standards. Which statement is correct?",
+    "options": [
+      "Straight-through always means pins 1–8 on one end map randomly to pins 8–1 on the other end",
+      "You must use TIA-568A on one end and TIA-568B on the other end to make a straight-through cable",
+      "Fiber OM4 LC-LC jumpers follow the same TIA-568A/B color code as copper Cat6",
+      "Both ends use the same pinout standard (both TIA-568A or both TIA-568B); mixing A on one end and B on the other creates a crossover"
+    ],
+    "correct": 3,
+    "explanation": "A straight-through cable terminates both ends with the same TIA-568 wiring (A-A or B-B). Mixing 568A on one end and 568B on the other produces a crossover (TX/RX pairs swapped). Random reverse pin mapping is not the definition of straight-through, and fiber jumpers do not use the copper 568A/B color scheme.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is 802.1Q tunneling (Q-in-Q / double tagging) typically used for?",
+    "options": [
+      "Encrypting every Ethernet frame with IPsec between two access PCs",
+      "Replacing Spanning Tree with a single root bridge for the whole campus",
+      "Carrying a customer’s VLAN-tagged traffic across a provider network by adding an outer service VLAN tag, so the customer’s inner VLAN IDs are preserved end to end",
+      "Forcing all access ports into the same native VLAN as the management SVI"
+    ],
+    "correct": 2,
+    "explanation": "Q-in-Q (IEEE 802.1ad style double tagging) lets a service provider wrap a customer’s 802.1Q frames with an outer tag. The provider switches on the outer VLAN; the customer’s inner tags stay intact across the metro/WAN handoff. It is not IPsec encryption, not an STP replacement, and not a way to force every access port onto the management VLAN.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does IEEE 802.11w (Protected Management Frames / PMF) protect in a Wi-Fi BSS?",
+    "options": [
+      "Selected unicast management frames (such as deauthentication and disassociation) so an attacker cannot easily forge them to kick clients offline",
+      "Only the SSID broadcast in every beacon, turning the network into a hidden SSID by default",
+      "The entire CAPWAP tunnel between AP and WLC with a second IPsec layer",
+      "DHCP Offer packets on the wired uplink of the AP"
+    ],
+    "correct": 0,
+    "explanation": "802.11w adds cryptographic protection to certain management frames (notably deauth/disassoc), reducing spoofed disconnect attacks. It does not hide the SSID by itself, does not wrap CAPWAP in extra IPsec, and does not secure wired DHCP on the AP uplink. WPA3 requires PMF; WPA2 can optionally enable it.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In Wi-Fi (802.11), what is Dynamic Frequency Selection (DFS) mainly used for on 5 GHz (and 6 GHz where required)?",
+    "options": [
+      "Forcing every client to roam to 2.4 GHz whenever RSSI drops below −70 dBm",
+      "Detecting radar and other regulated incumbents so the AP can vacate or avoid those channels, which can cause a CAC wait or a channel change",
+      "Encrypting management frames with AES-CCMP so beacons cannot be spoofed",
+      "Replacing CSMA/CA with a scheduled TDMA airtime plan on every AP"
+    ],
+    "correct": 1,
+    "explanation": "DFS (Dynamic Frequency Selection) lets APs use weather-radar and other regulated 5/6 GHz channels only if they can detect incumbents and leave the channel when required. That often means a Channel Availability Check (CAC) before use and a possible channel change mid-operation. It is not band steering, not 802.11w PMF, and not a TDMA scheduler.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the practical difference between UPC and APC fiber connector polish styles?",
+    "options": [
+      "UPC is only for multimode and APC is only for single-mode; mixing them always works optically",
+      "APC adds a metal ferrule that doubles the launch power compared with UPC",
+      "UPC and APC differ only in the color of the strain-relief boot, with identical end-face geometry",
+      "APC uses an angled end-face that reflects light into the cladding, lowering return loss; UPC is flat (ultra polish) and should not be mated to APC"
+    ],
+    "correct": 3,
+    "explanation": "UPC (Ultra Physical Contact) has a flat polished end-face; APC (Angled Physical Contact) is typically ~8° angled so reflected light goes into the cladding instead of back toward the laser—critical for analog/PON and many single-mode links. APC and UPC must not be mated: geometry mismatch causes high loss and possible damage. Boot color often hints (green APC, blue UPC) but color alone is not the definition, and polish style is not “multimode-only vs single-mode-only.”",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Compared with older PoE (IEEE 802.3af/at), what does IEEE 802.3bt (Type 3/Type 4, often called PoE++) mainly enable on a compatible switch port?",
+    "options": [
+      "Only powering devices over fiber SFP ports instead of copper RJ-45",
+      "Replacing the data pairs with dedicated DC conductors so Ethernet frames no longer share the cable",
+      "Delivering substantially higher power (roughly up to ~60 W Type 3 / ~90 W Type 4 at the PSE) using more pairs, for devices such as PTZ cameras, access points, and thin clients",
+      "Negotiating Layer 3 routing adjacency over the same pairs that carry DC power"
+    ],
+    "correct": 2,
+    "explanation": "IEEE 802.3bt extends Power over Ethernet beyond 802.3af (~15 W) and 802.3at/PoE+ (~30 W) by using additional pairs and higher budgets (commonly cited ~60 W Type 3 and ~90 W Type 4 at the power-sourcing equipment). It still runs over copper Ethernet cabling with data and power sharing pairs after negotiation—not fiber SFPs, not “DC-only conductors instead of data,” and not a routing protocol.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In Wi-Fi 6 (802.11ax), what is the main purpose of OFDMA (Orthogonal Frequency-Division Multiple Access)?",
+    "options": [
+      "Splitting a channel into resource units so an AP can serve multiple clients in the same transmit opportunity with smaller, scheduled allocations, improving efficiency for many small frames",
+      "Forcing every client onto a single spatial stream so MU-MIMO is never used",
+      "Replacing WPA3 with an older WEP-based cipher suite for IoT endpoints",
+      "Extending the 2.4 GHz band to 80 MHz-wide channels identical to 5 GHz VHT80"
+    ],
+    "correct": 0,
+    "explanation": "OFDMA divides a Wi-Fi channel into smaller resource units (RUs) so one AP transmit/receive opportunity can address multiple stations with right-sized allocations—especially helpful under dense, short-packet traffic. It complements (does not disable) MU-MIMO; it is unrelated to WEP/WPA3 cipher choice; and it does not invent 80 MHz channels on 2.4 GHz like 5 GHz VHT80.",
+    "difficulty": "Medium"
   }
 ]

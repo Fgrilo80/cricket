@@ -1,0 +1,146 @@
+[
+  {
+    "question": "Na tríade CIA da segurança da informação, o que representa a Confidentiality (Confidencialidade)?",
+    "options": [
+      "Garantir que os sistemas estão sempre disponíveis para utilizadores autorizados",
+      "Garantir que só entidades autorizadas acedem à informação, tipicamente com controlos de acesso e encriptação",
+      "Garantir que os dados não são alterados sem deteção, por exemplo com hashes e assinaturas",
+      "Garantir que o tráfego de rede usa sempre a porta 443"
+    ],
+    "correct": 1,
+    "explanation": "A tríade CIA é Confidentiality, Integrity e Availability. Confidencialidade protege o acesso à informação (quem pode ver); Integridade protege contra alterações não autorizadas; Disponibilidade assegura acesso quando necessário.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Um email pede-lhe urgentemente para clicar num link e «validar a conta Cisco» introduzindo a password. Que tipo de ataque de engenharia social é este?",
+    "options": [
+      "Phishing (ou spear phishing se for direcionado)",
+      "Ataque de força bruta contra o servidor RADIUS",
+      "Man-in-the-middle exclusivamente na camada física",
+      "DDoS por amplificação DNS"
+    ],
+    "correct": 0,
+    "explanation": "Phishing usa mensagens fraudulentas para induzir a vítima a revelar credenciais ou instalar malware. Spear phishing é a variante altamente personalizada. Não é força bruta, MITM físico nem DDoS.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual é a diferença principal entre um firewall de filtragem de pacotes e um sistema IDS/IPS?",
+    "options": [
+      "Um firewall só analisa malware em anexos de email; IDS/IPS só faz NAT",
+      "Firewall e IDS são a mesma coisa; IPS é apenas a marca comercial Cisco",
+      "O firewall aplica política de permitir/negar tráfego; o IDS deteta anomalias/assinaturas (alerta) e o IPS pode bloquear em linha",
+      "O IDS substitui completamente AAA (Authentication, Authorization, Accounting)"
+    ],
+    "correct": 2,
+    "explanation": "Firewalls controlam o que passa segundo regras. IDS (Intrusion Detection) monitoriza e alerta; IPS (Intrusion Prevention) atua em linha e pode descartar tráfego malicioso. São complementares, não substitutos de AAA.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No modelo AAA usado em redes Cisco, o que significam Authentication, Authorization e Accounting?",
+    "options": [
+      "Apenas encriptação de ligações VPN site-to-site",
+      "Apenas balanceamento de carga entre controladores wireless",
+      "Apenas inventário automático de switches na LAN",
+      "Autenticar quem é o utilizador/dispositivo, autorizar o que pode fazer, e registar (accounting) o que fez"
+    ],
+    "correct": 3,
+    "explanation": "AAA: Authentication verifica identidade; Authorization define permissões/políticas; Accounting regista sessões e uso (útil para auditoria e faturação). Protocolos comuns: RADIUS e TACACS+.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Em VPNs, qual afirmação descreve melhor IPsec em comparação com SSL/TLS VPN (ex.: acesso remoto via browser ou AnyConnect em modo SSL)?",
+    "options": [
+      "IPsec opera tipicamente nas camadas de rede (protege pacotes IP) e é comum em site-to-site; SSL VPN trabalha sobretudo na sessão/transporte e é popular para acesso remoto de utilizadores",
+      "IPsec só funciona em IPv6; SSL VPN só em IPv4",
+      "SSL VPN substitui sempre o routing OSPF no núcleo",
+      "IPsec e SSL VPN são exatamente o mesmo protocolo com nomes diferentes"
+    ],
+    "correct": 0,
+    "explanation": "IPsec (AH/ESP, IKE) protege tráfego IP e é clássico em VPNs site-to-site. SSL/TLS VPNs encapsulam sessões de utilizador e são comuns em remote access. Ambos podem coexistir conforme o caso de uso.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual descrição corresponde corretamente a ransomware?",
+    "options": [
+      "Malware que cifra ficheiros da vítima e exige pagamento (resgate) para devolver o acesso",
+      "Um protocolo Cisco para sincronizar relógios NTP",
+      "Uma ACL que permite apenas HTTPS",
+      "Um tipo de cabo de fibra óptica multimodo"
+    ],
+    "correct": 0,
+    "explanation": "Ransomware encripta dados e pede resgate. Outros tipos: vírus, worms, trojans, spyware, rootkits. Mitigações: backups offline, patching, MFA, filtragem de email e least privilege.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "O que é Zero Trust, em termos de princípios de segurança de rede?",
+    "options": [
+      "Confiar automaticamente em qualquer dispositivo dentro da LAN corporativa",
+      "Desligar todos os firewalls porque a cloud já é segura",
+      "Nunca confiar por predefinição: verificar continuamente identidade, contexto e postura antes de conceder acesso mínimo necessário",
+      "Usar apenas passwords partilhadas em switches de acesso"
+    ],
+    "correct": 2,
+    "explanation": "Zero Trust assume que a rede interna não é zona de confiança automática. Exige autenticação forte, autorização contextual, microsegmentação e verificação contínua (nunca trust, always verify).",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No ecossistema Cisco de segurança, qual o papel típico do Cisco ISE (Identity Services Engine) face a uma plataforma de XDR/visão unificada como SecureX (ou sucessoras)?",
+    "options": [
+      "O ISE substitui completamente o routing BGP na Internet",
+      "O ISE foca-se em identidade, controlo de acesso (802.1X, guest, posture) e policy; plataformas tipo SecureX agregam telemetria e orquestram resposta entre produtos",
+      "SecureX é apenas um cabo consola; ISE é só um tema de wallpaper",
+      "Ambos servem exclusivamente para configurar VLANs em switches não geridos"
+    ],
+    "correct": 1,
+    "explanation": "Cisco ISE é o cérebro de AAA/policy NAC (802.1X, profiling, posture, guest). SecureX (e evoluções) integra alertas e workflows entre firewall, endpoint, email, etc. São complementares na arquitetura de segurança Cisco.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a diferença fundamental entre hashing e encriptação simétrica?",
+    "options": [
+      "Hashing e encriptação são sempre o mesmo algoritmo AES",
+      "A encriptação só funciona em texto português; hashing só em inglês",
+      "Hashing aumenta o tamanho dos dados; encriptação reduz sempre para 128 bits",
+      "Hashing é tipicamente unidirecional (integridade/verificação); encriptação simétrica é reversível com a chave partilhada (confidencialidade)"
+    ],
+    "correct": 3,
+    "explanation": "Hashes (SHA-256, etc.) não se «desfazem» para recuperar o original — servem para integridade e verificação. Encriptação simétrica (AES) cifra e decifra com a mesma chave. Assimétrico usa pares de chaves pública/privada.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Porque é que a autenticação multifator (MFA) reduz significativamente o risco de compromisso de contas?",
+    "options": [
+      "Porque elimina a necessidade de patches de segurança no sistema operativo",
+      "Porque torna o Wi-Fi automaticamente WPA3 sem configuração",
+      "Porque substitui firewalls perimetrais em todos os cenários",
+      "Porque exige algo mais do que só a password (ex.: app OTP, token, biometria), dificultando o uso de credenciais roubadas"
+    ],
+    "correct": 3,
+    "explanation": "MFA combina fatores (conhecimento, posse, inerência). Mesmo com password vazada, o atacante precisa do segundo fator. É controlo essencial em Zero Trust e em acesso administrativo Cisco (e não substitui patching nem firewalls).",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "O que é defense in depth (defesa em profundidade) num ambiente de rede?",
+    "options": [
+      "Usar uma única password complexa para todos os dispositivos",
+      "Confiar apenas num antivirus no endpoint e remover a segmentação",
+      "Aplicar várias camadas de controlos (perímetro, rede, identidade, endpoint, dados) para que a falha de um não comprometa tudo",
+      "Desativar logs para melhorar a performance"
+    ],
+    "correct": 2,
+    "explanation": "Defense in depth sobrepõe controlos complementares: firewalls, segmentação, AAA/MFA, EDR, encriptação, monitorização. Reduz o impacto de uma única falha.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual o benefício principal da segmentação de rede (ex.: VLANs, firewalls entre zonas) para a cibersegurança?",
+    "options": [
+      "Aumentar o broadcast domain para que o malware se propague mais depressa",
+      "Eliminar a necessidade de atualizar firmware",
+      "Permitir que convidados usem a mesma VLAN de gestão dos routers",
+      "Limitar movimento lateral: um compromisso numa zona não tem acesso automático a servidores críticos noutra zona"
+    ],
+    "correct": 3,
+    "explanation": "Segmentação (e microsegmentação) restringe east-west traffic. Isola IoT/guest da gestão e de data centers, alinhado com Zero Trust e least privilege.",
+    "difficulty": "Médio"
+  }
+]

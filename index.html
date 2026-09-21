@@ -305,7 +305,7 @@
             <div class="flex items-center gap-x-2 text-sm">
                 <div class="px-3 py-1.5 bg-slate-900 rounded-2xl flex items-center gap-x-2 border border-slate-700">
                     <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                    <span class="text-emerald-400 text-xs font-medium">BASE ATUALIZADA • 1100 PERGUNTAS</span>
+                    <span class="text-emerald-400 text-xs font-medium">BASE ATUALIZADA • 1208 PERGUNTAS</span>
                 </div>
                 <button onclick="showDatabaseInfo()" 
                         class="px-4 py-2 text-xs font-medium flex items-center gap-x-2 hover:bg-slate-800 transition-colors rounded-2xl border border-slate-700">
@@ -320,10 +320,10 @@
     <div id="home-screen" class="max-w-screen-xl mx-auto px-6 py-10">
         <div class="max-w-2xl mx-auto text-center mb-12">
             <div class="inline-flex items-center gap-x-2 bg-slate-900 px-4 py-1.5 rounded-3xl border border-slate-700 mb-4">
-                <span class="text-xs font-bold tracking-[2px] text-blue-400">VERSÃO 3.1 • 2026</span>
+                <span class="text-xs font-bold tracking-[2px] text-blue-400">VERSÃO 3.2 • 2026</span>
             </div>
             <h1 class="text-5xl sm:text-6xl font-display font-bold tracking-tighter mb-3">Domine as<br>Certificações Cisco</h1>
-            <p class="text-lg sm:text-xl text-slate-400 max-w-md mx-auto">Pratique com 1100 perguntas na base. Cada exame tira 50 ao calhas.<br>CCST • CCNA • CCNP • PT &amp; EN</p>
+            <p class="text-lg sm:text-xl text-slate-400 max-w-md mx-auto">Pratique com 1184 perguntas (CCST/CCNA/CCNP) + 24 starters Cybersegurança.<br>CCST • CCNA • CCNP • Cyber • PT &amp; EN</p>
         </div>
 
         <!-- Exam vs Practice (compact, above cert cards) -->
@@ -340,7 +340,7 @@
         </div>
 
         <!-- Certification Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 max-w-6xl mx-auto px-1">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-6 max-w-6xl mx-auto px-1">
             
             <!-- CCST Card -->
             <div class="quiz-card bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-7 modern-shadow">
@@ -356,7 +356,7 @@
                 <div class="space-y-3 mb-7">
                     <div class="flex items-center text-xs">
                         <div class="flex-1 h-px bg-slate-700"></div>
-                        <span id="count-ccst" class="px-3 text-slate-500">179 PT • 179 EN</span>
+                        <span id="count-ccst" class="px-3 text-slate-500">195 PT • 195 EN</span>
                         <div class="flex-1 h-px bg-slate-700"></div>
                     </div>
                     <div class="flex justify-between text-xs text-slate-400">
@@ -393,7 +393,7 @@
                 <div class="space-y-3 mb-7">
                     <div class="flex items-center text-xs">
                         <div class="flex-1 h-px bg-slate-700"></div>
-                        <span id="count-ccna" class="px-3 text-slate-500">185 PT • 185 EN</span>
+                        <span id="count-ccna" class="px-3 text-slate-500">201 PT • 201 EN</span>
                         <div class="flex-1 h-px bg-slate-700"></div>
                     </div>
                     <div class="flex justify-between text-xs text-slate-400">
@@ -430,7 +430,7 @@
                 <div class="space-y-3 mb-7">
                     <div class="flex items-center text-xs">
                         <div class="flex-1 h-px bg-slate-700"></div>
-                        <span id="count-ccnp" class="px-3 text-slate-500">180 PT • 180 EN</span>
+                        <span id="count-ccnp" class="px-3 text-slate-500">196 PT • 196 EN</span>
                         <div class="flex-1 h-px bg-slate-700"></div>
                     </div>
                     <div class="flex justify-between text-xs text-slate-400">
@@ -446,6 +446,43 @@
                         <span>Português</span>
                     </button>
                     <button onclick="startQuiz('ccnp', 'en')" 
+                            class="flex-1 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all text-white font-semibold py-3.5 rounded-2xl flex items-center justify-center gap-x-2 text-sm border border-slate-700">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>English</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cyber Card -->
+            <div class="quiz-card bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-7 modern-shadow">
+                <div class="flex items-start justify-between mb-6">
+                    <div>
+                        <div class="cert-badge bg-rose-500/10 text-rose-400 mb-3">CYBERSEGURANÇA</div>
+                        <h3 class="text-3xl sm:text-4xl font-display font-bold tracking-tighter">Cyber</h3>
+                        <p class="text-slate-400 text-sm mt-1">CCST Cybersecurity · em expansão</p>
+                    </div>
+                    <i class="fa-solid fa-user-shield text-4xl text-rose-400/70"></i>
+                </div>
+                
+                <div class="space-y-3 mb-7">
+                    <div class="flex items-center text-xs">
+                        <div class="flex-1 h-px bg-slate-700"></div>
+                        <span id="count-cyber" class="px-3 text-slate-500">12 PT • 12 EN</span>
+                        <div class="flex-1 h-px bg-slate-700"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <div><i class="fa-solid fa-check mr-1 text-rose-400"></i> Entrada + conceitos</div>
+                        <div><i class="fa-solid fa-check mr-1 text-rose-400"></i> CIA · Zero Trust · AAA</div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="startQuiz('cyber', 'pt')" 
+                            class="flex-1 bg-rose-600 hover:bg-rose-700 active:bg-rose-800 transition-all text-white font-semibold py-3.5 rounded-2xl flex items-center justify-center gap-x-2 text-sm">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>Português</span>
+                    </button>
+                    <button onclick="startQuiz('cyber', 'en')" 
                             class="flex-1 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all text-white font-semibold py-3.5 rounded-2xl flex items-center justify-center gap-x-2 text-sm border border-slate-700">
                         <i class="fa-solid fa-globe"></i>
                         <span>English</span>
@@ -631,15 +668,16 @@
             document.documentElement.style.setProperty('--accent', '#0a66c2');
         }
 
-        // Contagens alinhadas com data/*.js (CCST 181, CCNA 187, CCNP 182 por língua)
-        // Estrutura idêntica entre PT e EN (tradução fiel)
+        // Contagens alinhadas com data/*.js (CCST 195, CCNA 201, CCNP 196, Cyber 12 por língua)
+        // Estrutura idêntica entre PT e EN (tradução fiel). Classic tracks = 1184; + cyber starters = 1208.
         
         const databases = {
             ccst: { pt: [], en: [] },
             ccna: { pt: [], en: [] },
-            ccnp: { pt: [], en: [] }
+            ccnp: { pt: [], en: [] },
+            cyber: { pt: [], en: [] }
         };
-        const QUIZ_COUNTS = {"ccst": {"pt": 179, "en": 179}, "ccna": {"pt": 185, "en": 185}, "ccnp": {"pt": 180, "en": 180}};
+        const QUIZ_COUNTS = {"ccst": {"pt": 195, "en": 195}, "ccna": {"pt": 201, "en": 201}, "ccnp": {"pt": 196, "en": 196}, "cyber": {"pt": 12, "en": 12}};
         const I18N = {
             pt: {
                 prev: 'Anterior', pause: 'Pausar', next: 'Responder e Avançar', finish: 'Finalizar Quiz',
@@ -926,7 +964,8 @@
             const certNames = {
                 'ccst': 'CCST - Cisco Certified Support Technician',
                 'ccna': 'CCNA - Cisco Certified Network Associate',
-                'ccnp': 'CCNP - Cisco Certified Network Professional'
+                'ccnp': 'CCNP - Cisco Certified Network Professional',
+                'cyber': 'Cybersegurança - CCST Cybersecurity'
             };
             
             const langNames = { 'pt': 'Português', 'en': 'English' };
@@ -949,6 +988,9 @@
             } else if (cert === 'ccna') {
                 badgeClass = 'bg-blue-500/20 text-blue-400';
                 badgeText = 'ASSOCIATE • ' + quizLen + '/' + liveCount(cert, lang);
+            } else if (cert === 'cyber') {
+                badgeClass = 'bg-rose-500/20 text-rose-400';
+                badgeText = 'CYBER • ' + quizLen + '/' + liveCount(cert, lang);
             } else {
                 badgeClass = 'bg-violet-500/20 text-violet-400';
                 badgeText = 'PROFESSIONAL • ' + quizLen + '/' + liveCount(cert, lang);
@@ -1414,9 +1456,10 @@
                 .then(data => {
                     if (data.ccst && data.ccna && data.ccnp) {
                         Object.assign(databases, data);
+                        if (data.cyber) databases.cyber = data.cyber;
                         alert('✅ Base de dados atualizada com sucesso!\n\nRecarregue a página (Ctrl+Shift+R) para aplicar as novas perguntas.');
                     } else {
-                        throw new Error('O JSON não tem a estrutura correta (ccst, ccna, ccnp).');
+                        throw new Error('O JSON não tem a estrutura correta (ccst, ccna, ccnp; cyber opcional).');
                     }
                 })
                 .catch(err => {
@@ -1437,9 +1480,12 @@
                   `• CCNA Português: ${liveCount("ccna","pt")}\n` +
                   `• CCNA English: ${liveCount("ccna","en")}\n` +
                   `• CCNP Português: ${liveCount("ccnp","pt")}\n` +
-                  `• CCNP English: ${liveCount("ccnp","en")}\n\n` +
+                  `• CCNP English: ${liveCount("ccnp","en")}\n` +
+                  `• Cyber Português: ${liveCount("cyber","pt")}\n` +
+                  `• Cyber English: ${liveCount("cyber","en")}\n\n` +
+                  `Trilhos clássicos (CCST/CCNA/CCNP): 1184. Cybersegurança (starters): 24.\n` +
                   `As perguntas estão em data/*.js, podes acrescentar mais sem mexer no HTML.\n` +
-                  `O quiz seleciona 50 aleatórias de cada vez.\n\n` +
+                  `O quiz seleciona até 50 aleatórias de cada vez.\n\n` +
                   `Funcionalidade de auto-atualização online disponível via botão "Atualizar Agora".`);
         }
 
@@ -1502,7 +1548,7 @@
             
             setMode(currentMode);
 
-            ['ccst','ccna','ccnp'].forEach(cert => {
+            ['ccst','ccna','ccnp','cyber'].forEach(cert => {
                 const el = document.getElementById('count-' + cert);
                 if (el && QUIZ_COUNTS[cert]) {
                     el.textContent = QUIZ_COUNTS[cert].pt + ' PT • ' + QUIZ_COUNTS[cert].en + ' EN';

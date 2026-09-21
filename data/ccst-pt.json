@@ -2172,5 +2172,173 @@
     "correct": 1,
     "explanation": "ip helper-address ativa DHCP relay (entre outros helpers UDP): o router recebe o broadcast DHCP do cliente na LAN e reenvia-o em unicast para o IP do servidor DHCP, permitindo clientes e servidor em sub-redes diferentes. O router não inventa leases a menos que também esteja configurado como servidor DHCP.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "O que é um access point rogue (rogue AP) num ambiente wireless?",
+    "options": [
+      "Um WLC Cisco oficial que só serve SSIDs de convidados",
+      "Um AP licenciado que usa sempre WPA3-Enterprise",
+      "Um AP não autorizado ligado à rede cabeada (ou a emitir perto), que pode criar riscos de segurança e interferência",
+      "Qualquer AP que use a banda de 2,4 GHz em vez de 5 GHz"
+    ],
+    "correct": 2,
+    "explanation": "Um rogue AP é um access point wireless não autorizado—muitas vezes ligado a um switch corporativo por um utilizador, ou um evil twin de um atacante. Pode contornar NAC/802.1X, expor tráfego e interferir no plano RF. Controllers e WIDS/WIPS ajudam a detetar e conter rogues; esconder o SSID não os impede.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Em wireless 802.1X (WPA2/WPA3-Enterprise), como é que o EAP-TLS autentica tipicamente o cliente em comparação com o PEAP?",
+    "options": [
+      "O EAP-TLS usa certificado do cliente (e normalmente do servidor); o PEAP costuma encapsular um método interno com palavra-passe (ex. MSCHAPv2) dentro de um túnel TLS até ao RADIUS",
+      "O EAP-TLS só partilha um PSK para todo o SSID, como o WPA2-Personal clássico",
+      "O PEAP exige certificado do cliente e o EAP-TLS nunca usa certificados",
+      "Ambos desativam o RADIUS e autenticam só com a base de utilizadores local do AP"
+    ],
+    "correct": 0,
+    "explanation": "O EAP-TLS baseia-se em certificados: o cliente apresenta um certificado (e valida o servidor). O PEAP cria um túnel TLS até ao servidor de autenticação e costuma correr um método interno com palavra-passe (ex. MSCHAPv2), por isso os clientes precisam mais de credenciais do que de certificados. Ambos usam 802.1X com backend RADIUS (ex. ISE); nenhum é um PSK partilhado.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Para que serve principalmente o Cisco CleanAir numa rede wireless?",
+    "options": [
+      "Substituir o CAPWAP por mesh proprietário só em 900 MHz",
+      "Desativar permanentemente todos os clientes não-Wi-Fi sem um AP",
+      "Detetar e classificar interferentes RF não-Wi-Fi (micro-ondas, Bluetooth, jammers) para o RRM/IT os mitigar",
+      "Cifrar por omissão todos os frames de gestão com WEP"
+    ],
+    "correct": 2,
+    "explanation": "O CleanAir usa análise de espectro em APs capazes para identificar fontes de interferência não-Wi-Fi que degradam a WLAN. Controllers/Catalyst Center mostram interferentes e podem impulsionar alterações de RRM (canal/potência). Não substitui WPA3, CAPWAP nem esconder o SSID.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é o objetivo principal do IEEE 802.11r (Fast Transition / Fast BSS Transition) para clientes Wi-Fi?",
+    "options": [
+      "Acelerar o roaming entre APs ao reduzir o tempo gasto a reautenticar durante uma transição de BSS",
+      "Forçar todos os SSIDs a usar só a banda de 2,4 GHz",
+      "Substituir o DHCP por endereços APIPA estáticos no roam",
+      "Desligar a encriptação sempre que o cliente muda de AP"
+    ],
+    "correct": 0,
+    "explanation": "O 802.11r (FT) permite ao cliente concluir passos de handshake de chaves de forma a encurtar o tempo de roam entre APs no mesmo domínio de mobilidade—importante para voz/vídeo. Não remove a encriptação, não altera o DHCP nem limita a banda a 2,4 GHz. O 802.11k/v costuma complementar o FT com neighbor reports e roaming assistido.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num desenho wireless de convidados Cisco com auto-anchor (guest anchor), qual é o papel do controlador foreign face ao anchor?",
+    "options": [
+      "O foreign termina o SSID de convidados localmente e nunca faz túnel; o anchor só guarda leases DHCP offline",
+      "Ambos os controladores têm de estar no mesmo edifício e partilhar um IP de gestão, senão os convidados não associam",
+      "O foreign é onde o cliente associa; o tráfego de convidados é tunelado (tipicamente CAPWAP/EoIP) até ao anchor na DMZ, que aplica a VLAN/política de guest e muitas vezes a saída para a Internet",
+      "O anchor só trata a banda de 2,4 GHz; o foreign só trata a de 5 GHz"
+    ],
+    "correct": 2,
+    "explanation": "O auto-anchor (guest anchor) mantém os clientes de convidados associados a APs/WLCs no campus (foreign) e tunela o tráfego para um WLC anchor numa zona DMZ/firewall. O anchor coloca os convidados na VLAN de guest e tipicamente dá Internet sem acesso à LAN interna. Não é uma divisão por banda, e o foreign não termina simplesmente o tráfego de guest localmente.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que pretende um ataque de DHCP starvation numa LAN, e que funcionalidade no switch costuma mitigá-lo?",
+    "options": [
+      "Esgotar o pool de IPs do servidor DHCP pedindo muitos leases (muitas vezes com MACs falsificados) para os clientes legítimos não obterem endereço; mitigar com DHCP snooping (e muitas vezes port-security / limites de taxa)",
+      "Encher a tabela CAM do switch com MACs falsos até o switch se comportar como hub; mitigar só com PortFast do spanning-tree",
+      "Cifrar todas as mensagens DHCP Offer com WEP para os clientes não renovarem; mitigar desativando o DHCP relay",
+      "Forçar todos os clientes a usar APIPA 169.254.x.x permanentemente; mitigar desligando o ARP"
+    ],
+    "correct": 0,
+    "explanation": "O DHCP starvation satura Discover/Request (frequentemente com muitos MACs de cliente falsificados) para o pool do servidor acabar e utilizadores reais não obterem lease. O DHCP snooping limita portas untrusted e constrói a binding table; port-security e rate limiting de DHCP também ajudam. CAM overflow é outro ataque (MAC flooding). Desativar DHCP relay ou ARP não é a mitigação.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é uma diferença prática entre CDP e LLDP ao descobrir vizinhos num switch ou router?",
+    "options": [
+      "O CDP só funciona em links de fibra; o LLDP só funciona em cobre",
+      "O CDP é proprietário Cisco e vem ativo por omissão em muitos equipamentos Cisco; o LLDP é um padrão aberto IEEE 802.1AB usado para descoberta de vizinhos multi-fornecedor",
+      "O LLDP elege o DR OSPF; o CDP elege a root do STP",
+      "Ambos os protocolos cifram toda a tabela de vizinhos com IPsec, por isso não se conseguem capturar num SPAN"
+    ],
+    "correct": 1,
+    "explanation": "O CDP (Cisco Discovery Protocol) é proprietário e costuma estar ligado por omissão em equipamento Cisco. O LLDP (IEEE 802.1AB) é neutro quanto ao fabricante e preferível em ambientes mistos. Ambos anunciam identidade e capacidades no enlace; nenhum elege papéis OSPF/STP nem cifra a base de vizinhos com IPsec por omissão.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Um técnico monta um cabo de rede Ethernet copper straight-through segundo as normas TIA-568. Qual afirmação está correta?",
+    "options": [
+      "Straight-through significa sempre que os pinos 1–8 num extremo mapeiam de forma aleatória para 8–1 no outro",
+      "É obrigatório usar TIA-568A num extremo e TIA-568B no outro para fazer um cabo straight-through",
+      "Os jumpers de fibra OM4 LC-LC seguem o mesmo código de cores TIA-568A/B do cobre Cat6",
+      "Os dois extremos usam a mesma norma de pinout (ambos TIA-568A ou ambos TIA-568B); misturar A num extremo e B no outro cria um crossover"
+    ],
+    "correct": 3,
+    "explanation": "Um cabo straight-through termina os dois extremos com a mesma cablagem TIA-568 (A-A ou B-B). Misturar 568A num extremo e 568B no outro produz um crossover (pares TX/RX trocados). Mapeamento aleatório invertido não define straight-through, e os jumpers de fibra não usam o esquema de cores 568A/B do cobre.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Para que se usa tipicamente o 802.1Q tunneling (Q-in-Q / double tagging)?",
+    "options": [
+      "Cifrar cada trama Ethernet com IPsec entre dois PCs de acesso",
+      "Substituir o Spanning Tree por uma única root bridge em todo o campus",
+      "Transportar o tráfego etiquetado em VLAN do cliente através da rede do fornecedor, adicionando uma etiqueta VLAN de serviço exterior, para que os IDs VLAN interiores do cliente se preservem de ponta a ponta",
+      "Forçar todas as portas de acesso para a mesma native VLAN do SVI de gestão"
+    ],
+    "correct": 2,
+    "explanation": "O Q-in-Q (estilo IEEE 802.1ad com double tagging) permite ao fornecedor de serviço embrulhar as tramas 802.1Q do cliente com uma etiqueta exterior. O fornecedor comuta com base na VLAN exterior; as etiquetas interiores do cliente mantêm-se intactas no handoff metro/WAN. Não é cifra IPsec, não substitui o STP e não força todas as portas de acesso para a VLAN de gestão.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é que o IEEE 802.11w (Protected Management Frames / PMF) protege num BSS Wi-Fi?",
+    "options": [
+      "Tramas de gestão unicast selecionadas (como deauthentication e disassociation), para um atacante não as forjar facilmente e expulsar clientes",
+      "Apenas o broadcast do SSID em cada beacon, tornando a rede num SSID oculto por omissão",
+      "Todo o túnel CAPWAP entre AP e WLC com uma segunda camada IPsec",
+      "Pacotes DHCP Offer no uplink com fio do AP"
+    ],
+    "correct": 0,
+    "explanation": "O 802.11w acrescenta proteção criptográfica a certas tramas de gestão (nomeadamente deauth/disassoc), reduzindo ataques de desconexão forjada. Não esconde o SSID por si, não envolve o CAPWAP em IPsec extra e não protege o DHCP com fio no uplink do AP. O WPA3 exige PMF; o WPA2 pode ativá-lo opcionalmente.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No Wi-Fi (802.11), para que se usa principalmente a Dynamic Frequency Selection (DFS) nos 5 GHz (e 6 GHz onde for exigido)?",
+    "options": [
+      "Forçar todos os clientes a fazer roam para 2,4 GHz sempre que o RSSI desça abaixo de −70 dBm",
+      "Detetar radar e outros ocupantes regulamentados para o AP abandonar ou evitar esses canais, o que pode implicar uma espera CAC ou uma mudança de canal",
+      "Encriptar frames de gestão com AES-CCMP para que os beacons não possam ser falsificados",
+      "Substituir CSMA/CA por um plano TDMA agendado em todos os APs"
+    ],
+    "correct": 1,
+    "explanation": "A DFS (Dynamic Frequency Selection) permite aos APs usar canais 5/6 GHz partilhados com radar meteorológico e outros serviços só se detetarem incumbentes e saírem do canal quando exigido. Isso costuma implicar um Channel Availability Check (CAC) antes de usar o canal e uma possível mudança de canal em operação. Não é band steering, não é 802.11w PMF, e não é um agendador TDMA.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Qual é a diferença prática entre os polimentos de conector de fibra UPC e APC?",
+    "options": [
+      "UPC é só para multimodo e APC só para monomodo; misturá-los funciona sempre do ponto de vista ótico",
+      "O APC acrescenta uma férula metálica que duplica a potência de lançamento face ao UPC",
+      "UPC e APC diferem apenas na cor do boot de alívio de tensão, com a mesma geometria da face",
+      "O APC tem face angular que reflete a luz para o cladding, reduzindo o return loss; o UPC é plano (ultra polish) e não deve ser acoplado a APC"
+    ],
+    "correct": 3,
+    "explanation": "UPC (Ultra Physical Contact) tem face polida plana; APC (Angled Physical Contact) tem tipicamente ~8° de ângulo para a reflexão ir para o cladding em vez de voltar para o laser — importante em ligações analógicas/PON e muitas monomodo. APC e UPC não se devem acoplar: o desalinhamento geométrico causa perda elevada e possível dano. A cor do boot costuma indicar (verde APC, azul UPC), mas a cor sozinha não define o polimento, e o estilo não é “só multimodo vs só monomodo”.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Face ao PoE mais antigo (IEEE 802.3af/at), o que é que o IEEE 802.3bt (Type 3/Type 4, muitas vezes chamado PoE++) permite principalmente numa porta de switch compatível?",
+    "options": [
+      "Alimentar dispositivos apenas em portas SFP de fibra em vez de cobre RJ-45",
+      "Substituir os pares de dados por condutores DC dedicados para que as tramas Ethernet já não partilhem o cabo",
+      "Entregar potência substancialmente maior (cerca de ~60 W Type 3 / ~90 W Type 4 no PSE) usando mais pares, para dispositivos como câmaras PTZ, access points e thin clients",
+      "Negociar adjacência de encaminhamento Layer 3 nos mesmos pares que transportam alimentação DC"
+    ],
+    "correct": 2,
+    "explanation": "O IEEE 802.3bt alarga o Power over Ethernet além do 802.3af (~15 W) e 802.3at/PoE+ (~30 W), usando mais pares e orçamentos mais altos (tipicamente ~60 W Type 3 e ~90 W Type 4 no equipamento que fornece energia). Continua em cabos Ethernet de cobre com dados e energia a partilhar pares após negociação — não é SFP de fibra, não é “só DC em vez de dados”, e não é um protocolo de routing.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "No Wi-Fi 6 (802.11ax), qual é o objetivo principal do OFDMA (Orthogonal Frequency-Division Multiple Access)?",
+    "options": [
+      "Dividir um canal em resource units para o AP servir vários clientes na mesma oportunidade de transmissão com alocações mais pequenas e agendadas, melhorando a eficiência com muitas tramas curtas",
+      "Forçar todos os clientes a um único spatial stream para o MU-MIMO nunca ser usado",
+      "Substituir o WPA3 por um conjunto de cifras antigo baseado em WEP para endpoints IoT",
+      "Estender a banda de 2,4 GHz a canais de 80 MHz idênticos ao VHT80 dos 5 GHz"
+    ],
+    "correct": 0,
+    "explanation": "O OFDMA divide um canal Wi-Fi em resource units (RUs) mais pequenas para que uma oportunidade de TX/RX do AP possa endereçar várias estações com alocações dimensionadas — útil em ambientes densos com muitas tramas curtas. Complementa (não desativa) o MU-MIMO; não tem a ver com a escolha de cifras WEP/WPA3; e não cria canais de 80 MHz em 2,4 GHz como o VHT80 nos 5 GHz.",
+    "difficulty": "Medium"
   }
 ]

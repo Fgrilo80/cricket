@@ -2190,5 +2190,173 @@
     "correct": 3,
     "explanation": "O vBond é o orquestrador: os WAN Edges autenticam-se primeiro nele; depois o vBond indica como chegar ao vSmart (controlo) e ao vManage (gestão). O data plane fica entre edges (muitas vezes com IPsec); o vSmart distribui política de controlo via OMP. O vBond é crítico no bring-up zero-touch e na ajuda com NAT.",
     "difficulty": "Difícil"
+  },
+  {
+    "question": "No Cisco ACI, o que é um Endpoint Group (EPG)?",
+    "options": [
+      "Um grupo de endpoints (VMs, bare metal, contentores, etc.) que partilham o mesmo tratamento de política—tipicamente mapeados a um segmento VLAN/VXLAN dentro de um Bridge Domain",
+      "O switch spine físico que substitui o cluster de controladores APIC",
+      "Uma community BGP que o ACI copia sem alterações para todos os WAN edges",
+      "Um template de sampler NetFlow guardado só no border leaf"
+    ],
+    "correct": 0,
+    "explanation": "Um EPG é o objeto de política fundamental para endpoints que devem ser tratados da mesma forma. Os endpoints de um EPG ficam sob um Bridge Domain (e hierarquia VRF/tenant). A comunicação entre EPGs controla-se com contracts (provided/consumed), não só por partilharem um BD. O APIC continua a ser o controlador; os spines são underlay do fabric, não EPGs.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "No Cisco ACI, como é que dois EPGs comunicam normalmente de forma segura e orientada a políticas?",
+    "options": [
+      "Inundam sempre todo o tráfego no underlay sem filtros assim que partilham o nome do tenant",
+      "Só se ambos os EPGs forem configurados como vizinhos OSPF no mesmo loopback",
+      "Através de contracts: um EPG fornece (provides) um contract e o outro consome-o (consumes), permitindo tráfego específico (filters) entre eles",
+      "Ativando Root Guard PVST+ clássico em todos os downlinks dos leafs"
+    ],
+    "correct": 2,
+    "explanation": "O ACI usa um modelo de whitelist entre EPGs: os contracts definem que tráfego é permitido (filters/subjects). Um EPG provider oferece o contract; um consumer consome-o. Partilhar só um Bridge Domain não abre acesso East-West arbitrário. É política application-centric, não só ACLs de VLAN clássicas nem funcionalidades de STP.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "No Cisco ACI, de que é que um Bridge Domain (BD) é principalmente responsável?",
+    "options": [
+      "Ser o constructo de encaminhamento L2 (âmbito de broadcast/unknown unicast/multicast) ao qual os EPGs se ligam, muitas vezes com subnet/gateway SVI",
+      "Terminar todas as sessões BGP só com peers SPINE externos",
+      "Substituir o cluster APIC por um único leaf switch",
+      "Cifrar contracts com WPA3-Personal"
+    ],
+    "correct": 0,
+    "explanation": "O Bridge Domain é o constructo de Camada 2 no ACI: âmbito de flooding, muitas vezes com a subnet/gateway dos EPGs ligados. Os EPGs classificam endpoints; os contracts controlam a política entre EPGs; os VRFs separam contextos L3. O BD não é o APIC, não é só peering BGP nos spines e não é uma cifra wireless.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Para que serve o Guest Shell no Cisco IOS XE?",
+    "options": [
+      "Uma substituição da TCAM de hardware em todos os switches Catalyst",
+      "Um SSID wireless que desativa permanentemente o 802.1X",
+      "Um ambiente contentor Linux/CentOS no equipamento para correr scripts Python, pacotes yum e ferramentas de automação em paralelo com o IOS XE",
+      "Uma community BGP que define sempre Local Preference a 0"
+    ],
+    "correct": 2,
+    "explanation": "O Guest Shell é um contentor Linux on-box (muitas vezes baseado em CentOS) no IOS XE onde podes correr Python, instalar pacotes e usar comandos guestshell/run para automação sem sair do equipamento. Complementa EEM/Python on-box, mas não substitui a TCAM, não redefine SSIDs nem define communities BGP por si.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Para que se usa principalmente o Cisco pyATS na automatização e operação de redes?",
+    "options": [
+      "Como framework Python de testes e validação (muitas vezes com Genie) para interpretar o estado dos equipamentos, correr verificações e regredir alterações de rede com segurança",
+      "Substituir o IGP do underlay por um protocolo de routing proprietário só em Python em todos os PE",
+      "Como o único GUI suportado para configurar contracts ACI dentro do APIC",
+      "Como substituto do RADIUS na autenticação 802.1X em wireless"
+    ],
+    "correct": 0,
+    "explanation": "O pyATS (muitas vezes com parsers/modelos Genie) é o framework Python da Cisco para testes automatizados de rede: ligar a dispositivos, capturar/interpretar estado operacional, fazer diff before/after e construir suites reutilizáveis para CI/CD ou janelas de mudança. Não é um protocolo de routing, não é o GUI de contracts ACI, nem substitui RADIUS/802.1X.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No Cisco ISE, o que é que uma avaliação de posture (posture assessment) tipicamente verifica antes (ou como parte) de conceder acesso total à rede?",
+    "options": [
+      "Apenas se a porta do switch está em err-disable por causa do BPDU Guard",
+      "Apenas o area ID OSPF configurado no portátil do utilizador",
+      "Se o endpoint cumpre a política de segurança (por exemplo estado do antivírus, nível de patches do SO, encriptação de disco ou um agente obrigatório), para dispositivos não conformes poderem ser colocados em quarentena ou remediação",
+      "Se o nome do SSID está escondido, o que por si só prova que o cliente é de confiança"
+    ],
+    "correct": 2,
+    "explanation": "A posture do ISE avalia a saúde/conformidade do endpoint que se liga (via módulo de posture do AnyConnect/secure client ou similar) face à política—AV, patches, firewall, encriptação, etc. Hosts não conformes podem receber VLAN/ACL restrita e portal de remediação. Não tem a ver com err-disable por BPDU Guard, area IDs OSPF em portáteis, nem com esconder o SSID.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No Cisco SD-Access, qual é o papel principal do Control Plane Node?",
+    "options": [
+      "Termina todo o DHCP e NAT de utilizadores de cada edge switch apenas em hardware",
+      "Aloja a função LISP Map-Server/Map-Resolver: os edge nodes registam mapeamentos EID-to-RLOC dos endpoints e consultam o control plane para localizar destinos no fabric",
+      "Substitui o Spanning Tree inundando cada MAC desconhecido para todo o underlay",
+      "É apenas uma GUI de gestão e nunca participa no data nem no control plane"
+    ],
+    "correct": 1,
+    "explanation": "O SD-Access usa LISP no control plane do fabric. Os Control Plane Nodes atuam como Map-Server/Map-Resolver: os edge registam EIDs (endpoints) para RLOCs (locators edge/border) e resolvem EIDs remotos antes do encapsulamento VXLAN. Não são appliances de DHCP/NAT, não inundam MACs desconhecidos como Ethernet clássico, e não são só uma GUI (o Catalyst Center/DNA Center é o orquestrador).",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Num zone-based policy firewall (ZBFW) Cisco IOS, como é controlado o tráfego entre interfaces?",
+    "options": [
+      "Todas as interfaces têm de estar na VLAN 1, e as ACLs nas linhas VTY filtram o tráfego de trânsito",
+      "O ZBFW só inspeciona joins PIM multicast e ignora unicast TCP/UDP",
+      "Configura-se só ip inspect CBAC globalmente; as zones são ignoradas quando o NAT está ativo",
+      "As interfaces são atribuídas a security zones; um zone-pair com policy-map (class-maps) define o que é inspecionado/permitido entre a zone de origem e a de destino (tráfego intra-zone tipicamente permitido por omissão)"
+    ],
+    "correct": 3,
+    "explanation": "O ZBFW agrupa interfaces em zones. Tráfego inter-zone exige um zone-pair explícito e uma policy (class-map/policy-map) que permite/inspeciona fluxos da zone origem para a destino. Tráfego na mesma zone costuma ser permitido sem zone-pair. Não se limita a PIM, não depende de ACLs VTY para forwarding de trânsito, e distingue-se de desenhos só com CBAC clássico por interface.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num ambiente Cisco ISE / RADIUS, para que serve o Change of Authorization (CoA)?",
+    "options": [
+      "Substituir permanentemente o TACACS+ pelo RADIUS em todos os logins CLI dos equipamentos",
+      "Descarregar a imagem IOS do switch por TFTP após cada sessão 802.1X bem-sucedida",
+      "Permitir que o servidor de políticas envie uma atualização a uma sessão já autenticada (por exemplo reautenticar, terminar, ou mudar VLAN/ACL/SGT) sem esperar pelo próximo login do cliente",
+      "Eleger a root bridge do STP com base no shared secret do RADIUS"
+    ],
+    "correct": 2,
+    "explanation": "O CoA (autorização dinâmica RFC 5176) permite ao ISE/RADIUS enviar mensagens não solicitadas ao NAD para que uma sessão ativa seja reautenticada, desligada ou receba um novo resultado de autorização (VLAN, dACL, SGT, etc.). Não é uma política de substituição do TACACS, não descarrega imagens IOS e não tem relação com a eleição da root STP.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Que problema é que o Cisco OTV (Overlay Transport Virtualization) resolve principalmente?",
+    "options": [
+      "Estender VLANs / segmentos Ethernet de Camada 2 através de um DCI de Camada 3, contendo o STP e reduzindo flooding face a um stretch L2 ingénuo",
+      "Substituir o BGP por um IGP underlay proprietário só Cisco no core da Internet",
+      "Fornecer Power over Ethernet a servidores numa fabric leaf-spine",
+      "Cifrar consultas DNS entre resolvers recursivos e servidores autoritativos"
+    ],
+    "correct": 0,
+    "explanation": "O OTV é um overlay de encaminhamento MAC usado para estender VLANs entre data centers sobre transporte IP, com mecanismos que ajudam a conter domínios STP e a controlar flooding ARP/unknown unicast face a um link L2 esticado simples. Não é um IGP underlay da Internet, não é PoE e não cifra DNS.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No BGP, o que permite principalmente o Graceful Restart (muitas vezes associado a NSF nas plataformas Cisco) durante um restart do plano de controlo?",
+    "options": [
+      "Converter automaticamente todas as sessões eBGP em iBGP para remover o número de AS",
+      "Preservar o forwarding (FIB) e pedir aos peers que mantenham rotas marcadas como stale até o speaker em restart recuperar e atualizar o RIB, reduzindo perda de tráfego",
+      "Forçar cada peer a limpar toda a tabela BGP e reconvergir do zero por consistência",
+      "Substituir o keepalive TCP por deteção só com BFD e apagar todos os labels MPLS"
+    ],
+    "correct": 1,
+    "explanation": "O BGP Graceful Restart / NSF mantém o plano de dados a fazer forwarding enquanto o plano de controlo reinicia. Os peers retêm rotas stale durante um timer de restart; após a recuperação, End-of-RIB e updates refrescam o estado. Não converte eBGP em iBGP, e o objetivo é evitar uma tempestade destrutiva de reconvergência, não forçá-la.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Numa implementação Cisco Secure Firewall (antigo Firepower), qual é o papel principal do FMC (Firewall Management Center)?",
+    "options": [
+      "Servir de default gateway e fronteira NAT de todas as VLANs de acesso no campus",
+      "Terminar todos os túneis IPsec site-to-site para os sensores de ameaças nunca verem tráfego encriptado",
+      "Substituir o ISE na autenticação 802.1X das portas de acesso dos switches",
+      "Gestão centralizada de políticas, eventos e dispositivos dos sensores Secure Firewall / threat defense geridos (publicar políticas, recolher eventos, coordenar updates)"
+    ],
+    "correct": 3,
+    "explanation": "O FMC é o gestor: cria e publica políticas de access control / intrusion / malware, inventaria dispositivos e agrega eventos/saúde. Os sensores (FTD/Secure Firewall) ficam no caminho de dados. O FMC não é o default gateway do campus, não é um hub IPsec obrigatório para todos os túneis, e não substitui o ISE no 802.1X das portas de switch.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Num fabric VXLAN, o que representam um VTEP e um VNI?",
+    "options": [
+      "O VTEP é o endpoint do túnel VXLAN que encapsula/desencapsula tramas; o VNI (VXLAN Network Identifier) é o ID de segmento de 24 bits que separa redes Layer 2 do overlay",
+      "O VTEP é apenas um endereço de grupo multicast, e o VNI é o process ID OSPF do underlay",
+      "O VNI é o número de série físico do switch, e o VTEP é um shared secret RADIUS",
+      "Ambos os termos significam a mesma coisa: a porta UDP de destino exterior 4789"
+    ],
+    "correct": 0,
+    "explanation": "Um VTEP (VXLAN Tunnel Endpoint) fica na borda do overlay — muitas vezes num leaf ou hipervisor — e faz encapsulação/desencapsulação VXLAN. O VNI é um identificador de 24 bits que distingue segmentos do overlay (papel análogo a um VLAN ID, com espaço muito maior). Multicast/routing do underlay pode ajudar na replicação BUM, mas isso não é a definição de VTEP nem de VNI; nenhum é número de série, segredo RADIUS, ou apenas UDP/4789.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "No Cisco SD-WAN (arquitetura Viptela), que trio de papéis corresponde melhor a vManage, vSmart e vBond?",
+    "options": [
+      "vManage = ASIC de encaminhamento data-plane; vSmart = servidor DHCP; vBond = wireless controller",
+      "vManage = só IGP do underlay; vSmart = gateway NAT; vBond = coletor syslog",
+      "vManage = gestão/orquestração centralizada (UI e config); vSmart = plano de controlo, políticas e inteligência de routing do overlay; vBond = facilitador inicial de autenticação/orquestração que ajuda a integrar dispositivos no overlay",
+      "Os três appliances encaminham pacotes de utilizador no data plane e nunca participam no controlo ou na gestão"
+    ],
+    "correct": 2,
+    "explanation": "No split clássico de controladores Cisco SD-WAN: o vManage é o sistema de gestão/orquestração (GUI, templates, monitorização); o vSmart trata da inteligência de controlo do overlay e políticas centralizadas; o vBond ajuda no onboarding/autenticação segura dos WAN Edge e a apontá-los para o resto do fabric. Os routers Edge (vEdge/cEdge) levam o data plane — não os três controladores como forwarders de pacotes.",
+    "difficulty": "Medium"
   }
 ]
