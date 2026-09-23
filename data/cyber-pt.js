@@ -142,5 +142,101 @@ window.QUIZ_BANK = [
     "correct": 3,
     "explanation": "Segmentação (e microsegmentação) restringe east-west traffic. Isola IoT/guest da gestão e de data centers, alinhado com Zero Trust e least privilege.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é o objetivo principal de uma plataforma SIEM (Security Information and Event Management)?",
+    "options": [
+      "Substituir todos os agentes antivírus de endpoint por um único packet broker no switch core",
+      "Emitir certificados TLS públicos para servidores internos sem uma CA privada",
+      "Recolher e correlacionar logs/eventos de muitas fontes, detetar padrões suspeitos e apoiar alertas e investigação",
+      "Garantir zero falsos positivos bloqueando todas as consultas DNS de saída"
+    ],
+    "correct": 2,
+    "explanation": "Um SIEM agrega logs e eventos de segurança (firewalls, endpoints, identidade, cloud, etc.), normaliza e correlaciona-os, e ajuda analistas a detetar, alertar e investigar incidentes. Não substitui AV por um packet broker, não funciona como CA pública de TLS, e não promete zero falsos positivos ao bloquear DNS às cegas.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Em cibersegurança, para que se usa principalmente o framework MITRE ATT&CK?",
+    "options": [
+      "Um guia de sintaxe CLI específico de fabricante para configurar access lists no ASA",
+      "Uma base de conhecimento de táticas e técnicas de adversários (e procedimentos relacionados) usada para mapear deteções, planear defesas e falar de ameaças numa linguagem comum",
+      "Um algoritmo de encriptação obrigatório que substitui o AES em todos os handshakes TLS 1.3",
+      "Uma norma de layout físico de racks para densidade de cablagem em data centers"
+    ],
+    "correct": 1,
+    "explanation": "O MITRE ATT&CK cataloga táticas (o «porquê») e técnicas (o «como») de adversários no mundo real, muitas vezes com exemplos de procedimentos. Os defensores usam-no para analisar falhas de cobertura, escrever deteções e discutir incidentes de forma consistente. Não é documentação CLI do ASA, não é uma cifra que substitui o AES, e não é uma norma de cablagem.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Contra o que é que um Web Application Firewall (WAF) protege principalmente?",
+    "options": [
+      "Ataques à camada de aplicação contra apps HTTP/HTTPS (por exemplo SQLi, XSS e abuso de URLs ou APIs vulneráveis), inspecionando e filtrando pedidos web",
+      "Cortes de cabo Layer 1 entre o switch de acesso e o PC do utilizador",
+      "Esgotamento de memória da LSDB OSPF nos routers core causado por demasiados LSAs Type 5",
+      "Falha da bateria de um UPS que alimenta os wireless controllers"
+    ],
+    "correct": 0,
+    "explanation": "Um WAF fica à frente de aplicações web e inspeciona tráfego HTTP/S para bloquear ou desafiar ataques comuns à camada de aplicação, como SQL injection, cross-site scripting e padrões de pedido conhecidos como maus. Não resolve cortes físicos de cabo, dimensionamento da LSDB OSPF, nem baterias de UPS.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Qual é o objetivo principal do DNSSEC?",
+    "options": [
+      "Encriptar cada consulta DNS para que o resolver recursivo nunca veja o nome pedido (isso é DNS over TLS ou DNS over HTTPS, não DNSSEC)",
+      "Substituir o SPF para que os servidores de correio deixem de verificar que hosts podem enviar pelo domínio",
+      "Assinar digitalmente os dados DNS para que os resolvers validadores detetem respostas forjadas ou alteradas (autenticidade e integridade), sem esconder a própria consulta",
+      "Bloquear automaticamente todas as transferências de malware no endpoint"
+    ],
+    "correct": 2,
+    "explanation": "O DNSSEC acrescenta assinaturas digitais (registos RRSIG e DNSKEY, encadeados com DS no pai) para um resolver validador confirmar que os dados vieram da zona autoritativa e não foram modificados. A confidencialidade da consulta vem de DoT ou DoH, não do DNSSEC. Não substitui a autenticação de email nem a proteção de endpoint.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Em conjunto, o que fazem SPF, DKIM e DMARC na segurança do correio eletrónico?",
+    "options": [
+      "Encriptam o corpo da mensagem de ponta a ponta para só o destinatário a poder ler (isso é S/MIME ou PGP)",
+      "O SPF indica que servidores podem enviar em nome do domínio, o DKIM assina criptograficamente a mensagem e o DMARC diz aos recetores o que fazer quando essas verificações falham e como reportar — reduzindo o spoofing do domínio visível no From",
+      "Analisam anexos à procura de ransomware dentro do MTA usando apenas a porta TCP 25",
+      "Substituem o TLS na submissão SMTP (porta 587)"
+    ],
+    "correct": 1,
+    "explanation": "O SPF autoriza hosts de envio num registo TXT de DNS. O DKIM assina cabeçalhos selecionados e o corpo com uma chave do domínio publicada em DNS. O DMARC exige que o domínio visível do From alinhe com SPF e/ou DKIM e publica uma política (none, quarantine ou reject) mais relatórios. Em conjunto combatem a falsificação do domínio; não encriptam a mensagem nem substituem o TLS do SMTP.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a diferença principal entre EDR e XDR?",
+    "options": [
+      "O EDR só encripta discos; o XDR só configura VLANs",
+      "São o mesmo produto; XDR é apenas o nome Cisco do mesmo ficheiro de assinaturas de antivírus",
+      "O EDR substitui o firewall; o XDR substitui o DNS",
+      "O EDR foca telemetria e resposta no endpoint (processos, ficheiros e comportamento no host); o XDR correlaciona isso com outras fontes (rede, email, identidade, cloud) para uma visão mais ampla de deteção e resposta"
+    ],
+    "correct": 3,
+    "explanation": "EDR (Endpoint Detection and Response) recolhe telemetria e apoia a resposta nos endpoints. XDR (Extended Detection and Response) alarga a deteção e a resposta a vários pontos de controlo, correlacionando o endpoint com rede, email, cloud e identidade. O Cisco XDR é um exemplo deste modelo mais largo. Nenhum dos dois substitui, por si, o firewall ou a encriptação de disco.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Para que serve principalmente uma plataforma SOAR?",
+    "options": [
+      "Security Orchestration, Automation and Response: playbooks que automatizam e coordenam passos de resposta entre ferramentas (tickets, bloqueios na firewall, enriquecimento) para os analistas tratarem trabalho repetitivo de incidentes mais depressa",
+      "Um protocolo de routing que substitui o OSPF no data center",
+      "Um cofre físico para guardar passwords de firewalls",
+      "Uma norma que obriga a espelhar todos os pacotes para uma única porta SPAN"
+    ],
+    "correct": 0,
+    "explanation": "SOAR (orquestração, automação e resposta) executa playbooks: enriquecer alertas, abrir casos, isolar hosts, bloquear indicadores e notificar equipas. Complementa o SIEM, que deteta e guarda eventos, em vez de substituir routing ou SPAN.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Numa equipa de operações de segurança, o que é threat hunting?",
+    "options": [
+      "Esperar apenas por alertas SIEM de severidade alta e fechá-los sem procurar atividade relacionada",
+      "Desligar os logs para o atacante não perceber que foi detetado",
+      "Uma procura proativa na telemetria por atividade de adversário que as deteções automáticas possam ter falhado, muitas vezes guiada por uma hipótese e por frameworks como o MITRE ATT&CK",
+      "Substituir todos os controlos preventivos (firewall, MFA, patches) por uma revisão manual semanal de logs"
+    ],
+    "correct": 2,
+    "explanation": "Threat hunting parte do princípio de que algumas intrusões escapam aos alertas. O hunter formula uma hipótese (por exemplo uma técnica do ATT&CK), consulta dados de endpoint, rede ou identidade, e transforma achados em novas deteções. Complementa SIEM e EDR; não substitui a prevenção nem significa ignorar alertas.",
+    "difficulty": "Médio"
   }
 ];

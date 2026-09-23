@@ -2340,5 +2340,17 @@
     "correct": 0,
     "explanation": "O OFDMA divide um canal Wi-Fi em resource units (RUs) mais pequenas para que uma oportunidade de TX/RX do AP possa endereçar várias estações com alocações dimensionadas — útil em ambientes densos com muitas tramas curtas. Complementa (não desativa) o MU-MIMO; não tem a ver com a escolha de cifras WEP/WPA3; e não cria canais de 80 MHz em 2,4 GHz como o VHT80 nos 5 GHz.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "Num switch de acesso Cisco, qual é o objetivo principal do port security numa interface?",
+    "options": [
+      "Encriptar todas as tramas na porta com MACsec para que switches não autorizados não formem EtherChannel",
+      "Limitar que endereços MAC podem enviar tráfego nessa porta (e definir o que acontece em violação), para reduzir a ligação de endpoints não autorizados",
+      "Substituir o STP por uma blacklist de aprendizagem MAC que desativa permanentemente as VLANs no uplink",
+      "Forçar a porta a operar apenas como interface Layer 3 com máscara /30"
+    ],
+    "correct": 1,
+    "explanation": "O port security associa uma porta de acesso a um conjunto limitado de MACs de origem permitidos (estáticos, sticky ou aprendizagem dinâmica até um máximo) e aplica uma ação de violação (protect, restrict ou shutdown). Serve para controlar que endpoints podem usar a porta — não é encriptação MACsec de todas as tramas, não desativa STP/VLANs no uplink, e não transforma a porta numa routed /30.",
+    "difficulty": "Easy"
   }
 ]

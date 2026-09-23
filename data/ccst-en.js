@@ -2340,5 +2340,17 @@ window.QUIZ_BANK = [
     "correct": 0,
     "explanation": "OFDMA divides a Wi-Fi channel into smaller resource units (RUs) so one AP transmit/receive opportunity can address multiple stations with right-sized allocations—especially helpful under dense, short-packet traffic. It complements (does not disable) MU-MIMO; it is unrelated to WEP/WPA3 cipher choice; and it does not invent 80 MHz channels on 2.4 GHz like 5 GHz VHT80.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "On a Cisco access switch, what is the main goal of interface port security?",
+    "options": [
+      "Encrypting all frames on the port with MACsec so unauthorized switches cannot form an EtherChannel",
+      "Limiting which MAC addresses may send traffic on that port (and defining what happens on violation), to reduce unauthorized endpoint attachment",
+      "Replacing STP with a MAC-learning blacklist that permanently disables VLANs on the uplink",
+      "Forcing the port to operate only as a Layer 3 routed interface with a /30 mask"
+    ],
+    "correct": 1,
+    "explanation": "Port security binds an access port to a limited set of allowed source MAC addresses (static, sticky, or dynamic learning up to a maximum) and applies a violation action (protect, restrict, or shutdown). It is about controlling which endpoints may use the port—not MACsec encryption of every frame, not disabling STP/VLANs on uplinks, and not converting the port into a routed /30.",
+    "difficulty": "Easy"
   }
 ];

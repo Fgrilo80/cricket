@@ -2423,5 +2423,17 @@
     "correct": 1,
     "explanation": "O HSRP clássico é redundância first-hop active/standby: um Active encaminha para o IP virtual (e MAC virtual associado), enquanto um Standby monitoriza Hellos e assume o papel active em falha. Por omissão não é ECMP active-active (isso aproxima-se mais do modelo do GLBP), não é uma divisão de funções NAT, e não é a eleição DR/BDR do OSPF.",
     "difficulty": "Easy"
+  },
+  {
+    "question": "Num desenho Cisco DMVPN Phase 2/3, qual é o papel principal do NHRP (Next Hop Resolution Protocol)?",
+    "options": [
+      "Encriptar os payloads spoke-to-spoke com um perfil IPsec separado que substitui completamente o IKEv2",
+      "Anunciar tabelas BGP completas da Internet a partir de cada spoke para o hub para os spokes nunca precisarem de túnel",
+      "Atuar como IGP do underlay que substitui OSPF ou EIGRP nas interfaces WAN físicas",
+      "Permitir que os spokes resolvam dinamicamente os endereços de túnel (NBMA) uns dos outros para formarem túneis spoke-to-spoke diretos em vez de enviar todo o tráfego pelo hub"
+    ],
+    "correct": 3,
+    "explanation": "O NHRP é o serviço de mapeamento no DMVPN: os spokes registam o endereço público/NBMA no hub (NHS) e podem consultar mapeamentos para criar túneis spoke-to-spoke sob procura. O IPsec/IKEv2 continua a proteger os túneis; o NHRP não substitui o IGP do underlay nas ligações físicas, e não serve para despejar tabelas BGP da Internet no overlay.",
+    "difficulty": "Medium"
   }
 ]
