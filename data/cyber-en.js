@@ -142,5 +142,101 @@ window.QUIZ_BANK = [
     "correct": 3,
     "explanation": "Segmentation (and microsegmentation) restricts east-west traffic. It isolates IoT/guest from management and data centers, aligned with Zero Trust and least privilege.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "What is the primary purpose of a SIEM (Security Information and Event Management) platform?",
+    "options": [
+      "Replacing every endpoint antivirus agent with a single packet broker on the core switch",
+      "Issuing public TLS certificates for internal servers without a private CA",
+      "Collecting and correlating logs/events from many sources, detecting suspicious patterns, and supporting alerting and investigation",
+      "Guaranteeing zero false positives by blocking all outbound DNS queries"
+    ],
+    "correct": 2,
+    "explanation": "A SIEM aggregates logs and security events (firewalls, endpoints, identity, cloud, etc.), normalizes and correlates them, and helps analysts detect, alert on, and investigate incidents. It does not replace AV with a packet broker, does not act as a public CA for TLS, and cannot promise zero false positives by blindly blocking DNS.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "In cybersecurity, what is the MITRE ATT&CK framework mainly used for?",
+    "options": [
+      "A vendor-specific CLI syntax guide for configuring ASA access lists",
+      "A knowledge base of adversary tactics and techniques (and related procedures) used to map detections, plan defenses, and communicate about threats in a common language",
+      "A mandatory encryption algorithm that replaces AES in all TLS 1.3 handshakes",
+      "A physical rack layout standard for data-center cabling density"
+    ],
+    "correct": 1,
+    "explanation": "MITRE ATT&CK catalogs real-world adversary tactics (the “why”) and techniques (the “how”), often with procedure examples. Defenders use it to gap-analyze coverage, write detections, and discuss incidents consistently. It is not ASA CLI documentation, not a cipher that replaces AES, and not a cabling standard.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does a Web Application Firewall (WAF) primarily protect against?",
+    "options": [
+      "Application-layer attacks against HTTP/HTTPS apps (for example SQLi, XSS, and abuse of vulnerable URLs or APIs), by inspecting and filtering web requests",
+      "Layer 1 cable cuts between the access switch and the end user PC",
+      "Exhaustion of OSPF LSDB memory on core routers caused by too many Type 5 LSAs",
+      "Battery failure in a UPS that powers the wireless controllers"
+    ],
+    "correct": 0,
+    "explanation": "A WAF sits in front of web applications and inspects HTTP/S traffic to block or challenge common app-layer attacks such as SQL injection, cross-site scripting, and known bad request patterns. It does not fix physical cable cuts, OSPF LSDB sizing, or UPS batteries.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is the primary purpose of DNSSEC?",
+    "options": [
+      "Encrypting each DNS query so the recursive resolver never sees the name being looked up (that is DNS over TLS or DNS over HTTPS, not DNSSEC)",
+      "Replacing SPF so mail servers no longer need to check which hosts may send for a domain",
+      "Digitally signing DNS data so validating resolvers can detect forged or tampered answers (authenticity and integrity), without hiding the query itself",
+      "Automatically blocking every malware download on the endpoint"
+    ],
+    "correct": 2,
+    "explanation": "DNSSEC adds digital signatures (RRSIG and DNSKEY records, chained with DS records in the parent) so a validating resolver can confirm that the data came from the authoritative zone and was not modified. Query confidentiality comes from DoT or DoH, not from DNSSEC. It does not replace email authentication or endpoint protection.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Working together, what do SPF, DKIM, and DMARC do for email security?",
+    "options": [
+      "They encrypt the message body end to end so only the recipient can read it (that is S/MIME or PGP)",
+      "SPF lists which servers may send for a domain, DKIM cryptographically signs the message, and DMARC tells receivers what to do when those checks fail and how to report — reducing spoofing of the visible From domain",
+      "They scan attachments for ransomware inside the MTA using only TCP port 25",
+      "They replace TLS on SMTP submission (port 587)"
+    ],
+    "correct": 1,
+    "explanation": "SPF authorizes sending hosts in a DNS TXT record. DKIM signs selected headers and the body with a domain key published in DNS. DMARC requires the visible From domain to align with SPF and/or DKIM and publishes a policy (none, quarantine, or reject) plus reporting. Together they fight domain spoofing; they do not encrypt the message and they do not replace SMTP TLS.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the main difference between EDR and XDR?",
+    "options": [
+      "EDR only encrypts disks; XDR only configures VLANs",
+      "They are the same product; XDR is just the Cisco name for the same antivirus signature file",
+      "EDR replaces the firewall; XDR replaces DNS",
+      "EDR focuses on endpoint telemetry and response (processes, files, and host behavior); XDR correlates that with other sources such as network, email, identity, and cloud for a wider detection and response picture"
+    ],
+    "correct": 3,
+    "explanation": "EDR (Endpoint Detection and Response) collects telemetry and supports response on endpoints. XDR (Extended Detection and Response) extends detection and response across control points, correlating endpoint data with network, email, cloud, and identity. Cisco XDR is an example of that broader model. Neither one, by itself, replaces the firewall or disk encryption.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is a SOAR platform mainly used for?",
+    "options": [
+      "Security Orchestration, Automation, and Response: playbooks that automate and coordinate response steps across tools (tickets, firewall blocks, enrichment) so analysts handle repetitive incident work faster",
+      "A routing protocol that replaces OSPF inside the data center",
+      "A physical safe for storing firewall passwords",
+      "A standard that forces every packet to be mirrored to a single SPAN port"
+    ],
+    "correct": 0,
+    "explanation": "SOAR (orchestration, automation, and response) runs playbooks: enrich alerts, open cases, isolate hosts, block indicators, and notify teams. It complements a SIEM, which detects and stores events, rather than replacing routing or SPAN.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "In a security operations team, what is threat hunting?",
+    "options": [
+      "Waiting only for high-severity SIEM alerts and closing them without looking for related activity",
+      "Turning logging off so an attacker cannot tell they were detected",
+      "A proactive search through telemetry for adversary activity that automated detections may have missed, often guided by a hypothesis and by frameworks such as MITRE ATT&CK",
+      "Replacing every preventive control (firewall, MFA, patching) with a weekly manual log review"
+    ],
+    "correct": 2,
+    "explanation": "Threat hunting assumes some intrusions evade alerts. Hunters form a hypothesis (for example a technique from ATT&CK), query endpoint, network, or identity data, and turn findings into new detections. It complements SIEM and EDR; it does not replace prevention and it does not mean ignoring alerts.",
+    "difficulty": "Medium"
   }
 ];

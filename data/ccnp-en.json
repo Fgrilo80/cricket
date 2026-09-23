@@ -2358,5 +2358,17 @@
     "correct": 2,
     "explanation": "In the classic Cisco SD-WAN controller split: vManage is the management/orchestration system (GUI, templates, monitoring); vSmart handles control-plane overlay intelligence and centralized policy; vBond assists securely onboarding/authenticating WAN Edge devices and pointing them to the rest of the fabric. Edge routers (vEdge/cEdge) carry the data plane—not the three controllers as packet forwarders.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "In Cisco IOS/IOS XE, what is a route map most commonly used for?",
+    "options": [
+      "Matching routes or traffic with conditions (prefix lists, ACLs, metrics, tags, etc.) and then applying set actions—for example in redistribution, PBR, or BGP attribute manipulation",
+      "Replacing the FIB entirely with a static list of MAC addresses learned from CDP neighbors",
+      "Terminating SSL/TLS sessions on the route processor so every packet is decrypted in software",
+      "Electing the OSPF Designated Router on broadcast segments when hello timers differ"
+    ],
+    "correct": 0,
+    "explanation": "A route map is a sequenced list of match/set clauses. It is widely used to control redistribution (which prefixes, with what metric/tag), policy-based routing, and BGP path-attribute changes. It is not a MAC/FIB substitute, not an SSL offload feature on the RP, and not the OSPF DR election mechanism.",
+    "difficulty": "Medium"
   }
 ]

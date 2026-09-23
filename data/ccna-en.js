@@ -2423,5 +2423,17 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "Classic HSRP is active/standby first-hop redundancy: one Active forwards for the virtual IP (and associated virtual MAC), while a Standby monitors Hellos and assumes the active role on failure. It is not load-balancing ECMP by default (that is closer to GLBP’s model), not a NAT function split, and not OSPF’s DR/BDR election.",
     "difficulty": "Easy"
+  },
+  {
+    "question": "In a Cisco DMVPN Phase 2/3 design, what is the primary role of NHRP (Next Hop Resolution Protocol)?",
+    "options": [
+      "Encrypting spoke-to-spoke payloads with a separate IPsec profile that replaces IKEv2 entirely",
+      "Advertising full Internet BGP tables from each spoke into the hub so spokes never need a tunnel",
+      "Acting as the underlay IGP that replaces OSPF or EIGRP on the physical WAN interfaces",
+      "Letting spokes dynamically resolve each other’s tunnel (NBMA) addresses so direct spoke-to-spoke tunnels can form instead of hairpinning all traffic through the hub"
+    ],
+    "correct": 3,
+    "explanation": "NHRP is the mapping service in DMVPN: spokes register their public/NBMA address with the hub (NHS), and can query mappings to build on-demand spoke-to-spoke tunnels. IPsec/IKEv2 still protect the tunnels; NHRP does not replace the underlay IGP on physical links, and it is not a mechanism to dump full BGP Internet tables into the overlay.",
+    "difficulty": "Medium"
   }
 ];

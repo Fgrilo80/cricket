@@ -3,9 +3,9 @@
   "build": 9,
   "apkUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/download/v1.2.7/CiscoQuiz-1.2.7-arm64.apk",
   "releasesUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/tag/v1.2.7",
-  "bankTotal": 1208,
-  "bankClassic": 1184,
-  "bankCyber": 24,
+  "bankTotal": 1230,
+  "bankClassic": 1190,
+  "bankCyber": 40,
   "windowsNote": "No PC Windows: flutter build windows --release a partir da branch app (1.2.7+9). O banco de perguntas atualiza-se na app sem reinstalar.",
-  "notes": "v3.2 bank: 1184 classic (CCST 195, CCNA 201, CCNP 196 × PT/EN) + Cyber starters 12×2. Fourth track cyber wired."
+  "notes": "v3.2.1 bank: 1190 classic (CCST 196, CCNA 202, CCNP 197 × PT/EN) + Cyber 20×2. App binary stays 1.2.7; bank refreshes via cricket.json."
 }
