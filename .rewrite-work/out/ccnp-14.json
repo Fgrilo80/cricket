@@ -1,0 +1,215 @@
+{
+  "cert": "ccnp",
+  "items": [
+    {
+      "index": 146,
+      "pt": {
+        "options": [
+          "Só um processo OSPFv3 clássico de IPv6, sem address family IPv4 e sem anunciar prefixos IPv4",
+          "Um processo OSPFv3 a transportar IPv6 e/ou IPv4 (AFs), com adjacências ainda em link-local",
+          "Substituir o BGP VPNv4 no PE, levando os prefixos VPN apenas pelo OSPFv3 em vez de MP-BGP",
+          "Anunciar apenas LSAs Type 8 (Link-LSA) e deixar de usar os LSAs Type 9 para os prefixos da área"
+        ],
+        "explanation": "OSPFv3 clássico era só IPv6. AF (RFC 5838) leva IPv4 sobre OSPFv3. Adjacências continuam IPv6 link-local; router-id ainda é IPv4 de 32 bits. Instance ID separa AFs."
+      },
+      "en": {
+        "options": [
+          "Only a classic IPv6 OSPFv3 process, with no IPv4 address family and no IPv4 prefixes at all",
+          "One OSPFv3 process carrying IPv6 and/or IPv4 (AFs), with adjacencies still on link-local",
+          "Replacing BGP VPNv4 on the PE so VPN prefixes ride only on OSPFv3 instead of MP-BGP",
+          "Advertising Type-8 Link-LSAs only and dropping Type-9 Intra-Area Prefix LSAs for every prefix"
+        ],
+        "explanation": "Classic OSPFv3 was IPv6-only. AF (RFC 5838) carries IPv4 over OSPFv3. Adjacencies remain IPv6 link-local; router-id is still a 32-bit IPv4 value. Instance ID separates AFs."
+      }
+    },
+    {
+      "index": 147,
+      "pt": {
+        "options": [
+          "Bloquear DHCPv4 Discover e Offer na porta de acesso, sem inspecionar Router Advertisements IPv6",
+          "Impedir que um host malicioso anuncie Router Advertisements e se faça passar por gateway IPv6",
+          "Substituir o NDP, deixando de usar NS/NA e passando a resolver vizinhos IPv6 apenas por ARP",
+          "Ativar o IS-IS na porta de acesso para formar adjacências com o host e anunciar o gateway por LSP"
+        ],
+        "explanation": "RA Guard (e DHCPv6 Guard, ND inspection) são First-Hop Security. Portas de acesso: host-mode (RAs drop). Uplinks para routers: router-mode. Sem isto, um RA falso desvia o tráfego IPv6."
+      },
+      "en": {
+        "options": [
+          "Blocking DHCPv4 Discover and Offer on the access port, without inspecting IPv6 Router Advertisements",
+          "Stopping a malicious host from sending Router Advertisements and impersonating an IPv6 gateway",
+          "Replacing NDP so the switch stops using NS/NA and resolves IPv6 neighbors with ARP only",
+          "Enabling IS-IS on the access port so the host forms an adjacency and learns the gateway from an LSP"
+        ],
+        "explanation": "RA Guard (plus DHCPv6 Guard and ND inspection) is First-Hop Security. Access ports: host-mode (RAs dropped). Uplinks to routers: router-mode. Without it, a fake RA steals IPv6 traffic."
+      }
+    },
+    {
+      "index": 148,
+      "pt": {
+        "options": [
+          "Na tabela BGP do router de borda, filtrando prefixos eBGP antes de os instalar na RIB da VLAN de acesso",
+          "Na binding table do DHCP snooping (e statics) para permitir só o IP/MAC aprendido naquela porta",
+          "No NAT overload (PAT) da interface de saída, traduzindo o IP de origem antes de o encaminhar para a WAN",
+          "No VTP, que propaga nome, revisão e mapa de VLANs para autorizar o IP e o MAC aprendidos na porta"
+        ],
+        "explanation": "IPSG filtra no data plane o que DAI filtra no ARP. Port-security cobre o MAC; juntos fecham spoofing na borda. Exige snooping ativo e portas trusted rumo ao servidor DHCP."
+      },
+      "en": {
+        "options": [
+          "The BGP table on the edge router, filtering eBGP prefixes before they are installed in the access VLAN RIB",
+          "The DHCP snooping binding table (plus statics) to allow only the IP/MAC learned on that port",
+          "NAT overload (PAT) on the egress interface, translating the host source IP before it is sent toward the WAN",
+          "VTP, which propagates the domain name and revision so the switch can authorize the IP/MAC on that port"
+        ],
+        "explanation": "IPSG filters on the data plane what DAI filters in ARP. Port-security covers MAC; together they close edge spoofing. It needs snooping enabled and trusted ports toward the DHCP server."
+      }
+    },
+    {
+      "index": 149,
+      "pt": {
+        "options": [
+          "O border node só termina clientes Wi-Fi e o edge só comuta labels MPLS, sem LISP ETR/ITR nem VXLAN no fabric SD-Access",
+          "Edge conecta endpoints (LISP ETR/ITR, anycast SVI); border liga o fabric ao mundo exterior (fusion, DC, WAN, Internet)",
+          "Ambos são o vManage: orquestram a política central e não encaminham endpoints nem saem para fusion, DC ou WAN",
+          "O edge node é o próprio servidor ISE, que autentica 802.1X e emite os SGTs no lugar do switch de acesso do fabric"
+        ],
+        "explanation": "Control plane node = MS/MR LISP. Edge = access. Border = exit. WLC/FN liga APs. ISE dá SGT. Underlay é IGP/IS-IS + VXLAN; overlay são VN (macro-segmentação) + SGTs (micro)."
+      },
+      "en": {
+        "options": [
+          "The border node only terminates Wi-Fi clients and the edge node only switches MPLS labels, with no LISP ETR/ITR and no VXLAN in the fabric",
+          "Edge connects endpoints (LISP ETR/ITR, anycast SVI); border connects the fabric to the outside world (fusion, DC, WAN, Internet)",
+          "Both nodes are vManage: they only orchestrate central policy and do not forward endpoints or exit toward fusion, DC, or WAN",
+          "The edge node is the ISE policy server itself, which authenticates 802.1X clients and issues SGTs in place of the fabric access switch"
+        ],
+        "explanation": "Control-plane node = LISP MS/MR. Edge = access. Border = exit. WLC/FN attaches APs. ISE provides SGTs. Underlay is IGP/IS-IS plus VXLAN; overlay is VNs (macro-segmentation) plus SGTs (micro)."
+      }
+    },
+    {
+      "index": 150,
+      "pt": {
+        "options": [
+          "TLOC é só uma tag de VLAN 802.1Q no underlay; o OMP corre apenas no vBond e nunca é distribuído pelo vSmart aos WAN Edges da rede",
+          "TLOC (Transport Locator) identifica a ligação de um WAN Edge a um transport; o vSmart distribui OMP (rotas, TLOCs, políticas) aos edges",
+          "O OMP substitui por completo o DTLS, cifrando sozinho a sessão de controlo e eliminando o túnel DTLS entre cada WAN Edge e o respetivo vSmart",
+          "O TLOC é a interface gráfica do vManage, onde se desenha a topologia, e não identifica a ligação de transporte de um WAN Edge"
+        ],
+        "explanation": "vBond faz orquestração/STUN inicial. vManage = config/analytics. vSmart = control plane OMP. WAN Edge (vEdge/cEdge) forma túneis IPsec/GRE por TLOC (cor, encaps, system-ip). App-aware routing usa SLA dos túneis."
+      },
+      "en": {
+        "options": [
+          "A TLOC is only an 802.1Q VLAN tag on the underlay; OMP runs on vBond only and is never distributed by vSmart out to the WAN Edges",
+          "A TLOC (Transport Locator) identifies a WAN Edge's attachment to a transport; vSmart distributes OMP (routes, TLOCs, policies) to the edges",
+          "OMP fully replaces DTLS, encrypting the control session on its own and removing the DTLS tunnel that each WAN Edge opens to vSmart",
+          "A TLOC is the vManage graphical interface where the overlay topology is drawn, and it does not identify a WAN Edge's attachment to a transport"
+        ],
+        "explanation": "vBond does initial orchestration/STUN. vManage is config/analytics. vSmart is the OMP control plane. WAN Edge (vEdge/cEdge) builds IPsec/GRE tunnels per TLOC (color, encaps, system-ip). App-aware routing uses per-tunnel SLA."
+      }
+    },
+    {
+      "index": 151,
+      "pt": {
+        "options": [
+          "A IST é uma instância STP por cada VLAN, como no PVST+, e não a instância única partilhada por todos os switches da região MST",
+          "A instância que corre BPDUs para a região e mapeia VLANs não noutros instances; liga a região ao CST exterior",
+          "A IST é um EtherChannel que agrega os uplinks da região MST e transporta todas as VLANs num único bundle negociado por LACP",
+          "A IST é o root guard na fronteira da região, aplicado para impedir que um switch externo se torne o root bridge do CST"
+        ],
+        "explanation": "MST agrupa VLANs em poucas instâncias (carga de CPU). Todos os switches da região partilham nome, revisão e mapa VLAN-instance. IST (instance 0) é o 'CIST' dentro da região. PVST simulation nas fronteiras."
+      },
+      "en": {
+        "options": [
+          "The IST is a separate STP instance per VLAN, as in PVST+, and not the single instance shared by every switch in the MST region",
+          "The instance that carries BPDUs for the region and maps VLANs not in other instances; it joins the region to the external CST",
+          "The IST is an EtherChannel that bundles the region uplinks and carries every VLAN in one port-channel negotiated by LACP",
+          "The IST is root guard on the region boundary, applied to stop an external switch from becoming the root bridge of the CST"
+        ],
+        "explanation": "MST groups VLANs into a few instances (CPU load). Every switch in the region shares name, revision, and VLAN-instance map. IST (instance 0) is the CIST inside the region. PVST simulation runs at the boundaries."
+      }
+    },
+    {
+      "index": 152,
+      "pt": {
+        "options": [
+          "Eleger o DR OSPF na porta de acesso, comparando a prioridade e o router-id dos vizinhos ligados",
+          "Rate-limitar unicast desconhecido, multicast ou broadcast na porta, evitando que um loop/storm esgote o domínio",
+          "Substituir o CoPP no core, policando o tráfego para a CPU do route processor em vez do storm na porta de acesso",
+          "Traduzir VNIs VXLAN para VLANs 802.1Q no acesso, encapsulando e desencapsulando o overlay no switch"
+        ],
+        "explanation": "storm-control broadcast/multicast/unicast level X. Pode shutdown ou trap. Complementa BPDU Guard e loop guard mas não substitui STP. Nível em pps ou % da interface."
+      },
+      "en": {
+        "options": [
+          "Electing the OSPF designated router on the access port by comparing the neighbor priority and the router-id",
+          "Rate-limiting unknown unicast, multicast, or broadcast on the port so a loop/storm cannot exhaust the domain",
+          "Replacing CoPP in the core by policing traffic toward the route-processor CPU instead of the access-port storm",
+          "Translating VXLAN VNIs into 802.1Q VLANs on the access switch, encapsulating and decapsulating the overlay"
+        ],
+        "explanation": "storm-control broadcast/multicast/unicast level X. It can shut or trap. It complements BPDU Guard and loop guard but does not replace STP. The level is pps or a percent of interface bandwidth."
+      }
+    },
+    {
+      "index": 153,
+      "pt": {
+        "options": [
+          "Só pela porta TCP 80, sem DPI nem assinaturas, tratando qualquer porta dinâmica como tráfego desconhecido",
+          "Por aplicação (DPI/signatures, PDLM/NAR), permitindo marking/queuing de apps que usam portas dinâmicas",
+          "Só no campo MPLS EXP de 3 bits, sem identificar a aplicação nem classificar pacotes IP nativos no acesso",
+          "Apenas em frames ISL, lendo o cabeçalho de trunk Cisco e ignorando 802.1Q, IP e as portas da aplicação"
+        ],
+        "explanation": "match protocol na MQC usa NBAR. Útil para SaaS, voice RTP, e apps que não cabem numa ACL. Performance: offload em hardware recente. Não substitui a classificação na trust boundary quando o DSCP já vem correto."
+      },
+      "en": {
+        "options": [
+          "By TCP port 80 only, with no DPI or signatures, treating every dynamic port as unknown traffic",
+          "By application (DPI/signatures, PDLM/NAR), allowing marking/queuing of apps that use dynamic ports",
+          "In the 3-bit MPLS EXP field only, without identifying the application or classifying native IP packets",
+          "Only inside ISL frames, reading the Cisco trunk header and ignoring 802.1Q, IP, and application ports"
+        ],
+        "explanation": "match protocol in MQC uses NBAR. Useful for SaaS, RTP voice, and apps that do not fit an ACL. Performance: hardware offload on recent platforms. It does not replace trust-boundary classification when DSCP is already correct."
+      }
+    },
+    {
+      "index": 154,
+      "pt": {
+        "options": [
+          "Desligar o LLQ na policy child, para a voz partilhar a fila CBWFQ sem a priority queue",
+          "O parent faz shape da interface/túnel (CIR do ISP); o child faz LLQ/CBWFQ dentro dessa fatia",
+          "Só marcar o CoS 802.1p na trama de saída, sem shape no parent nem filas LLQ/CBWFQ no child",
+          "Substituir o BFD na interface, detetando a queda do vizinho pelo shaper em vez dos hellos de liveness"
+        ],
+        "explanation": "Numa subinterface ou DMVPN, o parent shaper evita burst contra o policer do ISP; o child dá prioridade à voz (priority) e bandwidth às classes. Sem parent, o TX da interface física (1G) ignora o contrato de 100M."
+      },
+      "en": {
+        "options": [
+          "Disabling LLQ in the child policy so voice shares the CBWFQ queue with no priority queue",
+          "The parent shapes the interface/tunnel (ISP CIR); the child runs LLQ/CBWFQ inside that slice",
+          "Marking only the 802.1p CoS on the egress frame, with no parent shaper and no child LLQ/CBWFQ",
+          "Replacing BFD on the interface, detecting neighbor loss with the shaper instead of liveness hellos"
+        ],
+        "explanation": "On a subinterface or DMVPN, the parent shaper prevents bursting into the ISP policer; the child gives voice priority (priority) and bandwidth to other classes. Without a parent, the 1G physical TX ignores a 100M contract."
+      }
+    },
+    {
+      "index": 155,
+      "pt": {
+        "options": [
+          "Substituem o campo IP TTL: os 3 bits de EXP passam a contar os saltos no label e o TTL do pacote IP deixa de ser decrementado",
+          "Carrega uma classe de serviço no label; o PE copia/mapeia DSCP↔EXP na entrada e o núcleo faz PHB sem olhar para o IP",
+          "São o VNI do VXLAN, um campo de 24 bits no cabeçalho UDP 4789, e não os 3 bits de classe de serviço do label MPLS",
+          "Só existem quando o LDP anuncia labels IPv6, e ficam ausentes nos LSPs IPv4 e em qualquer LSP de MPLS clássico"
+        ],
+        "explanation": "Pipe vs uniform vs short-pipe models definem se o DSCP original se restaura no egress. PHP com implicit-null perde EXP no último hop — daí explicit-null quando o PHB no PE de egress importa."
+      },
+      "en": {
+        "options": [
+          "They replace the IP TTL field: the three EXP bits count hops in the label and the IP packet TTL is no longer decremented at each hop",
+          "They carry a class of service in the label; the PE maps DSCP↔EXP at ingress and the core applies PHB without inspecting IP",
+          "They are the VXLAN VNI, a 24-bit identifier in the UDP 4789 header, rather than the 3-bit class field inside the MPLS label",
+          "They exist only when LDP advertises IPv6 labels, and they are absent from IPv4 LSPs and from every classic MPLS LSP"
+        ],
+        "explanation": "Pipe vs uniform vs short-pipe models decide whether the original DSCP is restored at egress. PHP with implicit-null loses EXP at the last hop — hence explicit-null when the egress PE PHB matters."
+      }
+    }
+  ]
+}
