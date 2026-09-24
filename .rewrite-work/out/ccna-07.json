@@ -1,0 +1,215 @@
+{
+  "cert": "ccna",
+  "items": [
+    {
+      "index": 80,
+      "pt": {
+        "options": [
+          "O endereço MAC da Gi0/0, convertido em 32 bits e usado como Router ID antes de qualquer IPv4 de interface",
+          "Router-id manual; senão o IPv4 mais alto de uma Loopback up; senão o IPv4 mais alto de uma interface física up",
+          "Sempre o valor fixo 1.1.1.1, mesmo que existam Loopbacks ou interfaces físicas up com outros endereços IPv4 do router",
+          "O endereço IPv4 da VLAN de gestão, mesmo quando uma Loopback up tem um IPv4 mais alto do que essa VLAN"
+        ],
+        "explanation": "O RID é um IPv4 de 32 bits. Configurar router-id é a prática recomendada. Mudar o RID exige clear ip ospf process."
+      },
+      "en": {
+        "options": [
+          "The MAC address of Gi0/0, converted to 32 bits and used as the Router ID ahead of any interface IPv4",
+          "Manual router-id; else highest IPv4 on an up Loopback; else highest IPv4 on an up physical interface",
+          "Always the fixed value 1.1.1.1, even if up Loopbacks or physical interfaces have other IPv4 addresses on the router",
+          "The IPv4 address of the management VLAN, even when an up Loopback has a higher IPv4 than that VLAN"
+        ],
+        "explanation": "The RID is a 32-bit IPv4 value. Setting router-id is recommended. Changing it requires clear ip ospf process."
+      }
+    },
+    {
+      "index": 81,
+      "pt": {
+        "options": [
+          "Maior prioridade numérica e, em empate, o maior MAC, mesmo com um Bridge ID mais alto",
+          "Menor Bridge ID: prioridade (omissão 32768) + MAC; o valor mais baixo ganha",
+          "O switch com mais VLANs activas na base local, ignorando a prioridade e o MAC",
+          "O primeiro switch a enviar um BPDU, sem comparar a prioridade nem o endereço MAC"
+        ],
+        "explanation": "Priority configurável em passos de 4096. spanning-tree vlan X root primary ajusta a prioridade para este switch ganhar."
+      },
+      "en": {
+        "options": [
+          "Highest numeric priority and, on a tie, the highest MAC, even with a larger Bridge ID",
+          "Lowest Bridge ID: priority (default 32768) plus MAC; the lowest value wins",
+          "The switch with the most active VLANs locally, ignoring both priority and the MAC",
+          "The first switch to send a BPDU, without comparing priority or the MAC address"
+        ],
+        "explanation": "Priority is set in steps of 4096. spanning-tree vlan X root primary lowers priority so this switch wins."
+      }
+    },
+    {
+      "index": 82,
+      "pt": {
+        "options": [
+          "Apenas os papéis root e designated, sem alternate nem backup como papéis extra do RSTP 802.1w",
+          "Alternate e backup, papéis de descarte prontos a transitar sem timers de 30–50 s",
+          "Os papéis DR e BDR do OSPF, eleitos por prioridade e Router ID entre os switches da mesma VLAN",
+          "Listen e learn como papéis finais e estáveis da porta, em vez de estados transitórios do STP"
+        ],
+        "explanation": "RSTP usa root, designated, alternate e backup. A convergência é em segundos (proposal/agreement), não nos 50 s do 802.1D."
+      },
+      "en": {
+        "options": [
+          "Only the root and designated roles, with no alternate or backup as extra roles of RSTP 802.1w",
+          "Alternate and backup, discarding roles that can transition without 30–50 s timers",
+          "The OSPF DR and BDR roles, elected by priority and Router ID among the switches in that VLAN",
+          "Listen and learn as final, stable port roles, rather than as transient states of classic STP"
+        ],
+        "explanation": "RSTP uses root, designated, alternate, and backup. Convergence is in seconds (proposal/agreement), not the 50 s of 802.1D."
+      }
+    },
+    {
+      "index": 83,
+      "pt": {
+        "options": [
+          "Desliga o PortFast nessa porta de acesso e impede a transição rápida da porta para o estado forwarding",
+          "Coloca a porta em root-inconsistent se chegar um BPDU superior, impedindo que um switch a jusante se torne root",
+          "Força a porta a tornar-se root port assim que recebe um BPDU, mesmo que esse BPDU seja inferior ao da root bridge",
+          "Activa o Loop Guard na mesma porta e passa-a a loop-inconsistent quando deixam de chegar BPDUs do vizinho"
+        ],
+        "explanation": "Usa-se em portas de edge para a core onde um switch de utilizador não deve ganhar a eleição. É complementar ao BPDU Guard."
+      },
+      "en": {
+        "options": [
+          "Disables PortFast on that access port and blocks the port from moving quickly into the forwarding state",
+          "Puts the port in root-inconsistent if a superior BPDU arrives, stopping a downstream switch from becoming root",
+          "Forces the port to become the root port as soon as a BPDU arrives, even when that BPDU is inferior to the root",
+          "Enables Loop Guard on the same port and moves it to loop-inconsistent when BPDUs from the neighbor stop"
+        ],
+        "explanation": "Use it on edge ports toward the core where a user switch must not win the election. It complements BPDU Guard."
+      }
+    },
+    {
+      "index": 84,
+      "pt": {
+        "options": [
+          "switchport mode access, que desliga o DTP e mantém o trunk dinâmico",
+          "switchport nonegotiate (com modo trunk ou access estático)",
+          "no spanning-tree, que desactiva o STP em vez da negociação DTP",
+          "shutdown vlan 1, que desliga a VLAN 1 em vez do DTP no trunk"
+        ],
+        "explanation": "DTP (dynamic auto/desirable) pode formar trunks indesejados. A prática é modo trunk ou access estático mais nonegotiate."
+      },
+      "en": {
+        "options": [
+          "switchport mode access, which stops DTP but keeps the dynamic trunk",
+          "switchport nonegotiate (with a static trunk or access mode)",
+          "no spanning-tree, which disables STP rather than DTP negotiation",
+          "shutdown vlan 1, which shuts VLAN 1 instead of DTP on the trunk"
+        ],
+        "explanation": "DTP (dynamic auto/desirable) can form unwanted trunks. Best practice is static trunk or access mode plus nonegotiate."
+      }
+    },
+    {
+      "index": 85,
+      "pt": {
+        "options": [
+          "Nada de errado ocorre; o tráfego com tag 802.1Q corrige sozinho a diferença de native VLAN",
+          "Tráfego untagged é interpretado em VLANs distintas e o CDP reporta native VLAN mismatch",
+          "O trunk 802.1Q cai de imediato e fica down até as native VLANs dos dois lados ficarem iguais",
+          "O STP desliga-se nas duas pontas e deixa de enviar BPDUs nesse enlace trunk"
+        ],
+        "explanation": "Frames da native VLAN vão sem tag. Se um lado pensa VLAN 1 e o outro VLAN 99, o untagged cruza VLANs."
+      },
+      "en": {
+        "options": [
+          "Nothing goes wrong; 802.1Q tagged traffic by itself corrects the native VLAN difference",
+          "Untagged traffic is interpreted in different VLANs and CDP reports a native VLAN mismatch",
+          "The 802.1Q trunk drops immediately and stays down until the native VLANs on both ends match",
+          "STP turns itself off on both ends and stops sending BPDUs across that trunk link"
+        ],
+        "explanation": "Native-VLAN frames are untagged. If one side assumes VLAN 1 and the other VLAN 99, untagged traffic crosses VLANs."
+      }
+    },
+    {
+      "index": 86,
+      "pt": {
+        "options": [
+          "switchport access vlan 10, só a VLAN de acesso",
+          "switchport trunk allowed vlan 10,20,30",
+          "vlan dot1q tag native, marca a VLAN nativa",
+          "spanning-tree vlan 10, o STP só dessa VLAN"
+        ],
+        "explanation": "Por omissão um trunk permite 1-4094. Restringir reduz flooding e risco. Use allowed vlan add/remove para ajustar."
+      },
+      "en": {
+        "options": [
+          "switchport access vlan 10, the access VLAN only",
+          "switchport trunk allowed vlan 10,20,30",
+          "vlan dot1q tag native, tags the native VLAN",
+          "spanning-tree vlan 10, STP for that VLAN only"
+        ],
+        "explanation": "By default a trunk allows 1-4094. Pruning the list reduces flooding and risk. Use allowed vlan add/remove to adjust."
+      }
+    },
+    {
+      "index": 87,
+      "pt": {
+        "options": [
+          "Uma subinterface de router-on-a-stick no router, com dot1Q, e não um endpoint L3 criado no próprio switch",
+          "A interface vlan X, um endpoint L3 interno para a VLAN, usada em encaminhamento inter-VLAN no switch",
+          "Um Port-channel que agrega várias ligações físicas e não serve de gateway L3 para a VLAN",
+          "Um módulo SFP de fibra ou cobre que apenas fornece o meio físico da porta do switch"
+        ],
+        "explanation": "interface vlan 10 com IP, mais ip routing, permite que o switch encaminhe entre VLANs sem router-on-a-stick."
+      },
+      "en": {
+        "options": [
+          "A router-on-a-stick subinterface on the router, using dot1Q, and not a Layer 3 endpoint created on the switch",
+          "interface vlan X, an internal Layer 3 endpoint for that VLAN, used for inter-VLAN routing on the switch",
+          "A Port-channel that bundles several physical links and does not act as the Layer 3 gateway for the VLAN",
+          "An SFP fiber or copper module that only provides the physical medium for the switch port"
+        ],
+        "explanation": "interface vlan 10 with an IP, plus ip routing, lets the switch route between VLANs without router-on-a-stick."
+      }
+    },
+    {
+      "index": 88,
+      "pt": {
+        "options": [
+          "Todas as portas de acesso de PCs, para que esses hosts possam enviar DHCPOFFER e DHCPACK",
+          "Portas rumo a servidores DHCP legitimos e uplinks/trunks para esses servidores",
+          "Nenhuma porta; o DHCP snooping não classifica interfaces como trusted nem como untrusted",
+          "Apenas as portas com PortFast, porque o PortFast marca automaticamente essa porta como trusted"
+        ],
+        "explanation": "ip dhcp snooping vlan X; nas portas de servidor/uplink: ip dhcp snooping trust. Portas untrusted bloqueiam DHCPOFFER/ACK falsos."
+      },
+      "en": {
+        "options": [
+          "Every PC access port, so those hosts are allowed to send DHCPOFFER and DHCPACK messages",
+          "Ports toward legitimate DHCP servers and the uplinks/trunks to those servers",
+          "No ports at all; DHCP snooping does not classify interfaces as trusted or as untrusted",
+          "Only ports with PortFast, because PortFast automatically marks that port as trusted"
+        ],
+        "explanation": "Enable ip dhcp snooping vlan X; on server/uplink ports set ip dhcp snooping trust. Untrusted ports drop fake DHCPOFFER/ACK."
+      }
+    },
+    {
+      "index": 89,
+      "pt": {
+        "options": [
+          "Na tabela OSPF, comparando o IP do ARP com o next-hop",
+          "Na binding table do DHCP snooping (IP-MAC-porta-VLAN)",
+          "No DNS, resolvendo o nome do host antes de aceitar o ARP",
+          "Na native VLAN, só se a VLAN nativa dos dois lados coincidir"
+        ],
+        "explanation": "DAI intercepta ARP em portas untrusted e compara IP/MAC com a base do snooping. ARP spoofing é descartado."
+      },
+      "en": {
+        "options": [
+          "The OSPF table, matching the ARP IP against the next hop",
+          "The DHCP snooping binding table (IP-MAC-port-VLAN)",
+          "DNS, resolving the hostname before the ARP is accepted",
+          "The native VLAN, only if the native VLAN matches on both ends"
+        ],
+        "explanation": "DAI intercepts ARP on untrusted ports and checks IP/MAC against the snooping database. Spoofed ARP is dropped."
+      }
+    }
+  ]
+}
