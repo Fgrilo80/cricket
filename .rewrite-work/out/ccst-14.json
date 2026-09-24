@@ -1,0 +1,215 @@
+{
+  "cert": "ccst",
+  "items": [
+    {
+      "index": 185,
+      "pt": {
+        "options": [
+          "O foreign termina o SSID de convidados localmente na WLC do campus e nunca faz túnel CAPWAP/EoIP até ao anchor; o anchor só guarda leases DHCP offline, sem VLAN de guest nem saída para a Internet na DMZ",
+          "Ambos os controladores têm de estar no mesmo edifício e partilhar um único IP de gestão, senão os convidados não associam ao SSID nem formam o túnel de mobilidade entre o campus e a DMZ",
+          "O foreign é onde o cliente associa; o tráfego de convidados é tunelado (tipicamente CAPWAP/EoIP) até ao anchor na DMZ, que aplica a VLAN/política de guest e muitas vezes a saída para a Internet",
+          "O anchor só trata a banda de 2,4 GHz dos clientes de convidados na DMZ; o foreign só trata a de 5 GHz no campus, e nenhum dos dois tunela o tráfego da outra banda para a Internet"
+        ],
+        "explanation": "O auto-anchor (guest anchor) mantém os clientes de convidados associados a APs/WLCs no campus (foreign) e tunela o tráfego para um WLC anchor numa zona DMZ/firewall. O anchor coloca os convidados na VLAN de guest e tipicamente dá Internet sem acesso à LAN interna. Não é uma divisão por banda, e o foreign não termina simplesmente o tráfego de guest localmente."
+      },
+      "en": {
+        "options": [
+          "The foreign controller terminates the guest SSID locally on the campus WLC and never tunnels CAPWAP/EoIP to the anchor; the anchor only stores DHCP leases offline, with no guest VLAN or Internet egress in the DMZ",
+          "Both controllers must be in the same building and share one management IP address, or guest clients cannot associate to the SSID or form a mobility tunnel between the campus and the DMZ",
+          "The foreign controller is where the client associates; guest traffic is tunneled (typically CAPWAP/EoIP) to the anchor in the DMZ, which applies the guest VLAN/policy and often Internet egress",
+          "The anchor controller only handles 2.4 GHz for guest clients in the DMZ; the foreign controller only handles 5 GHz on the campus, and neither tunnels traffic from the other band toward the Internet"
+        ],
+        "explanation": "Auto-anchor (guest anchor) keeps guest clients associated to APs/WLCs in the campus (foreign) while tunneling their traffic to an anchor WLC in a DMZ/firewall zone. The anchor places guests on the guest VLAN and typically provides Internet access without letting them reach the internal LAN. It is not a band split, and the foreign side does not simply terminate guest traffic locally."
+      }
+    },
+    {
+      "index": 186,
+      "pt": {
+        "options": [
+          "Esgotar o pool de IPs do servidor DHCP pedindo muitos leases (muitas vezes com MACs falsificados) para os clientes legítimos não obterem endereço; mitigar com DHCP snooping (e muitas vezes port-security / limites de taxa)",
+          "Encher a tabela CAM do switch com MACs falsos até o switch se comportar como hub e inundar todas as portas de acesso da VLAN; mitigar só com PortFast do spanning-tree nas portas de acesso, sem DHCP snooping nem limites de taxa de DHCP",
+          "Cifrar todas as mensagens DHCP Offer com WEP para os clientes não renovarem o lease nem obterem endereço; mitigar desativando o DHCP relay (ip helper-address) nos routers da LAN, sem ativar DHCP snooping",
+          "Forçar todos os clientes a usar APIPA 169.254.x.x permanentemente, sem qualquer lease do servidor DHCP; mitigar desligando o ARP no switch de acesso para bloquear respostas e impedir a renovação"
+        ],
+        "explanation": "O DHCP starvation satura Discover/Request (frequentemente com muitos MACs de cliente falsificados) para o pool do servidor acabar e utilizadores reais não obterem lease. O DHCP snooping limita portas untrusted e constrói a binding table; port-security e rate limiting de DHCP também ajudam. CAM overflow é outro ataque (MAC flooding). Desativar DHCP relay ou ARP não é a mitigação."
+      },
+      "en": {
+        "options": [
+          "Exhaust the DHCP server’s available IP pool by requesting many leases (often with spoofed MACs) so legitimate clients get no address; mitigate with DHCP snooping (and often port-security / rate limits)",
+          "Flood the switch CAM table with fake MACs until the switch acts like a hub and floods every access port in the VLAN; mitigate only with spanning-tree PortFast, without DHCP snooping or DHCP rate limits",
+          "Encrypt all DHCP Offer messages with WEP so clients cannot renew their lease or obtain an address; mitigate by disabling DHCP relay (ip helper-address) on the LAN routers, without enabling DHCP snooping",
+          "Force every client to use APIPA 169.254.x.x permanently, with no lease from the DHCP server; mitigate by turning off ARP on the access switch so replies are blocked and renewal fails"
+        ],
+        "explanation": "DHCP starvation floods Discover/Request traffic (frequently with many spoofed client MACs) so the server’s pool runs out and real users cannot get leases. DHCP snooping limits untrusted ports and builds a binding table; port-security and DHCP rate limiting also help. CAM overflow is a different attack (MAC flooding). Disabling DHCP relay or ARP is not the fix."
+      }
+    },
+    {
+      "index": 187,
+      "pt": {
+        "options": [
+          "O CDP só funciona em links de fibra óptica; o LLDP só funciona em cobre de par trançado, por isso um vizinho em porta RJ-45 nunca é descoberto pelo CDP nem anuncia as suas capacidades",
+          "O CDP é proprietário Cisco e vem ativo por omissão em muitos equipamentos Cisco; o LLDP é um padrão aberto IEEE 802.1AB usado para descoberta de vizinhos multi-fornecedor",
+          "O LLDP elege o designated router do OSPF no segmento; o CDP elege a root bridge do STP, e nenhum dos dois anuncia a identidade nem as capacidades do vizinho no enlace local",
+          "Ambos os protocolos cifram toda a tabela de vizinhos com IPsec por omissão, por isso os anúncios CDP e LLDP não se conseguem capturar num SPAN nem inspecionar em claro no analisador"
+        ],
+        "explanation": "O CDP (Cisco Discovery Protocol) é proprietário e costuma estar ligado por omissão em equipamento Cisco. O LLDP (IEEE 802.1AB) é neutro quanto ao fabricante e preferível em ambientes mistos. Ambos anunciam identidade e capacidades no enlace; nenhum elege papéis OSPF/STP nem cifra a base de vizinhos com IPsec por omissão."
+      },
+      "en": {
+        "options": [
+          "CDP works only on fiber-optic links; LLDP works only on twisted-pair copper, so a neighbor on an RJ-45 port is never discovered by CDP and never advertises capabilities",
+          "CDP is Cisco-proprietary and enabled by default on many Cisco devices; LLDP is an open IEEE 802.1AB standard used for multivendor neighbor discovery",
+          "LLDP elects the OSPF designated router on the segment; CDP elects the STP root bridge, and neither protocol advertises the neighbor identity on the local link",
+          "Both protocols encrypt the entire neighbor table with IPsec by default, so CDP and LLDP advertisements cannot be captured on a SPAN port or inspected in clear text"
+        ],
+        "explanation": "CDP (Cisco Discovery Protocol) is proprietary and commonly on by default on Cisco gear. LLDP (IEEE 802.1AB) is vendor-neutral and preferred in mixed environments. Both advertise identity and capabilities over the link; neither elects OSPF/STP roles nor encrypts the neighbor database with IPsec by default."
+      }
+    },
+    {
+      "index": 189,
+      "pt": {
+        "options": [
+          "Cifrar cada trama Ethernet com IPsec entre dois PCs de acesso na mesma VLAN de utilizador, sem etiqueta VLAN de serviço exterior e sem preservar os IDs VLAN interiores do cliente através da rede do fornecedor",
+          "Substituir o Spanning Tree por uma única root bridge em todo o campus e na rede do fornecedor, sem acrescentar uma etiqueta VLAN de serviço exterior para transportar as VLANs etiquetadas do cliente",
+          "Transportar o tráfego etiquetado em VLAN do cliente através da rede do fornecedor, adicionando uma etiqueta VLAN de serviço exterior, para que os IDs VLAN interiores do cliente se preservem de ponta a ponta",
+          "Forçar todas as portas de acesso para a mesma native VLAN do SVI de gestão do switch, sem double tagging e sem manter os IDs VLAN interiores do cliente intactos de ponta a ponta no fornecedor"
+        ],
+        "explanation": "O Q-in-Q (estilo IEEE 802.1ad com double tagging) permite ao fornecedor de serviço embrulhar as tramas 802.1Q do cliente com uma etiqueta exterior. O fornecedor comuta com base na VLAN exterior; as etiquetas interiores do cliente mantêm-se intactas no handoff metro/WAN. Não é cifra IPsec, não substitui o STP e não força todas as portas de acesso para a VLAN de gestão."
+      },
+      "en": {
+        "options": [
+          "Encrypting every Ethernet frame with IPsec between two access PCs on the same user VLAN, with no outer service VLAN tag and without preserving the customer inner VLAN IDs across the provider network",
+          "Replacing Spanning Tree with a single root bridge for the whole campus and the provider network, without adding an outer service VLAN tag to carry the customer tagged VLANs across that network",
+          "Carrying a customer’s VLAN-tagged traffic across a provider network by adding an outer service VLAN tag, so the customer’s inner VLAN IDs are preserved end to end",
+          "Forcing all access ports into the same native VLAN as the switch management SVI, with no double tagging and without keeping the customer inner VLAN IDs intact end to end across the provider"
+        ],
+        "explanation": "Q-in-Q (IEEE 802.1ad style double tagging) lets a service provider wrap a customer’s 802.1Q frames with an outer tag. The provider switches on the outer VLAN; the customer’s inner tags stay intact across the metro/WAN handoff. It is not IPsec encryption, not an STP replacement, and not a way to force every access port onto the management VLAN."
+      }
+    },
+    {
+      "index": 190,
+      "pt": {
+        "options": [
+          "Tramas de gestão unicast selecionadas (como deauthentication e disassociation), para um atacante não as forjar facilmente e expulsar clientes",
+          "Apenas o broadcast do SSID em cada beacon, tornando a rede num SSID oculto por omissão, sem proteger as tramas unicast de deauthentication nem de disassociation",
+          "Todo o túnel CAPWAP entre o AP e o WLC com uma segunda camada IPsec, sem proteger as tramas de gestão unicast como deauthentication e disassociation no BSS",
+          "Pacotes DHCP Offer no uplink com fio do AP, sem qualquer proteção às tramas de gestão unicast de deauthentication e disassociation enviadas no BSS Wi-Fi"
+        ],
+        "explanation": "O 802.11w acrescenta proteção criptográfica a certas tramas de gestão (nomeadamente deauth/disassoc), reduzindo ataques de desconexão forjada. Não esconde o SSID por si, não envolve o CAPWAP em IPsec extra e não protege o DHCP com fio no uplink do AP. O WPA3 exige PMF; o WPA2 pode ativá-lo opcionalmente."
+      },
+      "en": {
+        "options": [
+          "Selected unicast management frames (such as deauthentication and disassociation) so an attacker cannot easily forge them to kick clients offline",
+          "Only the SSID broadcast in every beacon, turning the network into a hidden SSID by default, without protecting unicast deauthentication or disassociation frames",
+          "The entire CAPWAP tunnel between the AP and the WLC with a second IPsec layer, without protecting unicast management frames such as deauthentication and disassociation",
+          "DHCP Offer packets on the wired uplink of the AP, with no protection for the unicast deauthentication and disassociation management frames sent in the Wi-Fi BSS"
+        ],
+        "explanation": "802.11w adds cryptographic protection to certain management frames (notably deauth/disassoc), reducing spoofed disconnect attacks. It does not hide the SSID by itself, does not wrap CAPWAP in extra IPsec, and does not secure wired DHCP on the AP uplink. WPA3 requires PMF; WPA2 can optionally enable it."
+      }
+    },
+    {
+      "index": 191,
+      "pt": {
+        "options": [
+          "Forçar todos os clientes a fazer roam para 2,4 GHz sempre que o RSSI desça abaixo de −70 dBm, sem detetar radar nem abandonar os canais regulamentados de 5 GHz",
+          "Detetar radar e outros ocupantes regulamentados para o AP abandonar ou evitar esses canais, o que pode implicar uma espera CAC ou uma mudança de canal",
+          "Encriptar frames de gestão com AES-CCMP para que os beacons não possam ser falsificados, sem detetar radar nem obrigar o AP a uma espera CAC ou mudança de canal",
+          "Substituir o CSMA/CA por um plano TDMA agendado em todos os APs, sem espera de Channel Availability Check nem mudança de canal quando aparece radar"
+        ],
+        "explanation": "A DFS (Dynamic Frequency Selection) permite aos APs usar canais 5/6 GHz partilhados com radar meteorológico e outros serviços só se detetarem incumbentes e saírem do canal quando exigido. Isso costuma implicar um Channel Availability Check (CAC) antes de usar o canal e uma possível mudança de canal em operação. Não é band steering, não é 802.11w PMF, e não é um agendador TDMA."
+      },
+      "en": {
+        "options": [
+          "Forcing every client to roam to 2.4 GHz whenever RSSI drops below −70 dBm, without detecting radar or vacating those regulated 5 GHz channels",
+          "Detecting radar and other regulated incumbents so the AP can vacate or avoid those channels, which can cause a CAC wait or a channel change",
+          "Encrypting management frames with AES-CCMP so beacons cannot be spoofed, without detecting radar or forcing the AP into a CAC wait or channel change",
+          "Replacing CSMA/CA with a scheduled TDMA airtime plan on every AP, with no Channel Availability Check wait and no channel change when radar appears"
+        ],
+        "explanation": "DFS (Dynamic Frequency Selection) lets APs use weather-radar and other regulated 5/6 GHz channels only if they can detect incumbents and leave the channel when required. That often means a Channel Availability Check (CAC) before use and a possible channel change mid-operation. It is not band steering, not 802.11w PMF, and not a TDMA scheduler."
+      }
+    },
+    {
+      "index": 192,
+      "pt": {
+        "options": [
+          "UPC é só para fibra multimodo e APC só para monomodo; misturá-los funciona sempre do ponto de vista ótico, sem perda por desalinhamento da face polida",
+          "O APC acrescenta uma férula metálica que duplica a potência de lançamento face ao UPC, sem mudar o ângulo da face nem reduzir o return loss para o laser",
+          "UPC e APC diferem apenas na cor do boot de alívio de tensão, com a mesma geometria da face, por isso acoplá-los nunca causa perda elevada nem risco de dano",
+          "O APC tem face angular que reflete a luz para o cladding, reduzindo o return loss; o UPC é plano (ultra polish) e não deve ser acoplado a APC"
+        ],
+        "explanation": "UPC (Ultra Physical Contact) tem face polida plana; APC (Angled Physical Contact) tem tipicamente ~8° de ângulo para a reflexão ir para o cladding em vez de voltar para o laser — importante em ligações analógicas/PON e muitas monomodo. APC e UPC não se devem acoplar: o desalinhamento geométrico causa perda elevada e possível dano. A cor do boot costuma indicar (verde APC, azul UPC), mas a cor sozinha não define o polimento, e o estilo não é “só multimodo vs só monomodo”."
+      },
+      "en": {
+        "options": [
+          "UPC is only for multimode fiber and APC is only for single-mode; mixing them always works optically, with no loss from a mismatched polished end-face",
+          "APC adds a metal ferrule that doubles the launch power compared with UPC, without changing the end-face angle or lowering return loss back toward the laser",
+          "UPC and APC differ only in the color of the strain-relief boot, with identical end-face geometry, so mating them never causes high loss or risk of damage",
+          "APC uses an angled end-face that reflects light into the cladding, lowering return loss; UPC is flat (ultra polish) and should not be mated to APC"
+        ],
+        "explanation": "UPC (Ultra Physical Contact) has a flat polished end-face; APC (Angled Physical Contact) is typically ~8° angled so reflected light goes into the cladding instead of back toward the laser—critical for analog/PON and many single-mode links. APC and UPC must not be mated: geometry mismatch causes high loss and possible damage. Boot color often hints (green APC, blue UPC) but color alone is not the definition, and polish style is not “multimode-only vs single-mode-only.”"
+      }
+    },
+    {
+      "index": 193,
+      "pt": {
+        "options": [
+          "Alimentar dispositivos apenas em portas SFP de fibra, em vez de cobre RJ-45, sem aumentar a potência entregue nos pares de um cabo Ethernet e sem orçamento Type 3 ou Type 4 no PSE",
+          "Substituir os pares de dados por condutores DC dedicados para que as tramas Ethernet já não partilhem o cabo, sem subir o orçamento de potência no PSE para câmaras, APs ou thin clients",
+          "Entregar potência substancialmente maior (cerca de ~60 W Type 3 / ~90 W Type 4 no PSE) usando mais pares, para dispositivos como câmaras PTZ, access points e thin clients",
+          "Negociar adjacência de encaminhamento Layer 3 nos mesmos pares que transportam alimentação DC, sem entregar cerca de 60 W ou 90 W a câmaras PTZ, access points ou thin clients"
+        ],
+        "explanation": "O IEEE 802.3bt alarga o Power over Ethernet além do 802.3af (~15 W) e 802.3at/PoE+ (~30 W), usando mais pares e orçamentos mais altos (tipicamente ~60 W Type 3 e ~90 W Type 4 no equipamento que fornece energia). Continua em cabos Ethernet de cobre com dados e energia a partilhar pares após negociação — não é SFP de fibra, não é “só DC em vez de dados”, e não é um protocolo de routing."
+      },
+      "en": {
+        "options": [
+          "Only powering devices over fiber SFP ports instead of copper RJ-45, without raising the wattage delivered on Ethernet pairs and without a Type 3 or Type 4 budget at the PSE",
+          "Replacing the data pairs with dedicated DC conductors so Ethernet frames no longer share the cable, without raising the power budget at the PSE for cameras, APs, or thin clients",
+          "Delivering substantially higher power (roughly up to ~60 W Type 3 / ~90 W Type 4 at the PSE) using more pairs, for devices such as PTZ cameras, access points, and thin clients",
+          "Negotiating Layer 3 routing adjacency over the same pairs that carry DC power, without delivering about 60 W or 90 W to PTZ cameras, access points, or thin clients"
+        ],
+        "explanation": "IEEE 802.3bt extends Power over Ethernet beyond 802.3af (~15 W) and 802.3at/PoE+ (~30 W) by using additional pairs and higher budgets (commonly cited ~60 W Type 3 and ~90 W Type 4 at the power-sourcing equipment). It still runs over copper Ethernet cabling with data and power sharing pairs after negotiation—not fiber SFPs, not “DC-only conductors instead of data,” and not a routing protocol."
+      }
+    },
+    {
+      "index": 194,
+      "pt": {
+        "options": [
+          "Dividir um canal em resource units para o AP servir vários clientes na mesma oportunidade de transmissão com alocações mais pequenas e agendadas, melhorando a eficiência com muitas tramas curtas",
+          "Forçar todos os clientes a um único spatial stream para o MU-MIMO nunca ser usado no BSS, sem dividir o canal em resource units agendadas para várias estações na mesma oportunidade de transmissão",
+          "Substituir o WPA3 por um conjunto de cifras antigo baseado em WEP para endpoints IoT de baixa potência, sem resource units e sem servir vários clientes na mesma oportunidade de transmissão do AP",
+          "Estender a banda de 2,4 GHz a canais de 80 MHz idênticos ao VHT80 dos 5 GHz em todos os APs, sem dividir o canal em resource units mais pequenas e agendadas para tramas curtas"
+        ],
+        "explanation": "O OFDMA divide um canal Wi-Fi em resource units (RUs) mais pequenas para que uma oportunidade de TX/RX do AP possa endereçar várias estações com alocações dimensionadas — útil em ambientes densos com muitas tramas curtas. Complementa (não desativa) o MU-MIMO; não tem a ver com a escolha de cifras WEP/WPA3; e não cria canais de 80 MHz em 2,4 GHz como o VHT80 nos 5 GHz."
+      },
+      "en": {
+        "options": [
+          "Splitting a channel into resource units so an AP can serve multiple clients in the same transmit opportunity with smaller, scheduled allocations, improving efficiency for many small frames",
+          "Forcing every client onto a single spatial stream so MU-MIMO is never used in the BSS, without splitting the channel into scheduled resource units for several stations in the same transmit opportunity",
+          "Replacing WPA3 with an older WEP-based cipher suite for low-power IoT endpoints, with no resource units and without serving several clients in the same AP transmit opportunity",
+          "Extending the 2.4 GHz band to 80 MHz-wide channels identical to 5 GHz VHT80 on every AP, without splitting the channel into smaller resource units scheduled for short frames"
+        ],
+        "explanation": "OFDMA divides a Wi-Fi channel into smaller resource units (RUs) so one AP transmit/receive opportunity can address multiple stations with right-sized allocations—especially helpful under dense, short-packet traffic. It complements (does not disable) MU-MIMO; it is unrelated to WEP/WPA3 cipher choice; and it does not invent 80 MHz channels on 2.4 GHz like 5 GHz VHT80."
+      }
+    },
+    {
+      "index": 195,
+      "pt": {
+        "options": [
+          "Encriptar todas as tramas na porta com MACsec para que switches não autorizados não formem EtherChannel, sem limitar os endereços MAC de origem permitidos nessa interface",
+          "Limitar que endereços MAC podem enviar tráfego nessa porta (e definir o que acontece em violação), para reduzir a ligação de endpoints não autorizados",
+          "Substituir o STP por uma blacklist de aprendizagem MAC que desativa permanentemente as VLANs no uplink quando um MAC desconhecido aparece na porta de acesso",
+          "Forçar a porta a operar apenas como interface Layer 3 encaminhada com máscara /30, sem limitar os endereços MAC que podem enviar tráfego nessa interface de acesso"
+        ],
+        "explanation": "O port security associa uma porta de acesso a um conjunto limitado de MACs de origem permitidos (estáticos, sticky ou aprendizagem dinâmica até um máximo) e aplica uma ação de violação (protect, restrict ou shutdown). Serve para controlar que endpoints podem usar a porta — não é encriptação MACsec de todas as tramas, não desativa STP/VLANs no uplink, e não transforma a porta numa routed /30."
+      },
+      "en": {
+        "options": [
+          "Encrypting all frames on the port with MACsec so unauthorized switches cannot form an EtherChannel, without limiting which source MAC addresses may transmit on that interface",
+          "Limiting which MAC addresses may send traffic on that port (and defining what happens on violation), to reduce unauthorized endpoint attachment",
+          "Replacing STP with a MAC-learning blacklist that permanently disables VLANs on the uplink whenever an unknown MAC appears on the access port",
+          "Forcing the port to operate only as a Layer 3 routed interface with a /30 mask, without limiting which MAC addresses may send traffic on that access interface"
+        ],
+        "explanation": "Port security binds an access port to a limited set of allowed source MAC addresses (static, sticky, or dynamic learning up to a maximum) and applies a violation action (protect, restrict, or shutdown). It is about controlling which endpoints may use the port—not MACsec encryption of every frame, not disabling STP/VLANs on uplinks, and not converting the port into a routed /30."
+      }
+    }
+  ]
+}

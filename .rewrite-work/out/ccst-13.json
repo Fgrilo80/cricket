@@ -1,0 +1,215 @@
+{
+  "cert": "ccst",
+  "items": [
+    {
+      "index": 175,
+      "pt": {
+        "options": [
+          "AS-path prepending BGP feito por peers upstream para alongar o AS-path que anunciam",
+          "Flaps de vizinhos OSPF provocados por mismatch de MTU nas interfaces de camada 3",
+          "Endereços MAC não autorizados nessa porta (limite/learn sticky e ação de violação)",
+          "Envenenamento de cache DNS no resolver, com respostas forjadas aos pedidos de nomes"
+        ],
+        "explanation": "Port security limita quais MACs podem usar uma porta de acesso (estático, dinâmico ou sticky). Em violação pode protect, restrict ou shutdown — controlo L2 básico para hosts finais."
+      },
+      "en": {
+        "options": [
+          "BGP AS-path prepending by upstream peers, used to lengthen the AS path those peers advertise",
+          "OSPF neighbor flaps caused by an MTU mismatch on the routed interfaces, which resets the adjacency",
+          "Unauthorized MAC addresses connecting to that port (limit/learn sticky MACs and violate action)",
+          "DNS cache poisoning on the resolver, by injecting forged answers into cached host-name lookups"
+        ],
+        "explanation": "Port security limits which MAC addresses may use an access port (static, dynamic, or sticky). On violation it can protect, restrict, or shut down the port — a basic Layer-2 access control for end hosts."
+      }
+    },
+    {
+      "index": 176,
+      "pt": {
+        "options": [
+          "Aceitar ofertas DHCP só de portas trusted (normalmente uplinks para o servidor real) e descartar respostas DHCP rogue",
+          "Substituir o DHCP por endereçamento estático em todo o campus, dando a cada host um IP fixo e nenhum lease dinâmico atribuído",
+          "Forçar automaticamente todos os clientes para uma private VLAN isolada, sem qualquer comunicação com o resto da LAN",
+          "Encriptar todos os pacotes DHCP com IPsec entre o cliente e o servidor, cobrindo Discover, Offer, Request e Ack"
+        ],
+        "explanation": "DHCP snooping cria uma binding table e só trata portas trusted configuradas como servidores DHCP válidos. Ofertas rogue em portas untrusted são descartadas, reduzindo MITM e gateway errado."
+      },
+      "en": {
+        "options": [
+          "Accept DHCP offers only from trusted ports (usually uplinks to the real server) and drop rogue DHCP replies",
+          "Replace DHCP with static addressing campus-wide, giving every host a fixed IP address and no dynamic lease",
+          "Force every client into a private VLAN automatically, so that client cannot communicate with the rest of the LAN",
+          "Encrypt all DHCP packets with IPsec between the client and the server, covering Discover, Offer, Request, and Ack"
+        ],
+        "explanation": "DHCP snooping builds a binding table and treats only configured trusted ports as valid DHCP servers. Rogue offers from untrusted access ports are dropped, reducing MITM and wrong-gateway attacks."
+      }
+    },
+    {
+      "index": 177,
+      "pt": {
+        "options": [
+          "Apaga todas as VLANs locais e força todos os switches do domínio para o modo Client",
+          "Só anuncia VLANs aprendidas via RADIUS e ignora as criadas na base de dados local",
+          "Reencaminha anúncios VTP mas não atualiza a sua própria base de VLANs com eles",
+          "Encripta automaticamente todos os trunks VLAN com MACsec, sem precisar de uma chave manual"
+        ],
+        "explanation": "Um switch VTP Transparent retransmite mensagens VTP nos trunks, mas mantém a base de VLANs local e não aprende nem propaga alterações no domínio VTP. Server cria/altera; Client sincroniza a partir do Server."
+      },
+      "en": {
+        "options": [
+          "Deletes all local VLANs and forces every switch in the domain into Client mode",
+          "Only advertises VLANs learned from RADIUS and ignores those created in the local database",
+          "Forwards VTP advertisements but does not update its own VLAN database from them",
+          "Encrypts all VLAN trunks with MACsec automatically, using a session key on every trunk link"
+        ],
+        "explanation": "A VTP Transparent switch relays VTP messages on trunks but keeps its own VLAN database local and does not learn or advertise VLAN changes into the VTP domain. Server creates/modifies; Client syncs from Server."
+      }
+    },
+    {
+      "index": 178,
+      "pt": {
+        "options": [
+          "O switch com o Bridge ID mais baixo (prioridade + MAC), após comparar Bridge IDs",
+          "Sempre o switch com mais portas de acesso, mesmo que o seu Bridge ID seja o mais alto",
+          "O primeiro switch a arrancar na VLAN, mesmo que a sua prioridade STP seja a mais alta",
+          "Só um router multilayer pode ser root; um switch de camada 2 nunca é eleito para root"
+        ],
+        "explanation": "O STP elege a root pelo Bridge ID mais baixo: prioridade configurada (default 32768) mais o MAC do switch. Prioridade mais baixa ganha; em empate, o MAC mais baixo. As root ports apontam para essa root."
+      },
+      "en": {
+        "options": [
+          "The switch with the lowest Bridge ID (priority + MAC), after comparing Bridge IDs",
+          "Always the switch with the highest port count, even when its Bridge ID is the highest",
+          "The first switch that boots in the VLAN, even when its STP priority value is higher",
+          "Only a multilayer router can be root; a Layer-2 switch is never elected as the root"
+        ],
+        "explanation": "STP elects the root by lowest Bridge ID: configured priority (default 32768) plus the switch MAC. Lower priority wins; if tied, the lower MAC wins. Root ports then point toward that root."
+      }
+    },
+    {
+      "index": 179,
+      "pt": {
+        "options": [
+          "Encriptar sessões de gestão ponta a ponta como o SSH, com troca de chaves Diffie-Hellman e cifra de toda a sessão CLI",
+          "Substituir o OSPF como protocolo de routing interno e passar a anunciar todas as rotas da tabela de routing do router",
+          "Autenticar clientes wireless com certificados digitais validados por um servidor RADIUS da empresa, em cada associação",
+          "Transferência simples de imagens IOS e ficheiros de configuração (UDP 69), sem autenticação nem encriptação nativas"
+        ],
+        "explanation": "O TFTP (Trivial File Transfer Protocol) usa UDP 69 e serve sobretudo para copiar imagens IOS e configs running/startup de/para um servidor. É leve, mas sem autenticação nem encriptação; use só em redes de gestão confiáveis. O FTP acrescenta login e TCP; SCP/SFTP são mais seguros quando disponíveis."
+      },
+      "en": {
+        "options": [
+          "Encrypting management sessions end-to-end like SSH, using Diffie-Hellman key exchange and a cipher on the CLI session",
+          "Replacing OSPF as the interior routing protocol and advertising every route stored in the routing table",
+          "Authenticating wireless clients with digital certificates that an enterprise RADIUS server must check",
+          "Simple transfer of IOS images and configuration files (UDP 69), without built-in authentication or encryption"
+        ],
+        "explanation": "TFTP (Trivial File Transfer Protocol) uses UDP 69 and is widely used to copy IOS images and running/startup configs to or from a server. It is lightweight but has no authentication or encryption; use it only on trusted management networks. FTP adds login and TCP reliability; SCP/SFTP are safer when available."
+      }
+    },
+    {
+      "index": 180,
+      "pt": {
+        "options": [
+          "Transforma o router num servidor DHCP que inventa leases localmente, sem qualquer servidor remoto",
+          "DHCP relay: reencaminha broadcasts DHCP dos clientes como unicast para um servidor DHCP remoto",
+          "Desativa permanentemente todos os broadcasts nessa VLAN, incluindo ARP e pedidos DHCP",
+          "Só traduz Neighbor Discovery IPv6 para ARP IPv4 e não reencaminha mensagens DHCP"
+        ],
+        "explanation": "ip helper-address ativa DHCP relay (entre outros helpers UDP): o router recebe o broadcast DHCP do cliente na LAN e reenvia-o em unicast para o IP do servidor DHCP, permitindo clientes e servidor em sub-redes diferentes. O router não inventa leases a menos que também esteja configurado como servidor DHCP."
+      },
+      "en": {
+        "options": [
+          "It turns the router into a DHCP server that invents leases locally, with no remote server",
+          "DHCP relay: it forwards DHCP broadcasts from clients as unicast to a remote DHCP server",
+          "It disables all broadcasts on that VLAN permanently, including ARP and DHCP requests",
+          "It only translates IPv6 Neighbor Discovery to IPv4 ARP and does not relay DHCP"
+        ],
+        "explanation": "ip helper-address enables DHCP relay (among other UDP helpers): the router receives a client DHCP broadcast on the LAN and forwards it as unicast to the configured DHCP server IP, so clients and the server can sit on different subnets. The router is not inventing leases unless it is also configured as a DHCP server."
+      }
+    },
+    {
+      "index": 181,
+      "pt": {
+        "options": [
+          "Um WLC Cisco oficial que só serve SSIDs de convidados e está registado na gestão wireless central da empresa",
+          "Um AP licenciado e homologado que usa sempre WPA3-Enterprise e está registado e autorizado no controlador wireless",
+          "Um AP não autorizado ligado à rede cabeada (ou a emitir perto), que pode criar riscos de segurança e interferência",
+          "Qualquer AP que use a banda de 2,4 GHz em vez de 5 GHz, mesmo quando esse access point está autorizado na rede"
+        ],
+        "explanation": "Um rogue AP é um access point wireless não autorizado—muitas vezes ligado a um switch corporativo por um utilizador, ou um evil twin de um atacante. Pode contornar NAC/802.1X, expor tráfego e interferir no plano RF. Controllers e WIDS/WIPS ajudam a detetar e conter rogues; esconder o SSID não os impede."
+      },
+      "en": {
+        "options": [
+          "An official Cisco WLC that only serves guest SSIDs and is operated from the central wireless management platform",
+          "A licensed access point that always uses WPA3-Enterprise and is registered and authorized on the wireless controller",
+          "An unauthorized AP connected to the wired network (or broadcasting nearby), which can create security and interference risks",
+          "Any AP that uses the 2.4 GHz band instead of 5 GHz, even when that access point is an authorized corporate access point on the LAN"
+        ],
+        "explanation": "A rogue AP is an unauthorized wireless access point—often plugged into a corporate switch by a user, or an attacker’s evil twin. It can bypass NAC/802.1X, expose traffic, and interfere with the RF plan. Controllers and WIDS/WIPS help detect and contain rogues; hiding the SSID does not stop them."
+      }
+    },
+    {
+      "index": 182,
+      "pt": {
+        "options": [
+          "O EAP-TLS usa certificado do cliente (e normalmente do servidor); o PEAP costuma encapsular um método interno com palavra-passe (ex. MSCHAPv2) dentro de um túnel TLS até ao RADIUS",
+          "O EAP-TLS só partilha um único PSK para todo o SSID, como o WPA2-Personal clássico, sem certificado de cliente e sem abrir qualquer túnel TLS até ao servidor RADIUS externo da empresa",
+          "O PEAP exige um certificado do cliente em cada estação e o EAP-TLS nunca usa certificados, nem no cliente nem no servidor de autenticação RADIUS",
+          "Ambos desativam o RADIUS e autenticam só com a base de utilizadores local do AP, sem MSCHAPv2, sem túnel TLS e sem qualquer certificado digital do cliente"
+        ],
+        "explanation": "O EAP-TLS baseia-se em certificados: o cliente apresenta um certificado (e valida o servidor). O PEAP cria um túnel TLS até ao servidor de autenticação e costuma correr um método interno com palavra-passe (ex. MSCHAPv2), por isso os clientes precisam mais de credenciais do que de certificados. Ambos usam 802.1X com backend RADIUS (ex. ISE); nenhum é um PSK partilhado."
+      },
+      "en": {
+        "options": [
+          "EAP-TLS uses a client (and usually server) certificate; PEAP commonly tunnels an inner password method (e.g. MSCHAPv2) inside a TLS tunnel to the RADIUS server",
+          "EAP-TLS only shares one pre-shared key for the whole SSID, like classic WPA2-Personal, with no client certificate and no TLS tunnel to the RADIUS server at all",
+          "PEAP requires a client certificate on every station, while EAP-TLS never uses certificates, neither for the client nor for the RADIUS server",
+          "Both methods disable RADIUS and authenticate only with the AP’s local user database, without MSCHAPv2, a TLS tunnel, or any client certificate"
+        ],
+        "explanation": "EAP-TLS is certificate-based: the client presents a cert (and validates the server). PEAP builds a TLS tunnel to the authentication server and usually runs an inner password method such as MSCHAPv2, so clients need credentials more often than certificates. Both still use 802.1X with a RADIUS backend (e.g. ISE); neither is a shared PSK."
+      }
+    },
+    {
+      "index": 183,
+      "pt": {
+        "options": [
+          "Substituir o CAPWAP por um mesh proprietário só na banda de 900 MHz, sem túneis de regresso para o WLC",
+          "Desativar permanentemente todos os clientes não-Wi-Fi sem um AP, impedindo esses clientes de se associarem à WLAN",
+          "Detetar e classificar interferentes RF não-Wi-Fi (micro-ondas, Bluetooth, jammers) para o RRM/IT os mitigar",
+          "Cifrar por omissão todos os frames de gestão com WEP, em vez de classificar interferentes no espectro de RF"
+        ],
+        "explanation": "O CleanAir usa análise de espectro em APs capazes para identificar fontes de interferência não-Wi-Fi que degradam a WLAN. Controllers/Catalyst Center mostram interferentes e podem impulsionar alterações de RRM (canal/potência). Não substitui WPA3, CAPWAP nem esconder o SSID."
+      },
+      "en": {
+        "options": [
+          "Replace CAPWAP with a proprietary mesh that runs only on 900 MHz, and with no CAPWAP tunnels back to the wireless LAN controller",
+          "Disable all non-Wi-Fi clients permanently without an AP, stopping those clients from associating to the WLAN at all",
+          "Detect and classify non-Wi-Fi RF interferers (microwaves, Bluetooth, rogue jammers) so RRM/IT can mitigate them",
+          "Encrypt every management frame with WEP by default, instead of classifying non-Wi-Fi interferers in the RF spectrum"
+        ],
+        "explanation": "CleanAir uses spectrum analysis on capable APs to identify non-Wi-Fi interference sources that degrade Wi-Fi. Controllers/Catalyst Center can show interferers and drive RRM changes (channel/power). It is not a substitute for WPA3, CAPWAP, or hiding the SSID."
+      }
+    },
+    {
+      "index": 184,
+      "pt": {
+        "options": [
+          "Acelerar o roaming entre APs ao reduzir o tempo gasto a reautenticar durante uma transição de BSS",
+          "Forçar todos os SSIDs a usar só a banda de 2,4 GHz e desligar por completo o rádio de 5 GHz em cada AP",
+          "Substituir o DHCP por endereços APIPA estáticos sempre que o cliente faz roam de um AP para outro",
+          "Desligar a encriptação sempre que o cliente muda de AP, deixando o tráfego de dados da sessão em claro"
+        ],
+        "explanation": "O 802.11r (FT) permite ao cliente concluir passos de handshake de chaves de forma a encurtar o tempo de roam entre APs no mesmo domínio de mobilidade—importante para voz/vídeo. Não remove a encriptação, não altera o DHCP nem limita a banda a 2,4 GHz. O 802.11k/v costuma complementar o FT com neighbor reports e roaming assistido."
+      },
+      "en": {
+        "options": [
+          "Speed up roaming between APs by reducing the time spent re-authenticating during a BSS transition",
+          "Force every SSID to use only the 2.4 GHz band and shut off the 5 GHz radio on every access point",
+          "Replace DHCP with static APIPA addresses whenever the client roams from one access point to another",
+          "Turn off encryption whenever the client changes AP, leaving that client’s data traffic in the clear"
+        ],
+        "explanation": "802.11r (FT) lets a client complete key handshake steps in a way that shortens roam time between APs in the same mobility domain—important for voice/video. It does not remove encryption, change DHCP behaviour, or limit the band to 2.4 GHz. 802.11k/v often complement FT with neighbor reports and assisted roaming."
+      }
+    }
+  ]
+}

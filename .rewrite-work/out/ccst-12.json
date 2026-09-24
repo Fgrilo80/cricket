@@ -1,0 +1,215 @@
+{
+  "cert": "ccst",
+  "items": [
+    {
+      "index": 165,
+      "pt": {
+        "options": [
+          "O switch de acesso está sem PoE, e essa falta de energia faz o certificador falhar o teste de NEXT",
+          "Há diafonia excessiva (pares mal torcidos/terminação má); tipicamente não passa Cat5e/Cat6",
+          "O DNS do cliente está errado, e essa resolução falhada é o que o teste de cabo reporta como NEXT elevado",
+          "É só um problema de VLAN de acesso no switch, sem defeito de torção, terminação ou diafonia nos pares"
+        ],
+        "explanation": "NEXT (near-end crosstalk) alto indica interferência entre pares — terminacão má, destorção excessiva ou cabo danificado. Re-terminar ou substituir o cabo; não é um sintoma de VLAN/DNS."
+      },
+      "en": {
+        "options": [
+          "The access switch has no PoE, and that missing power is what makes the cable certifier fail the NEXT test",
+          "Excessive crosstalk (poor twist/termination); typically fails Cat5e/Cat6 certification",
+          "The client's DNS is wrong, and that failed name lookup is what the cable test reports as high NEXT",
+          "It is only an access-VLAN problem on the switch, with no twist, termination, or crosstalk defect"
+        ],
+        "explanation": "High NEXT means pair-to-pair interference — bad termination, untwist, or damaged cable. Re-terminate or replace; it is not a VLAN/DNS symptom."
+      }
+    },
+    {
+      "index": 166,
+      "pt": {
+        "options": [
+          "Mudar só o tema do Windows, tratando a falta de ARP do gateway como um problema de aspeto do ambiente de trabalho",
+          "Verificar L2 no segmento (cabo/VLAN/porta err-disabled/ARP) antes de culpar DNS ou a Internet",
+          "Desativar o IPv6 em todos os hosts da empresa, partindo do princípio que o IPv6 bloqueia o ARP do gateway",
+          "Atualizar o firmware da impressora de rede, como se o ping ao gateway falhasse por causa do driver de impressão"
+        ],
+        "explanation": "Sem ARP do gateway não há L2 até ao default gateway. Confirma cabo, VLAN correta, estado da porta e se o gateway está no mesmo broadcast domain — DNS/HTTP só depois."
+      },
+      "en": {
+        "options": [
+          "Only change the Windows theme, treating the missing gateway ARP entry as a desktop appearance problem",
+          "Check L2 on the segment (cable/VLAN/err-disabled port/ARP) before blaming DNS or the Internet",
+          "Disable IPv6 on every company host, on the assumption that IPv6 is blocking the IPv4 gateway ARP reply",
+          "Update the network printer firmware, as if the failed gateway ping were caused by the print driver"
+        ],
+        "explanation": "No gateway ARP means no L2 path to the default gateway. Verify cable, correct VLAN, port status, and same broadcast domain — DNS/HTTP come later."
+      }
+    },
+    {
+      "index": 167,
+      "pt": {
+        "options": [
+          "O SSID do ponto de acesso está errado, e essa falha de Wi-Fi impede o AP Class 4 de negociar e receber PoE",
+          "802.3af (~15,4 W) pode ser insuficiente para Class 4/at (~30 W); precisa de PSE at/bt ou injector adequado",
+          "Falta uma rota estática no AP, e sem essa rota o switch só 802.3af recusa alimentar o rádio Class 4",
+          "O cabo Cat6 não transporta PoE, por isso um AP Class 4 fica sem energia mesmo ligado a um PSE 802.3at"
+        ],
+        "explanation": "Tipo/classe PoE limita a potência. Dispositivos at/bt em portas só-af podem não negociar potência suficiente. Cat5e/Cat6 transportam PoE; o limite é o PSE."
+      },
+      "en": {
+        "options": [
+          "The access-point SSID is wrong, and that Wi-Fi failure stops the Class 4 AP from negotiating and receiving PoE",
+          "802.3af (~15.4 W) can be insufficient for Class 4/at (~30 W); you need an at/bt PSE or a suitable injector",
+          "The AP is missing a static route, so the 802.3af-only switch refuses to power the Class 4 radio",
+          "Cat6 cable cannot carry PoE, so a Class 4 AP stays unpowered even when plugged into an 802.3at PSE"
+        ],
+        "explanation": "PoE type/class caps available power. at/bt PDs on af-only ports may not get enough power. Cat5e/Cat6 carry PoE fine — the PSE is the limit."
+      }
+    },
+    {
+      "index": 168,
+      "pt": {
+        "options": [
+          "Falha total de Layer 1 no AP, que derruba o rádio e impede qualquer quadro Wi-Fi, incluindo o ping a 8.8.8.8",
+          "Problema de DNS ou de redirecionamento HTTP do portal (resolução/nome), não de encaminhamento IP básico",
+          "O switch perdeu todas as VLANs nativas, isolando o SSID e cortando o encaminhamento IP até ao 8.8.8.8",
+          "O cabo do core ficou preso a 10 Mbps, e essa velocidade sozinha impede o portal cativo e a navegação web"
+        ],
+        "explanation": "Ping a um IP público OK indica encaminhamento básico. Portais cativos dependem de DNS/HTTP redirect — DNS errado, HTTPS estrito ou bloqueio do domínio do portal são causas típicas."
+      },
+      "en": {
+        "options": [
+          "Complete Layer 1 failure on the AP, which drops the radio and blocks frames, including the ping to 8.8.8.8",
+          "DNS or captive-portal HTTP redirect/name resolution issue — not basic IP forwarding",
+          "The switch lost every native VLAN, isolating the SSID and cutting IP forwarding all the way to 8.8.8.8",
+          "The core cable is stuck at 10 Mbps, and that speed alone stops the captive portal and web browsing"
+        ],
+        "explanation": "Successful ping to a public IP means basic forwarding works. Captive portals need DNS/HTTP redirect — bad DNS, strict HTTPS, or a blocked portal domain are common causes."
+      }
+    },
+    {
+      "index": 169,
+      "pt": {
+        "options": [
+          "O DHCP funcionou e atribuiu o endereço público 169.254, válido para sair à Internet pelo gateway",
+          "O cliente não obteve lease DHCP (sem servidor/relay/VLAN/cabo) e auto-configurou link-local IPv4",
+          "A sessão BGP do ISP caiu, e o PC passou a 169.254 porque o BGP deixou de anunciar a rota por omissão",
+          "O Wi-Fi 6E passou a ser obrigatório, e sem rádio 6E o PC Ethernet só consegue obter 169.254.x.x"
+        ],
+        "explanation": "169.254.0.0/16 é APIPA: o host desistiu do DHCP. Verifica cabo, VLAN de acesso, interface up, servidor DHCP e ip helper-address no gateway da VLAN."
+      },
+      "en": {
+        "options": [
+          "DHCP worked and assigned the public address 169.254, which is valid for Internet access through the gateway",
+          "The client got no DHCP lease (server/relay/VLAN/cable issue) and auto-configured IPv4 link-local",
+          "The ISP BGP session is down, so the PC moved to 169.254 when BGP stopped advertising the default route",
+          "Wi-Fi 6E is now mandatory, and without a 6E radio the Ethernet PC can only obtain 169.254.x.x"
+        ],
+        "explanation": "169.254.0.0/16 is APIPA: the host gave up on DHCP. Check cable, access VLAN, interface up, DHCP server, and ip helper-address on the VLAN gateway."
+      }
+    },
+    {
+      "index": 170,
+      "pt": {
+        "options": [
+          "Aumentar só a potência do rádio Wi-Fi do telefone, porque o PC em passthrough depende da cobertura sem fios local",
+          "VLAN de dados no switch (e no telefone), cabo PC↔telefone, e se a porta está em access/trunk com voice VLAN correta",
+          "Desativar o Spanning Tree em todo o campus, porque a voz a funcionar prova que o STP bloqueia apenas a VLAN de dados",
+          "Mudar o hostname do router de borda, porque o PC atrás do telefone chega à rede pelo nome desse router"
+        ],
+        "explanation": "Telefone+PC no mesmo cabo usa voice VLAN + data VLAN (ou multi-VLAN no telefone). Voz OK com dados mortos aponta para VLAN de dados/cabo PC ou config do telefone — não para Wi-Fi."
+      },
+      "en": {
+        "options": [
+          "Only increase the phone's Wi-Fi radio power, because the daisy-chained PC depends on local wireless coverage",
+          "Data VLAN on the switch (and phone), PC↔phone cable, and whether the port is access/trunk with the correct voice VLAN",
+          "Disable Spanning Tree across the whole campus, because working voice proves STP is blocking only the data VLAN",
+          "Rename the edge router hostname, because the PC behind the phone reaches the network by that router's configured name"
+        ],
+        "explanation": "Phone+PC on one cable uses voice VLAN + data VLAN (or phone multi-VLAN). Voice OK / data dead points to data VLAN, PC cable, or phone config — not Wi-Fi."
+      }
+    },
+    {
+      "index": 171,
+      "pt": {
+        "options": [
+          "Apenas via relay DHCPv4, que entrega o prefixo IPv6 dentro do lease",
+          "A partir do Router Advertisement (RA) enviado pelo router",
+          "Só com DNS inverso (PTR), que devolve ao host o prefixo de rede IPv6",
+          "Por ARP em broadcast, com o router a responder o prefixo IPv6 da LAN"
+        ],
+        "explanation": "Com SLAAC, o host usa informações do Router Advertisement (ICMPv6) do router local para saber o prefixo e parâmetros; pode combinar com EUI-64/privacy."
+      },
+      "en": {
+        "options": [
+          "Only via DHCPv4 relay, which returns the IPv6 prefix inside the lease",
+          "From Router Advertisement (RA) messages sent by the router",
+          "Only via reverse DNS (PTR), which returns the host's IPv6 network prefix",
+          "Via broadcast ARP requests that the router answers with the IPv6 prefix"
+        ],
+        "explanation": "With SLAAC, the host learns the prefix and parameters from the local router's Router Advertisement (ICMPv6); it may combine that with EUI-64/privacy addressing."
+      }
+    },
+    {
+      "index": 172,
+      "pt": {
+        "options": [
+          "Desativar todas as atualizações do SO para o cliente de email ignorar o phishing",
+          "Verificar remetente/URL e usar MFA; reportar mensagens suspeitas",
+          "Partilhar passwords só por chat interno, para um colega validar os links",
+          "Abrir todos os anexos .exe na sandbox do utilizador, sem confirmar remetente ou URL"
+        ],
+        "explanation": "Phishing explora confiança humana: validar remetente e links, MFA e reportar ao SOC/IT são controlos práticos de primeira linha."
+      },
+      "en": {
+        "options": [
+          "Disable all OS updates so the mail client ignores phishing messages",
+          "Verify sender/URL and use MFA; report suspicious messages",
+          "Share passwords only on internal chat so a coworker can check the links",
+          "Open every .exe file in a user sandbox without checking the sender or URL"
+        ],
+        "explanation": "Phishing targets human trust: verify sender and links, use MFA, and report to IT/SOC are practical first-line controls."
+      }
+    },
+    {
+      "index": 173,
+      "pt": {
+        "options": [
+          "Para eleger essa porta como root bridge do STP, fazendo o PC ou a impressora originar as BPDUs da rede",
+          "Para saltar listening/learning, passar a forwarding mais depressa e evitar atrasos de DHCP/arranque",
+          "Para desativar o BPDU filtering em todo o campus e deixar cada switch aceitar BPDUs em todas as portas",
+          "Para forçar o link de acesso a half duplex, baixando a velocidade e criando um domínio de colisão no PC"
+        ],
+        "explanation": "PortFast (edge) salta listening/learning em portas de host para forwarding imediato. Combina com BPDU Guard; nunca uses PortFast em links para switches."
+      },
+      "en": {
+        "options": [
+          "To elect that port as the STP root bridge so the PC or printer originates the network's BPDUs",
+          "To skip listening/learning so the port goes forwarding faster and avoid DHCP/boot delays",
+          "To disable BPDU filtering across the whole campus and let every switch accept BPDUs on all ports",
+          "To force the access link into half duplex, lowering the speed and creating a collision domain for the PC"
+        ],
+        "explanation": "PortFast (edge) skips listening/learning on end-host ports so they forward immediately. Pair with BPDU Guard; never use PortFast on links to switches."
+      }
+    },
+    {
+      "index": 174,
+      "pt": {
+        "options": [
+          "Mismatch de área OSPF nos extremos, o que gera CRC e late collisions",
+          "TTL de DNS demasiado baixo, o que gera CRC e late collisions no link",
+          "Mismatch de duplex (o outro lado ainda em auto/half)",
+          "Community SNMP errada, o que faz a porta contar CRC e late collisions"
+        ],
+        "explanation": "Fixar speed/duplex num extremo enquanto o outro faz auto-negociação costuma criar mismatch de duplex: CRC, runts e late collisions sob carga."
+      },
+      "en": {
+        "options": [
+          "OSPF area mismatch, which creates CRC and late collisions",
+          "DNS TTL too low, which causes CRC and late collisions",
+          "Duplex mismatch (other side still auto/half)",
+          "Wrong SNMP community, which makes the port count CRC errors"
+        ],
+        "explanation": "Hard-setting speed/duplex on one end while the other auto-negotiates often yields duplex mismatch: CRCs, runts, and late collisions under load."
+      }
+    }
+  ]
+}

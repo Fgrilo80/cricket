@@ -1,0 +1,215 @@
+{
+  "cert": "ccnp",
+  "items": [
+    {
+      "index": 40,
+      "pt": {
+        "options": [
+          "Ferramenta de backup que copia VMs entre nuvens híbridas sem otimizar placement ou custo",
+          "Solução de otimização de workload com AI para placement, scaling e custo em ambientes híbridos",
+          "Tipo de switch de data center que classifica tráfego de workload por DSCP e VLAN no fabric",
+          "Protocolo de encaminhamento dos prefixos de workload entre os sites de uma nuvem híbrida"
+        ],
+        "explanation": "Intersight Workload Optimizer usa AI para otimizar placement, scaling e custos de workloads em nuvens híbridas."
+      },
+      "en": {
+        "options": [
+          "Backup tool that copies VM images across hybrid clouds without optimizing placement or cost",
+          "AI-powered workload optimization solution for placement, scaling, and cost in hybrid environments",
+          "Type of data-center switch that classifies workload traffic by DSCP and VLAN in the fabric",
+          "Routing protocol that picks the next hop for each workload prefix between hybrid sites"
+        ],
+        "explanation": "Intersight Workload Optimizer uses AI to optimize workload placement, scaling, and costs across hybrid clouds."
+      }
+    },
+    {
+      "index": 41,
+      "pt": {
+        "options": [
+          "Monitoramento de rede via SNMP e NetFlow para mapear a topologia física do campus",
+          "Plataforma de observabilidade de aplicações com APM, business transactions e analytics",
+          "Tipo de switch Catalyst que aplica QoS nas portas de acesso da camada de distribuição",
+          "Firewall que inspeciona sessões e bloqueia aplicações conforme a zona de segurança"
+        ],
+        "explanation": "AppDynamics fornece visibilidade completa de performance de aplicações, desde código até experiência do usuário."
+      },
+      "en": {
+        "options": [
+          "Network monitoring that polls switches with SNMP and NetFlow to map the campus",
+          "Application observability platform with APM, business transactions, and analytics",
+          "Type of Catalyst switch applying QoS policy on distribution-layer access ports",
+          "Firewall that inspects sessions and blocks applications by security zone"
+        ],
+        "explanation": "AppDynamics provides full-stack visibility into application performance, from code to user experience."
+      }
+    },
+    {
+      "index": 42,
+      "pt": {
+        "options": [
+          "Monitoramento tradicional em silos, com ferramentas separadas de rede e aplicação sem correlação",
+          "Abordagem unificada que correlaciona dados de rede, aplicações, infraestrutura e experiência do usuário",
+          "Tipo de router de borda que anuncia prefixos BGP e aplica políticas de rota entre o campus e a WAN",
+          "Método de backup que agenda cópias de configuração e de imagens de VM para um repositório central"
+        ],
+        "explanation": "Full-Stack Observability correlaciona telemetria de toda a stack para troubleshooting e otimização proativa."
+      },
+      "en": {
+        "options": [
+          "Traditional monitoring in silos, with separate network and application tools and no correlation",
+          "Unified approach that correlates data from network, applications, infrastructure, and user experience",
+          "Type of edge router that advertises BGP prefixes and applies route policy between campus and the WAN",
+          "Backup method that schedules copies of device configurations and VM images into a central repository"
+        ],
+        "explanation": "Full-Stack Observability correlates telemetry across the entire stack for proactive troubleshooting and optimization."
+      }
+    },
+    {
+      "index": 43,
+      "pt": {
+        "options": [
+          "Firewall de borda que filtra sessões SD-WAN por zona e bloqueia aplicações",
+          "Monitoramento de internet e performance de aplicações para otimizar decisões de SD-WAN",
+          "Tipo de switch de acesso que termina as VLANs do site e entrega o tráfego ao edge",
+          "Servidor DNS autoritativo que resolve nomes internos do site antes do túnel SD-WAN"
+        ],
+        "explanation": "ThousandEyes fornece insights de performance de internet e aplicações para que o SD-WAN tome decisões inteligentes."
+      },
+      "en": {
+        "options": [
+          "Edge firewall that filters SD-WAN sessions by zone and blocks applications",
+          "Internet and application performance monitoring to optimize SD-WAN decisions",
+          "Type of access switch that ends site VLANs and sends traffic to the edge",
+          "DNS server that resolves internal site names before the SD-WAN tunnel is up"
+        ],
+        "explanation": "ThousandEyes provides insights into internet and application performance so SD-WAN can make intelligent decisions."
+      }
+    },
+    {
+      "index": 44,
+      "pt": {
+        "options": [
+          "Todos os routers internos",
+          "ABR, como summary inter-área",
+          "Somente pelo ASBR local",
+          "O DR Ethernet do segmento"
+        ],
+        "explanation": "LSAs OSPFv2 Type 3 (Network Summary) são gerados pelos ABR para anunciar prefixos inter-área. Não são LSA Type 1 de router."
+      },
+      "en": {
+        "options": [
+          "All OSPF routers inside the area",
+          "The ABR, as an inter-area summary",
+          "Only the local ASBR router",
+          "The DR on that Ethernet segment"
+        ],
+        "explanation": "OSPFv2 Type 3 Network Summary LSAs are generated by ABRs to advertise inter-area prefixes. They are not Type 1 router LSAs."
+      }
+    },
+    {
+      "index": 45,
+      "pt": {
+        "options": [
+          "Apenas os links intra-área OSPF",
+          "Rotas externas injetadas no OSPF",
+          "Summary Type 3 dentro da NSSA",
+          "Apenas prefixos IPv6 do OSPFv3"
+        ],
+        "explanation": "LSAs Type 5 AS-External são originados por ASBRs para rotas redistribuídas no OSPF; NSSA usa Type 7 traduzido para Type 5 pelo ABR."
+      },
+      "en": {
+        "options": [
+          "Only the intra-area OSPF links",
+          "External routes injected into OSPF",
+          "The NSSA inter-area summary LSA",
+          "Only the IPv6 prefixes in OSPFv3"
+        ],
+        "explanation": "Type 5 AS-External LSAs are originated by ASBRs for routes redistributed into OSPF; NSSA uses Type 7 translated to Type 5 by the ABR."
+      }
+    },
+    {
+      "index": 46,
+      "pt": {
+        "options": [
+          "Os LSAs de tipo 1 e 2 internos da área",
+          "Tipo 5 (externas); o ABR injeta default",
+          "Todos os LSAs tipo 3 de summary do ABR",
+          "Pacotes Hello trocados entre vizinhos"
+        ],
+        "explanation": "Uma área stub bloqueia externas Type 5; o ABR injeta uma default (0.0.0.0) para os routers stub alcançarem o exterior."
+      },
+      "en": {
+        "options": [
+          "The Type 1 and Type 2 LSAs inside the area",
+          "Type 5 (externals); the ABR injects a default",
+          "All Type 3 inter-area summary LSAs from ABRs",
+          "Hello packets exchanged among OSPF neighbors"
+        ],
+        "explanation": "A stub area blocks Type 5 externals; the ABR injects a default (0.0.0.0) so stub routers reach outside destinations."
+      }
+    },
+    {
+      "index": 47,
+      "pt": {
+        "options": [
+          "Rota de backup na topology table (feasible successor)",
+          "A rota primária na tabela de encaminhamento (FD mínima)",
+          "O vizinho que anuncia a pior métrica composta do EIGRP",
+          "Um LSA tipo 1 de router, como no OSPF, e não uma rota"
+        ],
+        "explanation": "No EIGRP, o successor é o melhor caminho (menor feasible distance) instalado na RIB; feasible successors são backups sem loop."
+      },
+      "en": {
+        "options": [
+          "The backup route kept in the EIGRP topology table",
+          "The primary route in the routing table (lowest FD)",
+          "The neighbor that offers the worst EIGRP metric",
+          "An OSPF Type 1 router LSA, not an EIGRP route"
+        ],
+        "explanation": "In EIGRP, the successor is the best path (lowest feasible distance) installed in the RIB; feasible successors are loop-free backups."
+      }
+    },
+    {
+      "index": 48,
+      "pt": {
+        "options": [
+          "O menor valor MED",
+          "AS-Path mais curto",
+          "Rota mais antiga",
+          "O menor Router-ID"
+        ],
+        "explanation": "A ordem clássica BGP best-path começa pelo Weight mais alto, depois Local Preference, originadas localmente, AS_PATH mais curto, etc."
+      },
+      "en": {
+        "options": [
+          "Lower MED value",
+          "Shortest AS-Path",
+          "Oldest BGP path",
+          "BGP's router ID"
+        ],
+        "explanation": "Classic BGP best-path order starts with highest Weight, then Local Preference, locally originated, shortest AS_PATH, and so on."
+      }
+    },
+    {
+      "index": 49,
+      "pt": {
+        "options": [
+          "Atributo transitivo da IETF anunciado entre ASes e herdado pelos vizinhos",
+          "Cisco-proprietary, local ao router, maior e melhor (default 32768 originadas)",
+          "Igual ao MED: menor valor é melhor e segue anunciado para os peers eBGP",
+          "Enviado aos peers eBGP no UPDATE para influenciar a entrada de tráfego no AS"
+        ],
+        "explanation": "O Weight BGP é específico Cisco, local ao router e nunca anunciado; um Weight mais alto ganha primeiro na seleção de caminho."
+      },
+      "en": {
+        "options": [
+          "An IETF transitive attribute advertised between ASes and inherited by iBGP neighbors",
+          "Cisco-proprietary, local to the router, higher is better (default 32768 for originated)",
+          "The same as MED: a lower value is better and it can be carried onward in eBGP updates",
+          "Sent to eBGP peers inside the UPDATE so it steers inbound traffic into the local AS"
+        ],
+        "explanation": "BGP Weight is Cisco-specific, local to the router, and never advertised; higher Weight wins first in path selection."
+      }
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "cert": "ccnp",
+  "items": [
+    {
+      "index": 20,
+      "pt": {
+        "options": [
+          "Rede tradicional configurada à mão em cada dispositivo, sem declarar intenção de negócio",
+          "Abordagem onde você define o 'o que' (intenção) e a rede automaticamente configura o 'como'",
+          "Tipo de switch de campus que apenas comuta quadros na camada 2, sem políticas de intenção",
+          "Protocolo de encaminhamento que escolhe o próximo salto por métricas de custo e caminho"
+        ],
+        "explanation": "Intent-Based Networking permite que administradores declarem intenções de negócio e a rede traduza automaticamente em políticas e configurações."
+      },
+      "en": {
+        "options": [
+          "Traditional networking configured by hand on each device, with no declared business intent",
+          "Approach where you define the 'what' (intent) and the network automatically configures the 'how'",
+          "Campus switch type that only switches frames at layer 2, with no intent-based policies",
+          "Routing protocol that selects the next hop using cost metrics and the available paths"
+        ],
+        "explanation": "Intent-Based Networking allows administrators to declare business intents and the network automatically translates them into policies and configurations."
+      }
+    },
+    {
+      "index": 21,
+      "pt": {
+        "options": [
+          "Backup de configuração dos equipamentos, guardado para restauração após uma falha",
+          "Analytics e troubleshooting proativo com machine learning e telemetria em tempo real",
+          "Tipo de router de borda que só encaminha pacotes entre a WAN e a LAN local",
+          "Servidor DNS que traduz nomes de host em endereços IP para os clientes da rede"
+        ],
+        "explanation": "DNA Assurance usa telemetria, ML e analytics para identificar problemas antes que afetem usuários e sugerir correções."
+      },
+      "en": {
+        "options": [
+          "Configuration backup of devices, stored so settings can be restored after a failure",
+          "Analytics and proactive troubleshooting with machine learning and real-time telemetry",
+          "Edge router type that only forwards packets between the WAN and the local LAN",
+          "DNS server that translates host names into IP addresses for the network clients"
+        ],
+        "explanation": "DNA Assurance uses telemetry, ML, and analytics to identify issues before they affect users and suggest fixes."
+      }
+    },
+    {
+      "index": 22,
+      "pt": {
+        "options": [
+          "Confiar em todos os dispositivos internos apenas porque já estão na rede da empresa",
+          "Nunca confiar, sempre verificar - microsegmentação, identidade contínua e menor privilégio",
+          "Tipo de firewall de perímetro que filtra portas apenas na borda externa da rede",
+          "Método de backup que copia configurações e imagens de IOS para um servidor remoto"
+        ],
+        "explanation": "Zero Trust assume que nada é confiável por padrão e aplica verificação contínua, microsegmentação e políticas de menor privilégio."
+      },
+      "en": {
+        "options": [
+          "Trust all internal devices solely because they already sit on the company network",
+          "Never trust, always verify - microsegmentation, continuous identity, and least privilege",
+          "Perimeter firewall type that filters ports only at the outer edge of the network",
+          "Backup method that copies device configurations and IOS images to a remote server"
+        ],
+        "explanation": "Zero Trust assumes nothing is trusted by default and applies continuous verification, microsegmentation, and least-privilege policies."
+      }
+    },
+    {
+      "index": 23,
+      "pt": {
+        "options": [
+          "Underlay é o overlay físico: a mesma rede virtual apenas instalada em hardware de campus e filial",
+          "Underlay é a infraestrutura física (MPLS, internet), overlay é a rede virtual (VXLAN, DMVPN) construída sobre ela",
+          "Não há diferença: underlay e overlay são o mesmo plano, com o mesmo endereçamento e encaminhamento",
+          "Overlay é mais lento por definição em qualquer transporte, inclusive com comutação em taxa de linha"
+        ],
+        "explanation": "Underlay = rede física subjacente. Overlay = rede virtual lógica construída sobre o underlay para abstração e serviços."
+      },
+      "en": {
+        "options": [
+          "Underlay is the physical overlay: the same virtual network merely installed on campus and branch hardware",
+          "Underlay is the physical infrastructure (MPLS, internet), overlay is the virtual network (VXLAN, DMVPN) built on top",
+          "There is no difference: underlay and overlay are the same plane, with the same addressing and forwarding",
+          "Overlay is slower by definition on every transport, even when the hardware still switches at line rate"
+        ],
+        "explanation": "Underlay = physical underlying network. Overlay = logical virtual network built on top of the underlay for abstraction and services."
+      }
+    },
+    {
+      "index": 24,
+      "pt": {
+        "options": [
+          "Router físico de borda que encaminha o tráfego de dados das filiais na fabric SD-WAN",
+          "Controlador centralizado de gerenciamento, políticas e orquestração de toda a solução SD-WAN",
+          "Tipo de switch de campus que comuta o tráfego LAN das filiais dentro da fabric SD-WAN",
+          "Servidor DHCP que entrega endereços IP, máscara e gateway aos clientes das filiais"
+        ],
+        "explanation": "vManage é o painel centralizado para gerenciamento, configuração, políticas e monitoramento de toda a fabric SD-WAN."
+      },
+      "en": {
+        "options": [
+          "Physical edge router that forwards branch data-plane traffic across the SD-WAN fabric",
+          "Centralized management controller for policies and orchestration of the entire SD-WAN solution",
+          "Campus switch type that switches branch LAN traffic inside the SD-WAN fabric only",
+          "DHCP server that hands out IP addresses, subnet masks, and gateways to branch clients"
+        ],
+        "explanation": "vManage is the centralized dashboard for management, configuration, policies, and monitoring of the entire SD-WAN fabric."
+      }
+    },
+    {
+      "index": 25,
+      "pt": {
+        "options": [
+          "Firewall de perímetro que inspeciona sessões e bloqueia tráfego segundo zonas e políticas de acesso",
+          "Otimização de aplicação com reconhecimento de aplicação, QoS inteligente e correção de perda de pacotes",
+          "Tipo de router de filial que apenas encaminha pacotes entre a LAN local e o circuito WAN",
+          "Protocolo de backup que replica a configuração do edge para um repositório remoto agendado"
+        ],
+        "explanation": "AppQoE fornece otimização de performance de aplicações com reconhecimento de aplicação e técnicas de correção."
+      },
+      "en": {
+        "options": [
+          "Perimeter firewall that inspects sessions and blocks traffic by zones and access policy",
+          "Application optimization with application awareness, intelligent QoS, and packet loss correction",
+          "Branch router type that only forwards packets between the local LAN and the WAN circuit",
+          "Backup protocol that replicates the edge configuration to a scheduled remote repository"
+        ],
+        "explanation": "AppQoE provides application performance optimization with application awareness and correction techniques."
+      }
+    },
+    {
+      "index": 26,
+      "pt": {
+        "options": [
+          "Firewall local na borda da LAN que só filtra tráfego, sem serviços de nuvem",
+          "Secure Internet Gateway na nuvem que combina DNS security, firewall, CASB e DLP",
+          "Tipo de switch de acesso que só comuta quadros Ethernet no campus local",
+          "Método de backup que replica políticas e logs para um servidor interno"
+        ],
+        "explanation": "Umbrella SIG é um gateway de internet seguro na nuvem que protege usuários remotos e locais."
+      },
+      "en": {
+        "options": [
+          "Local firewall at the LAN edge that only filters traffic, with no cloud services",
+          "Cloud Secure Internet Gateway that combines DNS security, firewall, CASB, and DLP",
+          "Access switch type that only switches Ethernet frames on the local campus",
+          "Backup method that replicates policies and logs onto an internal server"
+        ],
+        "explanation": "Umbrella SIG is a cloud secure internet gateway that protects remote and on-premises users."
+      }
+    },
+    {
+      "index": 27,
+      "pt": {
+        "options": [
+          "VPN tradicional de acesso remoto, com concentrador local e túneis IPsec estáticos",
+          "Solução SASE (Secure Access Service Edge) que combina networking e segurança na nuvem",
+          "Tipo de router de borda que só encaminha pacotes entre a LAN e o circuito WAN",
+          "Servidor DNS interno que resolve nomes de host para os endereços IP da empresa"
+        ],
+        "explanation": "Secure Access é a solução SASE da Cisco que fornece acesso seguro a qualquer aplicação de qualquer lugar."
+      },
+      "en": {
+        "options": [
+          "Traditional remote-access VPN with a local concentrator and static IPsec tunnels",
+          "SASE (Secure Access Service Edge) solution that combines networking and security in the cloud",
+          "Edge router type that only forwards packets between the LAN and the WAN circuit",
+          "Internal DNS server that resolves host names into the company's own IP addresses"
+        ],
+        "explanation": "Secure Access is Cisco's SASE solution that provides secure access to any application from anywhere."
+      }
+    },
+    {
+      "index": 28,
+      "pt": {
+        "options": [
+          "Antivírus tradicional que só varre arquivos locais no endpoint em busca de assinaturas de malware já conhecidas",
+          "Plataforma que correlaciona telemetria de múltiplas fontes (endpoint, rede, cloud, email) para detecção avançada de ameaças",
+          "Tipo de firewall de perímetro que bloqueia portas e protocolos só na borda externa da rede corporativa",
+          "Método de backup que copia logs de segurança e imagens de disco para um repositório remoto já agendado"
+        ],
+        "explanation": "XDR correlaciona dados de múltiplas fontes para detecção e resposta a ameaças avançadas com automação."
+      },
+      "en": {
+        "options": [
+          "Traditional antivirus that only scans local endpoint files for the malware signatures already known",
+          "Platform that correlates telemetry from multiple sources (endpoint, network, cloud, email) for advanced threat detection",
+          "Perimeter firewall type that blocks ports and protocols only at the outer edge of the corporate network",
+          "Backup method that copies security logs and full disk images to a scheduled remote off-site repository"
+        ],
+        "explanation": "XDR correlates data from multiple sources for advanced threat detection and response with automation."
+      }
+    },
+    {
+      "index": 29,
+      "pt": {
+        "options": [
+          "Servidor DHCP que distribui endereços IP, máscara e gateway aos clientes locais",
+          "Inteligência de ameaças global da Cisco que alimenta todas as soluções de segurança",
+          "Tipo de switch de campus que comuta quadros Ethernet apenas na camada de acesso",
+          "Protocolo de encaminhamento que calcula rotas e o próximo salto entre roteadores"
+        ],
+        "explanation": "Talos é a equipe de inteligência de ameaças da Cisco que fornece dados em tempo real para todas as soluções de segurança Cisco."
+      },
+      "en": {
+        "options": [
+          "DHCP server that assigns IP addresses, masks, and gateways to local clients",
+          "Cisco's global threat intelligence team that powers all Cisco security solutions",
+          "Campus switch type that switches Ethernet frames only at the access layer",
+          "Routing protocol that calculates routes and the next hop between routers"
+        ],
+        "explanation": "Talos is Cisco's threat intelligence team that provides real-time data to all Cisco security solutions."
+      }
+    }
+  ]
+}
