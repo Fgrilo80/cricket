@@ -1,11 +1,12 @@
 {
-  "version": "1.2.9",
-  "build": 11,
-  "apkUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/download/v1.2.9/CiscoQuiz-1.2.9-arm64.apk",
-  "releasesUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/tag/v1.2.9",
+  "version": "1.2.10",
+  "build": 12,
+  "apkUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/download/v1.2.10/CiscoQuiz-1.2.10-arm64.apk",
+  "windowsUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/download/v1.2.10/CiscoQuiz-1.2.10-Windows.zip",
+  "releasesUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/tag/v1.2.10",
   "bankTotal": 1230,
   "bankClassic": 1190,
   "bankCyber": 40,
-  "windowsNote": "Windows: https://github.com/Fgrilo80/cisco-quiz-app/releases/download/v1.2.9/CiscoQuiz-1.2.9-Windows.zip (ou flutter build windows --release na branch app, 1.2.9+11). O banco de perguntas atualiza-se na app sem reinstalar.",
-  "notes": "App 1.2.9+11. Bank 1230 after length-bias (Cricket main 02c0a868): 1190 classic (CCST 196, CCNA 202, CCNP 197 × PT/EN) + Cyber 20×2. Question count unchanged."
+  "windowsNote": "Windows: https://github.com/Fgrilo80/cisco-quiz-app/releases/download/v1.2.10/CiscoQuiz-1.2.10-Windows.zip (ou flutter build windows --release na branch app, 1.2.10+12). O banco de perguntas atualiza-se na app sem reinstalar.",
+  "notes": "App 1.2.10+12. Bank refresh is SHA-256 of the remote body, so 1230 questions still update when the text changes. Android uses apkUrl; Windows uses windowsUrl. APK is debug-signed."
 }
