@@ -1,0 +1,215 @@
+{
+  "cert": "ccna",
+  "items": [
+    {
+      "index": 23,
+      "pt": {
+        "options": [
+          "Interface física do chassis, sem encapsulamento 802.1Q nem divisão de VLANs no link",
+          "Interface lógica criada em uma interface física para suportar múltiplas VLANs (router-on-a-stick)",
+          "Interface de backup que só entra em serviço se a porta física principal falhar",
+          "Interface wireless do router, destinada apenas a clientes Wi-Fi da rede local"
+        ],
+        "explanation": "Subinterfaces permitem que um router único processe tráfego de múltiplas VLANs em uma única interface física (router-on-a-stick)."
+      },
+      "en": {
+        "options": [
+          "Physical chassis interface, without 802.1Q tagging or any VLAN separation on it",
+          "Logical interface created on a physical interface to support multiple VLANs (router-on-a-stick)",
+          "Backup interface that comes online only if the primary physical router port fails",
+          "Wireless router interface intended only for local 802.11 Wi-Fi client access"
+        ],
+        "explanation": "Subinterfaces allow a single router to process traffic from multiple VLANs on one physical interface (router-on-a-stick)."
+      }
+    },
+    {
+      "index": 24,
+      "pt": {
+        "options": [
+          "Ver a configuração do NAT",
+          "Mostrar traduções NAT ativas",
+          "Apagar traduções NAT ativas",
+          "Mostrar ACLs usadas no NAT"
+        ],
+        "explanation": "show ip nat translations mostra a tabela ativa de traduções NAT/PAT (bindings inside↔outside). Não é a tabela de encaminhamento."
+      },
+      "en": {
+        "options": [
+          "Show the NAT configuration",
+          "Show active NAT translations",
+          "Delete the NAT translations",
+          "Show ACLs applied to NAT"
+        ],
+        "explanation": "show ip nat translations displays the active NAT/PAT translation table (inside↔outside bindings). It is not the routing table."
+      }
+    },
+    {
+      "index": 25,
+      "pt": {
+        "options": [
+          "Protocolo de encaminhamento que anuncia rotas entre roteadores, como o OSPF faz",
+          "Protocolo que fornece redundância e balanceamento de carga entre múltiplos gateways",
+          "Tipo de ACL, numerada ou nomeada, que filtra pacotes pelo IP de origem",
+          "Protocolo de VPN que cifra o tráfego entre sites remotos, como o IPsec"
+        ],
+        "explanation": "GLBP fornece redundância de gateway com balanceamento de carga ativo-ativo usando múltiplos roteadores ativos."
+      },
+      "en": {
+        "options": [
+          "Routing protocol that advertises routes between routers, as OSPF does",
+          "Protocol that provides redundancy and load balancing between multiple gateways",
+          "Numbered or named ACL type that filters packets by source IP address",
+          "VPN protocol that encrypts traffic between remote sites, such as IPsec"
+        ],
+        "explanation": "GLBP provides gateway redundancy with active-active load balancing using multiple active routers."
+      }
+    },
+    {
+      "index": 26,
+      "pt": {
+        "options": [
+          "Configurar NAT de endereços privados para IP público",
+          "Encaminhar broadcasts DHCP para um servidor DHCP remoto",
+          "Configurar rota estática com rede, máscara e next-hop",
+          "Ativar firewall para bloquear tráfego de entrada"
+        ],
+        "explanation": "ip helper-address permite que broadcasts DHCP de clientes sejam encaminhados para um servidor DHCP em outra rede."
+      },
+      "en": {
+        "options": [
+          "Configure NAT: private addresses to public IP",
+          "Forward DHCP broadcasts to a remote DHCP server",
+          "Add static route with network, mask, next-hop",
+          "Enable a firewall to block inbound traffic"
+        ],
+        "explanation": "ip helper-address allows DHCP broadcasts from clients to be forwarded to a DHCP server on another network."
+      }
+    },
+    {
+      "index": 27,
+      "pt": {
+        "options": [
+          "Gerenciador de VLANs que cria, nomeia e atribui portas de acesso no switch",
+          "Recurso que otimiza o uso de recursos de hardware (TCAM) para diferentes funções",
+          "Protocolo de encaminhamento que calcula rotas com o algoritmo de Dijkstra",
+          "Tipo de memória volátil onde o switch guarda a running-config em uso"
+        ],
+        "explanation": "SDM permite alocar recursos de hardware (TCAM) de forma otimizada para routing, security, etc."
+      },
+      "en": {
+        "options": [
+          "VLAN manager that creates, names and assigns access ports on the switch",
+          "Feature that optimizes hardware resource usage (TCAM) for different functions",
+          "Routing protocol that calculates routes with Dijkstra's SPF algorithm",
+          "Volatile memory type where the switch stores the active running-config"
+        ],
+        "explanation": "SDM allows optimized allocation of hardware resources (TCAM) for routing, security, etc."
+      }
+    },
+    {
+      "index": 28,
+      "pt": {
+        "options": [
+          "Inside local é o IP público na Internet e inside global é o IP privado",
+          "Inside local é o IP privado interno, inside global é o IP público após tradução",
+          "Não há diferença: inside local e inside global designam o mesmo endereço",
+          "Inside local é o IP do servidor externo de destino, fora da tabela de NAT"
+        ],
+        "explanation": "Inside local = IP original do host interno. Inside global = IP público usado na internet após NAT."
+      },
+      "en": {
+        "options": [
+          "Inside local is the public Internet IP and inside global is the private IP",
+          "Inside local is internal private IP, inside global is public IP after translation",
+          "There is no difference: inside local and inside global name the same address",
+          "Inside local is the external destination server IP, outside the NAT table"
+        ],
+        "explanation": "Inside local = original IP of internal host. Inside global = public IP used on the internet after NAT."
+      }
+    },
+    {
+      "index": 29,
+      "pt": {
+        "options": [
+          "Protocolo de encaminhamento que anuncia rotas e elege vizinhos no OSPF",
+          "Recurso de segurança que desabilita porta se receber BPDU (evita loops)",
+          "Tipo de VLAN que isola portas e impede o tráfego direto entre os hosts",
+          "Método de backup que envia a startup-config para um servidor TFTP"
+        ],
+        "explanation": "BPDU Guard desabilita automaticamente uma porta PortFast se ela receber um BPDU, prevenindo loops."
+      },
+      "en": {
+        "options": [
+          "Routing protocol that advertises routes and elects neighbors, like OSPF",
+          "Security feature that disables port if it receives a BPDU (prevents loops)",
+          "VLAN type that isolates ports and blocks direct traffic between hosts",
+          "Backup method that sends the startup-config to a remote TFTP server"
+        ],
+        "explanation": "BPDU Guard automatically disables a PortFast port if it receives a BPDU, preventing loops."
+      }
+    },
+    {
+      "index": 30,
+      "pt": {
+        "options": [
+          "Mostrar a running-config guardada na memória do router",
+          "Mostrar pacotes IP processados pelo router (cuidado: alto impacto)",
+          "Apagar os logs armazenados no buffer de logging do router",
+          "Reiniciar a interface e derrubar o link por alguns segundos"
+        ],
+        "explanation": "debug ip packet mostra detalhes de pacotes IP processados. Use com cuidado pois pode sobrecarregar o CPU."
+      },
+      "en": {
+        "options": [
+          "Show the full running-config stored in the router's memory",
+          "Show IP packets processed by the router (use with caution: high impact)",
+          "Clear the log messages stored in the router's logging buffer",
+          "Restart the physical interface and drop the link for a few seconds"
+        ],
+        "explanation": "debug ip packet shows details of IP packets being processed. Use with caution as it can overload the CPU."
+      }
+    },
+    {
+      "index": 31,
+      "pt": {
+        "options": [
+          "Um router físico isolado, identificado apenas pelo chassis e pelas portas físicas de hardware",
+          "Configuração onde um router usa subinterfaces para rotear entre múltiplas VLANs em uma única interface física",
+          "Tipo de switch multicamada que encaminha frames entre VLANs sem precisar de um router externo",
+          "Método de NAT em que vários hosts internos compartilham um IP público usando portas TCP"
+        ],
+        "explanation": "Router-on-a-stick usa uma interface física com subinterfaces 802.1Q para rotear entre VLANs."
+      },
+      "en": {
+        "options": [
+          "A single physical router appliance, identified only by its chassis and its hardware ports",
+          "Configuration where a router uses subinterfaces to route between multiple VLANs on a single physical interface",
+          "Multilayer switch type that forwards frames between VLANs without needing an external router",
+          "NAT method in which many internal hosts share one public IP address by using source ports"
+        ],
+        "explanation": "Router-on-a-stick uses one physical interface with 802.1Q subinterfaces to route between VLANs."
+      }
+    },
+    {
+      "index": 32,
+      "pt": {
+        "options": [
+          "20/21",
+          "TCP 22, porta padrão do SSH",
+          "TCP 23, porta padrão do Telnet",
+          "TCP 80, porta padrão do HTTP"
+        ],
+        "explanation": "O controlo FTP é TCP 21; em modo ativo os dados usam frequentemente TCP 20. Em ambientes atuais é comum modo passivo com portas de dados dinâmicas."
+      },
+      "en": {
+        "options": [
+          "20/21",
+          "TCP 22, the default SSH port",
+          "TCP 23, the default Telnet port",
+          "TCP 80, the default HTTP port"
+        ],
+        "explanation": "FTP control is TCP 21; in active mode data often uses TCP 20. Modern deployments frequently use passive mode with dynamic data ports."
+      }
+    }
+  ]
+}
