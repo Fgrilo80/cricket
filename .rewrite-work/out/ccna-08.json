@@ -1,0 +1,215 @@
+{
+  "cert": "ccna",
+  "items": [
+    {
+      "index": 90,
+      "pt": {
+        "options": [
+          "O switch de acesso atua como supplicant e inicia o EAPOL em nome do PC, em vez de autenticar a porta",
+          "Authenticator, que rele EAPOL e envia RADIUS ao servidor de autenticação (ex.: ISE)",
+          "O switch é o próprio servidor RADIUS, como o ISE, e valida credenciais sem reencaminhar o EAPOL",
+          "O switch faz somente relay de DHCP, reencaminha Discover e Request, e não trata EAPOL nem fala RADIUS"
+        ],
+        "explanation": "O PC e o supplicant, o switch o authenticator e o ISE/NPS o authentication server. Até autenticar, a porta pode ficar restrita."
+      },
+      "en": {
+        "options": [
+          "The access switch acts as the supplicant and starts EAPOL for the PC, instead of authenticating the port",
+          "Authenticator, which relays EAPOL and sends RADIUS to the authentication server (e.g. ISE)",
+          "The switch is the RADIUS server itself, such as ISE, and checks credentials locally without relaying EAPOL",
+          "The switch does DHCP relay only, forwards Discover and Request, and never handles EAPOL or RADIUS"
+        ],
+        "explanation": "The PC is the supplicant, the switch is the authenticator, and ISE/NPS is the authentication server. Until then the port may stay restricted."
+      }
+    },
+    {
+      "index": 91,
+      "pt": {
+        "options": [
+          "VRRP é só IPv6 e não cria um gateway virtual IPv4, ao contrário do HSRP proprietário da Cisco",
+          "VRRP e padrão IETF; HSRP e proprietario Cisco; ambos fornecem gateway virtual",
+          "HSRP não tem prioridade; o router ativo não se elege por um valor configurado entre 1 e 255",
+          "VRRP não elege master; todos os routers do grupo anunciam e usam o IP virtual em simultâneo"
+        ],
+        "explanation": "HSRP usa MAC 0000.0c07.acXX; VRRP usa 0000.5e00.01XX e pode partilhar o IP real do master como virtual."
+      },
+      "en": {
+        "options": [
+          "VRRP is IPv6-only and does not create an IPv4 virtual gateway, unlike Cisco proprietary HSRP",
+          "VRRP is an IETF standard; HSRP is Cisco proprietary; both provide a virtual gateway",
+          "HSRP has no priority, so the active router is not elected by a configured value from 1 to 255",
+          "VRRP does not elect a master; every router in the group advertises and uses the virtual IP at once"
+        ],
+        "explanation": "HSRP uses MAC 0000.0c07.acXX; VRRP uses 0000.5e00.01XX and may share the master's real IP as the virtual IP."
+      }
+    },
+    {
+      "index": 92,
+      "pt": {
+        "options": [
+          "Só com DHCPv4, que entrega ao host o endereço IPv6, o comprimento do prefixo e o gateway predefinido",
+          "Recebe RA (ICMPv6) com prefixo; gera o Interface ID e faz DAD via Neighbor Solicitation",
+          "O router atribui uma porta TCP ao host e grava esse número como Interface ID dentro do anúncio",
+          "Usa ARP clássico em broadcast Ethernet para aprender o prefixo e confirmar o endereço no enlace"
+        ],
+        "explanation": "O RA traz prefixo, MTU e lifetime. O host monta o GUA, testa DAD e pode ainda usar DHCPv6 consoante os flags M/O do RA."
+      },
+      "en": {
+        "options": [
+          "Only with DHCPv4, which hands the host an IPv6 address, a prefix length, and a default gateway",
+          "It receives an RA (ICMPv6) with a prefix, builds an Interface ID, and runs DAD via Neighbor Solicitation",
+          "The router assigns a TCP port to the host and stores that number as the Interface ID inside the advertisement",
+          "It uses classic ARP Ethernet broadcasts to learn the prefix and to confirm the address on the link"
+        ],
+        "explanation": "The RA carries prefix, MTU, and lifetime. The host builds a GUA, runs DAD, and may still use DHCPv6 depending on the RA M/O flags."
+      }
+    },
+    {
+      "index": 93,
+      "pt": {
+        "options": [
+          "Copia-se o MAC de 48 bits tal como está, e esse bloco passa inteiro a ser o Interface ID",
+          "Insere-se FFFE no meio e inverte-se o bit U/L (7.o bit do primeiro octeto)",
+          "Acrescenta-se apenas ::1 ao prefixo anunciado, e o Interface ID fica esse sufixo",
+          "Usa-se o IPv4 embebido nos últimos 32 bits, como num IPv4-mapped, e ignora-se o MAC"
+        ],
+        "explanation": "00:1A:2B:3C:4D:5E vira 021A:2BFF:FE3C:4D5E (bit U/L flipped). Muitos SO preferem privacy addresses aleatorios."
+      },
+      "en": {
+        "options": [
+          "The 48-bit MAC is copied unchanged, and that same block becomes the entire Interface ID",
+          "FFFE is inserted in the middle and the U/L bit (7th bit of the first octet) is flipped",
+          "Only the suffix ::1 is appended to the advertised prefix, and nothing is derived from the MAC address",
+          "Embedded IPv4 fills the last 32 bits, as in an IPv4-mapped address, and the MAC address is ignored"
+        ],
+        "explanation": "00:1A:2B:3C:4D:5E becomes 021A:2BFF:FE3C:4D5E (U/L bit flipped). Many OSes prefer random privacy addresses."
+      }
+    },
+    {
+      "index": 94,
+      "pt": {
+        "options": [
+          "2000::/3 (unicast global público)",
+          "FC00::/7 (na prática fd00::/8)",
+          "FE80::/10 (link-local do enlace)",
+          "FF00::/8 (prefixo de multicast)"
+        ],
+        "explanation": "ULA (RFC 4193) e o analogo privado do RFC 1918. Global unicast e 2000::/3, link-local FE80::/10 e multicast FF00::/8."
+      },
+      "en": {
+        "options": [
+          "2000::/3 (public global unicast)",
+          "FC00::/7 (in practice fd00::/8)",
+          "FE80::/10 (link-local on the link)",
+          "FF00::/8 (IPv6 multicast prefix)"
+        ],
+        "explanation": "ULA (RFC 4193) is the private analogue of RFC 1918. Global unicast is 2000::/3, link-local is FE80::/10, and multicast is FF00::/8."
+      }
+    },
+    {
+      "index": 95,
+      "pt": {
+        "options": [
+          "Porque a área 0 recebe a prioridade STP mais alta e é eleita raiz de todas as outras áreas OSPF",
+          "Para garantir um grafo sem loops de sumarização; o SPF inter-área passa sempre pelo backbone",
+          "A área 0 é a única que envia Hello; as restantes não formam adjacências nem trocam LSA entre si",
+          "Não é obrigatório em NSSA, que fica fora do backbone e não precisa de ABR nem de virtual-link"
+        ],
+        "explanation": "ABRs ligam áreas não-backbone a área 0. Virtual-links existem para remendar topologias que quebram esta regra."
+      },
+      "en": {
+        "options": [
+          "Because area 0 is given the highest STP priority and is elected root of every other OSPF area",
+          "To keep summarization loop-free; inter-area SPF always transits the backbone",
+          "Area 0 is the only area that sends Hellos; the others form no adjacencies and exchange no LSAs",
+          "It is not required for NSSA, which stays off the backbone and needs no ABR or virtual link"
+        ],
+        "explanation": "ABRs attach non-backbone areas to area 0. Virtual links exist to patch topologies that break this rule."
+      }
+    },
+    {
+      "index": 98,
+      "pt": {
+        "options": [
+          "Está 15 saltos abaixo da UTC, perto do limite da hierarquia NTP e longe do relógio de referência",
+          "Esta ligado a uma referência de tempo autoritativa (GPS, relogio atomico) e serve os stratum 2",
+          "É um cliente Windows à espera de hora, sem GPS nem relógio atómico e sem servir clientes stratum 2",
+          "Não pode autenticar NTP: o stratum 1 envia a hora em claro e recusa chaves de autenticação MD5 ou SHA"
+        ],
+        "explanation": "Stratum 0 e a fonte (GPS/atomico). Stratum 1 sincroniza com stratum 0. Stratum 16 significa não sincronizado."
+      },
+      "en": {
+        "options": [
+          "It is 15 hops below UTC, near the edge of the NTP hierarchy and far from the reference clock",
+          "It is attached to an authoritative time reference (GPS, atomic clock) and serves stratum 2 clients",
+          "It is a Windows client waiting for the time, with no GPS or atomic clock and no stratum 2 clients to serve",
+          "It cannot authenticate NTP: a stratum 1 server sends the time in the clear and refuses MD5 or SHA keys"
+        ],
+        "explanation": "Stratum 0 is the reference (GPS/atomic). Stratum 1 syncs to stratum 0. Stratum 16 means unsynchronized."
+      }
+    },
+    {
+      "index": 99,
+      "pt": {
+        "options": [
+          "RADIUS usa TCP 49 e separa a autorização por comando; o TACACS+ usa UDP e junta autenticação com autorização",
+          "TACACS+ usa TCP 49 e separa autenticação, autorização e accounting; RADIUS usa UDP e combina auth+authz",
+          "Não há diferença: ambos usam UDP, cifram apenas a password e tratam autenticação e autorização no mesmo passo",
+          "TACACS+ não cifra a password; o corpo TCP 49 segue em claro e só o RADIUS esconde a credencial do utilizador"
+        ],
+        "explanation": "Para administração de dispositivos Cisco prefere-se TACACS+ (autorização comando a comando). RADIUS e o padrão em 802.1X/Wi-Fi/VPN."
+      },
+      "en": {
+        "options": [
+          "RADIUS uses TCP 49 and separates per-command authorization; TACACS+ uses UDP and merges authentication with authorization",
+          "TACACS+ uses TCP 49 and separates authentication, authorization, and accounting; RADIUS uses UDP and combines auth+authz",
+          "There is no difference: both use UDP, encrypt only the password, and handle authentication and authorization in the same step",
+          "TACACS+ does not encrypt the password; the TCP 49 body stays in the clear and only RADIUS hides the user credential"
+        ],
+        "explanation": "Cisco device administration prefers TACACS+ (per-command authorization). RADIUS is the standard for 802.1X/Wi-Fi/VPN."
+      }
+    },
+    {
+      "index": 100,
+      "pt": {
+        "options": [
+          "SDN elimina todos os switches físicos do campus: o controlador reencaminha cada pacote sozinho e os equipamentos deixam de ter um plano de dados próprio",
+          "O plano de controlo e logicamente centralizado no controlador; os dispositivos ficam sobretudo no plano de dados, com APIs northbound/southbound",
+          "SDN não usa IP: o controlador programa apenas fluxos de camada 2 e os hosts deixam de precisar de endereços, rotas ou gateways",
+          "O controlador substitui o cabeamento: os links físicos desaparecem e os switches passam a ligar-se uns aos outros só pela API northbound"
+        ],
+        "explanation": "Southbound (NETCONF, OpenFlow, gNMI) programa os nos; northbound (REST) oferece intenção as aplicações. Catalyst Center e o exemplo campus no CCNA."
+      },
+      "en": {
+        "options": [
+          "SDN eliminates every switch: the controller forwards each packet by itself and the devices no longer keep a data plane of their own",
+          "The control plane is logically centralized in a controller; devices are mostly data-plane, with northbound/southbound APIs",
+          "SDN does not use IP: the controller programs only Layer 2 flows, and hosts no longer need addresses, routes, or gateways",
+          "The controller replaces the cabling: physical links disappear and the switches attach to one another only through the northbound API"
+        ],
+        "explanation": "Southbound (NETCONF, OpenFlow, gNMI) programs the nodes; northbound (REST) exposes intent to applications. Catalyst Center is the campus example in CCNA."
+      }
+    },
+    {
+      "index": 101,
+      "pt": {
+        "options": [
+          "Em anel STP clássico, em que cada switch bloqueia uma porta para cortar o loop de camada 2 no fabric",
+          "Cada leaf liga-se a todos os spines; leafs não se ligam entre si; ECMP no underlay",
+          "Só um uplink por leaf, preso a um único spine, sem ECMP e sem caminhos paralelos no underlay",
+          "Os spines ligam-se aos servidores e os leafs apenas unem os spines, sem portas viradas para os hosts"
+        ],
+        "explanation": "Qualquer leaf alcanca qualquer outra em dois hops, sem loops L2 no underlay (L3). Servidores e APs ligam-se aos leafs."
+      },
+      "en": {
+        "options": [
+          "In a classic STP ring, where each switch blocks one port to cut the Layer 2 loop across the fabric",
+          "Every leaf connects to every spine; leafs do not connect to each other; ECMP in the underlay",
+          "Only one uplink per leaf, tied to a single spine, with no ECMP and no parallel paths in the underlay",
+          "Spines connect to the servers, and the leafs only join the spines, with no ports facing the hosts"
+        ],
+        "explanation": "Any leaf reaches any other in two hops with no underlay L2 loops (L3). Servers and APs attach to leafs."
+      }
+    }
+  ]
+}
