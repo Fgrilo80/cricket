@@ -1,0 +1,215 @@
+{
+  "cert": "ccst",
+  "items": [
+    {
+      "index": 154,
+      "pt": {
+        "options": [
+          "10 Gb/s, porque o 10GBASE-T só precisa de dois pares e ignora os outros dois",
+          "100 Mb/s (Fast Ethernet) possível; Gigabit precisa dos quatro pares",
+          "Só a fibra monomodo pode funcionar, porque o Fast Ethernet não existe em cobre UTP",
+          "Nenhuma velocidade Ethernet funciona se algum par do mapa de fios estiver aberto"
+        ],
+        "explanation": "10/100BASE-TX usa sobretudo os pares 1-2 e 3-6. 1000BASE-T exige os quatro pares. Um tester a mostrar apenas dois pares bons aponta tipicamente para Fast Ethernet, não Gigabit."
+      },
+      "en": {
+        "options": [
+          "10 Gb/s, because 10GBASE-T only needs two pairs and ignores the other two",
+          "100 Mb/s (Fast Ethernet) may work; Gigabit needs all four pairs",
+          "Only single-mode fiber can work, because Fast Ethernet does not exist on UTP",
+          "No Ethernet speed works if any pair on the wiremap is left open"
+        ],
+        "explanation": "10/100BASE-TX mainly uses pairs 1-2 and 3-6. 1000BASE-T requires all four pairs. A tester showing only two good pairs typically points to Fast Ethernet, not Gigabit."
+      }
+    },
+    {
+      "index": 155,
+      "pt": {
+        "options": [
+          "Apenas a banda de 900 MHz, típica de LoRa, e não os 6 GHz do Wi-Fi 6E",
+          "A banda de 6 GHz (além de 2,4 e/ou 5 GHz, conforme o rádio)",
+          "Só Bluetooth LE em 2,4 GHz, sem acrescentar a banda Wi-Fi de 6 GHz",
+          "Apenas infravermelho IrDA, sem espectro rádio extra face ao Wi-Fi 6"
+        ],
+        "explanation": "Wi-Fi 6E é 802.11ax na banda de 6 GHz. Oferece mais espectro e canais largos com menos interferência herdada de 2,4/5 GHz, mas alcance tipicamente menor e clientes têm de ser 6E."
+      },
+      "en": {
+        "options": [
+          "Only the 900 MHz band used by LoRa, and not the extra 6 GHz of Wi-Fi 6E",
+          "The 6 GHz band (in addition to 2.4 and/or 5 GHz, depending on the radio)",
+          "Bluetooth LE on 2.4 GHz only, without adding the Wi-Fi 6 GHz band at all",
+          "Infrared IrDA only, with no extra radio spectrum compared with classic Wi-Fi 6"
+        ],
+        "explanation": "Wi-Fi 6E is 802.11ax in the 6 GHz band. It adds cleaner spectrum and wide channels with less legacy 2.4/5 GHz interference, but range is often shorter and clients must be 6E-capable."
+      }
+    },
+    {
+      "index": 156,
+      "pt": {
+        "options": [
+          "Falha só do certificado TLS no browser, sem problema de caminho IP",
+          "Problema de encaminhamento/WAN/firewall a montante do gateway local",
+          "Cabo de consola do switch desligado, o que corta a saída WAN do PC",
+          "O STP elegeu o PC como root bridge e bloqueou o caminho para a Internet"
+        ],
+        "explanation": "L3 local está ok (IP/gateway/ping LAN). Falha para IPs públicos indica caminho WAN, NAT ou firewall de perímetro — não DNS (usou-se IP) nem só TLS."
+      },
+      "en": {
+        "options": [
+          "Only a browser TLS certificate failure, with no IP path problem at all",
+          "Forwarding/WAN/firewall problem upstream of the local gateway",
+          "The switch console cable is unplugged, which cuts the PC off from the WAN",
+          "STP elected the PC as root bridge and blocked the path to the Internet"
+        ],
+        "explanation": "Local L3 is fine (IP/gateway/LAN ping). Failure to public IPs points to WAN path, NAT, or perimeter firewall — not DNS (an IP was used) and not TLS alone."
+      }
+    },
+    {
+      "index": 157,
+      "pt": {
+        "options": [
+          "Entrega no máximo 15,4 W na PSE, como o 802.3af Type 1, sem subir para Type 3 nem Type 4",
+          "Permite potências mais altas (até cerca de 60 W / 90 W na PSE) para APs e câmaras exigentes",
+          "Só funciona em fibra monomodo, porque o 802.3bt não alimenta os pares de cobre de um cabo UTP",
+          "Substitui sempre a fonte externa do PD, mesmo sem classificação PSE-PD nem negociação LLDP"
+        ],
+        "explanation": "802.3bt (PoE++) sobe a potência face a af/at. Continua a haver classificação/negociação PSE-PD; um PD incompatível ou cabo mau pode ficar sem energia suficiente."
+      },
+      "en": {
+        "options": [
+          "It tops out at 15.4 W at the PSE, like 802.3af Type 1, with no Type 3 or Type 4",
+          "It allows higher power (about 60 W / 90 W at the PSE) for demanding APs and cameras",
+          "It only works on single-mode fiber, because 802.3bt cannot power copper UTP pairs",
+          "It always replaces the PD external PSU, even with no classification or LLDP negotiation"
+        ],
+        "explanation": "802.3bt (PoE++) raises power versus af/at. PSE-PD classification/negotiation still applies; a mismatched PD or bad cable may not get enough power."
+      }
+    },
+    {
+      "index": 158,
+      "pt": {
+        "options": [
+          "DNS em falta no PC: sem resolução de nomes, o switch coloca a porta de acesso em err-disabled",
+          "Proteção (ex.: BPDU Guard / loop / link flap) desativou a porta ao detetar condição de erro",
+          "O cabo Cat6 não suporta Fast Ethernet, por isso o switch passa essa porta a err-disabled",
+          "Um SFP de fibra foi inserido na tomada RJ-45 e o switch marcou a porta como err-disabled"
+        ],
+        "explanation": "Err-disabled é estado de proteção. Hubs e loops geram BPDUs inesperados, colisões ou flaps; com BPDU Guard ou storm control a porta pode ir a err-disabled. Recupera-se com shutdown / no shutdown após corrigir a causa."
+      },
+      "en": {
+        "options": [
+          "Missing DNS on the PC: with no name resolution, the switch err-disables the access port and drops the link",
+          "A protection feature (for example BPDU Guard, loop, or link flap) disabled the port on an error condition",
+          "Cat6 cannot carry Fast Ethernet, so the switch moves that port into the err-disabled state",
+          "A fiber SFP was inserted into the RJ-45 jack, and the switch then marked that port err-disabled"
+        ],
+        "explanation": "Err-disabled is a protective state. Hubs and loops can trigger unexpected BPDUs, collisions, or flaps; with BPDU Guard or storm control the port may err-disable. Fix the cause, then shutdown / no shutdown."
+      }
+    },
+    {
+      "index": 159,
+      "pt": {
+        "options": [
+          "Um endereço GUA (ou ULA+NAT64) e um default router via RA/DHCPv6",
+          "Obrigatoriamente um endereço IPv4 APIPA 169.254, pois a Internet IPv6 usa essa gama",
+          "Desativar o NDP no host para o tráfego sair do enlace sem GUA nem router",
+          "Trocar o MAC do host para ff:ff:ff:ff:ff:ff para o router aceitar o IPv6"
+        ],
+        "explanation": "Link-local serve no enlace. Tráfego off-link precisa de GUA (2000::/3) ou mecanismo de tradução, mais um router default aprendido por Router Advertisement ou DHCPv6."
+      },
+      "en": {
+        "options": [
+          "A GUA (or ULA+NAT64) plus a default router via RA/DHCPv6",
+          "A mandatory IPv4 APIPA 169.254 address, since IPv6 Internet uses it",
+          "Disabling NDP so traffic can leave the link without a GUA or a router",
+          "Changing the MAC to ff:ff:ff:ff:ff:ff so the router accepts IPv6 traffic"
+        ],
+        "explanation": "Link-local works on the link. Off-link traffic needs a GUA (2000::/3) or a translation mechanism, plus a default router learned from Router Advertisement or DHCPv6."
+      }
+    },
+    {
+      "index": 161,
+      "pt": {
+        "options": [
+          "Sim, automaticamente via DFS, que dá rádio 6 GHz a um cliente só 802.11ac",
+          "Não: precisa de rádio e driver compatíveis com 6 GHz / 6E",
+          "Sim, se o canal de 6 GHz for 1, 6 ou 11, como no plano de 2,4 GHz",
+          "Só se desativar o WPA3: o cliente 802.11ac associa ao SSID só de 6 GHz"
+        ],
+        "explanation": "A banda de 6 GHz exige hardware 6E no cliente. Dispositivos Wi-Fi 5/6 sem rádio 6 GHz continuam nas bandas 2,4/5 GHz do AP, se existirem."
+      },
+      "en": {
+        "options": [
+          "Yes, automatically via DFS, giving the 802.11ac client 6 GHz radio",
+          "No: it needs a 6 GHz / 6E-capable radio and driver",
+          "Yes, if the 6 GHz channel is 1, 6, or 11, as on the 2.4 GHz plan",
+          "Only if WPA3 is disabled: the 802.11ac client joins the 6 GHz SSID"
+        ],
+        "explanation": "The 6 GHz band requires 6E client hardware. Wi-Fi 5/6 devices without a 6 GHz radio stay on the AP’s 2.4/5 GHz radios, if present."
+      }
+    },
+    {
+      "index": 162,
+      "pt": {
+        "options": [
+          "Maior penetração em paredes espessas do que a banda de 2,4 GHz no mesmo escritório",
+          "Mais espectro limpo e canais largos com menos redes legado a interferir",
+          "Elimina a autenticação WPA no SSID, porque a banda de 6 GHz é aberta por definição",
+          "Funciona sem antenas no AP nem no cliente, pois o espectro de 6 GHz dispensa RF"
+        ],
+        "explanation": "6 GHz oferece canais novos e menos ocupados; a penetração é em geral pior que 2,4 GHz. Planeia-se mais APs e cobertura, não só débito de pico."
+      },
+      "en": {
+        "options": [
+          "Better penetration through thick walls than the 2.4 GHz band in the same office",
+          "Cleaner spectrum and wide channels with less legacy interference",
+          "It removes the need for WPA on the SSID, because the 6 GHz band is open by design",
+          "It works with no antennas on the AP or the client, since 6 GHz spectrum needs no RF"
+        ],
+        "explanation": "6 GHz offers new, less crowded channels; wall penetration is usually worse than 2.4 GHz. Plan denser APs for coverage, not only peak rate."
+      }
+    },
+    {
+      "index": 163,
+      "pt": {
+        "options": [
+          "O cabo UTP tem só 2 pares ligados, e a mensagem bpduguard indica essa falha de cablagem",
+          "Foi ligado um switch/hub (ou PC com bridging) que enviou BPDUs numa porta de acesso com BPDU Guard",
+          "O PoE excede o orçamento do PSU e o IOS regista %PM-4-ERR_DISABLE: bpduguard por falta de potência",
+          "O DNS do cliente está em falta e o switch coloca Gi1/0/12 em err-disabled por essa causa"
+        ],
+        "explanation": "BPDU Guard desativa (err-disable) portas de acesso que recebem BPDUs — típico quando alguém liga outro switch. Recuperação: corrigir a topologia e fazer errdisable recovery ou shut/no shut."
+      },
+      "en": {
+        "options": [
+          "The UTP cable has only 2 pairs connected, and the bpduguard syslog means that wiring fault",
+          "A switch/hub (or a PC bridging) sent BPDUs on an access port with BPDU Guard enabled",
+          "PoE exceeds the PSU budget, and IOS logs %PM-4-ERR_DISABLE: bpduguard for lack of power",
+          "The client is missing DNS, so the switch puts Gi1/0/12 into err-disabled for that reason"
+        ],
+        "explanation": "BPDU Guard err-disables access ports that receive BPDUs — typical when someone plugs in another switch. Fix the topology, then recover with errdisable recovery or shut/no shut."
+      }
+    },
+    {
+      "index": 164,
+      "pt": {
+        "options": [
+          "Associa com WEP automaticamente, porque o AP recua de WPA3 para WEP na banda de 6 GHz",
+          "Não associa: 6 GHz exige WPA3 (SAE); o cliente tem de ser 6E e WPA3",
+          "Associa se o canal de 6 GHz for DFS, mesmo com o cliente limitado apenas a WPA2",
+          "Funciona só com IPv6: o cliente WPA2 associa ao SSID de 6 GHz quando usa IPv6"
+        ],
+        "explanation": "Na banda de 6 GHz o Wi-Fi Alliance exige WPA3. Clientes só-WPA2 ficam de fora desse SSID (podem usar 2,4/5 GHz se o AP anunciar SSIDs nessas bandas)."
+      },
+      "en": {
+        "options": [
+          "It associates with WEP automatically, because the AP falls back from WPA3 to WEP on 6 GHz",
+          "It will not associate: 6 GHz requires WPA3 (SAE); the client must be 6E and WPA3-capable",
+          "It associates if the 6 GHz channel is DFS, even when the client is limited to WPA2 only",
+          "It only works with IPv6: the WPA2 client joins the 6 GHz SSID when the host uses IPv6"
+        ],
+        "explanation": "Wi-Fi Alliance requires WPA3 on 6 GHz. WPA2-only clients cannot join that SSID (they may still use 2.4/5 GHz SSIDs if the AP offers them)."
+      }
+    }
+  ]
+}
