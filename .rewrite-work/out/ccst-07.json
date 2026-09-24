@@ -1,0 +1,215 @@
+{
+  "cert": "ccst",
+  "items": [
+    {
+      "index": 102,
+      "pt": {
+        "options": [
+          "80, e usa Telnet em claro na sessão web, sem qualquer TLS",
+          "443, e cifra a sessão com TLS; HTTP na 80 vai em claro",
+          "22, e cifra a sessão web com SSH, em vez de TLS na porta 443",
+          "53, e autentica a sessão web com DNSSEC, em vez de TLS"
+        ],
+        "explanation": "HTTPS encapsula HTTP sobre TLS na porta 443, protegendo confidencialidade e integridade. HTTP na 80 não cifra — credenciais e cookies viajam visíveis. Em gestão de equipamento deve preferir-se HTTPS/SSH a HTTP/Telnet."
+      },
+      "en": {
+        "options": [
+          "80, and it uses cleartext Telnet for the web session, without any TLS",
+          "443, and it encrypts the session with TLS; HTTP on 80 is clear text",
+          "22, and it encrypts the web session with SSH, instead of TLS on port 443",
+          "53, and it authenticates the web session with DNSSEC, instead of TLS"
+        ],
+        "explanation": "HTTPS wraps HTTP in TLS on port 443, protecting confidentiality and integrity. HTTP on 80 is unencrypted — credentials and cookies travel in the clear. Device management should prefer HTTPS/SSH over HTTP/Telnet."
+      }
+    },
+    {
+      "index": 104,
+      "pt": {
+        "options": [
+          "Servir apenas como consola série RJ-45, sem tramas Ethernet e sem 10GBASE-T",
+          "Melhor imunidade a diafonia e suporte a 10GBASE-T em distâncias curtas (tipicamente até 55 m)",
+          "Substituir toda a fibra metropolitana, incluindo as ligações longas de operador e os sistemas DWDM",
+          "Alimentar 100 W nos pares de dados sem PoE, fora de qualquer norma de potência IEEE 802.3"
+        ],
+        "explanation": "Cat6 tem especificações mais apertadas de crosstalk até 250 MHz e permite 10GBASE-T em canais curtos. Cat5e chega bem a 1 Gb/s em 100 m. Cat6A estende 10 Gb/s aos 100 m."
+      },
+      "en": {
+        "options": [
+          "Serving only as an RJ-45 serial console, with no Ethernet frames and no 10GBASE-T",
+          "Better crosstalk immunity and 10GBASE-T support over short runs (typically up to 55 m)",
+          "Replacing all metropolitan fiber, including the long carrier links and the DWDM systems",
+          "Delivering 100 W on the data pairs without PoE, outside any IEEE 802.3 power standard"
+        ],
+        "explanation": "Cat6 has tighter crosstalk specs through 250 MHz and supports 10GBASE-T on short channels. Cat5e is fine for 1 Gb/s at 100 m. Cat6A extends 10 Gb/s to a full 100 m."
+      }
+    },
+    {
+      "index": 105,
+      "pt": {
+        "options": [
+          "BNC coaxial de baioneta, usado no 10BASE2 de 50 ohm",
+          "LC (Lucent Connector), pequeno e com trava",
+          "DB-9 série, de consola RS-232, sem fibra ótica",
+          "RJ-11 telefónico, de par único, para linha analógica"
+        ],
+        "explanation": "SFP usa quase sempre duplex LC. SC é mais antigo e maior (ainda visto em GBIC/patch panels). ST é baioneta legado. BNC é coaxial; DB-9 é consola série; RJ-11 é telefone."
+      },
+      "en": {
+        "options": [
+          "Coaxial BNC bayonet used on 50-ohm 10BASE2 coax",
+          "LC (Lucent Connector), small and latched",
+          "Serial DB-9, for an RS-232 console, with no fiber",
+          "Telephone RJ-11, one pair, for an analog phone line"
+        ],
+        "explanation": "SFPs almost always use duplex LC. SC is older and larger (still seen on GBICs and some panels). ST is a legacy bayonet. BNC is coaxial; DB-9 is a serial console; RJ-11 is analog phone."
+      }
+    },
+    {
+      "index": 106,
+      "pt": {
+        "options": [
+          "O cabo do PC ao switch está partido na camada física",
+          "Falha de DNS (servidor DNS em falta, errado ou filtrado)",
+          "O switch sem PoE impede o browser de abrir o site pelo nome",
+          "O STP bloqueou o ICMP na porta de acesso do utilizador"
+        ],
+        "explanation": "Ping por IP prova Camadas 1–3 até ao servidor. Resolver o nome exige DNS (porta 53). Verificar ipconfig/ifconfig, o servidor DNS configurado e um nslookup/dig isola o problema em segundos."
+      },
+      "en": {
+        "options": [
+          "The cable from the PC to the switch is broken at Layer 1",
+          "DNS failure (missing, wrong, or filtered DNS server)",
+          "A switch without PoE stops the browser from opening the site by name",
+          "STP blocked only ICMP on the user's access port"
+        ],
+        "explanation": "A successful IP ping proves Layers 1–3 to the server. Using the name requires DNS (port 53). Checking ipconfig/ifconfig, the configured DNS server, and nslookup/dig isolates the issue in seconds."
+      }
+    },
+    {
+      "index": 107,
+      "pt": {
+        "options": [
+          "PC a PC, ou switch a switch, sem Auto-MDIX (MDI a MDI)",
+          "PC a switch, ou router a switch (MDI a MDI-X)",
+          "Apenas consolas Cisco com cabo rollover RJ-45",
+          "Apenas fibra multimodo com conetores LC duplex"
+        ],
+        "explanation": "O cabo direto mantém a pinagem igual nas duas pontas e liga MDI (NIC/router) a MDI-X (switch/hub). PC-PC ou switch-switch clássicos usavam crossover; o Auto-MDIX moderno torna o tipo quase irrelevante."
+      },
+      "en": {
+        "options": [
+          "PC to PC, or switch to switch, without Auto-MDIX (MDI to MDI)",
+          "PC to switch, or router to switch (MDI to MDI-X)",
+          "Cisco consoles only, using a rollover RJ-45 cable",
+          "Multimode fiber only, with duplex LC connectors"
+        ],
+        "explanation": "A straight-through cable keeps the same pinout on both ends and connects MDI (NIC/router) to MDI-X (switch/hub). Classic PC-PC or switch-switch links used crossovers; modern Auto-MDIX makes the cable type almost irrelevant."
+      }
+    },
+    {
+      "index": 108,
+      "pt": {
+        "options": [
+          "1 domínio de colisão, como se as 24 portas fossem um hub",
+          "2 domínios de colisão, um para cada sentido do full-duplex",
+          "12 domínios de colisão, só metade das portas do switch",
+          "24"
+        ],
+        "explanation": "Cada porta de switch é um domínio de colisão próprio. Em full-duplex as colisões deixam de ocorrer, mas o isolamento por porta mantém-se: 24 portas = 24 domínios. Um hub de 24 portas seria um único domínio."
+      },
+      "en": {
+        "options": [
+          "1 collision domain, as if all 24 ports were one hub",
+          "2 collision domains, one for each direction of full duplex",
+          "12 collision domains, only half of the switch ports",
+          "24"
+        ],
+        "explanation": "Each switch port is its own collision domain. Full duplex eliminates actual collisions, but the per-port isolation remains: 24 ports = 24 domains. A 24-port hub would be a single collision domain."
+      }
+    },
+    {
+      "index": 109,
+      "pt": {
+        "options": [
+          "Cada cabo de cobre entre o PC e o switch de acesso",
+          "Uma VLAN ou uma interface de router (L3)",
+          "Cada porta de um hub, isolando o broadcast local",
+          "O endereço MAC de origem da trama de broadcast"
+        ],
+        "explanation": "Broadcasts L2 (ff:ff:ff:ff:ff:ff) ficam dentro da VLAN. Um router (ou SVI/L3) não reencaminha broadcasts entre redes, por isso cada VLAN/sub-rede é um domínio de broadcast."
+      },
+      "en": {
+        "options": [
+          "Each copper cable between the PC and the access switch",
+          "A VLAN or a router (L3) interface",
+          "Each hub port, isolating that port's local broadcast",
+          "The source MAC address of the broadcast frame"
+        ],
+        "explanation": "Layer-2 broadcasts (ff:ff:ff:ff:ff:ff) stay inside a VLAN. A router (or SVI/L3) does not forward them between networks, so each VLAN/subnet is one broadcast domain."
+      }
+    },
+    {
+      "index": 114,
+      "pt": {
+        "options": [
+          "Para ter 30 hosts de utilizador numa LAN clássica com broadcast",
+          "Para usar os dois endereços sem reservar rede/broadcast (RFC 3021)",
+          "Só em Wi-Fi, para o ponto de acesso falar com um único cliente associado",
+          "Substitui o endereço IPv6 link-local fe80:: em cada interface do router"
+        ],
+        "explanation": "O RFC 3021 permite /31 em links ponto-a-ponto: os dois endereços são utilizáveis, poupando o desperdício da /30. Não é para LANs com broadcast."
+      },
+      "en": {
+        "options": [
+          "To provide 30 user hosts on a classic LAN that uses broadcast",
+          "To use both addresses without reserving network/broadcast (RFC 3021)",
+          "Only on Wi-Fi, so the access point talks with a single associated client",
+          "It replaces the IPv6 link-local fe80:: address on every router interface"
+        ],
+        "explanation": "RFC 3021 allows /31 on point-to-point links: both addresses are usable, avoiding the waste of a /30. It is not for broadcast LANs."
+      }
+    },
+    {
+      "index": 117,
+      "pt": {
+        "options": [
+          "Loopback do host, o mesmo papel do endereço ::1",
+          "Link-local de todos os nós, o multicast ff02::1",
+          "Endereço não especificado (unspecified)",
+          "Multicast all-routers, o grupo ff02::2 na ligação"
+        ],
+        "explanation": ":: é o endereço unspecified (::/128), usado como origem antes de o host ter endereço. Loopback é ::1. Não se atribui :: a uma interface."
+      },
+      "en": {
+        "options": [
+          "Host loopback, the same role as the address ::1",
+          "Link-local all-nodes, the multicast address ff02::1",
+          "The unspecified address",
+          "All-routers multicast, the group ff02::2 on the link"
+        ],
+        "explanation": ":: is the unspecified address (::/128), used as a source before a host has an address. Loopback is ::1. Do not assign :: to an interface."
+      }
+    },
+    {
+      "index": 121,
+      "pt": {
+        "options": [
+          "O DHCP deixa de funcionar e o cliente fica sem endereço",
+          "Terceiros na mesma BSS podem capturar tráfego não cifrado",
+          "Os canais 1, 6 e 11 fecham e o AP perde a banda de 2,4 GHz",
+          "O AP deixa de emitir beacon e desaparece do varrimento do cliente"
+        ],
+        "explanation": "Sem encriptação de camada 2, quem estiver associado (ou por vezes mesmo à escuta) pode ler frames. Use WPA2/WPA3 e, em redes públicas, um VPN."
+      },
+      "en": {
+        "options": [
+          "DHCP stops working and the client is left without an address",
+          "Others on the same BSS can capture unencrypted traffic",
+          "Channels 1, 6, and 11 shut down and the AP loses the 2.4 GHz band",
+          "The AP stops sending beacons and disappears from client scans"
+        ],
+        "explanation": "With no Layer-2 encryption, anyone associated (and sometimes even a passive listener) can read frames. Use WPA2/WPA3 and, on public Wi-Fi, a VPN."
+      }
+    }
+  ]
+}
