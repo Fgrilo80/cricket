@@ -2,10 +2,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the main difference between OSPFv2 and OSPFv3?",
     "options": [
-      "OSPFv3 supports only IPv4",
+      "OSPFv3 supports only IPv4 and forms adjacencies with global addresses",
       "OSPFv3 is designed for IPv6 and uses link-local addresses for adjacencies",
-      "There is no difference",
-      "OSPFv3 is slower"
+      "There is no difference: OSPFv2 and OSPFv3 share the same packet format",
+      "OSPFv3 is slower because it floods LSAs only on IPv4 multicast"
     ],
     "correct": 1,
     "explanation": "OSPFv3 was redesigned for IPv6, uses link-local addresses to form adjacencies, and supports multiple addresses per interface.",
@@ -15,9 +15,9 @@ window.QUIZ_BANK = [
     "question": "What is a 'BGP route reflector' and what is its function?",
     "options": [
       "Device that reflects BGP routes to reduce full-mesh sessions",
-      "Type of firewall",
-      "Backup protocol",
-      "DNS server"
+      "Firewall that inspects BGP sessions and blocks full-mesh",
+      "Backup protocol that mirrors the BGP table after a failure",
+      "DNS server that resolves BGP next hops into host names"
     ],
     "correct": 0,
     "explanation": "A Route Reflector allows a router to reflect BGP routes learned from one client to other clients, reducing the number of required IBGP sessions.",
@@ -26,10 +26,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'EIGRP named mode'?",
     "options": [
-      "Legacy configuration mode",
+      "Legacy EIGRP configuration mode that predates the classic AS-number mode",
       "Modern mode that allows hierarchical configuration and named EIGRP for multiple instances",
-      "Type of ACL",
-      "NAT method"
+      "Named ACL type that filters the EIGRP updates by instance and by metric",
+      "NAT method that translates addresses between distinct named EIGRP instances"
     ],
     "correct": 1,
     "explanation": "EIGRP named mode allows more organized configuration, support for multiple instances, and advanced features like wide metrics.",
@@ -38,10 +38,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'SD-WAN' and how does it differ from traditional WAN?",
     "options": [
-      "Same as MPLS",
+      "The same technology as MPLS, using the same static transport LSPs and no overlay over the public internet or LTE",
       "Software-defined approach to WAN management with intelligent overlay, zero-touch provisioning, and application-aware traffic optimization",
-      "Type of switch",
-      "Routing protocol"
+      "Campus switch type that only switches local WAN frames, with no overlay, no zero-touch, and no traffic optimization",
+      "Forwarding protocol that selects one static MPLS path between the branch sites and ignores the other underlays"
     ],
     "correct": 1,
     "explanation": "SD-WAN uses an intelligent overlay over any underlay (MPLS, internet, LTE) with centralized management and application-based policies.",
@@ -50,10 +50,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'Cisco DNA Center'?",
     "options": [
-      "Traditional device management",
+      "Traditional CLI device management without intent, analytics, or assurance",
       "Intent-based automation and network management platform with analytics and assurance",
-      "Type of router",
-      "DHCP server"
+      "Edge router type that forwards campus traffic using only local policies",
+      "DHCP server that hands out IPv4 addresses and options to campus network clients"
     ],
     "correct": 1,
     "explanation": "DNA Center provides intent-based automation, automated discovery, policies, and analytics for enterprise networks.",
@@ -62,10 +62,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the difference between 'PIM-SM' and 'PIM-DM'?",
     "options": [
-      "PIM-SM is dense mode, PIM-DM is sparse mode",
+      "PIM-SM is dense mode and floods the network; PIM-DM is sparse mode and uses an RP",
       "PIM-SM uses a rendezvous point and is efficient for sparse groups, PIM-DM floods and prunes",
-      "There is no difference",
-      "PIM-DM is more secure"
+      "There is no difference: both use the same RP and the same flood-and-prune cycle",
+      "PIM-DM is more secure because it authenticates joins with MD5 before flooding"
     ],
     "correct": 1,
     "explanation": "PIM-SM (Sparse Mode) uses an RP and is efficient for few receivers. PIM-DM (Dense Mode) floods the network and prunes branches without receivers.",
@@ -74,10 +74,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'EVPN' (Ethernet VPN) in VXLAN environments?",
     "options": [
-      "Type of VLAN",
+      "Extended VLAN that encapsulates Ethernet frames on the switch without BGP",
       "Control plane technology for VXLAN that uses BGP to distribute MAC/IP information",
-      "Routing protocol",
-      "Type of switch"
+      "Data-plane forwarding protocol that replaces BGP inside the VXLAN fabric",
+      "Leaf switch type that learns MACs only by flood-and-learn on the underlay"
     ],
     "correct": 1,
     "explanation": "EVPN uses BGP as the control plane for VXLAN, enabling efficient distribution of MACs, IPs, and VTEP information.",
@@ -86,10 +86,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'NetFlow' and 'Flexible NetFlow'?",
     "options": [
-      "Routing protocol",
+      "Routing protocol that selects paths from exported flow records",
       "Traffic flow monitoring technology for analysis, billing, and security",
-      "Type of ACL",
-      "Backup method"
+      "ACL type that filters packets using the router flow cache",
+      "Backup method that copies the flow cache to restore forwarding"
     ],
     "correct": 1,
     "explanation": "NetFlow collects flow data for traffic analysis, anomaly detection, and network planning.",
@@ -98,10 +98,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'Cisco TrustSec' and 'SGT'?",
     "options": [
-      "Encryption protocol",
+      "Encryption protocol that ciphers frames with MACsec and does not classify traffic by SGT",
       "Security architecture based on tags (Security Group Tags) for identity-based access control",
-      "Type of firewall",
-      "NAT method"
+      "Perimeter firewall type that filters only by IP address and ignores group tags",
+      "NAT method that translates addresses and rewrites SGTs between distinct security zones"
     ],
     "correct": 1,
     "explanation": "TrustSec uses SGTs (Security Group Tags) to classify traffic and apply identity-based access policies, independent of IP.",
@@ -110,10 +110,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'IPsec' in VPNs?",
     "options": [
-      "Encrypt traffic at the application layer",
+      "Encrypt traffic at the application layer, the way TLS protects the sessions",
       "Provide network-layer security (confidentiality, integrity, authentication) for VPNs",
-      "Type of routing",
-      "Backup protocol"
+      "Forwarding type that selects the VPN tunnel without encrypting or authenticating",
+      "Backup protocol that switches the VPN tunnel when the primary link fails"
     ],
     "correct": 1,
     "explanation": "IPsec operates at the network layer, providing encryption, authentication, and integrity for VPN tunnels.",
@@ -122,10 +122,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'AnyConnect' from Cisco?",
     "options": [
-      "Routing protocol",
+      "OSPF routing protocol that advertises prefixes among routers",
       "Secure remote access VPN client with SSL/TLS and IPsec support",
-      "Type of switch",
-      "DHCP server"
+      "Access switch that forwards Ethernet frames by learned MAC",
+      "DHCP server that leases IPv4 addresses and options to clients"
     ],
     "correct": 1,
     "explanation": "Cisco AnyConnect is the modern VPN client that supports SSL VPN and IPsec with advanced mobility features.",
@@ -134,10 +134,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of a 'Wireless LAN Controller (WLC)'?",
     "options": [
-      "Wireless router",
+      "Home wireless router that NATs Wi-Fi LAN clients onto a single WAN uplink",
       "Centralized device that manages multiple Access Points, roaming, security, and RF",
-      "Type of switch",
-      "Firewall"
+      "Access switch that learns MAC addresses and forwards frames inside a VLAN",
+      "Stateful firewall that inspects TCP sessions and drops matching flows by ACL"
     ],
     "correct": 1,
     "explanation": "WLC centralizes AP management, enables fast roaming, security policies, and RF optimization.",
@@ -146,10 +146,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'CAPWAP'?",
     "options": [
-      "Routing protocol",
+      "OSPF routing protocol that floods LSAs and computes the shortest path",
       "Protocol used by WLC to control and manage Access Points (replaces LWAPP)",
-      "Type of VLAN",
-      "NAT method"
+      "VLAN type that isolates broadcast domains on an access-switch trunk",
+      "NAT method that rewrites private IPv4 addresses to one public address"
     ],
     "correct": 1,
     "explanation": "CAPWAP (Control and Provisioning of Wireless Access Points) is the standard protocol for communication between WLC and APs.",
@@ -158,10 +158,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'Cisco ISE' (Identity Services Engine)?",
     "options": [
-      "DHCP server",
+      "DHCP server that leases IPv4 addresses, masks, and gateways to clients on the local LAN",
       "Centralized identity-based access control platform, 802.1X, profiling, and policy enforcement",
-      "Type of router",
-      "Firewall"
+      "Edge router type that forwards IP packets between the LAN and WAN using the routing table",
+      "Stateful firewall that inspects live sessions and blocks packets by attack signature"
     ],
     "correct": 1,
     "explanation": "ISE provides NAC (Network Access Control), 802.1X, guest access, device profiling, and dynamic policies.",
@@ -170,10 +170,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'SD-Access' from Cisco?",
     "options": [
-      "Traditional access",
+      "Traditional access that pins one VLAN per user on the switch port, with no fabric or overlay",
       "Software-defined access architecture with fabric overlay, underlay, and identity-based policies",
-      "Type of switch",
-      "Backup protocol"
+      "Campus switch model that only forwards frames in hardware, with no overlay or identity policy",
+      "Backup protocol that copies the running-config to a TFTP server on a predetermined schedule"
     ],
     "correct": 1,
     "explanation": "SD-Access creates a network fabric with VXLAN/EVPN overlay, automated underlay, and SGT-based policies.",
@@ -182,10 +182,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'Ansible' in Cisco network automation?",
     "options": [
-      "Programming language",
+      "Compiled programming language that the device runs locally as a resident agent",
       "Agentless automation tool that uses YAML playbooks to configure devices via SSH/NETCONF",
-      "Type of switch",
-      "VPN protocol"
+      "Access switch model that learns MAC addresses and switches frames only inside the VLAN",
+      "IPsec VPN protocol that encrypts one tunnel between two sites and authenticates peers"
     ],
     "correct": 1,
     "explanation": "Ansible is an open-source agentless tool that uses playbooks to automate network configuration in an idempotent way.",
@@ -194,10 +194,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'MPLS L3 VPN'?",
     "options": [
-      "Point-to-point VPN",
+      "Point-to-point VPN with a single IPsec tunnel between exactly two sites and no shared core",
       "Technology that allows multiple customers to share MPLS infrastructure with route isolation via VRF",
-      "Type of switch",
-      "Backup protocol"
+      "Campus switch model that learns MAC addresses and switches Ethernet frames only inside a VLAN",
+      "Backup protocol that sends the running-config to a TFTP server on a predetermined interval"
     ],
     "correct": 1,
     "explanation": "MPLS L3 VPN uses VRFs on PE routers to isolate routes of different customers while sharing the MPLS infrastructure.",
@@ -206,10 +206,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'Cisco Umbrella'?",
     "options": [
-      "Local firewall",
+      "Local LAN firewall that inspects every packet in hardware before forwarding",
       "Cloud-based security service that blocks malicious domains, C2, and phishing via DNS",
-      "Type of router",
-      "Backup protocol"
+      "Edge router that forwards IP packets between LAN and WAN by the routing table",
+      "Backup protocol that copies the running-config to a TFTP server on a schedule"
     ],
     "correct": 1,
     "explanation": "Umbrella is a cloud DNS security service that blocks threats before they reach the network.",
@@ -218,10 +218,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'Stealthwatch' (now Secure Network Analytics)?",
     "options": [
-      "Antivirus",
+      "Endpoint antivirus that scans files on the host and quarantines malware by known signature",
       "Network Detection and Response (NDR) solution that uses machine learning to detect threats and anomalies",
-      "Type of switch",
-      "DHCP server"
+      "Access switch model that learns MAC addresses and switches Ethernet frames only inside the VLAN",
+      "DHCP server that leases IPv4 addresses, subnet masks, and gateways to clients on the local subnet"
     ],
     "correct": 1,
     "explanation": "Stealthwatch analyzes network flow to detect anomalous behavior and advanced threats.",
@@ -230,10 +230,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'Cisco Secure Firewall' (formerly Firepower)?",
     "options": [
-      "Simple router",
+      "Simple router that only forwards packets by destination IP, with no content inspection or IPS",
       "Next-Generation Firewall (NGFW) with IPS, URL filtering, malware protection, and ISE integration",
-      "Type of switch",
-      "Backup protocol"
+      "Access switch model that learns MAC addresses and switches frames only inside the VLAN",
+      "Backup protocol that copies the running-config to a TFTP server on a scheduled interval"
     ],
     "correct": 1,
     "explanation": "Secure Firewall is an NGFW with deep inspection, IPS, application control, and integration with other Cisco security solutions.",
@@ -242,10 +242,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'Intent-Based Networking'?",
     "options": [
-      "Traditional networking",
+      "Traditional networking configured by hand on each device, with no declared business intent",
       "Approach where you define the 'what' (intent) and the network automatically configures the 'how'",
-      "Type of switch",
-      "Routing protocol"
+      "Campus switch type that only switches frames at layer 2, with no intent-based policies",
+      "Routing protocol that selects the next hop using cost metrics and the available paths"
     ],
     "correct": 1,
     "explanation": "Intent-Based Networking allows administrators to declare business intents and the network automatically translates them into policies and configurations.",
@@ -254,10 +254,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'Cisco DNA Assurance'?",
     "options": [
-      "Configuration backup",
+      "Configuration backup of devices, stored so settings can be restored after a failure",
       "Analytics and proactive troubleshooting with machine learning and real-time telemetry",
-      "Type of router",
-      "DNS server"
+      "Edge router type that only forwards packets between the WAN and the local LAN",
+      "DNS server that translates host names into IP addresses for the network clients"
     ],
     "correct": 1,
     "explanation": "DNA Assurance uses telemetry, ML, and analytics to identify issues before they affect users and suggest fixes.",
@@ -266,10 +266,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'Zero Trust Security' in Cisco architecture?",
     "options": [
-      "Trust all internal devices",
+      "Trust all internal devices solely because they already sit on the company network",
       "Never trust, always verify - microsegmentation, continuous identity, and least privilege",
-      "Type of firewall",
-      "Backup method"
+      "Perimeter firewall type that filters ports only at the outer edge of the network",
+      "Backup method that copies device configurations and IOS images to a remote server"
     ],
     "correct": 1,
     "explanation": "Zero Trust assumes nothing is trusted by default and applies continuous verification, microsegmentation, and least-privilege policies.",
@@ -278,10 +278,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the difference between 'underlay' and 'overlay' in SD-WAN/SD-Access?",
     "options": [
-      "Underlay is the physical overlay",
+      "Underlay is the physical overlay: the same virtual network merely installed on campus and branch hardware",
       "Underlay is the physical infrastructure (MPLS, internet), overlay is the virtual network (VXLAN, DMVPN) built on top",
-      "There is no difference",
-      "Overlay is slower"
+      "There is no difference: underlay and overlay are the same plane, with the same addressing and forwarding",
+      "Overlay is slower by definition on every transport, even when the hardware still switches at line rate"
     ],
     "correct": 1,
     "explanation": "Underlay = physical underlying network. Overlay = logical virtual network built on top of the underlay for abstraction and services.",
@@ -290,10 +290,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'Cisco vManage' in SD-WAN?",
     "options": [
-      "Physical router",
+      "Physical edge router that forwards branch data-plane traffic across the SD-WAN fabric",
       "Centralized management controller for policies and orchestration of the entire SD-WAN solution",
-      "Type of switch",
-      "DHCP server"
+      "Campus switch type that switches branch LAN traffic inside the SD-WAN fabric only",
+      "DHCP server that hands out IP addresses, subnet masks, and gateways to branch clients"
     ],
     "correct": 1,
     "explanation": "vManage is the centralized dashboard for management, configuration, policies, and monitoring of the entire SD-WAN fabric.",
@@ -302,10 +302,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'AppQoE' in SD-WAN?",
     "options": [
-      "Firewall",
+      "Perimeter firewall that inspects sessions and blocks traffic by zones and access policy",
       "Application optimization with application awareness, intelligent QoS, and packet loss correction",
-      "Type of router",
-      "Backup protocol"
+      "Branch router type that only forwards packets between the local LAN and the WAN circuit",
+      "Backup protocol that replicates the edge configuration to a scheduled remote repository"
     ],
     "correct": 1,
     "explanation": "AppQoE provides application performance optimization with application awareness and correction techniques.",
@@ -314,10 +314,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'Cisco Umbrella SIG'?",
     "options": [
-      "Local firewall",
+      "Local firewall at the LAN edge that only filters traffic, with no cloud services",
       "Cloud Secure Internet Gateway that combines DNS security, firewall, CASB, and DLP",
-      "Type of switch",
-      "Backup method"
+      "Access switch type that only switches Ethernet frames on the local campus",
+      "Backup method that replicates policies and logs onto an internal server"
     ],
     "correct": 1,
     "explanation": "Umbrella SIG is a cloud secure internet gateway that protects remote and on-premises users.",
@@ -326,10 +326,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'Cisco Secure Access'?",
     "options": [
-      "Traditional VPN",
+      "Traditional remote-access VPN with a local concentrator and static IPsec tunnels",
       "SASE (Secure Access Service Edge) solution that combines networking and security in the cloud",
-      "Type of router",
-      "DNS server"
+      "Edge router type that only forwards packets between the LAN and the WAN circuit",
+      "Internal DNS server that resolves host names into the company's own IP addresses"
     ],
     "correct": 1,
     "explanation": "Secure Access is Cisco's SASE solution that provides secure access to any application from anywhere.",
@@ -338,10 +338,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'Cisco XDR' (Extended Detection and Response)?",
     "options": [
-      "Traditional antivirus",
+      "Traditional antivirus that only scans local endpoint files for the malware signatures already known",
       "Platform that correlates telemetry from multiple sources (endpoint, network, cloud, email) for advanced threat detection",
-      "Type of firewall",
-      "Backup method"
+      "Perimeter firewall type that blocks ports and protocols only at the outer edge of the corporate network",
+      "Backup method that copies security logs and full disk images to a scheduled remote off-site repository"
     ],
     "correct": 1,
     "explanation": "XDR correlates data from multiple sources for advanced threat detection and response with automation.",
@@ -350,10 +350,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'Cisco Talos'?",
     "options": [
-      "DHCP server",
+      "DHCP server that assigns IP addresses, masks, and gateways to local clients",
       "Cisco's global threat intelligence team that powers all Cisco security solutions",
-      "Type of switch",
-      "Routing protocol"
+      "Campus switch type that switches Ethernet frames only at the access layer",
+      "Routing protocol that calculates routes and the next hop between routers"
     ],
     "correct": 1,
     "explanation": "Talos is Cisco's threat intelligence team that provides real-time data to all Cisco security solutions.",
@@ -362,10 +362,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'Cisco Duo'?",
     "options": [
-      "Routing protocol",
+      "Routing protocol that exchanges prefixes with OSPF neighbors and calculates the SPF tree",
       "Multi-factor authentication (MFA) and adaptive access solution with device health verification",
-      "Type of switch",
-      "Firewall"
+      "Access switch family that forwards Ethernet frames by VLAN using the spanning-tree protocol",
+      "Perimeter firewall that inspects sessions and enforces a stateful traffic filtering policy"
     ],
     "correct": 1,
     "explanation": "Duo provides MFA, device health verification, and adaptive access to protect logins.",
@@ -374,10 +374,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'Cisco Secure Endpoint' (formerly AMP for Endpoints)?",
     "options": [
-      "Traditional antivirus",
+      "Traditional antivirus based only on local signatures, without EDR or XDR",
       "Advanced endpoint protection with malware detection, EDR, and XDR integration",
-      "Type of router",
-      "DNS server"
+      "Edge router family that forwards IP packets and advertises routes with BGP",
+      "Authoritative DNS server that resolves host names and serves internal zones"
     ],
     "correct": 1,
     "explanation": "Secure Endpoint offers real-time protection, threat detection, and response on endpoints.",
@@ -386,10 +386,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'Cisco Secure Email' (formerly ESA)?",
     "options": [
-      "Email client",
+      "User email client that drafts, sends, and reads mail on the endpoint",
       "Secure email gateway with spam, phishing, malware protection, and DLP",
-      "Type of switch",
-      "Backup protocol"
+      "Access switch family that forwards Ethernet frames by VLAN and STP",
+      "Backup protocol that copies files and scheduled jobs between servers"
     ],
     "correct": 1,
     "explanation": "Secure Email is Cisco's secure email gateway with advanced protection against email threats.",
@@ -398,10 +398,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'Cisco Secure Web Appliance' (formerly WSA)?",
     "options": [
-      "Simple proxy",
+      "Simple proxy that only forwards HTTP, with no URL filtering or malware scanning",
       "Secure Web Gateway with URL filtering, malware scanning, DLP, and application control",
-      "Type of router",
-      "Firewall"
+      "WAN router family that forwards IP packets and establishes external BGP sessions",
+      "Perimeter firewall that inspects L3/L4 sessions and enforces access control lists"
     ],
     "correct": 1,
     "explanation": "Secure Web Appliance protects web traffic with URL filtering, antimalware, and usage policies.",
@@ -410,10 +410,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'Cisco Meraki'?",
     "options": [
-      "Traditional Cisco solution",
+      "Traditional Cisco solution managed from the local CLI, with no cloud dashboard or zero-touch",
       "Cloud-managed networking platform with unified dashboard, zero-touch provisioning, and analytics",
-      "Type of firewall",
-      "Routing protocol"
+      "Type of perimeter firewall that only inspects sessions and filters IP traffic at the edge",
+      "Routing protocol that advertises prefixes among neighbors and selects the best path"
     ],
     "correct": 1,
     "explanation": "Meraki offers switches, APs, firewalls, and cameras 100% cloud-managed with a simple yet powerful dashboard.",
@@ -422,10 +422,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'Cisco Intersight'?",
     "options": [
-      "Network management",
+      "Campus network management platform that only sets VLANs, STP, and QoS policies",
       "Hybrid infrastructure management platform (data center, edge, cloud) with automation",
-      "Type of switch",
-      "DHCP server"
+      "Data center switch family that only forwards Ethernet frames in a leaf-spine fabric",
+      "DHCP server that leases IPv4 addresses, options, and reservations to LAN clients"
     ],
     "correct": 1,
     "explanation": "Intersight provides unified management, automation, and insights for Cisco UCS, HyperFlex, and more infrastructure.",
@@ -434,10 +434,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'Cisco ACI' (Application Centric Infrastructure)?",
     "options": [
-      "Traditional networking",
+      "Traditional network using manual VLANs and spanning tree, with no SDN fabric or app contracts",
       "SDN solution for data centers with leaf-spine fabric, application-based policies, and automation",
-      "Type of switch",
-      "Backup protocol"
+      "Campus access switch family that only forwards Ethernet frames by VLAN with spanning tree",
+      "Backup protocol that replicates volumes and job schedules between data center servers"
     ],
     "correct": 1,
     "explanation": "ACI is Cisco's SDN solution for data centers with VXLAN fabric, APIC controller, and application-centric policies.",
@@ -446,10 +446,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'Cisco Nexus Dashboard'?",
     "options": [
-      "Simple switch",
+      "Simple Layer 2 switch that only forwards Ethernet frames inside a single VLAN",
       "Management and automation platform for data center with Nexus Dashboard and services",
-      "Type of router",
-      "Firewall"
+      "Edge router family that forwards IP packets and advertises external BGP routes",
+      "Perimeter firewall that inspects sessions and enforces a traffic filtering policy"
     ],
     "correct": 1,
     "explanation": "Nexus Dashboard provides unified management, automation, and services for ACI and NX-OS fabrics.",
@@ -458,10 +458,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'Cisco HyperFlex'?",
     "options": [
-      "Traditional server",
+      "Traditional standalone server with local disks and no storage distributed across nodes",
       "Hyperconverged infrastructure (HCI) solution with integrated storage, compute, and networking",
-      "Type of switch",
-      "Routing protocol"
+      "Access switch family that forwards Ethernet frames by VLAN using the spanning-tree protocol",
+      "Routing protocol that exchanges prefixes with neighbors and computes the best path"
     ],
     "correct": 1,
     "explanation": "HyperFlex is Cisco's HCI solution with distributed storage, high availability, and simplified management.",
@@ -470,10 +470,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'Cisco UCS' (Unified Computing System)?",
     "options": [
-      "Standalone server",
+      "Isolated standalone server with local configuration and no stateless service profile",
       "Server platform (blade/rack) with unified management, stateless computing, and automation",
-      "Type of switch",
-      "Firewall"
+      "Data center switch family that only forwards Ethernet frames in a leaf-spine fabric",
+      "Perimeter firewall that inspects L3/L4 sessions and enforces access control lists"
     ],
     "correct": 1,
     "explanation": "UCS integrates compute, networking, and storage with centralized management and stateless service profiles.",
@@ -482,10 +482,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'Cisco Intersight Workload Optimizer'?",
     "options": [
-      "Backup tool",
+      "Backup tool that copies VM images across hybrid clouds without optimizing placement or cost",
       "AI-powered workload optimization solution for placement, scaling, and cost in hybrid environments",
-      "Type of switch",
-      "Routing protocol"
+      "Type of data-center switch that classifies workload traffic by DSCP and VLAN in the fabric",
+      "Routing protocol that picks the next hop for each workload prefix between hybrid sites"
     ],
     "correct": 1,
     "explanation": "Intersight Workload Optimizer uses AI to optimize workload placement, scaling, and costs across hybrid clouds.",
@@ -494,10 +494,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'Cisco AppDynamics'?",
     "options": [
-      "Network monitoring",
+      "Network monitoring that polls switches with SNMP and NetFlow to map the campus",
       "Application observability platform with APM, business transactions, and analytics",
-      "Type of switch",
-      "Firewall"
+      "Type of Catalyst switch applying QoS policy on distribution-layer access ports",
+      "Firewall that inspects sessions and blocks applications by security zone"
     ],
     "correct": 1,
     "explanation": "AppDynamics provides full-stack visibility into application performance, from code to user experience.",
@@ -506,10 +506,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'Cisco Full-Stack Observability'?",
     "options": [
-      "Traditional monitoring",
+      "Traditional monitoring in silos, with separate network and application tools and no correlation",
       "Unified approach that correlates data from network, applications, infrastructure, and user experience",
-      "Type of router",
-      "Backup method"
+      "Type of edge router that advertises BGP prefixes and applies route policy between campus and the WAN",
+      "Backup method that schedules copies of device configurations and VM images into a central repository"
     ],
     "correct": 1,
     "explanation": "Full-Stack Observability correlates telemetry across the entire stack for proactive troubleshooting and optimization.",
@@ -518,10 +518,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'Cisco ThousandEyes' in SD-WAN?",
     "options": [
-      "Firewall",
+      "Edge firewall that filters SD-WAN sessions by zone and blocks applications",
       "Internet and application performance monitoring to optimize SD-WAN decisions",
-      "Type of switch",
-      "DNS server"
+      "Type of access switch that ends site VLANs and sends traffic to the edge",
+      "DNS server that resolves internal site names before the SD-WAN tunnel is up"
     ],
     "correct": 1,
     "explanation": "ThousandEyes provides insights into internet and application performance so SD-WAN can make intelligent decisions.",
@@ -530,10 +530,10 @@ window.QUIZ_BANK = [
   {
     "question": "OSPF LSA type 3 is generated by:",
     "options": [
-      "All routers",
+      "All OSPF routers inside the area",
       "The ABR, as an inter-area summary",
-      "The ASBR only",
-      "The Ethernet DR"
+      "Only the local ASBR router",
+      "The DR on that Ethernet segment"
     ],
     "correct": 1,
     "explanation": "OSPFv2 Type 3 Network Summary LSAs are generated by ABRs to advertise inter-area prefixes. They are not Type 1 router LSAs.",
@@ -542,10 +542,10 @@ window.QUIZ_BANK = [
   {
     "question": "OSPF LSA type 5 represents:",
     "options": [
-      "Intra-area links",
+      "Only the intra-area OSPF links",
       "External routes injected into OSPF",
-      "NSSA summary",
-      "IPv6 only"
+      "The NSSA inter-area summary LSA",
+      "Only the IPv6 prefixes in OSPFv3"
     ],
     "correct": 1,
     "explanation": "Type 5 AS-External LSAs are originated by ASBRs for routes redistributed into OSPF; NSSA uses Type 7 translated to Type 5 by the ABR.",
@@ -554,10 +554,10 @@ window.QUIZ_BANK = [
   {
     "question": "An OSPF stub area blocks which LSAs?",
     "options": [
-      "Type 1 and 2",
+      "The Type 1 and Type 2 LSAs inside the area",
       "Type 5 (externals); the ABR injects a default",
-      "All type 3 LSAs",
-      "Hello packets"
+      "All Type 3 inter-area summary LSAs from ABRs",
+      "Hello packets exchanged among OSPF neighbors"
     ],
     "correct": 1,
     "explanation": "A stub area blocks Type 5 externals; the ABR injects a default (0.0.0.0) so stub routers reach outside destinations.",
@@ -566,10 +566,10 @@ window.QUIZ_BANK = [
   {
     "question": "The EIGRP successor is:",
     "options": [
-      "The backup route in the topology table",
+      "The backup route kept in the EIGRP topology table",
       "The primary route in the routing table (lowest FD)",
-      "The neighbor with the worst metric",
-      "An LSA type 1"
+      "The neighbor that offers the worst EIGRP metric",
+      "An OSPF Type 1 router LSA, not an EIGRP route"
     ],
     "correct": 1,
     "explanation": "In EIGRP, the successor is the best path (lowest feasible distance) installed in the RIB; feasible successors are loop-free backups.",
@@ -578,10 +578,10 @@ window.QUIZ_BANK = [
   {
     "question": "BGP path selection: after Weight and Local Pref, a common next criterion is:",
     "options": [
-      "MED",
+      "Lower MED value",
       "Shortest AS-Path",
-      "Oldest path",
-      "Router-ID"
+      "Oldest BGP path",
+      "BGP's router ID"
     ],
     "correct": 1,
     "explanation": "Classic BGP best-path order starts with highest Weight, then Local Preference, locally originated, shortest AS_PATH, and so on.",
@@ -590,10 +590,10 @@ window.QUIZ_BANK = [
   {
     "question": "BGP Weight is:",
     "options": [
-      "An IETF transitive attribute",
+      "An IETF transitive attribute advertised between ASes and inherited by iBGP neighbors",
       "Cisco-proprietary, local to the router, higher is better (default 32768 for originated)",
-      "The same as MED",
-      "Sent to eBGP peers"
+      "The same as MED: a lower value is better and it can be carried onward in eBGP updates",
+      "Sent to eBGP peers inside the UPDATE so it steers inbound traffic into the local AS"
     ],
     "correct": 1,
     "explanation": "BGP Weight is Cisco-specific, local to the router, and never advertised; higher Weight wins first in path selection.",
@@ -602,10 +602,10 @@ window.QUIZ_BANK = [
   {
     "question": "In iBGP, a higher Local Preference means:",
     "options": [
-      "A worse path",
+      "A worse path out of the AS",
       "Preferred for exiting the AS",
-      "Used on eBGP only",
-      "It replaces AS-Path"
+      "Used only on eBGP sessions",
+      "It replaces AS-Path in iBGP"
     ],
     "correct": 1,
     "explanation": "Higher Local Preference influences which path is preferred to exit the local AS; it is advertised within iBGP, unlike Weight.",
@@ -626,10 +626,10 @@ window.QUIZ_BANK = [
   {
     "question": "iBGP does not re-advertise iBGP prefixes to other iBGP peers. The classic fix is:",
     "options": [
-      "AS-Path prepend",
+      "AS-Path prepend to re-advertise the iBGP routes",
       "iBGP full mesh or route reflectors / confederations",
-      "OSPF default",
-      "LSA type 5"
+      "An OSPF default route among iBGP peers in the AS",
+      "OSPF type 5 LSAs carrying the iBGP prefixes across"
     ],
     "correct": 1,
     "explanation": "iBGP does not re-advertise iBGP-learned routes to other iBGP peers (split horizon), so you need a full mesh or route reflectors/confederations.",
@@ -638,10 +638,10 @@ window.QUIZ_BANK = [
   {
     "question": "A route-reflector client receives:",
     "options": [
-      "eBGP routes only",
+      "Only eBGP routes learned from peers outside the AS",
       "Routes reflected by the RR, without a client full mesh",
-      "Type 3 LSAs only",
-      "Inverted MED"
+      "Only OSPF type 3 inter-area summary LSAs from ABRs",
+      "The MED value inverted when iBGP routes are reflected"
     ],
     "correct": 1,
     "explanation": "A route reflector reflects iBGP routes among clients so the AS can avoid a full iBGP mesh while keeping loop-prevention attributes.",
@@ -650,10 +650,10 @@ window.QUIZ_BANK = [
   {
     "question": "VRF-Lite is used to:",
     "options": [
-      "Encrypt the control plane",
+      "Encrypt control-plane packets of the routing sessions on the PE",
       "Separate forwarding tables on the same PE/CE without requiring MPLS",
-      "Replace STP",
-      "IPv6 only"
+      "Replace STP in the calculation of the active Layer 2 topology",
+      "Isolate IPv6 forwarding only, and keep no IPv4 table on the CE"
     ],
     "correct": 1,
     "explanation": "VRFs separate routing and forwarding tables per tenant; VRF-Lite does that without requiring MP-BGP/MPLS in the core.",
@@ -662,10 +662,10 @@ window.QUIZ_BANK = [
   {
     "question": "In MPLS label stacking, the top label is:",
     "options": [
-      "The L3VPN service label at the bottom",
+      "The L3VPN service label that sits at the bottom",
       "The one the LSR uses for the next hop (transport/IGP)",
-      "The CE MAC",
-      "DSCP"
+      "The CE MAC address placed at the top of the stack",
+      "The IP packet DSCP copied in as the top MPLS label"
     ],
     "correct": 1,
     "explanation": "In MPLS VPN, the top label is typically transport (IGP/LDP/SR) and the bottom label (S=1) is the VPN service label.",
@@ -674,10 +674,10 @@ window.QUIZ_BANK = [
   {
     "question": "LDP distributes:",
     "options": [
-      "BGP prefixes",
+      "BGP prefixes inside the AS",
       "MPLS labels for IGP prefixes",
-      "VLANs",
-      "PKI certificates"
+      "VLANs in the local domain",
+      "PKI certificates for LSRs"
     ],
     "correct": 1,
     "explanation": "LDP distributes labels bound to Forwarding Equivalence Classes (usually IPv4 prefixes) so LSRs can build LSPs.",
@@ -686,10 +686,10 @@ window.QUIZ_BANK = [
   {
     "question": "BFD (Bidirectional Forwarding Detection) is used to:",
     "options": [
-      "Replace OSPF",
+      "Replace OSPF for adjacency formation and the SPF calculation",
       "Detect forwarding failures in milliseconds, independent of the IGP",
-      "Elect the DR",
-      "Encrypt GRE"
+      "Elect the DR and the BDR on each multi-access OSPF segment",
+      "Encrypt GRE tunnels together with the keys of the data plane"
     ],
     "correct": 1,
     "explanation": "BFD provides sub-second forwarding-plane failure detection that OSPF, EIGRP, or BGP can use to tear down neighbors quickly.",
@@ -698,10 +698,10 @@ window.QUIZ_BANK = [
   {
     "question": "IP SLA on a Cisco router can:",
     "options": [
-      "Compile IOS",
+      "Compile the IOS image locally on that Cisco router",
       "Measure latency/jitter/availability and react with tracking",
-      "Replace AAA",
-      "Create VLANs"
+      "Replace AAA for authentication of all management access",
+      "Create the access VLANs and name them on the campus switch"
     ],
     "correct": 1,
     "explanation": "IP SLA probes measure reachability/latency; object tracking can drive PBR, HSRP/VRRP priority, or static route resilience.",
@@ -710,10 +710,10 @@ window.QUIZ_BANK = [
   {
     "question": "PBR (Policy-Based Routing) steers traffic based on:",
     "options": [
-      "The RIB only",
+      "Only the destination prefix already installed in the RIB",
       "Route-maps (ACL, DSCP, length) rather than destination alone",
-      "The STP root",
-      "LLDP"
+      "The STP root bridge elected on that Layer 2 segment",
+      "Neighbors and capabilities advertised by LLDP on the port"
     ],
     "correct": 1,
     "explanation": "Policy-Based Routing (PBR) can set ip next-hop (or interface) based on route-map matches instead of pure destination RIB lookup.",
@@ -722,10 +722,10 @@ window.QUIZ_BANK = [
   {
     "question": "StackWise / StackWise Virtual aggregates:",
     "options": [
-      "Wireless APs",
+      "Wireless APs into one logical control plane",
       "Switches into one logical control plane",
-      "BGP sessions",
-      "MPLS VRFs"
+      "BGP sessions merged into one logical speaker",
+      "MPLS VRFs merged into one forwarding table"
     ],
     "correct": 1,
     "explanation": "A switch stack operates as one logical switch with synchronized control plane (often SSO/NSF) and shared management IP.",
@@ -735,9 +735,9 @@ window.QUIZ_BANK = [
     "question": "vPC (Nexus) allows:",
     "options": [
       "Two switches to appear as one to STP/LACP without being a single supervisor",
-      "Replacing OSPF",
-      "FCoE only",
-      "Disabling BPDU Guard"
+      "Replacing OSPF as the routing protocol between the two Nexus vPC peer switches",
+      "Carrying FCoE only, with no data Ethernet and no LACP toward the hosts",
+      "Disabling BPDU Guard on the access and edge ports of the vPC pair"
     ],
     "correct": 0,
     "explanation": "vPC (Nexus) presents a multi-chassis EtherChannel to downstream devices without requiring a classic stack cable domain.",
@@ -746,10 +746,10 @@ window.QUIZ_BANK = [
   {
     "question": "SD-Access control plane typically uses:",
     "options": [
-      "STP only",
+      "STP only, to block loops, with no EID-to-RLOC mapping",
       "LISP to map identity (EID) to location (RLOC)",
-      "RIP v1",
-      "VTP v3 only"
+      "Classful RIPv1, advertising the fabric endpoint identifiers",
+      "VTP version 3 only, propagating VLANs as the control plane"
     ],
     "correct": 1,
     "explanation": "Cisco SD-Access fabric commonly combines LISP for control, VXLAN for data overlay, and ISE for policy/identity.",
@@ -758,10 +758,10 @@ window.QUIZ_BANK = [
   {
     "question": "ISE at the access layer uses 802.1X to:",
     "options": [
-      "Encrypt OSPF",
+      "Encrypt access OSPF adjacencies with MD5 authentication",
       "Authenticate user/device and apply dACL/SGT",
-      "Elect the STP root",
-      "Translate NAT64"
+      "Elect the STP root switch by the 802.1X supplicant vote",
+      "Translate IPv6 into IPv4 using NAT64 on the access port"
     ],
     "correct": 1,
     "explanation": "Cisco ISE acts as the RADIUS/policy engine for 802.1X, TrustSec, and SDA—authorizing users/devices and delivering policy.",
@@ -770,10 +770,10 @@ window.QUIZ_BANK = [
   {
     "question": "An SGT (Scalable Group Tag) in TrustSec is:",
     "options": [
-      "An OSPF number",
+      "An OSPF process or area number stored in the LSDB",
       "A group tag for identity-based policy",
-      "A native VLAN",
-      "A BGP community"
+      "The 802.1Q native VLAN for untagged trunk traffic",
+      "A standard or extended BGP community attribute"
     ],
     "correct": 1,
     "explanation": "Security Group Tags (SGTs) classify users/devices; SGACLs enforce traffic rules between groups independent of IP alone.",
@@ -782,10 +782,10 @@ window.QUIZ_BANK = [
   {
     "question": "NETCONF typically carries YANG over:",
     "options": [
-      "Telnet",
+      "Telnet (port 23)",
       "SSH (port 830)",
-      "HTTP only",
-      "SNMP v2"
+      "HTTP only (port 80)",
+      "SNMP v2 (port 161)"
     ],
     "correct": 1,
     "explanation": "NETCONF commonly runs over SSH on TCP 830; RESTCONF uses HTTPS. Both manage YANG-modeled configuration/state.",
@@ -794,10 +794,10 @@ window.QUIZ_BANK = [
   {
     "question": "A YANG model describes:",
     "options": [
-      "STP topology",
+      "Only the active STP topology: root, costs and blocking ports",
       "Structure and constraints of config/state data",
-      "MAC ACLs only",
-      "Spanning tree"
+      "MAC ACLs alone, excluding configuration and state data",
+      "Spanning tree itself, including root election by BPDUs"
     ],
     "correct": 1,
     "explanation": "YANG is the data modeling language used by NETCONF/RESTCONF to describe configuration and operational state—not a transport.",
@@ -806,10 +806,10 @@ window.QUIZ_BANK = [
   {
     "question": "DMVPN Phase 3 allows:",
     "options": [
-      "Hub-and-spoke only, no shortcuts",
+      "Permanent hub-and-spoke only, with no NHRP spoke shortcuts",
       "NHRP redirect/shortcut for direct spoke-to-spoke",
-      "IPsec transport without GRE only",
-      "Required OSPFv2"
+      "IPsec transport mode alone, without a multipoint GRE tunnel",
+      "Requiring OSPFv2 as the only routing protocol on the DMVPN"
     ],
     "correct": 1,
     "explanation": "In DMVPN Phase 3, NHRP redirect/shortcut lets spokes build direct spoke-to-spoke tunnels instead of hairpinning via the hub.",
@@ -818,10 +818,10 @@ window.QUIZ_BANK = [
   {
     "question": "FlexVPN on IOS-XE is based on:",
     "options": [
-      "L2TP only",
+      "L2TP only, with no IKEv2 or VTI",
       "IKEv2 (with virtual templates)",
-      "Aggressive IKEv1 only",
-      "PPTP"
+      "Aggressive IKEv1 only, with no IKEv2",
+      "PPTP with MS-CHAPv2 and no IKEv2"
     ],
     "correct": 1,
     "explanation": "FlexVPN is Cisco’s IKEv2-based framework that unifies site-to-site, DMVPN-like, and remote-access VPN styles.",
@@ -830,10 +830,10 @@ window.QUIZ_BANK = [
   {
     "question": "CoPP (Control Plane Policing) protects:",
     "options": [
-      "The user data plane",
+      "The user data plane by policing transit traffic switched between the access ports",
       "The control-plane CPU by rate-limiting traffic to processes (e.g. SSH, routing)",
-      "The CAM only",
-      "PoE"
+      "Only the forwarding CAM/TCAM, without rate-limiting the route-processor CPU",
+      "PoE power on access ports by cutting surplus draw from the powered devices"
     ],
     "correct": 1,
     "explanation": "Control Plane Policing (CoPP) applies QoS/ACL policies to traffic destined to the route processor, protecting CPU-bound protocols.",
@@ -842,10 +842,10 @@ window.QUIZ_BANK = [
   {
     "question": "uRPF (unicast RPF) mitigates:",
     "options": [
-      "DHCP starvation",
+      "DHCP starvation by limiting spoofed-MAC DHCP discovers on each access port",
       "Source IP spoofing by checking the source would be routable on the interface",
-      "STP loops",
-      "BFD drops"
+      "STP loops by placing redundant ports in blocking according to received BPDUs",
+      "BFD session drops by raising the hello interval and the detection multiplier"
     ],
     "correct": 1,
     "explanation": "uRPF (strict or loose) drops packets whose source is inconsistent with the RIB/FIB—mitigating spoofed sources.",
@@ -854,10 +854,10 @@ window.QUIZ_BANK = [
   {
     "question": "PIM Sparse Mode uses an RP for:",
     "options": [
-      "Electing the OSPF DR",
+      "Electing the OSPF Designated Router on each multiaccess segment",
       "The initial shared tree (*,G) before the SPT (S,G)",
-      "NAT translation",
-      "DSCP marking"
+      "Translating NAT addresses between the multicast source and the RP",
+      "Marking DSCP on multicast packets that pass through the RP"
     ],
     "correct": 1,
     "explanation": "PIM-SM receivers join via the Rendezvous Point first; traffic may later switch to the shortest-path tree (SPT) toward the source.",
@@ -866,10 +866,10 @@ window.QUIZ_BANK = [
   {
     "question": "Anycast RP (MSDP) solves:",
     "options": [
-      "A single RP with no redundancy",
+      "Keeping a single RP with no redundancy and no multicast load sharing",
       "Multicast RP redundancy/load-share across boxes or domains",
-      "IPv6 ND only",
-      "VTP pruning"
+      "IPv6 Neighbor Discovery only, with no source-active state between RPs",
+      "Doing VTP pruning of VLANs with no multicast receivers on access trunks"
     ],
     "correct": 1,
     "explanation": "Anycast RP lets several RPs share one address for redundancy; MSDP often exchanges source-active state between RPs.",
@@ -890,10 +890,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the difference between an OSPF stub area and an NSSA?",
     "options": [
-      "None",
+      "There is no practical difference at all: stub and NSSA block the same set of external LSAs and the ABR injects no default into either area",
       "Stub blocks Type 5 LSAs and the ABR injects a default; NSSA allows Type 7 (externals from the area) which the ABR translates to Type 5",
-      "Stub allows native BGP",
-      "NSSA has no ABR"
+      "A stub area allows native BGP among the area's routers, whereas an NSSA blocks every BGP session and accepts no BGP-learned routes",
+      "An NSSA has no ABR: Type 7 LSAs stay confined to the area and no border router translates them into Type 5 LSAs on the backbone"
     ],
     "correct": 1,
     "explanation": "Totally stubby also blocks Type 3 except a default. Choose NSSA when an ASBR (redistribution) sits inside the edge area.",
@@ -902,10 +902,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the initial Cisco BGP Best Path order after next-hop reachability?",
     "options": [
-      "MED, then Weight",
+      "Lowest MED first and highest Weight only afterward, ahead of Local Preference, AS-PATH, and origin",
       "Highest Weight; then highest Local Preference; locally originated; shortest AS-PATH; origin; lowest MED",
-      "Always the peer with the highest IP",
-      "Only AS-PATH matters"
+      "Always select the eBGP or iBGP peer with the highest IP address, without looking at Weight, Local Preference, or AS-PATH",
+      "After next-hop only AS-PATH matters: the path with fewer autonomous systems always wins and the other attributes are ignored"
     ],
     "correct": 1,
     "explanation": "Weight (local to the router) is Cisco's first tie-breaker. Local Pref (default 100) is the first attribute advertised in iBGP.",
@@ -926,10 +926,10 @@ window.QUIZ_BANK = [
   {
     "question": "In an MPLS L3VPN, what are RD and RT for?",
     "options": [
-      "They are the same community value",
+      "RD and RT are the same BGP community value and they perform exactly the same VRF import function",
       "RD makes the prefix unique in VPNv4 BGP; RT (extended community) controls import/export among VRFs",
-      "RD encrypts the payload",
-      "RT replaces the IGP"
+      "The RD encrypts the customer payload inside the MPLS packet before it crosses the service-provider core",
+      "The RT replaces the customer IGP and becomes the only protocol that fills the VRF forwarding table"
     ],
     "correct": 1,
     "explanation": "The same IPv4 in two customers needs different RDs. RTs define import/export policy. A VRF can import several RTs (extranet).",
@@ -938,10 +938,10 @@ window.QUIZ_BANK = [
   {
     "question": "How does VRF-lite differ from MPLS VPN?",
     "options": [
-      "It always requires LDP",
+      "It always requires LDP and an MPLS label at every hop, including on the access links, before each VRF table can be isolated",
       "It separates forwarding tables on the same box without MPLS labels; inter-box links carry one subinterface/VLAN per VRF",
-      "It forbids overlapping IPs",
-      "It works only with BGP"
+      "It forbids overlapping IPs: each VRF must use different IPv4 prefixes, or forwarding on the device fails",
+      "It works only with BGP inside each VRF and refuses OSPF, EIGRP, RIPv2, or any per-VRF static route"
     ],
     "correct": 1,
     "explanation": "VRF-lite is campus/WAN multi-VRF: vrf definition, ip vrf forwarding on the SVI, per-VRF routing, no MPLS core. Overlapping IPs are allowed.",
@@ -950,10 +950,10 @@ window.QUIZ_BANK = [
   {
     "question": "In EIGRP, what is a Feasible Successor?",
     "options": [
-      "Always the route in the FIB",
+      "The route that is always active in the FIB as the primary path, even when it fails the DUAL Feasibility Condition",
       "A backup route that passes the Feasibility Condition (neighbor AD < successor FD) and can be installed without a DUAL recomputation",
-      "A neighbor in INIT",
-      "A route with AD 255"
+      "An EIGRP neighbor that remains in the INIT state and has not yet exchanged topology updates or formed an adjacency",
+      "A route with administrative distance 255, which EIGRP still installs in the routing table as a backup without consulting the successor"
     ],
     "correct": 1,
     "explanation": "Successor = the path in use (lowest FD). Without an FS, a failure goes active and queries. Variance allows unequal-cost load balancing with FS.",
@@ -962,10 +962,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does the EIGRP variance command do?",
     "options": [
-      "It changes K-values",
+      "It changes the EIGRP metric K-values (K1 through K5) and forces neighbors to recalculate bandwidth, delay, and reliability",
       "It allows unequal-cost load balancing among the successor and feasible successors whose FD fits in FD_min × variance",
-      "It disables split horizon",
-      "It changes the AS"
+      "It disables EIGRP split horizon on the interface and advertises routes back out the link they were learned on",
+      "It changes the EIGRP autonomous system number on the router and keeps adjacencies only when the neighbor uses the new AS"
     ],
     "correct": 1,
     "explanation": "Variance 1 (default) is equal-cost only. Variance 2 installs FS routes with metric up to 2× the successor. K-values must match on neighbors.",
@@ -974,10 +974,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the main advantage of MST (802.1s) over Rapid PVST+?",
     "options": [
-      "MST always runs one tree per VLAN",
+      "MST always runs a distinct tree per VLAN, like Rapid PVST+, and does not group several VLANs into one instance",
       "MST maps many VLANs onto a few instances, cutting BPDUs and CPU when hundreds of VLANs exist",
-      "MST has no root",
-      "MST only works with hubs"
+      "MST has no root bridge: neither the IST nor any MSTI elects a root bridge inside the region",
+      "MST only works with shared hubs and does not form a spanning tree on switches with point-to-point links"
     ],
     "correct": 1,
     "explanation": "Rapid PVST+ = one instance per VLAN. MST groups VLANs into IST/MSTI with a region (name, revision, map). The digest must match in the region.",
@@ -986,10 +986,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does UDLD detect?",
     "options": [
-      "Always STP loops on copper",
+      "STP loops on copper in every case, even when the link is bidirectional and both sides receive frames",
       "A unidirectional link (TX on one side with no RX on the other) that STP may miss, creating a forwarding loop",
-      "OSPF Hello failures only",
-      "CRC on jumbo frames"
+      "Only OSPF Hello failures between routing neighbors, without checking whether one side's TX reaches the other's RX",
+      "CRC errors only on jumbo frames, leaving aside fiber links where one direction has stopped receiving"
     ],
     "correct": 1,
     "explanation": "UDLD sends frames and expects the peer to echo them. Normal mode syslogs; aggressive errdisables. It complements STP Loop Guard. Typical on fiber.",
@@ -998,10 +998,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does STP Loop Guard do?",
     "options": [
-      "The same as BPDU Guard",
+      "It does the same as BPDU Guard: it err-disables a PortFast port as soon as a BPDU arrives from a neighboring switch",
       "It prevents a non-designated port from becoming designated forwarding if BPDUs stop, avoiding a unidirectional loop",
-      "It forces PortFast",
-      "It elects the root"
+      "It forces PortFast on every access port so they skip listening and learning and go straight to forwarding",
+      "It elects the root bridge by comparing Bridge ID and priority to choose the spanning-tree root switch"
     ],
     "correct": 1,
     "explanation": "If BPDUs stop, classic STP assumes the designated bridge is gone and may forward. Loop Guard puts the port loop-inconsistent until BPDUs return.",
@@ -1010,10 +1010,10 @@ window.QUIZ_BANK = [
   {
     "question": "How do SSO and NSF relate on a Cisco chassis with dual RP?",
     "options": [
-      "NSF saves the config; SSO does not",
+      "NSF saves the running-config on the standby RP, while SSO replicates neither the configuration nor routing protocol state",
       "SSO replicates control-plane state to the standby RP; NSF keeps CEF forwarding during switchover with graceful restart",
-      "They are the same NAT feature",
-      "SSO disables the FIB"
+      "They are the same NAT feature, translating inside addresses to outside addresses during the RP switchover",
+      "SSO disables the FIB and stops CEF forwarding in the data plane until the standby RP finishes booting"
     ],
     "correct": 1,
     "explanation": "SSO + NSF/GR allow supervisor failover in seconds without dropping adjacencies if the peer understands GR. ISSU builds on this.",
@@ -1022,10 +1022,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is LLQ (Low Latency Queuing) in a QoS policy-map?",
     "options": [
-      "WRED on every class",
+      "WRED on every class in the policy-map, dropping packets early by DSCP before the queue fills",
       "A priority queue (usually EF/voice) served first, combined with CBWFQ for the other classes",
-      "Default-class policing only",
-      "A type of STP"
+      "Default-class policing only, rate-limiting best-effort traffic without any priority queue",
+      "A type of STP that elects the root bridge and blocks redundant ports to prevent Layer 2 loops"
     ],
     "correct": 1,
     "explanation": "priority implies a policer so voice cannot starve the link. Other classes use bandwidth (CBWFQ). Do not put bulk traffic in priority.",
@@ -1046,10 +1046,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is WRED (Weighted Random Early Detection) for?",
     "options": [
-      "Always increasing the TCP window",
+      "Always increasing the TCP window on every flow so the output queue fills without any early packet drop",
       "Dropping packets probabilistically before the queue fills, by precedence/DSCP, avoiding synchronized TCP tail drops",
-      "Encrypting the queue",
-      "Replacing LLQ"
+      "Encrypting the packets inside the output queue, by DSCP class, to prevent synchronized TCP slow start",
+      "Replacing LLQ by removing the EF voice priority queue and serving every remaining class with random early drop only"
     ],
     "correct": 1,
     "explanation": "Tail drop fills the queue and many TCPs hit slow start together. WRED starts dropping earlier on lower-priority flows. Do not apply it to voice.",
@@ -1058,10 +1058,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the fundamental difference between plain GRE and GRE over IPsec?",
     "options": [
-      "Plain GRE encrypts with AES",
+      "Plain GRE encrypts the payload with AES on protocol 47, providing confidentiality without ESP or IPsec",
       "GRE encapsulates any protocol but is clear text; IPsec adds confidentiality/integrity, usually in tunnel mode",
-      "IPsec cannot carry OSPF",
-      "GRE always requires certificates"
+      "IPsec cannot carry OSPF, not even over GRE or a VTI, because ESP accepts only static unicast",
+      "GRE always requires digital certificates, for both the plain tunnel and GRE over IPsec, to authenticate each peer"
     ],
     "correct": 1,
     "explanation": "GRE alone is protocol 47 with no crypto. IPsec (ESP proto 50) encrypts. For IGP over VPN use GRE/IPsec, VTI, FlexVPN or DMVPN. Lower MTU/MSS.",
@@ -1070,10 +1070,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the main advantage of IKEv2 over IKEv1?",
     "options": [
-      "IKEv2 needs more messages",
+      "IKEv2 needs more messages than IKEv1 main mode, typically nine exchanges instead of four",
       "Fewer round-trips, native NAT traversal, EAP, MOBIKE, and better rekey; IKEv1 is the legacy model",
-      "IKEv2 does not authenticate",
-      "IKEv1 supports EAP and IKEv2 does not"
+      "IKEv2 does not authenticate the peers; it only negotiates cipher keys and leaves identity unchecked",
+      "IKEv1 supports native EAP for authentication and IKEv2 does not, so IKEv2 is limited to a pre-shared key"
     ],
     "correct": 1,
     "explanation": "IKEv2 uses fewer messages than IKEv1 main mode (commonly described as 4 vs 9) and underpins Cisco FlexVPN. It is not L2TP by itself.",
@@ -1082,10 +1082,10 @@ window.QUIZ_BANK = [
   {
     "question": "What distinguishes GETVPN from tunnel VPNs such as DMVPN?",
     "options": [
-      "GETVPN requires GRE",
+      "GETVPN requires GRE to build the overlay between group members before applying the GDOI group keys",
       "GETVPN encrypts native traffic (no tunnel overlay) with GDOI group keys; it preserves the original IP header",
-      "GETVPN does not use IPsec",
-      "GETVPN is only for public Internet without an IGP"
+      "GETVPN does not use IPsec; it protects traffic with GDOI alone, without ESP encapsulation or TEKs",
+      "GETVPN is only for the public Internet without an IGP, because it hides the original IP addresses inside a tunnel"
     ],
     "correct": 1,
     "explanation": "A key server distributes KEKs/TEKs via GDOI. GMs encapsulate ESP but keep original src/dst. Ideal on a private WAN; it does not traverse NAT like DMVPN.",
@@ -1094,10 +1094,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is MACsec (IEEE 802.1AE)?",
     "options": [
-      "End-to-end Layer 3 encryption",
+      "End-to-end Layer 3 encryption between hosts, without protecting each Ethernet hop",
       "Hop-by-hop Layer 2 encryption between ports, with keys via MKA (802.1X)",
-      "A type of GRE",
-      "A BGP replacement"
+      "A type of GRE that wraps the Ethernet frame in another IP packet to cross routers",
+      "A BGP replacement that advertises prefixes and selects the best path between ASes"
     ],
     "correct": 1,
     "explanation": "Useful on datacenter/campus switch links for confidentiality on the wire. It does not replace WAN IPsec.",
@@ -1106,10 +1106,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is MAB (MAC Authentication Bypass) in 802.1X access?",
     "options": [
-      "A type of EtherChannel",
+      "A type of EtherChannel that bundles the access ports and authenticates the channel by the neighbor switch MAC",
       "A fallback that authenticates the device by MAC via RADIUS when no 802.1X supplicant is present",
-      "Mandatory MACsec encryption",
-      "A routing protocol"
+      "Mandatory MACsec encryption on every access port, using MKA keys, before any form of authentication",
+      "A routing protocol that advertises the host MAC as a prefix and selects the next hop on the access port"
     ],
     "correct": 1,
     "explanation": "Typical order: 802.1X, then MAB, then WebAuth. MAB is weak (MACs are spoofable); combine it with profiling and dACL/SGT.",
@@ -1118,10 +1118,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is ERSPAN compared with SPAN/RSPAN?",
     "options": [
-      "It is local SPAN only",
+      "It is local SPAN only, copying frames to a destination port on the same switch without leaving the chassis",
       "It encapsulates monitored traffic in GRE/IP toward an analyzer on another L3 network, crossing routers",
-      "It is hub-only",
-      "It replaces NetFlow"
+      "It is exclusive to hubs, which flood every frame out all ports because they have no MAC address table",
+      "It replaces NetFlow, exporting flow counters over UDP to a collector instead of copies of the frames"
     ],
     "correct": 1,
     "explanation": "SPAN: same switch. RSPAN: a dedicated VLAN across L2 trunks. ERSPAN: GRE/IP, reaches a destination in another subnet.",
@@ -1130,10 +1130,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is model-driven telemetry on IOS-XE/NX-OS?",
     "options": [
-      "SNMP polling every 5 minutes only",
+      "SNMP pull polling every five minutes only, with no YANG subscription and no periodic or on-change stream over gRPC",
       "Streaming of YANG data (periodic or on-change) via gRPC/gNMI/NETCONF to collectors, instead of SNMP pull",
-      "An ASCII syslog substitute",
-      "CLI accounting only"
+      "An ASCII syslog substitute that only sends event text and never streams modeled operational YANG data to a collector",
+      "CLI accounting only, which records the commands entered by the operator and does not publish operational YANG state"
     ],
     "correct": 1,
     "explanation": "Subscriptions target YANG paths. Second-level cadence and on-change notifications give visibility SNMP cannot scale.",
@@ -1142,10 +1142,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is YANG in network programmability?",
     "options": [
-      "A transport protocol",
+      "A transport protocol that carries configuration between the controller and the network device",
       "A data modeling language (config and state) used by NETCONF/RESTCONF/gNMI",
-      "An IPsec cipher",
-      "A type of OSPF LSA"
+      "An IPsec cipher that encrypts management traffic between the controller and the router",
+      "A type of OSPF LSA that advertises external prefixes and their metric in the domain"
     ],
     "correct": 1,
     "explanation": "Modules such as Cisco-IOS-XE-native and openconfig-interfaces describe leaves and types. Encoding may be XML or JSON. Without YANG, NETCONF has no schema.",
@@ -1154,10 +1154,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is a practical contrast between NETCONF and RESTCONF?",
     "options": [
-      "RESTCONF uses only SSH and always XML datastore lock",
+      "RESTCONF uses only SSH and always applies an XML datastore lock, with no HTTP verbs, no JSON body, and no HTTPS session",
       "NETCONF runs over SSH with datastores (running/candidate) and XML RPCs; RESTCONF maps YANG to HTTP/HTTPS with JSON or XML",
-      "NETCONF is native HTTP",
-      "RESTCONF does not authenticate"
+      "NETCONF is native HTTP and edits running with GET, PATCH, and PUT, without opening an SSH session or sending XML RPCs",
+      "RESTCONF does not authenticate the client, ignores certificates and passwords, and accepts any anonymous HTTP request to the datastore"
     ],
     "correct": 1,
     "explanation": "NETCONF: edit-config, locks, candidate+commit. RESTCONF: GET /restconf/data/... is simpler for web apps. gNMI is the third path.",
@@ -1166,10 +1166,10 @@ window.QUIZ_BANK = [
   {
     "question": "In LISP, what are EID and RLOC?",
     "options": [
-      "The same WAN address",
+      "The same WAN address, used at once as the host identity and as the xTR location on the LISP underlay",
       "EID is the host/prefix identity; RLOC is the location (xTR loopback) used to encapsulate on the underlay",
-      "RLOC is the native VLAN",
-      "EID replaces DNS"
+      "RLOC is the native VLAN of the 802.1Q trunk, the identifier of untagged traffic that crosses the LISP fabric",
+      "EID replaces DNS and resolves host names directly to IP addresses, without querying the LISP map-server"
     ],
     "correct": 1,
     "explanation": "Map-resolver/map-server resolve EID to RLOC. xTRs encapsulate. This is the SD-Access control plane with VXLAN as the data plane.",
@@ -1178,10 +1178,10 @@ window.QUIZ_BANK = [
   {
     "question": "What identifies a VXLAN segment in the data plane?",
     "options": [
-      "The 12-bit VLAN ID only",
+      "The 12-bit VLAN ID only, carried in the 802.1Q header, with no 24-bit VNI field in the encapsulation",
       "The 24-bit VNI (VXLAN Network Identifier) in the VXLAN header, destination UDP 4789",
-      "DSCP EF",
-      "The OSPF Router ID"
+      "DSCP EF in the outer IP header, used as the identifier of the VXLAN segment itself",
+      "The OSPF Router ID of the VTEP, advertised to underlay neighbors and used as the VXLAN segment identifier"
     ],
     "correct": 1,
     "explanation": "24 bits ~ 16 million segments (versus 4094 VLANs). VTEPs encapsulate Ethernet in UDP/IP. EVPN distributes MAC/IP to VTEP mappings.",
@@ -1190,10 +1190,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is an anycast gateway in a VXLAN/EVPN or SD-Access fabric?",
     "options": [
-      "Classic HSRP with two different IPs",
+      "Classic HSRP with two different IPs, one active and one standby, elected between a pair of distribution routers",
       "The same SVI IP and MAC configured on every leaf, so the default gateway is always on the local leaf",
-      "An anycast DNS server only",
-      "A BGP RR"
+      "An anycast DNS server only, answering name queries from the leaf that is closest to the requesting client",
+      "A BGP RR that elects the anycast gateway and advertises the virtual IP only from the leaf that became active"
     ],
     "correct": 1,
     "explanation": "The host ARPs the gateway and the local leaf answers. That avoids trombone routing through a central HSRP pair. The underlay provides leaf-to-leaf reachability.",
@@ -1202,10 +1202,10 @@ window.QUIZ_BANK = [
   {
     "question": "What timer and DR difference exists between OSPF point-to-point and broadcast?",
     "options": [
-      "Both elect a DR and use Hello 30",
+      "Both elect a DR/BDR and use a 30-second Hello and a 120-second Dead, on point-to-point as well as on broadcast",
       "P2P: no DR/BDR, Hello 10 s, direct FULL adjacency; broadcast: elects DR/BDR, Hello 10 s, FULL only with DR/BDR",
-      "Broadcast sends no Hellos",
-      "P2P uses Hello 30 s"
+      "Broadcast sends no Hello packets and forms the FULL adjacency only with periodic DBD, LSU, and LSAck between neighbors",
+      "P2P uses, by default, a 30-second Hello and a 120-second Dead, the timer used on NBMA and point-to-multipoint networks"
     ],
     "correct": 1,
     "explanation": "ip ospf network point-to-point on Ethernet p2p (/31 links) avoids a useless election. A network-type mismatch blocks adjacency.",
@@ -1214,10 +1214,10 @@ window.QUIZ_BANK = [
   {
     "question": "What are BGP communities used for?",
     "options": [
-      "Replacing AS-PATH",
+      "Replacing the AS-PATH entirely, deleting the autonomous-system list from the route and leaving only the community as the path attribute",
       "Optional tags that travel with the route so policy (local-pref, filter, no-export) can be applied elsewhere in the AS or at a peering",
-      "Encrypting UPDATEs",
-      "Electing the RR"
+      "Encrypting BGP UPDATEs end to end, using the community to protect the path attributes instead of MD5, TCP-AO, or TLS",
+      "Electing the route reflector of the cluster, comparing communities and choosing the reflector that advertises the lowest numeric value"
     ],
     "correct": 1,
     "explanation": "Well-known: no-export, no-advertise, internet, local-AS. Route-maps set/match community. This is the transit and customer policy tool.",
@@ -1226,10 +1226,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is a Loop-Free Alternate (LFA) in IP FRR?",
     "options": [
-      "A Type 5 LSA",
+      "A Type 5 external LSA that OSPF floods across the domain to advertise the backup prefix with a type-2 external metric",
       "A precomputed backup next hop that does not reconverge the prefix through the protected router, allowing sub-50 ms repair",
-      "A BGP community",
-      "An STP mode"
+      "An optional BGP community that marks the prefix so the neighbor raises local-pref and diverts transit traffic onto the backup",
+      "An STP mode, such as RSTP or MST, that blocks the alternate port until the primary path toward the root bridge fails"
     ],
     "correct": 1,
     "explanation": "The IGP finds a neighbor whose path to the prefix does not go through the primary. Remote LFA/TI-LFA covers cases with no local LFA. BFD detects the failure.",
@@ -1238,10 +1238,10 @@ window.QUIZ_BANK = [
   {
     "question": "How are Private VLANs (PVLAN) organized?",
     "options": [
-      "One VLAN per MAC only",
+      "One VLAN per MAC address only, created dynamically on the access switch at the moment the host first obtains an IP address through DHCP",
       "One primary VLAN plus secondary isolated VLANs (talk only to promiscuous) or community VLANs (talk among themselves and to promiscuous)",
-      "Every port is promiscuous",
-      "PVLAN replaces VXLAN"
+      "Every port in the VLAN is promiscuous and may talk freely to every host that belongs to the primary VLAN or to any secondary VLAN",
+      "PVLAN replaces VXLAN in the fabric, encapsulating each Ethernet frame inside UDP port 4789 so that tenants stay isolated on the IP underlay"
     ],
     "correct": 1,
     "explanation": "The promiscuous port (gateway/firewall) sees everyone. Isolated hosts do not talk to each other. Community groups hosts. Useful in shared hosting.",
@@ -1250,10 +1250,10 @@ window.QUIZ_BANK = [
   {
     "question": "What characterizes a FlexConnect AP versus Local mode?",
     "options": [
-      "FlexConnect forces all traffic to the WLC",
+      "FlexConnect forces all client traffic on the SSID to the WLC over CAPWAP and never switches those frames locally, even if the branch WAN is up",
       "In FlexConnect the AP can switch an SSID locally and survive if CAPWAP to the WLC dies; Local mode uses central switching at the WLC",
-      "Local mode does not use CAPWAP",
-      "FlexConnect does not authenticate"
+      "Local mode does not use CAPWAP for control or for data: the AP switches the SSID alone on the campus and never registers a session with the WLC",
+      "FlexConnect does not authenticate 802.1X or PSK clients and accepts any station on the SSID without a local server or a check on the WLC"
     ],
     "correct": 1,
     "explanation": "Branches with a weak WAN use FlexConnect: local DHCP/data. Local/centrally switched is the campus model. The WLC still manages RRM while the tunnel is up.",
@@ -1262,10 +1262,10 @@ window.QUIZ_BANK = [
   {
     "question": "Which main functions does RRM run on a WLC?",
     "options": [
-      "It only encrypts WPA3",
+      "It only encrypts WPA3 client frames and does not tune transmit power, channel, or AP-group coverage",
       "TPC (power), DCA (channel selection), and coverage hole detection, tuning RF across the AP group",
-      "It assigns DHCP addresses",
-      "It replaces ISE"
+      "It assigns IPv4 DHCP addresses to wireless clients instead of selecting AP channel and transmit power",
+      "It replaces Cisco ISE for 802.1X authentication and authorization, so the WLC no longer needs RADIUS"
     ],
     "correct": 1,
     "explanation": "The WLC measures neighbors (NDP), avoids co-channel interference, raises/lowers dBm, and covers holes. Without RRM, channels and power stay static.",
@@ -1274,10 +1274,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does IGMP snooping do on a switch?",
     "options": [
-      "It blocks all multicast",
+      "It blocks all IP multicast in the VLAN, including IGMP joins and the traffic that should reach the router querier",
       "It watches IGMP joins/leaves and forwards IP multicast only to ports with receivers (and the router/querier)",
-      "It converts multicast to GRE",
-      "It enables PIM-DM on every port"
+      "It converts IP multicast into GRE tunnels between each access port and the uplink, ignoring IGMP joins entirely",
+      "It enables PIM-DM on every access port and floods dense (S,G) state instead of limiting delivery to IGMP receivers"
     ],
     "correct": 1,
     "explanation": "Without snooping the switch treats multicast as VLAN broadcast. With snooping plus a querier you save the uplink. MLD snooping is the IPv6 equivalent.",
@@ -1286,10 +1286,10 @@ window.QUIZ_BANK = [
   {
     "question": "Look at this show ip bgp. Why is 10.1.1.2 the best path for 172.16.0.0 and not 10.1.1.3?",
     "options": [
-      "Longer AS-path wins",
+      "A longer AS-path wins, so 10.1.1.2 is chosen for 172.16.0.0",
       "Local Preference 200 > 150 (after Weight, which is 0 on both)",
-      "Higher MED wins",
-      "Origin e is preferred over i"
+      "A higher MED wins, and the metric of 10.1.1.2 beats the metric of 10.1.1.3",
+      "Origin e is preferred over i, and that step selects 10.1.1.2 as best"
     ],
     "correct": 1,
     "explanation": "Cisco best path: Weight (higher, local) → Local Pref (higher) → locally originated → AS-path (shorter) → origin (i < e < ?) → MED (lower)... Weight ties at 0; LocPrf 200 beats 150. Both paths are iBGP (i).",
@@ -1299,10 +1299,10 @@ window.QUIZ_BANK = [
   {
     "question": "Look at this show ip ospf database. LSA 10.2.0.0 under Summary Net Link States is which type and who originates it?",
     "options": [
-      "Type 1 Router LSA from 1.1.1.1",
+      "Type 1 Router LSA from 1.1.1.1, listing that router's own links inside Area 0, not a network summary",
       "Type 3 summary, originated by ABR 2.2.2.2 to advertise a network from another area",
-      "Type 5 external from 9.9.9.9",
-      "Type 4 ASBR-summary"
+      "Type 5 external from 9.9.9.9, advertising 10.2.0.0 as an AS-external route from outside OSPF",
+      "Type 4 ASBR-summary, identifying ASBR 9.9.9.9 instead of advertising network 10.2.0.0 into Area 0"
     ],
     "correct": 1,
     "explanation": "Summary Net Link States = Type 3, built by ABRs. Type-5 AS External are externals (here 8.8.8.0 from 9.9.9.9). Router Link States = Type 1. Type 4 would describe an ASBR, not network 10.2.0.0.",
@@ -1312,10 +1312,10 @@ window.QUIZ_BANK = [
   {
     "question": "Look at this show ip eigrp topology. Is the path via 10.1.3.2 a feasible successor?",
     "options": [
-      "No, because 3328 > 3072 (FD)",
+      "No, because distance 3328 exceeds FD 3072, so 10.1.3.2 is not a feasible successor",
       "Yes, because advertised distance 2816 is less than the successor FD (3072)",
-      "No, because it is Active",
-      "Yes, because reported metric 3328 is less than 2816"
+      "No, because 10.2.2.0/24 is Active and DUAL is still searching for a successor",
+      "Yes, because reported metric 3328 is less than 2816 and passes the feasibility check"
     ],
     "correct": 1,
     "explanation": "Successor: via 10.1.1.2, FD=3072 (feasible distance = metric to the destination). Candidate via 10.1.3.2: (reported AD=2816, total FD=3328). Feasibility: AD 2816 < successor FD 3072 → it is an FS, but it is not installed (1 successor; variance 1). P = Passive, DUAL is stable.",
@@ -1325,10 +1325,10 @@ window.QUIZ_BANK = [
   {
     "question": "Look at this show bfd neighbors. What do State Up and RH/RS Up mean?",
     "options": [
-      "The IGP is down but BFD lingered",
+      "The IGP is down, but BFD lingered in Up and does not mean those next hops are alive",
       "The BFD session is up and forwarding to those next hops is considered alive",
-      "BFD runs only for IPv6",
-      "LD/RD 1/1 means a loop was detected"
+      "BFD runs only for IPv6, so these IPv4 show bfd neighbors rows are not live sessions",
+      "LD/RD 1/1 means BFD detected a forwarding loop between the two neighboring routers"
     ],
     "correct": 1,
     "explanation": "BFD Up lets OSPF/EIGRP/BGP react in milliseconds without waiting for dead timers. LD/RD are local/remote discriminators. Int is the session interface. Without BFD, Gi0/0 would use 10 s hellos / 40 s dead on OSPF broadcast.",
@@ -1338,10 +1338,10 @@ window.QUIZ_BANK = [
   {
     "question": "Look at this show ip vrf. What can you conclude?",
     "options": [
-      "There is a single shared forwarding table",
+      "There is a single shared forwarding table used by both CUST_A and CUST_B on this same router",
       "Two VRF-Lite instances (CUST_A and CUST_B) with distinct RDs and non-overlapping interfaces",
-      "MPLS TE is up on Lo10",
-      "Both VRFs must use the same RD"
+      "MPLS TE is up on Lo10, with a traffic-engineering tunnel configured inside the CUST_A VRF",
+      "Both VRFs must use the same RD, so 65000:10 and 65000:20 make the configuration invalid"
     ],
     "correct": 1,
     "explanation": "Each VRF has its own RIB/FIB. RD 65000:10 vs 65000:20 distinguishes prefixes if they are exported as VPNv4; in pure VRF-Lite the RD still identifies the VRF. Gi0/0 cannot belong to both VRFs at once.",
@@ -1351,10 +1351,10 @@ window.QUIZ_BANK = [
   {
     "question": "Look at this show mpls forwarding-table. What does Pop Label mean for 10.1.1.0/24?",
     "options": [
-      "The prefix is missing from the LFIB",
+      "Prefix 10.1.1.0/24 is missing from the LFIB, so it has no local label and no outgoing action",
       "PHP: this router (penultimate) pops the transport label before handing the packet to the last hop",
-      "The packet is dropped",
-      "TE is mandatory"
+      "The packet for 10.1.1.0/24 is dropped, because Pop Label means the label and the IP packet are discarded",
+      "TE is mandatory for 10.1.1.0/24, and Pop Label identifies a traffic-engineering tunnel on that prefix"
     ],
     "correct": 1,
     "explanation": "Penultimate Hop Popping saves the egress PE from inspecting a label plus IP. Outgoing 22 = swap to label 22. No Label = native IP forwarding (no MPLS for that prefix).",
@@ -1364,10 +1364,10 @@ window.QUIZ_BANK = [
   {
     "question": "Look at this show ip bgp summary. Which neighbor is not Established, and why is Idle inferred?",
     "options": [
-      "10.1.1.2, because PfxRcd is 6",
+      "10.1.1.2 is not Established, because PfxRcd 6 is a numeric Idle code and not the count of prefixes received from that peer",
       "198.51.100.2, State Idle and Up/Down never — TCP/BGP never established (ACL, AS, reachability, or missing neighbor)",
-      "203.0.113.2, because AS 65001 is eBGP",
-      "All of them are Established"
+      "203.0.113.2 is not Established, because AS 65001 is eBGP and an eBGP peer always remains Idle in this show ip bgp summary",
+      "All of the neighbors are Established, and Idle on 198.51.100.2 is only that neighbor's count of received prefixes"
     ],
     "correct": 1,
     "explanation": "The State/PfxRcd column shows a prefix count if Established, or an FSM state (Idle, Active, OpenSent...). Idle + never = no session. 10.1.1.2 is iBGP (AS 65000=local) with 6 prefixes; 203.0.113.2 is eBGP with 4.",
@@ -1390,10 +1390,10 @@ window.QUIZ_BANK = [
   {
     "question": "Who originates OSPFv2 Type 2 (Network) LSAs and what do they describe?",
     "options": [
-      "Every router, its P2P links",
+      "Every router, describing its own point-to-point links inside a Type 2 Network LSA",
       "The DR on a multiaccess segment: the list of routers on the segment and the mask",
-      "The ASBR, external prefixes",
-      "The ABR, a Type-7 default"
+      "The ASBR, advertising external Type 5 prefixes in place of the multiaccess Network LSA",
+      "The ABR, injecting an NSSA Type-7 default as though that default were the Type 2"
     ],
     "correct": 1,
     "explanation": "Type 2 exists only where there is a DR (broadcast/NBMA). The Link ID is the DR interface IP. Point-to-point has no Type 2. Type 1 describes the router's own links.",
@@ -1402,10 +1402,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the Type 4 (ASBR-summary) LSA for?",
     "options": [
-      "To advertise an intra-area prefix",
+      "To advertise an intra-area prefix from Type 1, as if Type 4 described the router's own local links",
       "To let routers in other areas know how to reach an ASBR (ASBR Router ID, originated by the ABR)",
-      "To replace Type 5 inside an NSSA",
-      "To describe the DR"
+      "To replace Type 5 inside an NSSA, carrying the external prefixes that only Type 7 is allowed to hold",
+      "To describe the DR on a multiaccess segment and the attached routers, which is the Type 2 role"
     ],
     "correct": 1,
     "explanation": "Type 5 carries the external prefix, but the forwarding next hop may be an ASBR in another area. Type 4 gives the cost to that ASBR. NSSAs do not take Type 5: they use Type 7, translated to 5 at the ABR.",
@@ -1414,10 +1414,10 @@ window.QUIZ_BANK = [
   {
     "question": "What extra LSAs does an OSPF totally stubby (no-summary) area block versus a plain stub?",
     "options": [
-      "Type 1 only",
+      "Type 1 router LSAs only, while still allowing inter-area Type 3 summaries into the area",
       "Besides Type 4/5, also Type 3 summaries; the ABR injects only a Type 3 default",
-      "Hellos only",
-      "Mandatory Type 2 LSAs"
+      "OSPF Hellos only, without also blocking Type 3, Type 4, or Type 5 LSAs in the area",
+      "Mandatory Type 2 LSAs from the DR, rather than the inter-area Type 3 summaries"
     ],
     "correct": 1,
     "explanation": "Stub: no Type 5 (and no Type 4). Totally stubby: no specific Type 3 either, only a default. NSSA: allows redistributed Type 7. Totally NSSA: NSSA plus no-summary. The backbone (area 0) is never stub.",
@@ -1426,10 +1426,10 @@ window.QUIZ_BANK = [
   {
     "question": "When do you use an OSPF virtual-link?",
     "options": [
-      "To encrypt Type-5 LSAs",
+      "To encrypt Type-5 external LSAs as they cross the non-stub transit area between the virtual-link ABRs",
       "To attach a discontiguous area to area 0 (or repair a split area 0) through a non-stub transit area",
-      "To replace BFD",
-      "Only in NSSAs"
+      "To replace BFD when detecting OSPF neighbor failures between the ABRs that terminate the virtual-link",
+      "Only inside NSSA areas, so the virtual-link can cross that NSSA and repair a backbone that has split"
     ],
     "correct": 1,
     "explanation": "Every area must touch the backbone. A virtual-link is a logical tunnel between ABRs across a regular area. It cannot cross stub/NSSA. The clean fix is to redesign so area 0 is contiguous.",
@@ -1438,10 +1438,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is Stuck-in-Active (SIA) in EIGRP?",
     "options": [
-      "A successor with FD 0",
+      "A successor whose feasible distance is 0, installed in the RIB without the router ever going Active",
       "The router stayed Active waiting for Query replies and the SIA timer expired with no reply from a neighbor",
-      "The normal Passive state",
-      "An OSPF 2-Way adjacency"
+      "The normal Passive state, where DUAL already chose a successor and sends no Queries to its EIGRP neighbors",
+      "An OSPF 2-Way adjacency between the DR and a DROTHER on a multiaccess broadcast segment"
     ],
     "correct": 1,
     "explanation": "With no FS, DUAL sends Queries. If a neighbor never replies (bad WAN, MTU, CPU), the router declares SIA and resets that adjacency. Mitigation: stub, summarization, SIA timer, stable links.",
@@ -1450,10 +1450,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does an EIGRP router configured as stub connected summary do?",
     "options": [
-      "It becomes an OSPF ASBR",
+      "It becomes an OSPF ASBR and then originates a Type 5 LSA for every EIGRP prefix redistributed from that stub",
       "It advertises only connected and summary and is not queried for destinations beyond the stub (reduces SIA)",
-      "It disables DUAL",
-      "It forces variance 128"
+      "It disables DUAL on that stub router, so it stops computing a successor and a feasible successor",
+      "It forces variance 128 on the stub, accepting paths whose metric is up to 128 times the successor"
     ],
     "correct": 1,
     "explanation": "EIGRP stub is for branches: the hub does not send Queries to the stub asking about core networks. receive-only/static/redistributed are variants. It is not the same as an OSPF stub.",
@@ -1462,10 +1462,10 @@ window.QUIZ_BANK = [
   {
     "question": "EIGRP K-values must match between neighbors. Which Ks does the classic default use?",
     "options": [
-      "K1 through K5 all set to 1",
+      "K1 through K5 all set to 1, including load and reliability",
       "K1=1 (bandwidth) and K3=1 (delay); K2=K4=K5=0",
-      "K5=1 only",
-      "K4=1 for MTU"
+      "K5=1 only, using reliability and ignoring bandwidth",
+      "K4=1 for MTU, treating MTU as part of the metric"
     ],
     "correct": 1,
     "explanation": "Classic metric ≈ 256 * (10^7/min_bw + sum_delay). K2 (load) and K4/K5 (reliability) are unused by default. Wide metrics (named mode) use 64 bits. K mismatch = no adjacency.",
@@ -1474,10 +1474,10 @@ window.QUIZ_BANK = [
   {
     "question": "In BGP, a lower MED (metric) means what, and where is it compared?",
     "options": [
-      "A worse path; it is always compared across different ASes with no exception",
+      "A worse path; it is always compared across different ASes, with no exception for the same neighboring AS",
       "A better path; it is compared among routes from the same neighboring AS (unless bgp always-compare-med)",
-      "It replaces Weight",
-      "It is not in best path"
+      "It replaces the router's local Weight as the first step in Cisco's BGP best-path decision process",
+      "It is left out of Cisco best-path selection and ignored even when the neighboring AS values match"
     ],
     "correct": 1,
     "explanation": "MED is optional non-transitive. Cisco by default compares MED only among paths from the same neighbor AS. always-compare-med compares across ASes (and can loop if inconsistent). A missing MED is treated as 0 by default (bgp bestpath med missing-as-worst flips that).",
@@ -1486,10 +1486,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is BGP AS-path prepend for?",
     "options": [
-      "To shorten the path so it always wins",
+      "To shorten the AS-path by stripping repeated ASNs so that the prefix always wins the best-path selection at every neighbor",
       "To advertise the prefix with your AS repeated, making the path longer for neighbors and steering inbound traffic away",
-      "To erase the AS-path",
-      "To force an iBGP full mesh"
+      "To erase the entire AS-path from every UPDATE, leaving the advertised prefix with no ASN at all",
+      "To force a full iBGP mesh among all speakers in the AS instead of relying on route reflectors"
     ],
     "correct": 1,
     "explanation": "Prepend is cheap inbound traffic engineering. Local Pref/Weight control outbound. Communities (no-export, local-AS) scale more cleanly. It does not break the AS; it only lengthens the path.",
@@ -1498,10 +1498,10 @@ window.QUIZ_BANK = [
   {
     "question": "Why configure neighbor x.x.x.x next-hop-self on iBGP at a PE/edge?",
     "options": [
-      "To encrypt UPDATEs",
+      "To encrypt each BGP UPDATE sent to the iBGP neighbor, protecting the next hop and all of the path attributes",
       "So the next hop of eBGP prefixes passed into iBGP is an address reachable in the AS IGP (the speaker itself)",
-      "To disable the RR",
-      "To set MED to 0"
+      "To disable the route reflector on that PE so iBGP clients stop receiving the routes it would reflect",
+      "To set MED to 0 on every eBGP prefix before those prefixes are advertised onward to iBGP neighbors"
     ],
     "correct": 1,
     "explanation": "eBGP leaves the next hop as the external peer, often unresolvable in the core. next-hop-self rewrites it to the iBGP peering address (loopback). On an RR it applies toward clients. Alternative: advertise the external next-hop /32 in the IGP (usually undesirable).",
@@ -1510,10 +1510,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does the well-known community no-export mean?",
     "options": [
-      "Do not advertise the prefix to any iBGP peer",
+      "Do not advertise the prefix to any iBGP peer in the AS, as if no-export were no-advertise",
       "Do not advertise the prefix outside the AS (nor from a confederation to 'real' eBGP)",
-      "Always prefer this path",
-      "Same as Weight 65535"
+      "Always prefer this path in best-path selection, as if no-export were an absolute preference",
+      "Same as Weight 65535, Cisco's local maximum, which selects the path only on this router"
     ],
     "correct": 1,
     "explanation": "no-export: stay inside the AS. no-advertise: do not advertise to any peer. local-AS: do not leave the confederation sub-AS. internet (default) may go to everyone. Communities are the ISP policy hook.",
@@ -1522,10 +1522,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the difference between a BGP route reflector and a confederation?",
     "options": [
-      "There is no difference",
+      "There is no difference at all: a route reflector and a confederation only rename the AS and leave the iBGP full mesh and split-horizon exactly the same",
       "An RR relaxes iBGP split-horizon inside a cluster (clients/non-clients); a confederation splits the AS into sub-ASes with special eBGP between them",
-      "Confederations work only with OSPF",
-      "An RR requires MPLS"
+      "A confederation works only with OSPF as the IGP and does not build sub-ASes when the interior runs IS-IS, EIGRP, or static routes",
+      "An RR requires MPLS and LDP in the core: without a transport label the cluster rejects clients and will not reflect iBGP routes"
     ],
     "correct": 1,
     "explanation": "Both avoid a full iBGP mesh. RR is simpler (cluster-id, originator-id against loops). A confederation (private 64512-65534) isolates policy per sub-AS and treats inter-sub-AS like eBGP for next-hop/MED. They can be combined.",
@@ -1534,10 +1534,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is eBGP multihop?",
     "options": [
-      "iBGP with TTL 1",
+      "iBGP with TTL 1, forcing every internal peer onto the same L2 segment because the packet expires at the first hop",
       "Allowing an eBGP session between addresses that are not directly adjacent by raising TTL (default eBGP TTL is 1)",
-      "A type of LSA",
-      "MPLS PHP"
+      "A type of OSPF LSA that advertises the eBGP neighbor, the session TTL, and the remote AS to routers in the area",
+      "MPLS PHP: the eBGP session pops the transport label at the penultimate hop to raise the TTL"
     ],
     "correct": 1,
     "explanation": "Typical: peering between loopbacks across a shared IGP/connected network, or peering several hops away. disable-connected-check covers loopbacks on the same link. Risk: a large TTL widens the attack surface; BFD is still recommended.",
@@ -1546,10 +1546,10 @@ window.QUIZ_BANK = [
   {
     "question": "In an MPLS L3VPN, where does PHP (penultimate hop popping) happen?",
     "options": [
-      "On the source CE",
+      "On the source CE, which pops the LDP transport label before the packet enters the ingress PE",
       "On the router immediately before the egress PE, which pops the transport label (LDP/SR)",
-      "Only on the BGP RR",
-      "On the IPsec client"
+      "Only on the BGP RR, which removes the VPN label while reflecting the VPNv4 prefix to the other PEs",
+      "On the IPsec client, which decrypts the tunnel and pops the transport label on the last hop of the LSP"
     ],
     "correct": 1,
     "explanation": "The transport LSP is LDP (or SR). The penultimate hop pops so the egress PE looks only at the VPN label (or IP, with PHP vs explicit-null variations). explicit-null preserves EXP/TTL to the egress.",
@@ -1559,9 +1559,9 @@ window.QUIZ_BANK = [
     "question": "LDP versus RSVP-TE in MPLS: which contrast is correct?",
     "options": [
       "LDP builds LSPs from the IGP RIB, hop by hop; RSVP-TE signals tunnels with bandwidth/path constraints",
-      "RSVP-TE replaces the IGP",
-      "LDP always requires TE",
-      "Both use only UDP 179"
+      "RSVP-TE replaces the IGP: OSPF and IS-IS stop running, and each tunnel learns topology without link-state advertisements",
+      "LDP always requires TE, with bandwidth reservation and affinity, and without those constraints it installs no LSP",
+      "Both use only UDP 179, the same port as BGP, for discovery hellos and for the signaling session"
     ],
     "correct": 0,
     "explanation": "LDP rides beside the IGP (UDP 646 hello, TCP 646 session). RSVP-TE (and SR-TE) is for engineering: bandwidth, affinity, fast reroute. Many cores mix LDP at the edge with TE in the backbone, or move to Segment Routing.",
@@ -1570,10 +1570,10 @@ window.QUIZ_BANK = [
   {
     "question": "BFD echo mode versus asynchronous: what is the idea?",
     "options": [
-      "Echo does not exist on Cisco",
+      "Echo does not exist on Cisco: IOS implements only asynchronous mode and discards any echo packet received on the BFD session",
       "Async: both peers send control packets; Echo: the peer loops the initiator's echo packet on the forwarding path",
-      "Echo fully replaces the IGP",
-      "Async runs only for IPv6"
+      "Echo fully replaces the IGP, advertises the routes, and computes the shortest path instead of OSPF or IS-IS",
+      "Async runs only for IPv6, using link-local; on IPv4, BFD is limited to echo mode and sends no control packets"
     ],
     "correct": 1,
     "explanation": "Echo tests the neighbor data plane with less CPU on the peer. Not all hardware/IOS supports echo. 50x3 ms timers are common on LAN; WAN uses more conservative values. BFD is tied to IGP/BGP with fall-over bfd / bfd all-interfaces.",
@@ -1582,10 +1582,10 @@ window.QUIZ_BANK = [
   {
     "question": "In PBR, what is the difference between set ip next-hop and set interface?",
     "options": [
-      "There is no difference",
+      "There is no operational difference: set ip next-hop and set interface pick the same next hop and the same exit, and both fall back to normal routing if the destination is down",
       "set ip next-hop uses an IP (falling back to normal routing if unreachable, unless default); set interface forces that outbound iface (dangerous on multiaccess without ARP)",
-      "set interface works only with BGP",
-      "set ip next-hop ignores the route-map ACL"
+      "set interface works only with BGP; with OSPF, EIGRP, or static routes the route-map ignores that clause and traffic always follows the route the RIB already chose",
+      "set ip next-hop ignores the route-map ACL and steers all traffic received on the interface, including packets that do not match any line of the policy"
     ],
     "correct": 1,
     "explanation": "PBR (ip policy route-map) matches ACLs/length/DSCP and steers before the RIB. set ip next-hop verify-availability plus tracking/BFD avoids black holes. set ip default next-hop applies only when the RIB has no route (except default).",
@@ -1594,10 +1594,10 @@ window.QUIZ_BANK = [
   {
     "question": "In Nexus vPC, what are the peer-link and peer-keepalive for?",
     "options": [
-      "They are the same cable",
+      "They are the same cable: peer-link and keepalive share one EtherChannel, and if that cable fails both peers stay active with no one detecting dual-active",
       "Peer-link syncs state (MCS, LACP, IGMP, BPDUs) between the two peers; keepalive (separate, often mgmt) detects dual-active if the peer-link fails",
-      "Keepalive forwards server data-plane traffic",
-      "Peer-link replaces IGP routing"
+      "Keepalive forwards server data-plane traffic between the two chassis, including L2 frames and flows from ports attached to only one peer",
+      "Peer-link replaces IGP routing and advertises the routes between the two Nexus switches, instead of OSPF, IS-IS, or EIGRP, for routed traffic"
     ],
     "correct": 1,
     "explanation": "Servers see one EtherChannel toward two chassis. Without keepalive, a peer-link failure can split-brain (both active). Orphan ports attach to only one peer. STP is handled specially on vPC.",
@@ -1606,10 +1606,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is an orphan port in a vPC?",
     "options": [
-      "An LACP port bundled on both peers",
+      "An LACP port bundled on both peers, with member links active on each chassis of the vPC domain",
       "A port that attaches a device to only one of the vPC switches, not to the pair",
-      "The peer-keepalive",
-      "The peer-link native VLAN"
+      "The peer-keepalive, the orphan port that attaches a host only to the peer switch management address",
+      "The peer-link native VLAN, counted as an orphan port because CFS stays on a single chassis"
     ],
     "correct": 1,
     "explanation": "If the peer hosting the orphan fails, the device loses connectivity even if the other side's vPC is up. Mitigation: dual-attach (vPC) or orphan-port suspend. Peer-gateway / orphan-port may be needed for routed traffic.",
@@ -1618,10 +1618,10 @@ window.QUIZ_BANK = [
   {
     "question": "In LISP as used by SD-Access, what does the Map-Server/Map-Resolver do?",
     "options": [
-      "It encapsulates VXLAN on the data plane of every edge",
+      "It encapsulates VXLAN on the data plane of every edge, over UDP 4789, between each pair of RLOCs",
       "Control plane: it stores EID→RLOC mappings and answers Map-Requests from ITR/ETR (edges)",
-      "It replaces ISE",
-      "It is vManage"
+      "It replaces ISE: it authenticates 802.1X, applies the SGT, and the fabric no longer queries RADIUS",
+      "It is vManage, the SD-WAN template controller, and not the Map-Server of the SD-Access fabric"
     ],
     "correct": 1,
     "explanation": "The ITR asks 'where is this EID?'; the MS/MR (control-plane node) replies with the ETR's RLOC. The data plane is VXLAN (UDP 4789) between RLOCs. Border nodes connect the fabric to the rest of the network.",
@@ -1642,10 +1642,10 @@ window.QUIZ_BANK = [
   {
     "question": "Inline SGT versus SXP in TrustSec/ISE: what is the difference?",
     "options": [
-      "SXP encapsulates VXLAN; inline uses RADIUS",
+      "SXP encapsulates Ethernet data frames in VXLAN between the NADs; inline is limited to the SGT in the RADIUS Access-Accept and does not carry it in the frame",
       "Inline carries the tag in CMD/Cisco Meta Data hop by hop; SXP (TCP 64999) advertises IP-SGT out of band where the media cannot carry the tag",
-      "Both require MPLS",
-      "Inline exists only on Wi-Fi"
+      "Both inline tagging and SXP require an MPLS core with transport labels in order to carry the SGT between the access switches",
+      "Inline SGT tagging exists only on Wi-Fi, inside CAPWAP toward the WLC, and does not apply to switched Ethernet in the campus"
     ],
     "correct": 1,
     "explanation": "ISE classifies the user and pushes the SGT to the NAD (802.1X). Capable switches forward the tag. SXP fills gaps (WAN, third-party). Enforcement is SGACL at the destination. pxGrid shares context with firewalls.",
@@ -1654,10 +1654,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the NETCONF candidate datastore for?",
     "options": [
-      "To replace running immediately with no lock",
+      "To replace running immediately, with no lock and no commit, by applying each edit-config directly onto the active configuration",
       "To edit a proposed config (edit-config) and then atomically commit to running, with lock and rollback",
-      "To read SNMP MIBs only",
-      "To store IOS.bin"
+      "To read only SNMP MIBs through get-bulk, without any write of YANG configuration data on the device",
+      "To store the IOS.bin image in the device flash, as a software repository rather than as YANG configuration"
     ],
     "correct": 1,
     "explanation": "candidate plus commit lets you validate and apply all-or-nothing (confirmed-commit with automatic rollback). running-only devices edit live. RESTCONF uses the same YANG model over HTTP. Confirmed commit is the antidote to AAA/ACL lockouts.",
@@ -1666,10 +1666,10 @@ window.QUIZ_BANK = [
   {
     "question": "DMVPN Phase 1 versus Phase 3: which contrast is correct?",
     "options": [
-      "Phase 1 already has direct spoke-to-spoke",
+      "Phase 1 already builds direct spoke-to-spoke tunnels, with NHRP resolution between spokes and with data traffic not passing through the hub",
       "Phase 1 is hub-and-spoke (spokes do not build tunnels to each other); Phase 3 uses NHRP redirect/shortcut for spoke-to-spoke",
-      "Phase 3 disables NHRP",
-      "Phase 1 requires GETVPN"
+      "Phase 3 disables NHRP on the hub and the spokes and resolves the tunnels only with static routes, without redirect messages",
+      "Phase 1 requires GETVPN with GDOI underneath mGRE to encrypt the traffic, instead of an IPsec profile on the tunnel"
     ],
     "correct": 1,
     "explanation": "Phase 2 allows spoke-to-spoke but needs full routing tables on spokes (hub summaries break it). Phase 3: the hub sends NHRP redirect, spokes install shortcuts; hub summaries work. IPsec profile + mGRE + NHRP are common to all phases.",
@@ -1678,10 +1678,10 @@ window.QUIZ_BANK = [
   {
     "question": "In GETVPN, what are the Key Server (KS) and Group Member (GM) roles?",
     "options": [
-      "KS forwards the data plane; GM only runs the IGP",
+      "The KS forwards the encrypted data plane between the private WAN sites; the GM only runs the IGP and does not apply GDOI encryption to the users' traffic",
       "KS distributes group SAs (GDOI/IKEv1) to GMs; GMs encrypt the original traffic while preserving the IP header (tunnel-less) on the private WAN",
-      "GM is the BGP RR",
-      "KS is a DMVPN spoke"
+      "The GM is the WAN BGP route reflector, which reflects the group prefixes to the other members and stays out of encrypting the data traffic",
+      "The KS is a DMVPN spoke that registers its tunnel with the hub via NHRP and does not distribute the group keys to the members"
     ],
     "correct": 1,
     "explanation": "GETVPN (GDOI) fits private/MPLS WANs where the original IP header must remain for routing. TBAR (time-based anti-replay) and COOP KS (redundancy) are typical. It does not replace DMVPN on the public Internet (no group tunnel/NAT traversal).",
@@ -1690,10 +1690,10 @@ window.QUIZ_BANK = [
   {
     "question": "CoPP versus CPPr (Control Plane Protection): what is the nuance?",
     "options": [
-      "They are the same feature with no difference",
+      "CoPP and CPPr are only two names for the same feature on classic IOS and on IOS-XE, with no difference in the policy-map, the subinterfaces, or the control-plane granularity",
       "CoPP applies a policy-map to the logical control-plane interface (aggregate); CPPr (host/transit/cef-exception) further splits CEF for extra granularity on classic IOS",
-      "CPPr replaces the data plane",
-      "CoPP exists only on NX-OS"
+      "CPPr replaces the CEF data plane with a policy applied on the CPU, so user traffic is forwarded on the control plane instead of being switched in hardware",
+      "CoPP exists only on NX-OS platforms, where an admin selects a copp profile, and it cannot be configured on the control-plane interface of classic IOS or of IOS-XE"
     ],
     "correct": 1,
     "explanation": "Both protect CPU from floods (TTL expiry, ICMP, SSH). Start from a Cisco-recommended policy and tune. Undercopping breaks BGP/OSPF; over-permitting lets DoS in. NX-OS uses copp profile.",
@@ -1702,10 +1702,10 @@ window.QUIZ_BANK = [
   {
     "question": "uRPF strict versus loose: what is the difference?",
     "options": [
-      "Loose requires the source to match the ingress interface; strict only requires the prefix in the FIB",
+      "Loose: the source reverse path must point at the ingress interface; strict: the prefix only has to exist in the FIB, on any iface, even with asymmetry",
       "Strict: the source reverse path must point at the ingress interface; loose: the source just has to exist in the FIB (any iface), useful with asymmetry",
-      "Strict is IPv6 only",
-      "Loose always drops the default"
+      "Strict uRPF mode exists only for IPv6 packets and does not apply to IPv4 packets received on the edge router ingress interface",
+      "Loose mode always drops packets whose only route is the default, and neither allow-default nor an exception ACL changes that drop"
     ],
     "correct": 1,
     "explanation": "ip verify unicast source reachable-via rx = strict; reachable-via any = loose. Strict is strong anti-spoofing at access; loose at the edge with asymmetric routing. allow-default and an exception ACL tune behavior.",
@@ -1714,10 +1714,10 @@ window.QUIZ_BANK = [
   {
     "question": "On a PIM-SM multiaccess segment, what is the Designated Router (DR) for?",
     "options": [
-      "Electing the STP root",
+      "Electing the STP root on the segment, by the lowest bridge ID, in order to build the LAN switching tree",
       "Sending Registers to the RP (sources) and Join/Prune on behalf of local receivers (IGMP)",
-      "Replacing BSR",
-      "Encrypting multicast"
+      "Replacing the BSR and flooding the PIM-SM RP-set by itself across the whole multicast domain",
+      "Encrypting the segment multicast with IPsec before forwarding it onward toward the RP"
     ],
     "correct": 1,
     "explanation": "The PIM DR (highest IP, or priority) is the only router that registers sources and sends joins toward the RP. Do not confuse it with the OSPF DR. Assert elects the forwarder when several routers have the same group on a LAN.",
@@ -1726,10 +1726,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the contrast between Auto-RP and BSR for RP discovery?",
     "options": [
-      "BSR is Cisco-only; Auto-RP is IETF",
+      "BSR is Cisco-proprietary and runs only on IOS; Auto-RP is the IETF standard method, described in an RFC, for advertising the RP to the PIM routers",
       "Auto-RP (Cisco, 224.0.1.39/40) advertises RPs via a mapping agent; BSR (RFC, PIM messages) elects a Bootstrap Router that floods the RP-set",
-      "Both require MSDP",
-      "Auto-RP works only with PIM-DM"
+      "Both Auto-RP and BSR require MSDP sessions between candidate RPs in order to advertise the mapping and elect the bootstrap router",
+      "Auto-RP works only with PIM-DM, because the mapping agent depends on dense flooding and does not operate when the mode is sparse"
     ],
     "correct": 1,
     "explanation": "Auto-RP needs sparse-dense or auto-rp listener so groups 39/40 can flow. BSR is the standard and rides native PIM-SM. Anycast-RP (MSDP or RFC 4610) gives geographic RP redundancy.",
@@ -1738,10 +1738,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is SPT switchover in PIM-SM?",
     "options": [
-      "Switching from PIM-DM to BIDIR",
+      "Changing the router PIM mode from PIM-DM to PIM-BIDIR as soon as the first packet of the group arrives on the shared tree (*,G) rooted at the RP, with no (S,G) Join",
       "After the first packet arrives on the shared tree (*,G) toward the RP, the last-hop DR may send an (S,G) Join toward the source, taking the RP off the path",
-      "Disabling IGMP snooping",
-      "Electing a new BSR"
+      "Disabling IGMP snooping on every access switch so the last-hop router stops receiving that group's traffic on the RP shared tree (*,G)",
+      "Electing a new Bootstrap Router in the domain and flooding the complete RP-set again when traffic leaves the shared tree (*,G) toward the source"
     ],
     "correct": 1,
     "explanation": "Cisco defaults to immediate switchover (spt-threshold 0). spt-threshold infinity keeps traffic on the shared tree (useful for brief sources). SSM (IGMPv3, 232/8) goes (S,G) with no RP.",
@@ -1750,10 +1750,10 @@ window.QUIZ_BANK = [
   {
     "question": "IS-IS in ENCOR campus/WAN: what do L1 versus L2 mean?",
     "options": [
-      "L1 is eBGP; L2 is iBGP",
+      "L1 corresponds to eBGP sessions between autonomous systems; L2 corresponds to iBGP inside the same AS, with the next hop unchanged",
       "L1 is intra-area (station); L2 is the backbone between areas; L1/L2 sits at the border and leaks a default",
-      "L2 runs IPv6 only",
-      "L1 replaces BFD"
+      "Level L2 carries IPv6 prefixes only, and IPv4 addressing is confined to routers that operate strictly as L1",
+      "Level L1 replaces BFD, detecting link failures without IS-IS hellos and without dedicated BFD sessions on the router"
     ],
     "correct": 1,
     "explanation": "IS-IS has no OSPF-style area 0: the backbone is the contiguous set of L2 routers. NET is area + SysID + NSEL. Wide metric is required on modern networks. IS-IS is a common SR/LDP base in SPs.",
@@ -1762,10 +1762,10 @@ window.QUIZ_BANK = [
   {
     "question": "What do OSPFv3 Address Families (AF) on IOS-XE allow?",
     "options": [
-      "Only a classic IPv6 process with no IPv4",
+      "Only a classic IPv6 OSPFv3 process, with no IPv4 address family and no IPv4 prefixes at all",
       "One OSPFv3 process carrying IPv6 and/or IPv4 (AFs), with adjacencies still on link-local",
-      "Replacing BGP VPNv4",
-      "Type-8 LSAs only"
+      "Replacing BGP VPNv4 on the PE so VPN prefixes ride only on OSPFv3 instead of MP-BGP",
+      "Advertising Type-8 Link-LSAs only and dropping Type-9 Intra-Area Prefix LSAs for every prefix"
     ],
     "correct": 1,
     "explanation": "Classic OSPFv3 was IPv6-only. AF (RFC 5838) carries IPv4 over OSPFv3. Adjacencies remain IPv6 link-local; router-id is still a 32-bit IPv4 value. Instance ID separates AFs.",
@@ -1774,10 +1774,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is IPv6 RA Guard at the access layer for?",
     "options": [
-      "Blocking DHCPv4",
+      "Blocking DHCPv4 Discover and Offer on the access port, without inspecting IPv6 Router Advertisements",
       "Stopping a malicious host from sending Router Advertisements and impersonating an IPv6 gateway",
-      "Replacing NDP",
-      "Enabling IS-IS"
+      "Replacing NDP so the switch stops using NS/NA and resolves IPv6 neighbors with ARP only",
+      "Enabling IS-IS on the access port so the host forms an adjacency and learns the gateway from an LSP"
     ],
     "correct": 1,
     "explanation": "RA Guard (plus DHCPv6 Guard and ND inspection) is First-Hop Security. Access ports: host-mode (RAs dropped). Uplinks to routers: router-mode. Without it, a fake RA steals IPv6 traffic.",
@@ -1786,10 +1786,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does IP Source Guard (ip verify source) rely on?",
     "options": [
-      "The BGP table",
+      "The BGP table on the edge router, filtering eBGP prefixes before they are installed in the access VLAN RIB",
       "The DHCP snooping binding table (plus statics) to allow only the IP/MAC learned on that port",
-      "NAT overload",
-      "VTP"
+      "NAT overload (PAT) on the egress interface, translating the host source IP before it is sent toward the WAN",
+      "VTP, which propagates the domain name and revision so the switch can authorize the IP/MAC on that port"
     ],
     "correct": 1,
     "explanation": "IPSG filters on the data plane what DAI filters in ARP. Port-security covers MAC; together they close edge spoofing. It needs snooping enabled and trusted ports toward the DHCP server.",
@@ -1798,10 +1798,10 @@ window.QUIZ_BANK = [
   {
     "question": "In an SD-Access fabric, what is the border node versus the edge node?",
     "options": [
-      "Border is Wi-Fi only; edge is MPLS only",
+      "The border node only terminates Wi-Fi clients and the edge node only switches MPLS labels, with no LISP ETR/ITR and no VXLAN in the fabric",
       "Edge connects endpoints (LISP ETR/ITR, anycast SVI); border connects the fabric to the outside world (fusion, DC, WAN, Internet)",
-      "Both are vManage",
-      "Edge is ISE"
+      "Both nodes are vManage: they only orchestrate central policy and do not forward endpoints or exit toward fusion, DC, or WAN",
+      "The edge node is the ISE policy server itself, which authenticates 802.1X clients and issues SGTs in place of the fabric access switch"
     ],
     "correct": 1,
     "explanation": "Control-plane node = LISP MS/MR. Edge = access. Border = exit. WLC/FN attaches APs. ISE provides SGTs. Underlay is IGP/IS-IS plus VXLAN; overlay is VNs (macro-segmentation) plus SGTs (micro).",
@@ -1810,10 +1810,10 @@ window.QUIZ_BANK = [
   {
     "question": "In Cisco SD-WAN, what is a TLOC and who distributes OMP routes?",
     "options": [
-      "A TLOC is a VLAN tag; OMP runs on vBond only",
+      "A TLOC is only an 802.1Q VLAN tag on the underlay; OMP runs on vBond only and is never distributed by vSmart out to the WAN Edges",
       "A TLOC (Transport Locator) identifies a WAN Edge's attachment to a transport; vSmart distributes OMP (routes, TLOCs, policies) to the edges",
-      "OMP replaces DTLS",
-      "A TLOC is the vManage GUI"
+      "OMP fully replaces DTLS, encrypting the control session on its own and removing the DTLS tunnel that each WAN Edge opens to vSmart",
+      "A TLOC is the vManage graphical interface where the overlay topology is drawn, and it does not identify a WAN Edge's attachment to a transport"
     ],
     "correct": 1,
     "explanation": "vBond does initial orchestration/STUN. vManage is config/analytics. vSmart is the OMP control plane. WAN Edge (vEdge/cEdge) builds IPsec/GRE tunnels per TLOC (color, encaps, system-ip). App-aware routing uses per-tunnel SLA.",
@@ -1822,10 +1822,10 @@ window.QUIZ_BANK = [
   {
     "question": "In MST (802.1s), what is the IST (instance 0)?",
     "options": [
-      "One instance per VLAN as in PVST+",
+      "The IST is a separate STP instance per VLAN, as in PVST+, and not the single instance shared by every switch in the MST region",
       "The instance that carries BPDUs for the region and maps VLANs not in other instances; it joins the region to the external CST",
-      "An EtherChannel",
-      "Root guard"
+      "The IST is an EtherChannel that bundles the region uplinks and carries every VLAN in one port-channel negotiated by LACP",
+      "The IST is root guard on the region boundary, applied to stop an external switch from becoming the root bridge of the CST"
     ],
     "correct": 1,
     "explanation": "MST groups VLANs into a few instances (CPU load). Every switch in the region shares name, revision, and VLAN-instance map. IST (instance 0) is the CIST inside the region. PVST simulation runs at the boundaries.",
@@ -1834,10 +1834,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is storm control on an access switch for?",
     "options": [
-      "Electing the DR",
+      "Electing the OSPF designated router on the access port by comparing the neighbor priority and the router-id",
       "Rate-limiting unknown unicast, multicast, or broadcast on the port so a loop/storm cannot exhaust the domain",
-      "Replacing CoPP in the core",
-      "Translating VXLAN"
+      "Replacing CoPP in the core by policing traffic toward the route-processor CPU instead of the access-port storm",
+      "Translating VXLAN VNIs into 802.1Q VLANs on the access switch, encapsulating and decapsulating the overlay"
     ],
     "correct": 1,
     "explanation": "storm-control broadcast/multicast/unicast level X. It can shut or trap. It complements BPDU Guard and loop guard but does not replace STP. The level is pps or a percent of interface bandwidth.",
@@ -1846,10 +1846,10 @@ window.QUIZ_BANK = [
   {
     "question": "How does NBAR/AVC classify traffic in ENCOR QoS?",
     "options": [
-      "By TCP port 80 only",
+      "By TCP port 80 only, with no DPI or signatures, treating every dynamic port as unknown traffic",
       "By application (DPI/signatures, PDLM/NAR), allowing marking/queuing of apps that use dynamic ports",
-      "In MPLS EXP only",
-      "Only in ISL frames"
+      "In the 3-bit MPLS EXP field only, without identifying the application or classifying native IP packets",
+      "Only inside ISL frames, reading the Cisco trunk header and ignoring 802.1Q, IP, and application ports"
     ],
     "correct": 1,
     "explanation": "match protocol in MQC uses NBAR. Useful for SaaS, RTP voice, and apps that do not fit an ACL. Performance: hardware offload on recent platforms. It does not replace trust-boundary classification when DSCP is already correct.",
@@ -1858,10 +1858,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is hierarchical QoS (H-QoS) parent/child typically for?",
     "options": [
-      "Disabling LLQ",
+      "Disabling LLQ in the child policy so voice shares the CBWFQ queue with no priority queue",
       "The parent shapes the interface/tunnel (ISP CIR); the child runs LLQ/CBWFQ inside that slice",
-      "CoS marking only",
-      "Replacing BFD"
+      "Marking only the 802.1p CoS on the egress frame, with no parent shaper and no child LLQ/CBWFQ",
+      "Replacing BFD on the interface, detecting neighbor loss with the shaper instead of liveness hellos"
     ],
     "correct": 1,
     "explanation": "On a subinterface or DMVPN, the parent shaper prevents bursting into the ISP policer; the child gives voice priority (priority) and bandwidth to other classes. Without a parent, the 1G physical TX ignores a 100M contract.",
@@ -1870,10 +1870,10 @@ window.QUIZ_BANK = [
   {
     "question": "How do the 3 MPLS EXP (Traffic Class) bits carry QoS in the core?",
     "options": [
-      "They replace IP TTL",
+      "They replace the IP TTL field: the three EXP bits count hops in the label and the IP packet TTL is no longer decremented at each hop",
       "They carry a class of service in the label; the PE maps DSCP↔EXP at ingress and the core applies PHB without inspecting IP",
-      "They are the VXLAN VNI",
-      "They exist only with IPv6 LDP"
+      "They are the VXLAN VNI, a 24-bit identifier in the UDP 4789 header, rather than the 3-bit class field inside the MPLS label",
+      "They exist only when LDP advertises IPv6 labels, and they are absent from IPv4 LSPs and from every classic MPLS LSP"
     ],
     "correct": 1,
     "explanation": "Pipe vs uniform vs short-pipe models decide whether the original DSCP is restored at egress. PHP with implicit-null loses EXP at the last hop — hence explicit-null when the egress PE PHB matters.",
@@ -1882,10 +1882,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is OSPF max-metric router-lsa (on-startup) for?",
     "options": [
-      "Forcing the router to become DR",
+      "Force the router to win the DR/BDR election on the segment, ignoring OSPF priority and the router-id",
       "Advertising Type-1 LSAs with maximum metric during boot/reload, steering transit away until iBGP/MPLS are ready",
-      "Disabling BFD",
-      "Turning the area into an NSSA"
+      "Disable BFD on OSPF adjacencies during startup, so failure detection is no longer subsecond",
+      "Turn the router's OSPF area into an NSSA during boot, so it originates Type-7 LSAs instead of external Type-5 LSAs"
     ],
     "correct": 1,
     "explanation": "It avoids transit black holes when IGP converges before BGP (wait-for-bgp). Alternatives: iBGP IGP delay, prefix-suppression, BFD. It is the analogue of the IS-IS overload bit.",
@@ -1894,10 +1894,10 @@ window.QUIZ_BANK = [
   {
     "question": "BGP synchronization on modern IOS is:",
     "options": [
-      "Mandatory and enabled",
+      "Mandatory and enabled by default on modern IOS, forcing the synchronization check on every BGP session",
       "Off by default; when enabled, an iBGP prefix is installed in the RIB only if it is also known via the IGP",
-      "A replacement for an RR",
-      "Applicable to eBGP only"
+      "A replacement for a route reflector, removing the iBGP full mesh by reflecting prefixes among the clients",
+      "Applicable to eBGP sessions only, ignoring iBGP prefixes and any requirement that the IGP also know them"
     ],
     "correct": 1,
     "explanation": "The old rule avoided black holes in cores that did not run BGP on every hop. With MPLS/full-mesh/RR and label or full-BGP forwarding, synchronization is obsolete (no synchronization is the default).",
@@ -1906,10 +1906,10 @@ window.QUIZ_BANK = [
   {
     "question": "With OSPFv3 Address Families on IOS-XE, what can one process do?",
     "options": [
-      "Only carry IPv4 static routes",
+      "Only carry IPv4 static routes, with no LSAs and no OSPF IPv6 prefixes inside the same process",
       "Exchange topology/LSAs for IPv6 and IPv4 under the OSPFv3 framework, with separate AFs",
-      "Fully replace BGP on the Internet",
-      "Disable NDP on every link"
+      "Fully replace BGP on the Internet, advertising the global table using only OSPFv3 LSAs from one AF",
+      "Disable NDP on every IPv6 link, dropping Neighbor Discovery while the ipv4 address family stays active"
     ],
     "correct": 1,
     "explanation": "OSPFv3 AF splits address-family ipv6 and ipv4 unicast. Adjacency is OSPFv3; which prefixes are advertised depends on the active AF.",
@@ -1919,9 +1919,9 @@ window.QUIZ_BANK = [
     "question": "Why is a manual router-id common on pure IPv6 OSPFv3?",
     "options": [
       "Because the OSPF Router ID is still a 32-bit value and there may be no IPv4 interface to derive it from",
-      "Because OSPFv3 requires a 128-bit IPv6 Router ID",
-      "Because the Router ID must equal the MAC",
-      "Because without a router-id STP cannot elect a root"
+      "Because OSPFv3 requires a 128-bit IPv6 Router ID copied from the global address of the loopback interface",
+      "Because the Router ID must equal the interface MAC, using those 48 bits to build the OSPF Type-1 LSA",
+      "Because without a router-id STP cannot elect a root bridge, since the switch bridge ID depends on that OSPF value"
     ],
     "correct": 0,
     "explanation": "Even in IPv6-only networks the OSPF Router ID is 32 bits. With no IPv4 addresses, IOS may fail automatic RID election — set it with router-id A.B.C.D.",
@@ -1930,10 +1930,10 @@ window.QUIZ_BANK = [
   {
     "question": "In Cisco network automation, RESTCONF typically carries YANG data over what?",
     "options": [
-      "SNMPv1 on UDP/161 only",
+      "SNMPv1 on UDP/161 only, with traps and MIBs, and no HTTP or YANG",
       "HTTP/HTTPS with JSON or XML payloads modeled in YANG",
-      "Unauthenticated Telnet",
-      "TFTP only"
+      "Unauthenticated Telnet on port 23, in clear text, without YANG",
+      "TFTP only on UDP/69, to copy config files, and not a REST API"
     ],
     "correct": 1,
     "explanation": "RESTCONF exposes YANG datastores over HTTP/HTTPS (JSON/XML). NETCONF uses SSH/XML; gNMI is another path. SNMP remains separate for classic monitoring.",
@@ -1942,10 +1942,10 @@ window.QUIZ_BANK = [
   {
     "question": "QoS: with a 10 Mbps policer and a much larger burst, what typically happens to the excess (no shaping)?",
     "options": [
-      "It is always queued forever with no loss",
+      "It is always queued forever with no loss, as if the policer were a shaper that buffers every excess byte in the output queue",
       "It may be dropped or remarked per the policy (conform/exceed/violate) — policing does not smooth bursts like shaping",
-      "It automatically becomes OSPF",
-      "MTU increases to 9000"
+      "It automatically becomes OSPF Type-1 LSAs, redistributing the excess burst into the routing process",
+      "The interface MTU increases to 9000 bytes so the burst fits in one jumbo frame and is never dropped"
     ],
     "correct": 1,
     "explanation": "Policing meters rate and drops/remarks excess; shaping delays (buffers) to smooth. A large burst under a policer means drops/remarks, not an infinite queue.",
@@ -1955,9 +1955,9 @@ window.QUIZ_BANK = [
     "question": "In a Zero Trust architecture for enterprise network access, which statement is most accurate?",
     "options": [
       "Never trust by location: continuously authenticate/authorize and segment (least privilege), instead of ‘intranet = trusted’",
-      "Automatically trust any host inside the firewall perimeter",
-      "Disable 802.1X and use hubs only",
-      "Replace BGP with static routes across the entire core"
+      "Automatically trust any host inside the firewall perimeter, treating the intranet as a safe zone with no further authentication",
+      "Disable 802.1X at the access layer and use hubs only, so every port shares one broadcast domain with no identity checks",
+      "Replace BGP with static routes across the entire core, dropping dynamic policy and the control plane between the routers"
     ],
     "correct": 0,
     "explanation": "Zero Trust removes implicit trust based on network location. It needs continuous identity, policy and segmentation — not ‘everything behind the firewall is safe’.",
@@ -1966,10 +1966,10 @@ window.QUIZ_BANK = [
   {
     "question": "SASE (Secure Access Service Edge) typically combines what?",
     "options": [
-      "Only L2 switching at campus access",
+      "Only L2 switching at campus access, with VLANs and trunks, and with no SD-WAN or cloud-delivered security",
       "WAN networking functions (e.g. SD-WAN) with security services preferably delivered from the cloud (SSE)",
-      "Only single-mode fiber cables",
-      "Only MST Spanning Tree"
+      "Only single-mode fiber cables between branches, as a physical medium, with no WAN functions and no SSE services",
+      "Only MST Spanning Tree in the campus, computing instances and root bridges instead of SD-WAN and SSE"
     ],
     "correct": 1,
     "explanation": "SASE joins connectivity (often SD-WAN) and cloud security (SSE: SWG, CASB, ZTNA, etc.). It is not an STP protocol.",
@@ -1978,10 +1978,10 @@ window.QUIZ_BANK = [
   {
     "question": "RRM on a Cisco WLC — main goal?",
     "options": [
-      "Compute the best BGP path using AS-path",
-      "Replace OSPF in the campus core",
+      "Compute the best BGP path using AS-path, picking the transit route with the fewest autonomous systems",
+      "Replace OSPF in the campus core, moving internal IP forwarding onto the WLC RRM algorithm",
       "Dynamically tune AP channels/power (and related RF) to cut interference and improve RF",
-      "Encrypt the control plane with MACsec between WAN routers"
+      "Encrypt the control plane with MACsec between WAN routers, protecting OSPF and BGP on the link using 802.1AE"
     ],
     "correct": 2,
     "explanation": "Radio Resource Management optimizes RF (channel, TX power, etc.). It does not forward IP in the core or replace OSPF/BGP.",
@@ -1990,9 +1990,9 @@ window.QUIZ_BANK = [
   {
     "question": "Network assurance on ENCOR: Flexible NetFlow + IP SLA together mainly help with what?",
     "options": [
-      "Only configuring LACP EtherChannel",
-      "Removing any need for syslog",
-      "Disabling CoPP on the control plane",
+      "Only configuring LACP EtherChannel at the access layer, negotiating bundles and member ports with no flow telemetry",
+      "Removing any need for syslog, because event logs are replaced by sampled NetFlow records on the collector",
+      "Disabling CoPP on the control plane, removing the policy that rate-limits traffic destined to the router CPU",
       "Flow visibility (NetFlow) plus active performance/availability tests (IP SLA) for diagnostics and baselines"
     ],
     "correct": 3,
@@ -2002,10 +2002,10 @@ window.QUIZ_BANK = [
   {
     "question": "In OSPF, LSA type 1 describes:",
     "options": [
-      "External routes",
+      "External routes injected by an ASBR as a Type 5 LSA",
       "The router and its intra-area links",
-      "The area summary",
-      "An ASBR in another AS"
+      "The inter-area summary an ABR advertises in a Type 3 LSA",
+      "An ASBR in another autonomous system, reached by a Type 4 LSA"
     ],
     "correct": 1,
     "explanation": "OSPFv2 Type 1 Router LSAs describe a router’s links within an area and are flooded inside that area only.",
@@ -2014,10 +2014,10 @@ window.QUIZ_BANK = [
   {
     "question": "An EIGRP feasible successor requires:",
     "options": [
-      "AD > successor FD",
+      "An AD greater than the successor FD, reversing the feasibility condition",
       "Advertised Distance < successor FD (feasibility condition)",
-      "The same BGP AS",
-      "LSA type 5"
+      "The same BGP autonomous system required between the two EIGRP neighbors",
+      "An OSPF Type 5 external LSA for that same destination prefix"
     ],
     "correct": 1,
     "explanation": "EIGRP feasible successor: the neighbor’s advertised distance must be less than the successor’s feasible distance (feasibility condition).",
@@ -2026,10 +2026,10 @@ window.QUIZ_BANK = [
   {
     "question": "A VXLAN VNI identifies:",
     "options": [
-      "A local VLAN only",
+      "Only the local VLAN ID mapped on the access switch",
       "The overlay (L2/L3) segment in the fabric",
-      "The BGP ASN",
-      "DSCP"
+      "The BGP autonomous system number configured on the leaf",
+      "The DSCP marking carried in the outer IP header"
     ],
     "correct": 1,
     "explanation": "A VXLAN Network Identifier (VNI) identifies the overlay L2/L3 segment in the fabric—not a local VLAN ID alone or a BGP ASN.",
@@ -2038,10 +2038,10 @@ window.QUIZ_BANK = [
   {
     "question": "GETVPN (GDOI) is designed for:",
     "options": [
-      "The public Internet with NAT",
+      "The public Internet with NAT, which rewrites the source IP along the path",
       "Private WAN (MPLS) with group IPsec while preserving original headers",
-      "Wi-Fi only",
-      "IPv6 link-local"
+      "Wi-Fi only, with no group IPsec overlay protecting the private WAN",
+      "IPv6 link-local traffic, confined to the segment and never routed"
     ],
     "correct": 1,
     "explanation": "GETVPN uses a key server to distribute keys; original IP headers stay visible, which suits MPLS cores needing to route on real IPs.",
@@ -2050,10 +2050,10 @@ window.QUIZ_BANK = [
   {
     "question": "QoS LLQ (Low Latency Queue) is typically for:",
     "options": [
-      "Bulk backup",
+      "Bulk backups queued at low priority inside CBWFQ",
       "Real-time voice/video (priority queue)",
-      "Best-effort HTTP",
-      "Routing updates only"
+      "Best-effort HTTP in class-default, with no strict queue",
+      "Routing updates only, with no real-time voice or video"
     ],
     "correct": 1,
     "explanation": "In a policy-map, priority enables LLQ (strict priority) for a class and is usually policed so voice cannot starve other queues.",
@@ -2062,10 +2062,10 @@ window.QUIZ_BANK = [
   {
     "question": "WRED avoids:",
     "options": [
-      "BGP blackholing",
+      "BGP blackholing when a dropped neighbor session withdraws the prefix from the Loc-RIB",
       "Global tail drop by dropping probabilistically by DSCP before the queue is full",
-      "RIP loops",
-      "NTP failure"
+      "RIP loops caused by counting to infinity on a distance-vector routing update",
+      "NTP failure that leaves router clocks unsynchronized across the routing domain"
     ],
     "correct": 1,
     "explanation": "WRED drops packets early with per-class/weight thresholds to signal TCP congestion before the queue tail-drops everything.",
@@ -2074,10 +2074,10 @@ window.QUIZ_BANK = [
   {
     "question": "In a Cisco SD-WAN fabric, what identifies a TLOC?",
     "options": [
-      "Only the vEdge system-IP",
+      "Only the vEdge system-IP, omitting the transport color and the encapsulation",
       "The combination of system-IP, color, and encapsulation (e.g. ipsec/gre)",
-      "Only the site-ID configured in vManage",
-      "The MAC address of the transport interface"
+      "Only the site-ID set in vManage, without system-IP, color, or encapsulation",
+      "The MAC address of the transport interface, instead of system-IP, color, and encapsulation"
     ],
     "correct": 1,
     "explanation": "A TLOC (Transport Locator) is identified by system-IP + color + encapsulation; that tuple is how the control/overlay refers to a transport.",
@@ -2086,10 +2086,10 @@ window.QUIZ_BANK = [
   {
     "question": "In an iBGP network with route reflectors, what is the main effect of configuring a client under an RR?",
     "options": [
-      "The client no longer needs any eBGP sessions",
+      "The client no longer needs any eBGP sessions with external peers outside the AS",
       "The RR can reflect iBGP routes among clients without an iBGP full mesh",
-      "The RR automatically disables route aggregation",
-      "Clients always prefer eBGP routes from the RR"
+      "The RR automatically disables route aggregation inside the local BGP process",
+      "Clients always prefer the eBGP routes learned from the RR over every other path"
     ],
     "correct": 1,
     "explanation": "Route reflectors scale iBGP: the RR reflects routes learned from clients to other clients/nonclients, avoiding a full mesh.",
@@ -2098,10 +2098,10 @@ window.QUIZ_BANK = [
   {
     "question": "How does LLQ differ from plain CBWFQ for real-time voice?",
     "options": [
-      "LLQ removes all policing from the network",
+      "LLQ removes all policing from the network, disabling the implicit priority-class policer and the shape rates of every other CBWFQ class on the egress policy-map",
       "LLQ adds a strict-priority queue so voice can dequeue ahead of CBWFQ classes (often with a policer to limit priority bandwidth)",
-      "CBWFQ always prefers voice over LLQ",
-      "LLQ only works on Frame Relay"
+      "Plain CBWFQ always prefers voice over LLQ, dequeuing class-default ahead of the strict-priority queue even while the egress link is congested",
+      "LLQ only works on Frame Relay, because the strict-priority queue requires FRTS maps and cannot be applied on Ethernet or other interface encapsulations"
     ],
     "correct": 1,
     "explanation": "LLQ = CBWFQ plus a priority queue. Voice/video get low latency; a priority policer prevents the priority class from starving other queues.",
@@ -2110,10 +2110,10 @@ window.QUIZ_BANK = [
   {
     "question": "In Cisco Catalyst Center (DNA Center) Assurance, client health scores primarily help you:",
     "options": [
-      "Replace OSPF with static routes automatically",
+      "Replace OSPF with static routes automatically in the campus control plane, with no operator review of the paths",
       "See onboarding, connectivity, and application experience issues for wired/wireless clients over time",
-      "Disable NetFlow collectors",
-      "Force all APs into Monitor Mode"
+      "Disable the NetFlow collectors that export traffic flows from access switches and wireless access points",
+      "Force every access point into Monitor Mode, taking those radios out of service for wireless clients"
     ],
     "correct": 1,
     "explanation": "Assurance aggregates telemetry (onboarding, RSSI, DHCP/AAA, app experience) into client/device health so you can troubleshoot trends and failures, not rewrite routing.",
@@ -2123,9 +2123,9 @@ window.QUIZ_BANK = [
     "question": "Model-Driven Telemetry (MDT) with gRPC/dial-out is preferred over classic SNMP polling mainly because it:",
     "options": [
       "Streams subscribed YANG-modeled data continuously (push) with lower overhead and richer structured updates than repeated SNMP GETs",
-      "Works only on Frame Relay interfaces",
-      "Replaces BGP with YANG notifications on the control plane",
-      "Removes the need for any collector or subscription"
+      "It works only on Frame Relay interfaces, because gRPC dial-out requires DLCI and LMI to export YANG models instead of running over Ethernet or IP",
+      "It replaces BGP on the control plane with YANG notifications, stopping prefix advertisement and using only gRPC subscriptions as the routing protocol",
+      "It removes the need for any collector or subscription, publishing YANG telemetry as a local broadcast with no gRPC dial-out destination or subscribed model"
     ],
     "correct": 0,
     "explanation": "MDT uses YANG models and subscriptions (often gRPC dial-out or dial-in) to push telemetry to collectors. Compared with SNMP polling, you get continuous, structured updates with less chatter and better scale for modern assurance.",
@@ -2134,10 +2134,10 @@ window.QUIZ_BANK = [
   {
     "question": "IEEE 802.11ax (Wi-Fi 6) improves high-density WLAN efficiency primarily with:",
     "options": [
-      "Disabling DFS channels in all regulatory domains",
-      "Replacing CAPWAP with plain Layer-2 bridging only",
+      "Disabling DFS channels in every regulatory domain, removing dynamic 5 GHz spectrum so clients are served without airtime scheduling",
+      "Replacing CAPWAP with plain Layer-2 bridging only between the AP and the WLC, removing the centralized WLAN control and data tunnel",
       "OFDMA, MU-MIMO enhancements, BSS coloring, and Target Wake Time to serve more clients with less airtime contention",
-      "Mandatory WEP encryption on every SSID"
+      "Mandatory WEP encryption on every SSID, using shared RC4 keys, as the method that reduces airtime contention in a dense WLAN"
     ],
     "correct": 2,
     "explanation": "802.11ax focuses on efficiency in dense environments: OFDMA schedules multi-user resource units, improved MU-MIMO, BSS coloring reduces co-channel interference impact, and TWT saves client power. It is not about dropping CAPWAP or using WEP.",
@@ -2147,9 +2147,9 @@ window.QUIZ_BANK = [
     "question": "What is the main operational reason to use ERSPAN instead of local SPAN?",
     "options": [
       "To encapsulate mirrored traffic in GRE and send it across an IP network to a remote analyzer",
-      "To encrypt the control plane with IPsec by default",
-      "To replace NetFlow sampling entirely",
-      "To disable STP on the monitored VLAN"
+      "To encrypt the control plane with IPsec by default, protecting BPDUs and adjacencies instead of copies",
+      "To replace NetFlow sampling entirely, stopping flow export and using only the mirror session as traffic accounting",
+      "To disable STP on the monitored VLAN, stopping BPDUs in that VLAN before they are copied to the analyzer"
     ],
     "correct": 0,
     "explanation": "ERSPAN (Encapsulated Remote SPAN) GRE-encapsulates mirrored frames so a central packet analyzer can receive copies from switches elsewhere in the IP fabric. Local SPAN stays on the same switch; RSPAN uses a VLAN.",
@@ -2158,10 +2158,10 @@ window.QUIZ_BANK = [
   {
     "question": "In Cisco wireless FlexConnect, what does local switching achieve at a remote branch AP?",
     "options": [
-      "Forces every user frame back to the WLC before it can reach the local LAN",
-      "Disables all SSIDs when the CAPWAP tunnel drops",
+      "Forces every user frame back to the WLC over the CAPWAP data tunnel before that frame can exit onto the branch LAN",
+      "Disables every SSID on the AP as soon as the CAPWAP tunnel drops, even when local switching and local authentication are set",
       "Bridges client data to the local wired VLAN at the AP when configured, even if the WLC path is constrained",
-      "Converts the AP into a full BGP route reflector"
+      "Converts the remote AP into a full BGP route reflector that reflects the branch iBGP routes to each associated wireless client"
     ],
     "correct": 2,
     "explanation": "FlexConnect (H-REAP) local switching lets the AP bridge client traffic onto a local branch VLAN, reducing WAN hairpinning to the controller. Central switching tunnels user data to the WLC; local auth/switching options cover WAN failure modes.",
@@ -2170,10 +2170,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does IPv6 RA Guard protect against on an access switch?",
     "options": [
-      "It blocks all IPv6 traffic except DHCPv6 forever",
+      "It blocks all IPv6 traffic on the access port forever, allowing only DHCPv6 and dropping data, ND, and SLAAC messages",
       "It filters rogue Router Advertisements on access ports so only trusted ports may announce prefixes/gateways",
-      "It replaces SLAAC with mandatory static addressing on every host",
-      "It encrypts Neighbor Discovery with IPsec automatically"
+      "It replaces SLAAC with mandatory static addressing on every host and also rejects legitimate Router Advertisements on trusted ports",
+      "It automatically encrypts Neighbor Discovery with IPsec on each access port, ciphering RS, RA, NS, and NA without filtering rogue ads"
     ],
     "correct": 1,
     "explanation": "RA Guard (IPv6 First Hop Security) drops or blocks unexpected Router Advertisements on untrusted access ports, stopping rogue devices from advertising fake prefixes or default gateways. Trusted uplink/router ports are allowed to send RAs. It complements DHCPv6 Guard and ND inspection.",
@@ -2182,9 +2182,9 @@ window.QUIZ_BANK = [
   {
     "question": "In Cisco SD-WAN, what is the primary role of the vBond orchestrator?",
     "options": [
-      "It alone forwards all user data packets in the underlay",
-      "It replaces every WAN edge router with a Layer-2 bridge",
-      "It only stores NetFlow records for compliance",
+      "It alone forwards every user data packet across the underlay, instead of the WAN Edges sending that traffic to each other",
+      "It replaces every WAN edge router with a Layer-2 bridge, removing OMP, TLOCs, and the SD-WAN overlay between sites",
+      "It only stores NetFlow records exported by the WAN Edges for compliance, without authenticating devices or doing onboarding",
       "It authenticates and introduces WAN Edge devices to the overlay (vSmart/vManage), enabling secure onboarding"
     ],
     "correct": 3,
@@ -2195,9 +2195,9 @@ window.QUIZ_BANK = [
     "question": "In Cisco ACI, what is an Endpoint Group (EPG)?",
     "options": [
       "A group of endpoints (VMs, bare metal, containers, etc.) that share the same policy treatment—typically mapped to a VLAN/VXLAN segment inside a Bridge Domain",
-      "The physical spine switch that replaces the APIC controller cluster",
-      "A BGP community that ACI copies unchanged into every WAN edge",
-      "A NetFlow sampler template stored only on the border leaf"
+      "The physical spine switch that replaces the APIC controller cluster, taking over fabric management alone and programming policy for every tenant and application",
+      "A BGP community that ACI copies unchanged into every WAN edge, tagging L3Out routes instead of grouping endpoints that should receive the same policy treatment",
+      "A NetFlow sampler template stored only on the border leaf, used to export L3Out flows rather than gathering VMs, bare metal, or containers under the same policy"
     ],
     "correct": 0,
     "explanation": "An EPG is the fundamental policy object for endpoints that should be treated alike. Endpoints in an EPG live under a Bridge Domain (and VRF/tenant hierarchy). Communication between EPGs is controlled by contracts (provided/consumed), not by simply sharing a BD. The APIC still remains the controller; spines are fabric underlay, not EPGs.",
@@ -2206,10 +2206,10 @@ window.QUIZ_BANK = [
   {
     "question": "In Cisco ACI, how do two EPGs normally communicate in a secure, policy-driven way?",
     "options": [
-      "They always flood all traffic in the underlay with no filters once they share a tenant name",
-      "Only if both EPGs are configured as OSPF neighbors on the same loopback",
+      "They always flood all traffic in the underlay, with no filters or contracts, as soon as the two EPGs share only the same tenant name",
+      "Only if both EPGs are configured as OSPF neighbors on the same loopback, exchanging network LSAs instead of using contracts and filters",
       "Through contracts: one EPG provides a contract and the other consumes it, allowing specific traffic (filters) between them",
-      "By enabling classic PVST+ Root Guard on every leaf downlink"
+      "By enabling classic PVST+ Root Guard on every leaf downlink so the STP election opens traffic between the EPGs without any contract"
     ],
     "correct": 2,
     "explanation": "ACI uses a whitelist model between EPGs: contracts define which traffic is allowed (filters/subjects). A provider EPG offers a contract; a consumer EPG consumes it. Sharing a Bridge Domain alone does not open arbitrary East-West access. This is application-centric policy, not classic VLAN ACLs alone or STP features.",
@@ -2219,9 +2219,9 @@ window.QUIZ_BANK = [
     "question": "In Cisco ACI, what is a Bridge Domain (BD) primarily responsible for?",
     "options": [
       "Acting as the L2 forwarding construct (broadcast/unknown unicast/multicast scope) that EPGs attach to, often with a subnet/SVI gateway",
-      "Terminating all BGP sessions to external SPINE peers only",
-      "Replacing the APIC cluster with a single leaf switch",
-      "Encrypting contracts with WPA3-Personal"
+      "Terminating every BGP session with external SPINE peers only, treating the Bridge Domain as a transit AS that advertises routes outside the ACI fabric",
+      "Replacing the APIC controller cluster with a single leaf switch that becomes the only management point for the fabric, the tenant, and the EPGs",
+      "Encrypting the tenant contracts with WPA3-Personal, applying SAE on each Bridge Domain to protect East-West traffic between attached EPGs"
     ],
     "correct": 0,
     "explanation": "A Bridge Domain is the ACI Layer-2 construct: flooding scope, often holding the gateway subnet for connected EPGs. EPGs classify endpoints; contracts control EPG-to-EPG policy; VRFs separate L3 contexts. The BD is not the APIC, not BGP-only spine peering, and not a wireless cipher.",
@@ -2230,10 +2230,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is Guest Shell on Cisco IOS XE used for?",
     "options": [
-      "A replacement for the hardware TCAM on every Catalyst switch",
-      "A wireless SSID that disables 802.1X permanently",
+      "A replacement for the hardware TCAM on every Catalyst switch, so packet forwarding depends only on Python scripts inside the container",
+      "A wireless SSID defined in IOS XE that permanently disables 802.1X and leaves the WLAN open, with no Linux container and no Python",
       "A CentOS/Linux container environment on-box to run Python scripts, yum packages, and network automation tools alongside IOS XE",
-      "A BGP community that always sets Local Preference to 0"
+      "A BGP community configured in IOS XE that always sets Local Preference to 0 on learned routes, without running Python scripts or yum packages"
     ],
     "correct": 2,
     "explanation": "Guest Shell is an on-box Linux container (often CentOS-based) on IOS XE where you can run Python, install packages, and use guestshell/run commands for automation without leaving the device. It complements EEM/on-box Python but does not replace TCAM, redefine SSIDs, or set BGP communities by itself.",
@@ -2243,9 +2243,9 @@ window.QUIZ_BANK = [
     "question": "What is Cisco pyATS primarily used for in network automation and operations?",
     "options": [
       "As a Python test and validation framework (often with Genie) to parse device state, run checks, and regress network changes safely",
-      "Replacing the underlay IGP with a proprietary Python-only routing protocol on every PE",
-      "As the only supported GUI to configure ACI contracts inside APIC",
-      "As a replacement for RADIUS when doing 802.1X on wireless"
+      "Replacing the underlay IGP with a proprietary Python-only routing protocol on every PE, dropping OSPF, IS-IS, and BGP on each fabric edge router before convergence",
+      "As the only supported GUI to configure ACI contracts, EPGs, filters, and tenants inside APIC, pushing fabric policy instead of running tests",
+      "As a replacement for RADIUS when doing 802.1X on wireless, validating client EAP, the supplicant certificate, and the VLAN assigned to the SSID"
     ],
     "correct": 0,
     "explanation": "pyATS (often paired with Genie parsers/models) is Cisco’s Python framework for automated network testing: connect to devices, snapshot/parse operational state, diff before/after, and build reusable test suites for CI/CD or change windows. It is not a routing protocol, not the ACI contract GUI, and not an 802.1X/RADIUS replacement.",
@@ -2254,10 +2254,10 @@ window.QUIZ_BANK = [
   {
     "question": "In Cisco ISE, what does a posture assessment typically check before (or as part of) granting full network access?",
     "options": [
-      "Only whether the switchport is in err-disable because of BPDU Guard",
-      "Only the OSPF area ID configured on the user’s laptop",
+      "Only whether the switchport is in err-disable because of BPDU Guard, treating that port state as the sole posture criterion before granting the endpoint its full access VLAN, ignoring antivirus and the OS patch level",
+      "Only the OSPF area ID configured on the user’s laptop, as if posture compliance depended on the endpoint routing process rather than antivirus, patches, or disk encryption",
       "Whether the endpoint meets security policy (for example antivirus status, OS patch level, disk encryption, or a required agent) so non-compliant devices can be quarantined or remediated",
-      "Whether the SSID name is hidden, which alone proves the client is trusted"
+      "Whether the SSID name is hidden, which alone proves the client is trusted, skipping antivirus, OS patch level, disk encryption, a host firewall, and any required posture agent"
     ],
     "correct": 2,
     "explanation": "ISE posture evaluates the health/compliance of the connecting endpoint (via AnyConnect/secure client posture module or similar) against policy—AV, patches, firewall, encryption, etc. Non-compliant hosts can get a restricted VLAN/ACL and remediation portal. It is unrelated to BPDU Guard err-disable, OSPF area IDs on laptops, or hiding the SSID.",
@@ -2266,10 +2266,10 @@ window.QUIZ_BANK = [
   {
     "question": "In Cisco SD-Access, what is the primary role of the Control Plane Node?",
     "options": [
-      "It terminates all user DHCP and NAT for every edge switch in hardware only",
+      "It terminates all user DHCP and NAT for every edge switch in hardware only, without hosting the LISP Map-Server or resolving any EID-to-RLOC mappings in the fabric overlay",
       "It hosts the LISP Map-Server/Map-Resolver function: edge nodes register endpoint EID-to-RLOC mappings and query the control plane to locate destinations in the fabric",
-      "It replaces Spanning Tree by flooding every unknown MAC to the entire underlay",
-      "It is only a management GUI and never participates in the data or control plane"
+      "It replaces Spanning Tree by flooding every unknown MAC to the entire underlay, instead of edge nodes querying the LISP control plane to locate destinations",
+      "It is only a management GUI and never participates in the data or control plane, leaving all EID-to-RLOC registration and resolution to Catalyst Center"
     ],
     "correct": 1,
     "explanation": "SD-Access uses LISP for the fabric control plane. Control Plane Nodes act as Map-Server/Map-Resolver: fabric edge nodes register EIDs (endpoints) to RLOCs (edge/border locators) and resolve remote EIDs before VXLAN encapsulation. They are not DHCP/NAT appliances, do not flood unknown MACs like classic Ethernet learning floods, and are not merely a GUI (Catalyst Center/DNA Center is the orchestrator).",
@@ -2278,9 +2278,9 @@ window.QUIZ_BANK = [
   {
     "question": "In a Cisco IOS zone-based policy firewall (ZBFW), how is traffic between interfaces controlled?",
     "options": [
-      "Every interface must be placed in VLAN 1, and ACLs on the VTY lines filter transit traffic",
-      "ZBFW only inspects multicast PIM joins and ignores unicast TCP/UDP",
-      "You configure classic ip inspect CBAC globally; zones are ignored when NAT is enabled",
+      "Every interface must be placed in VLAN 1, and ACLs on the VTY lines filter transit traffic, with no security zones assigned and no zone-pair policy-maps to inspect flows, as if the zone firewall did not exist on the router",
+      "ZBFW only inspects multicast PIM joins and ignores unicast TCP/UDP, so sessions between the inside zone and the outside zone are neither classified, permitted, nor inspected by any inspect policy",
+      "You configure classic ip inspect CBAC globally; zones are ignored when NAT is enabled, and no zone-pair with a class-map controls traffic between the interfaces of the source and destination zones",
       "Interfaces are assigned to security zones; a zone-pair with a policy-map (class-maps) defines what is inspected/allowed between a source zone and a destination zone (intra-zone traffic is typically allowed by default)"
     ],
     "correct": 3,
@@ -2290,10 +2290,10 @@ window.QUIZ_BANK = [
   {
     "question": "In a Cisco ISE / RADIUS deployment, what is Change of Authorization (CoA) used for?",
     "options": [
-      "To permanently replace TACACS+ with RADIUS for all device CLI logins",
-      "To download the switch IOS image over TFTP after every successful 802.1X session",
+      "To permanently replace TACACS+ with RADIUS for all device CLI logins, using CoA as the only method of administrator authentication and command authorization on every managed network device",
+      "To download the switch IOS image over TFTP after every successful 802.1X session, treating CoA as the NAD software-upgrade path rather than dynamic authorization",
       "To let the policy server push an update to an already-authenticated session (for example reauthenticate, terminate, or change VLAN/ACL/SGT) without waiting for the next client login",
-      "To elect the STP root bridge based on the RADIUS shared secret"
+      "To elect the STP root bridge based on the RADIUS shared secret, making CoA the bridge-priority and path-cost criterion across the Layer-2 domain of the access switch"
     ],
     "correct": 2,
     "explanation": "CoA (RFC 5176 dynamic authorization) lets ISE/RADIUS send unsolicited messages to the NAD so an active session can be reauthenticated, disconnected, or given a new authorization result (VLAN, dACL, SGT, etc.). It is not a TACACS replacement policy, not an IOS image download mechanism, and unrelated to STP root election.",
@@ -2303,9 +2303,9 @@ window.QUIZ_BANK = [
     "question": "What problem does Cisco OTV (Overlay Transport Virtualization) primarily solve?",
     "options": [
       "Extending Layer-2 VLANs / Ethernet segments across a Layer-3 data-center interconnect while containing STP and reducing flooding compared with a naive long L2 stretch",
-      "Replacing BGP with a proprietary Cisco-only underlay IGP in the Internet core",
-      "Providing Power over Ethernet to servers in a leaf-spine fabric",
-      "Encrypting DNS queries between recursive resolvers and authoritative servers"
+      "Replacing BGP with a proprietary Cisco-only underlay IGP in the Internet core, rather than extending Layer-2 VLANs across a Layer-3 data-center interconnect",
+      "Providing Power over Ethernet to servers in a leaf-spine fabric, powering hosts instead of extending Ethernet segments and containing STP across the DCI between sites",
+      "Encrypting DNS queries between recursive resolvers and authoritative servers, without extending VLANs or containing STP domains over the interconnect"
     ],
     "correct": 0,
     "explanation": "OTV is a MAC-routing overlay used to extend VLANs between data centers over an IP transport, with mechanisms that help contain STP domains and control ARP/unknown unicast flooding versus a simple stretched L2 link. It is not an Internet underlay IGP, not PoE, and not DNS encryption.",
@@ -2314,10 +2314,10 @@ window.QUIZ_BANK = [
   {
     "question": "In BGP, what does Graceful Restart (often paired with NSF on Cisco platforms) primarily allow during a control-plane restart?",
     "options": [
-      "Automatically converting all eBGP sessions into iBGP so the AS number can be removed",
+      "Automatically converting all eBGP sessions into iBGP so the AS number can be removed, instead of preserving the FIB and stale routes during the control-plane restart",
       "Preserving forwarding (FIB) and asking peers to keep routes marked stale until the restarting speaker recovers and refreshes the RIB, reducing traffic loss",
-      "Forcing every peer to clear its entire BGP table and reconverge from scratch for consistency",
-      "Replacing TCP session keepalive with BFD-only detection and deleting all MPLS labels"
+      "Forcing every peer to clear its entire BGP table and reconverge from scratch for consistency, dropping stale routes and the forwarding already installed in the FIB",
+      "Replacing TCP session keepalive with BFD-only detection and deleting all MPLS labels, rather than keeping forwarding while the restarting speaker refreshes the RIB"
     ],
     "correct": 1,
     "explanation": "BGP Graceful Restart / NSF keeps the data plane forwarding while the control plane restarts. Peers retain stale routes for a restart timer; after recovery, End-of-RIB and updates refresh state. It does not convert eBGP to iBGP, and it aims to avoid a full destructive reconvergence storm rather than force one.",
@@ -2326,9 +2326,9 @@ window.QUIZ_BANK = [
   {
     "question": "In a Cisco Secure Firewall (formerly Firepower) deployment, what is the primary role of FMC (Firewall Management Center)?",
     "options": [
-      "Acting as the default gateway and NAT boundary for every access VLAN in the campus",
-      "Terminating all site-to-site IPsec tunnels so threat sensors never see encrypted traffic",
-      "Replacing ISE for 802.1X authentication of switch access ports",
+      "Acting as the default gateway and NAT boundary for every access VLAN in the campus, forwarding user traffic instead of deploying access policy to the Firepower sensors",
+      "Terminating all site-to-site IPsec tunnels so threat sensors never see encrypted traffic, acting as the mandatory VPN hub for every remote peer",
+      "Replacing ISE for 802.1X authentication of switch access ports, issuing VLAN, dACL, and SGT results in place of the identity policy server",
       "Centralized policy, event, and device management for managed Secure Firewall / threat defense sensors (push policies, collect events, coordinate updates)"
     ],
     "correct": 3,
@@ -2339,9 +2339,9 @@ window.QUIZ_BANK = [
     "question": "In a VXLAN fabric, what do a VTEP and a VNI represent?",
     "options": [
       "The VTEP is the VXLAN tunnel endpoint that encapsulates/decapsulates frames; the VNI (VXLAN Network Identifier) is the 24-bit segment ID that separates overlay Layer 2 networks",
-      "The VTEP is only a multicast group address, and the VNI is the underlay OSPF process ID",
-      "The VNI is the physical switch serial number, and the VTEP is a RADIUS shared secret",
-      "Both terms mean the same thing: the outer UDP destination port 4789"
+      "The VTEP is only a multicast group address, and the VNI is the underlay OSPF process ID, with no Ethernet encapsulation and no separation of overlay segments in a VXLAN EVPN fabric",
+      "The VNI is the physical switch serial number, and the VTEP is a RADIUS shared secret, with no role as a VXLAN tunnel endpoint or segment identifier",
+      "Both terms mean the same thing: the outer UDP destination port 4789, without distinguishing the encapsulating endpoint from the 24-bit overlay ID"
     ],
     "correct": 0,
     "explanation": "A VTEP (VXLAN Tunnel Endpoint) sits at the edge of the overlay—often on a leaf or hypervisor—and performs VXLAN encapsulation/decapsulation. The VNI is a 24-bit identifier that distinguishes overlay segments (analogous in role to a VLAN ID, but with a much larger space). Multicast/underlay routing may help BUM replication, but that is not what “VTEP” or “VNI” mean; neither is a serial number, RADIUS secret, or merely UDP/4789.",
@@ -2350,10 +2350,10 @@ window.QUIZ_BANK = [
   {
     "question": "In Cisco SD-WAN (Viptela architecture), which trio of roles best matches vManage, vSmart, and vBond?",
     "options": [
-      "vManage = data-plane forwarding ASIC; vSmart = DHCP server; vBond = wireless controller",
-      "vManage = underlay IGP only; vSmart = NAT gateway; vBond = syslog collector",
+      "vManage = data-plane forwarding ASIC on every WAN Edge; vSmart = underlay DHCP server for the IPsec tunnels; vBond = campus wireless controller for the APs, with no management UI, no OMP overlay policy, and no WAN Edge onboarding",
+      "vManage = underlay IGP only (OSPF or BGP) between transports; vSmart = per-site egress NAT gateway; vBond = syslog collector for edges and controllers, with no central orchestration, no OMP overlay routing, and no initial authentication",
       "vManage = centralized management/orchestration UI and device config; vSmart = control-plane policy and overlay routing intelligence; vBond = initial authentication/orchestration facilitator that helps bring devices into the overlay",
-      "All three appliances forward user packets in the data plane and never participate in control or management"
+      "All three appliances forward user packets in the data plane at each site and never participate in control or management, leaving centralized policy, device templates, and secure onboarding to the WAN Edge routers"
     ],
     "correct": 2,
     "explanation": "In the classic Cisco SD-WAN controller split: vManage is the management/orchestration system (GUI, templates, monitoring); vSmart handles control-plane overlay intelligence and centralized policy; vBond assists securely onboarding/authenticating WAN Edge devices and pointing them to the rest of the fabric. Edge routers (vEdge/cEdge) carry the data plane—not the three controllers as packet forwarders.",
@@ -2363,9 +2363,9 @@ window.QUIZ_BANK = [
     "question": "In Cisco IOS/IOS XE, what is a route map most commonly used for?",
     "options": [
       "Matching routes or traffic with conditions (prefix lists, ACLs, metrics, tags, etc.) and then applying set actions—for example in redistribution, PBR, or BGP attribute manipulation",
-      "Replacing the FIB entirely with a static list of MAC addresses learned from CDP neighbors",
-      "Terminating SSL/TLS sessions on the route processor so every packet is decrypted in software",
-      "Electing the OSPF Designated Router on broadcast segments when hello timers differ"
+      "Replacing the FIB entirely with a static list of MAC addresses learned from CDP neighbors, which the data plane uses to forward frames instead of the CEF table",
+      "Terminating SSL/TLS sessions on the route processor so that every packet is decrypted in software on the RP itself, before any CEF lookup or before programming the egress adjacency",
+      "Electing the OSPF Designated Router on broadcast segments when hello timers differ, by choosing the neighbor whose dead interval advertised in the hello packet is the largest"
     ],
     "correct": 0,
     "explanation": "A route map is a sequenced list of match/set clauses. It is widely used to control redistribution (which prefixes, with what metric/tag), policy-based routing, and BGP path-attribute changes. It is not a MAC/FIB substitute, not an SSL offload feature on the RP, and not the OSPF DR election mechanism.",

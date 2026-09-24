@@ -2,10 +2,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of the Transport layer in the TCP/IP model?",
     "options": [
-      "Logical addressing",
+      "Logical IP addressing of hosts on the LAN",
       "Reliable data delivery between applications",
-      "Packet routing",
-      "Physical bit transmission"
+      "IP packet routing between distinct subnets",
+      "Physical bit transmission across the cable"
     ],
     "correct": 1,
     "explanation": "The Transport layer (TCP/UDP) provides data delivery between applications, with TCP offering reliability.",
@@ -26,10 +26,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is a static route?",
     "options": [
-      "Route learned automatically by a routing protocol",
+      "Route learned on its own by OSPF protocol",
       "Route manually configured by the administrator",
-      "Default route",
-      "Backup route"
+      "Default route 0.0.0.0/0 used for all traffic",
+      "Backup route OSPF installs if the link fails"
     ],
     "correct": 1,
     "explanation": "Static routes are entered manually and stay until changed or withdrawn; they do not recalculate like OSPF/EIGRP when topology changes.",
@@ -38,10 +38,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the difference between OSPF and EIGRP?",
     "options": [
-      "OSPF is Cisco proprietary, EIGRP is open",
+      "OSPF is Cisco proprietary and EIGRP is open",
       "EIGRP uses DUAL algorithm, OSPF uses Dijkstra",
-      "There is no difference",
-      "OSPF is faster than EIGRP"
+      "OSPF and EIGRP use the same SPF algorithm",
+      "OSPF always converges faster than EIGRP does"
     ],
     "correct": 1,
     "explanation": "EIGRP is Cisco proprietary with DUAL algorithm. OSPF is open standard and uses Dijkstra's algorithm (SPF).",
@@ -50,10 +50,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is NAT overload (PAT)?",
     "options": [
-      "Translation of one private IP to one public IP",
+      "Static mapping of one private IP to one public IP",
       "Multiple private IPs sharing one public IP using ports",
-      "Port translation",
-      "Traffic blocking"
+      "Translation of destination ports toward inside hosts",
+      "Blocking outbound traffic that fails an ACL check"
     ],
     "correct": 1,
     "explanation": "PAT (Port Address Translation) allows multiple internal devices to share one public IP using different ports.",
@@ -63,9 +63,9 @@ window.QUIZ_BANK = [
     "question": "What does the command 'ip route 0.0.0.0 0.0.0.0 192.168.1.1' do?",
     "options": [
       "Configure static default route",
-      "Configure route to specific network",
-      "Delete route",
-      "Show routes"
+      "Add static route to 10.10.1.0",
+      "Erase the IPv4 default route",
+      "List the IPv4 routing table"
     ],
     "correct": 0,
     "explanation": "This command configures the static default route (gateway of last resort) to 192.168.1.1.",
@@ -74,10 +74,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is VLAN tagging (802.1Q)?",
     "options": [
-      "Method to encrypt VLANs",
+      "Method that encrypts VLAN frames on trunk links",
       "Inserting a tag into frames to identify the source VLAN",
-      "Routing protocol",
-      "Type of switch"
+      "Routing protocol that advertises VLAN ID values",
+      "Hardware switch model that carries only one VLAN"
     ],
     "correct": 1,
     "explanation": "802.1Q is the IEEE standard for inserting a 4-byte tag into Ethernet frames to identify the VLAN.",
@@ -98,10 +98,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is an ACL (Access Control List)?",
     "options": [
-      "MAC address list",
+      "MAC list used by switch port security",
       "Set of rules to permit or deny traffic",
-      "Routing table",
-      "VLAN configuration"
+      "Table that selects the next IP hop",
+      "VLAN and access-port setup on switch"
     ],
     "correct": 1,
     "explanation": "ACLs are used to filter traffic based on criteria such as source/destination IP, ports, etc.",
@@ -110,10 +110,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of the HSRP protocol?",
     "options": [
-      "Dynamic routing",
+      "Dynamic routing of prefixes with OSPF",
       "Provide redundant gateway with virtual IP",
-      "Load balancing",
-      "VPN"
+      "Per-packet load split among HSRP routers",
+      "IPsec VPN tunnel between branch routers"
     ],
     "correct": 1,
     "explanation": "HSRP (Hot Standby Router Protocol) provides gateway redundancy with a shared virtual IP.",
@@ -122,10 +122,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the main difference between a router and a Layer 3 switch?",
     "options": [
-      "Router is faster",
+      "The router is faster because it forwards every packet in CPU software",
       "Layer 3 switch performs Layer 3 routing but with hardware optimized for switching",
-      "There is no difference",
-      "Router does not support VLANs"
+      "A router and a Layer 3 switch forward the same way on the same hardware",
+      "A router cannot carry VLANs and rejects 802.1Q trunks on its ports"
     ],
     "correct": 1,
     "explanation": "Layer 3 switches combine L2 switching with L3 routing in ASIC hardware, much faster than traditional routers.",
@@ -134,10 +134,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'EtherChannel'?",
     "options": [
-      "Encryption protocol",
+      "Protocol that encrypts Ethernet frames sent between two switches",
       "Technology to bundle multiple physical ports into a single logical link",
-      "Type of VLAN",
-      "NAT method"
+      "VLAN type that isolates access ports inside the same local switch",
+      "NAT method that maps many private IPs onto one public address"
     ],
     "correct": 1,
     "explanation": "EtherChannel allows aggregation of physical links to increase bandwidth and provide redundancy (LACP or PAgP).",
@@ -146,10 +146,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of the command 'show ip ospf neighbor'?",
     "options": [
-      "Show routing table",
+      "List IP routes via show ip route",
       "Show OSPF neighbors and their state",
-      "Show interface configuration",
-      "Show logs"
+      "Show OSPF config of the interface",
+      "Show the local syslog buffer"
     ],
     "correct": 1,
     "explanation": "show ip ospf neighbor lists OSPF neighbors, adjacency state (FULL, etc.), and DR/BDR roles on multi-access segments—not the full LSDB.",
@@ -159,9 +159,9 @@ window.QUIZ_BANK = [
     "question": "What is a 'prefix-list' on Cisco routers?",
     "options": [
       "IP prefix list for route filtering",
-      "VLAN list",
-      "ACL list",
-      "User list"
+      "VLAN list filtering access ports",
+      "ACL list that filters IP traffic",
+      "User list used for authentication"
     ],
     "correct": 0,
     "explanation": "Prefix-lists are used to filter routes based on network prefixes and mask length.",
@@ -171,9 +171,9 @@ window.QUIZ_BANK = [
     "question": "What is the difference between 'standard' and 'extended' ACL?",
     "options": [
       "Standard filters only by source IP, extended by source, destination, protocol and port",
-      "There is no difference",
-      "Extended is simpler",
-      "Standard is more secure"
+      "No difference: standard and extended filter the same source and destination fields",
+      "Extended is simpler: it checks only source IP and skips destination, protocol, port",
+      "Standard is more secure: it inspects source, destination, protocol and session state"
     ],
     "correct": 0,
     "explanation": "Standard ACLs (1-99) filter only by source IP. Extended ACLs (100-199) offer more granular filtering.",
@@ -182,10 +182,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'BGP' and what is it used for?",
     "options": [
-      "Internal routing protocol",
+      "Internal routing protocol, like OSPF, used only inside a single AS",
       "External routing protocol used on the internet to exchange routes between AS",
-      "Backup protocol",
-      "Security protocol"
+      "Backup protocol that advertises routes only when the main IGP stops working",
+      "Security protocol that encrypts data traffic and authenticates each packet"
     ],
     "correct": 1,
     "explanation": "BGP (Border Gateway Protocol) is the routing protocol used on the internet to exchange routes between autonomous systems.",
@@ -194,10 +194,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does the command 'ip nat inside source list 1 interface GigabitEthernet0/0 overload' do?",
     "options": [
-      "Configure static NAT",
+      "Configure fixed one-to-one static NAT",
       "Configure dynamic PAT using ACL and interface",
-      "Delete NAT",
-      "Show NAT"
+      "Delete the NAT entries with clear ip nat",
+      "Show NAT table with show ip nat translations"
     ],
     "correct": 1,
     "explanation": "This command configures PAT (NAT overload) using ACL 1 and the interface IP as the public address.",
@@ -206,10 +206,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'CEF' (Cisco Express Forwarding)?",
     "options": [
-      "Routing protocol",
+      "Routing protocol that exchanges LSAs and runs SPF",
       "Hardware packet forwarding technology for high performance",
-      "Type of switch",
-      "Backup method"
+      "Layer 2 switch model that only forwards Ethernet frames",
+      "Backup method that saves running-config into NVRAM"
     ],
     "correct": 1,
     "explanation": "CEF uses FIB table and adjacencies to forward packets in hardware, much faster than traditional routing.",
@@ -230,10 +230,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'VRF' (Virtual Routing and Forwarding)?",
     "options": [
-      "Type of VLAN",
+      "VLAN type that isolates broadcasts on a switch without its own routing table",
       "Technology that allows multiple independent routing tables on the same router",
-      "VPN protocol",
-      "Type of firewall"
+      "VPN protocol that encrypts IPsec tunnels and authenticates the remote sites",
+      "Firewall type that uses zones and policies to filter network traffic"
     ],
     "correct": 1,
     "explanation": "VRF allows creating separate routing instances on the same physical device, useful for segmentation.",
@@ -243,9 +243,9 @@ window.QUIZ_BANK = [
     "question": "What is the function of 'Spanning Tree PortFast'?",
     "options": [
       "Speed up STP convergence on access ports",
-      "Disable STP",
-      "Increase port priority",
-      "Create trunk"
+      "Disable STP on the port, ignore BPDUs",
+      "Raise STP port priority on the switch",
+      "Create an 802.1Q trunk on the port"
     ],
     "correct": 0,
     "explanation": "PortFast immediately puts access ports into forwarding state, skipping listening/learning states.",
@@ -254,10 +254,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'Anycast' in IPv6?",
     "options": [
-      "Unique address for multiple devices",
+      "Unique address of many hosts, sent to all of them",
       "Address that identifies the nearest device in a group",
-      "Broadcast address",
-      "Multicast address"
+      "IPv6 broadcast sent to every node on the link",
+      "Multicast from FF00::/8 sent to the whole group"
     ],
     "correct": 1,
     "explanation": "Anycast delivers the packet to the nearest device (lowest metric) in a group sharing the same address.",
@@ -266,10 +266,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the difference between 'RIPv2' and 'OSPF'?",
     "options": [
-      "RIPv2 is link-state, OSPF is distance-vector",
+      "RIPv2 is link-state with areas and OSPF is distance-vector",
       "RIPv2 has a 15-hop limit, OSPF is hierarchical and scalable",
-      "There is no difference",
-      "RIPv2 is more secure"
+      "There is no difference: both are 15-hop distance-vector",
+      "RIPv2 is more secure: it encrypts routes and OSPF does not"
     ],
     "correct": 1,
     "explanation": "RIPv2 is distance-vector with a 15-hop limit. OSPF is link-state, hierarchical (areas), and scalable for large networks.",
@@ -278,10 +278,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is a 'subinterface' on Cisco routers?",
     "options": [
-      "Physical interface",
+      "Physical chassis interface, without 802.1Q tagging or any VLAN separation on it",
       "Logical interface created on a physical interface to support multiple VLANs (router-on-a-stick)",
-      "Backup interface",
-      "Wireless interface"
+      "Backup interface that comes online only if the primary physical router port fails",
+      "Wireless router interface intended only for local 802.11 Wi-Fi client access"
     ],
     "correct": 1,
     "explanation": "Subinterfaces allow a single router to process traffic from multiple VLANs on one physical interface (router-on-a-stick).",
@@ -290,10 +290,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of the command 'show ip nat translations'?",
     "options": [
-      "Show NAT configuration",
+      "Show the NAT configuration",
       "Show active NAT translations",
-      "Delete translations",
-      "Show ACLs"
+      "Delete the NAT translations",
+      "Show ACLs applied to NAT"
     ],
     "correct": 1,
     "explanation": "show ip nat translations displays the active NAT/PAT translation table (inside↔outside bindings). It is not the routing table.",
@@ -302,10 +302,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'GLBP' (Gateway Load Balancing Protocol)?",
     "options": [
-      "Routing protocol",
+      "Routing protocol that advertises routes between routers, as OSPF does",
       "Protocol that provides redundancy and load balancing between multiple gateways",
-      "Type of ACL",
-      "VPN protocol"
+      "Numbered or named ACL type that filters packets by source IP address",
+      "VPN protocol that encrypts traffic between remote sites, such as IPsec"
     ],
     "correct": 1,
     "explanation": "GLBP provides gateway redundancy with active-active load balancing using multiple active routers.",
@@ -314,10 +314,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'ip helper-address'?",
     "options": [
-      "Configure NAT",
+      "Configure NAT: private addresses to public IP",
       "Forward DHCP broadcasts to a remote DHCP server",
-      "Configure static route",
-      "Enable firewall"
+      "Add static route with network, mask, next-hop",
+      "Enable a firewall to block inbound traffic"
     ],
     "correct": 1,
     "explanation": "ip helper-address allows DHCP broadcasts from clients to be forwarded to a DHCP server on another network.",
@@ -326,10 +326,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'SDM' (Switching Database Manager) on Cisco switches?",
     "options": [
-      "VLAN manager",
+      "VLAN manager that creates, names and assigns access ports on the switch",
       "Feature that optimizes hardware resource usage (TCAM) for different functions",
-      "Routing protocol",
-      "Type of memory"
+      "Routing protocol that calculates routes with Dijkstra's SPF algorithm",
+      "Volatile memory type where the switch stores the active running-config"
     ],
     "correct": 1,
     "explanation": "SDM allows optimized allocation of hardware resources (TCAM) for routing, security, etc.",
@@ -338,10 +338,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the difference between 'inside local' and 'inside global' in NAT?",
     "options": [
-      "Inside local is public IP, inside global is private IP",
+      "Inside local is the public Internet IP and inside global is the private IP",
       "Inside local is internal private IP, inside global is public IP after translation",
-      "There is no difference",
-      "Inside local is server IP"
+      "There is no difference: inside local and inside global name the same address",
+      "Inside local is the external destination server IP, outside the NAT table"
     ],
     "correct": 1,
     "explanation": "Inside local = original IP of internal host. Inside global = public IP used on the internet after NAT.",
@@ -350,10 +350,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'BPDU Guard'?",
     "options": [
-      "Routing protocol",
+      "Routing protocol that advertises routes and elects neighbors, like OSPF",
       "Security feature that disables port if it receives a BPDU (prevents loops)",
-      "Type of VLAN",
-      "Backup method"
+      "VLAN type that isolates ports and blocks direct traffic between hosts",
+      "Backup method that sends the startup-config to a remote TFTP server"
     ],
     "correct": 1,
     "explanation": "BPDU Guard automatically disables a PortFast port if it receives a BPDU, preventing loops.",
@@ -362,10 +362,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of the command 'debug ip packet'?",
     "options": [
-      "Show configuration",
+      "Show the full running-config stored in the router's memory",
       "Show IP packets processed by the router (use with caution: high impact)",
-      "Clear logs",
-      "Restart interface"
+      "Clear the log messages stored in the router's logging buffer",
+      "Restart the physical interface and drop the link for a few seconds"
     ],
     "correct": 1,
     "explanation": "debug ip packet shows details of IP packets being processed. Use with caution as it can overload the CPU.",
@@ -374,10 +374,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'router-on-a-stick'?",
     "options": [
-      "Single physical router",
+      "A single physical router appliance, identified only by its chassis and its hardware ports",
       "Configuration where a router uses subinterfaces to route between multiple VLANs on a single physical interface",
-      "Type of switch",
-      "NAT method"
+      "Multilayer switch type that forwards frames between VLANs without needing an external router",
+      "NAT method in which many internal hosts share one public IP address by using source ports"
     ],
     "correct": 1,
     "explanation": "Router-on-a-stick uses one physical interface with 802.1Q subinterfaces to route between VLANs.",
@@ -387,9 +387,9 @@ window.QUIZ_BANK = [
     "question": "What is the default port for the FTP protocol?",
     "options": [
       "20/21",
-      "22",
-      "23",
-      "80"
+      "TCP 22, the default SSH port",
+      "TCP 23, the default Telnet port",
+      "TCP 80, the default HTTP port"
     ],
     "correct": 0,
     "explanation": "FTP control is TCP 21; in active mode data often uses TCP 20. Modern deployments frequently use passive mode with dynamic data ports.",
@@ -398,10 +398,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'PVST+' (Per-VLAN Spanning Tree Plus)?",
     "options": [
-      "STP for all VLANs together",
+      "STP with one common instance applied to all VLANs together",
       "Cisco implementation of STP that runs one STP instance per VLAN",
-      "Load balancing protocol",
-      "Type of trunk"
+      "Load balancing protocol between gateways, without using STP",
+      "Type of 802.1Q trunk that carries several VLANs on one link"
     ],
     "correct": 1,
     "explanation": "PVST+ runs a separate STP instance for each VLAN, allowing per-VLAN optimization.",
@@ -411,9 +411,9 @@ window.QUIZ_BANK = [
     "question": "What is the function of 'ip domain-lookup'?",
     "options": [
       "Enable DNS resolution on the router",
-      "Disable DNS",
-      "Configure DNS server",
-      "Show DNS cache"
+      "Disable DNS on this router",
+      "Set the DNS server in use",
+      "Show DNS cache on the router"
     ],
     "correct": 0,
     "explanation": "ip domain-lookup lets the router resolve hostnames via DNS (or the configured name server). no ip domain-lookup disables that behavior.",
@@ -422,10 +422,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'LACP' (Link Aggregation Control Protocol)?",
     "options": [
-      "Routing protocol",
+      "Routing protocol that advertises RIP route updates",
       "IEEE standard protocol for EtherChannel negotiation",
-      "Type of ACL",
-      "Security protocol"
+      "ACL type that filters packets by source IP only",
+      "Security protocol that encrypts traffic like IPsec"
     ],
     "correct": 1,
     "explanation": "LACP is the IEEE 802.3ad standard protocol for dynamically forming EtherChannels.",
@@ -435,9 +435,9 @@ window.QUIZ_BANK = [
     "question": "What is the difference between 'active' and 'passive' in LACP?",
     "options": [
       "Active initiates negotiation, passive responds",
-      "There is no difference",
-      "Passive is faster",
-      "Active is insecure"
+      "No difference: both LACP modes act the same",
+      "Passive is faster at forming the channel",
+      "Active is insecure and does not authenticate"
     ],
     "correct": 0,
     "explanation": "Active mode initiates LACP negotiation. Passive mode only responds to negotiations.",
@@ -446,10 +446,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'HSRP preemption'?",
     "options": [
-      "Disable HSRP",
+      "Disable HSRP on the interface and remove the group virtual IP",
       "Allow higher priority router to take over active role when available",
-      "Type of load balancing",
-      "Configuration backup"
+      "Type of load balancing that splits traffic across HSRP routers",
+      "Configuration backup that saves the HSRP running-config to NVRAM"
     ],
     "correct": 1,
     "explanation": "Preemption allows a higher priority router to automatically assume the active role when it becomes available again.",
@@ -458,10 +458,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of the command 'show spanning-tree vlan 10'?",
     "options": [
-      "Show VLAN 10 configuration",
+      "Show VLAN 10 configuration, name, ports, status",
       "Show STP state for VLAN 10 (root bridge, ports, etc.)",
-      "Show ACLs for VLAN 10",
-      "Show NAT for VLAN 10"
+      "Show VLAN 10 ACLs, including each filtering entry",
+      "Show VLAN 10 NAT on the network edge router"
     ],
     "correct": 1,
     "explanation": "show spanning-tree vlan <id> shows STP role/state, root bridge, and costs for that VLAN. It is not the MAC address table.",
@@ -470,10 +470,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is a 'route-map' on Cisco routers?",
     "options": [
-      "VLAN map",
+      "VLAN map that ties each VLAN ID to access ports on the switch",
       "Powerful tool for route manipulation and filtering based on complex criteria",
-      "Type of ACL",
-      "VPN protocol"
+      "Numbered ACL type that permits or denies packets by source IP only",
+      "VPN protocol that encrypts traffic between remote sites, like IPsec"
     ],
     "correct": 1,
     "explanation": "Route-maps provide match/set logic for redistribution, PBR, and NAT control—more flexible than a simple distribute-list alone.",
@@ -482,10 +482,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'ip sla'?",
     "options": [
-      "Configure NAT",
+      "Configure NAT to translate private addresses to a public outside IP",
       "Monitor network performance (latency, jitter, loss) with synthetic tests",
-      "Configure VPN",
-      "Manage users"
+      "Configure an IPsec VPN to encrypt traffic between two remote sites",
+      "Manage local users, with passwords and privilege levels on the router"
     ],
     "correct": 1,
     "explanation": "IP SLA allows creating synthetic performance tests to monitor SLAs and trigger actions.",
@@ -494,10 +494,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'uRPF' (Unicast Reverse Path Forwarding)?",
     "options": [
-      "Routing protocol",
+      "Routing protocol that advertises routes and selects the best path",
       "Security mechanism that verifies if source IP is reachable via incoming interface",
-      "Type of firewall",
-      "Backup method"
+      "Firewall type that inspects sessions and blocks unsolicited traffic",
+      "Backup method that copies the router configuration to a remote server"
     ],
     "correct": 1,
     "explanation": "uRPF helps prevent spoofing by verifying that a return path to the source IP exists via the incoming interface.",
@@ -506,10 +506,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the difference between 'named' and 'numbered' ACL?",
     "options": [
-      "Named is older",
+      "Named is older and appeared before numbered ACLs in the 1-99 range",
       "Named ACL allows easy editing and descriptive names, numbered is numeric",
-      "There is no difference",
-      "Named is less secure"
+      "There is no difference: named and numbered filter and edit alike",
+      "Named is less secure because it ignores the mask and line order"
     ],
     "correct": 1,
     "explanation": "Named ACLs use names and allow insertion/removal of specific lines. Numbered ACLs are more limited.",
@@ -518,10 +518,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'MPLS' (Multiprotocol Label Switching)?",
     "options": [
-      "Routing protocol",
+      "Routing protocol that picks paths by metric, like OSPF",
       "Label switching technology for high performance and VPNs",
-      "Type of switch",
-      "NAT method"
+      "Type of switch that forwards frames only by MAC table",
+      "NAT method that maps private addresses to one public IP"
     ],
     "correct": 1,
     "explanation": "MPLS uses short labels to forward packets at high speed and supports Layer 2/3 VPNs.",
@@ -530,10 +530,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of the command 'clear ip nat translation *'?",
     "options": [
-      "Show translations",
+      "Show NAT translations on screen",
       "Clear all active NAT translations",
-      "Restart NAT",
-      "Configure NAT"
+      "Restart the whole NAT process",
+      "Set static NAT on an interface"
     ],
     "correct": 1,
     "explanation": "This command clears all current NAT translations (useful after configuration changes).",
@@ -542,10 +542,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'sticky MAC' in port-security?",
     "options": [
-      "MAC that never changes",
+      "Hardware MAC address that stays immutable and never changes at all",
       "Feature that dynamically learns MACs and saves them to running-config",
-      "Type of VLAN",
-      "Encryption method"
+      "VLAN type that isolates access ports without learning MAC addresses",
+      "Encryption method that encrypts Ethernet frames on the switch port"
     ],
     "correct": 1,
     "explanation": "Sticky MAC learns MAC addresses dynamically and adds them to the configuration as static entries.",
@@ -554,10 +554,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the function of 'ip tcp window-size'?",
     "options": [
-      "Configure MTU",
+      "Set interface MTU to fragment IP packets",
       "Adjust TCP window size to optimize throughput",
-      "Configure port",
-      "Enable firewall"
+      "Set the TCP listen port of a local service",
+      "Turn on a zone firewall for TCP sessions"
     ],
     "correct": 1,
     "explanation": "Allows adjusting the TCP window size to improve performance on high-latency links.",
@@ -566,10 +566,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is 'DMVPN' (Dynamic Multipoint VPN)?",
     "options": [
-      "Static VPN",
+      "Static site-to-site VPN with IPsec tunnels configured by hand on each remote peer",
       "Cisco technology that enables dynamic hub-and-spoke VPNs with direct spoke-to-spoke tunnels",
-      "Type of firewall",
-      "Routing protocol"
+      "Type of firewall that inspects sessions and blocks all unsolicited inbound traffic",
+      "Routing protocol that advertises IP prefixes between neighbors, the way OSPF does"
     ],
     "correct": 1,
     "explanation": "DMVPN creates dynamic VPNs where spokes can connect directly to each other without going through the hub.",
@@ -592,8 +592,8 @@ window.QUIZ_BANK = [
     "options": [
       "switchport mode trunk",
       "switchport access vlan 20",
-      "no switchport",
-      "ip routing"
+      "no switchport (routed)",
+      "ip routing on a router"
     ],
     "correct": 1,
     "explanation": "switchport mode access plus switchport access vlan 20 puts the port in VLAN 20 untagged. Trunk mode carries multiple tagged VLANs.",
@@ -614,10 +614,10 @@ window.QUIZ_BANK = [
   {
     "question": "OSPFv2 hellos on Ethernet use which addresses?",
     "options": [
-      "Broadcast 255.255.255.255",
+      "IPv4 broadcast 255.255.255.255",
       "Multicast 224.0.0.5 and 224.0.0.6",
-      "Unicast to the DR only",
-      "FF02::5 only"
+      "Unicast only to the elected DR",
+      "Only FF02::5, the OSPFv3 hello"
     ],
     "correct": 1,
     "explanation": "OSPF Hellos go to AllSPFRouters 224.0.0.5; DR/BDR also listen on AllDRouters 224.0.0.6. These are not the same as EIGRP’s 224.0.0.10.",
@@ -626,7 +626,7 @@ window.QUIZ_BANK = [
   {
     "question": "DHCP snooping protects against:",
     "options": [
-      "STP loops",
+      "Layer-2 STP loops",
       "Rogue DHCP servers",
       "Broadcast storms",
       "Fake OSPF routes"
@@ -638,10 +638,10 @@ window.QUIZ_BANK = [
   {
     "question": "Where should an extended ACL usually be placed?",
     "options": [
-      "Closest to the destination",
+      "Near the destination",
       "Closest to the source",
-      "Core only",
-      "On every PC"
+      "Only on core routers",
+      "On each end-user PC"
     ],
     "correct": 1,
     "explanation": "Place extended ACLs near the source to drop unwanted traffic early and save bandwidth; standard ACLs often go near the destination.",
@@ -650,10 +650,10 @@ window.QUIZ_BANK = [
   {
     "question": "NTP is used to:",
     "options": [
-      "Resolve names",
+      "Resolve host names to IPs via DNS",
       "Synchronize clocks across the network",
-      "Measure WAN jitter",
-      "Encrypt syslog"
+      "Measure jitter across WAN links",
+      "Encrypt syslog messages in transit"
     ],
     "correct": 1,
     "explanation": "NTP (Network Time Protocol) synchronizes clocks across devices so logs, certificates, and auth (e.g. Kerberos) share a common timebase. It is not DNS, not a jitter probe, and not encryption for syslog.",
@@ -662,10 +662,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does an SNMP GET do?",
     "options": [
-      "Configures the device",
+      "Writes one MIB object with SET",
       "Reads a MIB object from the agent",
-      "Sends a trap",
-      "Resets an interface"
+      "Sends an SNMP trap to the NMS",
+      "Resets a physical interface"
     ],
     "correct": 1,
     "explanation": "SNMP GET reads MIB objects from the agent; SET writes them; traps/informs notify the NMS of events. It is not NetFlow export.",
@@ -674,10 +674,10 @@ window.QUIZ_BANK = [
   {
     "question": "Where should QoS classification happen, preferably?",
     "options": [
-      "Only at the ISP",
+      "Only at the ISP edge router",
       "Closest to the source (edge)",
-      "Only in the MPLS core",
-      "On DNS"
+      "Only inside the MPLS core",
+      "On the company DNS server"
     ],
     "correct": 1,
     "explanation": "Mark/classify traffic as close to the edge (access) as practical so DSCP/CoS is set early and honored through the path.",
@@ -686,10 +686,10 @@ window.QUIZ_BANK = [
   {
     "question": "CDP and LLDP are used to:",
     "options": [
-      "Elect the OSPF DR",
+      "Elect the OSPF designated router",
       "Discover neighbors and link capabilities",
-      "Encrypt trunks",
-      "Translate NAT"
+      "Encrypt frames sent on 802.1Q trunks",
+      "Translate IP addresses with static NAT"
     ],
     "correct": 1,
     "explanation": "CDP is Cisco proprietary neighbor discovery; LLDP is the IEEE 802.1AB standard. Both advertise device/port identity at L2.",
@@ -698,10 +698,10 @@ window.QUIZ_BANK = [
   {
     "question": "An IPv6 link-local address typically starts with:",
     "options": [
-      "2001:",
+      "2001::/16, a typical global unicast prefix",
       "fe80::/10",
-      "ff00::/8",
-      "::1"
+      "ff00::/8, the IPv6 multicast prefix",
+      "::1, the loopback address of the host"
     ],
     "correct": 1,
     "explanation": "IPv6 link-local addresses in FE80::/10 are required on every IPv6-enabled interface for neighbor discovery and many control protocols.",
@@ -710,10 +710,10 @@ window.QUIZ_BANK = [
   {
     "question": "RESTCONF often uses which data format?",
     "options": [
-      "YAML only",
+      "YAML only, not JSON",
       "JSON or XML over HTTP",
-      "CSV",
-      "Protobuf only"
+      "CSV files over FTP",
+      "Solely Protobuf data"
     ],
     "correct": 1,
     "explanation": "RESTCONF exposes YANG-modeled data over HTTP(S), typically with JSON or XML payloads—an HTTP-friendly alternative to NETCONF/SSH.",
@@ -722,10 +722,10 @@ window.QUIZ_BANK = [
   {
     "question": "JSON differs from XML by:",
     "options": [
-      "Being binary",
+      "Being a compact binary format",
       "Being lighter, with key-value pairs",
-      "Not supporting arrays",
-      "Requiring a DTD"
+      "Not supporting lists or arrays",
+      "Requiring a DTD to be valid"
     ],
     "correct": 1,
     "explanation": "JSON is a lightweight text format of objects and arrays widely used in REST APIs. It is not a routing protocol and not YANG itself.",
@@ -734,10 +734,10 @@ window.QUIZ_BANK = [
   {
     "question": "Ansible reaches Cisco devices mainly via:",
     "options": [
-      "An agent on IOS",
+      "A permanent agent installed on IOS",
       "SSH (agentless) and sometimes NETCONF",
-      "SNMP only",
-      "Required Telnet"
+      "Only SNMP polling of the IOS box",
+      "Mandatory Telnet into the IOS CLI"
     ],
     "correct": 1,
     "explanation": "Ansible is typically agentless: the control node pushes YAML playbooks over SSH/WinRM/NETCONF. It is not primarily an SNMP poller.",
@@ -758,9 +758,9 @@ window.QUIZ_BANK = [
   {
     "question": "With auto-cost reference-bandwidth 100000 (Mb/s), what is the OSPF cost of a 100 Mb/s FastEthernet interface?",
     "options": [
-      "1",
-      "10",
-      "100",
+      "1, the OSPF cost of this FastEthernet",
+      "10, the OSPF cost of this FastEthernet",
+      "100, the OSPF cost of this FastEthernet",
       "1000"
     ],
     "correct": 3,
@@ -770,10 +770,10 @@ window.QUIZ_BANK = [
   {
     "question": "An 802.1Q trunk carries:",
     "options": [
-      "Only one VLAN",
+      "Only one access VLAN, sent without a tag",
       "Multiple tagged VLANs, except the untagged native",
-      "VLAN 1 only",
-      "Management traffic only"
+      "Only VLAN 1, whether it is tagged or native",
+      "Only management traffic, such as CDP or SSH"
     ],
     "correct": 1,
     "explanation": "802.1Q tags frames with a VLAN ID on trunks; the native VLAN is sent/received untagged. ISL is an older Cisco alternative.",
@@ -782,10 +782,10 @@ window.QUIZ_BANK = [
   {
     "question": "An SSID on a WLAN is:",
     "options": [
-      "The WPA3 key",
+      "The WPA3 key that encrypts client WLAN traffic",
       "The wireless network name seen by clients",
-      "The DFS channel",
-      "The BSSID only"
+      "The DFS channel the AP radio selects on the band",
+      "Only the BSSID, not the visible WLAN name"
     ],
     "correct": 1,
     "explanation": "The SSID is the human-readable WLAN name; the BSSID is the AP radio’s MAC that uniquely identifies that BSS.",
@@ -794,10 +794,10 @@ window.QUIZ_BANK = [
   {
     "question": "WPA3-Enterprise typically authenticates with:",
     "options": [
-      "PSK only",
+      "Only a shared PSK for all the clients",
       "802.1X/EAP and a RADIUS server",
-      "128-bit WEP",
-      "Telnet"
+      "128-bit WEP used for authentication",
+      "Telnet used to authenticate the client"
     ],
     "correct": 1,
     "explanation": "WPA2/WPA3-Enterprise uses 802.1X with a RADIUS server per user; PSK (personal) shares one passphrase for all clients.",
@@ -806,10 +806,10 @@ window.QUIZ_BANK = [
   {
     "question": "A first LAN troubleshooting step when the site will not open is often:",
     "options": [
-      "Replace the core",
+      "Replace the core switch before any other check",
       "Check the client IP, mask, gateway, and DNS",
-      "Disable OSPF",
-      "Factory-reset the ISP"
+      "Disable OSPF on every router in the LAN",
+      "Factory-reset the ISP gear at the network edge"
     ],
     "correct": 1,
     "explanation": "When a host cannot reach anything, first verify its own IP, mask, gateway, and DNS—most failures are local misconfiguration.",
@@ -818,10 +818,10 @@ window.QUIZ_BANK = [
   {
     "question": "Syslog severity 0 means:",
     "options": [
-      "Informational",
+      "Informational (syslog level 6)",
       "Emergency (most severe)",
-      "Debug",
-      "Notice"
+      "Debug (syslog level 7)",
+      "Notice (syslog level 5)"
     ],
     "correct": 1,
     "explanation": "Syslog severity runs from 0 (emergencies) to 7 (debugging); lower numbers are more severe. Filtering often uses a severity threshold.",
@@ -830,10 +830,10 @@ window.QUIZ_BANK = [
   {
     "question": "A WLC uses CAPWAP to:",
     "options": [
-      "Replace OSPF",
+      "Replace OSPF for IP packet forwarding",
       "Tunnel and control lightweight APs",
-      "Encrypt disks",
-      "Perform NAT"
+      "Encrypt the disks inside the controller",
+      "Perform NAT between the WLAN and the LAN"
     ],
     "correct": 1,
     "explanation": "CAPWAP tunnels control (and often data) between a lightweight AP and the WLC. It replaced older LWAPP in Cisco architectures.",
@@ -842,10 +842,10 @@ window.QUIZ_BANK = [
   {
     "question": "IPv6 global unicast often starts with:",
     "options": [
-      "fe80:",
+      "fe80:, the link-local prefix",
       "2000::/3 (e.g. 2001:)",
-      "ff02:",
-      "::1"
+      "ff02:, the multicast prefix",
+      "::1, the loopback address"
     ],
     "correct": 1,
     "explanation": "Global unicast IPv6 currently sits in 2000::/3 (e.g. documentation prefix 2001:db8::/32). FE80::/10 is link-local, not global.",
@@ -866,10 +866,10 @@ window.QUIZ_BANK = [
   {
     "question": "Does switchport mode access accept 802.1Q tags?",
     "options": [
-      "Yes, all VLANs",
+      "Yes, tagged frames for all the VLANs",
       "No: only the access VLAN, untagged",
-      "Only tagged VLAN 1",
-      "Only if PortFast is on"
+      "Only tagged frames that belong to VLAN 1",
+      "Only when PortFast is enabled on the port"
     ],
     "correct": 1,
     "explanation": "Access ports belong to one VLAN and expect untagged frames (native for that VLAN). Tagged frames usually belong on trunks.",
@@ -890,10 +890,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is a floating static route?",
     "options": [
-      "A route with a lower AD than the primary so it always wins",
+      "A route with a lower AD than the primary, so that it is always chosen and wins forwarding",
       "A backup route with a higher AD than the primary, used only if the primary disappears",
-      "An OSPF route in the table",
-      "A mandatory default route"
+      "An OSPF route that the process installs into the router's forwarding table",
+      "A mandatory default route, always installed in the RIB no matter what its AD is"
     ],
     "correct": 1,
     "explanation": "You configure the same prefix with a backup next hop and a high AD (for example 250). While the primary exists, the floating route stays out of the RIB.",
@@ -902,10 +902,10 @@ window.QUIZ_BANK = [
   {
     "question": "How does a router choose among several routes to the same destination?",
     "options": [
-      "Always the oldest route",
+      "Always the oldest route already present in the routing table",
       "Longest prefix match; if tied, lowest AD; if still tied, best metric",
-      "Always OSPF",
-      "The route with the longer mask always loses"
+      "Always the OSPF route, even with a shorter prefix or a worse AD",
+      "The route with the longer mask always loses to the shorter prefix match"
     ],
     "correct": 1,
     "explanation": "IP lookup uses longest-prefix match first. Only then do AD and metric matter. A /24 beats a /16 even if the /16 comes from a protocol with a better AD.",
@@ -914,10 +914,10 @@ window.QUIZ_BANK = [
   {
     "question": "On an OSPF multiaccess Ethernet network, who is elected DR?",
     "options": [
-      "Always the router with the lowest Router ID",
+      "Always the router with the lowest Router ID, ignoring the OSPF priority value",
       "The router with the highest OSPF priority; if tied, the highest Router ID",
-      "Whoever booted first never loses",
-      "Whoever has the most Loopbacks"
+      "The first router that booted, which never loses the DR role later",
+      "The router that owns the largest number of Loopback interfaces"
     ],
     "correct": 1,
     "explanation": "Priority (0–255, default 1) decides; priority 0 makes a router ineligible. A tie uses the highest Router ID. The DR originates the Type 2 LSA.",
@@ -938,10 +938,10 @@ window.QUIZ_BANK = [
   {
     "question": "How is default OSPF cost calculated in classic IOS?",
     "options": [
-      "Cost = bandwidth in kb/s",
+      "Cost = the interface bandwidth figure in kb/s, with no division at all",
       "Cost = reference bandwidth / interface bandwidth (default 100 Mb/s)",
-      "Cost = EIGRP delay",
-      "Cost = hop count"
+      "Cost = the cumulative EIGRP delay measured along the whole path",
+      "Cost = the number of hops to the destination, as RIP does"
     ],
     "correct": 1,
     "explanation": "With a 100 Mb/s reference, FastEthernet costs 1. Modern networks raise auto-cost reference-bandwidth so 1/10/40 Gb/s links differ.",
@@ -962,10 +962,10 @@ window.QUIZ_BANK = [
   {
     "question": "How is the OSPF Router ID chosen if router-id is not configured?",
     "options": [
-      "The MAC of Gi0/0",
+      "The MAC address of Gi0/0, converted to 32 bits and used as the Router ID ahead of any interface IPv4",
       "Manual router-id; else highest IPv4 on an up Loopback; else highest IPv4 on an up physical interface",
-      "Always 1.1.1.1",
-      "The management VLAN address"
+      "Always the fixed value 1.1.1.1, even if up Loopbacks or physical interfaces have other IPv4 addresses on the router",
+      "The IPv4 address of the management VLAN, even when an up Loopback has a higher IPv4 than that VLAN"
     ],
     "correct": 1,
     "explanation": "The RID is a 32-bit IPv4 value. Setting router-id is recommended. Changing it requires clear ip ospf process.",
@@ -974,10 +974,10 @@ window.QUIZ_BANK = [
   {
     "question": "How is the STP/RSTP root bridge elected?",
     "options": [
-      "Highest priority, then highest MAC",
+      "Highest numeric priority and, on a tie, the highest MAC, even with a larger Bridge ID",
       "Lowest Bridge ID: priority (default 32768) plus MAC; the lowest value wins",
-      "The switch with the most VLANs",
-      "The first switch to send a BPDU"
+      "The switch with the most active VLANs locally, ignoring both priority and the MAC",
+      "The first switch to send a BPDU, without comparing priority or the MAC address"
     ],
     "correct": 1,
     "explanation": "Priority is set in steps of 4096. spanning-tree vlan X root primary lowers priority so this switch wins.",
@@ -986,10 +986,10 @@ window.QUIZ_BANK = [
   {
     "question": "Which extra roles does RSTP (802.1w) add versus classic STP (802.1D)?",
     "options": [
-      "Only root and designated",
+      "Only the root and designated roles, with no alternate or backup as extra roles of RSTP 802.1w",
       "Alternate and backup, discarding roles that can transition without 30–50 s timers",
-      "DR and BDR",
-      "Listen and learn as final roles"
+      "The OSPF DR and BDR roles, elected by priority and Router ID among the switches in that VLAN",
+      "Listen and learn as final, stable port roles, rather than as transient states of classic STP"
     ],
     "correct": 1,
     "explanation": "RSTP uses root, designated, alternate, and backup. Convergence is in seconds (proposal/agreement), not the 50 s of 802.1D.",
@@ -998,10 +998,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does Root Guard do on a port?",
     "options": [
-      "Disables PortFast",
+      "Disables PortFast on that access port and blocks the port from moving quickly into the forwarding state",
       "Puts the port in root-inconsistent if a superior BPDU arrives, stopping a downstream switch from becoming root",
-      "Forces the port to be the root port",
-      "Enables Loop Guard"
+      "Forces the port to become the root port as soon as a BPDU arrives, even when that BPDU is inferior to the root",
+      "Enables Loop Guard on the same port and moves it to loop-inconsistent when BPDUs from the neighbor stop"
     ],
     "correct": 1,
     "explanation": "Use it on edge ports toward the core where a user switch must not win the election. It complements BPDU Guard.",
@@ -1010,10 +1010,10 @@ window.QUIZ_BANK = [
   {
     "question": "How do you disable DTP negotiation on a Cisco trunk?",
     "options": [
-      "switchport mode access",
+      "switchport mode access, which stops DTP but keeps the dynamic trunk",
       "switchport nonegotiate (with a static trunk or access mode)",
-      "no spanning-tree",
-      "shutdown vlan 1"
+      "no spanning-tree, which disables STP rather than DTP negotiation",
+      "shutdown vlan 1, which shuts VLAN 1 instead of DTP on the trunk"
     ],
     "correct": 1,
     "explanation": "DTP (dynamic auto/desirable) can form unwanted trunks. Best practice is static trunk or access mode plus nonegotiate.",
@@ -1022,10 +1022,10 @@ window.QUIZ_BANK = [
   {
     "question": "What happens if the two ends of an 802.1Q trunk use different native VLANs?",
     "options": [
-      "Nothing; tagged traffic fixes it",
+      "Nothing goes wrong; 802.1Q tagged traffic by itself corrects the native VLAN difference",
       "Untagged traffic is interpreted in different VLANs and CDP reports a native VLAN mismatch",
-      "The trunk always goes down immediately",
-      "STP turns itself off"
+      "The 802.1Q trunk drops immediately and stays down until the native VLANs on both ends match",
+      "STP turns itself off on both ends and stops sending BPDUs across that trunk link"
     ],
     "correct": 1,
     "explanation": "Native-VLAN frames are untagged. If one side assumes VLAN 1 and the other VLAN 99, untagged traffic crosses VLANs.",
@@ -1034,10 +1034,10 @@ window.QUIZ_BANK = [
   {
     "question": "Which command limits the VLANs allowed on a trunk?",
     "options": [
-      "switchport access vlan 10",
+      "switchport access vlan 10, the access VLAN only",
       "switchport trunk allowed vlan 10,20,30",
-      "vlan dot1q tag native",
-      "spanning-tree vlan 10"
+      "vlan dot1q tag native, tags the native VLAN",
+      "spanning-tree vlan 10, STP for that VLAN only"
     ],
     "correct": 1,
     "explanation": "By default a trunk allows 1-4094. Pruning the list reduces flooding and risk. Use allowed vlan add/remove to adjust.",
@@ -1046,10 +1046,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is an SVI (Switch Virtual Interface) on a Layer 3 switch?",
     "options": [
-      "A router-on-a-stick subinterface only",
+      "A router-on-a-stick subinterface on the router, using dot1Q, and not a Layer 3 endpoint created on the switch",
       "interface vlan X, an internal Layer 3 endpoint for that VLAN, used for inter-VLAN routing on the switch",
-      "A Port-channel",
-      "An SFP"
+      "A Port-channel that bundles several physical links and does not act as the Layer 3 gateway for the VLAN",
+      "An SFP fiber or copper module that only provides the physical medium for the switch port"
     ],
     "correct": 1,
     "explanation": "interface vlan 10 with an IP, plus ip routing, lets the switch route between VLANs without router-on-a-stick.",
@@ -1058,10 +1058,10 @@ window.QUIZ_BANK = [
   {
     "question": "With DHCP snooping, which ports should be trusted?",
     "options": [
-      "Every PC access port",
+      "Every PC access port, so those hosts are allowed to send DHCPOFFER and DHCPACK messages",
       "Ports toward legitimate DHCP servers and the uplinks/trunks to those servers",
-      "None; snooping does not use trust",
-      "Only PortFast ports"
+      "No ports at all; DHCP snooping does not classify interfaces as trusted or as untrusted",
+      "Only ports with PortFast, because PortFast automatically marks that port as trusted"
     ],
     "correct": 1,
     "explanation": "Enable ip dhcp snooping vlan X; on server/uplink ports set ip dhcp snooping trust. Untrusted ports drop fake DHCPOFFER/ACK.",
@@ -1070,10 +1070,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does Dynamic ARP Inspection (DAI) validate ARP against?",
     "options": [
-      "The OSPF table",
+      "The OSPF table, matching the ARP IP against the next hop",
       "The DHCP snooping binding table (IP-MAC-port-VLAN)",
-      "DNS",
-      "The native VLAN"
+      "DNS, resolving the hostname before the ARP is accepted",
+      "The native VLAN, only if the native VLAN matches on both ends"
     ],
     "correct": 1,
     "explanation": "DAI intercepts ARP on untrusted ports and checks IP/MAC against the snooping database. Spoofed ARP is dropped.",
@@ -1082,10 +1082,10 @@ window.QUIZ_BANK = [
   {
     "question": "In 802.1X, what role does the access switch play?",
     "options": [
-      "Supplicant",
+      "The access switch acts as the supplicant and starts EAPOL for the PC, instead of authenticating the port",
       "Authenticator, which relays EAPOL and sends RADIUS to the authentication server (e.g. ISE)",
-      "The RADIUS server itself",
-      "DHCP relay only"
+      "The switch is the RADIUS server itself, such as ISE, and checks credentials locally without relaying EAPOL",
+      "The switch does DHCP relay only, forwards Discover and Request, and never handles EAPOL or RADIUS"
     ],
     "correct": 1,
     "explanation": "The PC is the supplicant, the switch is the authenticator, and ISE/NPS is the authentication server. Until then the port may stay restricted.",
@@ -1094,10 +1094,10 @@ window.QUIZ_BANK = [
   {
     "question": "Which statement distinguishes VRRP from HSRP?",
     "options": [
-      "VRRP is IPv6-only",
+      "VRRP is IPv6-only and does not create an IPv4 virtual gateway, unlike Cisco proprietary HSRP",
       "VRRP is an IETF standard; HSRP is Cisco proprietary; both provide a virtual gateway",
-      "HSRP has no priority",
-      "VRRP does not elect a master"
+      "HSRP has no priority, so the active router is not elected by a configured value from 1 to 255",
+      "VRRP does not elect a master; every router in the group advertises and uses the virtual IP at once"
     ],
     "correct": 1,
     "explanation": "HSRP uses MAC 0000.0c07.acXX; VRRP uses 0000.5e00.01XX and may share the master's real IP as the virtual IP.",
@@ -1106,10 +1106,10 @@ window.QUIZ_BANK = [
   {
     "question": "How does an IPv6 host get an address with SLAAC?",
     "options": [
-      "Only with DHCPv4",
+      "Only with DHCPv4, which hands the host an IPv6 address, a prefix length, and a default gateway",
       "It receives an RA (ICMPv6) with a prefix, builds an Interface ID, and runs DAD via Neighbor Solicitation",
-      "The router assigns a TCP port",
-      "It uses classic ARP"
+      "The router assigns a TCP port to the host and stores that number as the Interface ID inside the advertisement",
+      "It uses classic ARP Ethernet broadcasts to learn the prefix and to confirm the address on the link"
     ],
     "correct": 1,
     "explanation": "The RA carries prefix, MTU, and lifetime. The host builds a GUA, runs DAD, and may still use DHCPv6 depending on the RA M/O flags.",
@@ -1118,10 +1118,10 @@ window.QUIZ_BANK = [
   {
     "question": "In EUI-64, what is done to a 48-bit MAC to form the Interface ID?",
     "options": [
-      "It is copied unchanged",
+      "The 48-bit MAC is copied unchanged, and that same block becomes the entire Interface ID",
       "FFFE is inserted in the middle and the U/L bit (7th bit of the first octet) is flipped",
-      "::1 is simply appended",
-      "Embedded IPv4 is used"
+      "Only the suffix ::1 is appended to the advertised prefix, and nothing is derived from the MAC address",
+      "Embedded IPv4 fills the last 32 bits, as in an IPv4-mapped address, and the MAC address is ignored"
     ],
     "correct": 1,
     "explanation": "00:1A:2B:3C:4D:5E becomes 021A:2BFF:FE3C:4D5E (U/L bit flipped). Many OSes prefer random privacy addresses.",
@@ -1130,10 +1130,10 @@ window.QUIZ_BANK = [
   {
     "question": "Which prefix identifies IPv6 Unique Local Addresses (ULA)?",
     "options": [
-      "2000::/3",
+      "2000::/3 (public global unicast)",
       "FC00::/7 (in practice fd00::/8)",
-      "FE80::/10",
-      "FF00::/8"
+      "FE80::/10 (link-local on the link)",
+      "FF00::/8 (IPv6 multicast prefix)"
     ],
     "correct": 1,
     "explanation": "ULA (RFC 4193) is the private analogue of RFC 1918. Global unicast is 2000::/3, link-local is FE80::/10, and multicast is FF00::/8.",
@@ -1142,10 +1142,10 @@ window.QUIZ_BANK = [
   {
     "question": "Why must every OSPF area connect to area 0?",
     "options": [
-      "Because area 0 has STP priority",
+      "Because area 0 is given the highest STP priority and is elected root of every other OSPF area",
       "To keep summarization loop-free; inter-area SPF always transits the backbone",
-      "Area 0 is the only area that sends Hellos",
-      "It is not required for NSSA"
+      "Area 0 is the only area that sends Hellos; the others form no adjacencies and exchange no LSAs",
+      "It is not required for NSSA, which stays off the backbone and needs no ABR or virtual link"
     ],
     "correct": 1,
     "explanation": "ABRs attach non-backbone areas to area 0. Virtual links exist to patch topologies that break this rule.",
@@ -1178,10 +1178,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does an NTP stratum 1 server mean?",
     "options": [
-      "It is 15 hops below UTC",
+      "It is 15 hops below UTC, near the edge of the NTP hierarchy and far from the reference clock",
       "It is attached to an authoritative time reference (GPS, atomic clock) and serves stratum 2 clients",
-      "It is a Windows client",
-      "It cannot authenticate NTP"
+      "It is a Windows client waiting for the time, with no GPS or atomic clock and no stratum 2 clients to serve",
+      "It cannot authenticate NTP: a stratum 1 server sends the time in the clear and refuses MD5 or SHA keys"
     ],
     "correct": 1,
     "explanation": "Stratum 0 is the reference (GPS/atomic). Stratum 1 syncs to stratum 0. Stratum 16 means unsynchronized.",
@@ -1190,10 +1190,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is a key difference between TACACS+ and RADIUS for CLI access?",
     "options": [
-      "RADIUS uses TCP 49 and separates authorization",
+      "RADIUS uses TCP 49 and separates per-command authorization; TACACS+ uses UDP and merges authentication with authorization",
       "TACACS+ uses TCP 49 and separates authentication, authorization, and accounting; RADIUS uses UDP and combines auth+authz",
-      "There is no difference",
-      "TACACS+ does not encrypt the password"
+      "There is no difference: both use UDP, encrypt only the password, and handle authentication and authorization in the same step",
+      "TACACS+ does not encrypt the password; the TCP 49 body stays in the clear and only RADIUS hides the user credential"
     ],
     "correct": 1,
     "explanation": "Cisco device administration prefers TACACS+ (per-command authorization). RADIUS is the standard for 802.1X/Wi-Fi/VPN.",
@@ -1202,10 +1202,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the core difference between traditional networking and controller-based (SDN) networking?",
     "options": [
-      "SDN eliminates every switch",
+      "SDN eliminates every switch: the controller forwards each packet by itself and the devices no longer keep a data plane of their own",
       "The control plane is logically centralized in a controller; devices are mostly data-plane, with northbound/southbound APIs",
-      "SDN does not use IP",
-      "The controller replaces cabling"
+      "SDN does not use IP: the controller programs only Layer 2 flows, and hosts no longer need addresses, routes, or gateways",
+      "The controller replaces the cabling: physical links disappear and the switches attach to one another only through the northbound API"
     ],
     "correct": 1,
     "explanation": "Southbound (NETCONF, OpenFlow, gNMI) programs the nodes; northbound (REST) exposes intent to applications. Catalyst Center is the campus example in CCNA.",
@@ -1214,10 +1214,10 @@ window.QUIZ_BANK = [
   {
     "question": "In a spine-leaf fabric, how are switches connected?",
     "options": [
-      "In a classic STP ring",
+      "In a classic STP ring, where each switch blocks one port to cut the Layer 2 loop across the fabric",
       "Every leaf connects to every spine; leafs do not connect to each other; ECMP in the underlay",
-      "Only one uplink per leaf",
-      "Spines connect to servers"
+      "Only one uplink per leaf, tied to a single spine, with no ECMP and no parallel paths in the underlay",
+      "Spines connect to the servers, and the leafs only join the spines, with no ports facing the hosts"
     ],
     "correct": 1,
     "explanation": "Any leaf reaches any other in two hops with no underlay L2 loops (L3). Servers and APs attach to leafs.",
@@ -1226,10 +1226,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the difference between Type 1 and Type 2 hypervisors?",
     "options": [
-      "Type 1 does not exist",
+      "A Type 1 hypervisor does not exist in the classification; only hosted Type 2, such as VirtualBox, runs on a host operating system",
       "Type 1 (bare-metal, e.g. ESXi, Hyper-V, KVM) runs on hardware; Type 2 (hosted, e.g. VirtualBox) runs on a host OS",
-      "Type 2 is always faster in the datacenter",
-      "Type 1 only virtualizes networks"
+      "Hosted Type 2, such as VirtualBox on a host OS, is always faster in the datacenter than bare-metal Type 1 such as ESXi or KVM",
+      "Bare-metal Type 1, such as ESXi, Hyper-V, or KVM, only virtualizes networks and does not run server virtual machines on hardware"
     ],
     "correct": 1,
     "explanation": "Type 1 is the datacenter/NFV standard (CSR, CAT8000v, ASAv). Type 2 is for laptop labs.",
@@ -1238,10 +1238,10 @@ window.QUIZ_BANK = [
   {
     "question": "Which DSCP is the Expedited Forwarding (EF) PHB, typical for voice?",
     "options": [
-      "CS0 / 0",
+      "CS0 / 0 (000000)",
       "EF / 46 (101110)",
-      "AF41 / 34",
-      "CS6 / 48"
+      "AF41 / 34 (100010)",
+      "CS6 / 48 (110000)"
     ],
     "correct": 1,
     "explanation": "EF (DSCP 46) asks for low latency and jitter: LLQ on the WAN. AF is four-class assurance; CS6/CS7 are network control.",
@@ -1250,10 +1250,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the difference between policing and shaping in QoS?",
     "options": [
-      "They are synonyms",
+      "Policing and shaping are synonyms in QoS: both drop excess above the rate at once, and neither one queues bursts",
       "Policing drops or re-marks traffic above the rate; shaping queues the excess to smooth bursts, adding delay",
-      "Shaping exists only in STP",
-      "Policing increases bandwidth"
+      "Shaping exists only in Spanning Tree, where it delays BPDUs above the rate; policing does not apply to WAN output queues",
+      "Policing increases the available bandwidth by re-marking traffic above the rate, instead of dropping it or delaying it"
     ],
     "correct": 1,
     "explanation": "At the WAN edge, shaping avoids drops in the ISP. Policing protects the core but may drop. Both use a token bucket.",
@@ -1262,10 +1262,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is a CAM (MAC flooding) overflow attack and how is it mitigated?",
     "options": [
-      "DNS poisoning",
+      "Poisoning the DNS cache with fake answers to misdirect hostnames; the usual mitigation is to validate those answers with DNSSEC",
       "Filling the MAC table with fake addresses so the switch floods unicast as broadcast; mitigate with port-security",
-      "Disabling OSPF",
-      "Using NAT"
+      "Disabling the OSPF process on the switch to flush the MAC table and stop unicast from being forwarded as broadcast",
+      "Using source NAT on the VLAN to translate the fake MAC addresses and stop the switch CAM table from filling up"
     ],
     "correct": 1,
     "explanation": "Tools such as macof saturate TCAM. The switch then floods unicast frames out every port in the VLAN. Port-security limits the abuse.",
@@ -1287,10 +1287,10 @@ window.QUIZ_BANK = [
   {
     "question": "Look at this show ip ospf neighbor. What does 2WAY/DROTHER for neighbor 4.4.4.4 mean?",
     "options": [
-      "The FULL adjacency failed and the link is down",
+      "The FULL adjacency to 4.4.4.4 failed and GigabitEthernet0/0 is down, because 2WAY means the neighbor is unreachable",
       "On multiaccess Ethernet, DROTHER neighbors stay 2-Way with each other; FULL is only with DR/BDR",
-      "Hellos are mismatched and the session will reset",
-      "It is the normal state on point-to-point serial"
+      "Hellos are mismatched on the timer with 4.4.4.4, so the OSPF session will reset out of the 2WAY/DROTHER state",
+      "It is the normal state on a point-to-point serial link, where neighbors stay 2WAY/DROTHER instead of FULL with no DR"
     ],
     "correct": 1,
     "explanation": "On broadcast segments you go FULL only with the DR and BDR. Two DRTHERs remain 2-Way (they see hellos, they do not exchange the DD database). On serial, FULL/ - with no DR and priority 0.",
@@ -1313,10 +1313,10 @@ window.QUIZ_BANK = [
   {
     "question": "Look at this show etherchannel summary. What can you conclude about Po1?",
     "options": [
-      "The channel is down (flag D) and uses PAgP",
+      "Po1 is down (flag D) and the Protocol column shows PAgP, not LACP",
       "It is an in-use L2 EtherChannel (SU), LACP, with 2 bundled (P) ports",
-      "Only one port is active; the other is Hot-standby",
-      "It is an L3 port-channel (flag R) with no protocol"
+      "Only Gi1/0/1 is bundled (P); Gi1/0/2 is Hot-standby (H) and does not forward",
+      "It is an L3 port-channel (flag R) and Protocol is empty, with no LACP or PAgP"
     ],
     "correct": 1,
     "explanation": "Po1(SU): S = Layer 2, U = in use. Protocol LACP. Gi1/0/1(P) and Gi1/0/2(P) are bundled. PAgP would show as PAgP in the Protocol column.",
@@ -1339,10 +1339,10 @@ window.QUIZ_BANK = [
   {
     "question": "Look at this show spanning-tree vlan 10. What role does this switch have, and what does Gi1/0/24 P2p Edge mean?",
     "options": [
-      "It is root secondary; Edge means blocking",
+      "This switch is root secondary; P2p Edge on Gi1/0/24 means a blocking port in RSTP",
       "This switch is the root; P2p Edge is an edge (PortFast) port in forwarding",
-      "It does not run STP; Edge is the native trunk",
-      "It is backup root; Edge means loop-inconsistent"
+      "This switch does not run STP on VLAN 10; P2p Edge on Gi1/0/24 is only the native trunk",
+      "This switch is backup root; P2p Edge on Gi1/0/24 means the loop-inconsistent state"
     ],
     "correct": 1,
     "explanation": "'This bridge is the root' and Root ID = Bridge ID. Priority 24586 = 24576 + sys-id-ext 10. Gi1/0/24 Type P2p Edge = RSTP edge (PortFast) designated and FWD.",
@@ -1352,10 +1352,10 @@ window.QUIZ_BANK = [
   {
     "question": "Look at this show ip interface brief. What is the status of GigabitEthernet0/1 and of GigabitEthernet0/2?",
     "options": [
-      "Both up/up",
+      "GigabitEthernet0/1 and GigabitEthernet0/2 are both up/up, with line and protocol up just like Gi0/0",
       "Gi0/1 administratively down/down (shutdown); Gi0/2 up/down (far-end L1/L2 missing)",
-      "Gi0/1 up/down; Gi0/2 shutdown",
-      "Both administratively down"
+      "Gi0/1 is up/down from missing far-end L1/L2; Gi0/2 is administratively down/down because of shutdown",
+      "Gi0/1 and Gi0/2 are both administratively down/down, disabled by shutdown"
     ],
     "correct": 1,
     "explanation": "administratively down = shutdown command. up/down = interface enabled but line protocol down (cable, clock, keepalives, line protocol). Loopback0 and Gi0/0 are up/up.",
@@ -1365,10 +1365,10 @@ window.QUIZ_BANK = [
   {
     "question": "Look at this show access-lists. Host 10.1.1.50 opens HTTPS to 8.8.8.8. What happens?",
     "options": [
-      "It is permitted by ACE 10 (SSH)",
+      "It is permitted by ACE 10, matching HTTPS to 8.8.8.8 via permit tcp eq 22",
       "It is denied by ACE 30 (deny tcp eq 443) and hits that line",
-      "It is permitted by ACE 40 before the deny statements",
-      "The ACL ignores HTTPS because it has no UDP"
+      "Permitted by ACE 40 (permit ip any any), before the HTTP and HTTPS denies",
+      "The ACL ignores this HTTPS to 8.8.8.8 because BLOCK_WEB has no UDP ACE"
     ],
     "correct": 1,
     "explanation": "ACEs are evaluated top-down. 10 only permits SSH to 10.9.9.9. 20 denies HTTP, 30 denies HTTPS to any — matching 10.1.1.50→8.8.8.8:443. ACE 40 permit ip any any is never reached for this flow. An implicit deny exists at the end, but 30 already decides.",
@@ -1378,10 +1378,10 @@ window.QUIZ_BANK = [
   {
     "question": "Look at this show standby brief. What is the HSRP virtual IP and this router's state?",
     "options": [
-      "10.1.1.3, Standby",
+      "10.1.1.3, Standby, no preempt (lower Pri)",
       "10.1.1.1, Active with preempt (Pri 110)",
-      "10.1.1.1, Listen",
-      "local, Init"
+      "10.1.1.1, Listen, not Active and no preempt",
+      "local, Init, no HSRP virtual IP on group 1"
     ],
     "correct": 1,
     "explanation": "Virtual IP 10.1.1.1, State Active, P = preempt, priority 110. The Standby is 10.1.1.3. Hosts use 10.1.1.1 as their gateway.",
@@ -1391,10 +1391,10 @@ window.QUIZ_BANK = [
   {
     "question": "Look at this show ip dhcp snooping binding. What is this table used for on the switch?",
     "options": [
-      "The OSPF neighbor list",
+      "The OSPF neighbor list, with each peer's router ID, adjacency state, and local interface",
       "IP-MAC-VLAN-port bindings learned from DHCP; the database for DAI and IP Source Guard",
-      "The unknown-unicast CAM",
-      "NAT translations"
+      "The unknown-unicast CAM, which floods the frame when the destination MAC has not been learned",
+      "The router's NAT translations, which map inside-local addresses to inside-global addresses"
     ],
     "correct": 1,
     "explanation": "DHCP snooping records leases seen on untrusted ports (plus optional statics). DAI and IPSG consult this binding table to filter ARP and IP spoofing.",
@@ -1404,10 +1404,10 @@ window.QUIZ_BANK = [
   {
     "question": "On an 802.1Q trunk, what happens to native-VLAN traffic?",
     "options": [
-      "It is always dropped",
+      "It is always dropped, even if the native VLAN matches on both sides",
       "It crosses untagged, unlike the other allowed VLANs",
-      "It is forced to VLAN 1 even if native is 99",
-      "It is ISL-encapsulated"
+      "It is forced to VLAN 1 even if the native VLAN is set to 99",
+      "It is ISL-encapsulated, with a 26-byte header and an extra FCS"
     ],
     "correct": 1,
     "explanation": "Native-VLAN frames go untagged. Other allowed VLANs carry a 4-byte tag. Mismatched native VLANs at the two ends cause VLAN hopping/mis-mapping. Cisco recommends an unused native VLAN plus vlan dot1q tag native.",
@@ -1416,10 +1416,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is a voice VLAN (switchport voice vlan) for on an access port?",
     "options": [
-      "To replace 802.1X",
+      "To replace 802.1X on the access port, skipping RADIUS and the supplicant on the PC behind the phone",
       "To let the IP phone sit in a tagged VLAN (typically 802.1Q) while the PC uses the untagged access VLAN",
-      "To disable PoE",
-      "To build an EtherChannel with the phone"
+      "To disable PoE on the access port so the IP phone loses power and only the data frames remain on the link",
+      "To build an EtherChannel with the phone, bundling the voice and data ports into one logical channel"
     ],
     "correct": 1,
     "explanation": "The phone acts as a mini-switch: voice frames leave tagged on the voice VLAN; the PC on the same port uses the untagged access VLAN. CDP/LLDP can tell the phone its voice VLAN.",
@@ -1440,10 +1440,10 @@ window.QUIZ_BANK = [
   {
     "question": "Do two switches with PAgP auto on both ends form an EtherChannel?",
     "options": [
-      "Yes, auto/auto is the recommended pair",
+      "Yes, auto/auto is the recommended PAgP pair, because both ends wait and still negotiate the channel",
       "No: auto/auto does not start negotiation; one end needs desirable (or on/on with no protocol)",
-      "Yes, but only with LACP",
-      "No, because PAgP requires MST"
+      "Yes, but only with LACP: the auto/auto pair forms an EtherChannel only when LACP active is also on",
+      "No, because PAgP requires MST: without Multiple Spanning Tree, auto mode never starts channel negotiation"
     ],
     "correct": 1,
     "explanation": "PAgP: desirable initiates, auto waits. auto+auto = no channel. LACP: active initiates, passive waits; active+active or active+passive work, passive+passive does not. on/on forces a channel with no LACP/PAgP (dangerous if configs differ).",
@@ -1452,10 +1452,10 @@ window.QUIZ_BANK = [
   {
     "question": "Which LACP combination forms a channel?",
     "options": [
-      "passive + passive",
+      "passive + passive also brings the channel up",
       "active + active, or active + passive",
-      "auto + auto",
-      "desirable + auto in LACP only"
+      "auto + auto also brings the LACP channel up",
+      "desirable + auto forms a channel only in LACP"
     ],
     "correct": 1,
     "explanation": "LACP active sends PDUs; passive only replies. At least one end must be active. auto/desirable are PAgP modes, not LACP.",
@@ -1464,10 +1464,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does the OSPF command passive-interface GigabitEthernet0/0 do?",
     "options": [
-      "It shuts the interface at Layer 3",
+      "It shuts the interface at Layer 3, leaving it administratively down and unable to forward IP",
       "It advertises that interface's network but sends no hellos and forms no adjacency on it",
-      "It forces the router to be DR",
-      "It filters Type-5 LSAs"
+      "It forces this router to be the mandatory DR by setting the OSPF interface priority to the maximum",
+      "It filters Type-5 LSAs, removing external routes from the LSDB before the SPF calculation runs"
     ],
     "correct": 1,
     "explanation": "Useful on user LANs: the subnet appears in OSPF but a PC will not attempt an adjacency. passive-interface default plus no passive-interface on transit links is a common pattern.",
@@ -1476,10 +1476,10 @@ window.QUIZ_BANK = [
   {
     "question": "How do you originate a default route in OSPF from an ASBR that already has a default in the RIB?",
     "options": [
-      "ip route 0.0.0.0 0.0.0.0 null0 only",
+      "Only ip route 0.0.0.0 0.0.0.0 null0, with no default-information originate under the OSPF process",
       "default-information originate (and optionally always if the default is not in the RIB)",
-      "network 0.0.0.0 255.255.255.255 area 0",
-      "ip ospf priority 0"
+      "The command network 0.0.0.0 255.255.255.255 area 0, which advertises the 0.0.0.0/0 default into the area",
+      "The interface command ip ospf priority 0 on the ASBR, so the router starts originating the default"
     ],
     "correct": 1,
     "explanation": "default-information originate injects a Type-5 (or Type-7 in NSSA) LSA for 0.0.0.0/0 if a default exists in the RIB. The always keyword originates even without that route.",
@@ -1488,10 +1488,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the practical difference between SVI inter-VLAN routing and router-on-a-stick?",
     "options": [
-      "SVIs work only with IPv6",
+      "SVIs route between VLANs only with IPv6; on IPv4 the L3 switch cannot forward and needs router-on-a-stick",
       "SVI: the L3 switch routes on in-chassis SVIs; ROAS: an external router uses subinterfaces on a trunk",
-      "ROAS does not need 802.1Q",
-      "There is no forwarding difference"
+      "Router-on-a-stick separates VLANs on one physical interface with no 802.1Q trunk, tags, or subinterfaces",
+      "There is no practical forwarding difference: the SVI and router-on-a-stick use the same router and the same trunk"
     ],
     "correct": 1,
     "explanation": "SVI (interface vlan X) plus ip routing on an MLS is the modern campus design. ROAS uses an 802.1Q trunk to a router with encapsulation dot1Q subinterfaces. Both split broadcast domains; SVIs scale better.",
@@ -1500,10 +1500,10 @@ window.QUIZ_BANK = [
   {
     "question": "Where should a numbered standard ACL usually be placed?",
     "options": [
-      "As close to the source as possible, because it filters only the destination",
+      "As close to the source as possible, because a numbered standard ACL filters only destination IP",
       "As close to the destination as possible, because it filters only source IP",
-      "Always on the OSPF ASBR",
-      "Only on the NTP server"
+      "Always on the OSPF ASBR, no matter which source the numbered standard ACL is meant to filter",
+      "Only on the NTP server, so the standard ACL blocks clients that are not synced to NTP"
     ],
     "correct": 1,
     "explanation": "A standard ACL (1-99, 1300-1999) matches source only. Near the source it would cut traffic to other destinations too. Extended (100-199) filters source+destination+L4 and is placed near the source.",
@@ -1512,10 +1512,10 @@ window.QUIZ_BANK = [
   {
     "question": "Every IPv4 ACL in IOS ends with which implicit rule?",
     "options": [
-      "permit ip any any",
+      "permit ip any any (implicit permit)",
       "deny ip any any (implicit deny)",
-      "permit icmp any any",
-      "deny tcp any any eq 80"
+      "permit icmp any any (implicit permit)",
+      "deny tcp any any eq 80 (HTTP only)"
     ],
     "correct": 1,
     "explanation": "If no ACE matches, the packet is dropped. That is why a 'block a little' ACL needs permit ip any any at the end. An empty ACL applied to an interface can block everything.",
@@ -1524,10 +1524,10 @@ window.QUIZ_BANK = [
   {
     "question": "In Cisco NAT, which interfaces are marked ip nat inside and ip nat outside?",
     "options": [
-      "Inside = public Internet; outside = LAN",
+      "Inside marks the public Internet; outside marks the LAN whose private addresses are translated",
       "Inside = the internal domain (addresses to translate); outside = the public/external side",
-      "Both keywords are aliases for shutdown",
-      "They are used only with IPv6"
+      "The keywords ip nat inside and ip nat outside are only aliases of the shutdown command",
+      "ip nat inside and ip nat outside apply only to IPv6 interfaces and never to IPv4"
     ],
     "correct": 1,
     "explanation": "Inside local/global and outside local/global come from these marks. Typical PAT: LAN = inside, WAN = outside, ip nat inside source list ... interface <WAN> overload.",
@@ -1536,10 +1536,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does 1:1 static NAT (ip nat inside source static) do?",
     "options": [
-      "Many privates share one public IP via ports",
+      "Many private addresses share one public IP by multiplexing transport ports",
       "It maps a fixed inside local to a fixed inside global, permanently",
-      "It translates MAC only",
-      "It replaces ARP"
+      "It translates only the source MAC and leaves the inside-local IPv4 address intact",
+      "It replaces ARP on the LAN and stops resolving IP addresses into MAC addresses"
     ],
     "correct": 1,
     "explanation": "Static NAT is bidirectional and predictable — typical for publishing a server. PAT/overload multiplexes many internals onto one IP. A dynamic pool translates 1:1 from a set, with no guarantee of the same global.",
@@ -1548,10 +1548,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the difference among port-security violation modes protect, restrict, and shutdown?",
     "options": [
-      "They are identical",
+      "protect, restrict, and shutdown are identical modes: all three drop the frame silently and err-disable the port",
       "protect drops silently; restrict drops and increments counters/SNMP; shutdown err-disables the port",
-      "shutdown only logs and does not close the port",
-      "protect elects the STP root"
+      "shutdown only writes a syslog message for the violation and neither closes the port nor err-disables it",
+      "protect elects this switch as the STP root bridge whenever a MAC that exceeds the secure maximum appears"
     ],
     "correct": 1,
     "explanation": "The default is shutdown (err-disabled until shutdown/no shutdown or errdisable recovery). restrict notifies; protect is the quietest and the worst for troubleshooting.",
@@ -1560,10 +1560,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does errdisable recovery cause psecure-violation do?",
     "options": [
-      "It disables port-security forever",
+      "It disables port-security forever on every access port and blocks any new MAC-address violations",
       "It automatically re-enables ports err-disabled by port-security after an interval (default 300 s)",
-      "It turns the port into a trunk",
-      "It clears the NAT table"
+      "It converts the port that went err-disabled into an 802.1Q trunk and then allows every active VLAN",
+      "It clears the router's NAT translation table and deletes the static inside-local to global mappings"
     ],
     "correct": 1,
     "explanation": "Useful so PCs are not left down forever after a MAC flap. The timer is set with errdisable recovery interval. The cause must be listed for recovery.",
@@ -1572,10 +1572,10 @@ window.QUIZ_BANK = [
   {
     "question": "In 802.1X, what are the three classic roles?",
     "options": [
-      "Root, designated, blocked",
+      "Root, designated, and blocked are the three classic 802.1X roles on the access port",
       "Supplicant (client), authenticator (switch/AP), authentication server (RADIUS/ISE)",
-      "DR, BDR, DROTHER",
-      "ITR, ETR, MS"
+      "DR, BDR, and DROTHER are the three classic 802.1X roles among the OSPF routers",
+      "ITR, ETR, and MS are the three classic 802.1X roles in the LISP control plane"
     ],
     "correct": 1,
     "explanation": "The switch is the EAP authenticator (EAPoL on the port, RADIUS toward the backend). The PC is the supplicant. ISE/NPS is the server. MAB covers devices with no 802.1X client.",
@@ -1596,10 +1596,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is a key difference between an autonomous AP and a lightweight AP?",
     "options": [
-      "Autonomous APs have no radio",
+      "An autonomous AP has no Wi-Fi radio and only forwards wired Ethernet frames on the LAN",
       "Autonomous keeps SSID/config on the AP itself; lightweight gets config from a WLC via CAPWAP",
-      "Lightweight cannot use 802.1X",
-      "Autonomous always requires DNA Center"
+      "A lightweight AP cannot use 802.1X or RADIUS to authenticate its wireless clients",
+      "An autonomous AP always requires DNA Center to store the SSID and the rest of its configuration"
     ],
     "correct": 1,
     "explanation": "Autonomous IOS APs are managed one by one. Lightweight (CAPWAP) scales with a WLC: SSID, RF, roaming, and AAA are centralized. Mobility Express/embedded WLC is a middle ground.",
@@ -1620,10 +1620,10 @@ window.QUIZ_BANK = [
   {
     "question": "In IPv6 NDP, what are Neighbor Solicitation and Neighbor Advertisement for?",
     "options": [
-      "They replace OSPF Hello",
+      "They replace the OSPFv3 Hello and keep neighbor adjacencies up on the link",
       "They resolve IPv6→MAC (ARP equivalent) and detect duplicates (DAD)",
-      "They assign a GUA prefix by themselves with no RA",
-      "They encrypt link traffic"
+      "They assign the GUA prefix to the host alone, with no Router Advertisement",
+      "They encrypt all IPv6 link traffic with IPsec before the frame is sent"
     ],
     "correct": 1,
     "explanation": "NS (ICMPv6 type 135) asks who has an IPv6 address; NA (136) replies. DAD sends NS for the address being claimed. RS/RA (133/134) support SLAAC and the default gateway.",
@@ -1632,10 +1632,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does SNMPv3 authPriv provide compared with SNMPv2c?",
     "options": [
-      "Cleartext community strings, like v2c",
+      "Only cleartext community strings, as in SNMPv2c, with no user or cipher",
       "Authentication and encryption of messages (user + priv)",
-      "It replaces NTP",
-      "Traps only, never GET"
+      "It replaces NTP and synchronizes the clock on each managed device",
+      "It only sends traps and never answers GET, GET-NEXT, or SET"
     ],
     "correct": 1,
     "explanation": "v2c uses a community (effectively noAuthNoPriv). v3: noAuthNoPriv, authNoPriv (MD5/SHA), and authPriv (typically AES). Prefer authPriv and tight views. Informs (v2/v3) are ACKed; traps are not.",
@@ -1644,10 +1644,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the difference between an SNMP trap and an SNMP inform?",
     "options": [
-      "Traps use TCP; informs always use UDP",
+      "A trap uses TCP on port 162; an inform always uses UDP on that port and never TCP",
       "A trap is unacknowledged; an inform expects an ACK and is retried on failure",
-      "Informs exist only in SNMPv1",
-      "Traps encrypt and informs do not"
+      "Informs exist only in SNMPv1 and were removed in both SNMPv2c and SNMPv3",
+      "A trap encrypts the SNMP PDU with priv, while an inform is always sent in the clear"
     ],
     "correct": 1,
     "explanation": "Both are agent-to-NMS notifications. Inform (v2c/v3) is reliable; a trap can be lost. The cost is more load on the agent and the NMS.",
@@ -1668,10 +1668,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the difference between DSCP and CoS in QoS marking?",
     "options": [
-      "They are the same 3-bit field",
+      "DSCP and CoS are the same 3-bit field, copied unchanged from the 802.1Q tag into the IP header",
       "CoS is 3 bits in the 802.1Q tag (L2); DSCP is 6 bits in IP (L3) and survives routers",
-      "DSCP exists only in ISL frames",
-      "CoS replaces IP precedence in IPv6 only"
+      "DSCP exists only inside ISL frames and disappears when the trunk is changed to 802.1Q",
+      "CoS replaces IP precedence only on IPv6 and does not set the PCP field of the 802.1Q tag"
     ],
     "correct": 1,
     "explanation": "CoS (PCP) is lost when the 802.1Q tag is stripped. DSCP (e.g. EF 46, AF41) lives in the IP header. Trust boundary: classify/mark closest to the source and trust DSCP in the core.",
@@ -1680,10 +1680,10 @@ window.QUIZ_BANK = [
   {
     "question": "RESTCONF on IOS-XE typically uses which transport and base URI?",
     "options": [
-      "Telnet and /soap",
+      "Telnet (TCP 23) and /soap, as if RESTCONF were a SOAP web service",
       "HTTPS (TCP 443) and /restconf (YANG in JSON or XML)",
-      "TFTP and /rpc",
-      "SNMP and /mib"
+      "TFTP (UDP 69) and /rpc, treating RESTCONF as an XML file-copy call",
+      "SNMP (UDP 161) and /mib, reading OIDs instead of a YANG datastore"
     ],
     "correct": 1,
     "explanation": "RESTCONF maps HTTP GET/POST/PUT/PATCH/DELETE onto YANG datastores. NETCONF uses SSH 830 and XML RPC. AAA and certificates protect both.",
@@ -1692,10 +1692,10 @@ window.QUIZ_BANK = [
   {
     "question": "In a controller-based (SDN) network, what does the northbound API connect?",
     "options": [
-      "The controller to devices via OpenFlow/NETCONF only",
+      "The controller to devices via OpenFlow or NETCONF only (southbound)",
       "Applications/orchestration to the controller (intent requests)",
-      "Two spines to each other",
-      "Only CAPWAP from AP to WLC"
+      "Two spines linked to each other, as a fabric link and not an API",
+      "Only the CAPWAP tunnel from the AP to the WLC, for wireless access"
     ],
     "correct": 1,
     "explanation": "Northbound: apps → controller (REST). Southbound: controller → network devices (NETCONF, RESTCONF, OpenFlow, CLI/SSH). The data plane remains on the switches.",
@@ -1716,10 +1716,10 @@ window.QUIZ_BANK = [
   {
     "question": "A VRRP trait that distinguishes it from classic HSRP is:",
     "options": [
-      "Only Cisco implements it",
+      "Only Cisco implements it, treating VRRP as a proprietary protocol just like classic HSRP",
       "The VIP can be a router's real interface IP (master owns that address); it is an IETF standard",
-      "It never elects a master",
-      "It always uses a GLBP AVG"
+      "It never elects a master; every router in the VRRP group forwards at the same time, with no election",
+      "It always uses the GLBP AVG role to share host traffic across several virtual forwarders"
     ],
     "correct": 1,
     "explanation": "HSRP is Cisco proprietary and the VIP is always an extra IP. VRRP (RFC) lets the master use its interface IP as the VIP. GLBP (Cisco) load-shares with multiple AVFs.",
@@ -1728,10 +1728,10 @@ window.QUIZ_BANK = [
   {
     "question": "In GLBP, what is the AVG versus the AVF?",
     "options": [
-      "AVG only does NAT; AVF only does STP",
+      "The AVG only performs source NAT; the AVF only calculates the switch spanning tree",
       "AVG answers ARP for the VIP and assigns virtual MACs; AVFs forward the hosts' traffic",
-      "AVF elects the STP root; AVG is STP backup",
-      "There is no difference"
+      "The AVF elects the STP root bridge; the AVG remains only as that domain's STP backup role",
+      "There is no role difference: AVG and AVF are identical and both forward the VIP"
     ],
     "correct": 1,
     "explanation": "One Active Virtual Gateway owns the VIP and hands out virtual MACs (round-robin/weighted). Several Active Virtual Forwarders actually forward. That yields per-host load balancing, not only a passive standby.",
@@ -1740,10 +1740,10 @@ window.QUIZ_BANK = [
   {
     "question": "How does Cisco IOS choose between two OSPF routes for the same prefix at the same cost?",
     "options": [
-      "It uses only the oldest one",
+      "It uses only the oldest route in the table and ignores the second equal-cost OSPF path",
       "It installs both and equal-cost load-balances (CEF), up to the maximum-paths limit",
-      "It always prefers the higher Router ID",
-      "It drops them and uses RIP"
+      "It always prefers the route advertised by the numerically higher OSPF Router ID",
+      "It drops both equal-cost OSPF routes and forwards that prefix using RIP instead"
     ],
     "correct": 1,
     "explanation": "ECMP: several RIB/FIB entries for the same prefix/cost. maximum-paths caps the count. If costs differ, only the lower-cost route remains. AD only breaks ties across different protocols.",
@@ -1764,10 +1764,10 @@ window.QUIZ_BANK = [
   {
     "question": "If the RIB has 10.1.0.0/16 via OSPF and 10.1.1.0/24 via static, which route does a packet to 10.1.1.50 use?",
     "options": [
-      "The OSPF /16, because AD 110 is irrelevant here",
+      "The OSPF /16, because AD 110 is irrelevant next to the static route",
       "The static /24, by longest-match (more specific prefix)",
-      "Load-balance across both",
-      "Drop, route conflict"
+      "It load-balances the OSPF /16 and the static /24 for that packet",
+      "It drops the packet, as a conflict between the OSPF /16 and the static"
     ],
     "correct": 1,
     "explanation": "Longest prefix match is the first forwarding criterion. AD and metric apply only among routes for the same prefix. The /24 wins over the /16 for 10.1.1.50.",
@@ -1777,9 +1777,9 @@ window.QUIZ_BANK = [
     "question": "What is a recursive static route in IOS?",
     "options": [
       "A route whose next-hop IP the router must still resolve via another RIB route (it does not point at an interface)",
-      "A route that deletes itself",
-      "A default originated in OSPF",
-      "A NAT route"
+      "A static route that deletes itself from the RIB as soon as an inactivity timer on the router expires",
+      "A 0.0.0.0/0 default route originated by OSPF itself through the default-information originate command",
+      "A route installed by NAT in order to translate the source IP address of every traffic flow that crosses the router"
     ],
     "correct": 0,
     "explanation": "ip route 10.0.0.0 255.0.0.0 192.0.2.1 requires 192.0.2.1 to be reachable (typically connected or IGP). Fully specified: ip route ... 192.0.2.1 GigabitEthernet0/0 also sets the outgoing interface.",
@@ -1788,10 +1788,10 @@ window.QUIZ_BANK = [
   {
     "question": "WPA3-Personal uses which mechanism instead of the classic WPA2 PSK handshake?",
     "options": [
-      "40-bit WEP",
+      "40-bit WEP with RC4, the shared-key cipher mechanism that predates WPA entirely",
       "SAE (Simultaneous Authentication of Equals), resistant to offline dictionary attacks",
-      "Open System only",
-      "Mandatory TKIP"
+      "Open System authentication only, with no passphrase during the client 802.11 association",
+      "Mandatory TKIP with Michael, the legacy WPA cipher that WPA3-Personal still requires"
     ],
     "correct": 1,
     "explanation": "SAE (Dragonfly) performs a password handshake without exposing a hash that can be attacked offline like the 4-way PSK. WPA3-Enterprise has an optional 192-bit suite. WPA2-Enterprise remains 802.1X/EAP.",
@@ -1800,10 +1800,10 @@ window.QUIZ_BANK = [
   {
     "question": "How do you distinguish the data, control, and management planes on a router?",
     "options": [
-      "They are the same CPU queue",
+      "They are the same CPU queue: the data, control, and management planes share one processing path on the router",
       "Data: packet forwarding (CEF/TCAM); control: protocols (OSPF/BGP/ARP); management: SSH/SNMP/NETCONF",
-      "The control plane exists only on L2 switches",
-      "The management plane is EtherChannel"
+      "The control plane exists only on Layer 2 switches; a router does not run OSPF, BGP, or ARP",
+      "The management plane is EtherChannel, which bundles interfaces to carry SSH management traffic"
     ],
     "correct": 1,
     "explanation": "CoPP protects the control plane. Out-of-band (mgmt VRF) isolates management. The data plane should keep forwarding even if SSH fails. Mixing the planes is a classic design mistake.",
@@ -1812,10 +1812,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is EtherChannel hashing (for example src-dst-ip) for?",
     "options": [
-      "Electing the OSPF DR",
+      "Electing the OSPF DR and BDR among neighboring routers that share the same segment",
       "Choosing which bundle member each flow uses, while keeping per-flow packet order",
-      "Replacing STP on the bundle",
-      "Translating NAT"
+      "Replacing STP on the bundle completely, so loops disappear without any spanning tree",
+      "Translating NAT by rewriting the source IP address of each flow that hits the same hash"
     ],
     "correct": 1,
     "explanation": "A flow (same hash) stays on one port so TCP is not reordered. Without IP/port diversity, a single member can saturate. L3/L4 hashing spreads better than source-MAC alone.",
@@ -1824,10 +1824,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the difference between Root Guard and BPDU Guard?",
     "options": [
-      "There is no difference",
+      "There is no operational difference at all: Root Guard and BPDU Guard treat every BPDU the same and shut the same access port",
       "BPDU Guard err-disables an edge port if any BPDU is received; Root Guard stops that port becoming root port (superior BPDU)",
-      "Root Guard works only with LACP",
-      "BPDU Guard elects the root"
+      "Root Guard works only with active LACP, because it depends on the EtherChannel bundle to see BPDUs and block the port",
+      "BPDU Guard elects the root bridge by accepting the superior BPDU and promoting that access port to the domain root port"
     ],
     "correct": 1,
     "explanation": "BPDU Guard: access/PortFast — an unauthorized switch shuts the port. Root Guard: edge-facing uplinks — superior BPDUs are ignored and the port goes root-inconsistent, preserving the designated root.",
@@ -1836,10 +1836,10 @@ window.QUIZ_BANK = [
   {
     "question": "How does Ansible mainly apply playbooks to Cisco devices?",
     "options": [
-      "A permanent agent on every IOS device",
+      "A permanent agent on every IOS device that pulls the playbook locally without SSH",
       "Agentless over SSH/NETCONF from a control node, with inventory and ios_* modules",
-      "SNMP SET only",
-      "Telnet only with no inventory"
+      "SNMP SET only from the control node, with no SSH, NETCONF, or ios_* modules",
+      "Telnet only with no inventory, no ios_* modules, and no SSH or NETCONF session"
     ],
     "correct": 1,
     "explanation": "Ansible installs no agent on IOS. Inventory lists hosts; modules (ios_config, ios_command, ios_facts) use SSH. Classic Puppet/Chef use an agent. YAML describes desired state.",
@@ -1848,10 +1848,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is authenticated NTP (ntp authenticate / ntp trusted-key) for?",
     "options": [
-      "To raise stratum to 16",
+      "To raise stratum to 16 on purpose, leaving the router unsynchronized and ignoring every valid NTP server",
       "To ensure the router accepts time only from servers with a valid symmetric key, avoiding a fake clock",
-      "To replace DNS",
-      "To encrypt all user traffic"
+      "To replace DNS, translating host names into IP addresses with the same symmetric NTP key",
+      "To encrypt all user traffic crossing the router, using the NTP key as an IPsec pre-shared secret"
     ],
     "correct": 1,
     "explanation": "Fake NTP can break certificates, logs, and Kerberos. Symmetric keys (or the rare NTPv4 Autokey) authenticate the server. Stratum 16 = unsynchronized. Prefer internal stratum 1/2 sources.",
@@ -1860,10 +1860,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the fundamental difference between OSPFv2 and OSPFv3?",
     "options": [
-      "OSPFv3 only runs on L2 switches",
+      "OSPFv3 only runs on L2 switches, with no routing process and no support on IPv6 routers",
       "OSPFv2 routes IPv4; OSPFv3 was designed for IPv6 (and can do IPv4 AF on modern platforms)",
-      "OSPFv3 uses TCP instead of IP",
-      "There is no protocol difference at all"
+      "OSPFv3 uses TCP instead of IP protocol 89, dropping multicast hellos for its adjacencies",
+      "There is no protocol difference at all: both versions share the same LSAs, addresses, and network command"
     ],
     "correct": 1,
     "explanation": "OSPFv2 is for IPv4. OSPFv3 (RFC 5340) carries LSAs for IPv6; on IOS-XE, Address Families can also carry IPv4 in an OSPFv3 process.",
@@ -1872,10 +1872,10 @@ window.QUIZ_BANK = [
   {
     "question": "In OSPFv3, how is adjacency enabled differently from classic OSPFv2 IPv4 “network” statements?",
     "options": [
-      "Only via loopback 127.0.0.1",
+      "Only via loopback 127.0.0.1, without enabling the process on IPv6 interfaces or setting a Router ID",
       "Per-interface activation (ipv6 ospf / ospfv3) plus a Router ID; not the same IPv4 network mask command style",
-      "Only via multiprotocol BGP",
-      "Only via SNMP"
+      "Only via multiprotocol BGP, which advertises the IPv6 prefixes and forms the OSPF adjacency instead of hellos",
+      "Only via SNMP traps that discover neighbors and replace ipv6 ospf activation plus the Router ID"
     ],
     "correct": 1,
     "explanation": "OSPFv3 is enabled on IPv6 interfaces under an OSPFv3 process. A 32-bit Router ID is still required and is often set manually when no IPv4 interface exists.",
@@ -1896,10 +1896,10 @@ window.QUIZ_BANK = [
   {
     "question": "`show ip interface brief` shows Serial0/0/0 as administratively down / down. What is typically missing?",
     "options": [
-      "Only configure BGP",
+      "Only configure BGP to the neighbor, since administratively down means the BGP session has not opened",
       "The interface is shut down — need `no shutdown` (plus IP/encapsulation if required)",
-      "The console cable is reversed",
-      "NTP is out of sync"
+      "The console cable is reversed, which keeps Serial0/0/0 shut until the rollover cable is swapped",
+      "NTP is out of sync, and the wrong clock keeps the serial line in administratively down"
     ],
     "correct": 1,
     "explanation": "administratively down means the interface is in shutdown. `no shutdown` moves it toward up/down or up/up depending on line protocol.",
@@ -1909,10 +1909,10 @@ window.QUIZ_BANK = [
   {
     "question": "In `show etherchannel summary`, a port shows as `(I)` independent. What does that mean?",
     "options": [
-      "The EtherChannel is perfect on every member",
+      "The EtherChannel is perfect on every member: (I) confirms that port joined the bundle",
       "That port is not in the bundle (LACP/PAgP mismatch or bundling failed)",
-      "Native VLAN is 1 everywhere",
-      "STP is disabled"
+      "Native VLAN is 1 everywhere, and flag (I) only records that native VLAN on the trunk",
+      "STP is disabled on that port, and (I) means independent of spanning tree, not of the bundle"
     ],
     "correct": 1,
     "explanation": "Flags like (I) Independent mean the port did not join the port-channel — often LACP mode mismatch, VLAN, speed/duplex, or inconsistent member config.",
@@ -1936,9 +1936,9 @@ window.QUIZ_BANK = [
     "question": "In the CCNA 200-301 v1.1 blueprint, Generative AI and Predictive AI mainly fall under which knowledge domain?",
     "options": [
       "Automation and Programmability (and AI-assisted ops/management concepts)",
-      "Security Fundamentals only (15%)",
-      "IP Connectivity only (25%)",
-      "Network Access only (STP)"
+      "Security Fundamentals only (15%), where AI replaces AAA, firewalls, and access control",
+      "IP Connectivity only (25%), as a replacement for OSPF, EIGRP, and IPv4 routing",
+      "Network Access only (STP), limited to electing the root bridge with Predictive AI"
     ],
     "correct": 0,
     "explanation": "Cisco places AI/ML with Automation and Programmability (~10%). It does not replace OSPF/STP fundamentals.",
@@ -1947,10 +1947,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is a practical contrast between Generative AI and Predictive AI in network operations?",
     "options": [
-      "Generative AI works only offline; Predictive AI only in public cloud",
+      "Generative AI works only offline on the operator laptop; Predictive AI exists only in public cloud and never on campus",
       "Predictive AI estimates trends/anomalies from data; Generative AI creates new text/code/suggestions from prompts",
-      "They are absolute synonyms in the Cisco blueprint",
-      "Generative AI fully replaces the OSPF protocol"
+      "They are absolute synonyms in the Cisco blueprint: both only generate text and neither estimates trends from data",
+      "Generative AI fully replaces the OSPF protocol, computing IPv4 routes alone without LSAs, neighbors, or an area"
     ],
     "correct": 1,
     "explanation": "Predictive: forecasting and anomaly detection. Generative: creating content/configs/explanations. Neither replaces routing protocols.",
@@ -1959,10 +1959,10 @@ window.QUIZ_BANK = [
   {
     "question": "Machine Learning on a network assurance platform (e.g. telemetry analysis) is typically used to:",
     "options": [
-      "Replace spanning tree on the access layer",
-      "Automatically assign public IPv4 addresses to every host",
+      "Replace spanning tree on the access layer, electing the root bridge and blocking ports without BPDUs",
+      "Automatically assign public IPv4 addresses to every host, in place of DHCP and edge NAT",
       "Learn baseline patterns and flag deviations/anomalies earlier than static thresholds alone",
-      "Encrypt switch-to-switch frames with WEP"
+      "Encrypt switch-to-switch frames with WEP, using the assurance model as a shared key on the trunk"
     ],
     "correct": 2,
     "explanation": "ML builds baselines and spots anomalies (latency, drops, Wi-Fi clients). It does not change L2/L3 forwarding or replace STP/OSPF.",
@@ -1971,9 +1971,9 @@ window.QUIZ_BANK = [
   {
     "question": "On current CCNA, Terraform appears under Infrastructure as Code. How does it typically differ from Ansible at a conceptual exam level?",
     "options": [
-      "Terraform only manages Windows; Ansible only routers",
-      "Terraform uses only Telnet; Ansible uses only SNMP",
-      "Chef and Puppet are mandatory again and replace Terraform",
+      "Terraform only manages Windows servers with a local agent installed; Ansible only configures Cisco routers by CLI and ignores cloud and state",
+      "Terraform only changes devices over cleartext Telnet; Ansible only reads and writes SNMP MIBs, with no playbooks, SSH, or declarative API",
+      "Chef and Puppet are mandatory again on the current CCNA and replace Terraform as the only Infrastructure as Code tool",
       "Terraform declares desired infrastructure state (often cloud/API); Ansible is mainly procedural device configuration automation"
     ],
     "correct": 3,
@@ -1984,9 +1984,9 @@ window.QUIZ_BANK = [
     "question": "BPDU Filter on an access port — typical effect?",
     "options": [
       "Stops sending/receiving BPDUs on that port (behavior distinct from BPDU Guard)",
-      "Forces the port to always become root bridge",
-      "Automatically enables PortFast on every trunk",
-      "Permanently converts the native VLAN to VLAN 1"
+      "Forces that access port to always be the root bridge, ignoring other switches' Bridge ID",
+      "Automatically enables PortFast on every trunk port, including links between switches",
+      "Permanently converts that port's native VLAN to VLAN 1 even if another native VLAN is set"
     ],
     "correct": 0,
     "explanation": "BPDU Filter suppresses BPDUs on the interface. BPDU Guard err-disables on received BPDUs. Different features — a classic exam trap.",
@@ -1995,10 +1995,10 @@ window.QUIZ_BANK = [
   {
     "question": "Northbound API of an SDN controller: which authentication approach is common for modern REST (CCNA concept)?",
     "options": [
-      "Static ARP only on the client",
+      "Only a static ARP entry on the API client, with no token, key, or HTTPS toward the controller",
       "Tokens (e.g. Bearer/OAuth2) or API keys over HTTPS — not cleartext credentials over HTTP",
-      "Public SNMP community only",
-      "Shared WEP between controller and switch"
+      "Only the public SNMP community in cleartext, as the sole credential of the northbound REST API",
+      "Shared WEP with a static key between the SDN controller and the switch, instead of HTTPS tokens"
     ],
     "correct": 1,
     "explanation": "Controller REST APIs use HTTPS plus tokens/OAuth/API keys. SNMP communities and WEP are not the modern northbound auth model.",
@@ -2007,10 +2007,10 @@ window.QUIZ_BANK = [
   {
     "question": "Containers and VRFs on CCNA: which statement is most accurate?",
     "options": [
-      "A container is the same thing as a VRF in IOS",
-      "VRFs exist only on L2 switches with no IP",
+      "A Linux container on the host is the same object as an IOS VRF: both exist only to isolate that router's IP forwarding table",
+      "VRFs exist only on Layer 2 switches with no IP address and no routing table, so they never separate IP forwarding",
       "Containers isolate processes/apps on a host; VRFs isolate forwarding tables on a device — virtualization at different layers",
-      "Containers necessarily replace the BGP protocol"
+      "Containers necessarily replace the BGP protocol and advertise every route between routers themselves, with no BGP session"
     ],
     "correct": 2,
     "explanation": "Blueprint virtualization covers hosts (VMs/containers) and network (VRF). Different technologies; BGP remains independent.",
@@ -2019,9 +2019,9 @@ window.QUIZ_BANK = [
   {
     "question": "Cloud device management on CCNA typically means what for an admin?",
     "options": [
-      "Spanning tree is no longer needed on campus",
-      "Every switch becomes a Layer 1 hub",
-      "IPv6 is forbidden on the LAN",
+      "That spanning tree is no longer required anywhere on the campus, because the cloud console itself detects and removes every Layer 2 loop between switches",
+      "That every switch managed from the cloud then works only as a Layer 1 hub, with no frame switching, no VLANs, and no local routing at all",
+      "That IPv6 is forbidden on the entire access LAN as soon as the inventory, configuration, and telemetry of the switches and routers move to the cloud console",
       "Centralized management/monitoring off-site (needing connectivity and access control to the cloud console), without removing the need for correct local L2/L3"
     ],
     "correct": 3,
@@ -2031,10 +2031,10 @@ window.QUIZ_BANK = [
   {
     "question": "In STP, the root bridge is elected by:",
     "options": [
-      "Highest numeric priority",
+      "The highest numeric priority in the Bridge ID, not the MAC",
       "Lowest Bridge ID (priority + MAC)",
-      "Most VLANs",
-      "Highest uptime"
+      "The switch that has the largest number of active VLANs",
+      "The longest continuous uptime since the switch last booted"
     ],
     "correct": 1,
     "explanation": "STP elects the root by lowest Bridge ID: priority (default 32768) then MAC address. Lower priority wins over a higher MAC alone.",
@@ -2043,10 +2043,10 @@ window.QUIZ_BANK = [
   {
     "question": "PortFast on an access port is used to:",
     "options": [
-      "Disable STP",
+      "Disable STP on that access port and on the rest of the switch",
       "Move immediately to forwarding, avoiding PC delay",
-      "Elect the root",
-      "Negotiate a trunk"
+      "Elect that access port as the root bridge of the VLAN",
+      "Negotiate an 802.1Q trunk with the computer attached to the port"
     ],
     "correct": 1,
     "explanation": "PortFast moves an edge (access) port toward forwarding without waiting the full listening/learning timers—use with BPDU Guard.",
@@ -2056,9 +2056,9 @@ window.QUIZ_BANK = [
     "question": "A Cisco IPv4 default static route is:",
     "options": [
       "ip route 0.0.0.0 0.0.0.0 <next-hop or exit>",
-      "ip default-network 0.0.0.0",
-      "ip route 255.255.255.255",
-      "router default"
+      "ip default-network 0.0.0.0, with no next-hop or exit",
+      "ip route 255.255.255.255 used as the static default route",
+      "router default entered in IOS global configuration mode"
     ],
     "correct": 0,
     "explanation": "The default route 0.0.0.0/0 matches any destination with no better prefix; next-hop or exit-interface points to the gateway of last resort.",
@@ -2067,10 +2067,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does NAT overload (PAT) do?",
     "options": [
-      "One public IP per private host, 1:1",
+      "One exclusive public IP per private host, in a static 1:1 map",
       "Many privates share one or few public IPs via ports",
-      "Translates IPv6 only",
-      "Disables the firewall"
+      "Translates only IPv6 addresses, with no TCP or UDP port map",
+      "Disables the router firewall and stops filtering translated traffic"
     ],
     "correct": 1,
     "explanation": "PAT (NAT overload) maps many inside hosts to one (or few) public IP(s) by translating L4 ports. It is not 1:1 static NAT alone.",
@@ -2079,10 +2079,10 @@ window.QUIZ_BANK = [
   {
     "question": "An extended ACL filters based on:",
     "options": [
-      "Source IP only",
+      "Only the source IP address, as a standard ACL does",
       "Source, destination, protocol, and ports",
-      "MAC only",
-      "VLAN only"
+      "Only source and destination MAC addresses of the frame",
+      "Only the access VLAN number configured on the port"
     ],
     "correct": 1,
     "explanation": "Extended ACLs can match protocol, source/destination IP, and L4 ports—finer control than standard ACLs (source IP only).",
@@ -2092,9 +2092,9 @@ window.QUIZ_BANK = [
     "question": "What does HSRP give hosts?",
     "options": [
       "A virtual MAC/IP for a redundant gateway",
-      "Per-flow OSPF balancing",
-      "NAT translation",
-      "A DHCP server"
+      "Per-flow OSPF balancing across equal-cost paths",
+      "NAT translation from private addresses to public ones",
+      "A DHCP server handing out IP addresses to the hosts"
     ],
     "correct": 0,
     "explanation": "HSRP provides a virtual IP/MAC; one router is Active forwarding, another Standby ready to take over on failure.",
@@ -2103,10 +2103,10 @@ window.QUIZ_BANK = [
   {
     "question": "Dynamic ARP Inspection uses which database?",
     "options": [
-      "The OSPF table",
+      "The OSPF topology table built from the LSAs",
       "The DHCP snooping binding table",
-      "The VTP file",
-      "CAM aging"
+      "The VTP database file kept on the switch",
+      "The CAM aging timer for the VLAN MAC table"
     ],
     "correct": 1,
     "explanation": "Dynamic ARP Inspection validates ARP against the DHCP Snooping binding table to stop ARP spoofing on untrusted ports.",
@@ -2115,10 +2115,10 @@ window.QUIZ_BANK = [
   {
     "question": "BPDU Guard on a PortFast port:",
     "options": [
-      "Ignores BPDUs",
+      "Ignores incoming BPDUs and leaves the port forwarding",
       "Err-disables the port if a BPDU is received",
-      "Elects the root",
-      "Enables LACP"
+      "Elects the neighbor switch as the STP root bridge",
+      "Enables LACP so the port joins an EtherChannel bundle"
     ],
     "correct": 1,
     "explanation": "BPDU Guard err-disables a PortFast edge port if a BPDU appears—protecting against a rogue switch. It does not elect the STP root.",
@@ -2139,10 +2139,10 @@ window.QUIZ_BANK = [
   {
     "question": "In an outbound QoS policy, what does the `priority` command do for a voice class-map?",
     "options": [
-      "Guarantees proportional bandwidth to every class",
+      "Guarantees proportional bandwidth to every class in the policy, with no strict queue",
       "Creates a strict-priority (LLQ) queue for that class, usually policed",
-      "Disables WRED on the interface",
-      "Marks all packets DSCP EF regardless of class"
+      "Disables WRED early drop on that outbound interface for every traffic class",
+      "Marks every packet DSCP EF regardless of which class-map classified the traffic"
     ],
     "correct": 1,
     "explanation": "`priority` enables Low Latency Queuing (LLQ): a strict-priority queue for the class (typically voice), usually with a policer so it cannot starve the link.",
@@ -2163,10 +2163,10 @@ window.QUIZ_BANK = [
   {
     "question": "In EIGRP, a feasible successor is a backup route that:",
     "options": [
-      "Has the highest AD in the topology table",
+      "Has the highest advertised distance (AD) of all routes for that prefix stored in the EIGRP topology table, so that metric alone defines it",
       "Meets the feasibility condition (reported distance < feasible distance of the successor) and can replace the successor without a query",
-      "Must always be learned via OSPF",
-      "Is only used after BGP convergence"
+      "Must always be learned from OSPF neighbors first and only then redistributed into the EIGRP process before it can become the backup route",
+      "Is installed and used only after BGP has finished converging, once the external eBGP path is already stable in the IP routing table"
     ],
     "correct": 1,
     "explanation": "Feasible successors satisfy RD < FD of the current successor, so they are loop-free backups and can take over immediately without DUAL queries.",
@@ -2175,10 +2175,10 @@ window.QUIZ_BANK = [
   {
     "question": "Interface status `Administratively down / down` most often means:",
     "options": [
-      "Cable unplugged only",
+      "Only the network cable is unplugged and the line protocol is down",
       "The interface was shut down with the `shutdown` command",
-      "STP blocked the port as alternate",
-      "ACL denied all traffic"
+      "STP blocked the port in the alternate role, without a shutdown",
+      "An ACL denied all IP traffic, while the interface stayed up/up"
     ],
     "correct": 1,
     "explanation": "Administratively down means the interface is in shutdown. Line protocol down with up/up failure is cabling, speed, or Layer-1/2 issues — not the same as admin down.",
@@ -2187,9 +2187,9 @@ window.QUIZ_BANK = [
   {
     "question": "Compared with HSRP, what is a defining trait of VRRP on Cisco routers?",
     "options": [
-      "VRRP always requires GLBP weighting for every group",
-      "VRRP replaces OSPF entirely inside the LAN",
-      "VRRP can only run on Layer-2 switches, never routers",
+      "VRRP always requires GLBP weighting in every group so it can choose the active forwarder that sends the hosts' traffic",
+      "VRRP replaces OSPF entirely inside the LAN and removes the need for any other dynamic routing protocol on that segment",
+      "VRRP can only run on pure Layer-2 switches and never on Cisco routers or multilayer switches that have routed ports",
       "VRRP is an open standard (RFC) first-hop redundancy protocol; the virtual IP can be a real interface IP of the master"
     ],
     "correct": 3,
@@ -2211,9 +2211,9 @@ window.QUIZ_BANK = [
   {
     "question": "At Layer 3, which field is commonly used to mark packets for QoS classification end-to-end?",
     "options": [
-      "The 802.1Q CoS bits only (they survive every routed hop unchanged)",
-      "The TCP window size",
-      "The ARP opcode",
+      "Only the 802.1Q CoS bits, which survive unchanged on every routed hop to the destination",
+      "The TCP window size, treated as the end-to-end QoS mark carried in the IP header",
+      "The ARP opcode, which sets the packet QoS priority at each router along the path",
       "DSCP in the IP header (ToS/Traffic Class); CoS is Layer-2 on 802.1Q trunks"
     ],
     "correct": 3,
@@ -2223,10 +2223,10 @@ window.QUIZ_BANK = [
   {
     "question": "How does IPFIX relate to classic NetFlow on Cisco platforms?",
     "options": [
-      "IPFIX is only a Layer-2 CDP extension and cannot export flows",
+      "IPFIX is only a Layer-2 CDP extension on Cisco switches and does not export flow records or conversation metadata to a collector",
       "IPFIX (RFC 7011) is the IETF standardized evolution of flow export; NetFlow v9 inspired it and many exporters speak both",
-      "IPFIX replaces OSPF LSAs with flow records",
-      "IPFIX disables CEF so every packet is process-switched"
+      "IPFIX replaces OSPF link-state advertisements with flow records and stops flooding the link-state database out to neighbors",
+      "IPFIX disables CEF on the Cisco router and forces process-switching of every packet that is forwarded out of the interfaces"
     ],
     "correct": 1,
     "explanation": "IPFIX is the IETF standard for flow information export, heavily based on NetFlow v9 templates. Vendors often support NetFlow and IPFIX collectors; both export metadata about conversations, not full payloads.",
@@ -2236,9 +2236,9 @@ window.QUIZ_BANK = [
     "question": "What is a floating static route used for?",
     "options": [
       "A backup static route with a higher administrative distance than the primary path, installed only if the preferred route fails",
-      "A static route that always beats OSPF because static AD is infinite",
-      "A route that load-balances equally with every dynamic protocol by default",
-      "A host route that can only point to a null0 interface"
+      "A static route that always beats OSPF because the static administrative distance is infinite and can never lose in the routing table",
+      "A route that load-balances equally with every dynamic routing protocol by default, without changing the administrative distance",
+      "A host route (/32) that can only point at the discard interface null0 and can never point to an IP address as next hop"
     ],
     "correct": 0,
     "explanation": "A floating static is configured with an administrative distance higher than the primary route (for example static AD 1 raised to 210 so OSPF AD 110 wins). It stays out of the routing table until the preferred route disappears, then becomes the backup path. It does not beat OSPF unless you keep the default static AD of 1.",
@@ -2247,10 +2247,10 @@ window.QUIZ_BANK = [
   {
     "question": "On an OSPF multi-access segment (Ethernet), how are the Designated Router (DR) and Backup DR (BDR) chosen?",
     "options": [
-      "Always the router with the lowest OSPF process ID",
-      "Only the router that has a static default route",
+      "Always the router with the lowest OSPF process ID, ignoring interface priority and the Router ID",
+      "Only the router that has a static default route, even when its OSPF interface priority is zero",
       "Highest OSPF interface priority wins; if tied, highest Router ID wins (BDR is next)",
-      "Round-robin among all neighbors every Hello interval"
+      "Round-robin among all neighbors every Hello interval, changing which router is DR and which is BDR"
     ],
     "correct": 2,
     "explanation": "On broadcast multi-access networks OSPF elects a DR and BDR to reduce adjacency flooding. Highest interface priority (0–255; 0 means ineligible) wins; ties break on highest Router ID. Other routers form full adjacency mainly with DR/BDR (DROTHER).",
@@ -2259,9 +2259,9 @@ window.QUIZ_BANK = [
   {
     "question": "In the BGP neighbor finite-state machine, which state means the session is fully up and routes can be exchanged?",
     "options": [
-      "Idle — BGP has permanently disabled the neighbor",
-      "Active — BGP is only listening and never sends Open messages",
-      "Connect — TCP is down so UPDATE messages are flooded to all peers",
+      "Idle — BGP has permanently disabled the neighbor and will never retry that TCP session",
+      "Active — BGP is only listening on TCP and never sends Open messages to that neighbor",
+      "Connect — TCP is down, so UPDATE messages are flooded to every peer in the AS",
       "Established — the TCP session and BGP Open exchange succeeded; KEEPALIVE/UPDATE follow"
     ],
     "correct": 3,
@@ -2271,10 +2271,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is the purpose of IPv6 Duplicate Address Detection (DAD) before a host uses a unicast address?",
     "options": [
-      "To encrypt Neighbor Discovery with IPsec by default on every LAN",
+      "To encrypt Neighbor Discovery with IPsec by default on every LAN before the host may use any unicast address on that link",
       "To verify that no other node on the link is already using the candidate address, by sending a Neighbor Solicitation for that address",
-      "To request a global prefix exclusively from a DHCPv6 server and skip Router Advertisements",
-      "To convert every link-local address into a public anycast address on the Internet"
+      "To request a global prefix exclusively from a DHCPv6 server and skip the Router Advertisements heard on the link, without sending a Neighbor Solicitation",
+      "To convert every link-local address into a public anycast address on the Internet and advertise it beyond the local link as a global prefix"
     ],
     "correct": 1,
     "explanation": "DAD sends an NS (ICMPv6 type 135) for the tentative address with the unspecified source (::). If another node replies with an NA, the address is duplicate and must not be used. DAD applies to link-local and globally unique addresses (including those from SLAAC or DHCPv6). It does not encrypt ND by itself or replace RAs.",
@@ -2283,9 +2283,9 @@ window.QUIZ_BANK = [
   {
     "question": "Why would an operator use BGP AS-path prepending on advertisements to an ISP?",
     "options": [
-      "To encrypt BGP UPDATE messages with IPsec by default",
-      "To force the neighbor into the Idle state permanently",
-      "To replace OSPF metrics with hop count inside the LAN",
+      "To encrypt BGP UPDATE messages with IPsec by default on every prefix advertisement sent to the neighboring ISP, creating that IPsec SA",
+      "To force the neighbor into the Idle state permanently and stop that peering from exchanging any prefixes",
+      "To replace OSPF metrics with hop count inside the LAN so each internal router prefers the OSPF path with fewer hops",
       "To make a path look longer (less preferred) to inbound traffic engineering / influence how others reach you"
     ],
     "correct": 3,
@@ -2295,10 +2295,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does Unicast Reverse Path Forwarding (uRPF) check on a router interface?",
     "options": [
-      "That the destination MAC equals the router’s BIA before OSPF hello",
+      "That the destination MAC of each frame equals the router’s BIA before the OSPF hello is accepted and the adjacency forms on that interface of the segment",
       "That the source IP of inbound packets would be reachable via that same interface (anti-spoofing), using the FIB/RPF check mode",
-      "That every packet has a DSCP EF marking",
-      "That BGP peers are in Established before forwarding any LAN traffic"
+      "That every inbound packet has a DSCP EF marking and is dropped as soon as the QoS field carries any other value",
+      "That all BGP peers are in Established before any LAN traffic arriving on that router interface is forwarded"
     ],
     "correct": 1,
     "explanation": "uRPF drops (or alerts on) packets whose source address would not be routed back out the arrival interface—mitigating IP spoofing. Strict mode requires the best path via that interface; loose mode only requires the source to exist in the FIB. It is not a DSCP, MAC, or BGP-state gate for LAN forwarding.",
@@ -2307,9 +2307,9 @@ window.QUIZ_BANK = [
   {
     "question": "Why do network engineers configure route redistribution between two routing protocols (for example OSPF and EIGRP)?",
     "options": [
-      "To replace every router’s MAC address table with OSPF LSAs",
-      "To force BGP to use only the default administrative distance of RIP",
-      "To encrypt all routing updates with IPsec automatically whenever two IGPs meet",
+      "To replace every router’s MAC address table with OSPF LSAs, clearing the CAM entries learned on access ports and the uplink and leaving switching to the LSDB",
+      "To force BGP to use only the default administrative distance of RIP (120) on every route, ignoring both the eBGP value of 20 and the iBGP value of 200",
+      "To encrypt all routing updates with IPsec automatically whenever two IGPs meet at the boundary between OSPF and EIGRP, with no route map of any kind and no seed metric",
       "To inject routes learned in one routing domain into another so prefixes can be reached across protocol boundaries (with care for loops, metrics, and filtering)"
     ],
     "correct": 3,
@@ -2319,10 +2319,10 @@ window.QUIZ_BANK = [
   {
     "question": "In distance-vector routing (for example classic RIP), what does the split-horizon rule prevent?",
     "options": [
-      "Using more than one equal-cost path at a time (ECMP)",
+      "Using more than one equal-cost path at a time (ECMP), even when two RIP routes share the same metric",
       "Advertising a route back out the same interface from which it was learned, which helps limit simple routing loops",
-      "Sending any Hello packets on broadcast segments",
-      "Learning default routes from DHCP on LAN interfaces"
+      "Sending any Hello packets on broadcast segments, including those that would keep a distance-vector neighbor up on the link",
+      "Learning default routes from DHCP on LAN interfaces, installing the default gateway offered by the DHCP server"
     ],
     "correct": 1,
     "explanation": "Split-horizon says: do not advertise a route back toward the neighbor/interface that taught you that route. That blocks a common two-router loop pattern in distance-vector protocols. Poison reverse is a related technique (advertise the route back as unreachable). Split-horizon is unrelated to ECMP, OSPF-style Hellos, or DHCP defaults.",
@@ -2332,9 +2332,9 @@ window.QUIZ_BANK = [
     "question": "On a Cisco switch EtherChannel, what does the load-balancing (hash) algorithm primarily decide?",
     "options": [
       "Which member link of the bundle forwards a given flow, based on fields such as source/destination MAC or IP (and optionally ports), so traffic is distributed across the channel",
-      "Whether the EtherChannel negotiates with LACP or PAgP exclusively",
-      "The STP root bridge priority for all VLANs on the channel",
-      "The native VLAN ID that must be used on every member port"
+      "Whether the EtherChannel negotiates with LACP or with PAgP exclusively, choosing the bundle protocol from the MAC or IP hash of each flow that enters the channel",
+      "The STP root bridge priority for all VLANs on the channel, calculated from the source and destination MAC or IP hash of every flow that crosses the EtherChannel bundle on the switch",
+      "The native VLAN ID that must be used on every member port, taken from the same source or destination MAC or IP hash that spreads the flows across the channel"
     ],
     "correct": 0,
     "explanation": "EtherChannel load-balancing hashes selected packet fields (often src/dst MAC, src/dst IP, or Layer-4 ports) to pick one physical member for each flow. It does not choose LACP vs PAgP, set STP root priority, or define the native VLAN—those are separate configuration concerns.",
@@ -2343,10 +2343,10 @@ window.QUIZ_BANK = [
   {
     "question": "In EIGRP, what is the relationship between Reported Distance (RD), Feasible Distance (FD), and a feasible successor?",
     "options": [
-      "Reported Distance is always equal to the interface bandwidth in kb/s; Feasible Distance is only used by OSPF",
-      "A feasible successor is any neighbor that advertises an infinite metric (poison reverse)",
+      "Reported Distance is always equal to the interface bandwidth in kb/s; Feasible Distance is only used by OSPF and does not enter the EIGRP successor choice",
+      "A feasible successor is any neighbor that advertises an infinite metric (poison reverse), and that unreachable route is kept at once as backup without the EIGRP feasibility condition",
       "A neighbor can be a feasible successor only if its Reported Distance is less than the successor’s Feasible Distance (feasibility condition), providing a loop-free backup path",
-      "Feasible Distance is the hop count of RIP; Reported Distance is the BGP MED value copied into EIGRP"
+      "Feasible Distance is the hop count of RIP; Reported Distance is the BGP MED value copied into EIGRP, and the successor is chosen only by that advertised MED"
     ],
     "correct": 2,
     "explanation": "FD is the best metric known to reach a prefix via the successor. RD is the metric a neighbor advertises for that prefix (its distance to the destination). The feasibility condition (RD < FD of the successor) guarantees a loop-free backup—the feasible successor—usable immediately if the successor fails. RD is not bandwidth-only, and FD is not RIP hop count or BGP MED.",
@@ -2355,9 +2355,9 @@ window.QUIZ_BANK = [
   {
     "question": "In IPsec, what is the main difference between tunnel mode and transport mode?",
     "options": [
-      "Tunnel mode only works with AH; transport mode only works with ESP",
-      "Transport mode encrypts the entire original IP packet including the outer header used for Internet routing",
-      "Both modes always add an extra GRE header before ESP",
+      "Tunnel mode only works with AH; transport mode only works with ESP, and using the other security protocol in that mode makes the IPsec security association fail during negotiation",
+      "Transport mode encrypts the entire original IP packet, including the outer header used for Internet routing between the two VPN gateways",
+      "Both modes always add an extra GRE header before ESP, and without that GRE header IPsec neither authenticates nor encrypts traffic between the peers",
       "Tunnel mode encapsulates the original IP packet (new outer IP header); transport mode protects mainly the payload and leaves the original IP header in place for routing"
     ],
     "correct": 3,
@@ -2367,10 +2367,10 @@ window.QUIZ_BANK = [
   {
     "question": "On a Cisco wireless LAN controller, what is the purpose of Band Select (band steering)?",
     "options": [
-      "To force every client onto the 6 GHz band only, even if the client is 802.11n",
+      "To force every client onto the 6 GHz band only on the WLC, even if the client is 802.11n and has no Wi-Fi 6E radio that can transmit there",
       "To encourage dual-band clients to prefer 5 GHz (when suitable) instead of overcrowding 2.4 GHz, by delaying probe responses on 2.4 GHz",
-      "To replace CAPWAP with a Layer-2 Ethernet bridge between AP and WLC",
-      "To disable OFDM on 5 GHz so only DSSS clients can associate"
+      "To replace CAPWAP with a permanent Layer-2 Ethernet bridge between the AP and the WLC, removing both the control tunnel and the data tunnel",
+      "To disable OFDM on 5 GHz on the AP radio so that only DSSS clients, such as 802.11b stations at 1 or 2 Mb/s, can associate"
     ],
     "correct": 1,
     "explanation": "Band Select (band steering) nudges dual-band capable clients toward 5 GHz by responding more slowly (or not at first) to 2.4 GHz probes, reducing 2.4 GHz congestion. It does not magically put legacy clients on 6 GHz, does not replace CAPWAP, and does not disable OFDM on 5 GHz.",
@@ -2391,10 +2391,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does Path MTU Discovery (PMTUD) rely on to learn the smallest MTU along an IPv4 path?",
     "options": [
-      "Periodic ICMP Echo Requests sized exactly to 1500 bytes from every router hop",
-      "TCP always advertising a window of 536 bytes so fragmentation is never needed",
+      "Periodic ICMP Echo Requests sized exactly to 1500 bytes, generated at every router hop along the entire IPv4 path to the destination",
+      "TCP always advertising a window of 536 bytes on every session so that IPv4 fragmentation is never needed at any hop on the path",
       "Sending packets with the DF (Don't Fragment) bit set and using ICMP Fragmentation Needed messages when a hop must drop them",
-      "Forcing every tunnel interface to clamp TCP MSS to 40 bytes less than the physical MTU"
+      "Forcing every tunnel interface to clamp TCP MSS to 40 bytes less than the physical MTU of the local WAN interface on each router"
     ],
     "correct": 2,
     "explanation": "Classic IPv4 PMTUD sends packets with DF set. If a hop has a smaller MTU, it drops the packet and should return ICMP Type 3 Code 4 (Fragmentation Needed) with the next-hop MTU so the sender can lower its path MTU. Blindly shrinking TCP windows or always clamping MSS to tiny values is not how PMTUD works (though TCP MSS clamping is a related operational workaround when ICMP is filtered).",
@@ -2403,9 +2403,9 @@ window.QUIZ_BANK = [
   {
     "question": "In multi-area OSPF, why must Area 0 (the backbone) be present and correctly connected?",
     "options": [
-      "Because OSPF refuses to elect a Designated Router outside Area 0 on any multi-access segment",
-      "Because Area 0 is the only place where OSPF authentication keys are allowed",
-      "Because Type 1 Router LSAs are flooded only inside Area 0 and never into other areas",
+      "Because OSPF refuses to elect a Designated Router and a Backup Designated Router outside Area 0 on any multi-access broadcast or NBMA segment, leaving those neighbors stuck forever in the 2-Way state",
+      "Because Area 0 is the only place in the domain where OSPF authentication keys are allowed, in plain text, with MD5, or with SHA, configured on any router interface",
+      "Because Type 1 Router LSAs are flooded only inside Area 0 and are never originated, accepted, or retransmitted inside any non-backbone area of the OSPF domain",
       "Because non-backbone areas exchange inter-area routes through Area 0 (or a virtual-link substitute); without a contiguous backbone, areas can become partitioned from the rest of the OSPF domain"
     ],
     "correct": 3,
@@ -2415,10 +2415,10 @@ window.QUIZ_BANK = [
   {
     "question": "In Hot Standby Router Protocol (HSRP), what roles do the Active and Standby routers play for a virtual IP used as a default gateway?",
     "options": [
-      "Both forward user traffic in active-active ECMP while sharing one virtual MAC equally at all times",
+      "Both routers forward user traffic in active-active ECMP, always sharing one virtual MAC equally on every frame that the clients send onto the LAN",
       "The Active router owns the virtual IP/MAC and forwards traffic for that group; the Standby is ready to take over if the Active fails, after Hello-based detection",
-      "The Standby always NATs client addresses while the Active only answers ARP",
-      "HSRP elects a Designated Router and Backup Designated Router exactly like OSPF on a LAN"
+      "The Standby router always NATs the clients' IPv4 addresses while the Active only answers ARP requests sent to that HSRP group's virtual IP",
+      "HSRP elects a Designated Router and a Backup Designated Router exactly the same way OSPF does on a multi-access LAN, whether that LAN segment is broadcast or NBMA"
     ],
     "correct": 1,
     "explanation": "Classic HSRP is active/standby first-hop redundancy: one Active forwards for the virtual IP (and associated virtual MAC), while a Standby monitors Hellos and assumes the active role on failure. It is not load-balancing ECMP by default (that is closer to GLBP’s model), not a NAT function split, and not OSPF’s DR/BDR election.",
@@ -2427,9 +2427,9 @@ window.QUIZ_BANK = [
   {
     "question": "In a Cisco DMVPN Phase 2/3 design, what is the primary role of NHRP (Next Hop Resolution Protocol)?",
     "options": [
-      "Encrypting spoke-to-spoke payloads with a separate IPsec profile that replaces IKEv2 entirely",
-      "Advertising full Internet BGP tables from each spoke into the hub so spokes never need a tunnel",
-      "Acting as the underlay IGP that replaces OSPF or EIGRP on the physical WAN interfaces",
+      "Encrypting spoke-to-spoke payloads with a separate IPsec profile on each direct tunnel, a profile that fully replaces IKEv2 and skips key negotiation",
+      "Advertising full Internet BGP tables from each spoke into the hub so that the spokes never need to form a DMVPN tunnel in order to communicate directly with each other",
+      "Acting as the underlay IGP that fully replaces OSPF or EIGRP on the physical WAN interfaces and computes the path between each spoke and the hub by itself",
       "Letting spokes dynamically resolve each other’s tunnel (NBMA) addresses so direct spoke-to-spoke tunnels can form instead of hairpinning all traffic through the hub"
     ],
     "correct": 3,
