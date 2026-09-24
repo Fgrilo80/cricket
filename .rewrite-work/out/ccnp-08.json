@@ -1,0 +1,215 @@
+{
+  "cert": "ccnp",
+  "items": [
+    {
+      "index": 83,
+      "pt": {
+        "options": [
+          "Faz o mesmo que o BPDU Guard: coloca a porta PortFast em err-disable assim que recebe um BPDU de outro switch na camada de acesso",
+          "Impede que uma porta non-designated passe a designated forwarding se os BPDUs pararem, evitando loop por unidireccionalidade",
+          "Força PortFast em todas as portas de acesso para saltarem listening e learning e passarem logo a forwarding",
+          "Elege o root bridge comparando o Bridge ID e a priority para escolher o switch raiz da spanning tree"
+        ],
+        "explanation": "Se BPDUs cessam, STP classico assume que o designated desapareceu e a porta pode forwarding. Loop Guard poe loop-inconsistent até os BPDUs regressarem."
+      },
+      "en": {
+        "options": [
+          "It does the same as BPDU Guard: it err-disables a PortFast port as soon as a BPDU arrives from a neighboring switch",
+          "It prevents a non-designated port from becoming designated forwarding if BPDUs stop, avoiding a unidirectional loop",
+          "It forces PortFast on every access port so they skip listening and learning and go straight to forwarding",
+          "It elects the root bridge by comparing Bridge ID and priority to choose the spanning-tree root switch"
+        ],
+        "explanation": "If BPDUs stop, classic STP assumes the designated bridge is gone and may forward. Loop Guard puts the port loop-inconsistent until BPDUs return."
+      }
+    },
+    {
+      "index": 84,
+      "pt": {
+        "options": [
+          "NSF grava a running-config no RP standby e o SSO não replica a configuração nem o estado de nenhum protocolo de routing interno",
+          "SSO replica o estado do control plane ao RP standby; NSF mantem CEF forwarding durante o switchover com graceful restart",
+          "São o mesmo feature de NAT, que traduz os endereços internos para externos durante o switchover do RP",
+          "SSO desliga a FIB e interrompe o encaminhamento CEF no data plane até o RP standby concluir o arranque"
+        ],
+        "explanation": "SSO + NSF/GR permitem failover de supervisor em segundos sem perder adjacências se o peer entender GR. ISSU apoia-se nisto."
+      },
+      "en": {
+        "options": [
+          "NSF saves the running-config on the standby RP, while SSO replicates neither the configuration nor routing protocol state",
+          "SSO replicates control-plane state to the standby RP; NSF keeps CEF forwarding during switchover with graceful restart",
+          "They are the same NAT feature, translating inside addresses to outside addresses during the RP switchover",
+          "SSO disables the FIB and stops CEF forwarding in the data plane until the standby RP finishes booting"
+        ],
+        "explanation": "SSO + NSF/GR allow supervisor failover in seconds without dropping adjacencies if the peer understands GR. ISSU builds on this."
+      }
+    },
+    {
+      "index": 85,
+      "pt": {
+        "options": [
+          "WRED em todas as classes do policy-map, a descartar pacotes cedo segundo o DSCP antes de a fila encher",
+          "Uma priority queue (normalmente EF/voz) servida primeiro, combinada com CBWFQ nas demais classes",
+          "Somente policing da class-default, a limitar a taxa do best-effort sem qualquer fila de prioridade",
+          "Um tipo de STP que elege a root bridge e bloqueia portas redundantes para evitar loops na camada 2"
+        ],
+        "explanation": "priority reserva um policer implicito para não esgotar o link. As outras classes usam bandwidth (CBWFQ). Não se poe bulk na priority."
+      },
+      "en": {
+        "options": [
+          "WRED on every class in the policy-map, dropping packets early by DSCP before the queue fills",
+          "A priority queue (usually EF/voice) served first, combined with CBWFQ for the other classes",
+          "Default-class policing only, rate-limiting best-effort traffic without any priority queue",
+          "A type of STP that elects the root bridge and blocks redundant ports to prevent Layer 2 loops"
+        ],
+        "explanation": "priority implies a policer so voice cannot starve the link. Other classes use bandwidth (CBWFQ). Do not put bulk traffic in priority."
+      }
+    },
+    {
+      "index": 87,
+      "pt": {
+        "options": [
+          "Aumentar sempre a janela TCP de todos os fluxos para encher a fila de saída sem qualquer descarte antecipado",
+          "Descartar probabilisticamente pacotes antes da fila encher, por precedencia/DSCP, evitando tail-drop sincronizado de fluxos TCP",
+          "Cifrar os pacotes dentro da fila de saída, por classe DSCP, para impedir o slow start sincronizado do TCP",
+          "Substituir o LLQ, retirando a priority queue de voz EF e servindo todas as classes só com descarte aleatório ponderado por DSCP"
+        ],
+        "explanation": "Tail drop enche a fila e varios TCP entram em slow start ao mesmo tempo. WRED comeca a descartar cedo nos fluxos menos prioritarios. Não se aplica a voz."
+      },
+      "en": {
+        "options": [
+          "Always increasing the TCP window on every flow so the output queue fills without any early packet drop",
+          "Dropping packets probabilistically before the queue fills, by precedence/DSCP, avoiding synchronized TCP tail drops",
+          "Encrypting the packets inside the output queue, by DSCP class, to prevent synchronized TCP slow start",
+          "Replacing LLQ by removing the EF voice priority queue and serving every remaining class with random early drop only"
+        ],
+        "explanation": "Tail drop fills the queue and many TCPs hit slow start together. WRED starts dropping earlier on lower-priority flows. Do not apply it to voice."
+      }
+    },
+    {
+      "index": 88,
+      "pt": {
+        "options": [
+          "GRE puro cifra o payload com AES-256 no protocolo IP 47 e dá confidencialidade sem ESP, sem IKE e sem qualquer associação IPsec",
+          "GRE encapsula qualquer protocolo mas vai em claro; IPsec acrescenta confidencialidade/integridade, normalmente em modo tunnel",
+          "IPsec não pode transportar OSPF, nem sobre GRE nem numa VTI, porque o ESP só aceita unicast estático entre peers",
+          "GRE exige certificados digitais sempre, no túnel puro e no GRE over IPsec, para autenticar cada peer IKE"
+        ],
+        "explanation": "GRE sozinho: protocolo 47, sem crypto. IPsec (ESP proto 50) cifra. Para IGP sobre VPN usa-se GRE/IPsec, VTI, FlexVPN ou DMVPN. Baixar MTU/MSS."
+      },
+      "en": {
+        "options": [
+          "Plain GRE encrypts the payload with AES on protocol 47, providing confidentiality without ESP or IPsec",
+          "GRE encapsulates any protocol but is clear text; IPsec adds confidentiality/integrity, usually in tunnel mode",
+          "IPsec cannot carry OSPF, not even over GRE or a VTI, because ESP accepts only static unicast",
+          "GRE always requires digital certificates, for both the plain tunnel and GRE over IPsec, to authenticate each peer"
+        ],
+        "explanation": "GRE alone is protocol 47 with no crypto. IPsec (ESP proto 50) encrypts. For IGP over VPN use GRE/IPsec, VTI, FlexVPN or DMVPN. Lower MTU/MSS."
+      }
+    },
+    {
+      "index": 89,
+      "pt": {
+        "options": [
+          "IKEv2 exige mais mensagens que o main mode do IKEv1, normalmente nove trocas em vez de quatro",
+          "Menos round-trips, NAT traversal nativo, EAP, MOBIKE e melhor rekey; o IKEv1 e o modelo legado",
+          "IKEv2 não autentica os peers; só negoceia as chaves de cifra e deixa a identidade por verificar",
+          "IKEv1 suporta EAP nativo na autenticação e o IKEv2 não, ficando limitado a uma pre-shared key"
+        ],
+        "explanation": "IKEv2 usa menos mensagens que o main mode IKEv1 (comummente 4 vs 9) e é a base do FlexVPN Cisco. Por si só não é L2TP."
+      },
+      "en": {
+        "options": [
+          "IKEv2 needs more messages than IKEv1 main mode, typically nine exchanges instead of four",
+          "Fewer round-trips, native NAT traversal, EAP, MOBIKE, and better rekey; IKEv1 is the legacy model",
+          "IKEv2 does not authenticate the peers; it only negotiates cipher keys and leaves identity unchecked",
+          "IKEv1 supports native EAP for authentication and IKEv2 does not, so IKEv2 is limited to a pre-shared key"
+        ],
+        "explanation": "IKEv2 uses fewer messages than IKEv1 main mode (commonly described as 4 vs 9) and underpins Cisco FlexVPN. It is not L2TP by itself."
+      }
+    },
+    {
+      "index": 90,
+      "pt": {
+        "options": [
+          "GETVPN usa GRE obrigatório para criar o overlay entre os group members antes de aplicar as chaves GDOI",
+          "GETVPN cifra tráfego nativo (sem overlay de túnel) com chaves de grupo GDOI; preserva o cabeçalho IP original",
+          "GETVPN não usa IPsec; protege o tráfego só com o protocolo GDOI, sem encapsulamento ESP nem chaves TEK",
+          "GETVPN é só para a Internet pública sem IGP, porque esconde os endereços IP originais de cada host num túnel GRE"
+        ],
+        "explanation": "Key server distribui KEKs/TEKs via GDOI. Os GMs cifram ESP mas mantem src/dst originais. Ideal em WAN privada; não atravessa NAT como DMVPN."
+      },
+      "en": {
+        "options": [
+          "GETVPN requires GRE to build the overlay between group members before applying the GDOI group keys",
+          "GETVPN encrypts native traffic (no tunnel overlay) with GDOI group keys; it preserves the original IP header",
+          "GETVPN does not use IPsec; it protects traffic with GDOI alone, without ESP encapsulation or TEKs",
+          "GETVPN is only for the public Internet without an IGP, because it hides the original IP addresses inside a tunnel"
+        ],
+        "explanation": "A key server distributes KEKs/TEKs via GDOI. GMs encapsulate ESP but keep original src/dst. Ideal on a private WAN; it does not traverse NAT like DMVPN."
+      }
+    },
+    {
+      "index": 91,
+      "pt": {
+        "options": [
+          "Cifra de camada 3 ponta-a-ponta entre os hosts, sem proteger cada salto Ethernet",
+          "Cifra hop-by-hop da camada 2 entre portas, com chaves via MKA (802.1X)",
+          "Um tipo de GRE que encapsula o frame Ethernet noutro pacote IP para atravessar routers",
+          "Substitui o BGP ao anunciar prefixos e escolher o melhor caminho entre ASes"
+        ],
+        "explanation": "Util em links entre switches do datacenter/campus para confidencialidade no cabo. Não substitui IPsec WAN."
+      },
+      "en": {
+        "options": [
+          "End-to-end Layer 3 encryption between hosts, without protecting each Ethernet hop",
+          "Hop-by-hop Layer 2 encryption between ports, with keys via MKA (802.1X)",
+          "A type of GRE that wraps the Ethernet frame in another IP packet to cross routers",
+          "A BGP replacement that advertises prefixes and selects the best path between ASes"
+        ],
+        "explanation": "Useful on datacenter/campus switch links for confidentiality on the wire. It does not replace WAN IPsec."
+      }
+    },
+    {
+      "index": 92,
+      "pt": {
+        "options": [
+          "Um tipo de EtherChannel que agrega as portas de acesso e autentica o bundle pelo MAC do switch vizinho",
+          "Fallback que autentica o dispositivo pelo MAC via RADIUS quando não há supplicant 802.1X",
+          "Cifra MACsec obrigatória em cada porta de acesso, com chaves MKA, antes de qualquer autenticação",
+          "Um protocolo de routing que anuncia o MAC do host como prefixo e escolhe o next-hop no acesso"
+        ],
+        "explanation": "A ordem típica: 802.1X, depois MAB, depois WebAuth. MAB e fraco (MAC spoofable); usa-se com profiling e dACL/SGT."
+      },
+      "en": {
+        "options": [
+          "A type of EtherChannel that bundles the access ports and authenticates the channel by the neighbor switch MAC",
+          "A fallback that authenticates the device by MAC via RADIUS when no 802.1X supplicant is present",
+          "Mandatory MACsec encryption on every access port, using MKA keys, before any form of authentication",
+          "A routing protocol that advertises the host MAC as a prefix and selects the next hop on the access port"
+        ],
+        "explanation": "Typical order: 802.1X, then MAB, then WebAuth. MAB is weak (MACs are spoofable); combine it with profiling and dACL/SGT."
+      }
+    },
+    {
+      "index": 93,
+      "pt": {
+        "options": [
+          "É SPAN só local, a copiar os frames para uma porta de destino na mesma switch sem sair do chassis",
+          "Encapsula tráfego monitorizado em GRE/IP para um analisador em outra rede L3, atravessando routers",
+          "É exclusivo de hubs, que repetem cada frame em todas as portas por não terem tabela de endereços MAC",
+          "Substitui o NetFlow, exportando contadores de fluxos por UDP para um coletor em vez de cópias dos frames"
+        ],
+        "explanation": "SPAN: mesma switch. RSPAN: VLAN dedicada através de trunks L2. ERSPAN: GRE/IP, chega a um destination em outro subnet."
+      },
+      "en": {
+        "options": [
+          "It is local SPAN only, copying frames to a destination port on the same switch without leaving the chassis",
+          "It encapsulates monitored traffic in GRE/IP toward an analyzer on another L3 network, crossing routers",
+          "It is exclusive to hubs, which flood every frame out all ports because they have no MAC address table",
+          "It replaces NetFlow, exporting flow counters over UDP to a collector instead of copies of the frames"
+        ],
+        "explanation": "SPAN: same switch. RSPAN: a dedicated VLAN across L2 trunks. ERSPAN: GRE/IP, reaches a destination in another subnet."
+      }
+    }
+  ]
+}
