@@ -1,0 +1,215 @@
+{
+  "cert": "ccnp",
+  "items": [
+    {
+      "index": 125,
+      "pt": {
+        "options": [
+          "Não anunciar o prefixo a nenhum peer iBGP do AS, como se no-export fosse no-advertise",
+          "Não anunciar o prefixo para fora do AS (nem confederação para eBGP 'verdadeiro')",
+          "Prefira sempre este path no best-path, como se no-export fosse preferência absoluta",
+          "Igual a Weight 65535, o máximo local da Cisco, que escolhe o caminho só neste router"
+        ],
+        "explanation": "no-export: fica no AS. no-advertise: não anunciar a nenhum peer. local-AS: não sair da sub-AS de confederação. Internet (default) pode ir a toda a gente. Communities são o gancho de policy do ISP."
+      },
+      "en": {
+        "options": [
+          "Do not advertise the prefix to any iBGP peer in the AS, as if no-export were no-advertise",
+          "Do not advertise the prefix outside the AS (nor from a confederation to 'real' eBGP)",
+          "Always prefer this path in best-path selection, as if no-export were an absolute preference",
+          "Same as Weight 65535, Cisco's local maximum, which selects the path only on this router"
+        ],
+        "explanation": "no-export: stay inside the AS. no-advertise: do not advertise to any peer. local-AS: do not leave the confederation sub-AS. internet (default) may go to everyone. Communities are the ISP policy hook."
+      }
+    },
+    {
+      "index": 126,
+      "pt": {
+        "options": [
+          "Não há diferença alguma: o route reflector e a confederação só renomeiam o AS e deixam o full mesh iBGP e o split-horizon exatamente iguais",
+          "RR relaxa o split-horizon iBGP num cluster (clientes/non-clients); confederação parte o AS em sub-ASes com eBGP especial entre elas",
+          "Confederação só funciona com OSPF como IGP interno e não cria sub-ASes quando o interior usa IS-IS, EIGRP ou rotas estáticas",
+          "RR exige MPLS e LDP no core: sem etiqueta de transporte o cluster recusa os clientes e não reflete as rotas iBGP"
+        ],
+        "explanation": "Ambos evitam o full mesh iBGP. RR é mais simples (cluster-id, originator-id contra loops). Confederação (64512-65534 privadas) isola policy por sub-AS e usa next-hop/MED como eBGP entre sub-ASes. Podem combinar-se."
+      },
+      "en": {
+        "options": [
+          "There is no difference at all: a route reflector and a confederation only rename the AS and leave the iBGP full mesh and split-horizon exactly the same",
+          "An RR relaxes iBGP split-horizon inside a cluster (clients/non-clients); a confederation splits the AS into sub-ASes with special eBGP between them",
+          "A confederation works only with OSPF as the IGP and does not build sub-ASes when the interior runs IS-IS, EIGRP, or static routes",
+          "An RR requires MPLS and LDP in the core: without a transport label the cluster rejects clients and will not reflect iBGP routes"
+        ],
+        "explanation": "Both avoid a full iBGP mesh. RR is simpler (cluster-id, originator-id against loops). A confederation (private 64512-65534) isolates policy per sub-AS and treats inter-sub-AS like eBGP for next-hop/MED. They can be combined."
+      }
+    },
+    {
+      "index": 127,
+      "pt": {
+        "options": [
+          "iBGP com TTL 1, obrigando cada peer interno a estar no mesmo segmento L2 porque o pacote expira no primeiro salto",
+          "Permitir sessão eBGP entre endereços que não são diretamente adjacentes, subindo o TTL (omissão eBGP TTL=1)",
+          "Um tipo de LSA do OSPF que anuncia o vizinho eBGP, o TTL da sessão e o AS remoto aos routers da área",
+          "PHP no MPLS: a sessão eBGP faz pop da etiqueta de transporte no penúltimo hop para subir o TTL"
+        ],
+        "explanation": "Típico: peering entre loopbacks através de um IGP/connected compartilhado, ou peering por vários hops. disable-connected-check cobre o caso loopback no mesmo link. Risco: TTL grande alarga a superfície; BFD ainda é recomendado."
+      },
+      "en": {
+        "options": [
+          "iBGP with TTL 1, forcing every internal peer onto the same L2 segment because the packet expires at the first hop",
+          "Allowing an eBGP session between addresses that are not directly adjacent by raising TTL (default eBGP TTL is 1)",
+          "A type of OSPF LSA that advertises the eBGP neighbor, the session TTL, and the remote AS to routers in the area",
+          "MPLS PHP: the eBGP session pops the transport label at the penultimate hop to raise the TTL"
+        ],
+        "explanation": "Typical: peering between loopbacks across a shared IGP/connected network, or peering several hops away. disable-connected-check covers loopbacks on the same link. Risk: a large TTL widens the attack surface; BFD is still recommended."
+      }
+    },
+    {
+      "index": 128,
+      "pt": {
+        "options": [
+          "No CE de origem, que faz pop da etiqueta de transporte LDP antes de o pacote entrar no PE de ingresso",
+          "No router imediatamente antes do PE de egress, que faz pop da etiqueta de transporte (LDP/SR)",
+          "Só no RR BGP, que remove a etiqueta VPN ao refletir o prefixo VPNv4 para os outros PE",
+          "No cliente IPsec, que decifra o túnel e faz pop da etiqueta de transporte no último hop do LSP"
+        ],
+        "explanation": "O LSP de transporte é LDP (ou SR). O penúltimo hop faz pop para o PE de egress olhar só para a etiqueta VPN (ou IP em PHP+explicit-null variações). explicit-null preserva EXP/TTL até ao egress."
+      },
+      "en": {
+        "options": [
+          "On the source CE, which pops the LDP transport label before the packet enters the ingress PE",
+          "On the router immediately before the egress PE, which pops the transport label (LDP/SR)",
+          "Only on the BGP RR, which removes the VPN label while reflecting the VPNv4 prefix to the other PEs",
+          "On the IPsec client, which decrypts the tunnel and pops the transport label on the last hop of the LSP"
+        ],
+        "explanation": "The transport LSP is LDP (or SR). The penultimate hop pops so the egress PE looks only at the VPN label (or IP, with PHP vs explicit-null variations). explicit-null preserves EXP/TTL to the egress."
+      }
+    },
+    {
+      "index": 129,
+      "pt": {
+        "options": [
+          "LDP estabelece LSPs segundo a RIB IGP, hop-by-hop; RSVP-TE sinaliza tunnels com restrições de banda/caminho",
+          "RSVP-TE substitui o IGP: OSPF e IS-IS deixam de correr e cada túnel descobre a topologia sem anúncios de link-state",
+          "LDP exige sempre TE, com reserva de banda e afinidade, e sem essas restrições não instala nenhum LSP",
+          "Ambos usam apenas UDP 179, a mesma porta do BGP, nos hellos de descoberta e na sessão de sinalização"
+        ],
+        "explanation": "LDP anda ao lado do IGP (lib/hello UDP 646, sessão TCP 646). RSVP-TE (e SR-TE) serve engenharia: bandwidth, affinity, fast reroute. Muitos cores misturam LDP no access e TE no backbone, ou passam a Segment Routing."
+      },
+      "en": {
+        "options": [
+          "LDP builds LSPs from the IGP RIB, hop by hop; RSVP-TE signals tunnels with bandwidth/path constraints",
+          "RSVP-TE replaces the IGP: OSPF and IS-IS stop running, and each tunnel learns topology without link-state advertisements",
+          "LDP always requires TE, with bandwidth reservation and affinity, and without those constraints it installs no LSP",
+          "Both use only UDP 179, the same port as BGP, for discovery hellos and for the signaling session"
+        ],
+        "explanation": "LDP rides beside the IGP (UDP 646 hello, TCP 646 session). RSVP-TE (and SR-TE) is for engineering: bandwidth, affinity, fast reroute. Many cores mix LDP at the edge with TE in the backbone, or move to Segment Routing."
+      }
+    },
+    {
+      "index": 130,
+      "pt": {
+        "options": [
+          "Echo não existe em Cisco: o IOS implementa só o modo asynchronous e descarta qualquer pacote echo recebido na sessão BFD",
+          "Async: os dois peers enviam control packets; Echo: o peer faz loopback do pacote echo do iniciador na forwarding path",
+          "Echo substitui o IGP por completo, anuncia as rotas e calcula o shortest path no lugar do OSPF ou do IS-IS",
+          "Async só corre em IPv6, com link-local; em IPv4 o BFD limita-se ao modo echo e não envia control packets"
+        ],
+        "explanation": "Echo testa o data plane do vizinho com menos CPU no peer. Nem todos os hardware/IOS suportam echo. Timers 50x3 ms são comuns em LAN; WAN usa valores mais conservadores. BFD e IGP/BGP ligam-se com 'fall-over bfd' / 'bfd all-interfaces'."
+      },
+      "en": {
+        "options": [
+          "Echo does not exist on Cisco: IOS implements only asynchronous mode and discards any echo packet received on the BFD session",
+          "Async: both peers send control packets; Echo: the peer loops the initiator's echo packet on the forwarding path",
+          "Echo fully replaces the IGP, advertises the routes, and computes the shortest path instead of OSPF or IS-IS",
+          "Async runs only for IPv6, using link-local; on IPv4, BFD is limited to echo mode and sends no control packets"
+        ],
+        "explanation": "Echo tests the neighbor data plane with less CPU on the peer. Not all hardware/IOS supports echo. 50x3 ms timers are common on LAN; WAN uses more conservative values. BFD is tied to IGP/BGP with fall-over bfd / bfd all-interfaces."
+      }
+    },
+    {
+      "index": 131,
+      "pt": {
+        "options": [
+          "Não há diferença operacional: set ip next-hop e set interface escolhem o mesmo próximo salto e a mesma saída, e os dois fazem fallback para o routing normal se o destino estiver em baixo",
+          "set ip next-hop usa um IP (com fallback para routing normal se inalcançável, salvo default); set interface força a saída por essa iface (perigoso em multiacesso sem ARP)",
+          "set interface só funciona com BGP; com OSPF, EIGRP ou rotas estáticas o route-map ignora a cláusula e o tráfego segue sempre a rota que a RIB já escolheu",
+          "set ip next-hop ignora a ACL do route-map e desvia todo o tráfego recebido na interface, incluindo pacotes que não casam com nenhuma linha de match da policy"
+        ],
+        "explanation": "PBR (ip policy route-map) casa ACLs/length/DSCP e desvia antes da RIB. set ip next-hop verify-availability + tracking/BFD evita blackhole. set ip default next-hop só se a RIB não tiver rota (exceto default)."
+      },
+      "en": {
+        "options": [
+          "There is no operational difference: set ip next-hop and set interface pick the same next hop and the same exit, and both fall back to normal routing if the destination is down",
+          "set ip next-hop uses an IP (falling back to normal routing if unreachable, unless default); set interface forces that outbound iface (dangerous on multiaccess without ARP)",
+          "set interface works only with BGP; with OSPF, EIGRP, or static routes the route-map ignores that clause and traffic always follows the route the RIB already chose",
+          "set ip next-hop ignores the route-map ACL and steers all traffic received on the interface, including packets that do not match any line of the policy"
+        ],
+        "explanation": "PBR (ip policy route-map) matches ACLs/length/DSCP and steers before the RIB. set ip next-hop verify-availability plus tracking/BFD avoids black holes. set ip default next-hop applies only when the RIB has no route (except default)."
+      }
+    },
+    {
+      "index": 132,
+      "pt": {
+        "options": [
+          "São o mesmo cabo: peer-link e keepalive partilham um EtherChannel e, se esse cabo cair, os dois peers ficam active sem ninguém detetar o dual-active",
+          "Peer-link sincroniza estado (MCS, LACP, IGMP, BPDUs) entre os dois peers; keepalive (link separado, mgmt) deteta dual-active se o peer-link falhar",
+          "Keepalive encaminha o tráfego de data plane dos servidores entre os dois chassis, incluindo frames L2 e o fluxo das portas ligadas só a um peer",
+          "Peer-link substitui o routing IGP e passa a anunciar as rotas entre os dois Nexus, em vez de OSPF, IS-IS ou EIGRP, para o tráfego routed"
+        ],
+        "explanation": "Os servers veem um EtherChannel para dois chassis. Sem keepalive, um peer-link down pode levar a split-brain (ambos active). Orphan ports são portas que só ligam a um peer. STP é filtrado de forma especial no vPC."
+      },
+      "en": {
+        "options": [
+          "They are the same cable: peer-link and keepalive share one EtherChannel, and if that cable fails both peers stay active with no one detecting dual-active",
+          "Peer-link syncs state (MCS, LACP, IGMP, BPDUs) between the two peers; keepalive (separate, often mgmt) detects dual-active if the peer-link fails",
+          "Keepalive forwards server data-plane traffic between the two chassis, including L2 frames and flows from ports attached to only one peer",
+          "Peer-link replaces IGP routing and advertises the routes between the two Nexus switches, instead of OSPF, IS-IS, or EIGRP, for routed traffic"
+        ],
+        "explanation": "Servers see one EtherChannel toward two chassis. Without keepalive, a peer-link failure can split-brain (both active). Orphan ports attach to only one peer. STP is handled specially on vPC."
+      }
+    },
+    {
+      "index": 133,
+      "pt": {
+        "options": [
+          "Uma porta LACP em bundle nos dois peers, com membros ativos em cada chassis do domínio vPC",
+          "Uma porta que liga um dispositivo apenas a um dos switches vPC, não ao par",
+          "O peer-keepalive, a porta órfã que liga um host só ao endereço de gestão do outro switch",
+          "A VLAN nativa do peer-link, contada como orphan port porque o CFS fica num único chassis"
+        ],
+        "explanation": "Se o peer onde a orphan está falha, o dispositivo perde conectividade mesmo que o vPC do outro lado esteja up. Mitigação: dual-attach (vPC) ou orphan-port suspend. Peer-gateway / orphan-port podem ser necessários para routed traffic."
+      },
+      "en": {
+        "options": [
+          "An LACP port bundled on both peers, with member links active on each chassis of the vPC domain",
+          "A port that attaches a device to only one of the vPC switches, not to the pair",
+          "The peer-keepalive, the orphan port that attaches a host only to the peer switch management address",
+          "The peer-link native VLAN, counted as an orphan port because CFS stays on a single chassis"
+        ],
+        "explanation": "If the peer hosting the orphan fails, the device loses connectivity even if the other side's vPC is up. Mitigation: dual-attach (vPC) or orphan-port suspend. Peer-gateway / orphan-port may be needed for routed traffic."
+      }
+    },
+    {
+      "index": 134,
+      "pt": {
+        "options": [
+          "Encapsula VXLAN no data plane de todos os edges, em UDP 4789, entre os RLOCs de cada par",
+          "Control plane: guarda mapeamentos EID→RLOC e responde a Map-Requests dos ITR/ETR (edges)",
+          "Substitui o ISE: autentica 802.1X, aplica a SGT e o fabric deixa de consultar o RADIUS",
+          "É o vManage, o controlador de templates SD-WAN, e não o Map-Server do fabric SD-Access"
+        ],
+        "explanation": "ITR pergunta 'onde está este EID?'; MS/MR (control plane node) responde o RLOC do ETR. Data plane é VXLAN (UDP 4789) entre RLOCs. Border nodes ligam o fabric ao resto da rede."
+      },
+      "en": {
+        "options": [
+          "It encapsulates VXLAN on the data plane of every edge, over UDP 4789, between each pair of RLOCs",
+          "Control plane: it stores EID→RLOC mappings and answers Map-Requests from ITR/ETR (edges)",
+          "It replaces ISE: it authenticates 802.1X, applies the SGT, and the fabric no longer queries RADIUS",
+          "It is vManage, the SD-WAN template controller, and not the Map-Server of the SD-Access fabric"
+        ],
+        "explanation": "The ITR asks 'where is this EID?'; the MS/MR (control-plane node) replies with the ETR's RLOC. The data plane is VXLAN (UDP 4789) between RLOCs. Border nodes connect the fabric to the rest of the network."
+      }
+    }
+  ]
+}
