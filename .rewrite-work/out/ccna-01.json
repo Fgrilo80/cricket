@@ -1,0 +1,215 @@
+{
+  "cert": "ccna",
+  "items": [
+    {
+      "index": 12,
+      "pt": {
+        "options": [
+          "Listar rotas IP via show ip route",
+          "Mostrar vizinhos OSPF e seu estado",
+          "Mostrar config OSPF da interface",
+          "Mostrar o buffer local de syslog"
+        ],
+        "explanation": "Este comando exibe os vizinhos OSPF, estado da adjacência e informações de DR/BDR."
+      },
+      "en": {
+        "options": [
+          "List IP routes via show ip route",
+          "Show OSPF neighbors and their state",
+          "Show OSPF config of the interface",
+          "Show the local syslog buffer"
+        ],
+        "explanation": "show ip ospf neighbor lists OSPF neighbors, adjacency state (FULL, etc.), and DR/BDR roles on multi-access segments—not the full LSDB."
+      }
+    },
+    {
+      "index": 13,
+      "pt": {
+        "options": [
+          "Lista de prefixos IP para filtragem de rotas",
+          "Lista de VLANs que filtra portas de acesso",
+          "Lista de ACLs que filtram o tráfego IP",
+          "Lista de usuários locais para autenticação"
+        ],
+        "explanation": "Prefix-lists são usadas para filtrar rotas com base em prefixos de rede e comprimento de máscara."
+      },
+      "en": {
+        "options": [
+          "IP prefix list for route filtering",
+          "VLAN list filtering access ports",
+          "ACL list that filters IP traffic",
+          "User list used for authentication"
+        ],
+        "explanation": "Prefix-lists are used to filter routes based on network prefixes and mask length."
+      }
+    },
+    {
+      "index": 14,
+      "pt": {
+        "options": [
+          "Standard filtra apenas por IP de origem, extended por origem, destino, protocolo e porta",
+          "Não há diferença: standard e extended filtram os mesmos campos de origem e destino",
+          "Extended é mais simples: compara só o IP de origem e ignora destino, protocolo e porta",
+          "Standard é mais seguro pois inspeciona origem, destino, protocolo e estado da sessão"
+        ],
+        "explanation": "Standard ACLs (1-99) filtram apenas por IP de origem. Extended (100-199) oferecem filtragem mais granular."
+      },
+      "en": {
+        "options": [
+          "Standard filters only by source IP, extended by source, destination, protocol and port",
+          "No difference: standard and extended filter the same source and destination fields",
+          "Extended is simpler: it checks only source IP and skips destination, protocol, port",
+          "Standard is more secure: it inspects source, destination, protocol and session state"
+        ],
+        "explanation": "Standard ACLs (1-99) filter only by source IP. Extended ACLs (100-199) offer more granular filtering."
+      }
+    },
+    {
+      "index": 15,
+      "pt": {
+        "options": [
+          "Protocolo de encaminhamento interno, como o OSPF, usado apenas dentro de um AS",
+          "Protocolo de encaminhamento externo usado na internet para troca de rotas entre AS",
+          "Protocolo de backup que só anuncia rotas quando o IGP principal para de funcionar",
+          "Protocolo de segurança que cifra o tráfego de dados e autentica cada pacote IP"
+        ],
+        "explanation": "BGP (Border Gateway Protocol) é o protocolo de encaminhamento usado na internet para trocar rotas entre sistemas autônomos."
+      },
+      "en": {
+        "options": [
+          "Internal routing protocol, like OSPF, used only inside a single AS",
+          "External routing protocol used on the internet to exchange routes between AS",
+          "Backup protocol that advertises routes only when the main IGP stops working",
+          "Security protocol that encrypts data traffic and authenticates each packet"
+        ],
+        "explanation": "BGP (Border Gateway Protocol) is the routing protocol used on the internet to exchange routes between autonomous systems."
+      }
+    },
+    {
+      "index": 16,
+      "pt": {
+        "options": [
+          "Configurar NAT estático um-para-um fixo",
+          "Configurar PAT dinâmico usando ACL e interface",
+          "Apagar as traduções NAT com clear ip nat",
+          "Ver tabela NAT com show ip nat translations"
+        ],
+        "explanation": "Este comando configura PAT (NAT overload) usando a ACL 1 e o IP da interface como endereço público."
+      },
+      "en": {
+        "options": [
+          "Configure fixed one-to-one static NAT",
+          "Configure dynamic PAT using ACL and interface",
+          "Delete the NAT entries with clear ip nat",
+          "Show NAT table with show ip nat translations"
+        ],
+        "explanation": "This command configures PAT (NAT overload) using ACL 1 and the interface IP as the public address."
+      }
+    },
+    {
+      "index": 17,
+      "pt": {
+        "options": [
+          "Protocolo de encaminhamento que troca LSAs e calcula a árvore SPF",
+          "Tecnologia de encaminhamento de pacotes em hardware para alta performance",
+          "Modelo de switch de camada 2 que só comuta quadros Ethernet",
+          "Método de backup que grava a running-config na memória NVRAM"
+        ],
+        "explanation": "CEF usa tabela FIB e adjacências para encaminhar pacotes em hardware, muito mais rápido que encaminhamento tradicional."
+      },
+      "en": {
+        "options": [
+          "Routing protocol that exchanges LSAs and runs SPF",
+          "Hardware packet forwarding technology for high performance",
+          "Layer 2 switch model that only forwards Ethernet frames",
+          "Backup method that saves running-config into NVRAM"
+        ],
+        "explanation": "CEF uses FIB table and adjacencies to forward packets in hardware, much faster than traditional routing."
+      }
+    },
+    {
+      "index": 19,
+      "pt": {
+        "options": [
+          "Tipo de VLAN que isola o broadcast no switch sem criar uma tabela de rotas própria",
+          "Tecnologia que permite múltiplas tabelas de encaminhamento independentes no mesmo router",
+          "Protocolo de VPN que cifra túneis IPsec e autentica os sites remotos da empresa",
+          "Tipo de firewall que aplica zonas e políticas para filtrar o tráfego entre redes"
+        ],
+        "explanation": "VRF permite criar instâncias de encaminhamento separadas no mesmo dispositivo físico, útil para segmentação."
+      },
+      "en": {
+        "options": [
+          "VLAN type that isolates broadcasts on a switch without its own routing table",
+          "Technology that allows multiple independent routing tables on the same router",
+          "VPN protocol that encrypts IPsec tunnels and authenticates the remote sites",
+          "Firewall type that uses zones and policies to filter network traffic"
+        ],
+        "explanation": "VRF allows creating separate routing instances on the same physical device, useful for segmentation."
+      }
+    },
+    {
+      "index": 20,
+      "pt": {
+        "options": [
+          "Acelerar convergência de STP em portas de acesso",
+          "Desligar o STP na porta e ignorar os BPDUs",
+          "Aumentar a prioridade STP da porta no switch",
+          "Criar um trunk 802.1Q nessa porta de acesso"
+        ],
+        "explanation": "PortFast coloca imediatamente portas de acesso em estado forwarding, pulando os estados listening/learning."
+      },
+      "en": {
+        "options": [
+          "Speed up STP convergence on access ports",
+          "Disable STP on the port, ignore BPDUs",
+          "Raise STP port priority on the switch",
+          "Create an 802.1Q trunk on the port"
+        ],
+        "explanation": "PortFast immediately puts access ports into forwarding state, skipping listening/learning states."
+      }
+    },
+    {
+      "index": 21,
+      "pt": {
+        "options": [
+          "Endereço único de vários hosts, entregue a todos eles",
+          "Endereço que identifica o dispositivo mais próximo em um grupo",
+          "Endereço de broadcast IPv6 enviado a todos os nós do link",
+          "Endereço multicast do bloco FF00::/8 entregue a todo o grupo"
+        ],
+        "explanation": "Anycast entrega o pacote para o dispositivo mais próximo (menor métrica) em um grupo de dispositivos com o mesmo endereço."
+      },
+      "en": {
+        "options": [
+          "Unique address of many hosts, sent to all of them",
+          "Address that identifies the nearest device in a group",
+          "IPv6 broadcast sent to every node on the link",
+          "Multicast from FF00::/8 sent to the whole group"
+        ],
+        "explanation": "Anycast delivers the packet to the nearest device (lowest metric) in a group sharing the same address."
+      }
+    },
+    {
+      "index": 22,
+      "pt": {
+        "options": [
+          "RIPv2 é link-state com áreas e OSPF é distance-vector",
+          "RIPv2 tem limite de 15 hops, OSPF é hierárquico e escalável",
+          "Não há diferença: ambos são distance-vector de 15 hops",
+          "RIPv2 é mais seguro pois cifra as rotas e o OSPF não"
+        ],
+        "explanation": "RIPv2 é distance-vector com limite de 15 hops. OSPF é link-state, hierárquico (áreas) e escalável para grandes redes."
+      },
+      "en": {
+        "options": [
+          "RIPv2 is link-state with areas and OSPF is distance-vector",
+          "RIPv2 has a 15-hop limit, OSPF is hierarchical and scalable",
+          "There is no difference: both are 15-hop distance-vector",
+          "RIPv2 is more secure: it encrypts routes and OSPF does not"
+        ],
+        "explanation": "RIPv2 is distance-vector with a 15-hop limit. OSPF is link-state, hierarchical (areas), and scalable for large networks."
+      }
+    }
+  ]
+}
