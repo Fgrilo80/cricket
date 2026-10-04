@@ -1,0 +1,8 @@
+{
+  "version": "1.4.3",
+  "build": 11,
+  "package": "pt.fgrilo.camvigilancia",
+  "apkUrl": "https://fgrilo80.github.io/cricket/cam-vigilancia/Cam-Vigilancia.apk",
+  "apkSha256": "97b43a2d89704978781ad9b0688e30b1332ec1e703915799c1fc5dd5c03141b5",
+  "notes": "A app descarrega o APK e abre o instalador do Android. N\u00e3o abre o browser nem a p\u00e1gina de releases. apkSha256 \u00e9 do APK arm64 de teste 1.4.3 (assinatura debug)."
+}
