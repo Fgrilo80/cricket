@@ -2352,5 +2352,209 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "Port security binds an access port to a limited set of allowed source MAC addresses (static, sticky, or dynamic learning up to a maximum) and applies a violation action (protect, restrict, or shutdown). It is about controlling which endpoints may use the port—not MACsec encryption of every frame, not disabling STP/VLANs on uplinks, and not converting the port into a routed /30.",
     "difficulty": "Easy"
+  },
+  {
+    "question": "In vulnerability management, what do CVE and CVSS represent?",
+    "options": [
+      "CVE is Cisco’s private bug tracker ID, and CVSS is the number of packets per second a firewall can drop",
+      "CVE is a cryptographic hash of malware samples, and CVSS is the encryption strength of TLS cipher suites",
+      "CVE is a public identifier for a known vulnerability, and CVSS is a standardized severity score (0–10) that helps prioritize remediation",
+      "CVE is a Cisco proprietary ACL syntax, and CVSS is the VLAN ID used to quarantine infected hosts"
+    ],
+    "correct": 2,
+    "explanation": "CVE (Common Vulnerabilities and Exposures) assigns a public ID (e.g., CVE-2024-12345) to a known vulnerability so vendors and defenders can talk about the same issue. CVSS (Common Vulnerability Scoring System) produces a 0–10 severity score from exploitability and impact metrics to help prioritize patching. Neither is Cisco-private ACL/VLAN syntax, malware hashing, or firewall PPS capacity.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "In cybersecurity, what is the difference between a vulnerability and an exploit?",
+    "options": [
+      "A vulnerability is always malware already running on a host, and an exploit is only the antivirus signature database entry that removes that malware after a full disk scan",
+      "A vulnerability is a weakness that could be abused; an exploit is the method or code that uses it",
+      "A vulnerability is a Cisco proprietary bug tracker ID for TAC cases, and an exploit is any Ethernet frame larger than 1500 bytes on a campus LAN segment",
+      "A vulnerability is a firewall ACL line that blocks traffic by default, and an exploit is a remote-access VPN tunnel profile used by home workers"
+    ],
+    "correct": 1,
+    "explanation": "A vulnerability is a flaw or weakness (software bug, misconfiguration, weak process) that an attacker might abuse. An exploit is the specific technique or code that uses that weakness to achieve an effect (privilege gain, crash, data theft). Malware, AV signatures, MTU size, firewall rules, and VPN tunnels are different concepts.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "How does an evil twin wireless attack mainly differ from a simple rogue access point?",
+    "options": [
+      "An evil twin only works on wired Ethernet hubs between closets, while a rogue AP only works on long fiber links between buildings on campus",
+      "An evil twin is always a Cisco WLC guest portal feature on the controller, while a rogue AP is only unused PoE budget left on an access switch stack",
+      "An evil twin mimics a trusted SSID to lure clients; a rogue AP is any unauthorized AP",
+      "An evil twin only spoofs Bluetooth printer beacons in lobbies, while a rogue AP only changes DNS servers on DHCP scopes for guest VLANs"
+    ],
+    "correct": 2,
+    "explanation": "A rogue AP is any unauthorized wireless access point on or near the network. An evil twin is a hostile AP that deliberately impersonates a legitimate SSID (and often captive portal) so clients connect and credentials or traffic can be abused. Not every rogue AP is an evil twin; WLC portals, PoE budget, Bluetooth, and DHCP DNS are different topics.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "In physical access control, how do RFID badges mainly differ from NFC phones/cards used at a door reader?",
+    "options": [
+      "RFID badges only work over long fiber between buildings, while NFC only works on copper Ethernet trunks in the same wiring closet on campus",
+      "RFID badge readers often work at longer range for doors/gates; NFC stays centimeters for tap-style unlock",
+      "RFID always wraps every badge ID in TLS 1.3 end-to-end across the LAN, while NFC never carries any identifier and only blinks a status LED",
+      "NFC badges rewrite every campus firewall ACL overnight, while RFID badges only change OSPF interface costs on core routers during business hours"
+    ],
+    "correct": 1,
+    "explanation": "RFID access badges are commonly read at longer distances suitable for doors and gates. NFC is intentionally very short range (a few centimeters), used for tap interactions. Neither technology is about fiber vs copper trunks, TLS on every badge ID as the defining difference, or rewriting firewall/OSPF policy.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "In a typical perimeter design, what is the main purpose of a DMZ (demilitarized zone)?",
+    "options": [
+      "To replace the corporate firewall with an unmanaged Layer-2 hub that floods every VLAN and ignores ACLs forever",
+      "To host Internet-reachable services (e.g., web/mail) in a segmented zone between untrusted and internal networks",
+      "To permanently disable DHCP and DNS on every access switch so clients can only use static addressing campus-wide",
+      "To force all internal workstations onto the same /8 subnet as the ISP edge without any routing, NAT, or firewalls"
+    ],
+    "correct": 1,
+    "explanation": "A DMZ is a segmented perimeter zone for Internet-facing services, isolating them from the trusted LAN while still allowing controlled external access. It is not a Layer-2 hub substitute, does not disable DHCP/DNS campus-wide, and does not flatten addressing into one ISP /8.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "How does cut-through switching mainly differ from store-and-forward on a typical Ethernet switch?",
+    "options": [
+      "Cut-through waits for the full FCS and drops every CRC-errored frame before any byte is ever forwarded out the egress port",
+      "Store-and-forward starts sending after only the destination MAC is read, so CRC checks never happen on that platform",
+      "Cut-through starts forwarding after reading the destination MAC; store-and-forward buffers the whole frame first",
+      "Both modes permanently disable MAC learning and flood every unicast frame to all VLANs on the switch forever"
+    ],
+    "correct": 2,
+    "explanation": "Cut-through starts forwarding once enough of the header (at least the destination MAC) is known, lowering latency; store-and-forward receives the entire frame, checks FCS/CRC, then forwards. Cut-through does not wait for a full FCS check before starting; store-and-forward still does CRC validation; neither mode disables MAC learning.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does a host’s ARP cache mainly store, and why do entries typically age out?",
+    "options": [
+      "It stores every DNS A/AAAA answer for a long TTL so the host rarely needs a recursive resolver after the first successful query completes",
+      "It maps recently used IPv4 addresses to MAC addresses on the local link; aging clears stale mappings after a timeout",
+      "It keeps a full permanent copy of all switch CAM entries learned via CDP so Layer 3 forwarding never needs another ARP request again",
+      "It caches only IPv6 Neighbor Discovery options and ignores IPv4 entirely, because ARP was removed from modern Ethernet protocol stacks"
+    ],
+    "correct": 1,
+    "explanation": "The ARP cache (ARP table) maps IPv4 addresses to MAC addresses for on-link delivery. Entries usually expire so a host re-resolves if a peer’s MAC or addressing changes. It is not a DNS cache, not a copy of the switch CAM via CDP, and ARP still applies to IPv4 (IPv6 uses Neighbor Discovery).",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "On a Cisco switch interface counter, what do oversized “giants” and undersized “runts” mainly indicate?",
+    "options": [
+      "Giants mean the port stayed in half-duplex after Auto-MDIX failed, and runts mean Spanning Tree permanently blocked the link so no frames can ever forward again",
+      "Giants are normal jumbo frames created only by OSPF hellos on LAN ports, and runts are expected keepalive packets under 64 bytes that every healthy Ethernet link must show",
+      "Giants are frames larger than the allowed maximum and runts are shorter than the minimum; spikes often point to duplex, cabling, or NIC problems",
+      "Giants and runts only increment when DHCP snooping drops Discover/Offer messages, so clearing the binding table on the access switch always resets both counters to zero"
+    ],
+    "correct": 2,
+    "explanation": "Giants exceed the maximum Ethernet/MTU frame size and runts fall below the minimum (~64 bytes). Elevated counts often indicate duplex mismatch, bad cabling, or faulty NICs. They are not explained by STP blocking alone, “normal OSPF/keepalive” traffic, or DHCP snooping bindings.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is an OTDR (Optical Time Domain Reflectometer) mainly used for on fiber-optic links?",
+    "options": [
+      "It is a Layer-3 probe that floods ICMP echoes through every SFP so the switch can auto-negotiate duplex, MTU, and PoE class on copper access ports before any fiber span is tested",
+      "It sends light pulses into the fiber and analyzes reflections to locate breaks, splices, connectors, and measure attenuation along the span",
+      "It only certifies Cat6A copper bundles for PoE++ budget planning and cannot be connected to single-mode or multimode fiber plant under any accepted cabling standard",
+      "It replaces the need for cleaning LC/SC connectors because any OTDR trace automatically polishes and inspects the end-face before the first optical measurement runs"
+    ],
+    "correct": 1,
+    "explanation": "An OTDR injects optical pulses and uses backscatter/reflections to map events (breaks, splices, connectors) and estimate loss along the fiber. It is not an ICMP/copper duplex tool, not limited to Cat6A PoE planning, and does not polish connectors.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "How do LC, SC, and ST fiber connectors mainly differ in common campus cabling practice?",
+    "options": [
+      "LC uses a small latching duplex form common on SFP optics; SC is a larger square push-pull connector; ST uses a bayonet (twist-lock) coupling often seen on older multimode plant",
+      "LC, SC, and ST are electrically identical RJ-45 pinouts that only differ by the color of the plastic boot, never mate to optical fiber, and always negotiate PoE class before any light is sent",
+      "ST is the only connector allowed on single-mode spans longer than 40 km under every cabling standard, while LC and SC are restricted to copper Cat6A PoE++ access ports and cannot terminate fiber",
+      "SC always carries two CWDM wavelengths in one ferrule by definition, whereas LC and ST can only carry a single wavelength and therefore can never form a standards-compliant duplex optical link"
+    ],
+    "correct": 0,
+    "explanation": "LC is a small latching connector widely used on modern SFP/SFP+ optics; SC is a larger square push-pull style; ST uses a bayonet twist-lock and is common on older multimode installs. They are optical connectors (not RJ-45), are not limited by copper PoE rules, and duplex is about two fibers/ports—not a CWDM-only SC property.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Physically, how do single-mode fiber (SMF) and multimode fiber (MMF) mainly differ in common campus/WAN plant?",
+    "options": [
+      "SMF and MMF are electrically identical Cat6A copper pairs that only differ by jacket color, and both always negotiate PoE class before any light is sent on the optical link",
+      "SMF uses a small core (~9 µm) with laser sources for long reaches; MMF uses a larger core (50/62.5 µm) typically with LED/VCSEL sources for shorter building runs",
+      "MMF is the only fiber allowed on spans longer than 40 km under every cabling standard, while SMF is restricted to copper RJ-45 PoE++ access ports and cannot terminate optics",
+      "SMF always carries two CWDM wavelengths in one core by definition, whereas MMF can only carry a single wavelength and therefore can never form a duplex optical link"
+    ],
+    "correct": 1,
+    "explanation": "SMF has a small ~9 µm core and is driven by lasers for long campus/WAN distances. MMF has a larger 50/62.5 µm core and commonly uses LED/VCSEL sources for shorter in-building runs. Neither is copper/PoE, and duplex is about two fibers—not a CWDM-only SMF property.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "A Wi-Fi client shows RSSI -65 dBm and the noise floor is -90 dBm. What is the signal-to-noise ratio (SNR), and why does it matter?",
+    "options": [
+      "-155 dB, because SNR is the sum of the RSSI and the noise floor values, and a more negative result always means a cleaner radio link",
+      "65 dB, because SNR equals the RSSI value without its sign, and the noise floor is only used to choose the channel width on the AP",
+      "90 dB, because SNR is simply the noise floor without its sign, and the received signal level has no effect on the usable data rates",
+      "25 dB, because SNR is the gap between signal and noise; a higher SNR lets the client use faster modulation and keep a stable link"
+    ],
+    "correct": 3,
+    "explanation": "SNR = RSSI − noise floor = -65 − (-90) = 25 dB. The bigger the gap above the noise, the higher the modulation/data rate the client can sustain with fewer retries. It is not a sum, nor just one of the two values.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "A technician is making a new patch cable and has the UTP wires arranged in T568B order. Which tool permanently attaches the RJ-45 connector to the cable?",
+    "options": [
+      "A punch-down tool, which pushes each wire into the RJ-45 pins one at a time and trims the excess copper from the end of the jacket",
+      "A crimper, which presses the RJ-45 pins down through the wire insulation and clamps the connector strain relief onto the cable jacket",
+      "A tone generator and probe, which sends a signal along the cable and fuses the wires into the RJ-45 pins once the tone is detected",
+      "A cable certifier, which measures crosstalk and attenuation and then seals the connector onto the cable when every test result passes"
+    ],
+    "correct": 1,
+    "explanation": "A crimper pushes the connector's gold pins through each conductor's insulation and locks the strain relief onto the jacket. A punch-down tool terminates wires on patch panels and keystone jacks (110/Krone blocks), a toner and probe traces cables, and a certifier only tests the link.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "A Windows PC got an address from the wrong DHCP scope. The scope has been fixed. Which commands make the PC drop its current lease and request a new one right away?",
+    "options": [
+      "ipconfig /release followed by ipconfig /renew, which gives back the current lease and then starts a new DHCP request",
+      "ipconfig /flushdns followed by ipconfig /registerdns, which clears cached names and then signs the PC up to the DNS server",
+      "arp -d * followed by ping to the gateway, which clears the ARP cache so the router hands out a fresh address to the PC",
+      "netstat -r followed by route print, which lists the routing table and resets every interface that has a duplicate address"
+    ],
+    "correct": 0,
+    "explanation": "ipconfig /release sends a DHCPRELEASE and removes the address, and ipconfig /renew starts a new DHCP request (DORA). /flushdns and /registerdns deal with DNS only, arp -d clears MAC-to-IP mappings, and netstat -r and route print only show routes.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "You are cabling above a false ceiling used as an air return (plenum space). Which jacket type is required, and why?",
+    "options": [
+      "PVC (CM/CMR) jacket, because it is cheaper and the false ceiling already acts as a fire barrier for the whole floor",
+      "Plenum-rated (CMP) jacket, because it is low-smoke and low-toxicity if the cable burns in the air-handling space",
+      "Outdoor gel-filled jacket, because humidity above the tiles would corrode a normal indoor PVC jacket within months",
+      "Shielded foil-only jacket, because EMI from HVAC motors would corrupt Ethernet frames without a metal wrap"
+    ],
+    "correct": 1,
+    "explanation": "Plenum spaces carry environmental air. CMP (plenum) jackets use low-smoke, low-halogen materials so a fire does not pump toxic smoke through the HVAC. PVC CM/CMR is for non-plenum runs; gel-filled is for outdoor wet locations; foil shielding addresses EMI, not fire/smoke code.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "Before mating two fiber patch cords in a campus closet, what is the best practice to avoid high loss or dirty-connector faults?",
+    "options": [
+      "Bend each jumper into a tight loop so micro-bends prove the glass core is still continuous before you plug it in",
+      "Inspect the end-faces with a fiber microscope and clean with a cassette or wipe if contamination is visible",
+      "Crimp a new RJ45 plug onto the fiber jacket so copper test gear can certify the optical path end-to-end",
+      "Raise switch PoE to 802.3bt Type 4 so optical transceivers receive enough watts to burn dust off the ferrule"
+    ],
+    "correct": 1,
+    "explanation": "Contamination on fiber end-faces is a leading cause of high insertion loss and intermittent links. Inspect with a microscope and clean with an approved cassette/wipe before mating. Tight bends risk damage, RJ45 crimps are for copper UTP, and PoE does not clean optical ferrules.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What is an RJ-45 Ethernet loopback plug mainly used for when troubleshooting a PC or switch port?",
+    "options": [
+      "It converts every copper access port into a fiber SFP uplink so you can certify multimode links without an OTDR or a fiber microscope at all",
+      "It loops TX pairs back into RX on the same jack so you can verify the NIC or port can send and receive locally",
+      "It forces Auto-MDIX off permanently and replaces Spanning Tree so every cable becomes a crossover usable only between switches forever",
+      "It authenticates 802.1X clients by reflecting EAP frames unchanged until the RADIUS server finally issues an Access-Accept message"
+    ],
+    "correct": 1,
+    "explanation": "A loopback plug shorts or maps TX to RX on the same connector so link/activity LEDs and local diagnostics can prove the interface hardware path without a remote peer. It is not a fiber converter, not an STP/Auto-MDIX replacement, and not an 802.1X authenticator.",
+    "difficulty": "Easy"
   }
 ];

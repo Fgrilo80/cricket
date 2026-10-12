@@ -2303,7 +2303,7 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "A DFS (Dynamic Frequency Selection) permite aos APs usar canais 5/6 GHz partilhados com radar meteorológico e outros serviços só se detetarem incumbentes e saírem do canal quando exigido. Isso costuma implicar um Channel Availability Check (CAC) antes de usar o canal e uma possível mudança de canal em operação. Não é band steering, não é 802.11w PMF, e não é um agendador TDMA.",
-    "difficulty": "Medium"
+    "difficulty": "Médio"
   },
   {
     "question": "Qual é a diferença prática entre os polimentos de conector de fibra UPC e APC?",
@@ -2315,7 +2315,7 @@ window.QUIZ_BANK = [
     ],
     "correct": 3,
     "explanation": "UPC (Ultra Physical Contact) tem face polida plana; APC (Angled Physical Contact) tem tipicamente ~8° de ângulo para a reflexão ir para o cladding em vez de voltar para o laser — importante em ligações analógicas/PON e muitas monomodo. APC e UPC não se devem acoplar: o desalinhamento geométrico causa perda elevada e possível dano. A cor do boot costuma indicar (verde APC, azul UPC), mas a cor sozinha não define o polimento, e o estilo não é “só multimodo vs só monomodo”.",
-    "difficulty": "Medium"
+    "difficulty": "Médio"
   },
   {
     "question": "Face ao PoE mais antigo (IEEE 802.3af/at), o que é que o IEEE 802.3bt (Type 3/Type 4, muitas vezes chamado PoE++) permite principalmente numa porta de switch compatível?",
@@ -2327,7 +2327,7 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "O IEEE 802.3bt alarga o Power over Ethernet além do 802.3af (~15 W) e 802.3at/PoE+ (~30 W), usando mais pares e orçamentos mais altos (tipicamente ~60 W Type 3 e ~90 W Type 4 no equipamento que fornece energia). Continua em cabos Ethernet de cobre com dados e energia a partilhar pares após negociação — não é SFP de fibra, não é “só DC em vez de dados”, e não é um protocolo de routing.",
-    "difficulty": "Medium"
+    "difficulty": "Médio"
   },
   {
     "question": "No Wi-Fi 6 (802.11ax), qual é o objetivo principal do OFDMA (Orthogonal Frequency-Division Multiple Access)?",
@@ -2339,7 +2339,7 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "O OFDMA divide um canal Wi-Fi em resource units (RUs) mais pequenas para que uma oportunidade de TX/RX do AP possa endereçar várias estações com alocações dimensionadas — útil em ambientes densos com muitas tramas curtas. Complementa (não desativa) o MU-MIMO; não tem a ver com a escolha de cifras WEP/WPA3; e não cria canais de 80 MHz em 2,4 GHz como o VHT80 nos 5 GHz.",
-    "difficulty": "Medium"
+    "difficulty": "Médio"
   },
   {
     "question": "Num switch de acesso Cisco, qual é o objetivo principal do port security numa interface?",
@@ -2351,6 +2351,210 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O port security associa uma porta de acesso a um conjunto limitado de MACs de origem permitidos (estáticos, sticky ou aprendizagem dinâmica até um máximo) e aplica uma ação de violação (protect, restrict ou shutdown). Serve para controlar que endpoints podem usar a porta — não é encriptação MACsec de todas as tramas, não desativa STP/VLANs no uplink, e não transforma a porta numa routed /30.",
-    "difficulty": "Easy"
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Na gestão de vulnerabilidades, o que representam CVE e CVSS?",
+    "options": [
+      "CVE é o ID privado do bug tracker da Cisco, e CVSS é o número de pacotes por segundo que uma firewall consegue descartar",
+      "CVE é um hash criptográfico de amostras de malware, e CVSS é a força de encriptação dos cipher suites TLS",
+      "CVE é um identificador público de uma vulnerabilidade conhecida, e CVSS é uma pontuação padronizada de gravidade (0–10) que ajuda a priorizar a remediação",
+      "CVE é uma sintaxe de ACL proprietária Cisco, e CVSS é o ID de VLAN usado para pôr hosts infetados em quarentena"
+    ],
+    "correct": 2,
+    "explanation": "O CVE (Common Vulnerabilities and Exposures) atribui um ID público (ex.: CVE-2024-12345) a uma vulnerabilidade conhecida para vendors e defensores falarem do mesmo problema. O CVSS (Common Vulnerability Scoring System) produz uma pontuação de gravidade 0–10 a partir de métricas de explorabilidade e impacto, para priorizar patches. Não é sintaxe ACL/VLAN Cisco, hash de malware, nem capacidade PPS de firewall.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Em cibersegurança, qual é a diferença entre uma vulnerabilidade e um exploit?",
+    "options": [
+      "Uma vulnerabilidade é sempre malware já a correr num host, e um exploit é só a entrada da base de assinaturas de antivírus que remove esse malware após um scan completo do disco",
+      "Uma vulnerabilidade é uma fraqueza que pode ser abusada; um exploit é o método ou código que a usa",
+      "Uma vulnerabilidade é um ID de bug proprietário Cisco para casos TAC, e um exploit é qualquer trama Ethernet maior que 1500 bytes num segmento LAN de campus",
+      "Uma vulnerabilidade é uma linha de ACL de firewall que bloqueia tráfego por omissão, e um exploit é um perfil de túnel VPN de acesso remoto para teletrabalho"
+    ],
+    "correct": 1,
+    "explanation": "Uma vulnerabilidade é uma falha ou fraqueza (bug de software, má configuração, processo fraco) que um atacante pode abusar. Um exploit é a técnica ou código concreto que usa essa fraqueza para obter um efeito (elevação de privilégios, crash, roubo de dados). Malware, assinaturas AV, MTU, regras de firewall e túneis VPN são conceitos diferentes.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Em que difere principalmente um ataque evil twin de um access point rogue simples?",
+    "options": [
+      "Um evil twin só funciona em hubs Ethernet com fio entre armários, enquanto um rogue AP só funciona em ligações longas de fibra entre edifícios no campus",
+      "Um evil twin é sempre um portal guest de WLC Cisco no controlador, enquanto um rogue AP é só orçamento PoE não usado num stack de switches de acesso",
+      "Um evil twin imita um SSID de confiança para atrair clientes; um rogue AP é qualquer AP não autorizado",
+      "Um evil twin só falsifica beacons Bluetooth de impressoras na receção, enquanto um rogue AP só altera servidores DNS nos scopes DHCP de VLANs guest"
+    ],
+    "correct": 2,
+    "explanation": "Um rogue AP é qualquer access point wireless não autorizado na ou perto da rede. Um evil twin é um AP hostil que imita deliberadamente um SSID legítimo (e muitas vezes um portal cativo) para os clientes se ligarem e abusarem de credenciais ou tráfego. Nem todo rogue AP é evil twin; portais WLC, PoE, Bluetooth e DNS DHCP são temas diferentes.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "No controlo de acesso físico, em que diferem principalmente os cartões RFID dos telemóveis/cartões NFC num leitor de porta?",
+    "options": [
+      "Os cartões RFID só funcionam sobre fibra longa entre edifícios, enquanto o NFC só funciona em troncos Ethernet de cobre no mesmo armário de rede no campus",
+      "Leitores RFID de crachá costumam ler a maior distância em portas/portões; o NFC fica a centímetros no tap-to-unlock",
+      "O RFID envolve sempre cada ID de crachá em TLS 1.3 ponta a ponta na LAN, enquanto o NFC nunca transporta identificador e só pisca um LED de estado",
+      "Crachás NFC reescrevem todas as ACL de firewall do campus de noite, enquanto RFID só altera custos OSPF nos routers de núcleo em horário laboral"
+    ],
+    "correct": 1,
+    "explanation": "Crachás RFID de acesso são tipicamente lidos a distâncias maiores, adequadas a portas e portões. O NFC é de alcance muito curto (poucos centímetros), para interações por aproximação. Nenhum dos dois se define por fibra vs cobre, TLS em todos os IDs, ou reescrever política de firewall/OSPF.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Num desenho de perímetro típico, qual é o objetivo principal de uma DMZ (zona desmilitarizada)?",
+    "options": [
+      "Substituir o firewall corporativo por um hub Layer-2 não gerido que inundaria todas as VLANs e ignoraria ACLs para sempre",
+      "Alojar serviços alcançáveis na Internet (ex.: web/mail) numa zona segmentada entre redes não confiáveis e a rede interna",
+      "Desativar permanentemente DHCP e DNS em todos os switches de acesso para os clientes só usarem endereçamento estático no campus",
+      "Forçar todas as workstations internas para a mesma sub-rede /8 do edge do ISP sem qualquer routing, NAT ou firewalls"
+    ],
+    "correct": 1,
+    "explanation": "Uma DMZ é uma zona de perímetro segmentada para serviços expostos à Internet, isolando-os da LAN confiável com acesso externo controlado. Não substitui o firewall por um hub, não desativa DHCP/DNS no campus nem achata o endereçamento num /8 do ISP.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Em que difere principalmente o switching cut-through do store-and-forward num switch Ethernet típico?",
+    "options": [
+      "O cut-through espera o FCS completo e descarta todas as tramas com erro de CRC antes de enviar qualquer byte pela porta de saída do switch",
+      "O store-and-forward começa a enviar só depois de ler o MAC de destino, por isso nunca faz verificação de CRC nessa plataforma",
+      "O cut-through começa a reencaminhar após ler o MAC de destino; o store-and-forward bufferiza primeiro a trama inteira",
+      "Ambos os modos desativam permanentemente a aprendizagem de MACs e inundam todas as tramas unicast para todas as VLANs do switch"
+    ],
+    "correct": 2,
+    "explanation": "O cut-through começa a reencaminhar assim que conhece o suficiente do cabeçalho (pelo menos o MAC de destino), reduzindo latência; o store-and-forward recebe a trama inteira, valida FCS/CRC e só depois reencaminha. O cut-through não espera o FCS completo antes de começar; o store-and-forward continua a validar CRC; nenhum desativa a aprendizagem de MACs.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que guarda principalmente a cache ARP de um host, e porque é que as entradas tipicamente expiram?",
+    "options": [
+      "Guarda todas as respostas DNS A/AAAA com TTL longo para o host quase nunca precisar de um resolver recursivo após a primeira query bem-sucedida",
+      "Associa endereços IPv4 usados recentemente a endereços MAC no enlace local; o envelhecimento limpa mapeamentos obsoletos após um timeout",
+      "Mantém uma cópia permanente de todas as entradas CAM do switch aprendidas via CDP para o encaminhamento L3 nunca mais precisar de pedidos ARP",
+      "Só faz cache de opções IPv6 Neighbor Discovery e ignora por completo o IPv4, porque o ARP foi removido das stacks Ethernet modernas atuais"
+    ],
+    "correct": 1,
+    "explanation": "A cache ARP (tabela ARP) mapeia endereços IPv4 para MAC para entrega no enlace. As entradas costumam expirar para o host voltar a resolver se o MAC ou o endereçamento do peer mudar. Não é cache DNS, nem cópia da CAM via CDP, e o ARP continua a aplicar-se a IPv4 (IPv6 usa Neighbor Discovery).",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Num contador de interface de um switch Cisco, o que indicam principalmente os “giants” (oversized) e os “runts” (undersized)?",
+    "options": [
+      "Giants significam que a porta ficou em half-duplex após falha do Auto-MDIX, e runts que o Spanning Tree bloqueou o link de forma permanente sem nunca mais encaminhar frames",
+      "Giants são frames jumbo normais criados só por hellos OSPF em portas LAN, e runts são keepalives esperados com menos de 64 bytes que todo o link Ethernet saudável deve mostrar",
+      "Giants são frames maiores que o máximo permitido e runts mais curtos que o mínimo; picos apontam muitas vezes para problemas de duplex, cablagem ou NIC",
+      "Giants e runts só sobem quando o DHCP snooping descarta mensagens Discover/Offer, por isso limpar a binding table no switch de acesso põe sempre ambos os contadores a zero"
+    ],
+    "correct": 2,
+    "explanation": "Giants excedem o tamanho máximo de frame Ethernet/MTU e runts ficam abaixo do mínimo (~64 bytes). Contagens elevadas apontam muitas vezes para mismatch de duplex, má cablagem ou NICs com falha. Não se explicam só por STP a bloquear, por “tráfego OSPF/keepalive normal”, nem por bindings de DHCP snooping.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Para que serve principalmente um OTDR (Optical Time Domain Reflectometer) em links de fibra ótica?",
+    "options": [
+      "É uma sonda de Camada 3 que inunda ICMP através de cada SFP para o switch auto-negociar duplex, MTU e classe PoE em portas de cobre antes de testar qualquer troço de fibra",
+      "Envia impulsos de luz pela fibra e analisa reflexões para localizar ruturas, emendas, conectores e medir atenuação ao longo do troço",
+      "Só certifica cabos Cat6A de cobre para planear orçamento PoE++ e não se pode ligar a fibra monomodo nem multimodo em nenhuma norma de cablagem aceite",
+      "Substitui a limpeza de conectores LC/SC porque qualquer traço OTDR polisca e inspeciona automaticamente a face do conector antes da primeira medição ótica"
+    ],
+    "correct": 1,
+    "explanation": "Um OTDR injeta impulsos óticos e usa backscatter/reflexões para mapear eventos (ruturas, emendas, conectores) e estimar a perda ao longo da fibra. Não é ferramenta ICMP/duplex em cobre, não se limita a Cat6A/PoE, nem polisca conectores.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Em que diferem principalmente os conectores de fibra LC, SC e ST na prática comum de cablagem campus?",
+    "options": [
+      "LC usa um formato duplex pequeno com trinco, comum em óticas SFP; SC é um conector quadrado maior push-pull; ST usa acoplamento baioneta (twist-lock), frequente em planta multimodo mais antiga",
+      "LC, SC e ST são pinouts RJ-45 eletricamente idênticos que só diferem na cor do boot de plástico, nunca se ligam a fibra ótica e negociam sempre a classe PoE antes de enviar qualquer luz",
+      "ST é o único conector permitido em troços monomodo com mais de 40 km em todas as normas de cablagem, enquanto LC e SC ficam restringidos a portas de cobre Cat6A PoE++ e não podem terminar fibra",
+      "SC transporta sempre dois comprimentos de onda CWDM num único ferrule por definição, ao passo que LC e ST só suportam um comprimento de onda e por isso nunca formam um link ótico duplex conforme as normas"
+    ],
+    "correct": 0,
+    "explanation": "LC é um conector pequeno com trinco, muito usado em óticas SFP/SFP+; SC é quadrado push-pull maior; ST usa baioneta e é comum em instalações multimodo antigas. São conectores óticos (não RJ-45), não limitados por regras PoE em cobre, e o duplex refere-se a duas fibras/portas—não a uma propriedade CWDM exclusiva do SC.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Fisicamente, em que diferem principalmente a fibra monomodo (SMF) e a multimodo (MMF) na planta campus/WAN comum?",
+    "options": [
+      "SMF e MMF são pares de cobre Cat6A eletricamente idênticos que só diferem na cor da capa, e ambas negociam sempre a classe PoE antes de enviar qualquer luz no link ótico",
+      "SMF usa um núcleo pequeno (~9 µm) com fontes laser para longos alcances; MMF usa um núcleo maior (50/62,5 µm), tipicamente com LED/VCSEL, para troços mais curtos em edifícios",
+      "MMF é a única fibra permitida em troços com mais de 40 km em todas as normas de cablagem, enquanto SMF fica restringida a portas de cobre RJ-45 PoE++ e não pode terminar fibra",
+      "SMF transporta sempre dois comprimentos de onda CWDM num único núcleo por definição, ao passo que MMF só suporta um comprimento de onda e por isso nunca forma um link ótico duplex"
+    ],
+    "correct": 1,
+    "explanation": "SMF tem núcleo ~9 µm e é alimentada por lasers para longas distâncias campus/WAN. MMF tem núcleo 50/62,5 µm e costuma usar LED/VCSEL em troços curtos dentro de edifícios. Nenhuma é cobre/PoE, e o duplex refere-se a duas fibras—não a uma propriedade CWDM exclusiva da SMF.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Um cliente Wi-Fi mostra RSSI de -65 dBm e o noise floor é -90 dBm. Qual é a relação sinal-ruído (SNR) e porque é importante?",
+    "options": [
+      "-155 dB, porque a SNR é a soma do RSSI com o noise floor, e um resultado mais negativo significa sempre uma ligação rádio mais limpa",
+      "65 dB, porque a SNR é igual ao valor do RSSI sem sinal, e o noise floor só serve ao AP para escolher a largura de canal e a potência de emissão",
+      "90 dB, porque a SNR é apenas o noise floor sem sinal, e o nível do sinal recebido não afeta os débitos de dados utilizáveis",
+      "25 dB, porque a SNR é a diferença entre sinal e ruído; uma SNR maior permite ao cliente usar modulação mais rápida e manter ligação estável"
+    ],
+    "correct": 3,
+    "explanation": "SNR = RSSI − noise floor = -65 − (-90) = 25 dB. Quanto maior a margem acima do ruído, maior a modulação/débito que o cliente sustenta com menos retransmissões. Não é uma soma nem apenas um dos dois valores.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Um técnico está a fazer um cabo de patch novo e já tem os fios UTP na ordem T568B. Que ferramenta fixa de forma permanente o conector RJ-45 ao cabo?",
+    "options": [
+      "Uma ferramenta punch-down, que empurra cada fio para os pinos do RJ-45 um a um e corta o cobre em excesso na ponta da bainha",
+      "Um alicate de cravar (crimper), que pressiona os pinos do RJ-45 através do isolamento e prende o conector à bainha do cabo",
+      "Um gerador de tom e sonda, que envia um sinal ao longo do cabo e funde os fios nos pinos do RJ-45 assim que o tom é detetado",
+      "Um certificador de cabos, que mede crosstalk e atenuação e depois sela o conector no cabo quando todos os testes dão resultado positivo"
+    ],
+    "correct": 1,
+    "explanation": "O crimper empurra os pinos dourados do conector através do isolamento de cada condutor e prende o conector à bainha. A punch-down termina fios em patch panels e tomadas keystone (blocos 110/Krone), o gerador de tom e sonda serve para identificar cabos e o certificador apenas testa a ligação.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Um PC Windows recebeu um endereço do scope DHCP errado. O scope já foi corrigido. Que comandos fazem o PC largar o lease atual e pedir logo um novo?",
+    "options": [
+      "ipconfig /release seguido de ipconfig /renew, que devolve o lease atual e depois inicia um novo pedido DHCP",
+      "ipconfig /flushdns seguido de ipconfig /registerdns, que limpa os nomes em cache e depois regista o PC no servidor DNS",
+      "arp -d * seguido de ping ao gateway, que limpa a cache ARP para o router entregar um endereço novo ao PC",
+      "netstat -r seguido de route print, que lista a tabela de routing e reinicia cada interface que tenha um endereço duplicado"
+    ],
+    "correct": 0,
+    "explanation": "O ipconfig /release envia um DHCPRELEASE e remove o endereço, e o ipconfig /renew inicia um novo pedido DHCP (DORA). /flushdns e /registerdns tratam só de DNS, arp -d limpa os mapeamentos MAC-IP e netstat -r e route print apenas mostram rotas.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Estás a passar cabo acima de um teto falso usado como retorno de ar (espaço plenum). Que tipo de capa é obrigatório e porquê?",
+    "options": [
+      "Capa PVC (CM/CMR), porque é mais barata e o teto falso já funciona como barreira corta-fogo para todo o piso",
+      "Capa plenum (CMP), porque liberta pouco fumo e pouca toxicidade se o cabo arder no espaço de ventilação",
+      "Capa outdoor com gel, porque a humidade acima das placas corroeria uma capa PVC interior normal em poucos meses",
+      "Capa só com folha blindada, porque a EMI dos motores HVAC corromperia as tramas Ethernet sem uma envolvente metálica"
+    ],
+    "correct": 1,
+    "explanation": "Os espaços plenum transportam ar ambiental. As capas CMP (plenum) usam materiais de baixo fumo e baixo halogéneo para um incêndio não empurrar fumo tóxico pelo HVAC. PVC CM/CMR serve para percursos não-plenum; gel é para exterior húmido; a blindagem trata de EMI, não do código de fumo/fogo.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Antes de acoplar dois patch cords de fibra num armário de campus, qual é a melhor prática para evitar perda elevada ou falhas por conector sujo?",
+    "options": [
+      "Dobrar cada jumper em laço apertado para micro-curvas provarem que o núcleo de vidro ainda está contínuo antes de ligar",
+      "Inspecionar as faces com um microscópio de fibra e limpar com cassete ou toalhete se houver contaminação visível",
+      "Crimpar uma ficha RJ45 nova na capa da fibra para o teste de cobre certificar o caminho ótico de ponta a ponta",
+      "Subir o PoE do switch para 802.3bt Tipo 4 para os transcetores óticos terem watts suficientes para queimar o pó na ferrule"
+    ],
+    "correct": 1,
+    "explanation": "Contaminação nas faces de fibra é causa frequente de perda de inserção elevada e ligações intermitentes. Inspecione com microscópio e limpe com cassete/toalhete aprovado antes de acoplar. Laços apertados arriscam dano; crimps RJ45 são para UTP de cobre; o PoE não limpa ferrules óticas.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Para que serve principalmente um loopback plug RJ-45 Ethernet na resolução de problemas de um PC ou porta de switch?",
+    "options": [
+      "Converte cada porta de acesso em cobre num uplink de fibra SFP para certificar links multimodo sem OTDR nem microscópio de fibra ótica",
+      "Liga os pares TX de volta aos RX no mesmo jack para verificar se a NIC ou a porta conseguem enviar e receber localmente",
+      "Desliga o Auto-MDIX de forma permanente e substitui o Spanning Tree para todos os cabos passarem a crossover só entre switches",
+      "Autentica clientes 802.1X ao refletir frames EAP sem alteração até o servidor RADIUS emitir finalmente um Access-Accept da sessão"
+    ],
+    "correct": 1,
+    "explanation": "Um loopback plug faz curto ou mapeia TX para RX no mesmo conector para LEDs de link/atividade e diagnósticos locais provarem o caminho de hardware da interface sem um peer remoto. Não é conversor de fibra, não substitui STP/Auto-MDIX e não é autenticador 802.1X.",
+    "difficulty": "Fácil"
   }
 ];

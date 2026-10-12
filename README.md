@@ -6,16 +6,16 @@ Base de perguntas do **Cisco Quiz** (CCST, CCNA, CCNP + **Cybersegurança**).
 - Banco agregado: `cricket.json` (também em `data/`)
 - Por certificação/língua: `data/{ccst|ccna|ccnp|cyber}-{pt|en}.{json,js}`
 
-## Contagens (v3.2.1)
+## Contagens (v3.3.0)
 
 | Trilho | PT | EN |
 |--------|----|----|
-| CCST   | 196 | 196 |
-| CCNA   | 202 | 202 |
-| CCNP   | 197 | 197 |
-| **Classic total** | | **1190** |
-| Cyber  | 20 | 20 |
-| **Grand total** | | **1230** |
+| CCST   | 213 | 213 |
+| CCNA   | 219 | 219 |
+| CCNP   | 215 | 215 |
+| **Classic total** | | **1294** |
+| Cyber  | 78 | 78 |
+| **Grand total** | | **1450** |
 
 ## Cybersegurança (4.º trilho)
 

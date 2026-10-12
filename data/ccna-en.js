@@ -2435,5 +2435,209 @@ window.QUIZ_BANK = [
     "correct": 3,
     "explanation": "NHRP is the mapping service in DMVPN: spokes register their public/NBMA address with the hub (NHS), and can query mappings to build on-demand spoke-to-spoke tunnels. IPsec/IKEv2 still protect the tunnels; NHRP does not replace the underlay IGP on physical links, and it is not a mechanism to dump full BGP Internet tables into the overlay.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "What problem do NAT64 and DNS64 mainly solve together in an IPv6-mostly network?",
+    "options": [
+      "They replace OSPF entirely with BGP so an IPv6-only campus never needs an interior gateway protocol for any internal routing at all",
+      "They encrypt every stub-resolver DNS query with site-to-site IPsec before it leaves the LAN, ignoring DoH or DoT client settings",
+      "They force every access switch to configure dual-stack SVIs so each user VLAN must always have both an IPv4 and an IPv6 default gateway",
+      "They let IPv6-only clients reach IPv4-only servers via DNS64 AAAA synthesis and NAT64 translation"
+    ],
+    "correct": 3,
+    "explanation": "In IPv6-mostly designs, clients may lack IPv4. DNS64 synthesizes AAAA answers from A records so the client dials an IPv6 destination; NAT64 then translates between the IPv6 client and the real IPv4 server. This is not an OSPF/BGP swap, not blanket IPsec for DNS, and not a requirement that every SVI be dual-stack.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the main defensive idea behind a DNS sinkhole?",
+    "options": [
+      "Redirect known-bad domain lookups to a safe controlled address instead of the real malware C2",
+      "Replace every recursive resolver with static hosts files so the campus network never uses DNS queries again at all",
+      "Force all client DNS to use only UDP port 53 forever and block DoH/DoT even for approved security investigation tools",
+      "Advertise a default route of 0.0.0.0/0 into OSPF so every host blackholes all Internet-bound traffic on the LAN"
+    ],
+    "correct": 0,
+    "explanation": "A DNS sinkhole answers queries for known malicious domains with a non-routable or honeypot IP under defender control, so infected hosts cannot reach real C2 and analysts can spot the attempts. It is not abandoning DNS for hosts files, not a blanket ban on DoH/DoT as the sole goal, and not sinking all Internet traffic via OSPF.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the main practical difference between classic NetFlow and sFlow for traffic visibility?",
+    "options": [
+      "NetFlow only works on wireless LAN controllers in guest mode, while sFlow only works on analog dial-up modems and never inspects IP packets at all",
+      "NetFlow and sFlow are identical Cisco CLI aliases on every platform; picking either name changes nothing about sampling rates or export format fields",
+      "sFlow replaces the entire BGP process so edge routers no longer need neighbors, while NetFlow permanently deletes every VLAN database entry on the switch",
+      "NetFlow/IPFIX-style exports often track flow records; sFlow typically samples packets at a set rate for scale"
+    ],
+    "correct": 3,
+    "explanation": "Classic NetFlow/IPFIX focuses on flow records (who talked to whom, how much, which ports). sFlow commonly uses packet sampling plus counter samples for scalable visibility across many ports. They are not Wi-Fi-only vs modem-only, not identical CLI aliases, and neither replaces BGP or deletes VLAN databases.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is a gratuitous ARP (GARP) mainly used for on a LAN?",
+    "options": [
+      "To announce or refresh a host’s IP-to-MAC mapping (e.g., after failover) without answering a prior ARP request",
+      "To permanently delete every OSPF neighbor on the WAN edge whenever a PC renews its DHCP lease at midnight local time",
+      "To replace BGP with a Layer-2 broadcast so core routers no longer need AS numbers or TCP session 179",
+      "To encrypt all VLAN trunk tags with MACsec keys derived only from the SSID of the guest wireless network"
+    ],
+    "correct": 0,
+    "explanation": "A gratuitous ARP is an ARP announcement (often request/reply for one’s own IP) used to update neighbors’ ARP caches—common after FHRP failover, VM moves, or IP changes—without waiting for someone else’s ARP query. It does not delete OSPF neighbors, replace BGP, or derive MACsec from guest SSIDs.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In classic distance-vector routing, what does route poisoning with poison reverse mainly try to achieve?",
+    "options": [
+      "It encrypts every routing update with MACsec keys derived only from the RIP process ID and a shared guest wireless SSID",
+      "It permanently converts the router into an OSPF ABR so Type-3 summary LSAs replace all distance-vector metrics entirely",
+      "It forces every interface into half-duplex so collision domains shrink before the next SPF calculation can even start",
+      "It advertises a failed route with an infinite metric (and may reverse-poison) so neighbors stop using that path quickly"
+    ],
+    "correct": 3,
+    "explanation": "Poison reverse / route poisoning marks a route as unreachable (infinite metric) so neighbors drop it fast and routing loops are less likely after a failure. It is not about MACsec, becoming an OSPF ABR, or forcing half-duplex.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is VLAN hopping mainly trying to achieve on a switched campus LAN?",
+    "options": [
+      "Reach frames into a VLAN the attacker should not access, often via switch spoofing or double-tagging tricks",
+      "Encrypt every trunk with MACsec keys derived only from the native VLAN ID so STP BPDUs become unreadable",
+      "Force all access ports into an EtherChannel with LACP passive on both ends so CAM tables stop learning MACs",
+      "Replace 802.1Q tags with MPLS labels end-to-end so the core ignores VLANs and only forwards by EXP bits"
+    ],
+    "correct": 0,
+    "explanation": "VLAN hopping aims to inject or receive traffic in another VLAN without authorization, classically via switch spoofing (negotiating a trunk) or double-tagging across a mismatched native VLAN. It is not about MACsec on trunks, forcing EtherChannels that stop MAC learning, or replacing 802.1Q with MPLS in the campus.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What is the main purpose of a time-based ACL on a Cisco IOS router?",
+    "options": [
+      "To replace all numbered ACLs with object-groups so NAT translations refresh only during the configured maintenance window",
+      "To force every ACE to match only OSPF and EIGRP hellos, blocking data-plane IP traffic outside the routing domain forever",
+      "To encrypt ACL log messages with IPsec before they reach the syslog server whenever the configured time-range is inactive",
+      "To permit or deny traffic only during a configured time-range (for example business hours), using time-range with the ACL"
+    ],
+    "correct": 3,
+    "explanation": "A time-based ACL ties permit/deny ACE evaluation to a time-range (absolute or periodic). Outside that window the ACE does not match as intended for that schedule. It is not about replacing ACLs with object-groups for NAT, locking the ACL to routing hellos only, or encrypting syslog with IPsec when the range is inactive.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "On a Cisco switch, what is the practical difference between switchport mode dynamic desirable and dynamic auto for DTP?",
+    "options": [
+      "Dynamic desirable silently disables Spanning Tree on the port forever, while dynamic auto forces the port into an access VLAN 1 regardless of any neighbor DTP packets received",
+      "Dynamic desirable actively tries to negotiate a trunk; dynamic auto will form a trunk only if the far end initiates negotiation (e.g., desirable or trunk)",
+      "Both modes always create an 802.1Q trunk immediately at boot on every interface, and DTP packets are never sent on either setting under any shipping IOS or IOS-XE release",
+      "Dynamic auto encrypts all frames with MACsec before DTP runs on the link, while dynamic desirable only allows ISL encapsulation and never permits 802.1Q tagging at all"
+    ],
+    "correct": 1,
+    "explanation": "Dynamic desirable actively seeks to form a trunk via DTP. Dynamic auto is passive: it trunks only if the neighbor starts negotiation (desirable/on/trunk). Neither disables STP by itself, neither always trunks without negotiation, and DTP mode is unrelated to MACsec/ISL-only rules.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "On a Cisco switch access port running 802.1X, what is typically true before the client successfully authenticates?",
+    "options": [
+      "The port immediately trunks all VLANs and floods every frame including CDP and LLDP to the entire broadcast domain with no RADIUS involvement at all, regardless of any vendor-specific default on the platform.",
+      "The port bridges unrestricted user data at line rate while Spanning Tree is permanently disabled, and EAPOL frames are never exchanged with the client in typical campus and enterprise production networks alike.",
+      "The port stays unauthorized for normal user traffic and mainly allows EAPOL (and any explicitly permitted pre-auth traffic) until RADIUS authorizes the session",
+      "The switch always assigns the client a public /8 address from CGNAT and encrypts every frame with MACsec before any EAP identity exchange can start across common IOS, IOS-XE, and NX-OS deployment models."
+    ],
+    "correct": 2,
+    "explanation": "Until 802.1X succeeds, the port is unauthorized for ordinary user data; EAPOL carries the authentication exchange (plus any admin-allowed pre-auth exceptions). It does not freely trunk/flood everything, disable STP, or invent CGNAT/MACsec-before-EAP rules by default.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Why is 40 MHz channel bonding usually avoided on 2.4 GHz in dense enterprise WLANs?",
+    "options": [
+      "2.4 GHz has only three non-overlapping 20 MHz channels, so a 40 MHz channel consumes most of the band and causes co-channel and adjacent-channel interference",
+      "802.11 standards forbid any channel wider than 20 MHz on 2.4 GHz, so APs silently drop every client that tries to associate on a bonded 40 MHz channel at all",
+      "40 MHz channels on 2.4 GHz are reserved for radar under DFS rules, so the AP must leave the channel immediately whenever a weather radar is detected",
+      "Bonding on 2.4 GHz disables WPA2 and WPA3 encryption on the radio, because the wider channel cannot carry the extra CCMP header in each frame"
+    ],
+    "correct": 0,
+    "explanation": "With only channels 1, 6 and 11 non-overlapping at 20 MHz, a 40 MHz channel leaves almost no room for a clean channel plan and increases interference. 40 MHz is technically allowed (802.11n), DFS applies to 5 GHz, and channel width has nothing to do with encryption.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "After DHCP snooping is enabled on an access switch, clients stop getting addresses from a Cisco IOS DHCP server on a different router. The switch is inserting option 82 with giaddr 0.0.0.0. What is a valid fix?",
+    "options": [
+      "Mark every access port as trusted for DHCP snooping, so the switch stops building the binding table and forwards all DHCP messages",
+      "Disable IP routing on the DHCP server router, so that it accepts DHCP messages relayed with option 82 and a giaddr of 0.0.0.0",
+      "Run no ip dhcp snooping information option on the switch, or set ip dhcp relay information trust-all on the router or relay",
+      "Change the DHCP pool on the server to use the native VLAN, because option 82 is only accepted when it arrives on untagged frames"
+    ],
+    "correct": 2,
+    "explanation": "By default, a snooping switch adds option 82 but leaves giaddr at 0, and IOS DHCP servers or relays drop those packets as untrusted. You can stop the switch from inserting option 82, or tell the server/relay to trust it. Trusting access ports defeats snooping, and disabling routing or changing VLANs does not change how option 82 is handled.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "A branch router has a default route to ISP A and a floating static default (AD 10) to ISP B. ISP A's link stays up/up, but its upstream fails and traffic is black-holed. What makes the router fail over?",
+    "options": [
+      "Raise the administrative distance of the ISP A route to 250, so the router always prefers the floating route to ISP B instead",
+      "Enable CDP on the ISP A interface, because the route is removed as soon as the ISP router stops sending CDP announcements",
+      "Configure spanning-tree portfast on the ISP A interface, so the port is taken down faster when the upstream fails",
+      "Use an IP SLA ICMP echo to a host behind ISP A, a track object, and add track to the ISP A route so it is removed on failure"
+    ],
+    "correct": 3,
+    "explanation": "A static route stays in the table while its exit interface is up, even if the path behind it is dead. IP SLA probes a remote target, a track object follows the probe result, and 'ip route 0.0.0.0 0.0.0.0 <ISP A> track 1' withdraws the route when the probe fails, so the floating route to ISP B takes over. Changing AD would make ISP B primary all the time, CDP does not remove static routes and PortFast is an STP feature.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "An engineer needs to copy frames from access port Gi1/0/10 to a packet analyzer on Gi1/0/24 without interrupting user traffic. Which feature does this?",
+    "options": [
+      "Remote SPAN (RSPAN) using a dedicated VLAN that floods the mirrored frames to every switch in the VTP domain",
+      "Port security sticky learning on Gi1/0/10, which duplicates each learned MAC frame toward the analyzer port",
+      "A local SPAN session that sets Gi1/0/10 as the source and Gi1/0/24 as the destination monitor port",
+      "ERSPAN with a GRE tunnel to the analyzer, required whenever source and destination are on the same switch"
+    ],
+    "correct": 2,
+    "explanation": "Local SPAN (monitor session) mirrors frames from one or more source ports/VLANs to a destination port on the same switch without changing the user path. RSPAN is for mirroring across switches via a special VLAN; sticky port security learns MACs, it does not mirror; ERSPAN encapsulates mirrored traffic in GRE and is for remote analyzers, not a same-switch requirement.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "On a Cisco router forwarding many packets between two Ethernet interfaces, which plane behavior is expected with CEF enabled?",
+    "options": [
+      "The data plane uses a pre-built FIB and adjacency table so most packets are switched without per-packet process-level routing lookups",
+      "Every packet is punted to the CPU routing process, which runs the full routing table lookup before the frame can leave the egress interface",
+      "CEF only rewrites MAC addresses in hardware and still requires RIP or OSPF to rewrite the IP TTL on every single transit packet in software",
+      "CEF disables the routing table entirely, so the router forwards solely by flooding unknown unicasts like a Layer-2 switch CAM miss"
+    ],
+    "correct": 0,
+    "explanation": "Cisco Express Forwarding builds a FIB from the RIB plus adjacencies (next-hop L2 rewrite). The data plane then forwards most packets from those structures without punting each one for a process-level routing lookup. Process switching punts packets to the CPU; CEF does not need IGP help just to decrement TTL; CEF does not turn the router into an L2 flooder or remove the RIB.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In classic Cisco VTP, what does enabling VTP pruning mainly accomplish on trunk links?",
+    "options": [
+      "It deletes unused VLANs from the VLAN database on every switch so the VTP domain can never exceed 32 VLANs total",
+      "It converts every access port into a trunk automatically whenever a new VLAN is advertised in a VTP summary update",
+      "It forces Transparent-mode switches to originate VTP advertisements so Client switches learn VLANs without a Server",
+      "It stops flooding unknown unicasts/broadcasts for VLANs that have no ports on the far side of a trunk"
+    ],
+    "correct": 3,
+    "explanation": "VTP pruning limits unnecessary flooded traffic on trunks by not forwarding frames for VLANs that are unused on the remote side. It does not shrink the VLAN database to a hard 32-VLAN cap, does not auto-convert access ports to trunks, and Transparent mode still does not originate VTP advertisements as a Server would.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Why is enabling Spanning Tree PortFast on a trunk port generally a bad idea in a campus LAN?",
+    "options": [
+      "A switching loop can form instantly if another switch is plugged in, because PortFast skips the Listening/Learning states",
+      "PortFast forces the interface into blocking forever so no user VLAN traffic can ever forward across that entire trunk link",
+      "PortFast disables 802.1Q tagging completely and converts the trunk into an access port that only carries VLAN 1 frames",
+      "PortFast raises the STP bridge priority to zero, making that switch the permanent root bridge of every VLAN instance"
+    ],
+    "correct": 0,
+    "explanation": "PortFast is meant for edge/access ports connected to end hosts. On a trunk (or any link that might connect another switch), skipping Listening/Learning can create an immediate loop and broadcast storm if a switch is attached. It does not block forever, strip 802.1Q, or change bridge priority.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "On a Cisco access switch, what does configuring switchport protected (a protected port) mainly achieve for hosts in the same VLAN?",
+    "options": [
+      "It encrypts all frames between those hosts with MACsec session keys derived only from the VLAN ID so no cleartext Ethernet ever leaves the ASIC",
+      "It converts the VLAN into a routed /30 on every access port so each host must use the switch SVI as the only possible next hop forever after boot",
+      "It disables Spanning Tree on that port and forces PortFast on while turning BPDU Guard off so another switch can attach without ever err-disabling",
+      "It blocks Layer-2 forwarding between protected ports in the same VLAN while still allowing each host to reach unprotected ports like the gateway"
+    ],
+    "correct": 3,
+    "explanation": "Protected ports (PVLAN edge / switchport protected) stop direct L2 communication between ports marked protected in the same VLAN; traffic to unprotected ports (often the uplink/gateway) still works. They do not enable MACsec from the VLAN ID, turn every access port into a /30, or disable STP/PortFast policy.",
+    "difficulty": "Medium"
   }
 ];

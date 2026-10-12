@@ -2321,7 +2321,7 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O BGP Graceful Restart / NSF mantém o plano de dados a fazer forwarding enquanto o plano de controlo reinicia. Os peers retêm rotas stale durante um timer de restart; após a recuperação, End-of-RIB e updates refrescam o estado. Não converte eBGP em iBGP, e o objetivo é evitar uma tempestade destrutiva de reconvergência, não forçá-la.",
-    "difficulty": "Hard"
+    "difficulty": "Difícil"
   },
   {
     "question": "Numa implementação Cisco Secure Firewall (antigo Firepower), qual é o papel principal do FMC (Firewall Management Center)?",
@@ -2333,7 +2333,7 @@ window.QUIZ_BANK = [
     ],
     "correct": 3,
     "explanation": "O FMC é o gestor: cria e publica políticas de access control / intrusion / malware, inventaria dispositivos e agrega eventos/saúde. Os sensores (FTD/Secure Firewall) ficam no caminho de dados. O FMC não é o default gateway do campus, não é um hub IPsec obrigatório para todos os túneis, e não substitui o ISE no 802.1X das portas de switch.",
-    "difficulty": "Medium"
+    "difficulty": "Médio"
   },
   {
     "question": "Num fabric VXLAN, o que representam um VTEP e um VNI?",
@@ -2345,7 +2345,7 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "Um VTEP (VXLAN Tunnel Endpoint) fica na borda do overlay — muitas vezes num leaf ou hipervisor — e faz encapsulação/desencapsulação VXLAN. O VNI é um identificador de 24 bits que distingue segmentos do overlay (papel análogo a um VLAN ID, com espaço muito maior). Multicast/routing do underlay pode ajudar na replicação BUM, mas isso não é a definição de VTEP nem de VNI; nenhum é número de série, segredo RADIUS, ou apenas UDP/4789.",
-    "difficulty": "Medium"
+    "difficulty": "Médio"
   },
   {
     "question": "No Cisco SD-WAN (arquitetura Viptela), que trio de papéis corresponde melhor a vManage, vSmart e vBond?",
@@ -2357,7 +2357,7 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "No split clássico de controladores Cisco SD-WAN: o vManage é o sistema de gestão/orquestração (GUI, templates, monitorização); o vSmart trata da inteligência de controlo do overlay e políticas centralizadas; o vBond ajuda no onboarding/autenticação segura dos WAN Edge e a apontá-los para o resto do fabric. Os routers Edge (vEdge/cEdge) levam o data plane — não os três controladores como forwarders de pacotes.",
-    "difficulty": "Medium"
+    "difficulty": "Médio"
   },
   {
     "question": "No Cisco IOS/IOS XE, para que se usa mais frequentemente um route map?",
@@ -2369,6 +2369,222 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "Um route map é uma lista sequenciada de cláusulas match/set. Usa-se muito para controlar redistribuição (que prefixos, com que métrica/tag), policy-based routing e alterações de atributos BGP. Não substitui a FIB/MAC, não é offload SSL no RP, e não é o mecanismo de eleição do DR no OSPF.",
-    "difficulty": "Medium"
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é o objetivo principal do BGP route dampening?",
+    "options": [
+      "Suprimir temporariamente prefixos com flap e reduzir churn de withdrawals",
+      "Converter cada sessão eBGP em iBGP para cada edge partilhar a tabela Internet completa sem confederações nem route reflectors",
+      "Substituir keepalives TCP por deteção de falha só com BFD em todos os vizinhos BGP em todas as address families",
+      "Forçar MED e local preference para valores idênticos para o tráfego de saída preferir sempre o peer com menor router ID"
+    ],
+    "correct": 0,
+    "explanation": "O BGP route dampening atribui uma penalização quando um prefixo faz flap; se a penalização ultrapassa o limiar de suppress, a rota fica retida até a penalização descer abaixo do limiar de reuse. Isso limita churn no plano de controlo por peers ou links instáveis. Não transforma eBGP em iBGP, não substitui keepalives por só-BFD, nem iguala MED/local-pref.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Em desenhos Zero Trust, o que fornece principalmente o ZTNA (Zero Trust Network Access) para acesso a aplicações?",
+    "options": [
+      "Uma tabela BGP completa da Internet em cada portátil para utilizadores remotos nunca precisarem de VPN nem de verificação de identidade",
+      "Confiança incondicional para qualquer dispositivo que uma vez passou no NAC no campus, sem reavaliação posterior da sessão",
+      "Flooding de camada 2 de todo o tráfego de aplicações em todas as VLANs do campus para fluxos east-west ficarem sem filtro",
+      "Acesso por aplicação, consciente de identidade, mediado após authz contínua—sem expor a rede interna completa"
+    ],
+    "correct": 3,
+    "explanation": "O ZTNA media o acesso a aplicações específicas com base na identidade do utilizador/dispositivo e na política, tipicamente sem colocar o utilizador na rede interna completa como uma VPN clássica. Alinha-se com autenticação/autorização contínua. Não é entregar tabela BGP aos portáteis, nem confiança eterna após um NAC, nem flooding L2 do tráfego de apps.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Em que difere principalmente a autenticação passwordless (ex.: FIDO2/WebAuthn ou passkeys) da MFA clássica que junta password a um OTP?",
+    "options": [
+      "Passwordless prova um autenticador criptográfico (muitas vezes anti-phishing) sem password reutilizável; a MFA clássica ainda centra-se na password mais um segundo fator",
+      "Passwordless apaga permanentemente todos os objetos de utilizador do Active Directory para o campus só poder usar contas admin locais partilhadas em cada posto para sempre após o rollout",
+      "Passwordless só funciona quando os utilizadores autenticam por cabo de consola série no router, enquanto MFA com OTP só funciona depois do OSPF estar totalmente convergido em todos os PE do VRF",
+      "A MFA clássica negoceia sempre chaves lattice quantum-safe em cada handshake TLS, enquanto passwordless só guarda passwords em claro em registos DNS TXT públicos do realm"
+    ],
+    "correct": 0,
+    "explanation": "Auth passwordless/FIDO2 usa criptografia de chave pública ligada a um autenticador ou plataforma, sem transmitir uma password reutilizável. A MFA clássica tipicamente começa com password e acrescenta OTP/push/SMS. Não é apagar o AD, consola série vs OSPF, nem guardar passwords no DNS.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é o objetivo principal do VRF route leaking entre dois VRF no mesmo PE/router?",
+    "options": [
+      "Apagar todos os labels MPLS da tabela global para o PE só poder reencaminhar frames com tags IEEE 802.1Q vindas da camada de acesso do campus",
+      "Forçar todos os VRF a partilhar um único process ID OSPF igual ao AS BGP, senão as sessões iBGP recusam estabelecer-se de todo",
+      "Converter cada VRF numa VLAN no mesmo stack de switches para o tráfego east-west deixar de precisar de endereço IP",
+      "Partilhar de forma seletiva prefixos (ex.: serviços partilhados) entre tabelas VRF sem fundir as tabelas inteiras"
+    ],
+    "correct": 3,
+    "explanation": "O VRF route leaking (import/export de rotas selecionadas, muitas vezes via route-targets ou estáticos) permite que serviços partilhados — DNS, DHCP, gestão — alcancem vários VRF mantendo o resto isolado. Não serve para apagar labels MPLS, amarrar process ID OSPF ao AS BGP, nem transformar VRF em VLAN.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Em VPNs MPLS de Camada 3, qual é o papel principal de uma route target (RT) extended community?",
+    "options": [
+      "Controla que rotas VPN um PE importa para ou exporta de um VRF, permitindo partilha seletiva entre VPNs",
+      "Apaga permanentemente a tabela de routing global para o PE só encaminhar tramas IPv4 sem label desde o acesso",
+      "Substitui o LDP pelo STP para cada PE eleger uma única root bridge antes de qualquer label VPN poder ser anunciada",
+      "Cifra os payloads do cliente com uma chave igual ao número AS do BGP para os CE nunca precisarem de túneis IPsec"
+    ],
+    "correct": 0,
+    "explanation": "As route targets são extended communities BGP que marcam rotas VPN na exportação e as selecionam na importação para VRFs, definindo que sites partilham rotas. Não apagam a tabela global, não substituem LDP por STP nem derivam cifrar payloads do número AS.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Que problema o Segment Routing (SR) tenta principalmente simplificar face ao MPLS clássico que depende de LDP (ou RSVP-TE) para distribuir labels?",
+    "options": [
+      "Remove permanentemente o underlay IP para cada pacote ter de ser bridged em Layer 2 em todo o backbone do fornecedor de serviço",
+      "Substitui completamente o BGP por um IGP proprietário que já não consegue transportar rotas VPN nem prefixos de internet",
+      "Obriga cada PE a correr um full mesh de túneis GRE antes de qualquer label poder ser imposto em prefixos de cliente",
+      "Codifica o caminho como segmentos (muitas vezes no IGP), reduzindo estado LDP/RSVP-TE por LSP"
+    ],
+    "correct": 3,
+    "explanation": "O Segment Routing conduz o tráfego com uma lista ordenada de segmentos (SIDs de nó/adjacência/prefixo), tipicamente distribuídos via IGP (ou BGP), permitindo steering tipo TE com menos estado de sinalização por LSP do que LDP ou RSVP-TE clássicos. Não remove o underlay IP, não substitui o BGP nem exige um mesh GRE antes dos labels funcionarem.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Em BGP, que problema o Outbound Route Filtering (ORF) ajuda principalmente a reduzir?",
+    "options": [
+      "Permite ao recetor enviar filtros de prefixos ao emissor para cortar churn de UPDATE indesejado antes dessas rotas serem anunciadas para dentro",
+      "Substitui TCP MD5 e GTSM em todas as sessões eBGP para o ORF autenticar sozinho os peers sem segredo partilhado nem verificação de TTL",
+      "Converte automaticamente todos os peers iBGP em full-mesh para clientes de route reflector quando a capability ORF é negociada uma vez na sessão",
+      "Obriga todos os speakers BGP a anunciar só rotas default e a retirar de imediato todos os prefixos mais específicos da tabela global de rotas"
+    ],
+    "correct": 0,
+    "explanation": "O ORF (muitas vezes baseado em prefix-list) deixa o speaker BGP recetor anunciar o seu filtro inbound ao emissor, para este suprimir UPDATEs que o recetor descartaria na mesma—poupando largura de banda e CPU. O ORF não substitui segurança da sessão (MD5/GTSM), não converte sozinho um full-mesh em route reflectors, nem força anúncios só-default a nível global.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Em BGP, que problema ajuda principalmente a resolver a capability Additional Paths (add-path)?",
+    "options": [
+      "Substitui todas as sessões eBGP multihop por iBGP puro para o comprimento do AS-path ser ignorado para sempre na best-path selection em todos os speakers do AS",
+      "Obriga cada PE a originar automaticamente uma default route em cada VRF, eliminando qualquer necessidade de import/export de route-target em MPLS Layer-3 VPN",
+      "Converte o MED num atributo totalmente transitivo para todos os ASes a jusante terem de preferir exatamente a mesma saída que o AS local já selecionou",
+      "Permite a um speaker BGP anunciar mais do que um caminho para o mesmo prefixo a um peer, melhorando diversidade e failover quando o caminho primário se perde"
+    ],
+    "correct": 3,
+    "explanation": "O BGP clássico anuncia só o best path por prefixo a um vizinho. O add-path permite anunciar caminhos adicionais para o mesmo NLRI para os peers manterem backups—melhorando diversidade e convergência. Não substitui eBGP multihop, não força defaults em VRF no lugar de RTs, nem torna o MED transitivo.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Qual é o objetivo principal do MPLS Traffic Engineering (MPLS-TE) face ao encaminhamento IP/IGP só pelo caminho mais curto?",
+    "options": [
+      "Encaminhar tráfego selecionado por LSPs com restrições (muitas vezes RSVP-TE) que seguem banda ou affinity, não só o shortest path do IGP",
+      "Substituir cada adjacência IGP por um túnel GRE permanente para que OSPF e IS-IS deixem de trocar LSAs ou hellos no underlay em todo o core do provider",
+      "Forçar todas as rotas VRF de cliente a um único next-hop BGP global que ignora túneis TE, affinities, pesos administrativos e quaisquer reservas de banda no core",
+      "Cifrar todos os pacotes etiquetados com MACsec só no edge PE-CE, o que os vendors tratam como obrigatório antes de qualquer túnel TE ser sinalizado ou admitido no core MPLS"
+    ],
+    "correct": 0,
+    "explanation": "O MPLS-TE constrói LSPs com restrições (tipicamente via RSVP-TE) para o tráfego seguir caminhos engenheirados (banda/affinity) em vez de só SPF do IGP. Não substitui IGPs por GRE, não ignora TE num next-hop BGP único, nem exige MACsec antes da sinalização TE.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que é que o BGP Prefix Independent Convergence (PIC) edge visa principalmente melhorar?",
+    "options": [
+      "Apaga permanentemente todas as sessões iBGP para o router de edge só aprender prefixos por uma rota default do IGP e nunca manter entradas BGP multipath na tabela CEF de encaminhamento",
+      "Força MED e local preference para valores idênticos em todos os peers para as communities de engenharia de tráfego nunca mais influenciarem a saída em qualquer router de edge de produção",
+      "Pré-calcula um caminho de backup no FIB/CEF para, após falha PE-CE ou de peering, o encaminhamento mudar para o next hop alternativo com menos atraso de recálculo por prefixo",
+      "Substitui o BGP por completo por LSAs OSPF Type-5 inundados a partir do edge da Internet para os prefixos externos convergirem só via SPF completo em cada ABR local da área"
+    ],
+    "correct": 2,
+    "explanation": "O BGP PIC edge mantém um caminho de backup pré-calculado para, após falha de edge/peering, a falha-over precisar de muito menos trabalho por prefixo—convergência mais rápida no FIB. Não apaga iBGP, não congela MED/local-pref, nem substitui BGP por LSAs externos OSPF.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Dois routers fazem redistribuição mútua entre OSPF e EIGRP. Qual é uma forma comum de impedir que as rotas voltem para o domínio de onde vieram?",
+    "options": [
+      "Aumentar a reference bandwidth do OSPF nos dois routers para que as rotas redistribuídas tenham sempre custo maior que as nativas e nunca voltem a ser instaladas",
+      "Marcar as rotas com uma tag ao redistribuir (ex.: set tag 110) e usar route-maps no outro ponto de redistribuição para negar as rotas com essa tag",
+      "Ativar BFD entre os dois routers de redistribuição para que qualquer rota em loop seja detetada como vizinho em falha e removida em poucos milissegundos",
+      "Configurar a área OSPF como totally stubby para bloquear LSAs externas e o EIGRP nunca aprender rotas que tenham origem dentro do domínio OSPF"
+    ],
+    "correct": 1,
+    "explanation": "As route tags marcam onde um prefixo foi redistribuído; um route-map na outra fronteira faz match à tag e nega-a, evitando loops de realimentação e caminhos subótimos. A reference bandwidth e o BFD não registam a origem da rota, e uma área totally stubby bloqueia LSAs para essa área, não a realimentação de redistribuição num ASBR.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Dado ip prefix-list LAB permit 10.0.0.0/8 ge 24 le 24, qual destas rotas é permitida?",
+    "options": [
+      "10.0.0.0/8, porque o prefixo base e o seu comprimento correspondem sempre de forma exata quando ge e le estão na mesma entrada",
+      "10.1.0.0/16, porque qualquer prefixo dentro de 10.0.0.0/8 mais curto que /24 é aceite antes de a condição ge 24 ser avaliada",
+      "10.1.2.128/25, porque a palavra ge 24 aceita qualquer comprimento de /24 ou mais longo, independentemente do limite le 24",
+      "10.1.2.0/24, porque os primeiros 8 bits correspondem a 10.0.0.0/8 e o comprimento é exatamente /24, ou seja ge 24 e le 24"
+    ],
+    "correct": 3,
+    "explanation": "Com ge e le, os bits de rede têm de corresponder à base (primeiros 8 bits = 10) e o comprimento do prefixo tem de estar no intervalo indicado; ge 24 le 24 significa exatamente /24. Só 10.1.2.0/24 corresponde. /8 e /16 são curtos demais e /25 é mais longo do que o le 24 permite.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Dois sites de um cliente usam ambos BGP AS 65010 e ligam-se a uma MPLS L3VPN de um operador (AS 64500). As rotas do site 1 nunca aparecem no site 2. Que correção do lado do operador é habitual?",
+    "options": [
+      "Configurar next-hop-self nos PE, porque o CE descarta qualquer rota cujo next hop não esteja diretamente ligado a ele",
+      "Configurar neighbor as-override no PE para cada CE, para o PE substituir o AS 65010 no AS path pelo seu AS 64500",
+      "Configurar remove-private-as nos CE, para o AS 65010 ser retirado antes de as rotas serem enviadas para os PE do operador",
+      "Configurar um route reflector nos PE, porque o split horizon do iBGP está a bloquear as rotas entre os dois sites"
+    ],
+    "correct": 1,
+    "explanation": "A prevenção de loops do eBGP faz o CE do site 2 rejeitar rotas que já trazem o seu próprio AS 65010. Com as-override, o PE troca o AS do cliente pelo AS do operador e o CE aceita a rota. A alternativa do lado do cliente é allowas-in no CE. Next-hop-self, route reflector ou remove-private-as no CE não resolvem esta verificação do AS path (o remove-private-as no CE deixaria o próprio AS no caminho).",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Um speaker BGP anuncia aggregate-address 10.0.0.0/8 as-set summary-only. O que muda a keyword as-set no agregado que os peers recebem?",
+    "options": [
+      "Constrói um AS_SET no AS_PATH com os AS dos more-specifics, para a deteção de loops ainda os ver",
+      "Obriga a que cada rota more-specific continue anunciada com o agregado para todos os peers eBGP e iBGP",
+      "Define o atributo atomic-aggregate e remove communities, para os peers não saberem que AS originaram realmente as partes do agregado",
+      "Reescreve o next-hop do agregado para o router-id local e desativa next-hop-self em todas as sessões iBGP"
+    ],
+    "correct": 0,
+    "explanation": "Com as-set, o AS_PATH do agregado inclui um AS_SET (lista não ordenada) com os AS dos more-specifics suprimidos, preservando a deteção de loops. O summary-only suprime o anúncio desses more-specifics (por isso as-set não os mantém anunciados). atomic-aggregate é independente; as-set por si não remove communities nem altera next-hop / next-hop-self no iBGP.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Numa MPLS L3VPN, um site CE multi-homed recebe um valor Site of Origin (SoO) no VRF PE-CE. Qual é o principal propósito do SoO?",
+    "options": [
+      "Substitui o route distinguisher para dois VRFs partilharem um prefixo IPv4 sobreposto sem precisarem de um RD único em cada instância VRF",
+      "Obriga cada PE a preferir caminhos eBGP PE-CE face a iBGP VPNv4, subindo o local preference para 200 nessa etiqueta SoO",
+      "Encripta a atualização VPNv4 entre PEs com um SA IPsec por site derivado do valor da extended community SoO",
+      "Marca os prefixos desse site para o PE bloquear o reanúncio dessas rotas de volta para o site e evitar loops"
+    ],
+    "correct": 3,
+    "explanation": "O SoO é uma extended community que marca rotas como pertencentes a um site de cliente. Num site multi-homed, os PEs usam-no para reconhecer prefixos originados nesse site e evitar reinseri-los de volta para o mesmo site (loops / reentrada subótima). A unicidade do RD é independente do SoO; o SoO não é um botão de local preference e não fornece IPsec para VPNv4.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Numa MPLS L3VPN, quando é tipicamente necessário um sham-link OSPF entre routers PE?",
+    "options": [
+      "Quando um link OSPF backdoor entre dois sites CE seria preferido face ao caminho intra-área através do backbone MPLS VPN",
+      "Quando cada CE tem de correr BGP em vez de OSPF para o PE traduzir LSAs OSPF em rotas VPNv4 com um RD único por site cliente",
+      "Quando o LDP está desativado no core e o único protocolo de distribuição de labels entre P é RSVP-TE para unicast IPv4 total",
+      "Quando o VRF do cliente usa EIGRP como protocolo PE-CE e precisa de adjacência OSPF só para checks RPF de multicast no core"
+    ],
+    "correct": 0,
+    "explanation": "O sham-link cria uma adjacência OSPF intra-área entre PEs através da MPLS VPN para o caminho do backbone parecer intra-área. Sem ele, um backdoor CE–CE OSPF real (também intra-área) pode ser preferido face ao caminho VPN que parece inter-área. Sham-links são ferramenta de desenho OSPF PE-CE, não substituto de PE-CE só BGP, de LDP, nem de RPF multicast EIGRP.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Num edge de operador ou grande empresa, para que serve principalmente o Remotely Triggered Black Hole (RTBH)?",
+    "options": [
+      "Espelha uma cópia de cada pacote de cliente numa sessão SPAN local para reconstruir NetFlow offline após flaps de link",
+      "Obriga todos os speakers iBGP a serem route-reflector clients uns dos outros para a full-mesh clássica deixar de ser necessária",
+      "Substitui OSPF por IS-IS no core ao injetar uma rota default marcada apenas com a community bem conhecida no-advertise",
+      "Descarta rapidamente tráfego para (ou de) um prefixo atacado ao injetar uma rota mais específica que aponta para Null0"
+    ],
+    "correct": 3,
+    "explanation": "O RTBH usa BGP (ou similar) para injetar uma rota de trigger para os routers de edge fazerem black-hole de um destino atacado (destination-based) ou origem (source-based com uRPF) via Null0. É mitigação rápida de DDoS, não rebuild SPAN/NetFlow, não substituto de route-reflector, nem ferramenta de migração OSPF→IS-IS.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Num desenho metro Ethernet de operador, o que oferece principalmente o VPLS (Virtual Private LAN Service) aos clientes?",
+    "options": [
+      "Uma LAN Layer-2 multiponto emulada sobre um core MPLS (ou similar) para sites distantes parecerem partilhar um segmento Ethernet bridged",
+      "Um túnel IPsec um-para-um por CE que substitui cada VLAN do cliente por uma tabela VRF-lite única em cada PE sem quaisquer pseudowires ativos",
+      "Uma Area 0 OSPF só dentro do core do operador que redistribui automaticamente todos os prefixos BGP do cliente para IS-IS Level-1 completo",
+      "Uma L3VPN só-unicast que proíbe broadcast e flooding de unknown-unicast para o ARP Ethernet nunca atravessar o backbone do operador"
+    ],
+    "correct": 0,
+    "explanation": "O VPLS emula uma LAN partilhada (L2 VPN multiponto) sobre um backbone packet/MPLS com pseudowires/bridging VSI para o domínio Ethernet do cliente abranger vários sites. Não é IPsec por CE a substituir VRFs, não é truque de redistribuição OSPF Area 0 para IS-IS, nem uma L3VPN só-unicast que proíba flooding de ARP.",
+    "difficulty": "Difícil"
   }
 ];

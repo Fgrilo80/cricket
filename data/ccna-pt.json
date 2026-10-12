@@ -2386,7 +2386,7 @@
     ],
     "correct": 0,
     "explanation": "O LACP (IEEE 802.3ad/802.1AX) usa active (inicia) e passive (responde). Active+passive ou active+active formam canal; passive+passive não. A palavra-chave on é EtherChannel estático sem negociação LACP. desirable/auto são modos PAgP, não LACP.",
-    "difficulty": "Medium"
+    "difficulty": "Médio"
   },
   {
     "question": "Em que se baseia o Path MTU Discovery (PMTUD) para descobrir o menor MTU ao longo de um caminho IPv4?",
@@ -2398,7 +2398,7 @@
     ],
     "correct": 2,
     "explanation": "O PMTUD clássico em IPv4 envia pacotes com DF. Se um hop tiver MTU menor, descarta o pacote e deve devolver ICMP Type 3 Code 4 (Fragmentation Needed) com o next-hop MTU para o emissor baixar o path MTU. Reduzir a window TCP ou fazer sempre clamp MSS para valores minúsculos não é o mecanismo do PMTUD (embora o clamp de MSS seja um workaround operacional quando o ICMP é filtrado).",
-    "difficulty": "Medium"
+    "difficulty": "Médio"
   },
   {
     "question": "Em OSPF multi-área, porque é que a Area 0 (backbone) tem de existir e estar corretamente ligada?",
@@ -2410,7 +2410,7 @@
     ],
     "correct": 3,
     "explanation": "O desenho hierárquico OSPF exige que todas as áreas se liguem (diretamente ou via virtual link) à Area 0 para as rotas inter-área resumidas pelos ABR permanecerem sem loops e alcançáveis. Um backbone em falta ou partido isola áreas umas das outras. A eleição DR/BDR é comportamento de segmento multi-acesso, não “só na Area 0”; a autenticação não está limitada à Area 0; as LSA Type 1 ficam intra-área em todas as áreas — isso não explica sozinho a necessidade do backbone.",
-    "difficulty": "Medium"
+    "difficulty": "Médio"
   },
   {
     "question": "No Hot Standby Router Protocol (HSRP), que papéis têm os routers Active e Standby para um IP virtual usado como default gateway?",
@@ -2422,7 +2422,7 @@
     ],
     "correct": 1,
     "explanation": "O HSRP clássico é redundância first-hop active/standby: um Active encaminha para o IP virtual (e MAC virtual associado), enquanto um Standby monitoriza Hellos e assume o papel active em falha. Por omissão não é ECMP active-active (isso aproxima-se mais do modelo do GLBP), não é uma divisão de funções NAT, e não é a eleição DR/BDR do OSPF.",
-    "difficulty": "Easy"
+    "difficulty": "Fácil"
   },
   {
     "question": "Num desenho Cisco DMVPN Phase 2/3, qual é o papel principal do NHRP (Next Hop Resolution Protocol)?",
@@ -2434,6 +2434,210 @@
     ],
     "correct": 3,
     "explanation": "O NHRP é o serviço de mapeamento no DMVPN: os spokes registam o endereço público/NBMA no hub (NHS) e podem consultar mapeamentos para criar túneis spoke-to-spoke sob procura. O IPsec/IKEv2 continua a proteger os túneis; o NHRP não substitui o IGP do underlay nas ligações físicas, e não serve para despejar tabelas BGP da Internet no overlay.",
-    "difficulty": "Medium"
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Que problema resolvem principalmente NAT64 e DNS64 em conjunto numa rede sobretudo IPv6?",
+    "options": [
+      "Substituem por completo o OSPF por BGP para um campus só-IPv6 nunca precisar de protocolo de gateway interior para nenhum encaminhamento interno",
+      "Encriptam todas as queries DNS do stub resolver com IPsec site-to-site antes de saírem da LAN, ignorando definições DoH ou DoT do cliente",
+      "Forçam cada switch de acesso a configurar SVIs dual-stack para cada VLAN de utilizadores ter sempre gateway IPv4 e IPv6",
+      "Permitem clientes só-IPv6 alcançarem servidores só-IPv4 via síntese AAAA (DNS64) e tradução NAT64"
+    ],
+    "correct": 3,
+    "explanation": "Em desenhos IPv6-mostly, os clientes podem não ter IPv4. O DNS64 sintetiza respostas AAAA a partir de registos A para o cliente marcar um destino IPv6; o NAT64 traduz entre o cliente IPv6 e o servidor IPv4 real. Não é trocar OSPF por BGP, não é IPsec obrigatório no DNS, nem exige dual-stack em todas as SVIs.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a ideia defensiva principal de um DNS sinkhole?",
+    "options": [
+      "Redirecionar lookups de domínios conhecidos como maus para um endereço controlado e seguro em vez do C2 real",
+      "Substituir todos os resolvers recursivos por ficheiros hosts estáticos para o campus nunca mais usar queries DNS de todo",
+      "Forçar todo o DNS dos clientes a usar só UDP 53 para sempre e bloquear DoH/DoT mesmo para ferramentas de investigação aprovadas",
+      "Anunciar uma rota por omissão 0.0.0.0/0 no OSPF para cada host fazer blackhole de todo o tráfego Internet na LAN"
+    ],
+    "correct": 0,
+    "explanation": "Um DNS sinkhole responde a queries de domínios maliciosos conhecidos com um IP não encaminhável ou honeypot sob controlo do defensor, para hosts infetados não alcançarem o C2 real e os analistas detetarem as tentativas. Não é abandonar DNS por hosts files, nem banir DoH/DoT como único objetivo, nem afundar toda a Internet via OSPF.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a diferença prática principal entre NetFlow clássico e sFlow para visibilidade de tráfego?",
+    "options": [
+      "O NetFlow só funciona em controladores WLAN em modo guest, enquanto o sFlow só funciona em modems dial-up analógicos e nunca inspeciona pacotes IP de todo",
+      "NetFlow e sFlow são aliases CLI Cisco idênticos em todas as plataformas; escolher qualquer nome não muda taxas de amostragem nem campos do formato de exportação",
+      "O sFlow substitui todo o processo BGP para os routers de edge já não precisarem de vizinhos, enquanto o NetFlow apaga permanentemente todas as entradas da base de VLANs no switch",
+      "Exportações NetFlow/IPFIX costumam registar fluxos; o sFlow tipicamente amostra pacotes a uma taxa fixa para escalar"
+    ],
+    "correct": 3,
+    "explanation": "NetFlow/IPFIX clássico centra-se em registos de fluxo (quem falou com quem, quanto, que portos). O sFlow usa frequentemente amostragem de pacotes mais contadores para visibilidade escalável em muitas portas. Não são só Wi-Fi vs modem, não são aliases CLI idênticos, e nenhum substitui BGP nem apaga bases de VLANs.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Para que serve principalmente um gratuitous ARP (GARP) numa LAN?",
+    "options": [
+      "Anunciar ou atualizar o mapeamento IP–MAC de um host (ex.: após failover) sem responder a um pedido ARP prévio",
+      "Apagar permanentemente todos os vizinhos OSPF no edge WAN sempre que um PC renova o lease DHCP à meia-noite",
+      "Substituir o BGP por um broadcast de Camada 2 para os routers de núcleo já não precisarem de AS nem da sessão TCP 179",
+      "Cifrar todas as tags de trunk VLAN com chaves MACsec derivadas só do SSID da rede wireless guest"
+    ],
+    "correct": 0,
+    "explanation": "Um gratuitous ARP é um anúncio ARP (pedido/resposta do próprio IP) para atualizar caches ARP dos vizinhos — comum após failover FHRP, migração de VM ou mudança de IP — sem esperar por um pedido ARP de outro. Não apaga vizinhos OSPF, não substitui BGP nem deriva MACsec de SSIDs guest.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No routing distance-vector clássico, o que tenta principalmente alcançar o route poisoning com poison reverse?",
+    "options": [
+      "Cifrar cada update de routing com chaves MACsec derivadas só do process ID RIP e de um SSID guest partilhado em toda a rede do campus",
+      "Converter permanentemente o router num ABR OSPF para LSAs de sumário Type-3 substituírem todas as métricas distance-vector no AS",
+      "Forçar todas as interfaces para half-duplex para os domínios de colisão encolherem antes do próximo cálculo SPF poder começar",
+      "Anunciar uma rota falhada com métrica infinita (e pode fazer reverse-poison) para os vizinhos deixarem de usar esse caminho depressa"
+    ],
+    "correct": 3,
+    "explanation": "Poison reverse / route poisoning marca uma rota como inalcançável (métrica infinita) para os vizinhos a abandonarem depressa e reduzirem loops após uma falha. Não tem a ver com MACsec, tornar-se ABR OSPF nem forçar half-duplex.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que tenta principalmente alcançar um ataque de VLAN hopping numa LAN campus com switches?",
+    "options": [
+      "Fazer chegar tramas a uma VLAN a que o atacante não deveria ter acesso, muitas vezes via switch spoofing ou double-tagging",
+      "Cifrar todos os trunks com chaves MACsec derivadas só do ID da VLAN nativa para os BPDUs STP ficarem ilegíveis",
+      "Forçar todas as portas de acesso para um EtherChannel com LACP passive em ambos os extremos para as tabelas CAM pararem de aprender MACs",
+      "Substituir tags 802.1Q por labels MPLS ponta a ponta para o core ignorar VLANs e só reencaminhar pelos bits EXP"
+    ],
+    "correct": 0,
+    "explanation": "O VLAN hopping procura injetar ou receber tráfego noutra VLAN sem autorização, classicamente por switch spoofing (negociar um trunk) ou double-tagging com VLAN nativa desalinhada. Não é sobre MACsec nos trunks, forçar EtherChannels que parem a aprendizagem de MACs, nem substituir 802.1Q por MPLS no campus.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é o objetivo principal de uma ACL baseada em tempo (time-based ACL) num router Cisco IOS?",
+    "options": [
+      "Substituir todas as ACL numeradas por object-groups para as traduções NAT só atualizarem na janela de manutenção configurada",
+      "Forçar que cada ACE só faça match a hellos OSPF e EIGRP, bloqueando para sempre o tráfego IP do data plane fora do domínio de routing",
+      "Cifrar as mensagens de log da ACL com IPsec antes de chegarem ao servidor syslog sempre que o time-range configurado estiver inativo",
+      "Permitir ou negar tráfego só durante um time-range configurado (por exemplo horário laboral), usando time-range juntamente com a ACL"
+    ],
+    "correct": 3,
+    "explanation": "Uma ACL baseada em tempo liga a avaliação permit/deny das ACE a um time-range (absolute ou periodic). Fora dessa janela a ACE não faz match como previsto para esse horário. Não serve para substituir ACL por object-groups de NAT, limitar a ACL só a hellos de routing, nem cifrar syslog com IPsec quando o range está inativo.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num switch Cisco, qual é a diferença prática entre switchport mode dynamic desirable e dynamic auto no DTP?",
+    "options": [
+      "Dynamic desirable desativa silenciosamente o Spanning Tree na porta para sempre, enquanto dynamic auto força a porta em access VLAN 1 independentemente de quaisquer pacotes DTP do vizinho",
+      "Dynamic desirable tenta ativamente negociar um trunk; dynamic auto só forma trunk se a outra ponta iniciar a negociação (ex.: desirable ou trunk)",
+      "Ambos os modos criam sempre um trunk 802.1Q imediatamente no boot em todas as interfaces, e pacotes DTP nunca são enviados em nenhuma das definições em qualquer release IOS ou IOS-XE",
+      "Dynamic auto cifra todas as tramas com MACsec antes do DTP correr no link, enquanto dynamic desirable só permite encapsulamento ISL e nunca permite tagging 802.1Q de forma alguma"
+    ],
+    "correct": 1,
+    "explanation": "Dynamic desirable procura ativamente formar um trunk via DTP. Dynamic auto é passivo: só faz trunk se o vizinho iniciar a negociação (desirable/on/trunk). Nenhum desativa STP por si, nenhum faz sempre trunk sem negociação, e o modo DTP não define regras MACsec/só-ISL.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Numa porta de acesso Cisco com 802.1X, o que é tipicamente verdade antes do cliente autenticar com sucesso?",
+    "options": [
+      "A porta faz imediatamente trunk de todas as VLANs e inundação de todas as tramas incluindo CDP e LLDP para todo o domínio de broadcast, sem qualquer envolvimento do RADIUS, independentemente de qualquer default específico do fabricante na plataforma.",
+      "A porta faz bridging irrestrito de dados de utilizador a line rate enquanto o Spanning Tree fica permanentemente desativado, e tramas EAPOL nunca são trocadas com o cliente em redes campus e empresariais de produção típicas.",
+      "A porta permanece não autorizada para tráfego normal de utilizador e permite sobretudo EAPOL (e qualquer tráfego pré-auth explicitamente permitido) até o RADIUS autorizar a sessão",
+      "O switch atribui sempre ao cliente um endereço público /8 de CGNAT e cifra todas as tramas com MACsec antes de qualquer troca de identidade EAP poder começar em modelos comuns de deployment IOS, IOS-XE e NX-OS."
+    ],
+    "correct": 2,
+    "explanation": "Até o 802.1X ter sucesso, a porta está não autorizada para dados normais de utilizador; o EAPOL transporta a autenticação (mais exceções pré-auth que o admin permita). Não faz trunk/flood livre, não desativa STP, nem inventa regras CGNAT/MACsec-antes-do-EAP por omissão.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Porque é que o channel bonding de 40 MHz é normalmente evitado em 2,4 GHz em WLANs empresariais densas?",
+    "options": [
+      "2,4 GHz tem só três canais de 20 MHz sem sobreposição, por isso um canal de 40 MHz ocupa quase toda a banda e causa interferência co-canal e de canal adjacente",
+      "As normas 802.11 proíbem qualquer canal com mais de 20 MHz em 2,4 GHz, por isso os APs descartam em silêncio todos os clientes que tentem associar num canal de 40 MHz",
+      "Os canais de 40 MHz em 2,4 GHz estão reservados a radar pelas regras DFS, por isso o AP tem de sair do canal mal deteta um radar meteorológico",
+      "O bonding em 2,4 GHz desativa a encriptação WPA2 e WPA3 no rádio, porque o canal mais largo não consegue transportar o cabeçalho CCMP extra em cada frame"
+    ],
+    "correct": 0,
+    "explanation": "Com apenas os canais 1, 6 e 11 sem sobreposição a 20 MHz, um canal de 40 MHz quase impede um plano de canais limpo e aumenta a interferência. 40 MHz é tecnicamente permitido (802.11n), o DFS aplica-se a 5 GHz e a largura de canal nada tem a ver com encriptação.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Depois de ativar DHCP snooping num switch de acesso, os clientes deixam de obter endereço de um servidor DHCP Cisco IOS noutro router. O switch está a inserir a opção 82 com giaddr 0.0.0.0. Qual é uma correção válida?",
+    "options": [
+      "Marcar todas as portas de acesso como trusted no DHCP snooping, para o switch deixar de criar a binding table e encaminhar todas as mensagens DHCP",
+      "Desativar o routing IP no router servidor de DHCP, para que aceite mensagens DHCP com a opção 82 e um giaddr igual a 0.0.0.0",
+      "Usar no ip dhcp snooping information option no switch, ou ip dhcp relay information trust-all no router ou relay",
+      "Mudar o pool DHCP do servidor para a native VLAN, porque a opção 82 só é aceite quando chega em frames sem tag 802.1Q"
+    ],
+    "correct": 2,
+    "explanation": "Por omissão, o switch com snooping acrescenta a opção 82 mas deixa o giaddr a 0, e os servidores ou relays DHCP IOS descartam esses pacotes por não serem de confiança. Pode-se impedir o switch de inserir a opção 82 ou configurar o servidor/relay para confiar nela. Pôr as portas de acesso como trusted anula o snooping, e desligar o routing ou mudar de VLAN não altera o tratamento da opção 82.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um router de filial tem uma rota por omissão para o ISP A e uma floating static (AD 10) para o ISP B. A ligação ao ISP A continua up/up, mas o upstream do ISP falha e o tráfego perde-se. O que faz o router passar para o ISP B?",
+    "options": [
+      "Subir a distância administrativa da rota do ISP A para 250, para o router preferir sempre a floating route para o ISP B em vez dela",
+      "Ativar CDP na interface do ISP A, porque a rota é retirada logo que o router do ISP deixa de enviar anúncios CDP",
+      "Configurar spanning-tree portfast na interface do ISP A, para a porta ser desligada mais depressa quando o upstream falha",
+      "Usar IP SLA ICMP echo para um host atrás do ISP A, um objeto track, e pôr track na rota do ISP A para ser retirada se falhar"
+    ],
+    "correct": 3,
+    "explanation": "Uma rota estática fica na tabela enquanto a interface de saída estiver up, mesmo que o caminho a seguir esteja em baixo. O IP SLA testa um destino remoto, o objeto track segue o resultado e 'ip route 0.0.0.0 0.0.0.0 <ISP A> track 1' retira a rota quando o teste falha, e a floating route para o ISP B entra em uso. Mudar a AD tornava o ISP B sempre o principal, o CDP não retira rotas estáticas e o PortFast é uma funcionalidade do STP.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um engenheiro precisa de copiar tramas da porta de acesso Gi1/0/10 para um analisador em Gi1/0/24 sem interromper o tráfego dos utilizadores. Que funcionalidade faz isto?",
+    "options": [
+      "Remote SPAN (RSPAN) com uma VLAN dedicada que inundaria as tramas espelhadas para todos os switches do domínio VTP",
+      "Port security com sticky learning em Gi1/0/10, que duplica cada trama de MAC aprendido para a porta do analisador",
+      "Uma sessão SPAN local que define Gi1/0/10 como origem e Gi1/0/24 como porta de destino do monitor",
+      "ERSPAN com túnel GRE até ao analisador, obrigatório sempre que origem e destino estão no mesmo switch"
+    ],
+    "correct": 2,
+    "explanation": "O SPAN local (monitor session) espelha tramas de uma ou mais portas/VLANs de origem para uma porta de destino no mesmo switch, sem alterar o caminho do utilizador. O RSPAN serve para espelhar entre switches via uma VLAN especial; o sticky port security aprende MACs, não espelha; o ERSPAN encapsula o tráfego espelhado em GRE e destina-se a analisadores remotos, não é obrigatório no mesmo switch.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num router Cisco a reencaminhar muitos pacotes entre duas interfaces Ethernet, que comportamento do plano de dados se espera com CEF ativo?",
+    "options": [
+      "O plano de dados usa FIB e adjacências pré-construídas, e a maioria dos pacotes evita lookups de routing por processo",
+      "Cada pacote é enviado à CPU do processo de routing, que faz o lookup completo da tabela antes do frame sair na interface de egress",
+      "O CEF só reescreve endereços MAC em hardware e ainda precisa de RIP ou OSPF para reescrever o TTL IP de cada pacote de trânsito em software",
+      "O CEF desativa por completo a tabela de routing, e o router só encaminha inundando unicasts desconhecidos como num miss da CAM de um switch L2"
+    ],
+    "correct": 0,
+    "explanation": "O Cisco Express Forwarding constrói uma FIB a partir da RIB mais adjacências (rewrite L2 do next-hop). O plano de dados encaminha a maioria dos pacotes a partir dessas estruturas sem enviar cada um para um lookup de routing ao nível do processo. O process switching envia pacotes à CPU; o CEF não precisa da ajuda do IGP só para decrementar o TTL; o CEF não transforma o router num inundador L2 nem remove a RIB.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No VTP clássico da Cisco, o que é que ativar VTP pruning consegue principalmente nos links trunk?",
+    "options": [
+      "Apaga VLANs não usadas da base de dados em todos os switches para o domínio VTP nunca poder ultrapassar 32 VLANs no total",
+      "Converte automaticamente cada porta de acesso em trunk sempre que uma VLAN nova é anunciada num summary update VTP",
+      "Obriga switches em modo Transparent a originar anúncios VTP para Clients aprenderem VLANs sem qualquer Server",
+      "Impede inundar unicasts desconhecidos/broadcasts de VLANs que não têm portas do outro lado do trunk"
+    ],
+    "correct": 3,
+    "explanation": "O VTP pruning limita tráfego inundado desnecessário nos trunks ao não encaminhar frames de VLANs sem uso no lado remoto. Não reduz a base de VLANs a um teto fixo de 32, não converte portas de acesso em trunks, e o modo Transparent continua a não originar anúncios VTP como um Server.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Porque é geralmente má ideia ativar Spanning Tree PortFast numa porta trunk numa LAN de campus?",
+    "options": [
+      "Pode formar-se imediatamente um loop se outro switch for ligado, porque o PortFast salta os estados Listening/Learning",
+      "O PortFast força a interface a ficar em blocking para sempre, pelo que nenhum tráfego de VLAN de utilizador passa nesse trunk",
+      "O PortFast desativa por completo a marcação 802.1Q e converte o trunk numa porta de acesso que só transporta a VLAN 1",
+      "O PortFast sobe a bridge priority STP para zero, tornando esse switch a raiz permanente de todas as instâncias de VLAN"
+    ],
+    "correct": 0,
+    "explanation": "O PortFast destina-se a portas de acesso/edge ligadas a hosts finais. Num trunk (ou link que possa ligar outro switch), saltar Listening/Learning pode criar um loop imediato e tempestade de broadcasts se um switch for ligado. Não bloqueia para sempre, não remove 802.1Q, nem altera a bridge priority.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num switch de acesso Cisco, o que consegue principalmente a configuração switchport protected (protected port) para hosts na mesma VLAN?",
+    "options": [
+      "Cifra todas as tramas entre esses hosts com chaves de sessão MACsec derivadas só do ID da VLAN para nunca sair Ethernet em claro do ASIC do switch",
+      "Converte a VLAN numa /30 routed em cada porta de acesso para cada host ter de usar sempre a SVI do switch como único next-hop possível após o boot",
+      "Desativa o Spanning Tree nessa porta e força PortFast com BPDU Guard desligado para outro switch se ligar sem nunca ir ao estado err-disable",
+      "Bloqueia o encaminhamento Layer-2 entre portas protected na mesma VLAN, permitindo ainda que cada host chegue a portas unprotected (ex. gateway)"
+    ],
+    "correct": 3,
+    "explanation": "Protected ports (PVLAN edge / switchport protected) impedem comunicação L2 direta entre portas marcadas protected na mesma VLAN; o tráfego para portas unprotected (muitas vezes o uplink/gateway) continua a funcionar. Não ativam MACsec a partir do ID da VLAN, não transformam cada acesso numa /30, nem desativam a política STP/PortFast.",
+    "difficulty": "Médio"
   }
 ]
