@@ -153,7 +153,7 @@
     ],
     "correct": 2,
     "explanation": "Um SIEM agrega logs e eventos de segurança (firewalls, endpoints, identidade, cloud, etc.), normaliza e correlaciona-os, e ajuda analistas a detetar, alertar e investigar incidentes. Não substitui AV por um packet broker, não funciona como CA pública de TLS, e não promete zero falsos positivos ao bloquear DNS às cegas.",
-    "difficulty": "Easy"
+    "difficulty": "Fácil"
   },
   {
     "question": "Em cibersegurança, para que se usa principalmente o framework MITRE ATT&CK?",
@@ -165,7 +165,7 @@
     ],
     "correct": 1,
     "explanation": "O MITRE ATT&CK cataloga táticas (o «porquê») e técnicas (o «como») de adversários no mundo real, muitas vezes com exemplos de procedimentos. Os defensores usam-no para analisar falhas de cobertura, escrever deteções e discutir incidentes de forma consistente. Não é documentação CLI do ASA, não é uma cifra que substitui o AES, e não é uma norma de cablagem.",
-    "difficulty": "Medium"
+    "difficulty": "Médio"
   },
   {
     "question": "Contra o que é que um Web Application Firewall (WAF) protege principalmente?",
@@ -177,7 +177,7 @@
     ],
     "correct": 0,
     "explanation": "Um WAF fica à frente de aplicações web e inspeciona tráfego HTTP/S para bloquear ou desafiar ataques comuns à camada de aplicação, como SQL injection, cross-site scripting e padrões de pedido conhecidos como maus. Não resolve cortes físicos de cabo, dimensionamento da LSDB OSPF, nem baterias de UPS.",
-    "difficulty": "Easy"
+    "difficulty": "Fácil"
   },
   {
     "question": "Qual é o objetivo principal do DNSSEC?",
@@ -237,6 +237,702 @@
     ],
     "correct": 2,
     "explanation": "Threat hunting parte do princípio de que algumas intrusões escapam aos alertas. O hunter formula uma hipótese (por exemplo uma técnica do ATT&CK), consulta dados de endpoint, rede ou identidade, e transforma achados em novas deteções. Complementa SIEM e EDR; não substitui a prevenção nem significa ignorar alertas.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é a principal diferença entre um Indicator of Compromise (IoC) e um Indicator of Attack (IoA)?",
+    "options": [
+      "Os IoCs só se usam em crachás de segurança física e inventários de leitores de porta no átrio, enquanto os IoAs só se usam em site surveys wireless e mapas de calor de RF para posicionar access points na planta",
+      "Um IoC é tipicamente um artefacto forense que sugere que já houve compromisso (hash, IP, domínio, caminho de ficheiro), ao passo que um IoA foca comportamentos/TTPs que mostram um ataque em curso — mesmo antes de aparecerem IoCs clássicos",
+      "Os IoAs substituem identificadores CVE nas bases públicas de vulnerabilidades, enquanto os IoCs substituem as pontuações de gravidade CVSS que as equipas de patches usam para priorizar a remediação semanal",
+      "Não há diferença: os vendors usam os dois termos de forma intercambiável para a mesma entrada de ACL numa firewall que bloqueia um único IP malicioso conhecido ou um domínio malicioso"
+    ],
+    "correct": 1,
+    "explanation": "Os IoCs são artefactos observáveis ligados a atividade maliciosa conhecida após ou durante o compromisso (hashes de malware, IPs/domínios de C2, nomes de ficheiro). Os IoAs enfatizam comportamentos e técnicas do atacante (ex.: PowerShell invulgar, padrões de credential dumping) para detetar atividade mais cedo e de forma mais resiliente quando a infraestrutura muda. Não são conceitos de crachá/wireless, não substituem CVE/CVSS, e não são sinónimos de linhas de ACL.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num cenário de compromisso, o que significa normalmente “movimento lateral” (lateral movement)?",
+    "options": [
+      "Deslocar fisicamente os racks do data center na fila para melhorar o fluxo de ar de refrigeração após um incidente, sem mudar hosts comprometidos, contas ou caminhos internos",
+      "Rodar certificados VPN de hora a hora para os utilizadores remotos se reautenticarem continuamente, mesmo quando nenhum host da rede interna foi comprometido por um atacante",
+      "Após o acesso inicial, o atacante pivota do primeiro host comprometido para outros sistemas/contas dentro da rede para expandir o controlo e alcançar alvos de alto valor",
+      "Fazer failover automático do tráfego do ISP primário para um circuito de backup quando o BGP retira um prefixo, o que é um evento de routing e não um passo de uma intrusão"
+    ],
+    "correct": 2,
+    "explanation": "O movimento lateral é a fase pós-compromisso em que o adversário salta entre hosts e escala ou reutiliza credenciais (RDP, SMB, Pass-the-Hash, ferramentas de gestão remota, etc.) para alargar a posição e chegar aos “crown jewels”. Não é relocação física de racks, política isolada de rotação de certificados, nem failover de ISP.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Para que serve principalmente um CASB (Cloud Access Security Broker)?",
+    "options": [
+      "Ficar entre utilizadores e serviços cloud para aplicar política de segurança — visibilidade, conformidade, proteção de dados e defesa contra ameaças no uso de SaaS/IaaS (incluindo shadow IT)",
+      "Substituir o switch de core corporativo por um fabric apenas de Layer 2 gerido na cloud que não pode correr OSPF, BGP nem outro protocolo de routing entre os bastidores",
+      "Gerar pontuações de gravidade CVSS automaticamente só a partir de amostras NetFlow, sem base de vulnerabilidades, inventário de ativos ou resultados de um scanner",
+      "Terminar todos os labels MPLS no CASB para os routers de branch deixarem de precisar de um provider edge e poderem abandonar as sessões de LDP ou segment routing"
+    ],
+    "correct": 0,
+    "explanation": "Um Cloud Access Security Broker é um ponto de controlo (baseado em API, proxy reverso/forward, ou ambos) que aplica política de segurança empresarial ao uso de apps cloud: descobrir shadow IT, impor DLP/controlos de acesso e detetar ameaças em contextos SaaS/IaaS. Não substitui o switch de core, não é um motor CVSS alimentado só por NetFlow, e não substitui um PE MPLS.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Em que é que o Business Email Compromise (BEC) difere tipicamente do phishing em massa clássico?",
+    "options": [
+      "O BEC depende sempre de exploits zero-day de browser em drive-by downloads, enquanto as campanhas de phishing só usam mensagens SMS",
+      "O BEC é uma família de ransomware que encripta caixas de correio corporativas para pagamento, enquanto o phishing só rouba PSKs Wi-Fi de routers domésticos",
+      "O BEC é fraude de engenharia social dirigida (muitas vezes falsos executivos/fornecedores) para desviar dinheiro ou dados, não um isco amplo de credenciais",
+      "O BEC só tem sucesso contra caixas Gmail pessoais de consumo, enquanto o phishing só tem sucesso contra prompts de password do Active Directory corporativo"
+    ],
+    "correct": 2,
+    "explanation": "O BEC é tipicamente uma fraude focada: os atacantes impersonam um CEO, responsável financeiro ou fornecedor de confiança e empurram uma transferência ou alteração de dados, muitas vezes sem malware. O phishing clássico lança uma rede larga para roubar passwords ou entregar payloads. O BEC não se define como só zero-day, ransomware de mailboxes, nem limitado a Gmail vs AD.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é o objetivo principal dos controlos de Data Loss Prevention (DLP)?",
+    "options": [
+      "Retirar por completo as firewalls de perímetro para que só os motores de antivírus de endpoint inspecionem e permitam todo o tráfego de aplicações de saída dos portáteis",
+      "Detetar e impedir que dados sensíveis saiam de canais aprovados sem autorização",
+      "Encriptar em ZIP todas as partilhas de ficheiros departamentais de noite para as janelas de backup terminarem mais depressa em tape ou object storage",
+      "Dar a cada utilizador um MAC aleatório novo no login para os switches Layer-2 do campus não seguirem dispositivos entre edifícios"
+    ],
+    "correct": 1,
+    "explanation": "As políticas DLP identificam conteúdo sensível e aplicam regras em email, web, endpoints ou apps cloud para dados regulados ou secretos não serem exfiltrados à toa. Complementam — não substituem — firewalls e AV. Não são compressão de backup nem randomização diária de MAC.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Em que é que o Network Detection and Response (NDR) se foca principalmente?",
+    "options": [
+      "Apenas a varrer portáteis uma vez por mês à procura de patches de segurança Windows em falta e abrir tickets ITSM",
+      "Apenas a gerir tickets de alteração de firewall numa fila ITSM sem nunca inspecionar pacotes, flows ou metadados de sessão",
+      "Apenas a forçar DoH ou DoT para resolvers DNS recursivos nunca observarem nomes de query em claro dos clientes corporativos",
+      "Analisar tráfego/metadados de rede (muitas vezes também east-west) para detetar ameaças e apoiar a resposta"
+    ],
+    "correct": 3,
+    "explanation": "Ferramentas NDR observam o comportamento da rede — flows, sessões, por vezes pacotes — para detetar C2, movimento lateral e anomalias, e ajudar os analistas a responder. É mais amplo do que scans mensais de patches, só higiene de tickets ITSM, ou encriptação DNS (DoH/DoT), que são controlos diferentes.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que procura principalmente o UEBA (User and Entity Behavior Analytics)?",
+    "options": [
+      "Só a pontuação CVSS base exata de cada CVE publicado nesse dia civil, ignorando como as contas se comportam de facto em produção",
+      "Desvios face a linhas de base normais de utilizadores e entidades que podem sinalizar compromisso ou abuso interno",
+      "Substituir todas as ACL de firewall por um único permit any-any para a análise nunca observar fluxos bloqueados na edge",
+      "Encriptar todo o syslog com uma chave pré-partilhada estática e descartar todo o contexto de identidade vindo do SSO"
+    ],
+    "correct": 1,
+    "explanation": "O UEBA constrói linhas de base comportamentais de utilizadores e entidades (hosts, contas de serviço) e assinala atividade anómala que pode indicar takeover de conta, ameaça interna ou movimento lateral. Não é um feed de pontuação CVE, nem desculpa para abrir firewalls a any-any, nem descartar contexto de identidade nos logs.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é “shadow IT” no contexto de segurança empresarial?",
+    "options": [
+      "O inventário oficial CMDB de cada rack aprovado no data center mais os números de série Cisco TAC guardados para auditorias",
+      "Um exercício tabletop trimestral obrigatório que só testa leitores de crachá físicos nos torniquetes da receção em drills",
+      "Unidades de negócio a adotarem apps ou cloud não sancionados fora da governação de TI",
+      "Um caminho de fibra escura de failover usado só pelos switches de core em janelas de manutenção noturna aos fins de semana"
+    ],
+    "correct": 2,
+    "explanation": "Shadow IT é o uso de aplicações, SaaS ou infraestrutura sem aprovação de TI/segurança—criando falhas de visibilidade, conformidade e fuga de dados. Não é o CMDB oficial, nem um exercício de crachás na receção, nem uma fibra escura de manutenção.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "O que procura alcançar um ataque de MFA fatigue (MFA bombing)?",
+    "options": [
+      "Substituir todos os concentradores VPN corporativos por um SSID guest aberto sem portal cativo, sem WPA e sem registo de associações na edge",
+      "Fazer downgrade de todas as sessões TLS da Internet para HTTP em claro inundando só com ICMP echo contra cada resolver recursivo da quinta DNS do campus",
+      "Inundar o utilizador com prompts push/OTP até aprovar um por irritação, dando ao atacante uma sessão",
+      "Apagar todas as communities BGP em todos os routers de edge de noite para as tags de engenharia de tráfego nunca mais poderem ser usadas por route-maps em produção"
+    ],
+    "correct": 2,
+    "explanation": "MFA fatigue/bombing sobrecarrega o utilizador legítimo com prompts de autenticação até aceitar um, entregando ao atacante uma sessão autenticada após roubo de credenciais ou password spray. Não é o mecanismo de SSID guest aberto, downgrade TLS só com ICMP, nem limpar communities BGP.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que significa um container escape básico num host com workloads Docker/Kubernetes?",
+    "options": [
+      "O processo do contentor só perde o endereço IPv4 e tem de renovar DHCP no eth0, sem alterar de todo as fronteiras de isolamento nem privilégios no host",
+      "Atacante/malware quebra o isolamento do contentor e pode afetar o host ou contentores irmãos",
+      "O Kubernetes converte sempre cada Pod numa VM Type-1 completa que não pode partilhar o kernel com o nó worker sob qualquer plugin CNI",
+      "O escape só renomeia a interface bridge Docker para VLAN 1 e desativa automaticamente todos os objetos NetworkPolicy do cluster sem verificações RBAC"
+    ],
+    "correct": 1,
+    "explanation": "Um container escape ocorre quando código dentro do contentor quebra o isolamento (namespaces/cgroups/capabilities/má config) e alcança o SO do host ou workloads irmãos. Não é uma renovação DHCP inofensiva, nem a afirmação de que cada Pod vira VM Type-1, nem só renomear a bridge Docker.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Que problema procura reduzir principalmente o certificate pinning (public-key pinning) numa app móvel ou cliente thick?",
+    "options": [
+      "Força todas as portas de switch de acesso para err-disabled sempre que um utilizador instala uma CA raiz corporativa no portátil para correio ou VPN",
+      "Substitui totalmente o DNS empresarial por ficheiros /etc/hosts estáticos em cada endpoint para as apps nunca mais resolverem nomes via resolvers recursivos",
+      "Guarda a password reutilizável do utilizador no campo CN do certificado leaf para nunca serem necessários prompts MFA após o primeiro login",
+      "Limita que certs/chaves de servidor a app aceita, reduzindo algum MITM TLS com CAs inesperadas"
+    ],
+    "correct": 3,
+    "explanation": "Certificate pinning (ou public-key pinning) ensina o cliente a esperar um certificado ou chave específicos (ou um conjunto pequeno), para um proxy TLS com outro certificado assinado por outra CA ter mais probabilidade de falhar. Não põe portas em err-disabled, não substitui DNS por hosts, nem embute passwords no CN.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que a microsegmentação pretende controlar sobretudo no tráfego east-west dentro de um data center ou VPC cloud?",
+    "options": [
+      "Substituir todas as firewalls de bordo por um único switch hub para todos os tenants partilharem uma VLAN plana e um único default gateway para sempre",
+      "Limitar movimento lateral com regras allow finas entre workloads, não só no perímetro north-south",
+      "Desligar toda a cifra entre VMs para os packet brokers espelharem todos os fluxos east-west sem licenças de inspeção TLS",
+      "Forçar todas as queries de base de dados a ir por modems dial-up, enquanto os tiers web só podem usar bridges token-ring dos anos 90"
+    ],
+    "correct": 1,
+    "explanation": "A microsegmentação aplica controlos por identidade ou label entre workloads para uma brecha num tier não alcançar livremente outros (east-west). Complementa o perímetro; não o substitui por uma VLAN plana, nem desliga cifra para taps, nem usa caminhos dial-up/token-ring obsoletos.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Em que se baseia principalmente uma técnica living-off-the-land (LOLBins) durante uma intrusão?",
+    "options": [
+      "Distribuir um driver de kernel novo e não assinado em cada pen USB deixada no parque para os defensores só procurarem binários estranhos",
+      "Substituir a raiz DNS corporativa por um pool NTP público para todos os portáteis perderem o default gateway até reimaging",
+      "Abusar de ferramentas OS já confiáveis no host (PowerShell, wmic, bash, certutil) em vez de largar ficheiros de malware óbvios",
+      "Desativar todas as regras de firewall no mundo com um único SNMP write no core para o movimento lateral nunca mais precisar de credenciais"
+    ],
+    "correct": 2,
+    "explanation": "Living-off-the-land abusa de binários e scripts legítimos pré-instalados para as ações maliciosas se misturarem com atividade de admin e escaparem a AV só por hash. Não se define por drivers USB sozinhos, partidas DNS/NTP, nem por um SNMP write mágico que abre a Internet toda.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num compromisso da cadeia de fornecimento de software (estilo SolarWinds), que relação de confiança o atacante abusa sobretudo?",
+    "options": [
+      "Atualização ou pipeline de build de fornecedor de confiança, para código malicioso ir em software assinado já aceite",
+      "Só o portal captive do Wi-Fi guest para imprimir cupões da cantina sem nunca tocar nos servidores de build de produção nem no CI/CD corporativo",
+      "O beacon Bluetooth da máquina de café do escritório para reescrever communities BGP em todos os routers PE do campus todas as manhãs antes do almoço",
+      "Uma única linha de fax não usada no átrio que de alguma forma passa a ser de um dia para o outro a única CA pública da organização inteira"
+    ],
+    "correct": 0,
+    "explanation": "Ataques à supply-chain miram a confiança nas atualizações do fornecedor ou artefactos CI/CD — o malware é injetado a montante e entregue como software “legítimo”. Portais Wi-Fi guest, Bluetooth da máquina de café e faxes do átrio não são o caminho definidor desta classe de ataque.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é o objetivo principal de segurança ao implantar honeypots ou tecnologia de deception mais ampla?",
+    "options": [
+      "Substituir permanentemente todas as regras de firewall de produção por uma política any-any aberta para os atacantes nunca mais fazerem scan",
+      "Guardar todas as passwords dos colaboradores num único ficheiro em claro que os auditores possam descarregar sem qualquer desafio MFA",
+      "Colocar sistemas ou credenciais isco que atraiam atacantes, gerem alertas de alta confiança e gastem tempo ao adversário sem dados reais",
+      "Desativar o logging em todos os domain controllers para o movimento lateral ficar invisível ao SOC durante o resto do compromisso"
+    ],
+    "correct": 2,
+    "explanation": "Honeypots/deception apresentam ativos ou tokens falsos que utilizadores legítimos quase não tocam; a interação é um sinal forte de atividade hostil e pode atrasar ou distrair atacantes. Não abrem firewalls any-any, não guardam passwords em claro nem desativam logging dos DC.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Porque é que os atacantes por vezes abusam de DNS tunneling para comando-e-controlo ou exfiltração de dados?",
+    "options": [
+      "Porque perguntas/respostas DNS podem transportar payloads codificados e muitas vezes passam filtros de perímetro que permitem DNS, escondendo C2 ou dados",
+      "Porque o DNS cifra sempre todos os payloads com TLS 1.3 ponta-a-ponta e por isso nenhum resolver ou firewall consegue inspecionar esses conteúdos em caso algum",
+      "Porque o DNS substitui o BGP no backbone da Internet e os routers encaminham ficheiros roubados apenas como LSAs OSPF Type-5 externos em todo o mundo",
+      "Porque desativar o resolver recursivo apaga permanentemente todas as contas Active Directory do domínio sem deixar quaisquer entradas de auditoria registadas"
+    ],
+    "correct": 0,
+    "explanation": "O DNS tunneling codifica dados em queries/respostas DNS; muitas redes permitem DNS de saída, o que pode contornar controlos que bloqueiam outros protocolos. O DNS não é inerentemente TLS ponta-a-ponta em todas as queries, não substitui BGP/OSPF nem apaga contas AD.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "No planeamento de disaster recovery, como diferem principalmente o RTO e o RPO?",
+    "options": [
+      "RTO é só a marca da biblioteca de fitas de backup; RPO é o número do canal Wi-Fi usado nos exercícios trimestrais de failover",
+      "RTO e RPO são métricas idênticas que equivalem sempre ao intervalo Dead do OSPF configurado no par de routers de edge WAN",
+      "RTO mede quanto tempo o SOC pode reter emails de phishing; RPO mede quantas regras de firewall têm de ser apagadas todas as noites",
+      "RTO é o tempo máximo aceitável para restaurar um serviço após uma falha; RPO é a perda máxima de dados aceitável olhando para trás"
+    ],
+    "correct": 3,
+    "explanation": "O Recovery Time Objective (RTO) limita quanto tempo um serviço pode ficar em baixo; o Recovery Point Objective (RPO) limita quantos dados se pode perder, expresso em tempo antes do incidente. Não são marcas de fitas, temporizadores OSPF nem métricas de phishing/limpeza de firewall.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num ambiente Windows Active Directory, o que reutiliza principalmente um ataque pass-the-hash (PtH)?",
+    "options": [
+      "Apenas a password em claro escrita uma vez no teclado, nunca qualquer material de credencial guardado em memória ou bases de dados",
+      "Um hash NTLM (ou similar) roubado para autenticar como o utilizador sem conhecer a password em claro",
+      "Um UPDATE BGP forjado que injeta uma rota mais específica para todos os domain controllers ficarem inalcançáveis a partir da LAN",
+      "Um servidor DHCP rogue que distribui um intervalo APIPA para os clientes perderem DNS e não localizarem os domain controllers"
+    ],
+    "correct": 1,
+    "explanation": "O pass-the-hash reutiliza hashes NTLM (ou relacionados) capturados para autenticar sem obter a password em claro. Não se limita a uma password digitada, nem é uma técnica de BGP ou de DHCP rogue.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Qual é o objetivo principal de segurança ao plantar canary tokens (ou honeytokens semelhantes) em ficheiros, URLs ou credenciais?",
+    "options": [
+      "Substituir por completo o SIEM corporativo para os analistas deixarem de precisar de logs, alertas ou regras de correlação",
+      "Cifrar o disco de cada endpoint com uma chave BitLocker única derivada só da string canary e do hostname",
+      "Obter um alerta de alta confiança quando alguém acede a um recurso falso que utilizadores legítimos nunca deveriam tocar",
+      "Desativar permanentemente o MFA em contas privilegiadas para os operadores iniciarem sessão mais depressa num incidente declarado"
+    ],
+    "correct": 2,
+    "explanation": "Canary tokens / honeytokens são artefactos isco que não devem ser usados no trabalho normal; o acesso gera um sinal forte de probing ou roubo. Não substituem o SIEM, não cifram discos por si nem desativam MFA.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Em que se baseia principalmente um sistema air-gapped para se isolar de ameaças remotas via rede?",
+    "options": [
+      "Separação física (ou estritamente controlada) de redes não confiáveis para malware remoto não o alcançar por IP",
+      "Um único VPC em cloud pública com security groups abertos para os operadores patcharem mais depressa a partir de qualquer host na Internet",
+      "IPsec site-to-site sempre ligado ao edge da Internet para todas as atualizações serem puxadas automaticamente sem revisão",
+      "Desativar logging local e antivírus para o host usar menos CPU enquanto continua ligado ao Wi-Fi corporativo"
+    ],
+    "correct": 0,
+    "explanation": "O air-gap isola um sistema mantendo-o fora de redes não confiáveis (fisicamente ou com controlos extremos), reduzindo malware remoto e caminhos de C2. Exposição aberta em cloud, IPsec permanente à Internet ou juntar-se ao Wi-Fi corporativo desativando defesas contradiz esse isolamento.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Em que diferem principalmente as funções de red team, blue team e purple team num exercício de segurança?",
+    "options": [
+      "A red team só escreve políticas de compliance e checklists de auditoria; a blue team só faz patch de firmware; a purple team só gere crachás físicos à porta",
+      "A blue team simula atacantes externos de ponta a ponta; a red team só monitoriza alertas SIEM; a purple team desativa logs para reduzir ruído nos testes",
+      "A red team emula atacantes; a blue team defende e deteta; a purple team melhora a colaboração para os achados ofensivos subirem a qualidade da defesa",
+      "Os três nomes significam o mesmo escalão de SOC e só diferem pelo logótipo do fornecedor no dashboard partilhado de tickets e ecrãs de operação"
+    ],
+    "correct": 2,
+    "explanation": "As red teams emulam adversários (ofensiva). As blue teams protegem, detetam e respondem (defesa). O purple teaming liga as duas para técnicas de ataque e deteções melhorarem em conjunto. As outras opções invertem ou inventam funções e tratam as labels como o mesmo escalão de SOC.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Qual é a diferença principal entre consumir feeds de threat intelligence e fazer threat hunting?",
+    "options": [
+      "Os feeds só listam versões de software aprovadas para janelas de patch Tuesday; o hunting só inventaria impressoras, por isso nenhuma atividade usa telemetria de rede",
+      "Os feeds de threat intel entregam indicadores ou contexto para enriquecer a deteção; o threat hunting procura proativamente na telemetria ameaças que podem não ter alertas prévios",
+      "O hunting substitui todos os feeds porque um hunter nunca usa IOCs na prática; os feeds substituem o hunting porque a automação sozinha fecha todos os casos de intrusão desconhecida",
+      "Os feeds são só para red teams em exercícios de phishing e tabletops; o hunting é só para background checks de RH e nunca toca em logs de segurança nem em pacotes"
+    ],
+    "correct": 1,
+    "explanation": "Os feeds de threat intelligence fornecem IOCs/TTPs/contexto que ferramentas e analistas podem usar. O threat hunting é uma procura proativa na telemetria por atividade suspeita que os alertas podem ter falhado. O hunting usa muitas vezes intel, mas não é o mesmo que ingerir feeds passivamente; nenhuma das atividades se limita a listas de patches, impressoras ou checks de RH.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que tenta obter principalmente um ataque Kerberoasting num ambiente Active Directory?",
+    "options": [
+      "PSKs VPN em claro a partir do campo de opções DHCP, fazendo spoofing de um helper-address rogue em todas as VLANs de acesso do campus",
+      "Material de password de contas de serviço crackável offline, pedindo tickets de serviço para SPNs e extraindo hashes dos tickets",
+      "Um certificado golden permanente para enrollment MDM, repondo handshakes WPA3 SAE capturados só no segmento Wi-Fi de convidados (SSID guest)",
+      "Chaves privadas SSH root de equipamentos de rede, forçando todas as sessões BGP a cair para TCP-AO com uma keychain intencionalmente vazia"
+    ],
+    "correct": 1,
+    "explanation": "O Kerberoasting pede tickets de serviço Kerberos (TGS) para contas com SPN, extrai o material cifrado e faz crack offline para recuperar passwords de contas de serviço—muitas vezes com privilégios elevados. Não é sobre spoofing de helper DHCP para PSK VPN, certificados MDM via WPA3 SAE, nem esvaziar keychains TCP-AO de BGP para obter SSH root.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O que tenta abusar principalmente um ataque de NTLM relay num ambiente Windows?",
+    "options": [
+      "Faz crack offline de TGTs Kerberos ao capturar respostas AS-REP só de contas com a pré-autenticação Kerberos explicitamente desativada no domínio",
+      "Captura uma tentativa de autenticação NTLM da vítima e faz relay para outro serviço para o atacante se autenticar como esse utilizador sem saber a password",
+      "Inunda o RADIUS com certificados cliente EAP-TLS forjados até o NPS revogar todas as contas de máquina e objetos computer guardados no Active Directory",
+      "Só desliga o SMB signing no próprio portátil do atacante para as imagens de disco locais abrirem um pouco mais depressa no imaging forense de discos sobresselentes"
+    ],
+    "correct": 1,
+    "explanation": "O NTLM relay intercepta uma autenticação NTLM legítima e reutiliza-a contra outro alvo (muitas vezes quando signing ou channel binding estão fracos). Não é AS-REP roasting, nem flooding EAP-TLS no RADIUS, nem um ajuste local de desempenho SMB.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Em que é que o password spraying difere principalmente de um brute-force online clássico contra uma só conta?",
+    "options": [
+      "O spraying só funciona contra chaves públicas SSH e nunca contra portais web, gateways VPN ou outros formulários de login que ainda aceitam passwords normais de utilizador final",
+      "O spraying exige acesso físico à consola do domain controller para cada password adivinhada ser escrita diretamente no ficheiro NTDS.dit na base de dados em disco",
+      "O spraying testa um conjunto pequeno de passwords comuns em muitas contas para evitar lockouts, enquanto o brute-force clássico martela muitas passwords contra uma só conta-alvo",
+      "Não há diferença real: ambos os nomes descrevem o mesmo fluxo Kerberoasting que pede tickets de serviço e faz crack dos hashes completamente offline a seguir"
+    ],
+    "correct": 2,
+    "explanation": "O password spraying espalha poucas passwords prováveis por muitos utilizadores para ficar abaixo dos limiares de lockout; o brute-force online clássico concentra muitas tentativas numa conta. Não se limita a chaves SSH, não precisa de consola no DC e não é Kerberoasting.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Em ataques a Active Directory, o que permite principalmente um DCSync bem-sucedido a um adversário?",
+    "options": [
+      "Abusar de direitos de replicação de domain controller para extrair hashes de passwords (por exemplo via DRSUAPI) do AD sem executar payload na consola interativa do DC",
+      "Substituir todos os templates administrativos de Group Policy por um MSI malicioso para todas as workstations instalarem software indesejado na próxima janela de reboot obrigatório",
+      "Desativar a autenticação Kerberos em toda a forest e forçar todos os logons interativos e de rede a usar só NTLMv1 sem qualquer fallback para protocolos mais recentes",
+      "Reescrever todos os SPNs de utilizador em registos DNS CNAME públicos para os ticket-granting tickets só resolverem via resolvers recursivos externos na Internet"
+    ],
+    "correct": 0,
+    "explanation": "O DCSync abusa de privilégios de replicação do diretório (muitas vezes após roubar credenciais de alto privilégio) para pedir segredos/hashes como se o atacante fosse um DC. Não é trocar MSI de GPO, desligar Kerberos na forest, nem reescrever SPNs em CNAMEs DNS públicos.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Na análise de malware, o que significa principalmente “sandbox detonation”?",
+    "options": [
+      "Apagar o domain controller de produção durante a noite para cada binário suspeito se reinstalar a partir de uma pen USB no reboot seguinte de cada workstation do domínio",
+      "Desativar todos os sensores EDR durante 24 horas para os analistas copiarem hashes de malware diretamente para o schema live do Active Directory e templates de GPO",
+      "Executar um ficheiro suspeito num ambiente virtual isolado para observar o comportamento (rede, ficheiros, registo) sem infetar hosts de produção",
+      "Publicar a amostra completa num paste site público para todos os SOCs recompilarem o binário antes de qualquer análise estática ou dinâmica local"
+    ],
+    "correct": 2,
+    "explanation": "Sandbox detonation executa uma amostra suspeita num ambiente isolado e controlado para capturar indicadores comportamentais com segurança. Não é apagar DCs, desativar EDR para tocar no schema AD, nem publicar amostras em paste sites públicos como definição.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Em ataques a Active Directory, em que é que um Golden Ticket difere principalmente de um Silver Ticket?",
+    "options": [
+      "Um Golden Ticket só é válido em workstations Linux juntas via Samba, enquanto um Silver Ticket funciona só em tenants Azure AD cloud-only sem qualquer domain controller on-premises presente",
+      "Um Golden Ticket forja um TGT com o hash KRBTGT para pedidos amplos de service tickets; um Silver Ticket forja um TGS para um serviço com o hash dessa conta de serviço",
+      "Ambos os tickets são tokens JWT idênticos emitidos por políticas Conditional Access do Entra ID e nunca envolvem chaves Kerberos guardadas em domain controllers on-premises",
+      "Um Silver Ticket exige sempre direitos DCSync primeiro num DC, ao passo que um Golden Ticket se cria a partir de qualquer conta guest local sem credenciais de domínio nem material KRBTGT"
+    ],
+    "correct": 1,
+    "explanation": "Golden Tickets forjam TGTs com o hash KRBTGT (acesso amplo para pedir service tickets). Silver Tickets forjam um TGS para um serviço com o hash dessa conta. São construções Kerberos, não regras JWT só Linux/Azure, e o Silver não exige exclusivamente DCSync primeiro.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Na deteção de rede, como se manifesta tipicamente o “beaconing” de malware para um servidor C2 (command-and-control)?",
+    "options": [
+      "Um único burst de ruído UDP aleatório que nunca se repete e só aparece no primeiro DHCP Discover após um cold boot do endpoint na VLAN de acesso",
+      "Flood contínuo OSPF full-mesh entre todas as workstations para o C2 reescrever a topologia IGP e os tipos de área do campus em tempo real em todos os sites e VRFs",
+      "Emails cifrados só para o mail gateway local, sem callbacks e sem abrir ligações outbound para qualquer host externo ou resolver DNS",
+      "Ligações ou queries DNS outbound periódicas, muitas vezes low-and-slow, de um implant para o C2 do atacante para check-in e comandos"
+    ],
+    "correct": 3,
+    "explanation": "Beaconing são check-ins repetidos do malware ao C2 (HTTP/DNS/etc.), muitas vezes periódicos e discretos. Não é um burst UDP único no DHCP, rewrite OSPF em mesh, nem só email sem callbacks outbound.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é que o AS-REP roasting abusa principalmente em ambientes Kerberos de Active Directory?",
+    "options": [
+      "Inunda o RADIUS com handshakes EAP-TLS até cada wireless controller esquecer os servidores AAA e cair para SSIDs abertos em todo o fabric campus da empresa",
+      "Reescreve communities BGP em todos os routers PE de um dia para o outro para o tráfego de retorno preferir um peer ISP malicioso que só anuncia uma default para a empresa",
+      "Esvazia todos os pools DHCP com tempestades Discover e MACs aleatórios para os clientes só receberem endereços APIPA e nunca aprenderem os servidores DNS de domínio",
+      "Pede mensagens AS-REP para contas que não exigem pré-autenticação Kerberos e depois faz crack offline do material cifrado para recuperar essas passwords"
+    ],
+    "correct": 3,
+    "explanation": "O AS-REP roasting mira contas com pré-autenticação Kerberos desativada: o atacante obtém o ciphertext AS-REP e faz crack offline da password. Não é flood RADIUS/EAP-TLS, rewrite de communities BGP, nem starvation DHCP.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Em ataques baseados em Kerberos, o que envolve principalmente o Pass-the-Ticket (PtT)?",
+    "options": [
+      "Fazer crack de pares challenge-response NTLM capturados só via spoofing LLMNR/NBT-NS na LAN, sem nunca ler ou injetar um ticket Kerberos de qualquer cache do sistema",
+      "Enviar códigos SMS de uso único de phishing que expiram em trinta segundos para a fadiga MFA forçar cada utilizador a aprovar um push fraudulento no telemóvel",
+      "Reutilizar um ticket Kerberos roubado (TGT ou service ticket) da memória ou disco para autenticar como esse principal sem conhecer a password da conta",
+      "Fazer brute-force offline de handshakes WPA3 SAE durante dias para criar um certificado permanente de enrollment MDM que só funciona em SSIDs guest e nunca nos corporativos"
+    ],
+    "correct": 2,
+    "explanation": "Pass-the-Ticket reutiliza um ticket Kerberos roubado (muitas vezes de LSASS/cache de tickets) para autenticar sem a password em claro. Distingue-se do crack de hashes NTLM via spoofing LLMNR, phishing de fadiga MFA, ou crack WPA3 SAE.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Porque é que os atacantes fazem muitas vezes dump de credenciais do processo LSASS num host Windows?",
+    "options": [
+      "O LSASS só guarda nomes da fila do spooler de impressão e caminhos de drivers, por isso o dump é obrigatório antes de qualquer movimento lateral por SMB na LAN corporativa",
+      "O LSASS guarda material de autenticação (ex.: hashes NTLM, tickets Kerberos, por vezes segredos em claro) que pode permitir Pass-the-Hash, Pass-the-Ticket ou mais pivots no domínio",
+      "O LSASS é o único sítio onde a Group Policy guarda PSKs Wi-Fi de cada SSID, e o dump substitui a necessidade de quaisquer credenciais de domínio ao juntar tenants Azure AD só na cloud",
+      "O LSASS cifra a imagem do firmware BIOS local a cada boot, por isso o dump é a única forma suportada de desbloquear chaves de recuperação BitLocker dos bancos PCR do TPM nesse host"
+    ],
+    "correct": 1,
+    "explanation": "O LSASS (Local Security Authority Subsystem Service) faz cache de segredos de logon como hashes NTLM e tickets Kerberos; o dump alimenta PtH/PtT e movimento lateral. Não é repositório de filas de impressão, nem o único cofre GPO de PSK Wi-Fi para Azure, nem um ritual de desbloqueio BIOS/BitLocker TPM.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que caracteriza malware fileless em ataques a endpoints?",
+    "options": [
+      "Corre sobretudo em memória ou via ferramentas/scripts nativos de confiança (ex.: PowerShell, WMI), com pouco ou nenhum EXE malicioso tradicional escrito em disco, o que reduz a eficácia de scans AV baseados em ficheiros",
+      "Só consegue infetar impressoras air-gapped sem CPU, RAM ou stack de rede, e guarda sempre um binário PE completo em C:\\Windows\\System32 antes de cada execução, independentemente de qualquer default específico do fabricante na plataforma.",
+      "Define-se como qualquer worm USB autorun que obriga a vítima a fazer duplo clique num .exe num drive de rede mapeado e nunca usa living-off-the-land nem técnicas em memória em redes campus e empresariais de produção típicas.",
+      "Encripta exclusivamente partições de disco com uma nota pública de ransomware e nunca abusa de hosts de scripting, payloads no registo ou injeção refletiva de DLL em memória em modelos comuns de deployment IOS, IOS-XE e NX-OS."
+    ],
+    "correct": 0,
+    "explanation": "Malware fileless privilegia execução em memória ou living-off-the-land (PowerShell/WMI/etc.), pelo que scans clássicos em disco falham mais. Não se limita a impressoras air-gapped, não é só worm USB de .exe, nem é sinónimo de ransomware só de encriptação de disco.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Em cenários de ameaça cibernética, o que descreve tipicamente o island hopping?",
+    "options": [
+      "Mover fisicamente discos rígidos entre dois data centers air-gapped por estafeta, sem nunca usar a Internet nem qualquer rede de um fornecedor de serviços geridos",
+      "Comprometer uma organização ligada mais fraca (muitas vezes fornecedor/MSP/parceiro) e depois pivotar dessa relação de confiança para o ambiente do alvo principal",
+      "Saltar VLANs apenas forjando tags 802.1Q numa porta local de switch, sem phishing, exploit nem abuso de qualquer caminho de confiança de terceiros fora da LAN",
+      "Rodar domínios C2 a cada milissegundo com one-time pad criptográfico para resolvers DNS e inspeção SNI TLS se tornarem permanentemente impossíveis em todos os caminhos"
+    ],
+    "correct": 1,
+    "explanation": "Island hopping abusa da confiança num terceiro ligado (fornecedor/MSP/parceiro): compromete a ilha mais fraca e pivota para o alvo real. Não são transferências de disco por estafeta, não é só VLAN hopping local, nem a definição de rotação ultra-rápida de domínios C2.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Como é que os Domain Generation Algorithms (DGAs) ajudam tipicamente o malware a manter reachability de command-and-control?",
+    "options": [
+      "Fixam permanentemente um único IP hard-coded no binário para os defensores só precisarem de bloquear um endereço durante toda a campanha, sem qualquer envolvimento de DNS, independentemente de qualquer default específico do fabricante na plataforma.",
+      "Substituem todas as queries DNS por entradas estáticas em /etc/hosts distribuídas por USB para o malware nunca contactar um resolver e não ser observado em telemetria DNS passiva em redes campus e empresariais de produção típicas.",
+      "Geram algoritmicamente muitos nomes de domínio candidatos ao longo do tempo; o operador regista um (ou poucos) desse conjunto para os hosts infetados ainda encontrarem o C2 mesmo depois de domínios individuais serem bloqueados",
+      "Encriptam toda a LSDB OSPF dentro de registos TXT para os routers tratarem o tráfego de botnet como externos Type-5 e nunca permitirem às equipas de segurança fazer sinkhole de qualquer nome gerado em modelos comuns de deployment IOS, IOS-XE e NX-OS."
+    ],
+    "correct": 2,
+    "explanation": "Os DGAs produzem muitos nomes possíveis; os atacantes registam os que precisam para o malware reencontrar o C2 após takedowns. Não são um único IP hard-coded, não são só /etc/hosts por USB, nem truques de LSDB OSPF em TXT.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é server-side request forgery (SSRF)?",
+    "options": [
+      "Um ataque em que um script injetado numa página web corre nos browsers de outros utilizadores e rouba os cookies de sessão enquanto veem a página",
+      "Um ataque em que o browser da vítima é enganado para enviar um pedido autenticado a um site onde tem sessão iniciada, como mudar a password",
+      "Um ataque em que o atacante faz um servidor vulnerável enviar pedidos para alvos à sua escolha, como serviços internos ou endpoints de metadata da cloud",
+      "Um ataque em que o atacante inunda um servidor web com ligações TCP meio abertas até a tabela de ligações encher e novos utilizadores não conseguirem ligar"
+    ],
+    "correct": 2,
+    "explanation": "No SSRF o próprio servidor é usado como proxy, muitas vezes para chegar a sistemas só internos ou à metadata da cloud (ex.: 169.254.169.254) e roubar credenciais. A opção 1 descreve XSS, a 2 CSRF (falsificação do lado do cliente) e a 4 um SYN flood.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Como é que o domain fronting ajuda o malware a esconder o tráfego de comando e controlo (C2)?",
+    "options": [
+      "Regista milhares de domínios aleatórios todos os dias para que os defensores não consigam bloquear todos antes de o malware encontrar um que o operador controla",
+      "Reescreve os registos DNS do próprio domínio da vítima para que os utilizadores internos sejam redirecionados para uma página de login clonada alojada pelo atacante",
+      "Esconde os comandos C2 dentro de payloads ICMP echo para que firewalls que só inspecionam TCP e UDP nunca vejam as instruções do atacante",
+      "Mostra um domínio reputado alojado numa CDN no DNS e no SNI do TLS, enquanto o cabeçalho HTTP Host dentro da sessão cifrada aponta para o backend do atacante"
+    ],
+    "correct": 3,
+    "explanation": "O domain fronting abusa de CDNs: as camadas visíveis (DNS, SNI) indicam um domínio de confiança, mas o cabeçalho Host interno encaminha o pedido para o serviço do atacante na mesma CDN, pelo que bloqueá-lo implica bloquear o domínio popular. A opção 1 é DGA, a 2 DNS hijacking/pharming e a 3 túnel ICMP.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Durante a resposta a incidentes, que evidência deve normalmente ser recolhida primeiro segundo a ordem de volatilidade?",
+    "options": [
+      "Registos da CPU, cache e conteúdo da RAM, junto com processos em execução e ligações de rede ativas, porque se perdem ao desligar",
+      "As fitas de backup arquivadas fora do local, porque são as cópias mais antigas dos dados e as mais prováveis de serem sobrescritas primeiro",
+      "A imagem completa do disco do host afetado, porque os dados em disco desaparecem assim que o responder abre o ticket do caso",
+      "Os logs impressos e documentos físicos no escritório, porque a evidência em papel degrada-se mais depressa do que dados na memória"
+    ],
+    "correct": 0,
+    "explanation": "A ordem de volatilidade manda capturar primeiro os dados mais efémeros: registos, cache, RAM, estado de processos e rede, depois ficheiros temporários, disco, logs remotos e por fim media de arquivo. Backups e imagens de disco são muito menos voláteis do que a memória.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um atacante carrega a página de transferências de um banco num iframe invisível num site de jogos e leva os utilizadores a clicar num botão Confirmar escondido. Que ataque é este e qual é uma defesa padrão?",
+    "options": [
+      "Clickjacking; o banco deve enviar X-Frame-Options DENY ou CSP frame-ancestors para os browsers recusarem mostrar as páginas em frames",
+      "Cross-site scripting; o banco deve fazer hash de todas as passwords com bcrypt para que os scripts injetados não leiam as credenciais",
+      "SQL injection; o banco deve usar queries parametrizadas para que o botão escondido não altere a instrução SQL enviada à base de dados",
+      "DNS spoofing; o banco deve ativar DNSSEC na sua zona para que o site de jogos deixe de resolver o domínio do banco para um servidor falso"
+    ],
+    "correct": 0,
+    "explanation": "O clickjacking (UI redressing) sobrepõe uma página legítima num frame a um isco, para a vítima clicar em botões reais. A defesa é proibir o enquadramento com X-Frame-Options ou Content-Security-Policy frame-ancestors. Não há script injetado, nem SQL alterado, nem mexidas na resolução DNS.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O domínio de um site malicioso resolve primeiro para o servidor do atacante com TTL muito curto e depois volta a resolver para 192.168.1.1, permitindo ao browser da vítima enviar pedidos para a página de administração do router de casa. Que técnica é esta?",
+    "options": [
+      "DNS cache poisoning, porque o atacante injeta respostas falsas no resolver do ISP e todos os utilizadores desse resolver são redirecionados para o router",
+      "Domain generation algorithm (DGA), porque o malware cria milhares de domínios aleatórios por dia para os defensores não conseguirem bloquear os servidores",
+      "DNS rebinding, porque a mesma origem passa a apontar para um IP interno, e a same-origin policy do browser deixa o script do atacante chegar lá",
+      "DNS tunneling, porque o atacante codifica dados roubados em labels de subdomínio longas e exfiltra-os através de consultas DNS recursivas normais"
+    ],
+    "correct": 2,
+    "explanation": "O DNS rebinding abusa de TTLs curtos: o hostname (mesma origem) passa a apontar para um IP privado e o JavaScript do atacante fala com dispositivos internos. Defesas: resolvers que bloqueiam respostas privadas para nomes públicos, validação do cabeçalho Host e autenticação nos serviços internos. Cache poisoning falsifica dados do resolver, DGA serve a resiliência de C2 e tunneling serve a exfiltração.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O servidor de build de uma empresa descarrega um pacote interno chamado acme-utils. Um atacante publica acme-utils versão 99.0 no registo público npm e o build instala-o. Que ataque é este e qual é uma mitigação importante?",
+    "options": [
+      "Typosquatting; os programadores devem ser treinados a escrever bem os nomes dos pacotes, porque o ataque só resulta com nomes mal escritos",
+      "Dependency confusion; usar pacotes com scope/namespace e apontar o build para um registo privado com versões fixas e lockfiles",
+      "Ataque watering hole; bloquear o site do npm no proxy da empresa, porque o pacote só chega a utilizadores que navegam no registo",
+      "Man-in-the-browser; instalar uma extensão anti-malware nos agentes de build, porque o código malicioso é injetado na sessão do browser"
+    ],
+    "correct": 1,
+    "explanation": "A dependency confusion explora gestores de pacotes que preferem a versão mais alta entre fontes públicas e privadas. Scopes/namespaces, um único registo privado (que faz proxy do público), versões fixas e lockfiles evitam-na. Typosquatting depende de nomes mal escritos, watering hole compromete um site que as vítimas visitam e man-in-the-browser é malware na sessão do browser.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um utilizador autenticado muda o URL /api/invoices/1043 para /api/invoices/1044 e vê a fatura de outro cliente. Que vulnerabilidade é esta?",
+    "options": [
+      "Cross-site request forgery (CSRF), porque o browser envia o cookie de sessão num pedido que o utilizador nunca quis enviar",
+      "Directory traversal, porque o número no caminho deixa o utilizador sair da raiz web e ler ficheiros do disco do servidor",
+      "Insecure direct object reference (IDOR), uma falha de controlo de acessos em que o servidor não verifica quem é o dono",
+      "Session fixation, porque o atacante definiu o ID de sessão antes do login e pode agora reutilizá-lo para ler dados do cliente"
+    ],
+    "correct": 2,
+    "explanation": "O IDOR (parte do Broken Access Control da OWASP) acontece quando a aplicação confia num ID de objeto vindo do cliente sem verificar se o utilizador autenticado lhe pode aceder. A correção é uma verificação de autorização no servidor para cada objeto (IDs aleatórios não chegam). CSRF forja pedidos a partir do browser da vítima, traversal usa ../ para chegar a ficheiros e session fixation reutiliza um ID de sessão definido antes.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Utilizadores com MFA por notificação push são alvo de phishing através de um reverse proxy que mostra a verdadeira página de login do Microsoft 365. Depois o atacante entra sem qualquer pedido de MFA. O que aconteceu e o que resiste melhor?",
+    "options": [
+      "Phishing adversary-in-the-middle roubou o cookie de sessão depois do MFA; FIDO2/passkeys ligadas à origem bloqueiam-no",
+      "MFA fatigue inundou os utilizadores com pedidos push até um ser aprovado; number matching nos pedidos basta para travar este reverse proxy",
+      "SIM swapping passou os números dos utilizadores para o atacante; trocar códigos SMS por notificações push bloqueia o ataque por completo",
+      "Password spraying adivinhou passwords comuns; um limite de bloqueio de conta mais alto impede o atacante de reutilizar a sessão"
+    ],
+    "correct": 0,
+    "explanation": "Os kits AiTM (por exemplo Evilginx) fazem relay do login real, a vítima completa o MFA e o proxy captura o cookie de sessão, que o atacante reutiliza. FIDO2/passkeys estão ligadas ao domínio verdadeiro e não assinam para o domínio do proxy; acesso condicional e token binding também ajudam. MFA fatigue precisa de pedidos repetidos, SIM swapping ataca o SMS e spraying só adivinha passwords.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Um funcionário clica num link e aprova uma app chamada 'PDF Viewer' que pede Mail.Read e offline_access no Microsoft 365. Mais tarde o correio continua a ser lido mesmo depois de a password ser reposta. O que é isto?",
+    "options": [
+      "Credential stuffing, porque o atacante reutilizou uma password vazada de outro site e repor a password não acaba com isso",
+      "Roubo de cookies por malware, porque o infostealer copiou cookies do browser que se mantêm válidos após a reposição",
+      "Typosquatting, porque o funcionário foi a um domínio parecido e o site falso continua a ler o correio pelo webmail",
+      "Illicit consent grant (consent phishing OAuth); a app tem refresh token próprio, por isso há que revogar o consentimento"
+    ],
+    "correct": 3,
+    "explanation": "No consent phishing o atacante não precisa da password: o utilizador concede permissões delegadas a uma app OAuth maliciosa e o offline_access dá-lhe um refresh token que sobrevive à reposição da password. A correção é revogar o consentimento e os tokens da app e limitar o consentimento dos utilizadores a editores verificados ou aprovação de administrador. Credential stuffing e cookies roubados são cortados por uma reposição com revogação de sessões, e typosquatting é só um domínio parecido.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um formulário de login monta SQL com concatenação de strings a partir do campo username. Que defesa melhor impede SQL injection clássica aqui?",
+    "options": [
+      "Confiar só num conjunto de assinaturas WAF, porque os WAF modernos reescrevem todas as queries antes de chegarem ao motor da base de dados",
+      "Fazer hash SHA-256 do username antes da concatenação, para as aspas injetadas virarem hex e não poderem fechar a string",
+      "Passar a coluna só para ID numérico e continuar a concatenar, porque números não transportam metacaracteres SQL",
+      "Usar queries parametrizadas (prepared statements) para o input ser ligado como dados e nunca ser interpretado como código SQL"
+    ],
+    "correct": 3,
+    "explanation": "Queries parametrizadas / prepared statements separam a instrução SQL dos valores ligados, por isso o input não altera a estrutura da query. Os WAF ajudam em profundidade mas falham payloads novos; hashear o username mantém a query concatenada; forçar numérico ajuda um campo mas não é correção geral e podem restar técnicas baseadas em erros.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No Windows, o ImagePath de um serviço é C:\\Program Files\\Vendor App\\service.exe sem aspas, e Authenticated Users pode escrever em C:\\Program Files\\Vendor App\\. Como pode um atacante local escalar para a conta do serviço?",
+    "options": [
+      "Substituir o PATH de todo o sistema para o cmd.exe correr primeiro, porque o Windows procura sempre o PATH antes da pasta do ImagePath",
+      "Colocar um executável malicioso mais cedo no caminho sem aspas (p.ex. C:\\Program.exe ou sob Vendor App) que o SCM vai lançar",
+      "Ativar SeDebugPrivilege com whoami /priv e fazer dump do LSASS, o que é obrigatório antes de abusar de qualquer ImagePath sem aspas",
+      "Limpar a lista DependOnService do serviço para o Windows reinstalar o binário a partir de um UNC controlado pelo atacante no boot"
+    ],
+    "correct": 1,
+    "explanation": "Caminhos de serviço sem aspas e com espaços fazem o Service Control Manager tentar C:\\Program.exe, depois C:\\Program Files\\Vendor.exe, e só depois o caminho real. Permissão de escrita numa pasta anterior permite deixar um binário que o SCM corre com a identidade do serviço (muitas vezes LocalSystem). Hijack do PATH é outro problema; dump LSASS com SeDebug é outra técnica; DependOnService não reinstala assim a partir de UNC.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Que afirmação melhor distingue XSS armazenado (stored) de XSS refletido (reflected) numa aplicação web típica?",
+    "options": [
+      "O XSS stored só funciona em HTTP em claro, enquanto o reflected exige HTTPS e um certificado de cliente válido antes do script correr no browser",
+      "O XSS stored guarda o script em dados no servidor para quem vê depois; o reflected só ecoa o payload nessa resposta imediata",
+      "O XSS stored só altera registos DNS no resolver, enquanto o reflected reescreve caches ARP no switch de acesso da vítima",
+      "O XSS stored precisa de uma extensão de browser maliciosa, enquanto o reflected só precisa de um email sem qualquer link aberto"
+    ],
+    "correct": 1,
+    "explanation": "O XSS stored (persistente) grava o payload num armazenamento da aplicação (comentário, perfil, ticket) para outros utilizadores o receberem e executarem mais tarde. O XSS reflected tira o payload do pedido e reflete-o nessa resposta (muitas vezes via URL maliciosa). HTTP/HTTPS e certificados de cliente não definem a diferença; nenhum dos tipos é sobre envenenar DNS/ARP; extensões não entram na classificação clássica.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um site bancário autentica POSTs com cookies de sessão. Que defesa melhor impede CSRF clássico numa transferência que altera estado?",
+    "options": [
+      "Desativar TLS no endpoint de transferência para o browser recusar cookies em POSTs cross-site sem URL HTTPS",
+      "Fazer hash MD5 do número de conta no body JSON, porque ferramentas CSRF não forjam esse digest sem material de chave privada do HSM offline do banco",
+      "Exigir um token anti-CSRF por sessão (ou cookies SameSite=Strict) para POSTs cross-site forjados não terem o segredo esperado",
+      "Abrir CORS com Access-Control-Allow-Origin * para o browser bloquear automaticamente POSTs cross-origin com credenciais"
+    ],
+    "correct": 2,
+    "explanation": "O CSRF clássico aproveita o envio automático de cookies do browser num pedido cross-site forjado. Tokens anti-CSRF (ou cookies SameSite estritos) fazem com que o pedido forjado não tenha um segredo que só a página legítima da app consegue ler. Desativar TLS não impede o envio de cookies; MD5 de um número de conta público não é segredo CSRF; ACAO * não bloqueia CSRF com credenciais e é o oposto de uma política CORS apertada.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Porque é que o UEFI Secure Boot (ou Measured Boot com atestações TPM) continua útil mesmo com o disco totalmente encriptado ao estilo BitLocker (FDE)?",
+    "options": [
+      "Protege a integridade da cadeia de boot para malware não substituir o bootloader/kernel antes do SO desbloquear o volume encriptado",
+      "Substitui por completo a encriptação de disco, porque um bootloader validado já encripta cada ficheiro com a endorsement key do TPM",
+      "Impede todo o phishing de contas admin na cloud ao ligar cada sessão HTTPS ao hash da base Secure Boot da plataforma",
+      "Elimina a necessidade de patches no SO, pois só componentes de boot assinados pela Microsoft podem ter vulnerabilidades exploráveis"
+    ],
+    "correct": 0,
+    "explanation": "A encriptação total de disco protege a confidencialidade dos dados em repouso, mas um bootloader ou kernel comprometido pode correr antes/durante o desbloqueio e subverter o SO. O Secure Boot verifica assinaturas dos componentes de boot; o Measured Boot/atestação regista hashes no TPM para verificação remota. O FDE não é substituído pelo Secure Boot; o Secure Boot não impede phishing; código de boot assinado continua a precisar de patches e não torna o SO isento de bugs.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é que um ataque XML External Entity (XXE) explora principalmente num parser vulnerável?",
+    "options": [
+      "Inunda o resolver DNS com subdomínios aleatórios gerados por um DGA para queries recursivas esgotarem a memória de cache",
+      "Falsifica o MAC da vítima no gateway por defeito para respostas ARP redirecionarem sessões HTTPS para um proxy SSL strip local",
+      "Engana o parser para resolver entidades externas, o que pode ler ficheiros locais ou alcançar URLs internas a partir do servidor",
+      "Substitui a base de assinaturas do bootloader UEFI para o Secure Boot aceitar um kernel não assinado antes do BitLocker desbloquear"
+    ],
+    "correct": 2,
+    "explanation": "O XXE abusa de parsers XML que processam referências a entidades externas. Um documento manipulado pode fazer o servidor obter recursos file:// ou URLs HTTP internas (impacto por vezes semelhante a SSRF). Não é inundação DNS por DGA, não é spoofing ARP, nem ataque a Secure Boot/bootloader.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Na tradecraft de malware Windows, em que consiste principalmente o process hollowing?",
+    "options": [
+      "Encriptar só o Master Boot Record com uma nota de ransomware e deixar os ficheiros do utilizador em clusters NTFS em claro",
+      "Iniciar um processo legítimo suspenso, desmapear o seu código e injetar código malicioso antes de o retomar",
+      "Registar um servidor DHCP rogue que dá DNS do atacante para os browsers resolverem bancos para sites de phishing",
+      "Fazer brute-force Kerberos AS-REP a contas sem pré-autenticação para crackar hashes offline sem tickets"
+    ],
+    "correct": 1,
+    "explanation": "O process hollowing cria um processo legítimo em estado suspenso, esvazia (desmapeia) a imagem em memória, injeta código do atacante e retoma a execução para o payload correr sob um nome de processo de confiança. Não é ransomware só do MBR, não é DHCP/DNS rogue, nem AS-REP roasting (fraqueza de pré-autenticação Kerberos).",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Para que serve principalmente o Microsoft Sysmon em endpoints Windows num desenho de monitorização blue team?",
+    "options": [
+      "Substitui a proteção em tempo real do Windows Defender ao assinar cada executável com um certificado de code-signing local autoassinado",
+      "É uma função de encriptação total de disco que guarda chaves de recuperação BitLocker só no TPM e nunca no Active Directory",
+      "É um cliente VPN que força todo o tráfego corporativo por túneis WireGuard antes de qualquer processo abrir um socket",
+      "Fornece logs detalhados de processos, rede e criação de ficheiros que pipelines SIEM/EDR podem usar para deteção"
+    ],
+    "correct": 3,
+    "explanation": "O Sysmon (System Monitor) é um serviço/driver Windows que regista telemetria rica—criação de processos, ligações de rede, alterações a ficheiros/registo, etc.—no event log do Windows para SIEM ou detection engineering. Não substitui o Defender AV, não é BitLocker, nem um cliente VPN.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que tenta principalmente um bypass típico de WAF contra um web application firewall?",
+    "options": [
+      "Inunda o resolver DNS recursivo com subdomínios aleatórios gerados por DGA até esgotar a memória de cache em cada nó do resolver",
+      "Manipula pedidos (encoding, caminhos alternativos, truques de verbo) para o payload malicioso chegar à app sem bater nas regras do WAF",
+      "Falsifica o MAC do gateway por defeito para respostas ARP forjadas redirecionarem sessões HTTPS para um proxy SSL-strip local na LAN",
+      "Substitui a base de assinaturas do UEFI Secure Boot para o firmware aceitar um bootloader não assinado antes de o BitLocker desbloquear"
+    ],
+    "correct": 1,
+    "explanation": "Bypasses de WAF exploram falhas entre o que o WAF normaliza/corresponde e o que a app de backend aceita—encodings, confusão de paths, truques de verbo/content-type HTTP, etc. Não é inundação DNS por DGA, spoofing ARP, nem ataque a Secure Boot.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Na tradecraft Windows, em que consiste principalmente o DLL sideloading?",
+    "options": [
+      "Encriptar só o Master Boot Record com uma nota de ransomware e deixar todos os ficheiros do utilizador em clusters NTFS totalmente em claro",
+      "Registar um servidor DHCP rogue que entrega DNS controlado pelo atacante para os browsers resolverem bancos para páginas de phishing falsas",
+      "Colocar uma DLL maliciosa onde uma app assinada de confiança a carrega pela ordem de procura, correndo código do atacante nesse processo",
+      "Fazer brute-force Kerberos AS-REP a contas sem pré-autenticação para conseguir crackar hashes offline sem obter quaisquer tickets Kerberos"
+    ],
+    "correct": 2,
+    "explanation": "O DLL sideloading abusa de como as apps Windows resolvem caminhos de DLL: o atacante coloca uma DLL maliciosa que um binário legítimo assinado carrega, muitas vezes para se misturar em processos de confiança e contornar allow-lists simples. Não é ransomware só do MBR, DHCP/DNS rogue, nem AS-REP roasting.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "No Active Directory, porque é a delegação Kerberos unconstrained especialmente perigosa se um atacante comprometer esse host?",
+    "options": [
+      "O host pode reutilizar tickets de utilizadores que se autenticam nele para os impersonar perante outros serviços no domínio",
+      "Desativa completamente o Kerberos e força todos os logons interativos a usar binds LDAP simple em claro só na porta TCP 389",
+      "Converte automaticamente todas as contas de serviço em Domain Admins após o próximo intervalo de atualização de GPO terminar",
+      "Guarda chaves de recuperação BitLocker no SYSVOL em claro para qualquer Authenticated User as ler a partir do share"
+    ],
+    "correct": 0,
+    "explanation": "Com delegação unconstrained, um computador/serviço recebe e pode reencaminhar TGTs de utilizadores que se ligam a ele, permitindo impersonação noutros serviços se o host for comprometido. Não desativa Kerberos para binds LDAP, não promove contas de serviço a Domain Admin, nem põe chaves BitLocker no SYSVOL.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que exploram principalmente as vulnerabilidades da família PrintNightmare num ambiente Windows?",
+    "options": [
+      "Forjam communities BGP nos routers de edge para cada subnet de impressoras ir para Null0 antes de o serviço de spooler arrancar no boot",
+      "Substituem as chaves do UEFI Secure Boot para só firmware de impressora não assinado carregar antes de o BitLocker desbloquear o volume",
+      "Abusam do Windows Print Spooler para um atacante remoto ou local executar código como SYSTEM, muitas vezes via drivers maliciosos",
+      "Convertem cada Domain Controller num print server que guarda o NTDS.dit dentro da pasta partilhada printers$ para leitura SMB anónima"
+    ],
+    "correct": 2,
+    "explanation": "Problemas estilo PrintNightmare abusam do Print Spooler (e caminhos de instalação de drivers) para obter execução remota/local como SYSTEM. Mitigações: desativar o spooler onde não for preciso, restringir instalação de drivers e aplicar patches. Não é truque BGP Null0, troca de chaves Secure Boot, nem partilha anónima do NTDS.dit.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No abuso de Active Directory Certificate Services (AD CS), em que se baseia principalmente a técnica ESC1?",
+    "options": [
+      "Roubar só o hash KRBTGT de um backup em fita de Domain Controller só de leitura para forjar Silver Tickets sem usar certificados de todo",
+      "Um template de certificado mal configurado que deixa utilizadores pouco privilegiados fazer enroll com SAN arbitrário e autenticar como outro",
+      "Forçar todas as workstations a confiar numa opção DHCP 252 WPAD rogue para proxies interceptarem Kerberos AS-REQ só na porta UDP 88",
+      "Desativar a assinatura SMB em todo o domínio com uma única GPO para o relay NTLM para LDAP ficar o único pré-requisito que ainda se chama ESC1"
+    ],
+    "correct": 1,
+    "explanation": "O ESC1 abusa de templates AD CS demasiado permissivos (ex.: EKU de autenticação de cliente, SAN indicado pelo enrollee, enrollment para Domain Users) para o atacante obter um certificado que impersona outro principal e depois o usa para autenticar. Não é roubo só do KRBTGT para Silver Ticket, interceptação Kerberos via WPAD/DHCP 252, nem GPO de SMB signing como núcleo do ESC1.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Em que difere principalmente o RASP (Runtime Application Self-Protection) de um WAF tradicional de rede ou reverse-proxy?",
+    "options": [
+      "O RASP só inspeciona regras BGP flowspec no appliance de firewall de edge, enquanto um WAF só valida LSAs OSPF antes de entrarem na Area 0 do core",
+      "O RASP substitui por completo o TLS por HTTP em claro dentro do contentor da app para o WAF saltar para sempre o certificate pinning após cada deploy",
+      "O RASP corre apenas como sandbox offline de malware que detona binários carregados uma vez, enquanto um WAF fica inline em cada pacote do caminho",
+      "O RASP instrumenta a aplicação em execução para ver o contexto real de código; um WAF tipicamente filtra HTTP no edge sem ver o interior da app"
+    ],
+    "correct": 3,
+    "explanation": "O RASP faz hook/instrumentação no runtime da aplicação (bibliotecas, interpretadores, agentes) para as deteções usarem caminhos de código, fluxos de dados e utilizadores reais—contexto que um WAF de perímetro normalmente não tem. Um WAF continua a filtrar na camada HTTP/política de edge. RASP não é inspeção BGP/OSPF, não remove TLS, nem é só uma sandbox offline.",
     "difficulty": "Médio"
   }
 ]
