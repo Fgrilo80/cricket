@@ -2556,5 +2556,89 @@
     "correct": 1,
     "explanation": "A loopback plug shorts or maps TX to RX on the same connector so link/activity LEDs and local diagnostics can prove the interface hardware path without a remote peer. It is not a fiber converter, not an STP/Auto-MDIX replacement, and not an 802.1X authenticator.",
     "difficulty": "Easy"
+  },
+  {
+    "question": "What is a copper Time Domain Reflectometer (TDR) mainly used for when troubleshooting twisted-pair Ethernet cabling?",
+    "options": [
+      "It measures optical return loss and splice reflectance on single-mode fiber spans the same way a full OTDR trace does on every strand",
+      "It replaces the need for wiremap and length tests by certifying Category-6A alien crosstalk margins against ISO limits automatically",
+      "It sends a pulse on copper pairs and estimates distance to opens, shorts, or impedance changes along the cable run",
+      "It forces Auto-MDIX and PoE classification so every RJ-45 jack negotiates 802.3bt Type 4 power before any data link comes up"
+    ],
+    "correct": 2,
+    "explanation": "A copper TDR injects a pulse and times reflections to locate opens, shorts, and major impedance faults on twisted pair. An OTDR is the fiber counterpart; a TDR does not certify alien crosstalk by itself, replace wiremap/length entirely, or negotiate PoE/Auto-MDIX.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "In duplex fiber patching, what does maintaining A-to-B (Method A / crossed) polarity mainly ensure?",
+    "options": [
+      "That both strands always carry identical wavelengths so CWDM muxes can ignore TX/RX labels on every transceiver pair",
+      "That each transmitter lands on the peer receiver so light from TX on one end reaches RX on the other end",
+      "That multimode OM3 and single-mode OS2 can share the same cassette without any adapter polarity rules at all",
+      "That PoE classification still succeeds over fiber so the far-end switch can power the SFP-to-RJ45 media converter"
+    ],
+    "correct": 1,
+    "explanation": "Duplex fiber needs TX on one end to meet RX on the other. A-to-B (Method A) polarity flips strand positions so each transmitter lands on the peer receiver. It does not force identical wavelengths, mix OM3 with OS2 casually, or deliver PoE over fiber.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "What does a cable certifier mainly verify that a basic toner/probe pair typically cannot?",
+    "options": [
+      "That PoE classification finished successfully so every RJ-45 pin carries DC power irrespective of cable category rating or patch length",
+      "That the far-end switch already learned the patch-cord MAC address so Spanning Tree can safely skip PortFast on that access port forever",
+      "That the permanent link meets category limits for length, attenuation, NEXT, and related electrical performance metrics",
+      "That Auto-MDIX is forced off on both switch ports so only crossover cables will ever pass a simple continuity beep test end-to-end"
+    ],
+    "correct": 2,
+    "explanation": "A certifier measures electrical performance against TIA/ISO category limits (length, loss, NEXT, etc.). A toner/probe mainly finds and identifies cables; it does not certify category performance, prove PoE on every pin, or depend on STP/Auto-MDIX state.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "On a Cisco switch with default settings, what happens to a dynamically learned MAC after about 300 seconds with no frames from that source?",
+    "options": [
+      "It becomes a sticky static entry so the port forever accepts only that MAC and err-disables if any other source address appears later",
+      "It ages out of the MAC address table, so frames to that MAC are flooded in the VLAN until the switch relearns it from traffic",
+      "It is copied to every trunk neighbor via CDP so all switches keep forwarding to that port even after the host is unplugged",
+      "It triggers a Spanning Tree topology change that blocks the access port until the host sends a BPDU proving it is still connected"
+    ],
+    "correct": 1,
+    "explanation": "Dynamic MAC entries age out (300 s by default on Cisco). When gone, unknown-unicast frames to that MAC flood until relearned. Aging does not create sticky entries, use CDP, or block ports via STP.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "A PoE switch already supplies power to many phones and access points. A new camera is plugged in but gets no power, while data works on other ports. What is the most likely reason?",
+    "options": [
+      "The camera needs a crossover cable, because PoE only flows when the transmit and receive pairs are swapped by hand at one end of the link",
+      "PoE only works on trunk ports, so the access port must be changed to 802.1Q trunk mode before the switch will send any power to the camera",
+      "The switch disables PoE whenever a port runs at 1 Gbps, so the camera port must be forced to 100 Mbps full duplex before power is applied",
+      "The switch has used up its total PoE power budget, so it refuses to power the new device until load is reduced or more power is available"
+    ],
+    "correct": 3,
+    "explanation": "A PoE switch has a total power budget shared by all ports. When the budget is used up, new powered devices are denied power even though the port itself works. Crossover cables, trunk mode, and speed settings do not control PoE delivery.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "A closet has only copper Ethernet to the desk, but the uplink to the core is single-mode fiber. Which device lets you join those media without replacing the whole path?",
+    "options": [
+      "A straight-through patch cable alone, because copper UTP and single-mode fiber use the same electrical signalling and can be plugged into each other with no conversion hardware at all on either side of the link",
+      "A media converter (or a switch with matching copper and fiber ports), which translates between the copper Ethernet PHY and the optical transceiver so both segments can carry the same frames",
+      "A punch-down tool, because terminating the fiber strands onto an RJ45 jack is the standard way to connect optical uplinks to copper desk drops in campus closets",
+      "A tone generator and probe, which inject an optical carrier into the copper pair and prove the fiber and UTP are already electrically compatible without any intermediary device"
+    ],
+    "correct": 1,
+    "explanation": "A media converter (or a multi-media switch) bridges copper Ethernet and fiber optics so frames cross the media change. A patch cable alone cannot join electrical and optical PHYs; punch-down and toner tools are for copper termination and tracing, not media conversion.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "A technician needs a powered-off desktop on the LAN to boot so remote management tools can reach it. Which mechanism typically sends a specially crafted Ethernet frame that the NIC treats as a wake signal?",
+    "options": [
+      "A DHCP Discover flood from any client on the VLAN, because lease renewal packets always carry a BIOS wake flag that every modern NIC must honour before it can request an address on that segment at all",
+      "An OSPF Hello with the reserved bit set, which Layer-2 switches reinterpret as a power-on command for every host that shares the same OSPF process ID on that broadcast segment of the campus",
+      "Wake-on-LAN (WoL): a magic packet that contains the target MAC address repeated in the payload, which a WoL-capable NIC recognizes and signals the motherboard to power on",
+      "A CDP neighbor advertisement with a Power TLV, which forces the switch PoE budget to energize the PC's copper drop even when the PC has no PoE circuitry of its own on the motherboard side"
+    ],
+    "correct": 2,
+    "explanation": "Wake-on-LAN uses a magic packet whose payload repeats the target MAC; a capable NIC asserts a wake signal to the board. DHCP, OSPF Hellos, and CDP Power TLVs do not boot a powered-off PC over standard Ethernet.",
+    "difficulty": "Easy"
   }
 ]

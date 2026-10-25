@@ -1,5 +1,12 @@
 # Changelog — Cricket / Cisco Quiz (web)
 
+## v3.4.0 — 2026-10-25
+
+- Publicados **62 pares** PT/EN dos rascunhos diários de 13 a 24 Out 2026 (72 gerados, 10 pares removidos por tema duplicado do live).
+- Removidos (já cobertos no live): BGP AS-path prepending (18 Out), OSPF NSSA Type-7→5 (22 Out, CCNP #74), EIGRP stub/SIA (22 Out, CCNP #120), BGP route dampening (15 Out, CCNP #197), limpar/inspecionar conector de fibra (18 Out, CCST #211), canais 1/6/11 a 2,4 GHz (19 Out, CCST #119), APC vs UPC (22 Out, CCST #192), LED de link apagado (23 Out, CCST #129), conflito de IP duplicado (24 Out, CCST #128), certutil como LOLBin (18 Out, Cyber #32).
+- Totais: CCST 220, CCNA 230, CCNP 224, Cyber 113 (PT = EN). Clássicos **1348**. Cyber **226**. Banco **1574**.
+- App Flutter permanece **1.2.11+13**; `app-version.json` atualiza só `bankTotal` / `bankClassic` / `bankCyber`. O refresh OTA continua por SHA-256 do `cricket.json`.
+
 ## v3.3.0 — 2026-10-12
 
 - Publicados **110 pares** PT/EN dos rascunhos diários de 23 Set a 12 Out 2026 (120 gerados, 10 pares removidos por tema duplicado).

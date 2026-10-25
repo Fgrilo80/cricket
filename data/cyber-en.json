@@ -934,5 +934,425 @@
     "correct": 3,
     "explanation": "RASP hooks or instruments the application runtime (libraries, interpreters, agents) so detections use real code paths, data flows, and users—context a perimeter WAF usually lacks. A WAF still filters at HTTP/edge policy layer. RASP is not BGP/OSPF inspection, not a TLS-removal feature, and not merely an offline sandbox.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "What is BloodHound mainly used for in Active Directory security assessments?",
+    "options": [
+      "It replaces every Domain Controller’s KRBTGT password twice per hour so Golden Tickets expire before an attacker can forge any TGT at all",
+      "It acts as an inline WAF that blocks Kerberoasting TGS requests whenever an SPN belongs to a user account with a weak password hash",
+      "It encrypts LSASS memory with a hypervisor enclave so tools like Mimikatz can never read NTLM hashes or Kerberos tickets from RAM",
+      "It maps AD users, groups, computers, and ACLs as a graph to reveal attack paths such as paths to Domain Admin"
+    ],
+    "correct": 3,
+    "explanation": "BloodHound (and collectors like SharpHound) enumerate AD relationships and ACLs into a graph so analysts/attackers can find privilege-escalation paths (e.g. to Domain Admin). It does not rotate KRBTGT on a schedule, act as a WAF for Kerberoasting, or encrypt LSASS by itself.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In modern Active Directory abuse, what do Shadow Credentials mainly involve?",
+    "options": [
+      "Writing a malicious service principal name on krbtgt so every TGS request is forced into unconstrained delegation toward a rogue host",
+      "Writing attacker-controlled keys into an account’s msDS-KeyCredentialLink so the attacker can authenticate as that principal via PKINIT",
+      "Disabling SMB signing and LDAP channel binding domain-wide with one GPO so NTLM relay to Certificate Services becomes the only step left",
+      "Replacing the domain’s DANE TLSA records so LDAPS clients accept a forged certificate chain from any public Web PKI intermediate CA"
+    ],
+    "correct": 1,
+    "explanation": "Shadow Credentials abuse the msDS-KeyCredentialLink attribute (often via Key Trust / Windows Hello for Business style keys) so an attacker who can write that attribute adds their key material and then obtains tickets as the victim using PKINIT. It is not krbtgt SPN unconstrained-delegation setup, a GPO that only disables signing/binding, or DANE TLSA replacement.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "On a Microsoft Entra ID–joined Windows device, what is a Primary Refresh Token (PRT) mainly used for?",
+    "options": [
+      "It is a one-time BitLocker recovery password escrowed only to Active Directory so offline disks can never unlock without a Domain Admin",
+      "It is a local SAM hash of the enrolled user’s password that Windows replays to NTLM services when Kerberos is unavailable on that subnet",
+      "It is a device-bound SSO refresh token that lets the user silently obtain access tokens for Entra ID–protected cloud apps and resources",
+      "It is an Azure Storage shared access signature that grants anonymous write to every blob container in the tenant until the next password change"
+    ],
+    "correct": 2,
+    "explanation": "A PRT is issued to Entra-joined/hybrid-joined devices and enables single sign-on: the device can obtain access tokens for cloud resources without prompting the user repeatedly. Theft/abuse of PRT material is a living-off-cloud style concern. It is not BitLocker escrow, a SAM/NTLM hash replay blob, or a tenant-wide anonymous SAS.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In cloud environments, why is SSRF that reaches the instance metadata service (IMDS, e.g. 169.254.169.254) especially dangerous?",
+    "options": [
+      "It only lets an attacker change the VM hostname in DNS so TLS certificate pinning fails on the next reboot of every load balancer",
+      "It permanently disables the hypervisor firewall so every guest can send spoofed BGP updates into the provider backbone without IAM checks",
+      "It can expose temporary credentials or tokens that the instance role uses, letting the attacker call cloud APIs as that role",
+      "It forces the guest OS to downgrade all outbound TLS to SSLv3 so packet captures on the VPC mirror can decrypt every HTTPS session"
+    ],
+    "correct": 2,
+    "explanation": "IMDS often serves IAM role credentials (or similar short-lived tokens) to the instance. SSRF that can query that link-local endpoint can steal those credentials and abuse cloud APIs. It is not merely a hostname/DNS trick, a BGP spoof enabler, or an SSLv3 downgrade of all egress TLS.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does an OAuth device-code phishing attack mainly trick a victim into doing?",
+    "options": [
+      "Granting the attacker’s registered application consent by entering a short user code shown on a fake or attacker-controlled page",
+      "Installing a malicious browser extension that rewrites every Authorization header to a static Bearer token stolen from LSASS",
+      "Disabling MFA tenant-wide through a forged SAML assertion that the IdP accepts because the device code bypasses TLS entirely",
+      "Replacing the tenant’s JWKS endpoint with a rogue key so every previously issued refresh token validates forever without expiry"
+    ],
+    "correct": 1,
+    "explanation": "Device authorization flow shows a user code and a verification URI. Attackers phish victims into approving the attacker’s app (often via a convincing page), yielding tokens for the attacker. It is not an LSASS Bearer rewrite, an MFA-off SAML forge that skips TLS, or a permanent JWKS swap.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "On Windows, what does abusing SeImpersonatePrivilege (e.g. Potato-family techniques) mainly achieve for a local attacker?",
+    "options": [
+      "It rewrites the domain KRBTGT hash in AD so every TGT forged afterward is accepted as a Golden Ticket without needing DCSync rights",
+      "It disables Windows Defender Tamper Protection by swapping the ELAM driver signature database with an unsigned offline copy on disk",
+      "It forces every outbound SMB connection to fall back to NTLMv1 so a remote listener can capture crackable challenge-response pairs",
+      "It lets a service account (or similar) impersonate a more privileged token on the host, often escalating to SYSTEM locally"
+    ],
+    "correct": 3,
+    "explanation": "SeImpersonatePrivilege allows a process to impersonate clients that connect to it. Potato-style attacks coerce a privileged service to authenticate to the attacker’s pipe/listener and then impersonate that high-privilege token (often SYSTEM). It is not KRBTGT rewrite, ELAM/Tamper Protection bypass by itself, or a forced NTLMv1 downgrade of all SMB.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What does a PetitPotam-style attack mainly coerce a Windows host (often a DC) into doing?",
+    "options": [
+      "Rewriting the domain KRBTGT hash on disk locally so every forged TGT validates afterward without needing any DCSync rights",
+      "Disabling Credential Guard by replacing the VBS launch policy with an unsigned offline registry hive copied from another host",
+      "Forcing every outbound SMB session down to NTLMv1 so a remote listener can capture and crack challenge-response pairs offline",
+      "Authenticating to an attacker-controlled listener (often via MS-EFSRPC), enabling NTLM relay or related follow-on abuse"
+    ],
+    "correct": 3,
+    "explanation": "PetitPotam abuses MS-EFSRPC (and similar) to coerce authentication toward an attacker. Combined with NTLM relay (or related techniques), that can lead to further domain compromise. It is not itself a KRBTGT rewrite, a Credential Guard bypass by hive swap, or a forced NTLMv1 downgrade of all SMB.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What did the Zerologon vulnerability (CVE-2020-1472) mainly allow an attacker on the network to do against an unpatched domain controller?",
+    "options": [
+      "Read every BitLocker recovery key from Azure AD by spoofing only the Netlogon secure channel with an empty AES-GCM authentication tag",
+      "Disable Windows Defender Tamper Protection remotely by setting the Netlogon machine account password literally to the string zerologon",
+      "Spoof Netlogon secure-channel auth (all-zero IV flaw) and reset the DC machine account password to an empty or known value",
+      "Forge Kerberos Golden Tickets without ever touching KRBTGT, because Netlogon replaced PAC validation on every subsequent TGS-REQ"
+    ],
+    "correct": 2,
+    "explanation": "Zerologon abused a Netlogon crypto flaw (all-zero IV) so an attacker could impersonate a client and set the DC's machine account password to a known/empty value, enabling further takeover. It is not BitLocker key theft via empty GCM tags alone, a Defender Tamper Protection toggle, or Golden Tickets without KRBTGT.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What does enabling Windows Credential Guard mainly protect against on a supported host?",
+    "options": [
+      "All Kerberos Golden Ticket forgery across the domain, because every DC refuses any TGT that was not sealed inside a VBS enclave",
+      "Theft of derived credentials such as NTLM hashes or Kerberos tickets from LSASS by isolating those secrets with VBS",
+      "Every NTLM relay attack on the LAN, because Credential Guard completely disables NetNTLM for all outbound SMB connections",
+      "Ransomware encrypting local NTFS volumes, because VBS remaps disk clusters into an encrypted RAM-only scratch volume at boot"
+    ],
+    "correct": 1,
+    "explanation": "Credential Guard uses virtualization-based security to isolate secrets so malware running as admin cannot simply dump them from LSASS. It does not stop domain-wide Golden Tickets by itself, disable all NetNTLM/relay, or act as anti-ransomware disk encryption.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does a DCShadow attack mainly abuse in Active Directory replication?",
+    "options": [
+      "It floods every domain controller with forged Kerberos TGTs so legitimate DCSync rights become unnecessary for reading password hashes",
+      "It replaces the KRBTGT password hash on disk through a local offline edit, then waits for normal replication to push Golden Tickets domain-wide",
+      "It coerces a workstation to authenticate via MS-EFSRPC so an attacker can relay NTLM to LDAP and enroll a rogue certificate as that computer",
+      "It registers a rogue domain controller so attackers can push malicious object changes through normal AD replication channels"
+    ],
+    "correct": 3,
+    "explanation": "DCShadow makes a machine act as a DC and injects attacker-controlled changes into AD replication. It is not PetitPotam coercion, offline KRBTGT editing, or flooding forged TGTs.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Why do attackers sometimes add a backdoor ACE on the AdminSDHolder object in Active Directory?",
+    "options": [
+      "Because AdminSDHolder stores the KRBTGT hash in cleartext on disk, so any ACE there immediately grants DCSync without needing further replication steps",
+      "Because every new computer account inherits AdminSDHolder ACLs at join time, turning a single ACE into domain-wide local admin on every workstation forever",
+      "Because SDProp periodically copies AdminSDHolder's ACL onto protected privileged groups, so a planted ACE can reappear after admins clean those groups",
+      "Because AdminSDHolder disables Kerberos pre-authentication for all Domain Admins, enabling AS-REP roasting against every privileged account at once overnight"
+    ],
+    "correct": 2,
+    "explanation": "SDProp (Security Descriptor Propagator) reapplies AdminSDHolder's ACL to protected groups (e.g. Domain Admins) on a schedule. A backdoor ACE there can restore attacker rights after cleanup. It does not store KRBTGT in cleartext, grant workstation local admin, or disable preauth.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "How does overpass-the-hash (pass-the-key) differ from classic pass-the-hash against Active Directory?",
+    "options": [
+      "It dumps only LM hashes from the local SAM database and never touches Kerberos, so it works exclusively against hosts that still accept NTLMv1 on SMB shares",
+      "It uses a stolen NT hash or AES key to request a real Kerberos TGT, then authenticates with tickets instead of presenting NTLM hashes on every hop",
+      "It rewrites the domain KRBTGT key on every domain controller so existing Golden Tickets become the only valid credentials left anywhere in the forest",
+      "It disables SMB signing forest-wide by pushing a malicious GPO through SYSVOL, forcing every NTLM challenge to accept empty responses from attackers"
+    ],
+    "correct": 1,
+    "explanation": "Overpass-the-hash / pass-the-key turns a stolen key/hash into a Kerberos TGT (e.g. via mimikatz), so later access uses tickets rather than raw NTLM PtH on each resource. It is not LM-only, KRBTGT rewrite, or GPO-based signing disable.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In a Golden SAML attack against a federated environment such as AD FS, what does the attacker mainly steal and abuse?",
+    "options": [
+      "The KRBTGT account hash, which lets the attacker sign Kerberos tickets that cloud apps accept directly without any federation server in the path",
+      "The token-signing certificate private key, which lets the attacker forge SAML assertions for any user that trusting cloud services will accept",
+      "The DHCP server database, which lets the attacker hand out a rogue identity provider address so every browser logs in to a fake portal instead",
+      "The SMTP relay credentials, which let the attacker send password reset mails that automatically bypass MFA on every federated cloud service"
+    ],
+    "correct": 1,
+    "explanation": "Golden SAML means stealing the federation server token-signing key and forging signed SAML assertions for any user, often bypassing MFA at the service provider. It is not KRBTGT abuse, DHCP spoofing, or SMTP relay misuse.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "An attacker can write to a target computer object's msDS-AllowedToActOnBehalfOfOtherIdentity attribute and controls a machine account. What does resource-based constrained delegation abuse let them do?",
+    "options": [
+      "Reset the KRBTGT password on every domain controller so all existing tickets in the forest are revoked and only the attacker can request new ones",
+      "Disable Kerberos pre-authentication on the target so its password hash can be requested offline and cracked like an AS-REP roasting victim",
+      "Push a logon script to the target through SYSVOL so the next domain admin who signs in runs the payload with their own interactive session",
+      "Use S4U2Self and S4U2Proxy from the controlled account to get a service ticket to the target as a privileged user, then access it as that user"
+    ],
+    "correct": 3,
+    "explanation": "With write access to msDS-AllowedToActOnBehalfOfOtherIdentity, the attacker lets their machine account delegate to the target, then uses S4U2Self/S4U2Proxy to impersonate a privileged user to that host. It does not reset KRBTGT, disable pre-auth, or rely on SYSVOL scripts.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "On a Windows network that does not actively use IPv6, how does a mitm6-style attack usually get between clients and the network?",
+    "options": [
+      "It answers DHCPv6 requests as a rogue server and gives clients the attacker as DNS server, then captures or relays their authentication attempts",
+      "It floods the switch CAM table with fake IPv4 MAC addresses so every port turns into a hub and the attacker can sniff all unicast traffic in the VLAN",
+      "It brute-forces the domain controller over SMBv1 until a null session opens, then rewrites the IPv6 routing table on every domain member",
+      "It sends spoofed STP BPDUs with priority 0 so the attacker laptop becomes root bridge and all IPv6 traffic is forced through its interface"
+    ],
+    "correct": 0,
+    "explanation": "Windows prefers IPv6 and requests DHCPv6 by default. mitm6 answers as a rogue DHCPv6 server, sets itself as DNS, and then captures or relays authentication (for example to LDAP). Mitigate by blocking rogue DHCPv6/RA or disabling unused IPv6 and enforcing LDAP signing.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "On a Windows LAN where hosts still fall back to LLMNR or NBT-NS for name resolution, how does a Responder-style attack typically work?",
+    "options": [
+      "It patches the domain controller's SYSVOL share so every GPO pushes a fake DNS server address, which must happen before any LLMNR reply is accepted by clients",
+      "It disables Kerberos on every workstation through remote WMI calls, forcing all authentication onto cleartext Telnet so passwords appear directly in packet captures",
+      "It floods DHCP Offer packets with a rogue default gateway until the real DHCP server's lease pool is empty and every client loses all IP connectivity on the LAN",
+      "It answers forged LLMNR/NBT-NS replies for names that fail DNS, then tricks victims into authenticating to the attacker to capture hashes or relay"
+    ],
+    "correct": 3,
+    "explanation": "Responder-style tools poison LLMNR/NBT-NS by answering when DNS fails, then capture or relay the resulting authentication. They do not need SYSVOL GPO DNS changes, Kerberos disablement, or DHCP starvation as the core mechanism.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In AD CS abuse, what does the ESC8 scenario mainly combine to obtain a certificate for a privileged machine or user context?",
+    "options": [
+      "Stealing the CA private key from an offline backup tape store and forging certificates forever without contacting the enrollment web service again at any time",
+      "Relaying NTLM authentication to a certificate authority web enrollment endpoint (HTTP) that does not require EPA, then requesting a cert as the victim",
+      "Enabling unconstrained Kerberos delegation on every published CA template so any domain workstation can mint domain-admin tickets with no certificate involved",
+      "Replacing the domain root CA certificate inside Group Policy with a self-signed TLS certificate so intranet browsers trust attacker phishing sites by default"
+    ],
+    "correct": 1,
+    "explanation": "ESC8 abuses NTLM relay to HTTP-based AD CS web enrollment when protections like EPA are missing, letting the attacker request a certificate in the relayed victim's context. It is not primarily offline CA-key theft, unconstrained delegation on templates, or swapping root CAs in GPO.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "After compromising a workstation, an attacker wants to decrypt a user's saved browser passwords and Wi-Fi keys protected by Windows DPAPI. What is a realistic approach?",
+    "options": [
+      "Simply read the encrypted blobs and open them in Notepad, because DPAPI stores all secrets as plaintext and the encryption header is only a cosmetic label on the file",
+      "Obtain the user's masterkey (via their password/hash or the domain DPAPI backup key) and use it to decrypt the DPAPI-protected blobs for that user context",
+      "Reboot the machine into safe mode, which Microsoft documents as the only supported way for any process to transparently remove DPAPI protection from stored credentials",
+      "Change the user's password to a blank value, because setting an empty password automatically converts every existing DPAPI blob on disk into a cleartext copy for all apps"
+    ],
+    "correct": 1,
+    "explanation": "DPAPI blobs are encrypted with a masterkey derived from the user's credentials; with the user's password/hash or the domain backup key, an attacker can recover the masterkey and decrypt saved secrets. The blobs are not plaintext, and safe mode or blanking the password does not strip DPAPI.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "With admin rights on a domain controller, an attacker wants every domain password hash offline. Why use a Volume Shadow Copy (vssadmin/ntdsutil) to grab NTDS.dit?",
+    "options": [
+      "Because NTDS.dit is stored as an unencrypted CSV of cleartext passwords, so copying it needs no shadow copy and any user can open it directly from the live system folder",
+      "Because a shadow copy silently disables Active Directory replication to every other domain controller, which is required before Windows will allow the database file to be read at all",
+      "Because the live NTDS.dit is locked by the directory service, so a shadow copy (or ntdsutil IFM) provides a consistent offline copy of the database and SYSTEM hive to extract hashes",
+      "Because vssadmin automatically uploads NTDS.dit to Microsoft's cloud and emails the decrypted hashes to the operator, which is the only documented way to read the file remotely"
+    ],
+    "correct": 2,
+    "explanation": "The live NTDS.dit is locked by NTDS, so attackers use a Volume Shadow Copy or ntdsutil IFM to obtain a consistent copy of the database plus the SYSTEM hive (for the boot key) and extract hashes offline. The file is encrypted, not a cleartext CSV, and shadow copies do not disable replication or exfiltrate to a cloud.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "A user completed MFA and has an active cloud session. An attacker steals the browser session cookie and replays it. Why can this bypass MFA?",
+    "options": [
+      "Because the session cookie already represents a fully authenticated session, so replaying a valid, unexpired cookie lets the attacker ride the session without redoing MFA",
+      "Because stealing any cookie instantly reveals the user's cleartext password and current one-time code, which the browser always stores together inside every session cookie by design",
+      "Because MFA tokens are only checked on the very first login of the device's lifetime, so no cloud service ever re-evaluates authentication once a machine has logged in once",
+      "Because session cookies disable TLS for the whole domain, allowing the attacker to read all future traffic in plaintext and therefore skip multi-factor prompts entirely"
+    ],
+    "correct": 0,
+    "explanation": "A session cookie represents an already-authenticated session; replaying a valid, unexpired cookie (pass-the-cookie) lets an attacker reuse the post-MFA session without re-authenticating. Cookies do not contain the cleartext password or OTP, MFA is not a one-time lifetime check, and cookies do not disable TLS.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "After gaining code execution as SYSTEM on a domain controller, an attacker wants any account to authenticate with one master password while real passwords still work. Which persistence technique matches?",
+    "options": [
+      "Pass-the-hash against a member workstation only, because replaying an NTLM hash on a laptop permanently rewrites every domain password hash stored in Active Directory to the same value",
+      "Kerberoasting a single service account, because cracking one TGS ticket automatically installs a backdoor password that Active Directory accepts for every user in the forest forever",
+      "Skeleton Key: inject a patch into LSASS on the DC so Kerberos (and often NTLM) accepts a chosen master password for any account, while legitimate passwords continue to work",
+      "AS-REP roasting without pre-authentication, because collecting AS-REP hashes from users with UF_DONT_REQUIRE_PREAUTH is exactly how a universal master password is written into NTDS.dit"
+    ],
+    "correct": 2,
+    "explanation": "Skeleton Key patches LSASS on a domain controller so a attacker-chosen master password works for any account alongside real passwords. Pass-the-hash, Kerberoasting, and AS-REP roasting do not install that DC-wide dual-password backdoor.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "A hardened Windows estate enforces application allowlisting with WDAC (or AppLocker). Why can living-off-the-land binaries still undermine that control?",
+    "options": [
+      "Because WDAC and AppLocker always disable every Microsoft-signed binary on disk, so attackers must bring unsigned malware and therefore allowlisting cannot be bypassed by design",
+      "Because trusted, signed system tools (LOLBins) that remain allowed can be abused to download, decode, or spawn code, so attackers stay inside the allowlist while still executing payloads",
+      "Because allowlisting stores every blocked hash in cleartext in the registry, and reading that list remotely removes the policy from every joined machine without any admin rights",
+      "Because enabling WDAC automatically trusts any script or binary fetched over HTTP from the corporate proxy, which is documented as the supported exception path for line-of-business apps in production"
+    ],
+    "correct": 1,
+    "explanation": "Allowlisting permits known-good binaries; LOLBins that stay trusted can still fetch or launch attacker code, so defence needs tighter rules and script controls. WDAC does not ban all Microsoft binaries, expose a cleartext bypass list, or auto-trust HTTP downloads.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "During a forest migration, an account keeps an old high-privilege SID in its SID History. Why is that dangerous across a forest trust, and what mitigates it?",
+    "options": [
+      "SID History is only a display name for the account and is never evaluated in access tokens, so keeping old SIDs cannot grant rights in the trusting forest under any configuration known today",
+      "SID History forces Kerberos to disable AES and fall back to RC4 forever, which is the only security impact; resource access in the trusting domain is never affected by historical SIDs at all",
+      "SID History is stripped automatically on every authentication across any trust type, so injecting a Domain Admins SID into SID History can never elevate access in another forest",
+      "A forged or retained privileged SID in SID History can be added to the user's token and grant access in the trusting forest; SID filtering (quarantine) on the trust blocks those foreign SIDs"
+    ],
+    "correct": 3,
+    "explanation": "SID History can carry group SIDs into the access token; across a forest trust that can elevate privileges unless SID filtering (quarantine) strips unexpected SIDs. It is not cosmetic, not only an encryption downgrade, and is not always stripped on every trust.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "During an AD assessment you find Groups.xml under SYSVOL that still contains a cpassword attribute from old Group Policy Preferences. Why is that still valuable to an attacker today?",
+    "options": [
+      "cpassword is an HMAC of the GPO version and only proves the file was edited; it never decrypts to a reusable credential under any documented Microsoft AES key published for that feature historically",
+      "Microsoft published the static AES key used to protect GPP passwords, so anyone who can read SYSVOL can decrypt cpassword offline into cleartext credentials for the account it was set for",
+      "cpassword encrypts only the local Administrator SID and cannot store domain user passwords, so the finding is limited to identifying whether LAPS was ever enabled on that OU in the past years",
+      "Modern domain controllers strip cpassword on every SYSVOL replication, so a Groups.xml that still shows the attribute is always a false positive from an offline backup share that operators forgot to delete"
+    ],
+    "correct": 1,
+    "explanation": "GPP stored passwords with a well-known AES key (MS14-025 era). Readable SYSVOL cpassword values decrypt offline to cleartext. It is not a mere HMAC, not limited to a local SID, and DCs do not auto-strip every legacy copy.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In the noPac (CVE-2021-42278 / CVE-2021-42287) attack chain against Active Directory, what combination lets a low-privileged user escalate toward domain admin rights?",
+    "options": [
+      "Forcing every DC to disable PAC validation permanently by writing a single registry value under HKLM, which any authenticated user can set remotely through WinRM without other privileges on the domain controllers",
+      "Poisoning LLMNR so that a DC authenticates to the attacker, then replaying that Net-NTLMv1 response as a Silver Ticket for the krbtgt account without ever touching machine accounts in the domain",
+      "Exploiting PrintNightmare printer driver install rights on a workstation and then using that local SYSTEM token to dump LSASS on a neighboring DC over SMB signing-disabled links in the same site",
+      "Creating (or renaming) a machine account whose sAMAccountName matches a DC name without the trailing $, then requesting a TGT and exchanging it so the PAC is issued as that domain controller"
+    ],
+    "correct": 3,
+    "explanation": "noPac chains sAMAccountName spoofing (looking like a DC without $) with Kerberos TGT/TGS handling so the PAC is issued for the impersonated DC. It is not a simple HKLM flip by any user, not LLMNR-to-Silver-Ticket alone, and not PrintNightmare on a workstation.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "An attacker obtains the Directory Services Restore Mode (DSRM) password for a domain controller. In what situation does that credential become especially dangerous for persistence or recovery abuse?",
+    "options": [
+      "When DSRM login is allowed as a local break-glass account on a DC that is online (registry DsrmAdminLogonBehavior), the password acts like a local Administrator secret that survives many domain password rotations",
+      "When the DSRM password is typed into any member workstation's local Administrator account, it automatically syncs through SYSVOL and becomes the domain krbtgt password on the next replication cycle across every site",
+      "When Azure AD Connect is installed, the DSRM secret is mirrored into the cloud tenant as a Global Admin app password that cannot be rotated from on-premises tools under any supported hybrid topology today",
+      "When Credential Guard is enabled, DSRM credentials are the only secrets still stored in cleartext LSASS and therefore the preferred target for every dump tool on that host during an offline forensic capture"
+    ],
+    "correct": 0,
+    "explanation": "DSRM is the local SAM Administrator-equivalent on a DC. With DsrmAdminLogonBehavior allowing logon while AD DS is running, it is a durable break-glass secret independent of normal domain account rotation. It does not become krbtgt, does not auto-become Azure Global Admin, and Credential Guard is unrelated to inventing that property.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "A principal in the DNSAdmins group can load a DLL via the DNS Server's server-level plugin path. Why is that often treated as a privilege-escalation path to the Domain Controller?",
+    "options": [
+      "Because DNSAdmins membership alone grants Domain Admin rights in every forest functional level, so the DLL load is only a cosmetic log event and not needed for privilege gain on the DC across every site in the forest without needing any further ACL change on the DNS zone or service account.",
+      "Because the plugin path writes a scheduled task under SYSTEM that runs once at next reboot and then removes the principal from DNSAdmins, leaving no lasting code execution on the server after which the assessor loses the DLL path and must re-join DNSAdmins before another load attempt can succeed on that host.",
+      "Because loading any DLL into dns.exe requires the SeDebugPrivilege that only Enterprise Admins hold, so DNSAdmins cannot actually force the load without a second privileged account even when the server-level plugin registry value is already writable by that nested security group on the DC.",
+      "Because the Microsoft DNS Server service often runs as SYSTEM on a DC, so a malicious server-level plugin DLL (for example via serverlevelplugindll) executes code in that high-privilege context"
+    ],
+    "correct": 3,
+    "explanation": "On many DCs the DNS Server service runs as SYSTEM. Members of DNSAdmins can configure a server-level plugin DLL that dns.exe loads, yielding SYSTEM code execution and a path toward Domain Admin. DNSAdmins is not Domain Admin by itself; the risk is the privileged service context, not a scheduled-task trick or a SeDebugPrivilege gate that blocks DNSAdmins entirely.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "During an AD assessment you want the current password of a group Managed Service Account (gMSA). Which attribute / API path is typically used to retrieve the managed password blob for principals allowed to do so?",
+    "options": [
+      "Reading msDS-ManagedPassword (via LDAP with the right principals in PrincipalsAllowedToRetrieveManagedPassword) returns a blob the client can use to derive the current gMSA password",
+      "Dumping the clear-text password from the userPassword attribute on the gMSA object, which Active Directory always stores reversibly for every managed service account by default",
+      "Calling NetUserGetInfo level 3 against the gMSA sAMAccountName from any domain user, because gMSA passwords are intentionally readable by Authenticated Users for Kerberos SPN checks",
+      "Extracting the password from the gMSA's UnicodePwd attribute over anonymous LDAP bind, which Windows permits specifically for msDS-GroupManagedServiceAccount objects"
+    ],
+    "correct": 0,
+    "explanation": "gMSA passwords are retrieved by allowed principals through the constructed attribute msDS-ManagedPassword (often via LDAP), not from a world-readable clear-text userPassword, not via NetUserGetInfo for any domain user, and not over anonymous UnicodePwd binds. Membership in PrincipalsAllowedToRetrieveManagedPassword (or equivalent rights) controls who can get the blob.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Why do hardening guides push LDAP signing and LDAP channel binding on domain controllers?",
+    "options": [
+      "They replace Kerberos entirely with NTLM for directory binds, which simplifies ticket handling and removes the need to rotate krbtgt after a suspected compromise of a domain controller and without renewing any service account passwords that bind to the directory over LDAP.",
+      "They force every LDAP client to use LDAPS on port 636 only, so plain TCP/389 is firewalled and no unsigned Simple binds can ever reach the directory from inside the corporate network without needing StartTLS, client certificates, or any per-site firewall exception list.",
+      "Signing protects LDAP traffic integrity and channel binding ties the LDAP session to the TLS channel, reducing relay and tampering risks against directory binds (including StartTLS / LDAPS scenarios)",
+      "They disable all Simple binds and anonymous rootDSE queries, which alone stops BloodHound enumeration even when a valid domain user credential is already available to the assessor and without locking down SMB signing or other lateral-movement paths on member servers."
+    ],
+    "correct": 2,
+    "explanation": "LDAP signing ensures integrity of LDAP messages; channel binding associates the LDAP exchange with the underlying TLS channel so a relayed bind is harder to pull off. They do not replace Kerberos with NTLM, do not by themselves firewall 389, and do not alone stop BloodHound when a user credential exists.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "An admin account is added to the Active Directory 'Protected Users' group. Which effect does that membership have?",
+    "options": [
+      "The account becomes exempt from password expiry and lockout policies so that domain administrators are never blocked out during an incident or a brute-force attack",
+      "NTLM, DES/RC4 Kerberos pre-auth and credential delegation are blocked for it, and its TGTs are short and non-renewable, which limits credential theft and reuse",
+      "Its password hash is removed from the domain controllers, so the account can only sign in with a smart card and replication never copies its credentials to other DCs",
+      "All of its logons are routed through a jump server automatically, so its sessions can never reach workstations even when the user types its credentials there"
+    ],
+    "correct": 1,
+    "explanation": "Protected Users hardens member accounts: no NTLM, no DES or RC4 in Kerberos pre-authentication, no unconstrained or constrained delegation, no cached plaintext credentials via CredSSP/WDigest, and a 4-hour non-renewable TGT. It does not remove lockout, delete hashes from DCs, or force jump-server logons. It is meant for user accounts, not service or computer accounts.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In a 'Timeroasting' attack, an unauthenticated attacker sends MS-SNTP time requests to a domain controller. What do they gain, and when is it dangerous?",
+    "options": [
+      "The DC returns the clear-text krbtgt password inside the NTP reply, so any host that can reach UDP 123 can forge Golden Tickets without cracking anything offline",
+      "The DC shifts its clock by the offset in the request, so Kerberos tickets across the domain expire and users fall back to NTLM, which the attacker then relays freely",
+      "Replies are signed with a MAC derived from the requested computer account's NT hash, which can be cracked offline when machine passwords are weak or set by hand",
+      "The DC discloses every user's last logon time and source IP in the reply, giving the attacker a full session map without needing any domain credentials at all"
+    ],
+    "correct": 2,
+    "explanation": "With MS-SNTP, a DC signs time responses using a key derived from the NT hash of the computer account whose RID is in the request. An attacker can ask for many RIDs without authenticating and crack the results offline. It mainly hits computer accounts with weak or manually set passwords (for example pre-created or 'pre-Windows 2000' accounts); normal auto-rotated machine passwords are effectively uncrackable. It does not leak krbtgt, change the DC clock, or list user logons.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "In the Active Directory tiered administration model, what is the core rule for Tier 0 admin accounts?",
+    "options": [
+      "They log on only to Tier 0 assets (DCs, AD CS, identity sync servers), never to servers or workstations in lower tiers, so their credentials cannot be stolen there",
+      "They must log on to every workstation once a week to verify patches, because only Tier 0 accounts have rights to read the local security logs on user endpoints",
+      "They are shared by the whole help desk under one password, so that any technician can reset users quickly and audit trails stay limited to a single privileged identity",
+      "They are allowed anywhere as long as MFA is enabled, since MFA prevents their password hashes and Kerberos tickets from being left in the memory of lower-tier hosts"
+    ],
+    "correct": 0,
+    "explanation": "Tier 0 covers the identity control plane: domain controllers, AD CS, AD FS, sync servers and their admins. Those credentials must only be used on Tier 0 systems; logging on to a Tier 1 server or a Tier 2 workstation leaves hashes or tickets there for an attacker to steal. Routine endpoint work belongs to lower-tier accounts, shared admin accounts break accountability, and MFA at sign-in does not stop credentials being cached in memory.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Why do AD hardening guides recommend setting ms-DS-MachineAccountQuota to 0 on the domain?",
+    "options": [
+      "Because a non-zero quota lets every computer account log on interactively to domain controllers, which exposes them to credential theft by any user of that machine",
+      "Because the default quota of 10 makes each domain controller replicate computer objects ten times, which slows logons and lets attackers inject fake replication data",
+      "By default any authenticated user can join up to 10 computers, giving attackers a machine account they control for attacks such as RBCD abuse or noPac",
+      "Because a quota above zero disables Kerberos for new computers and forces them to use NTLM, which attackers can relay to the domain controller to obtain admin rights"
+    ],
+    "correct": 2,
+    "explanation": "ms-DS-MachineAccountQuota defaults to 10, so any authenticated user can create up to 10 computer accounts. An attacker-controlled machine account (with a known password and SPN) is a key step in attacks such as resource-based constrained delegation abuse, noPac and some relay chains. Setting it to 0 and delegating domain joins to a specific group removes that foothold. It does not affect DC logon rights, replication or Kerberos versus NTLM.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In an AD-integrated DNS zone, an attacker with only a normal domain user account adds a wildcard (*) record pointing to their own IP. What does this achieve?",
+    "options": [
+      "It replaces the A records of all domain controllers, so every Kerberos ticket request is sent to the attacker, who can then issue forged TGTs to any user in the domain",
+      "Names that have no existing record now resolve to the attacker, so mistyped or stale hostnames send traffic and NTLM authentication to them, much like LLMNR poisoning",
+      "It turns on DNS zone transfers to the attacker's IP, letting them download every record in the zone, but no client traffic is redirected and no credentials are exposed",
+      "It forces all clients to drop DNSSEC validation, so the attacker can now answer for any public domain on the Internet and steal TLS certificates issued for those sites"
+    ],
+    "correct": 1,
+    "explanation": "By default authenticated users can create new records in AD-integrated DNS zones (ADIDNS). A wildcard record answers for any name that does not already exist, so typos and decommissioned hostnames resolve to the attacker, who can capture or relay NTLM authentication, similar to LLMNR/NBT-NS poisoning but domain-wide. Existing records such as DC A records are not overwritten, zone transfers and DNSSEC are separate settings. Mitigate by restricting record creation and pre-creating a wildcard record.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "What does enabling LSA protection (RunAsPPL) on a Windows host mainly do?",
+    "options": [
+      "It encrypts the SAM database with a key stored in the TPM, so offline attackers who copy the disk cannot read local password hashes without the original motherboard",
+      "It blocks all NTLM authentication from the host and forces Kerberos for every connection, so pass-the-hash tools fail even when the attacker already has local admin",
+      "It moves cached domain credentials into a virtual machine isolated by the hypervisor, so even code running in the kernel of the host cannot read those secrets",
+      "It runs LSASS as a Protected Process Light, so even local admins cannot open it to read memory or load unsigned plugins, blocking common credential dumping"
+    ],
+    "correct": 3,
+    "explanation": "LSA protection runs lsass.exe as a Protected Process Light (PPL). Non-protected processes, even with admin rights and SeDebugPrivilege, cannot open it to read memory or inject code, and only signed LSA plugins load, which blocks tools like Mimikatz's sekurlsa without a kernel driver. Isolating secrets in a hypervisor-protected VM is Credential Guard; it does not encrypt the SAM with the TPM or disable NTLM.",
+    "difficulty": "Medium"
   }
 ]
