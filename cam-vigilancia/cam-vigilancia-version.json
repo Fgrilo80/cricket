@@ -1,8 +1,8 @@
 {
-  "version": "1.4.3",
-  "build": 11,
+  "version": "1.4.4",
+  "build": 12,
   "package": "pt.fgrilo.camvigilancia",
   "apkUrl": "https://fgrilo80.github.io/cricket/cam-vigilancia/Cam-Vigilancia.apk",
-  "apkSha256": "97b43a2d89704978781ad9b0688e30b1332ec1e703915799c1fc5dd5c03141b5",
-  "notes": "A app descarrega o APK e abre o instalador do Android. N\u00e3o abre o browser nem a p\u00e1gina de releases. apkSha256 \u00e9 do APK arm64 de teste 1.4.3 (assinatura debug)."
+  "apkSha256": "8241d42e6bf05649b17b892a746d7d1eec74d5de61a473f7f1d654d4b0e921c7",
+  "notes": "1.4.4: grava s\u00f3 quando carregas em Gravar (alertas continuam); IA mais sens\u00edvel a pessoas, crian\u00e7as, animais e comportamento suspeito, com sensibilidade ajust\u00e1vel; o ecr\u00e3 do visualizador fica ligado; \u00abFechar os dois\u00bb fecha a c\u00e2mara com confirma\u00e7\u00e3o. Nova assinatura de release: desinstala a vers\u00e3o antiga uma vez antes de instalar a 1.4.4 (perdes as defini\u00e7\u00f5es e o emparelhamento; os v\u00eddeos na Galeria ficam). A app descarrega o APK e abre o instalador do Android, sem browser."
 }
