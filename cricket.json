@@ -2558,6 +2558,90 @@
         "correct": 1,
         "explanation": "Um loopback plug faz curto ou mapeia TX para RX no mesmo conector para LEDs de link/atividade e diagnósticos locais provarem o caminho de hardware da interface sem um peer remoto. Não é conversor de fibra, não substitui STP/Auto-MDIX e não é autenticador 802.1X.",
         "difficulty": "Fácil"
+      },
+      {
+        "question": "Para que serve principalmente um Time Domain Reflectometer (TDR) de cobre na resolução de problemas de cablagem Ethernet de par entrançado?",
+        "options": [
+          "Mede return loss ótico e reflectância de emendas em fibra monomodo da mesma forma que um OTDR completo faz em cada fio",
+          "Substitui wiremap e testes de comprimento ao certificar automaticamente margens de alien crosstalk Cat-6A face aos limites ISO",
+          "Envia um impulso nos pares de cobre e estima a distância a opens, shorts ou mudanças de impedância ao longo do cabo",
+          "Força Auto-MDIX e classificação PoE para cada jack RJ-45 negociar potência 802.3bt Type 4 antes de qualquer link de dados"
+        ],
+        "correct": 2,
+        "explanation": "Um TDR de cobre injeta um impulso e cronometra reflexões para localizar opens, shorts e falhas graves de impedância no par entrançado. O OTDR é o equivalente em fibra; o TDR não certifica sozinho alien crosstalk, não substitui por completo wiremap/comprimento nem negoceia PoE/Auto-MDIX.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Na cablagem de fibra dúplex, o que garante principalmente manter a polaridade A-to-B (Method A / cruzada)?",
+        "options": [
+          "Que ambos os fios transportem sempre comprimentos de onda idênticos para muxes CWDM ignorarem rótulos TX/RX em cada par de transceivers",
+          "Que cada transmissor chegue ao receptor do peer para a luz do TX num extremo atingir o RX no outro extremo",
+          "Que multimodo OM3 e monomodo OS2 partilhem a mesma cassete sem quaisquer regras de polaridade nos adaptadores",
+          "Que a classificação PoE continue a funcionar sobre fibra para o switch remoto alimentar o conversor SFP-para-RJ45"
+        ],
+        "correct": 1,
+        "explanation": "Em fibra dúplex o TX de um extremo tem de encontrar o RX do outro. A polaridade A-to-B (Method A) troca as posições dos fios para cada transmissor aterrar no receptor do peer. Não força comprimentos de onda iguais, não mistura OM3 com OS2 à vontade, nem entrega PoE sobre fibra.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "O que verifica principalmente um certificador de cabo que um simples toner/sonda tipicamente não consegue?",
+        "options": [
+          "Que a classificação PoE concluiu com sucesso para cada pino RJ-45 transportar DC independentemente da categoria do cabo ou do comprimento do patch",
+          "Que o switch remoto já aprendeu o endereço MAC do patch cord para o Spanning Tree saltar PortFast nesse porto de acesso para sempre",
+          "Que o permanent link cumpre os limites da categoria para comprimento, atenuação, NEXT e métricas elétricas relacionadas",
+          "Que o Auto-MDIX fica forçado a off em ambos os portos do switch para só cabos crossover passarem um teste simples de continuidade de ponta a ponta"
+        ],
+        "correct": 2,
+        "explanation": "Um certificador mede o desempenho elétrico face aos limites TIA/ISO da categoria (comprimento, perda, NEXT, etc.). Um toner/sonda serve sobretudo para localizar e identificar cabos; não certifica a categoria, não prova PoE em todos os pinos nem depende do estado STP/Auto-MDIX.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Num switch Cisco com definições por omissão, o que acontece a um MAC aprendido dinamicamente após cerca de 300 segundos sem tramas dessa origem?",
+        "options": [
+          "Passa a entrada sticky estática para o porto aceitar só esse MAC para sempre e entrar em err-disable se aparecer outro endereço de origem",
+          "Expira da tabela de endereços MAC, pelo que as tramas para esse MAC são inundadas na VLAN até o switch o reaprender pelo tráfego",
+          "É copiado para cada vizinho trunk via CDP para todos os switches continuarem a encaminhar para esse porto mesmo com o host desligado",
+          "Dispara uma alteração de topologia Spanning Tree que bloqueia o porto de acesso até o host enviar uma BPDU a provar que continua ligado"
+        ],
+        "correct": 1,
+        "explanation": "As entradas MAC dinâmicas expiram (300 s por omissão na Cisco). Quando desaparecem, o unicast desconhecido para esse MAC inunda até ser reaprendido. O aging não cria sticky, não usa CDP nem bloqueia portos via STP.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Um switch PoE já alimenta muitos telefones e access points. Liga-se uma câmara nova que não recebe energia, embora os dados funcionem noutros portos. Qual é a razão mais provável?",
+        "options": [
+          "A câmara precisa de um cabo cruzado, porque o PoE só passa quando os pares de transmissão e receção são trocados à mão numa ponta da ligação",
+          "O PoE só funciona em portos trunk, por isso o porto de acesso tem de passar a trunk 802.1Q antes de o switch enviar energia para a câmara",
+          "O switch desliga o PoE sempre que um porto funciona a 1 Gbps, por isso o porto da câmara tem de ser forçado a 100 Mbps full duplex primeiro",
+          "O switch esgotou o orçamento total de energia PoE, por isso recusa alimentar o novo dispositivo até reduzir a carga ou haver mais energia"
+        ],
+        "correct": 3,
+        "explanation": "Um switch PoE tem um orçamento total de energia partilhado por todos os portos. Quando se esgota, novos dispositivos alimentados ficam sem energia mesmo com o porto a funcionar. Cabos cruzados, modo trunk e velocidade não controlam a entrega de PoE.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Um armário só tem Ethernet em cobre até à secretária, mas o uplink para o core é fibra monomodo. Que dispositivo permite juntar esses meios sem substituir todo o percurso?",
+        "options": [
+          "Um cabo patch direto sozinho, porque o UTP de cobre e a fibra monomodo usam a mesma sinalização eléctrica e ligam-se um ao outro sem qualquer hardware de conversão em qualquer lado da ligação óptica",
+          "Um conversor de meios (ou um switch com portas de cobre e fibra compatíveis), que traduz entre o PHY Ethernet de cobre e o transmissor óptico para ambos os segmentos transportarem as mesmas tramas",
+          "Uma ferramenta de punch-down, porque terminar as fibras num jack RJ45 é a forma padrão de ligar uplinks ópticos a drops de cobre em armários de campus de rede local",
+          "Um gerador de tom e sonda, que injecta uma portadora óptica no par de cobre e prova que a fibra e o UTP já são electricamente compatíveis sem dispositivo intermédio adicional no armário"
+        ],
+        "correct": 1,
+        "explanation": "Um conversor de meios (ou um switch multi-meios) faz a ponte entre Ethernet em cobre e fibra óptica para as tramas atravessarem a mudança de meio. Um patch sozinho não junta PHY eléctrico e óptico; punch-down e toner servem para terminação e rastreio em cobre, não para conversão de meios.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Um técnico precisa que um desktop desligado na LAN arranque para as ferramentas de gestão remota o alcançarem. Que mecanismo envia normalmente uma trama Ethernet especial que a NIC trata como sinal de wake?",
+        "options": [
+          "Uma inundação de DHCP Discover de qualquer cliente na VLAN, porque os pacotes de renovação de lease trazem sempre uma flag de wake no BIOS que toda a NIC moderna tem de honrar antes de pedir endereço nesse segmento da rede",
+          "Um Hello OSPF com o bit reservado activo, que os switches de Camada 2 reinterpretam como comando de ligar para todos os hosts que partilham o mesmo process ID OSPF nesse segmento de broadcast do campus",
+          "Wake-on-LAN (WoL): um magic packet que contém o MAC do alvo repetido no payload, que uma NIC compatível reconhece e sinaliza à motherboard para ligar a alimentação",
+          "Um anúncio de vizinho CDP com um Power TLV, que obriga o orçamento PoE do switch a energizar o drop de cobre do PC mesmo quando o PC não tem circuitos PoE próprios do lado da motherboard"
+        ],
+        "correct": 2,
+        "explanation": "O Wake-on-LAN usa um magic packet cujo payload repete o MAC do alvo; uma NIC capaz activa um sinal de wake na placa. DHCP, Hellos OSPF e Power TLVs do CDP não ligam um PC desligado sobre Ethernet normal.",
+        "difficulty": "Fácil"
       }
     ],
     "en": [
@@ -5117,6 +5201,90 @@
         ],
         "correct": 1,
         "explanation": "A loopback plug shorts or maps TX to RX on the same connector so link/activity LEDs and local diagnostics can prove the interface hardware path without a remote peer. It is not a fiber converter, not an STP/Auto-MDIX replacement, and not an 802.1X authenticator.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "What is a copper Time Domain Reflectometer (TDR) mainly used for when troubleshooting twisted-pair Ethernet cabling?",
+        "options": [
+          "It measures optical return loss and splice reflectance on single-mode fiber spans the same way a full OTDR trace does on every strand",
+          "It replaces the need for wiremap and length tests by certifying Category-6A alien crosstalk margins against ISO limits automatically",
+          "It sends a pulse on copper pairs and estimates distance to opens, shorts, or impedance changes along the cable run",
+          "It forces Auto-MDIX and PoE classification so every RJ-45 jack negotiates 802.3bt Type 4 power before any data link comes up"
+        ],
+        "correct": 2,
+        "explanation": "A copper TDR injects a pulse and times reflections to locate opens, shorts, and major impedance faults on twisted pair. An OTDR is the fiber counterpart; a TDR does not certify alien crosstalk by itself, replace wiremap/length entirely, or negotiate PoE/Auto-MDIX.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "In duplex fiber patching, what does maintaining A-to-B (Method A / crossed) polarity mainly ensure?",
+        "options": [
+          "That both strands always carry identical wavelengths so CWDM muxes can ignore TX/RX labels on every transceiver pair",
+          "That each transmitter lands on the peer receiver so light from TX on one end reaches RX on the other end",
+          "That multimode OM3 and single-mode OS2 can share the same cassette without any adapter polarity rules at all",
+          "That PoE classification still succeeds over fiber so the far-end switch can power the SFP-to-RJ45 media converter"
+        ],
+        "correct": 1,
+        "explanation": "Duplex fiber needs TX on one end to meet RX on the other. A-to-B (Method A) polarity flips strand positions so each transmitter lands on the peer receiver. It does not force identical wavelengths, mix OM3 with OS2 casually, or deliver PoE over fiber.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "What does a cable certifier mainly verify that a basic toner/probe pair typically cannot?",
+        "options": [
+          "That PoE classification finished successfully so every RJ-45 pin carries DC power irrespective of cable category rating or patch length",
+          "That the far-end switch already learned the patch-cord MAC address so Spanning Tree can safely skip PortFast on that access port forever",
+          "That the permanent link meets category limits for length, attenuation, NEXT, and related electrical performance metrics",
+          "That Auto-MDIX is forced off on both switch ports so only crossover cables will ever pass a simple continuity beep test end-to-end"
+        ],
+        "correct": 2,
+        "explanation": "A certifier measures electrical performance against TIA/ISO category limits (length, loss, NEXT, etc.). A toner/probe mainly finds and identifies cables; it does not certify category performance, prove PoE on every pin, or depend on STP/Auto-MDIX state.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "On a Cisco switch with default settings, what happens to a dynamically learned MAC after about 300 seconds with no frames from that source?",
+        "options": [
+          "It becomes a sticky static entry so the port forever accepts only that MAC and err-disables if any other source address appears later",
+          "It ages out of the MAC address table, so frames to that MAC are flooded in the VLAN until the switch relearns it from traffic",
+          "It is copied to every trunk neighbor via CDP so all switches keep forwarding to that port even after the host is unplugged",
+          "It triggers a Spanning Tree topology change that blocks the access port until the host sends a BPDU proving it is still connected"
+        ],
+        "correct": 1,
+        "explanation": "Dynamic MAC entries age out (300 s by default on Cisco). When gone, unknown-unicast frames to that MAC flood until relearned. Aging does not create sticky entries, use CDP, or block ports via STP.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "A PoE switch already supplies power to many phones and access points. A new camera is plugged in but gets no power, while data works on other ports. What is the most likely reason?",
+        "options": [
+          "The camera needs a crossover cable, because PoE only flows when the transmit and receive pairs are swapped by hand at one end of the link",
+          "PoE only works on trunk ports, so the access port must be changed to 802.1Q trunk mode before the switch will send any power to the camera",
+          "The switch disables PoE whenever a port runs at 1 Gbps, so the camera port must be forced to 100 Mbps full duplex before power is applied",
+          "The switch has used up its total PoE power budget, so it refuses to power the new device until load is reduced or more power is available"
+        ],
+        "correct": 3,
+        "explanation": "A PoE switch has a total power budget shared by all ports. When the budget is used up, new powered devices are denied power even though the port itself works. Crossover cables, trunk mode, and speed settings do not control PoE delivery.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "A closet has only copper Ethernet to the desk, but the uplink to the core is single-mode fiber. Which device lets you join those media without replacing the whole path?",
+        "options": [
+          "A straight-through patch cable alone, because copper UTP and single-mode fiber use the same electrical signalling and can be plugged into each other with no conversion hardware at all on either side of the link",
+          "A media converter (or a switch with matching copper and fiber ports), which translates between the copper Ethernet PHY and the optical transceiver so both segments can carry the same frames",
+          "A punch-down tool, because terminating the fiber strands onto an RJ45 jack is the standard way to connect optical uplinks to copper desk drops in campus closets",
+          "A tone generator and probe, which inject an optical carrier into the copper pair and prove the fiber and UTP are already electrically compatible without any intermediary device"
+        ],
+        "correct": 1,
+        "explanation": "A media converter (or a multi-media switch) bridges copper Ethernet and fiber optics so frames cross the media change. A patch cable alone cannot join electrical and optical PHYs; punch-down and toner tools are for copper termination and tracing, not media conversion.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "A technician needs a powered-off desktop on the LAN to boot so remote management tools can reach it. Which mechanism typically sends a specially crafted Ethernet frame that the NIC treats as a wake signal?",
+        "options": [
+          "A DHCP Discover flood from any client on the VLAN, because lease renewal packets always carry a BIOS wake flag that every modern NIC must honour before it can request an address on that segment at all",
+          "An OSPF Hello with the reserved bit set, which Layer-2 switches reinterpret as a power-on command for every host that shares the same OSPF process ID on that broadcast segment of the campus",
+          "Wake-on-LAN (WoL): a magic packet that contains the target MAC address repeated in the payload, which a WoL-capable NIC recognizes and signals the motherboard to power on",
+          "A CDP neighbor advertisement with a Power TLV, which forces the switch PoE budget to energize the PC's copper drop even when the PC has no PoE circuitry of its own on the motherboard side"
+        ],
+        "correct": 2,
+        "explanation": "Wake-on-LAN uses a magic packet whose payload repeats the target MAC; a capable NIC asserts a wake signal to the board. DHCP, OSPF Hellos, and CDP Power TLVs do not boot a powered-off PC over standard Ethernet.",
         "difficulty": "Easy"
       }
     ]
@@ -7763,6 +7931,138 @@
         "correct": 3,
         "explanation": "Protected ports (PVLAN edge / switchport protected) impedem comunicação L2 direta entre portas marcadas protected na mesma VLAN; o tráfego para portas unprotected (muitas vezes o uplink/gateway) continua a funcionar. Não ativam MACsec a partir do ID da VLAN, não transformam cada acesso numa /30, nem desativam a política STP/PortFast.",
         "difficulty": "Médio"
+      },
+      {
+        "question": "O que oferece principalmente um túnel GRE (Generic Routing Encapsulation) entre dois routers Cisco?",
+        "options": [
+          "Um link virtual ponto-a-ponto que pode encapsular vários protocolos Layer-3 (comummente IPv4/IPv6) através de uma rede de transporte IP",
+          "Cifra com MACsec em hardware de cada trama Ethernet no underlay para IP em claro nunca aparecer em qualquer hop intermédio da path",
+          "Substituição automática completa de OSPF por BGP nas duas pontas do túnel para só se trocarem rotas default no caminho overlay",
+          "Um serviço LAN Layer-2 transparente que faz flood de broadcasts entre todos os sites sem interfaces de túnel nem qualquer routing underlay"
+        ],
+        "correct": 0,
+        "explanation": "O GRE cria uma interface de túnel que encapsula pacotes passageiros (muitas vezes IP) dentro de GRE/IP para transporte num underlay. Não é MACsec por si, não força OSPF→BGP só com defaults, nem é um serviço LAN L2 multiponto estilo VPLS sem interfaces de túnel.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que permite principalmente o Proxy ARP a um router Cisco para hosts numa subnet ligada?",
+        "options": [
+          "Substituir o gateway por omissão de cada host por uma floating static para respostas ARP transportarem LSAs OSPF sem qualquer tabela de routing no host",
+          "Desativar por completo o ARP na LAN e forçar todas as tramas Ethernet a usarem só o MAC do router como único destino L2 para qualquer destino IP",
+          "Traduzir endereços privados internos para um pool público como o PAT, usando pedidos ARP em vez dos temporizadores clássicos de tradução NAT",
+          "Responder a ARP de IPs remotos com o seu próprio MAC para os hosts alcançarem alvos fora da subnet sem gateway por omissão"
+        ],
+        "correct": 3,
+        "explanation": "Com Proxy ARP ativo, o router pode responder a ARP de IPs que sabe encaminhar, colocando o seu MAC na resposta para o host enviar tramas ao router mesmo sem default gateway. Não é OSPF-sobre-ARP, nem desligar o ARP na LAN, nem PAT.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Num segmento multiponto Frame Relay ou NBMA semelhante, o que evita principalmente o tipo de rede OSPF point-to-multipoint?",
+        "options": [
+          "Quaisquer pacotes hello OSPF de todo, porque os LSAs só inundam depois de subir uma sessão BGP no mesmo DLCI para cada spoke remoto",
+          "A eleição de Designated Router e o mapeamento manual de vizinhos típicos do OSPF broadcast ou nonbroadcast clássico",
+          "Alcance IP a cada router spoke da cloud, porque o OSPF substitui em silêncio cada PVC por um túnel GRE automático até ao hub",
+          "Um router-id OSPF estável no hub da topologia, porque cada PVC herda um process ID OSPF único das definições da map-class Frame Relay"
+        ],
+        "correct": 1,
+        "explanation": "O OSPF point-to-multipoint trata a cloud como adjacências ponto-a-ponto: sem eleição DR/BDR e tipicamente sem os neighbor manuais comuns em nonbroadcast. Continua a usar hellos e router-ids e não cria GRE por cada PVC.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que protege principalmente a funcionalidade BGP neighbor maximum-prefix num router?",
+        "options": [
+          "Receber qualquer AS-path com mais de quatro hops, que a funcionalidade trunca em silêncio antes de atualizar o Loc-RIB a partir desse peer",
+          "Anunciar números de AS privados para a Internet, porque o maximum-prefix remove sempre AS 64512-65535 de cada UPDATE de saída enviado",
+          "Aceitar mais prefixos de um peer do que o esperado, o que pode esgotar memória ou CPU se um peer mal configurado inundar rotas",
+          "Perder a sessão TCP em cada soft clear, porque o maximum-prefix força um hard reset sempre que se edita um route-map de entrada no router"
+        ],
+        "correct": 2,
+        "explanation": "O maximum-prefix limita quantos prefixos um vizinho pode anunciar; ultrapassar o limiar pode avisar ou derrubar a sessão, protegendo recursos de uma inundação. Não trunca AS-paths, não remove AS privados nem redefine soft clears.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Dois routers OSPF no mesmo segmento Ethernet ficam presos no estado EXSTART/EXCHANGE e nunca chegam a FULL. Os timers hello e dead coincidem. Qual é uma causa clássica?",
+        "options": [
+          "Um MTU de interface diferente, pelo que o router com MTU menor descarta os pacotes de descrição da base de dados maiores e a troca nunca termina",
+          "IDs de processo OSPF diferentes nos dois routers, porque o ID de processo tem de coincidir antes de os routers sequer trocarem pacotes hello entre si",
+          "Ambos os routers usam loopbacks para o router ID, o que faz o OSPF recusar eleger um DR e mantém cada vizinho preso no estado 2-WAY",
+          "O segmento usa máscara /30, que o OSPF trata só como ponto a ponto e bloqueia a troca da base de dados até se definir o tipo broadcast"
+        ],
+        "correct": 0,
+        "explanation": "Vizinhos presos em EXSTART/EXCHANGE apontam muitas vezes para MTU diferente: pacotes DBD maiores que o MTU do peer são descartados. Os IDs de processo são locais, router IDs em loopback são normais e uma máscara /30 não bloqueia a troca.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O HSRP está ativo em dois routers. A ligação uplink do router ativo para o core falha, mas a interface HSRP na LAN mantém-se up. Como é que o tracking de interface ajuda o failover?",
+        "options": [
+          "Apaga de imediato toda a configuração do grupo HSRP no router standby, para ficar só o ativo e os clientes usarem para sempre o mesmo MAC de gateway na LAN",
+          "Força ambos os routers para o estado listen até o STP reconvergir por completo, o que impede qualquer gateway de responder a ARP até o uplink voltar a ficar up",
+          "Pode decrementar a prioridade HSRP do router ativo quando o uplink monitorizado cai, para o standby com prioridade restante mais alta passar a ativo",
+          "Reescreve o gateway por omissão de cada anfitrião para o IP do standby via opções DHCP, tratado como a única forma suportada de o HSRP mover tráfego após falha de uplink"
+        ],
+        "correct": 2,
+        "explanation": "O tracking de interface no HSRP baixa (ou ajusta) a prioridade do router ativo quando um uplink monitorizado falha, permitindo que o standby faça preempt e assuma. Não apaga grupos, não congela ambos em listen nem reescreve gateways no DHCP.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Um switch a funcionar como relay DHCP insere a Opção 82. O que é que a Opção 82 permite sobretudo ao servidor DHCP fazer?",
+        "options": [
+          "Identificar de que agente relay, porta e VLAN veio o pedido, para o servidor aplicar política ou atribuir endereços com base nessa informação de localização",
+          "Cifrar toda a troca DHCP ponto a ponto com TLS para que nenhum dispositivo no segmento de broadcast consiga alguma vez ler o endereço oferecido ou os parâmetros da lease",
+          "Dispensar por completo o comando ip helper-address, porque a Opção 82 sozinha encaminha o DISCOVER em broadcast por todos os saltos encaminhados sem relay configurado",
+          "Obrigar todos os clientes a renovar a lease a cada sessenta segundos independentemente do tempo de lease, que é o propósito documentado de inserir a opção de informação de relay"
+        ],
+        "correct": 0,
+        "explanation": "A Opção 82 (relay information) marca os pedidos com detalhes de circuit/remote-ID que identificam o relay, a porta e a VLAN, permitindo política por localização. Não cifra o DHCP, não substitui o ip helper-address nem encurta temporizadores de lease.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Um anúncio de router IPv6 define a flag M a 1 e a flag O a 1. Que comportamento de endereçamento devem esperar os hosts nessa ligação?",
+        "options": [
+          "Os hosts devem ignorar todos os Router Advertisements e obter cada endereço e gateway predefinido só de um servidor DHCPv4, porque as flags M e O desactivam sempre o IPv6 no segmento",
+          "Os hosts geram só endereços link-local e nunca usam um prefixo global, porque M=1 e O=1 em conjunto proíbem o SLAAC e proíbem o DHCPv6 para qualquer opção de configuração",
+          "Os hosts usam só SLAAC para o endereço global e nunca contactam um servidor DHCPv6, porque pôr ambas as flags a 1 é o sinal documentado de que o DHCPv6 stateful está desactivado na LAN",
+          "Os hosts obtêm endereços IPv6 de um servidor DHCPv6 stateful (M=1) e podem também pedir outra configuração como DNS via DHCPv6 (O=1), em vez de depender do SLAAC para o endereço"
+        ],
+        "correct": 3,
+        "explanation": "Nas flags do RA, M=1 significa que os hosts devem usar DHCPv6 stateful para endereços, e O=1 significa que outra configuração (por exemplo DNS) está disponível via DHCPv6. As flags não forçam só IPv4, não proíbem endereços globais nem significam só SLAAC.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Depois de subir um túnel GRE (ou GRE over IPsec), o router regista que a interface de túnel oscila e as rotas da LAN remota desaparecem. O IP de destino do túnel é aprendido por uma rota que aponta para o próprio túnel. Qual é a causa clássica?",
+        "options": [
+          "Encaminhamento recursivo: o melhor caminho para o destino do túnel passa recursivamente pelo túnel, por isso a rota exterior de encapsulamento desaparece e o túnel cai até a rota do underlay voltar",
+          "O MTU da interface de origem do túnel está abaixo de 1500, por isso cada cabeçalho GRE é descartado pelo checksum do peer remoto e a tabela de encaminhamento limpa esses prefixos como inalcançáveis para sempre nessa VRF",
+          "O OSPF recusa formar adjacência sobre GRE a menos que o network type seja broadcast, e sem essa adjacência o IGP do underlay retira o destino do túnel de todos os VRF configurados neste equipamento",
+          "O NAT no underlay reescreve a origem do túnel para um endereço público, o que obriga o CEF a puntar todos os pacotes encapsulados e marca o túnel administrativamente down após três tentativas no mesmo peer"
+        ],
+        "correct": 0,
+        "explanation": "O encaminhamento recursivo ocorre quando a rota para o destino do túnel prefere o próprio túnel, removendo o caminho de underlay que o encapsulamento precisa. MTU, network type OSPF e NAT podem causar outras falhas, mas este padrão de flap é o clássico da recursão.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Um portátil Windows mostra um endereço SLAAC estável e também um endereço IPv6 'temporário' que muda com o tempo. Para que serve o endereço temporário?",
+        "options": [
+          "As extensões de privacidade dão ao host interface IDs aleatórios e curtos para ligações de saída, para os sites remotos não o seguirem por um identificador IPv6 fixo",
+          "É um endereço de reserva que o DHCPv6 atribui só enquanto o router está em baixo e que é apagado logo que volta a chegar um Router Advertisement com a flag A",
+          "É o endereço link-local renumerado de hora a hora para os vizinhos repetirem a Duplicate Address Detection antes de encaminharem quaisquer tramas para o gateway por omissão",
+          "É um endereço de tradução NAT64 dado pelo ISP para o portátil chegar a sites só IPv4, enquanto o endereço estável fica limitado apenas a destinos IPv6"
+        ],
+        "correct": 0,
+        "explanation": "As extensões de privacidade IPv6 (RFC 8981, antes RFC 4941) criam endereços globais temporários com interface IDs aleatórios, usados nas ligações de saída e trocados ao longo do tempo, o que dificulta seguir o host. O endereço estável mantém-se para tráfego de entrada. Não são um recurso do DHCPv6, um link-local nem um endereço NAT64.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Um switch de acesso Layer 2 tem 'interface vlan 10' com o IP 10.1.10.5/24 e 'no ip routing'. Consegues fazer SSH a partir da VLAN 10, mas não da sub-rede de administração 10.9.0.0/24. O que falta?",
+        "options": [
+          "Um trunk até à sub-rede de administração, porque os pacotes SSH para a SVI de um switch só são aceites se chegarem marcados com o mesmo VLAN ID em que a própria SVI está configurada",
+          "Uma rota estática 'ip route 0.0.0.0 0.0.0.0', porque um switch com o routing desligado precisa de uma entrada na tabela de rotas antes de o servidor SSH aceitar novas sessões",
+          "O comando 'ip ssh version 2', porque as sessões SSH versão 1 são descartadas em silêncio sempre que vêm de uma sub-rede diferente da que está ligada diretamente à SVI",
+          "O comando 'ip default-gateway' a apontar para o router da VLAN 10, porque com o IP routing desligado o switch usa-o para responder a hosts de outras sub-redes"
+        ],
+        "correct": 3,
+        "explanation": "Com 'no ip routing', um switch Layer 2 comporta-se como um host: chega à sub-rede da sua SVI, mas para responder a outras sub-redes precisa de 'ip default-gateway <IP do router>'. As rotas estáticas só são usadas com o IP routing ligado, não é preciso trunk para tráfego de gestão encaminhado, e a versão do SSH nada tem a ver com a sub-rede de origem.",
+        "difficulty": "Médio"
       }
     ],
     "en": [
@@ -10406,6 +10706,138 @@
         "correct": 3,
         "explanation": "Protected ports (PVLAN edge / switchport protected) stop direct L2 communication between ports marked protected in the same VLAN; traffic to unprotected ports (often the uplink/gateway) still works. They do not enable MACsec from the VLAN ID, turn every access port into a /30, or disable STP/PortFast policy.",
         "difficulty": "Medium"
+      },
+      {
+        "question": "What does a GRE (Generic Routing Encapsulation) tunnel mainly provide between two Cisco routers?",
+        "options": [
+          "A virtual point-to-point link that can encapsulate multiple Layer-3 protocols (commonly IPv4/IPv6) across an IP transport network",
+          "Hardware MACsec encryption of every Ethernet frame on the underlay so cleartext IP never appears on any intermediate hop at all",
+          "Automatic replacement of OSPF with BGP on both tunnel ends so only default routes can ever be exchanged across the overlay path",
+          "A Layer-2 transparent LAN service that floods broadcasts between all sites without any tunnel interfaces or underlay routing needed"
+        ],
+        "correct": 0,
+        "explanation": "GRE creates a tunnel interface that encapsulates passenger packets (often IP) inside GRE/IP for transport across an underlay. It is not MACsec by itself, does not force OSPF→BGP with only defaults, and is not a full multipoint L2 VPLS-style LAN without tunnel interfaces.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What does Proxy ARP mainly allow a Cisco router to do for hosts on a connected subnet?",
+        "options": [
+          "Replace every host default gateway with a floating static so ARP replies can carry OSPF LSAs to neighbors without any routing table at all",
+          "Disable ARP entirely on the LAN and force all Ethernet frames to use the router MAC as the only Layer-2 destination for any IP destination",
+          "Translate private inside addresses to a public pool the same way PAT does, using ARP requests instead of classic NAT translation timers",
+          "Answer ARP for remote IPs with its own MAC so hosts reach off-subnet targets without a configured default gateway"
+        ],
+        "correct": 3,
+        "explanation": "With Proxy ARP enabled, a router may reply to ARP for IPs it can route to, putting its own MAC in the reply so the host sends frames to the router even without a default gateway. It is not OSPF-over-ARP, not a full ARP-off LAN redesign, and not PAT.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "On a multipoint Frame Relay or similar NBMA-style segment, what does OSPF network type point-to-multipoint mainly avoid needing?",
+        "options": [
+          "Any OSPF hello packets at all, because LSAs are flooded only after a BGP session comes up on the same DLCI toward each spoke",
+          "A Designated Router election and the manual neighbor mapping that classic broadcast or nonbroadcast OSPF often require",
+          "IP reachability to every spoke router, because OSPF silently replaces each PVC with an automatic GRE tunnel to the hub",
+          "A stable OSPF router-id on the hub, because each PVC inherits a unique OSPF process ID from the Frame Relay map-class settings"
+        ],
+        "correct": 1,
+        "explanation": "OSPF point-to-multipoint treats the cloud as a collection of point-to-point adjacencies: no DR/BDR election and typically no need for the manual neighbor statements common on nonbroadcast. It still uses hellos and router-ids and does not invent GRE for every PVC.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What does the BGP neighbor maximum-prefix feature mainly protect a router from?",
+        "options": [
+          "Receiving any AS-path longer than four hops, which the feature silently truncates before the Loc-RIB is updated from that peer session",
+          "Advertising private AS numbers to the Internet, because maximum-prefix always strips AS 64512-65535 from every outbound UPDATE message",
+          "Accepting more prefixes from a peer than expected, which can exhaust memory or CPU when a misconfigured peer floods routes",
+          "Losing the TCP session on every soft clear, because maximum-prefix forces a hard reset whenever an inbound route-map is edited on the router"
+        ],
+        "correct": 2,
+        "explanation": "maximum-prefix limits how many prefixes a neighbor may advertise; exceeding the threshold can warn or tear down the session, protecting resources from a flood. It does not truncate AS-paths, strip private AS numbers, or redefine soft clears.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Two OSPF routers on the same Ethernet segment stay stuck in the EXSTART/EXCHANGE state and never reach FULL. Hello and dead timers match. What is a classic cause?",
+        "options": [
+          "An interface MTU mismatch, so the router with the smaller MTU drops the larger database description packets and the exchange never completes",
+          "Different OSPF process IDs on the two routers, because the process ID must match exactly before routers can even exchange their hello packets",
+          "Both routers use loopback interfaces for the router ID, which makes OSPF refuse to elect a DR and keeps every neighbor stuck in the 2-WAY state",
+          "The segment uses a /30 mask, which OSPF treats as point-to-point only and blocks database exchange until the network type is set to broadcast"
+        ],
+        "correct": 0,
+        "explanation": "Neighbors stuck in EXSTART/EXCHANGE often point to an MTU mismatch: DBD packets larger than the peer MTU are dropped. Process IDs are locally significant, loopback router IDs are normal, and a /30 mask does not block the exchange.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "HSRP is active on two routers. The current active router's uplink to the core fails, but the LAN HSRP interface stays up. How does interface tracking help failover?",
+        "options": [
+          "It instantly deletes the standby router's entire HSRP group configuration, so only the active router remains and clients keep using the same gateway MAC forever after that",
+          "It forces both routers into the listen state until STP fully reconverges, which prevents any gateway from answering ARP requests until the failed uplink is restored again",
+          "It can decrement the active router's HSRP priority when the tracked uplink goes down, so the standby with a higher remaining priority becomes active",
+          "It rewrites every host default gateway address to the standby IP through DHCP options, which is treated as the only supported way HSRP can move traffic after uplink loss"
+        ],
+        "correct": 2,
+        "explanation": "HSRP interface tracking lowers (or can adjust) the active router's priority when a tracked uplink fails, allowing the standby to preempt and take over. It does not delete groups, freeze both routers in listen, or rewrite DHCP gateways.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "A switch acting as a DHCP relay inserts DHCP Option 82. What does Option 82 primarily let the DHCP server do?",
+        "options": [
+          "Identify which relay agent, port, and VLAN a request came from, so the server can apply policy or assign addresses based on that location information",
+          "Encrypt the whole DHCP exchange end to end with TLS so that no device on the broadcast segment can ever read the offered address or lease parameters at all",
+          "Replace the need for any ip helper-address command, because Option 82 by itself forwards the broadcast DISCOVER across every routed hop without a relay agent configured",
+          "Force all clients to renew their leases every sixty seconds regardless of lease time, which is the documented purpose of inserting the relay information option into requests"
+        ],
+        "correct": 0,
+        "explanation": "Option 82 (DHCP relay information) tags requests with circuit/remote-ID details identifying the relay, port, and VLAN, letting the server apply location-based policy. It does not encrypt DHCP, replace ip helper-address, or shorten lease timers.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "An IPv6 router advertisement sets the M flag to 1 and the O flag to 1. What addressing behaviour should hosts on that link expect?",
+        "options": [
+          "Hosts must ignore all Router Advertisements and obtain every address and default gateway only from a DHCPv4 server, because the M and O flags always disable IPv6 on the segment",
+          "Hosts generate only link-local addresses and never use a global prefix, because M=1 and O=1 together forbid SLAAC and forbid DHCPv6 for any configuration option at all",
+          "Hosts use SLAAC alone for the global address and never contact a DHCPv6 server, because setting both flags to 1 is the documented signal that stateful DHCPv6 is disabled on the LAN",
+          "Hosts obtain IPv6 addresses from a stateful DHCPv6 server (M=1) and may also request other configuration such as DNS via DHCPv6 (O=1), rather than relying on SLAAC for the address"
+        ],
+        "correct": 3,
+        "explanation": "In RA flags, M=1 means hosts should use stateful DHCPv6 for addresses, and O=1 means other configuration (for example DNS) is available via DHCPv6. The flags do not force IPv4-only, forbid global addresses, or mean SLAAC-only.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "After you bring up a GRE (or GRE over IPsec) tunnel, the router logs that the tunnel interface is flapping and the remote LAN routes disappear. The tunnel destination IP is learned via a route that points into the tunnel itself. What is the classic cause?",
+        "options": [
+          "Recursive routing: the best path to the tunnel destination is recursively via the tunnel, so the outer encapsulating route vanishes and the tunnel collapses until the underlay route returns",
+          "The tunnel source interface MTU is below 1500, so every GRE header is discarded by the remote peer's checksum and the routing table clears those prefixes as unreachable forever on that VRF instance",
+          "OSPF refuses to form adjacency over GRE unless network type is set to broadcast, and without that adjacency the underlay IGP withdraws the tunnel destination from every VRF configured on the box",
+          "NAT on the underlay rewrites the tunnel source to a public address, which forces CEF to punt every encapsulated packet and marks the tunnel administratively down after three retries on the same peer"
+        ],
+        "correct": 0,
+        "explanation": "Recursive routing happens when the route to the tunnel destination prefers the tunnel itself, removing the underlay path the encapsulation needs. MTU, OSPF network type, and NAT can cause other faults, but this specific flap pattern is the recursion classic.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "A Windows laptop shows a stable SLAAC address plus a 'temporary' IPv6 address that changes over time. Why does the temporary address exist?",
+        "options": [
+          "Privacy extensions give the host random, short-lived interface IDs for outbound connections, so remote sites cannot track it by a fixed IPv6 identifier",
+          "It is a backup address that DHCPv6 assigns only while the router is down, and it is deleted as soon as a Router Advertisement with the A flag is received again",
+          "It is the link-local address renumbered every hour so neighbors must redo Duplicate Address Detection before forwarding any frames toward the default gateway",
+          "It is a NAT64 translation address handed out by the ISP so the laptop can reach IPv4-only websites while its stable address stays limited to IPv6 destinations"
+        ],
+        "correct": 0,
+        "explanation": "IPv6 privacy extensions (RFC 8981, formerly RFC 4941) create temporary global addresses with random interface IDs that are used for outgoing connections and rotated over time, which makes tracking the host harder. The stable address stays for inbound use. They are not a DHCPv6 fallback, a link-local address, or a NAT64 address.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "A Layer 2 access switch has 'interface vlan 10' with IP 10.1.10.5/24 and 'no ip routing'. You can SSH to it from VLAN 10 but not from the admin subnet 10.9.0.0/24. What is missing?",
+        "options": [
+          "A trunk to the admin subnet, because SSH packets to a switch's SVI are only accepted when they arrive tagged with the same VLAN ID that the SVI itself is configured on",
+          "A static route 'ip route 0.0.0.0 0.0.0.0', because a switch with routing disabled still needs a routing table entry before the SSH server process will accept new sessions",
+          "The 'ip ssh version 2' command, because SSH version 1 sessions are dropped silently whenever they come from a subnet other than the one directly attached to the SVI",
+          "The 'ip default-gateway' command pointing to the VLAN 10 router, because with IP routing off the switch uses it to send replies to hosts on other subnets"
+        ],
+        "correct": 3,
+        "explanation": "With 'no ip routing', a Layer 2 switch behaves like a host: it can reach its own SVI subnet, but replies to other subnets need 'ip default-gateway <router IP>'. Static routes are only used when IP routing is enabled, trunks are not needed for routed management traffic, and the SSH version has nothing to do with the source subnet.",
+        "difficulty": "Medium"
       }
     ]
   },
@@ -12998,6 +13430,114 @@
         "correct": 0,
         "explanation": "O VPLS emula uma LAN partilhada (L2 VPN multiponto) sobre um backbone packet/MPLS com pseudowires/bridging VSI para o domínio Ethernet do cliente abranger vários sites. Não é IPsec por CE a substituir VRFs, não é truque de redistribuição OSPF Area 0 para IS-IS, nem uma L3VPN só-unicast que proíba flooding de ARP.",
         "difficulty": "Difícil"
+      },
+      {
+        "question": "Num fabric VXLAN EVPN, em que diferem principalmente as rotas EVPN Type-2 e Type-5?",
+        "options": [
+          "Type-2 só anuncia joins PIM multicast no underlay, enquanto Type-5 só transporta BPDUs de Spanning Tree entre VTEPs através do core",
+          "Type-2 anuncia alcançabilidade MAC/IP de hosts bridged; Type-5 anuncia prefixos IP para alcançabilidade inter-subnet / estilo L3VPN",
+          "Type-2 substitui por completo o BGP por flooding IS-IS Level-1 de tabelas MAC, enquanto Type-5 fica reservado a bindings LDP de cada VLAN",
+          "Type-2 e Type-5 são NLRIs idênticos; a única diferença é o VTEP usar OSPF ou EIGRP como IGP do underlay na fabric"
+        ],
+        "correct": 1,
+        "explanation": "EVPN Type-2 (MAC/IP Advertisement) transporta MAC do host e opcionalmente IP para adjacência L2/L2+L3 dentro de um VNI. Type-5 (IP Prefix Route) anuncia prefixos para routing entre subnets ou redes externas. Não são só PIM vs BPDUs, não substituem IS-IS/LDP, nem são NLRI idênticos.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Num desenho iBGP com route reflector, o que ajudam principalmente a evitar os atributos ORIGINATOR_ID e CLUSTER_LIST?",
+        "options": [
+          "Loops de routing e a reflexão do mesmo caminho de volta para o originador dentro da topologia do cluster de reflectors",
+          "Que todas as sessões eBGP aceitem valores MED só se cada peer também negociar primeiro a capability add-path",
+          "Que áreas OSPF formem virtual links quando um cliente RR corre também IS-IS Level-2 no mesmo endereço de loopback",
+          "Que o IPv6 ND instale entradas de vizinho só se o RR carimbar cada prefixo com um identificador Site-Local Scope único"
+        ],
+        "correct": 0,
+        "explanation": "ORIGINATOR_ID regista o router que originou a rota no cluster RR; CLUSTER_LIST acompanha os clusters que a refletiram. Juntos permitem detetar e descartar reflexões em loop. Não dizem respeito a MED/add-path em eBGP, virtual links OSPF/IS-IS, nem regras Site-Local do IPv6 ND.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Depois de alterar um route-map BGP de entrada, porque se prefere normalmente route refresh a neighbor soft-reconfiguration inbound?",
+        "options": [
+          "O route refresh pede ao peer para reenviar rotas sem guardar uma cópia extra completa do Adj-RIB-In, enquanto o soft-reconfiguration inbound mantém essa duplicata",
+          "O route refresh só funciona em eBGP e derruba sempre o TCP primeiro, enquanto o soft-reconfiguration inbound é obrigatório antes de qualquer sessão iBGP subir de todo",
+          "O soft-reconfiguration inbound nunca aplica uma nova política de entrada, pelo que só um hard clear instala no Loc-RIB os resultados do route-map atualizado para sempre",
+          "O route refresh desativa a seleção de best-path até o peer terminar de enviar, enquanto o soft-reconfiguration inbound congela o RIB-Out para nenhum UPDATE sair"
+        ],
+        "correct": 0,
+        "explanation": "O soft-reconfiguration inbound guarda uma cópia extra do Adj-RIB-In sem filtros (custo de memória). O route refresh (RFC 2918) pede ao peer para reenviar, aplicando a nova política sem essa cópia nem reset da sessão. O soft-reconfig aplica política na cópia guardada; não é magia só de eBGP.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Utilizadores atrás de um túnel GRE sobre IPsec abrem páginas web pequenas, mas downloads grandes ficam parados. Porque se aplica ip tcp adjust-mss (por exemplo 1360) na interface do túnel?",
+        "options": [
+          "Aumenta o MTU do túnel acima de 1500 bytes para os pacotes encapsulados levarem payloads Ethernet completos sem a ligação física os fragmentar",
+          "Desativa a verificação anti-replay do IPsec para fluxos TCP, porque segmentos grandes chegam fora de ordem e seriam descartados pelo peer recetor",
+          "Reescreve o MSS nos pacotes TCP SYN para os hosts enviarem segmentos que cabem após o overhead do túnel, evitando fragmentação e falhas de PMTUD",
+          "Diz ao router para limpar o bit DF em cada pacote que entra no túnel, para segmentos TCP grandes serem sempre fragmentados depois da cifragem"
+        ],
+        "correct": 2,
+        "explanation": "Os cabeçalhos do túnel reduzem o MTU útil. O ip tcp adjust-mss reescreve a opção MSS nos SYN TCP que passam, para os hosts enviarem segmentos menores que cabem, evitando fragmentação e PMTUD partido quando o ICMP é bloqueado. Não aumenta o MTU, não desativa anti-replay nem limpa o DF.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Quer que um router execute automaticamente comandos show e os guarde sempre que uma interface específica regista um evento de down, sem servidor externo. Que funcionalidade IOS encaixa melhor?",
+        "options": [
+          "Configurar strings de comunidade SNMP só de leitura, porque o SNMP read-only consegue executar comandos show no CLI localmente e escrever o resultado em flash a cada mudança de estado da interface",
+          "Ativar NetFlow na interface, já que os registos NetFlow são concebidos para correr comandos EXEC arbitrários e arquivar automaticamente o texto quando a ligação passa a down",
+          "Agendar um reload de poucos em poucos minutos, porque reiniciar é o mecanismo suportado para capturar o estado da interface e o arranque escreve diagnósticos em flash a cada boot",
+          "Um applet Embedded Event Manager (EEM) despoletado pelo padrão de syslog dessa interface a cair, a correr os comandos show e a guardar o resultado localmente"
+        ],
+        "correct": 3,
+        "explanation": "Os applets EEM observam eventos como padrões de syslog e executam ações de CLI no próprio equipamento, por isso uma mensagem de link-down pode despoletar comandos show guardados em flash sem sistema externo. SNMP, NetFlow e reloads periódicos não fazem automação local orientada a eventos.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Precisa que um router de bordo BGP anuncie um prefixo de backup a um peer só enquanto um prefixo primário estiver ausente da tabela BGP local. Que mecanismo Cisco encaixa?",
+        "options": [
+          "Advertisement condicional BGP com um advertise-map ligado a um non-exist-map (ou exist-map), para o prefixo de backup ser anunciado só quando o prefixo primário observado estiver ausente (ou presente)",
+          "Uma rota estática null0 para o prefixo de backup com distância administrativa 1, porque uma rota null sozinha faz o BGP retirar e reanunciar prefixos sempre que o caminho primário oscila",
+          "Activar soft-reconfiguration inbound do BGP em todos os vizinhos, porque a soft-reconfiguration guarda uma segunda RIB que alterna automaticamente os anúncios de saída quando os prefixos desaparecem do peer",
+          "Configurar maximum-prefix no peer com limiar de restart, porque atingir o limite de prefixos é a forma suportada de publicar uma rota de backup só durante falhas do primário"
+        ],
+        "correct": 0,
+        "explanation": "O advertisement condicional usa advertise-map com non-exist-map ou exist-map para um prefixo ser anunciado só quando outro prefixo observado está ausente ou presente. Rotas null0, soft-reconfiguration e maximum-prefix não implementam essa lógica condicional de saída.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Numa ligação point-to-point serial ou Ethernet configura ip unnumbered Loopback0 em ambas as extremidades. Qual é o principal efeito operacional, e que restrição continua a aplicar-se?",
+        "options": [
+          "Cada extremo toma um /32 único de um pool DHCP para a ligação se tornar automaticamente um /30 numerado, e o OSPF recusa anunciar esse endereço emprestado até também haver um IP secundário na mesma interface para a adjacência sem alterar o desenho do underlay",
+          "ip unnumbered desactiva o CEF nessa interface e força process switching em todos os pacotes, o que é obrigatório antes de se poderem impor labels MPLS em circuitos WAN point-to-point em qualquer backbone de produção actual com labels de serviço",
+          "Ambos os extremos partilham um espaço IPv4 emprestado de outra interface, eliminando a necessidade de uma subnet de trânsito dedicada, mas não se pode fazer ping ao remoto por um IP de ligação distinto porque nenhum existe no fio nesse desenho sem IP dedicado",
+          "Ambos os extremos emprestam o endereço IPv4 de uma interface referenciada (muitas vezes um loopback), por isso a ligação não precisa de subnet de trânsito dedicada; o forwarding continua, mas não se deve esperar um host on-link único por peer"
+        ],
+        "correct": 3,
+        "explanation": "ip unnumbered empresta o endereço de outra interface para a ligação point-to-point não precisar de subnet dedicada; o forwarding e os IGPs ainda podem usar a ligação, mas não há um IP de host único no fio por peer. Não inventa /30 via DHCP, não exige desactivar CEF, e a formulação correcta é o empréstimo da interface referenciada.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Num ABR OSPF configuras 'area 2 filter-list prefix BLOCK in'. Que rotas é que isto filtra de facto?",
+        "options": [
+          "LSAs Type-1 e Type-2 dentro da Área 2, por isso os routers internos dessa área perdem os prefixos negados da LSDB e da árvore SPF enquanto o ABR os mantém na tabela de rotas",
+          "LSAs externos Type-5 de qualquer ASBR, por isso as rotas redistribuídas que batem na lista desaparecem de todas as áreas, incluindo o backbone, sem mexer nos sumários inter-área",
+          "Só a tabela de rotas do próprio ABR: os LSAs continuam a ser inundados para a Área 2, mas o ABR deixa de instalar os prefixos negados e de encaminhar tráfego para eles",
+          "LSAs de sumário Type-3 que o ABR originaria para a Área 2, por isso os prefixos negados não são anunciados nessa área como rotas inter-área; os LSAs intra-área não mudam"
+        ],
+        "correct": 3,
+        "explanation": "O 'area X filter-list prefix NOME in|out' aplica-se num ABR e filtra LSAs de sumário Type-3: 'in' controla o que é anunciado para dentro da área X e 'out' o que sai dela. Não filtra LSAs Type-1/2 dentro de uma área nem externos Type-5, e muda o que é inundado, não só a tabela de rotas do ABR (isso seria um distribute-list in).",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "O R1 tem a Loopback0 10.50.0.1/24 no OSPF, mas os vizinhos aprendem 10.50.0.1/32 em vez de 10.50.0.0/24. Porquê, e como fazer o OSPF anunciar o /24?",
+        "options": [
+          "O OSPF trata a loopback como host stub e anuncia-a como /32; configurar 'ip ospf network point-to-point' na Loopback0 faz anunciar a máscara /24 configurada",
+          "Os vizinhos correm auto-summary, que encurta todas as loopbacks para rotas de host; 'no auto-summary' no processo OSPF de cada vizinho repõe o prefixo /24",
+          "A loopback está numa área stub, que só permite rotas de host; converter a área em área normal ou totally stubby passa a anunciar a máscara /24 configurada",
+          "Os hellos OSPF só levam o router ID, por isso as loopbacks aparecem sempre como /32; repetir 'network 10.50.0.0 0.0.0.255 area 0' força um LSA Type-3 com /24"
+        ],
+        "correct": 0,
+        "explanation": "Por omissão o OSPF usa o tipo de rede LOOPBACK nas interfaces loopback e anuncia-as como rotas de host /32, seja qual for a máscara configurada. Com 'ip ospf network point-to-point' na loopback o OSPF anuncia o prefixo real (/24). O OSPF não tem auto-summary, as áreas stub não limitam máscaras e repetir o comando network não muda nada.",
+        "difficulty": "Difícil"
       }
     ],
     "en": [
@@ -15588,6 +16128,114 @@
         "correct": 0,
         "explanation": "VPLS emulates a shared LAN (multipoint L2 VPN) across a packet/MPLS backbone using pseudowires/VSI bridging so customer Ethernet domains can span sites. It is not per-CE IPsec replacing VRFs, not an OSPF Area 0 redistribution trick into IS-IS, and not a unicast-only L3VPN that bans ARP flooding.",
         "difficulty": "Hard"
+      },
+      {
+        "question": "In a VXLAN EVPN fabric, how do EVPN Route Type-2 and Route Type-5 mainly differ?",
+        "options": [
+          "Type-2 only advertises multicast underlay PIM joins toward RPs, while Type-5 only carries Spanning Tree BPDUs between VTEPs across the fabric core links",
+          "Type-2 advertises MAC/IP host reachability for bridged endpoints, while Type-5 advertises IP prefixes for inter-subnet / L3VPN-style reachability",
+          "Type-2 replaces BGP entirely with IS-IS Level-1 flooding of entire MAC tables, while Type-5 is reserved for LDP label binding of every VLAN identifier",
+          "Type-2 and Type-5 are identical NLRI formats end-to-end; the only difference is whether the VTEP uses OSPF or EIGRP as the underlay IGP protocol"
+        ],
+        "correct": 1,
+        "explanation": "EVPN Type-2 (MAC/IP Advertisement) carries host MAC and optional IP bindings for L2/L2+L3 adjacency inside a VNI. Type-5 (IP Prefix Route) advertises prefixes for routing between subnets or external networks. They are not PIM-only vs BPDU carriers, not IS-IS/LDP substitutes, and not identical NLRI.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "In an iBGP route-reflector design, what do the ORIGINATOR_ID and CLUSTER_LIST attributes mainly help prevent?",
+        "options": [
+          "Routing loops and reflection of the same path back toward its originator inside the reflector cluster topology",
+          "All eBGP sessions from accepting MED values unless every peer also negotiates the add-path capability first",
+          "OSPF areas from forming virtual links whenever an RR client also runs IS-IS Level-2 on the same loopback address",
+          "IPv6 ND from installing neighbor entries unless the RR stamps every prefix with a unique Site-Local Scope identifier"
+        ],
+        "correct": 0,
+        "explanation": "ORIGINATOR_ID records the router that originated the route into the RR cluster; CLUSTER_LIST tracks clusters that reflected it. Together they let routers detect and drop looping reflections. They are not about eBGP MED/add-path gates, OSPF/IS-IS virtual links, or IPv6 ND Site-Local rules.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "After changing an inbound BGP route-map, why is route refresh usually preferred over neighbor soft-reconfiguration inbound?",
+        "options": [
+          "Route refresh asks the peer to resend routes without storing a full extra Adj-RIB-In copy, while soft-reconfiguration inbound keeps that duplicate",
+          "Route refresh only works for eBGP and always tears down TCP first, while soft-reconfiguration inbound is required before any iBGP session can come up at all",
+          "Soft-reconfiguration inbound never applies a new inbound policy at all, so only a hard clear can install updated route-map results into the Loc-RIB forever",
+          "Route refresh disables best-path selection until the peer finishes sending, while soft-reconfiguration inbound freezes the RIB-Out so no UPDATEs leave"
+        ],
+        "correct": 0,
+        "explanation": "Soft-reconfiguration inbound stores an extra unmodified Adj-RIB-In copy (memory cost). Route refresh (RFC 2918) asks the peer to resend so new inbound policy can be applied without that copy or a session reset. Soft-reconfig does apply policy on the stored copy; it is not eBGP-only magic.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "Users behind a GRE over IPsec tunnel can open small web pages, but large downloads stall. Why is ip tcp adjust-mss (for example 1360) applied on the tunnel interface?",
+        "options": [
+          "It raises the tunnel MTU above 1500 bytes so encapsulated packets can carry full Ethernet payloads without the physical link ever fragmenting them",
+          "It disables IPsec anti-replay checking for TCP flows, because large segments arrive out of order and would otherwise be dropped by the receiving peer",
+          "It rewrites the MSS in TCP SYN packets so endpoints send segments small enough to fit after tunnel overhead, avoiding fragmentation and PMTUD failures",
+          "It tells the router to clear the DF bit on every packet entering the tunnel, so oversized TCP segments are always fragmented by the router after encryption instead"
+        ],
+        "correct": 2,
+        "explanation": "Tunnel headers reduce usable MTU. ip tcp adjust-mss rewrites the MSS option in TCP SYNs passing through, so hosts send smaller segments that fit, avoiding fragmentation and broken PMTUD when ICMP is blocked. It does not raise MTU, disable anti-replay, or clear DF.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "You want a router to automatically run show commands and save them whenever a specific interface logs a down event, with no external server. Which IOS feature fits best?",
+        "options": [
+          "Configure SNMP read-only community strings, because read-only SNMP can execute CLI show commands locally and write their output to flash each time an interface changes state",
+          "Enable NetFlow on the interface, since NetFlow records are designed to run arbitrary EXEC commands and archive their text output automatically when a link transitions to down",
+          "Schedule a reload every few minutes, because reloading is the supported mechanism to capture interface state and the startup process writes diagnostics to flash on each boot",
+          "An Embedded Event Manager (EEM) applet triggered on the syslog pattern for that interface going down, running the show commands and saving the output locally"
+        ],
+        "correct": 3,
+        "explanation": "EEM applets watch events such as syslog patterns and run CLI actions on the device itself, so a link-down message can trigger show commands saved to flash with no external system. SNMP, NetFlow, and periodic reloads do not do local event-driven automation.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "You need a BGP edge router to advertise a backup prefix to a peer only while a primary prefix is missing from the local BGP table. Which Cisco mechanism fits?",
+        "options": [
+          "BGP conditional advertisement with an advertise-map tied to a non-exist-map (or exist-map), so the backup prefix is announced only when the watched primary prefix is absent (or present)",
+          "A static null0 route for the backup prefix with administrative distance 1, because a null route alone causes BGP to withdraw and re-advertise prefixes whenever the primary path flaps",
+          "Enabling BGP soft-reconfiguration inbound on every neighbour, because soft-reconfiguration stores a second RIB that automatically toggles outbound advertisements when prefixes disappear",
+          "Configuring maximum-prefix on the peer with a restart threshold, because hitting the prefix limit is the supported way to publish a backup route only during primary outages"
+        ],
+        "correct": 0,
+        "explanation": "Conditional advertisement uses advertise-map with non-exist-map or exist-map so a prefix is advertised only when another watched prefix is missing or present. Null0 routes, soft-reconfiguration, and maximum-prefix do not implement that conditional outbound logic.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "On a point-to-point serial or Ethernet link you configure ip unnumbered Loopback0 under both ends. What is the main operational effect, and which constraint still applies?",
+        "options": [
+          "Each end borrows a unique /32 from a DHCP pool so the link becomes a numbered /30 automatically, and OSPF refuses to advertise that borrowed address until a secondary IP is also assigned on the same interface for adjacency",
+          "ip unnumbered disables CEF on that interface and forces process switching for every packet, which is required before MPLS labels can be imposed on point-to-point WAN circuits in any production backbone design today",
+          "Both ends share one IPv4 address space borrowed from another interface, eliminating the need for a dedicated transit subnet, but you cannot ping the remote end by a distinct link IP because none exists on the wire at all in that design",
+          "Both ends borrow the IPv4 address of a referenced interface (often a loopback), so the link needs no dedicated transit subnet; routing still works for transit, yet you must not expect a unique on-link host address for each peer"
+        ],
+        "correct": 3,
+        "explanation": "ip unnumbered borrows the address of another interface so the point-to-point link needs no dedicated subnet; forwarding and IGPs can still use the link, but there is no unique on-wire host IP per peer. It does not invent DHCP /30s, does not require disabling CEF, and the precise wording is about borrowing rather than sharing one ambiguous space without the referenced interface.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "On an OSPF ABR you configure 'area 2 filter-list prefix BLOCK in'. Which routes does this actually filter?",
+        "options": [
+          "Type-1 and Type-2 LSAs inside Area 2, so internal routers of that area lose the denied prefixes from their own LSDB and SPF tree while the ABR keeps them in its routing table",
+          "Type-5 external LSAs from any ASBR, so redistributed routes matching the list are removed from every area, including the backbone, without touching inter-area summaries",
+          "Only the ABR's own routing table: the LSAs are still flooded into Area 2, but the ABR stops installing the denied prefixes and no longer forwards traffic toward them",
+          "Type-3 summary LSAs the ABR would originate into Area 2, so prefixes denied by the list are not advertised into that area as inter-area routes; intra-area LSAs are unaffected"
+        ],
+        "correct": 3,
+        "explanation": "'area X filter-list prefix NAME in|out' is applied on an ABR and filters Type-3 summary LSAs: 'in' controls what is advertised into area X, 'out' what is advertised out of it. It does not filter Type-1/2 LSAs inside an area or Type-5 externals, and it changes what is flooded, not just the ABR's own routing table (that would be a distribute-list in).",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "R1 has Loopback0 10.50.0.1/24 in OSPF, but neighbors learn 10.50.0.1/32 instead of 10.50.0.0/24. Why, and how do you make OSPF advertise the /24?",
+        "options": [
+          "OSPF treats a loopback as a stub host and advertises it as /32; setting 'ip ospf network point-to-point' on Loopback0 makes it advertise the configured /24 mask",
+          "The neighbors run auto-summary, which shortens every loopback to a host route; 'no auto-summary' under the OSPF process on each neighbor restores the /24 prefix",
+          "The loopback is in a stub area, which only allows host routes; converting the area to a normal area or a totally stubby area will advertise the configured /24 mask",
+          "OSPF hello packets carry only the router ID, so loopbacks always appear as /32; adding 'network 10.50.0.0 0.0.0.255 area 0' a second time forces a /24 Type-3 LSA"
+        ],
+        "correct": 0,
+        "explanation": "By default OSPF uses the LOOPBACK network type for loopback interfaces and advertises them as /32 host routes, whatever mask is configured. 'ip ospf network point-to-point' on the loopback makes OSPF advertise the real prefix (/24). OSPF has no auto-summary, stub areas do not restrict masks, and repeating the network statement changes nothing.",
+        "difficulty": "Hard"
       }
     ]
   },
@@ -16528,6 +17176,426 @@
         "correct": 3,
         "explanation": "O RASP faz hook/instrumentação no runtime da aplicação (bibliotecas, interpretadores, agentes) para as deteções usarem caminhos de código, fluxos de dados e utilizadores reais—contexto que um WAF de perímetro normalmente não tem. Um WAF continua a filtrar na camada HTTP/política de edge. RASP não é inspeção BGP/OSPF, não remove TLS, nem é só uma sandbox offline.",
         "difficulty": "Médio"
+      },
+      {
+        "question": "Para que se usa principalmente o BloodHound em avaliações de segurança de Active Directory?",
+        "options": [
+          "Substitui a password KRBTGT de cada Domain Controller duas vezes por hora para Golden Tickets expirarem antes de forjar qualquer TGT",
+          "Atua como WAF inline que bloqueia pedidos TGS de Kerberoasting quando um SPN pertence a conta de utilizador com hash fraco",
+          "Cifra a memória do LSASS com um enclave de hipervisor para ferramentas como Mimikatz nunca lerem hashes NTLM ou tickets Kerberos da RAM",
+          "Mapeia utilizadores, grupos, computadores e ACLs do AD num grafo para revelar caminhos de ataque, por exemplo até Domain Admin"
+        ],
+        "correct": 3,
+        "explanation": "O BloodHound (e collectors como SharpHound) enumeram relações e ACLs do AD num grafo para analistas/atacantes encontrarem caminhos de escalonamento de privilégios (ex.: até Domain Admin). Não roda o KRBTGT periodicamente, não é um WAF anti-Kerberoasting, nem cifra o LSASS por si.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "No abuso moderno de Active Directory, em que consistem principalmente as Shadow Credentials?",
+        "options": [
+          "Escrever um SPN malicioso no krbtgt para forçar cada pedido TGS a unconstrained delegation para um host rogue controlado pelo atacante",
+          "Escrever chaves controladas pelo atacante em msDS-KeyCredentialLink da conta para autenticar como esse principal via PKINIT",
+          "Desativar assinatura SMB e LDAP channel binding em todo o domínio com uma GPO para o relay NTLM a AD CS ficar o único passo em falta",
+          "Substituir registos DANE TLSA do domínio para clientes LDAPS aceitarem uma cadeia forjada de qualquer intermédia da Web PKI pública"
+        ],
+        "correct": 1,
+        "explanation": "Shadow Credentials abusam do atributo msDS-KeyCredentialLink (muitas vezes no modelo Key Trust / Windows Hello for Business) para quem puder escrever esse atributo adicionar o seu material de chave e obter tickets da vítima via PKINIT. Não é SPN no krbtgt para unconstrained delegation, nem só uma GPO a desligar signing/binding, nem troca de DANE TLSA.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Num dispositivo Windows joined ao Microsoft Entra ID, para que serve principalmente um Primary Refresh Token (PRT)?",
+        "options": [
+          "É uma password de recuperação BitLocker de uso único só em escrow no Active Directory para discos offline nunca abrirem sem um Domain Admin",
+          "É um hash SAM local da password do utilizador enrolled que o Windows reutiliza em serviços NTLM quando o Kerberos não está disponível na subnet",
+          "É um refresh token de SSO ligado ao dispositivo que permite obter em silêncio access tokens para apps e recursos cloud protegidos pelo Entra ID",
+          "É uma shared access signature do Azure Storage que dá escrita anónima a todos os contentores blob do tenant até à próxima mudança de password do user"
+        ],
+        "correct": 2,
+        "explanation": "Um PRT é emitido a dispositivos Entra-joined/hybrid-joined e permite SSO: o dispositivo obtém access tokens para recursos cloud sem pedir credenciais repetidamente. O roubo/abuso do PRT é um risco estilo living-off-cloud. Não é escrow BitLocker, nem hash SAM/NTLM para replay, nem um SAS anónimo de todo o tenant.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Em ambientes cloud, porque é especialmente perigoso um SSRF que alcança o instance metadata service (IMDS, ex. 169.254.169.254)?",
+        "options": [
+          "Só permite mudar o hostname da VM no DNS para o certificate pinning TLS falhar no próximo reboot de cada load balancer",
+          "Desativa permanentemente a firewall do hipervisor para cada guest enviar updates BGP spoofed para o backbone do provider sem IAM",
+          "Pode expor credenciais ou tokens temporários da instance role, permitindo ao atacante chamar APIs cloud com essa role",
+          "Força o SO guest a descer todo o TLS de saída para SSLv3 para captures no VPC mirror desencriptarem cada sessão HTTPS"
+        ],
+        "correct": 2,
+        "explanation": "O IMDS muitas vezes entrega credenciais IAM (ou tokens de curta duração) à instância. Um SSRF que consulte esse endpoint link-local pode roubar essas credenciais e abusar das APIs cloud. Não é só um truque de hostname/DNS, nem um enabler de BGP spoof, nem um downgrade SSLv3 de todo o TLS de saída.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Em que consiste principalmente um ataque de phishing com OAuth device code?",
+        "options": [
+          "Levar a vítima a conceder consentimento à app registada pelo atacante ao introduzir um user code curto mostrado numa página falsa ou controlada pelo atacante",
+          "Instalar uma extensão de browser maliciosa que reescreve cada Authorization header para um Bearer token estático roubado do LSASS",
+          "Desativar MFA em todo o tenant com uma asserção SAML forjada que o IdP aceita porque o device code ignora por completo o TLS",
+          "Substituir o endpoint JWKS do tenant por uma chave rogue para cada refresh token já emitido validar para sempre sem expiração"
+        ],
+        "correct": 1,
+        "explanation": "O fluxo device authorization mostra um user code e um URI de verificação. Os atacantes levam a vítima a aprovar a app do atacante (muitas vezes numa página convincente), obtendo tokens. Não é reescrita Bearer via LSASS, nem forge SAML que desliga MFA e TLS, nem troca permanente do JWKS.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "No Windows, o que consegue principalmente um atacante local ao abusar de SeImpersonatePrivilege (ex. técnicas da família Potato)?",
+        "options": [
+          "Reescreve o hash KRBTGT do domínio no AD para cada TGT forjado depois ser aceite como Golden Ticket sem qualquer direito DCSync no domínio",
+          "Desativa o Tamper Protection do Windows Defender trocando a base de assinaturas do driver ELAM por uma cópia offline sem assinatura válida",
+          "Força cada ligação SMB de saída a cair para NTLMv1 para um listener remoto capturar pares challenge-response facilmente crackáveis",
+          "Permite a uma conta de serviço (ou similar) impersonar um token mais privilegiado no host, muitas vezes escalando a SYSTEM"
+        ],
+        "correct": 3,
+        "explanation": "SeImpersonatePrivilege deixa um processo impersonar clientes que se ligam a ele. Ataques estilo Potato forçam um serviço privilegiado a autenticar-se no pipe/listener do atacante e depois impersonam esse token de alto privilégio (muitas vezes SYSTEM). Não é reescrita do KRBTGT, bypass do Tamper Protection/ELAM por si, nem downgrade forçado de todo o SMB para NTLMv1.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "O que força principalmente um ataque estilo PetitPotam um host Windows (muitas vezes um DC) a fazer?",
+        "options": [
+          "Reescrever no disco o hash KRBTGT do domínio para cada TGT forjado validar depois sem precisar de quaisquer direitos DCSync",
+          "Desativar o Credential Guard substituindo a política de arranque VBS por um hive de registo offline sem assinatura copiado de outro host",
+          "Forçar cada sessão SMB de saída a cair para NTLMv1 para um listener remoto capturar e crackar pares challenge-response offline",
+          "Autenticar-se num listener controlado pelo atacante (muitas vezes via MS-EFSRPC), permitindo NTLM relay ou abuso relacionado"
+        ],
+        "correct": 3,
+        "explanation": "O PetitPotam abusa do MS-EFSRPC (e similares) para forçar autenticação para o atacante. Combinado com NTLM relay (ou técnicas relacionadas), pode levar a compromisso adicional do domínio. Não é por si uma reescrita do KRBTGT, bypass do Credential Guard por hive, nem downgrade forçado de todo o SMB para NTLMv1.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que permitia principalmente a vulnerabilidade Zerologon (CVE-2020-1472) a um atacante na rede contra um domain controller sem patch?",
+        "options": [
+          "Ler todas as chaves de recuperação BitLocker do Azure AD forjando só o canal seguro Netlogon com uma tag de autenticação AES-GCM vazia",
+          "Desativar remotamente o Tamper Protection do Windows Defender ao definir a password da conta máquina Netlogon literalmente como a string zerologon",
+          "Forjar a autenticação do canal seguro Netlogon (falha do IV a zeros) e repor a password da conta máquina do DC para um valor vazio ou conhecido",
+          "Forjar Golden Tickets Kerberos sem nunca tocar no KRBTGT, porque o Netlogon substituiu a validação PAC em cada TGS-REQ seguinte"
+        ],
+        "correct": 2,
+        "explanation": "O Zerologon abusava de uma falha criptográfica do Netlogon (IV a zeros) para um atacante se fazer passar por cliente e definir a password da conta máquina do DC para um valor conhecido/vazio, abrindo caminho a takeover. Não é roubo de chaves BitLocker só com tags GCM vazias, nem um interruptor do Tamper Protection, nem Golden Tickets sem KRBTGT.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "O que protege principalmente o Windows Credential Guard num host suportado?",
+        "options": [
+          "Toda a forja de Golden Tickets Kerberos em todo o domínio, porque cada DC recusa qualquer TGT que não tenha sido selado dentro de um enclave VBS",
+          "O roubo de credenciais derivadas como hashes NTLM ou tickets Kerberos a partir do LSASS, isolando esses segredos com VBS",
+          "Todo o ataque NTLM relay na LAN, porque o Credential Guard desativa por completo o NetNTLM em todas as ligações SMB de saída",
+          "Ransomware a encriptar volumes NTFS locais, porque o VBS remapeia clusters de disco para um volume scratch só em RAM encriptado no arranque"
+        ],
+        "correct": 1,
+        "explanation": "O Credential Guard usa segurança baseada em virtualização para isolar segredos, impedindo malware com direitos de admin de os extrair simplesmente do LSASS. Não impede sozinho Golden Tickets no domínio, não desliga todo o NetNTLM/relay, nem serve de anti-ransomware por encriptação de disco.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que abusa principalmente um ataque DCShadow na replicação do Active Directory?",
+        "options": [
+          "Inunda cada controlador de domínio com TGTs Kerberos forjados para os direitos DCSync legítimos deixarem de ser necessários para ler hashes de passwords",
+          "Substitui o hash da password KRBTGT em disco com uma edição offline local e espera que a replicação normal propague Golden Tickets em todo o domínio",
+          "Coage uma estação a autenticar via MS-EFSRPC para o atacante fazer relay NTLM para LDAP e emitir um certificado rogue como esse computador",
+          "Regista um controlador de domínio rogue para os atacantes empurrarem alterações maliciosas a objetos pelos canais normais de replicação AD"
+        ],
+        "correct": 3,
+        "explanation": "O DCShadow faz uma máquina comportar-se como DC e injeta alterações controladas pelo atacante na replicação AD. Não é coerção PetitPotam, edição offline do KRBTGT nem inundação de TGTs forjados.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Porque adicionam por vezes os atacantes uma ACE de backdoor no objeto AdminSDHolder do Active Directory?",
+        "options": [
+          "Porque o AdminSDHolder guarda o hash KRBTGT em claro no disco, e qualquer ACE aí concede logo DCSync sem precisar de mais passos de replicação no domínio",
+          "Porque cada nova conta de computador herda as ACL do AdminSDHolder ao juntar-se ao domínio, transformando uma ACE em admin local em todas as estações",
+          "Porque o SDProp copia periodicamente a ACL do AdminSDHolder para grupos privilegiados protegidos, e uma ACE plantada pode voltar após limpeza desses grupos",
+          "Porque o AdminSDHolder desativa a pré-autenticação Kerberos de todos os Domain Admins, permitindo AS-REP roasting contra todas as contas privilegiadas de uma vez"
+        ],
+        "correct": 2,
+        "explanation": "O SDProp (Security Descriptor Propagator) reaplica periodicamente a ACL do AdminSDHolder a grupos protegidos (ex. Domain Admins). Uma ACE de backdoor aí pode restaurar direitos do atacante após limpeza. Não guarda KRBTGT em claro, não dá admin local nas estações nem desativa a pré-autenticação.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Como difere o overpass-the-hash (pass-the-key) do pass-the-hash clássico contra o Active Directory?",
+        "options": [
+          "Extrai só hashes LM da base SAM local e nunca toca no Kerberos, funcionando apenas em hosts que ainda aceitam NTLMv1 em partilhas SMB da rede",
+          "Usa um NT hash ou chave AES roubado para pedir um TGT Kerberos real e depois autentica com tickets em vez de apresentar hashes NTLM em cada salto",
+          "Reescreve a chave KRBTGT do domínio em cada controlador de domínio para os Golden Tickets existentes ficarem as únicas credenciais válidas na floresta",
+          "Desativa a assinatura SMB em toda a floresta com uma GPO maliciosa via SYSVOL, forçando cada desafio NTLM a aceitar respostas vazias dos atacantes"
+        ],
+        "correct": 1,
+        "explanation": "O overpass-the-hash / pass-the-key transforma uma chave/hash roubada num TGT Kerberos (ex. via mimikatz), e o acesso seguinte usa tickets em vez de PtH NTLM bruto em cada recurso. Não é só LM, não reescreve o KRBTGT nem desativa assinatura SMB por GPO.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Num ataque Golden SAML contra um ambiente federado como o AD FS, o que é que o atacante rouba e abusa principalmente?",
+        "options": [
+          "O hash da conta KRBTGT, que lhe permite assinar tickets Kerberos aceites diretamente por apps cloud sem nenhum servidor de federação pelo meio do caminho",
+          "A chave privada do certificado de assinatura de tokens, que lhe permite forjar asserções SAML para qualquer utilizador aceites pelos serviços cloud",
+          "A base de dados do servidor DHCP, que lhe permite distribuir um endereço de identity provider falso para cada browser entrar num portal falso",
+          "As credenciais do relay SMTP, que lhe permitem enviar emails de reposição de password que contornam o MFA em todos os serviços federados"
+        ],
+        "correct": 1,
+        "explanation": "Golden SAML é roubar a chave de assinatura de tokens do servidor de federação e forjar asserções SAML assinadas para qualquer utilizador, contornando muitas vezes o MFA no service provider. Não é abuso do KRBTGT, spoofing DHCP nem relay SMTP.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Um atacante pode escrever no atributo msDS-AllowedToActOnBehalfOfOtherIdentity de um objeto de computador alvo e controla uma conta de máquina. O que lhe permite o abuso de resource-based constrained delegation?",
+        "options": [
+          "Repor a password do KRBTGT em cada controlador de domínio para todos os tickets da floresta serem revogados e só o atacante conseguir pedir novos tickets",
+          "Desativar a pré-autenticação Kerberos no alvo para o hash da password ser pedido offline e quebrado como numa vítima de AS-REP roasting",
+          "Colocar um logon script no alvo via SYSVOL para o próximo domain admin que entrar executar o payload na sua própria sessão interativa",
+          "Usar S4U2Self e S4U2Proxy a partir da conta controlada para obter um service ticket para o alvo como utilizador privilegiado e aceder como ele"
+        ],
+        "correct": 3,
+        "explanation": "Com escrita no msDS-AllowedToActOnBehalfOfOtherIdentity, o atacante permite à sua conta de máquina delegar no alvo e usa S4U2Self/S4U2Proxy para se fazer passar por um utilizador privilegiado nesse host. Não repõe o KRBTGT, não desativa a pré-autenticação nem depende de scripts SYSVOL.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Numa rede Windows que não usa IPv6 ativamente, como é que um ataque do tipo mitm6 se coloca normalmente entre os clientes e a rede?",
+        "options": [
+          "Responde a pedidos DHCPv6 como servidor falso e dá aos clientes o atacante como servidor DNS, depois captura ou faz relay das autenticações",
+          "Inunda a tabela CAM do switch com MACs IPv4 falsos para cada porto virar hub e o atacante poder escutar todo o tráfego da VLAN",
+          "Faz brute-force ao controlador de domínio por SMBv1 até abrir uma null session e reescreve a tabela de rotas IPv6 em cada membro",
+          "Envia BPDUs STP falsas com prioridade 0 para o portátil do atacante ser root bridge e todo o tráfego IPv6 passar pela sua própria interface de rede"
+        ],
+        "correct": 0,
+        "explanation": "O Windows prefere IPv6 e pede DHCPv6 por omissão. O mitm6 responde como servidor DHCPv6 falso, define-se como DNS e depois captura ou faz relay de autenticações (por exemplo para LDAP). Mitiga-se bloqueando DHCPv6/RA falsos ou desativando IPv6 não usado e exigindo LDAP signing.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Numa LAN Windows em que os anfitriões ainda fazem fallback para LLMNR ou NBT-NS na resolução de nomes, como funciona tipicamente um ataque ao estilo Responder?",
+        "options": [
+          "Altera o share SYSVOL do controlador de domínio para cada GPO enviar um endereço DNS falso, o que teria de ocorrer antes de qualquer resposta LLMNR ser aceite",
+          "Desativa o Kerberos em todas as workstations através de chamadas WMI remotas, forçando toda a autenticação para Telnet em claro para as passwords aparecerem nas capturas",
+          "Inunda pacotes Offer DHCP com um gateway por omissão rogue até o pool de leases do DHCP real esvaziar e todos os clientes perderem a conectividade IP na LAN",
+          "Responde com LLMNR/NBT-NS falsos a nomes que falham no DNS e induz as vítimas a autenticarem-se ao atacante para capturar hashes ou fazer relay"
+        ],
+        "correct": 3,
+        "explanation": "Ferramentas ao estilo Responder envenenam LLMNR/NBT-NS respondendo quando o DNS falha e depois capturam ou fazem relay da autenticação. Não precisam de alterar DNS via GPO no SYSVOL, desativar Kerberos nem de DHCP starvation como mecanismo central.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "No abuso de AD CS, o que combina principalmente o cenário ESC8 para obter um certificado no contexto de uma máquina ou utilizador privilegiado?",
+        "options": [
+          "Roubar a chave privada da CA de uma fita de backup offline e forjar certificados para sempre sem voltar a contactar o serviço web de enrollment em momento algum",
+          "Fazer relay de autenticação NTLM para um endpoint HTTP de web enrollment da autoridade de certificação sem EPA, e pedir um certificado como a vítima",
+          "Ativar delegação Kerberos não constrangida em todos os templates publicados da CA para qualquer workstation do domínio emitir tickets de domain admin sem certificado",
+          "Substituir o certificado da CA raiz do domínio na Política de Grupo por um certificado TLS autoassinado para os browsers da intranet confiarem em sites de phishing"
+        ],
+        "correct": 1,
+        "explanation": "O ESC8 abusa de relay NTLM para o web enrollment HTTP do AD CS quando faltam proteções como EPA, permitindo pedir um certificado no contexto da vítima retransmitida. Não é sobretudo roubo offline da chave da CA, delegação não constrangida em templates nem troca da CA raiz via GPO.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Depois de comprometer uma estação de trabalho, um atacante quer decifrar as passwords de browser guardadas e as chaves Wi-Fi do utilizador protegidas pelo DPAPI do Windows. Qual é uma abordagem realista?",
+        "options": [
+          "Basta ler os blobs cifrados e abri-los no Bloco de Notas, porque o DPAPI guarda todos os segredos em texto limpo e o cabeçalho de cifra é só uma etiqueta cosmética no ficheiro",
+          "Obter a masterkey do utilizador (via a password/hash dele ou a chave de backup DPAPI do domínio) e usá-la para decifrar os blobs protegidos por DPAPI no contexto desse utilizador",
+          "Reiniciar a máquina em modo de segurança, que a Microsoft documenta como a única forma suportada de qualquer processo remover de forma transparente a proteção DPAPI das credenciais guardadas",
+          "Mudar a password do utilizador para um valor vazio, porque definir uma password vazia converte automaticamente cada blob DPAPI existente em disco numa cópia em texto limpo para todas as apps"
+        ],
+        "correct": 1,
+        "explanation": "Os blobs DPAPI são cifrados com uma masterkey derivada das credenciais do utilizador; com a password/hash do utilizador ou a chave de backup do domínio, um atacante recupera a masterkey e decifra os segredos guardados. Os blobs não estão em texto limpo, e o modo de segurança ou limpar a password não removem o DPAPI.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Com direitos de administrador num controlador de domínio, um atacante quer todos os hashes de password do domínio offline. Porquê usar uma Volume Shadow Copy (vssadmin/ntdsutil) para obter o NTDS.dit?",
+        "options": [
+          "Porque o NTDS.dit é guardado como um CSV não cifrado de passwords em texto limpo, por isso copiá-lo não precisa de shadow copy e qualquer utilizador o abre diretamente da pasta do sistema em uso",
+          "Porque uma shadow copy desativa em silêncio a replicação do Active Directory para todos os outros controladores de domínio, o que é exigido antes de o Windows permitir ler o ficheiro da base",
+          "Porque o NTDS.dit em uso está bloqueado pelo serviço de diretório, por isso uma shadow copy (ou ntdsutil IFM) dá uma cópia offline consistente da base e da hive SYSTEM para extrair os hashes",
+          "Porque o vssadmin envia automaticamente o NTDS.dit para a cloud da Microsoft e manda os hashes decifrados por email ao operador, que é a única forma documentada de ler o ficheiro remotamente"
+        ],
+        "correct": 2,
+        "explanation": "O NTDS.dit em uso está bloqueado pelo NTDS, por isso os atacantes usam uma Volume Shadow Copy ou ntdsutil IFM para obter uma cópia consistente da base mais a hive SYSTEM (boot key) e extrair hashes offline. O ficheiro é cifrado, não um CSV em texto limpo, e as shadow copies não desativam a replicação nem exfiltram para a cloud.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Um utilizador concluiu o MFA e tem uma sessão cloud ativa. Um atacante rouba o cookie de sessão do browser e reenvia-o. Porque é que isto pode contornar o MFA?",
+        "options": [
+          "Porque o cookie de sessão já representa uma sessão totalmente autenticada, por isso reenviar um cookie válido e não expirado deixa o atacante aproveitar a sessão sem refazer o MFA",
+          "Porque roubar qualquer cookie revela de imediato a password em texto limpo do utilizador e o código de uso único atual, que o browser guarda sempre juntos dentro de cada cookie de sessão por desenho",
+          "Porque os tokens de MFA só são verificados no primeiro login da vida do dispositivo, por isso nenhum serviço cloud volta a avaliar a autenticação depois de uma máquina ter entrado uma vez",
+          "Porque os cookies de sessão desativam o TLS em todo o domínio, permitindo ao atacante ler todo o tráfego futuro em texto limpo e assim saltar os pedidos de multifator por completo"
+        ],
+        "correct": 0,
+        "explanation": "Um cookie de sessão representa uma sessão já autenticada; reenviar um cookie válido e não expirado (pass-the-cookie) deixa o atacante reutilizar a sessão pós-MFA sem reautenticar. Os cookies não contêm a password em texto limpo nem o OTP, o MFA não é uma verificação única por vida, e os cookies não desativam o TLS.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Depois de obter execução de código como SYSTEM num controlador de domínio, um atacante quer que qualquer conta autentique com uma password mestra enquanto as passwords reais continuam a funcionar. Que técnica de persistência corresponde?",
+        "options": [
+          "Pass-the-hash só contra uma estação membro, porque reenviar um hash NTLM num portátil reescreve permanentemente todos os hashes de password do domínio guardados no Active Directory para o mesmo valor",
+          "Kerberoasting de uma única conta de serviço, porque partir um bilhete TGS instala automaticamente uma password de backdoor que o Active Directory aceita para todos os utilizadores da floresta para sempre",
+          "Skeleton Key: injectar um patch no LSASS do DC para o Kerberos (e muitas vezes o NTLM) aceitar uma password mestra escolhida para qualquer conta, enquanto as passwords legítimas continuam a funcionar",
+          "AS-REP roasting sem pré-autenticação, porque recolher hashes AS-REP de utilizadores com UF_DONT_REQUIRE_PREAUTH é exactamente como se escreve uma password mestra universal no NTDS.dit"
+        ],
+        "correct": 2,
+        "explanation": "O Skeleton Key faz patch ao LSASS num controlador de domínio para uma password mestra escolhida pelo atacante funcionar para qualquer conta a par das passwords reais. Pass-the-hash, Kerberoasting e AS-REP roasting não instalam esse backdoor de password dupla em todo o DC.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Um parque Windows reforçado aplica allowlisting de aplicações com WDAC (ou AppLocker). Porque é que binários living-off-the-land ainda podem enfraquecer esse controlo?",
+        "options": [
+          "Porque o WDAC e o AppLocker desactivam sempre todos os binários assinados pela Microsoft em disco, por isso os atacantes têm de trazer malware não assinado e o allowlisting não pode ser contornado por desenho sem excepções úteis",
+          "Porque ferramentas de sistema assinadas e de confiança (LOLBins) que continuam permitidas podem ser abusadas para descarregar, descodificar ou lançar código, mantendo o atacante dentro da allowlist ao executar payloads",
+          "Porque o allowlisting guarda cada hash bloqueado em texto limpo no registo, e ler essa lista remotamente remove a política de todas as máquinas juntas sem quaisquer direitos de administrador",
+          "Porque activar o WDAC confia automaticamente em qualquer script ou binário obtido por HTTP através do proxy corporativo, que é o caminho de excepção documentado para aplicações de negócio"
+        ],
+        "correct": 1,
+        "explanation": "O allowlisting permite binários conhecidos como bons; LOLBins que continuam de confiança ainda podem obter ou lançar código do atacante, por isso a defesa precisa de regras mais estritas e controlo de scripts. O WDAC não proíbe todos os binários Microsoft, não expõe uma lista de bypass em texto limpo nem confia automaticamente em downloads HTTP.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Durante uma migração de floresta, uma conta mantém um SID antigo de elevado privilégio no SID History. Porque é isso perigoso através de uma trust entre florestas, e o que o mitiga?",
+        "options": [
+          "O SID History é só um nome de apresentação da conta e nunca é avaliado nos tokens de acesso, por isso manter SIDs antigos não pode conceder direitos na floresta que confia em qualquer configuração conhecida hoje",
+          "O SID History obriga o Kerberos a desactivar AES e a cair para RC4 para sempre, que é o único impacto de segurança; o acesso a recursos no domínio que confia nunca é afectado por SIDs históricos de forma alguma",
+          "O SID History é removido automaticamente em todas as autenticações em qualquer tipo de trust, por isso injectar um SID de Domain Admins no SID History nunca eleva o acesso noutra floresta",
+          "Um SID privilegiado forjado ou retido no SID History pode ser acrescentado ao token do utilizador e conceder acesso na floresta que confia; o SID filtering (quarantine) na trust bloqueia esses SIDs estrangeiros"
+        ],
+        "correct": 3,
+        "explanation": "O SID History pode transportar SIDs de grupos para o token de acesso; através de uma trust entre florestas isso pode elevar privilégios a menos que o SID filtering (quarantine) remova SIDs inesperados. Não é cosmético, não é só um downgrade de cifra, e não é sempre removido em todas as trusts.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Numa avaliação AD encontra Groups.xml no SYSVOL que ainda contém o atributo cpassword de Group Policy Preferences antigas. Porque é isso ainda útil para um atacante hoje?",
+        "options": [
+          "cpassword é um HMAC da versão do GPO e só prova que o ficheiro foi editado; nunca desencripta para uma credencial reutilizável com qualquer chave AES documentada da Microsoft publicada historicamente para essa funcionalidade",
+          "A Microsoft publicou a chave AES estática usada para proteger passwords de GPP, por isso quem consegue ler o SYSVOL pode desencriptar o cpassword offline para credenciais em claro da conta definida",
+          "cpassword cifra só o SID do Administrator local e não pode guardar passwords de utilizadores de domínio, por isso o achado limita-se a saber se o LAPS alguma vez esteve activo nessa OU nos últimos anos",
+          "Os controladores de domínio modernos removem o cpassword em todas as replicações do SYSVOL, por isso um Groups.xml que ainda mostre o atributo é sempre um falso positivo de uma partilha de backup offline que os operadores esqueceram"
+        ],
+        "correct": 1,
+        "explanation": "As GPP guardavam passwords com uma chave AES bem conhecida (era MS14-025). Valores cpassword legíveis no SYSVOL desencriptam offline para texto claro. Não é um mero HMAC, não se limita a um SID local, e os DC não removem automaticamente todas as cópias antigas.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Na cadeia de ataque noPac (CVE-2021-42278 / CVE-2021-42287) contra Active Directory, que combinação permite a um utilizador de baixo privilégio escalar rumo a direitos de domain admin?",
+        "options": [
+          "Forçar todos os DC a desactivar permanentemente a validação do PAC escrevendo um único valor de registo em HKLM, que qualquer utilizador autenticado pode definir remotamente via WinRM sem outros privilégios nos controladores de domínio",
+          "Envenenar LLMNR para um DC autenticar no atacante e depois repetir essa resposta Net-NTLMv1 como Silver Ticket da conta krbtgt sem nunca tocar em contas de máquina no domínio Active Directory",
+          "Explorar direitos de instalação de drivers de impressora PrintNightmare numa workstation e usar esse token SYSTEM local para fazer dump do LSASS num DC vizinho sobre ligações SMB sem signing no mesmo site",
+          "Criar (ou renomear) uma conta de máquina cujo sAMAccountName corresponde ao nome de um DC sem o $ final, pedir um TGT e trocá-lo de forma que o PAC seja emitido como esse controlador de domínio"
+        ],
+        "correct": 3,
+        "explanation": "O noPac encadeia spoofing de sAMAccountName (parecer um DC sem $) com o tratamento Kerberos de TGT/TGS para o PAC ser emitido pelo DC impersonado. Não é um flip simples de HKLM por qualquer utilizador, não é só LLMNR para Silver Ticket, e não é PrintNightmare numa workstation.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Um atacante obtém a password do Directory Services Restore Mode (DSRM) de um controlador de domínio. Em que situação essa credencial se torna especialmente perigosa para persistência ou abuso de recuperação?",
+        "options": [
+          "Quando o login DSRM é permitido como conta local de emergência num DC online (registo DsrmAdminLogonBehavior), a password actua como segredo de Administrator local que sobrevive a muitas rotações de passwords do domínio",
+          "Quando a password DSRM é escrita na conta Administrator local de qualquer workstation membro, sincroniza automaticamente pelo SYSVOL e torna-se a password krbtgt do domínio no ciclo de replicação seguinte em todos os sites",
+          "Quando o Azure AD Connect está instalado, o segredo DSRM é espelhado no tenant cloud como app password de Global Admin que não se pode rodar com ferramentas on-premises em qualquer topologia híbrida suportada hoje",
+          "Quando o Credential Guard está activo, as credenciais DSRM são os únicos segredos ainda em claro no LSASS e por isso o alvo preferido de todas as ferramentas de dump nesse host durante uma captura forense offline"
+        ],
+        "correct": 0,
+        "explanation": "O DSRM é o equivalente local ao Administrator no SAM do DC. Com DsrmAdminLogonBehavior a permitir logon com o AD DS a correr, é um segredo de emergência duradouro independente da rotação normal de contas de domínio. Não se torna krbtgt, não vira Global Admin Azure sozinho, e o Credential Guard não inventa essa propriedade.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Um principal no grupo DNSAdmins pode carregar uma DLL pelo caminho de plugin de nível de servidor do DNS Server. Porque é que isso é frequentemente tratado como caminho de elevação de privilégios até ao Domain Controller?",
+        "options": [
+          "Porque a pertença a DNSAdmins concede sozinha direitos de Domain Admin em todos os níveis funcionais da floresta, por isso o carregamento da DLL é só um evento de log cosmético e não é preciso para ganhar privilégio no DC",
+          "Porque o caminho do plugin escreve uma tarefa agendada sob SYSTEM que corre uma vez no próximo reboot e depois remove o principal de DNSAdmins, sem deixar execução de código duradoura no servidor",
+          "Porque carregar qualquer DLL no dns.exe exige SeDebugPrivilege que só Enterprise Admins têm, por isso DNSAdmins não consegue forçar o carregamento sem uma segunda conta privilegiada",
+          "Porque o serviço Microsoft DNS Server corre muitas vezes como SYSTEM num DC, e uma DLL maliciosa de plugin de nível de servidor (por exemplo via serverlevelplugindll) executa código nesse contexto de alto privilégio"
+        ],
+        "correct": 3,
+        "explanation": "Em muitos DCs o serviço DNS Server corre como SYSTEM. Membros de DNSAdmins podem configurar uma DLL de plugin de nível de servidor que o dns.exe carrega, obtendo execução SYSTEM e um caminho para Domain Admin. DNSAdmins não é Domain Admin por si; o risco é o contexto privilegiado do serviço, não um truque de tarefa agendada nem um portão SeDebugPrivilege que bloqueie por completo o DNSAdmins.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Numa avaliação AD queres a password actual de uma group Managed Service Account (gMSA). Que atributo / caminho de API se usa tipicamente para obter o blob da password gerida pelos principals autorizados?",
+        "options": [
+          "Ler msDS-ManagedPassword (via LDAP com os principals correctos em PrincipalsAllowedToRetrieveManagedPassword) devolve um blob que o cliente usa para derivar a password actual da gMSA",
+          "Descarregar a password em claro do atributo userPassword no objecto da gMSA, que o Active Directory guarda sempre de forma reversível para todas as contas de serviço geridas por omissão",
+          "Chamar NetUserGetInfo nível 3 contra o sAMAccountName da gMSA a partir de qualquer utilizador do domínio, porque as passwords gMSA são de propósito legíveis por Authenticated Users para checagens Kerberos de SPN",
+          "Extrair a password do atributo UnicodePwd da gMSA por bind LDAP anónimo, o que o Windows permite especificamente para objectos msDS-GroupManagedServiceAccount"
+        ],
+        "correct": 0,
+        "explanation": "As passwords gMSA obtêm-se pelos principals autorizados através do atributo construído msDS-ManagedPassword (muitas vezes via LDAP), não de um userPassword em claro legível por todos, não via NetUserGetInfo para qualquer utilizador do domínio, nem por binds anónimos a UnicodePwd. Quem está em PrincipalsAllowedToRetrieveManagedPassword (ou direitos equivalentes) controla quem recebe o blob.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Porque é que os guias de hardening pedem LDAP signing e LDAP channel binding nos domain controllers?",
+        "options": [
+          "Substituem por completo o Kerberos por NTLM nos binds à directory, o que simplifica o tratamento de tickets e remove a necessidade de rodar o krbtgt após suspeita de compromisso de um domain controller",
+          "Obrigam todos os clientes LDAP a usar só LDAPS na porta 636, por isso o TCP/389 em claro fica firewallado e nenhum Simple bind sem assinatura chega à directory a partir da rede corporativa",
+          "O signing protege a integridade do tráfego LDAP e o channel binding liga a sessão LDAP ao canal TLS, reduzindo riscos de relay e adulteração nos binds à directory (incluindo cenários StartTLS / LDAPS)",
+          "Desactivam todos os Simple binds e as queries anónimas ao rootDSE, o que por si só impede a enumeração com BloodHound mesmo quando o avaliador já tem uma credencial válida de utilizador do domínio"
+        ],
+        "correct": 2,
+        "explanation": "O LDAP signing garante a integridade das mensagens LDAP; o channel binding associa a troca LDAP ao canal TLS por baixo, tornando um bind retransmitido (relay) mais difícil. Não substituem Kerberos por NTLM, não firewallam sozinhos a 389 e não param sozinhos o BloodHound quando já existe credencial de utilizador.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Uma conta de administrador é adicionada ao grupo 'Protected Users' do Active Directory. Que efeito tem essa pertença?",
+        "options": [
+          "A conta fica isenta das políticas de expiração de palavra-passe e de bloqueio, para que os administradores de domínio nunca fiquem trancados durante um incidente ou um ataque de força bruta",
+          "Ficam bloqueados para ela o NTLM, a pré-autenticação Kerberos com DES/RC4 e a delegação de credenciais, e os seus TGTs são curtos e não renováveis, o que limita o roubo e reuso",
+          "O hash da palavra-passe é removido dos controladores de domínio, por isso a conta só entra com smart card e a replicação nunca copia as suas credenciais para outros DCs",
+          "Todos os seus logons passam automaticamente por um jump server, por isso as sessões nunca chegam a postos de trabalho mesmo quando o utilizador escreve lá as credenciais"
+        ],
+        "correct": 1,
+        "explanation": "O Protected Users endurece as contas membro: sem NTLM, sem DES nem RC4 na pré-autenticação Kerberos, sem delegação (constrained ou unconstrained), sem credenciais em claro em cache via CredSSP/WDigest, e um TGT de 4 horas não renovável. Não tira o bloqueio, não apaga hashes dos DCs nem força logons por jump server. Destina-se a contas de utilizador, não a contas de serviço ou de computador.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Num ataque 'Timeroasting', um atacante sem autenticação envia pedidos de hora MS-SNTP a um controlador de domínio. O que ganha, e quando é que isso é perigoso?",
+        "options": [
+          "O DC devolve a palavra-passe do krbtgt em claro dentro da resposta NTP, por isso qualquer host que chegue à UDP 123 forja Golden Tickets sem quebrar nada offline",
+          "O DC acerta o relógio pelo desvio do pedido, por isso os tickets Kerberos do domínio expiram e os utilizadores caem para NTLM, que o atacante depois faz relay à vontade",
+          "As respostas são assinadas com um MAC derivado do hash NT da conta de computador pedida, que pode ser quebrado offline quando essas palavras-passe são fracas ou manuais",
+          "O DC revela na resposta a última hora de logon e o IP de origem de cada utilizador, dando ao atacante o mapa de sessões completo sem precisar de credenciais do domínio"
+        ],
+        "correct": 2,
+        "explanation": "No MS-SNTP, o DC assina as respostas de hora com uma chave derivada do hash NT da conta de computador cujo RID vem no pedido. Um atacante pode pedir muitos RIDs sem se autenticar e quebrar os resultados offline. Atinge sobretudo contas de computador com palavras-passe fracas ou definidas à mão (por exemplo contas pré-criadas ou 'pre-Windows 2000'); as palavras-passe de máquina normais, rodadas automaticamente, são praticamente inquebráveis. Não revela o krbtgt, não muda o relógio do DC nem lista logons.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "No modelo de administração por níveis (tiers) do Active Directory, qual é a regra central para as contas de administração Tier 0?",
+        "options": [
+          "Só fazem logon em activos Tier 0 (DCs, AD CS, servidores de sincronização de identidade), nunca em servidores ou postos de níveis abaixo, para não lhes roubarem as credenciais",
+          "Têm de entrar em todos os postos de trabalho uma vez por semana para verificar patches, porque só as contas Tier 0 podem ler os registos de segurança locais dos endpoints",
+          "São partilhadas por todo o help desk com uma só palavra-passe, para qualquer técnico repor utilizadores depressa e a auditoria ficar limitada a uma única identidade privilegiada",
+          "Podem entrar em qualquer lado desde que tenham MFA, porque a MFA impede que os hashes e os tickets Kerberos fiquem na memória dos hosts de níveis inferiores"
+        ],
+        "correct": 0,
+        "explanation": "O Tier 0 cobre o plano de controlo da identidade: controladores de domínio, AD CS, AD FS, servidores de sincronização e os seus administradores. Essas credenciais só se usam em sistemas Tier 0; entrar num servidor Tier 1 ou num posto Tier 2 deixa lá hashes ou tickets para um atacante roubar. O trabalho de rotina nos endpoints é para contas de nível inferior, contas de admin partilhadas destroem a responsabilização e a MFA no login não impede que as credenciais fiquem em memória.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Porque é que os guias de hardening do AD recomendam pôr o ms-DS-MachineAccountQuota a 0 no domínio?",
+        "options": [
+          "Porque uma quota acima de zero deixa todas as contas de computador fazer logon interativo nos DCs, o que as expõe ao roubo de credenciais por qualquer utilizador dessa máquina",
+          "Porque a quota por omissão de 10 faz cada controlador de domínio replicar os objetos de computador dez vezes, o que atrasa os logons e deixa injetar dados de replicação falsos",
+          "Por omissão qualquer utilizador autenticado pode juntar até 10 computadores, dando ao atacante uma conta de máquina que controla para ataques como abuso de RBCD ou noPac",
+          "Porque uma quota acima de zero desliga o Kerberos nos computadores novos e obriga-os a usar NTLM, que os atacantes podem reencaminhar para o DC para obterem direitos de admin"
+        ],
+        "correct": 2,
+        "explanation": "O ms-DS-MachineAccountQuota vem a 10 por omissão, por isso qualquer utilizador autenticado pode criar até 10 contas de computador. Uma conta de máquina controlada pelo atacante (com palavra-passe e SPN conhecidos) é um passo chave em ataques como abuso de resource-based constrained delegation, noPac e algumas cadeias de relay. Pô-lo a 0 e delegar a junção ao domínio num grupo próprio retira esse ponto de apoio. Não afeta o logon nos DCs, a replicação nem Kerberos versus NTLM.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Numa zona DNS integrada no AD, um atacante só com uma conta normal de utilizador do domínio cria um registo wildcard (*) que aponta para o seu IP. O que consegue com isso?",
+        "options": [
+          "Substitui os registos A de todos os controladores de domínio, por isso todos os pedidos de tickets Kerberos vão para o atacante, que pode emitir TGTs forjados para qualquer utilizador",
+          "Os nomes sem registo passam a resolver para o atacante, por isso hostnames mal escritos ou antigos mandam-lhe tráfego e autenticação NTLM, como no envenenamento LLMNR",
+          "Liga as transferências de zona DNS para o IP do atacante, que descarrega todos os registos da zona, mas nenhum tráfego dos clientes é desviado e nenhuma credencial é exposta",
+          "Obriga todos os clientes a deixar de validar DNSSEC, por isso o atacante passa a responder por qualquer domínio público da Internet e a roubar certificados TLS desses sites"
+        ],
+        "correct": 1,
+        "explanation": "Por omissão os utilizadores autenticados podem criar registos novos nas zonas DNS integradas no AD (ADIDNS). Um registo wildcard responde por qualquer nome que ainda não exista, por isso gralhas e hostnames desativados resolvem para o atacante, que pode capturar ou reencaminhar autenticação NTLM, como no envenenamento LLMNR/NBT-NS mas em todo o domínio. Os registos existentes, como os A dos DCs, não são substituídos, e transferências de zona e DNSSEC são definições à parte. Mitiga-se limitando a criação de registos e criando antecipadamente um registo wildcard.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "O que faz principalmente ativar a proteção LSA (RunAsPPL) num host Windows?",
+        "options": [
+          "Cifra a base de dados SAM com uma chave guardada no TPM, para que atacantes offline que copiem o disco não leiam os hashes locais sem a motherboard original",
+          "Bloqueia toda a autenticação NTLM do host e obriga a Kerberos em todas as ligações, para as ferramentas de pass-the-hash falharem mesmo com admin local",
+          "Move as credenciais de domínio em cache para uma máquina virtual isolada pelo hypervisor, para nem o código no kernel do host conseguir ler esses segredos",
+          "Corre o LSASS como Protected Process Light, para nem admins locais lerem a sua memória ou carregarem plugins não assinados, travando dumps de credenciais"
+        ],
+        "correct": 3,
+        "explanation": "A proteção LSA corre o lsass.exe como Protected Process Light (PPL). Processos não protegidos, mesmo com direitos de admin e SeDebugPrivilege, não o conseguem abrir para ler memória nem injetar código, e só carregam plugins LSA assinados, o que trava ferramentas como o sekurlsa do Mimikatz sem um driver de kernel. Isolar segredos numa VM protegida pelo hypervisor é o Credential Guard; não cifra a SAM com o TPM nem desliga o NTLM.",
+        "difficulty": "Médio"
       }
     ],
     "en": [
@@ -17465,6 +18533,426 @@
         ],
         "correct": 3,
         "explanation": "RASP hooks or instruments the application runtime (libraries, interpreters, agents) so detections use real code paths, data flows, and users—context a perimeter WAF usually lacks. A WAF still filters at HTTP/edge policy layer. RASP is not BGP/OSPF inspection, not a TLS-removal feature, and not merely an offline sandbox.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What is BloodHound mainly used for in Active Directory security assessments?",
+        "options": [
+          "It replaces every Domain Controller’s KRBTGT password twice per hour so Golden Tickets expire before an attacker can forge any TGT at all",
+          "It acts as an inline WAF that blocks Kerberoasting TGS requests whenever an SPN belongs to a user account with a weak password hash",
+          "It encrypts LSASS memory with a hypervisor enclave so tools like Mimikatz can never read NTLM hashes or Kerberos tickets from RAM",
+          "It maps AD users, groups, computers, and ACLs as a graph to reveal attack paths such as paths to Domain Admin"
+        ],
+        "correct": 3,
+        "explanation": "BloodHound (and collectors like SharpHound) enumerate AD relationships and ACLs into a graph so analysts/attackers can find privilege-escalation paths (e.g. to Domain Admin). It does not rotate KRBTGT on a schedule, act as a WAF for Kerberoasting, or encrypt LSASS by itself.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "In modern Active Directory abuse, what do Shadow Credentials mainly involve?",
+        "options": [
+          "Writing a malicious service principal name on krbtgt so every TGS request is forced into unconstrained delegation toward a rogue host",
+          "Writing attacker-controlled keys into an account’s msDS-KeyCredentialLink so the attacker can authenticate as that principal via PKINIT",
+          "Disabling SMB signing and LDAP channel binding domain-wide with one GPO so NTLM relay to Certificate Services becomes the only step left",
+          "Replacing the domain’s DANE TLSA records so LDAPS clients accept a forged certificate chain from any public Web PKI intermediate CA"
+        ],
+        "correct": 1,
+        "explanation": "Shadow Credentials abuse the msDS-KeyCredentialLink attribute (often via Key Trust / Windows Hello for Business style keys) so an attacker who can write that attribute adds their key material and then obtains tickets as the victim using PKINIT. It is not krbtgt SPN unconstrained-delegation setup, a GPO that only disables signing/binding, or DANE TLSA replacement.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "On a Microsoft Entra ID–joined Windows device, what is a Primary Refresh Token (PRT) mainly used for?",
+        "options": [
+          "It is a one-time BitLocker recovery password escrowed only to Active Directory so offline disks can never unlock without a Domain Admin",
+          "It is a local SAM hash of the enrolled user’s password that Windows replays to NTLM services when Kerberos is unavailable on that subnet",
+          "It is a device-bound SSO refresh token that lets the user silently obtain access tokens for Entra ID–protected cloud apps and resources",
+          "It is an Azure Storage shared access signature that grants anonymous write to every blob container in the tenant until the next password change"
+        ],
+        "correct": 2,
+        "explanation": "A PRT is issued to Entra-joined/hybrid-joined devices and enables single sign-on: the device can obtain access tokens for cloud resources without prompting the user repeatedly. Theft/abuse of PRT material is a living-off-cloud style concern. It is not BitLocker escrow, a SAM/NTLM hash replay blob, or a tenant-wide anonymous SAS.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "In cloud environments, why is SSRF that reaches the instance metadata service (IMDS, e.g. 169.254.169.254) especially dangerous?",
+        "options": [
+          "It only lets an attacker change the VM hostname in DNS so TLS certificate pinning fails on the next reboot of every load balancer",
+          "It permanently disables the hypervisor firewall so every guest can send spoofed BGP updates into the provider backbone without IAM checks",
+          "It can expose temporary credentials or tokens that the instance role uses, letting the attacker call cloud APIs as that role",
+          "It forces the guest OS to downgrade all outbound TLS to SSLv3 so packet captures on the VPC mirror can decrypt every HTTPS session"
+        ],
+        "correct": 2,
+        "explanation": "IMDS often serves IAM role credentials (or similar short-lived tokens) to the instance. SSRF that can query that link-local endpoint can steal those credentials and abuse cloud APIs. It is not merely a hostname/DNS trick, a BGP spoof enabler, or an SSLv3 downgrade of all egress TLS.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What does an OAuth device-code phishing attack mainly trick a victim into doing?",
+        "options": [
+          "Granting the attacker’s registered application consent by entering a short user code shown on a fake or attacker-controlled page",
+          "Installing a malicious browser extension that rewrites every Authorization header to a static Bearer token stolen from LSASS",
+          "Disabling MFA tenant-wide through a forged SAML assertion that the IdP accepts because the device code bypasses TLS entirely",
+          "Replacing the tenant’s JWKS endpoint with a rogue key so every previously issued refresh token validates forever without expiry"
+        ],
+        "correct": 1,
+        "explanation": "Device authorization flow shows a user code and a verification URI. Attackers phish victims into approving the attacker’s app (often via a convincing page), yielding tokens for the attacker. It is not an LSASS Bearer rewrite, an MFA-off SAML forge that skips TLS, or a permanent JWKS swap.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "On Windows, what does abusing SeImpersonatePrivilege (e.g. Potato-family techniques) mainly achieve for a local attacker?",
+        "options": [
+          "It rewrites the domain KRBTGT hash in AD so every TGT forged afterward is accepted as a Golden Ticket without needing DCSync rights",
+          "It disables Windows Defender Tamper Protection by swapping the ELAM driver signature database with an unsigned offline copy on disk",
+          "It forces every outbound SMB connection to fall back to NTLMv1 so a remote listener can capture crackable challenge-response pairs",
+          "It lets a service account (or similar) impersonate a more privileged token on the host, often escalating to SYSTEM locally"
+        ],
+        "correct": 3,
+        "explanation": "SeImpersonatePrivilege allows a process to impersonate clients that connect to it. Potato-style attacks coerce a privileged service to authenticate to the attacker’s pipe/listener and then impersonate that high-privilege token (often SYSTEM). It is not KRBTGT rewrite, ELAM/Tamper Protection bypass by itself, or a forced NTLMv1 downgrade of all SMB.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "What does a PetitPotam-style attack mainly coerce a Windows host (often a DC) into doing?",
+        "options": [
+          "Rewriting the domain KRBTGT hash on disk locally so every forged TGT validates afterward without needing any DCSync rights",
+          "Disabling Credential Guard by replacing the VBS launch policy with an unsigned offline registry hive copied from another host",
+          "Forcing every outbound SMB session down to NTLMv1 so a remote listener can capture and crack challenge-response pairs offline",
+          "Authenticating to an attacker-controlled listener (often via MS-EFSRPC), enabling NTLM relay or related follow-on abuse"
+        ],
+        "correct": 3,
+        "explanation": "PetitPotam abuses MS-EFSRPC (and similar) to coerce authentication toward an attacker. Combined with NTLM relay (or related techniques), that can lead to further domain compromise. It is not itself a KRBTGT rewrite, a Credential Guard bypass by hive swap, or a forced NTLMv1 downgrade of all SMB.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What did the Zerologon vulnerability (CVE-2020-1472) mainly allow an attacker on the network to do against an unpatched domain controller?",
+        "options": [
+          "Read every BitLocker recovery key from Azure AD by spoofing only the Netlogon secure channel with an empty AES-GCM authentication tag",
+          "Disable Windows Defender Tamper Protection remotely by setting the Netlogon machine account password literally to the string zerologon",
+          "Spoof Netlogon secure-channel auth (all-zero IV flaw) and reset the DC machine account password to an empty or known value",
+          "Forge Kerberos Golden Tickets without ever touching KRBTGT, because Netlogon replaced PAC validation on every subsequent TGS-REQ"
+        ],
+        "correct": 2,
+        "explanation": "Zerologon abused a Netlogon crypto flaw (all-zero IV) so an attacker could impersonate a client and set the DC's machine account password to a known/empty value, enabling further takeover. It is not BitLocker key theft via empty GCM tags alone, a Defender Tamper Protection toggle, or Golden Tickets without KRBTGT.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "What does enabling Windows Credential Guard mainly protect against on a supported host?",
+        "options": [
+          "All Kerberos Golden Ticket forgery across the domain, because every DC refuses any TGT that was not sealed inside a VBS enclave",
+          "Theft of derived credentials such as NTLM hashes or Kerberos tickets from LSASS by isolating those secrets with VBS",
+          "Every NTLM relay attack on the LAN, because Credential Guard completely disables NetNTLM for all outbound SMB connections",
+          "Ransomware encrypting local NTFS volumes, because VBS remaps disk clusters into an encrypted RAM-only scratch volume at boot"
+        ],
+        "correct": 1,
+        "explanation": "Credential Guard uses virtualization-based security to isolate secrets so malware running as admin cannot simply dump them from LSASS. It does not stop domain-wide Golden Tickets by itself, disable all NetNTLM/relay, or act as anti-ransomware disk encryption.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What does a DCShadow attack mainly abuse in Active Directory replication?",
+        "options": [
+          "It floods every domain controller with forged Kerberos TGTs so legitimate DCSync rights become unnecessary for reading password hashes",
+          "It replaces the KRBTGT password hash on disk through a local offline edit, then waits for normal replication to push Golden Tickets domain-wide",
+          "It coerces a workstation to authenticate via MS-EFSRPC so an attacker can relay NTLM to LDAP and enroll a rogue certificate as that computer",
+          "It registers a rogue domain controller so attackers can push malicious object changes through normal AD replication channels"
+        ],
+        "correct": 3,
+        "explanation": "DCShadow makes a machine act as a DC and injects attacker-controlled changes into AD replication. It is not PetitPotam coercion, offline KRBTGT editing, or flooding forged TGTs.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Why do attackers sometimes add a backdoor ACE on the AdminSDHolder object in Active Directory?",
+        "options": [
+          "Because AdminSDHolder stores the KRBTGT hash in cleartext on disk, so any ACE there immediately grants DCSync without needing further replication steps",
+          "Because every new computer account inherits AdminSDHolder ACLs at join time, turning a single ACE into domain-wide local admin on every workstation forever",
+          "Because SDProp periodically copies AdminSDHolder's ACL onto protected privileged groups, so a planted ACE can reappear after admins clean those groups",
+          "Because AdminSDHolder disables Kerberos pre-authentication for all Domain Admins, enabling AS-REP roasting against every privileged account at once overnight"
+        ],
+        "correct": 2,
+        "explanation": "SDProp (Security Descriptor Propagator) reapplies AdminSDHolder's ACL to protected groups (e.g. Domain Admins) on a schedule. A backdoor ACE there can restore attacker rights after cleanup. It does not store KRBTGT in cleartext, grant workstation local admin, or disable preauth.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "How does overpass-the-hash (pass-the-key) differ from classic pass-the-hash against Active Directory?",
+        "options": [
+          "It dumps only LM hashes from the local SAM database and never touches Kerberos, so it works exclusively against hosts that still accept NTLMv1 on SMB shares",
+          "It uses a stolen NT hash or AES key to request a real Kerberos TGT, then authenticates with tickets instead of presenting NTLM hashes on every hop",
+          "It rewrites the domain KRBTGT key on every domain controller so existing Golden Tickets become the only valid credentials left anywhere in the forest",
+          "It disables SMB signing forest-wide by pushing a malicious GPO through SYSVOL, forcing every NTLM challenge to accept empty responses from attackers"
+        ],
+        "correct": 1,
+        "explanation": "Overpass-the-hash / pass-the-key turns a stolen key/hash into a Kerberos TGT (e.g. via mimikatz), so later access uses tickets rather than raw NTLM PtH on each resource. It is not LM-only, KRBTGT rewrite, or GPO-based signing disable.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "In a Golden SAML attack against a federated environment such as AD FS, what does the attacker mainly steal and abuse?",
+        "options": [
+          "The KRBTGT account hash, which lets the attacker sign Kerberos tickets that cloud apps accept directly without any federation server in the path",
+          "The token-signing certificate private key, which lets the attacker forge SAML assertions for any user that trusting cloud services will accept",
+          "The DHCP server database, which lets the attacker hand out a rogue identity provider address so every browser logs in to a fake portal instead",
+          "The SMTP relay credentials, which let the attacker send password reset mails that automatically bypass MFA on every federated cloud service"
+        ],
+        "correct": 1,
+        "explanation": "Golden SAML means stealing the federation server token-signing key and forging signed SAML assertions for any user, often bypassing MFA at the service provider. It is not KRBTGT abuse, DHCP spoofing, or SMTP relay misuse.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "An attacker can write to a target computer object's msDS-AllowedToActOnBehalfOfOtherIdentity attribute and controls a machine account. What does resource-based constrained delegation abuse let them do?",
+        "options": [
+          "Reset the KRBTGT password on every domain controller so all existing tickets in the forest are revoked and only the attacker can request new ones",
+          "Disable Kerberos pre-authentication on the target so its password hash can be requested offline and cracked like an AS-REP roasting victim",
+          "Push a logon script to the target through SYSVOL so the next domain admin who signs in runs the payload with their own interactive session",
+          "Use S4U2Self and S4U2Proxy from the controlled account to get a service ticket to the target as a privileged user, then access it as that user"
+        ],
+        "correct": 3,
+        "explanation": "With write access to msDS-AllowedToActOnBehalfOfOtherIdentity, the attacker lets their machine account delegate to the target, then uses S4U2Self/S4U2Proxy to impersonate a privileged user to that host. It does not reset KRBTGT, disable pre-auth, or rely on SYSVOL scripts.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "On a Windows network that does not actively use IPv6, how does a mitm6-style attack usually get between clients and the network?",
+        "options": [
+          "It answers DHCPv6 requests as a rogue server and gives clients the attacker as DNS server, then captures or relays their authentication attempts",
+          "It floods the switch CAM table with fake IPv4 MAC addresses so every port turns into a hub and the attacker can sniff all unicast traffic in the VLAN",
+          "It brute-forces the domain controller over SMBv1 until a null session opens, then rewrites the IPv6 routing table on every domain member",
+          "It sends spoofed STP BPDUs with priority 0 so the attacker laptop becomes root bridge and all IPv6 traffic is forced through its interface"
+        ],
+        "correct": 0,
+        "explanation": "Windows prefers IPv6 and requests DHCPv6 by default. mitm6 answers as a rogue DHCPv6 server, sets itself as DNS, and then captures or relays authentication (for example to LDAP). Mitigate by blocking rogue DHCPv6/RA or disabling unused IPv6 and enforcing LDAP signing.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "On a Windows LAN where hosts still fall back to LLMNR or NBT-NS for name resolution, how does a Responder-style attack typically work?",
+        "options": [
+          "It patches the domain controller's SYSVOL share so every GPO pushes a fake DNS server address, which must happen before any LLMNR reply is accepted by clients",
+          "It disables Kerberos on every workstation through remote WMI calls, forcing all authentication onto cleartext Telnet so passwords appear directly in packet captures",
+          "It floods DHCP Offer packets with a rogue default gateway until the real DHCP server's lease pool is empty and every client loses all IP connectivity on the LAN",
+          "It answers forged LLMNR/NBT-NS replies for names that fail DNS, then tricks victims into authenticating to the attacker to capture hashes or relay"
+        ],
+        "correct": 3,
+        "explanation": "Responder-style tools poison LLMNR/NBT-NS by answering when DNS fails, then capture or relay the resulting authentication. They do not need SYSVOL GPO DNS changes, Kerberos disablement, or DHCP starvation as the core mechanism.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "In AD CS abuse, what does the ESC8 scenario mainly combine to obtain a certificate for a privileged machine or user context?",
+        "options": [
+          "Stealing the CA private key from an offline backup tape store and forging certificates forever without contacting the enrollment web service again at any time",
+          "Relaying NTLM authentication to a certificate authority web enrollment endpoint (HTTP) that does not require EPA, then requesting a cert as the victim",
+          "Enabling unconstrained Kerberos delegation on every published CA template so any domain workstation can mint domain-admin tickets with no certificate involved",
+          "Replacing the domain root CA certificate inside Group Policy with a self-signed TLS certificate so intranet browsers trust attacker phishing sites by default"
+        ],
+        "correct": 1,
+        "explanation": "ESC8 abuses NTLM relay to HTTP-based AD CS web enrollment when protections like EPA are missing, letting the attacker request a certificate in the relayed victim's context. It is not primarily offline CA-key theft, unconstrained delegation on templates, or swapping root CAs in GPO.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "After compromising a workstation, an attacker wants to decrypt a user's saved browser passwords and Wi-Fi keys protected by Windows DPAPI. What is a realistic approach?",
+        "options": [
+          "Simply read the encrypted blobs and open them in Notepad, because DPAPI stores all secrets as plaintext and the encryption header is only a cosmetic label on the file",
+          "Obtain the user's masterkey (via their password/hash or the domain DPAPI backup key) and use it to decrypt the DPAPI-protected blobs for that user context",
+          "Reboot the machine into safe mode, which Microsoft documents as the only supported way for any process to transparently remove DPAPI protection from stored credentials",
+          "Change the user's password to a blank value, because setting an empty password automatically converts every existing DPAPI blob on disk into a cleartext copy for all apps"
+        ],
+        "correct": 1,
+        "explanation": "DPAPI blobs are encrypted with a masterkey derived from the user's credentials; with the user's password/hash or the domain backup key, an attacker can recover the masterkey and decrypt saved secrets. The blobs are not plaintext, and safe mode or blanking the password does not strip DPAPI.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "With admin rights on a domain controller, an attacker wants every domain password hash offline. Why use a Volume Shadow Copy (vssadmin/ntdsutil) to grab NTDS.dit?",
+        "options": [
+          "Because NTDS.dit is stored as an unencrypted CSV of cleartext passwords, so copying it needs no shadow copy and any user can open it directly from the live system folder",
+          "Because a shadow copy silently disables Active Directory replication to every other domain controller, which is required before Windows will allow the database file to be read at all",
+          "Because the live NTDS.dit is locked by the directory service, so a shadow copy (or ntdsutil IFM) provides a consistent offline copy of the database and SYSTEM hive to extract hashes",
+          "Because vssadmin automatically uploads NTDS.dit to Microsoft's cloud and emails the decrypted hashes to the operator, which is the only documented way to read the file remotely"
+        ],
+        "correct": 2,
+        "explanation": "The live NTDS.dit is locked by NTDS, so attackers use a Volume Shadow Copy or ntdsutil IFM to obtain a consistent copy of the database plus the SYSTEM hive (for the boot key) and extract hashes offline. The file is encrypted, not a cleartext CSV, and shadow copies do not disable replication or exfiltrate to a cloud.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "A user completed MFA and has an active cloud session. An attacker steals the browser session cookie and replays it. Why can this bypass MFA?",
+        "options": [
+          "Because the session cookie already represents a fully authenticated session, so replaying a valid, unexpired cookie lets the attacker ride the session without redoing MFA",
+          "Because stealing any cookie instantly reveals the user's cleartext password and current one-time code, which the browser always stores together inside every session cookie by design",
+          "Because MFA tokens are only checked on the very first login of the device's lifetime, so no cloud service ever re-evaluates authentication once a machine has logged in once",
+          "Because session cookies disable TLS for the whole domain, allowing the attacker to read all future traffic in plaintext and therefore skip multi-factor prompts entirely"
+        ],
+        "correct": 0,
+        "explanation": "A session cookie represents an already-authenticated session; replaying a valid, unexpired cookie (pass-the-cookie) lets an attacker reuse the post-MFA session without re-authenticating. Cookies do not contain the cleartext password or OTP, MFA is not a one-time lifetime check, and cookies do not disable TLS.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "After gaining code execution as SYSTEM on a domain controller, an attacker wants any account to authenticate with one master password while real passwords still work. Which persistence technique matches?",
+        "options": [
+          "Pass-the-hash against a member workstation only, because replaying an NTLM hash on a laptop permanently rewrites every domain password hash stored in Active Directory to the same value",
+          "Kerberoasting a single service account, because cracking one TGS ticket automatically installs a backdoor password that Active Directory accepts for every user in the forest forever",
+          "Skeleton Key: inject a patch into LSASS on the DC so Kerberos (and often NTLM) accepts a chosen master password for any account, while legitimate passwords continue to work",
+          "AS-REP roasting without pre-authentication, because collecting AS-REP hashes from users with UF_DONT_REQUIRE_PREAUTH is exactly how a universal master password is written into NTDS.dit"
+        ],
+        "correct": 2,
+        "explanation": "Skeleton Key patches LSASS on a domain controller so a attacker-chosen master password works for any account alongside real passwords. Pass-the-hash, Kerberoasting, and AS-REP roasting do not install that DC-wide dual-password backdoor.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "A hardened Windows estate enforces application allowlisting with WDAC (or AppLocker). Why can living-off-the-land binaries still undermine that control?",
+        "options": [
+          "Because WDAC and AppLocker always disable every Microsoft-signed binary on disk, so attackers must bring unsigned malware and therefore allowlisting cannot be bypassed by design",
+          "Because trusted, signed system tools (LOLBins) that remain allowed can be abused to download, decode, or spawn code, so attackers stay inside the allowlist while still executing payloads",
+          "Because allowlisting stores every blocked hash in cleartext in the registry, and reading that list remotely removes the policy from every joined machine without any admin rights",
+          "Because enabling WDAC automatically trusts any script or binary fetched over HTTP from the corporate proxy, which is documented as the supported exception path for line-of-business apps in production"
+        ],
+        "correct": 1,
+        "explanation": "Allowlisting permits known-good binaries; LOLBins that stay trusted can still fetch or launch attacker code, so defence needs tighter rules and script controls. WDAC does not ban all Microsoft binaries, expose a cleartext bypass list, or auto-trust HTTP downloads.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "During a forest migration, an account keeps an old high-privilege SID in its SID History. Why is that dangerous across a forest trust, and what mitigates it?",
+        "options": [
+          "SID History is only a display name for the account and is never evaluated in access tokens, so keeping old SIDs cannot grant rights in the trusting forest under any configuration known today",
+          "SID History forces Kerberos to disable AES and fall back to RC4 forever, which is the only security impact; resource access in the trusting domain is never affected by historical SIDs at all",
+          "SID History is stripped automatically on every authentication across any trust type, so injecting a Domain Admins SID into SID History can never elevate access in another forest",
+          "A forged or retained privileged SID in SID History can be added to the user's token and grant access in the trusting forest; SID filtering (quarantine) on the trust blocks those foreign SIDs"
+        ],
+        "correct": 3,
+        "explanation": "SID History can carry group SIDs into the access token; across a forest trust that can elevate privileges unless SID filtering (quarantine) strips unexpected SIDs. It is not cosmetic, not only an encryption downgrade, and is not always stripped on every trust.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "During an AD assessment you find Groups.xml under SYSVOL that still contains a cpassword attribute from old Group Policy Preferences. Why is that still valuable to an attacker today?",
+        "options": [
+          "cpassword is an HMAC of the GPO version and only proves the file was edited; it never decrypts to a reusable credential under any documented Microsoft AES key published for that feature historically",
+          "Microsoft published the static AES key used to protect GPP passwords, so anyone who can read SYSVOL can decrypt cpassword offline into cleartext credentials for the account it was set for",
+          "cpassword encrypts only the local Administrator SID and cannot store domain user passwords, so the finding is limited to identifying whether LAPS was ever enabled on that OU in the past years",
+          "Modern domain controllers strip cpassword on every SYSVOL replication, so a Groups.xml that still shows the attribute is always a false positive from an offline backup share that operators forgot to delete"
+        ],
+        "correct": 1,
+        "explanation": "GPP stored passwords with a well-known AES key (MS14-025 era). Readable SYSVOL cpassword values decrypt offline to cleartext. It is not a mere HMAC, not limited to a local SID, and DCs do not auto-strip every legacy copy.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "In the noPac (CVE-2021-42278 / CVE-2021-42287) attack chain against Active Directory, what combination lets a low-privileged user escalate toward domain admin rights?",
+        "options": [
+          "Forcing every DC to disable PAC validation permanently by writing a single registry value under HKLM, which any authenticated user can set remotely through WinRM without other privileges on the domain controllers",
+          "Poisoning LLMNR so that a DC authenticates to the attacker, then replaying that Net-NTLMv1 response as a Silver Ticket for the krbtgt account without ever touching machine accounts in the domain",
+          "Exploiting PrintNightmare printer driver install rights on a workstation and then using that local SYSTEM token to dump LSASS on a neighboring DC over SMB signing-disabled links in the same site",
+          "Creating (or renaming) a machine account whose sAMAccountName matches a DC name without the trailing $, then requesting a TGT and exchanging it so the PAC is issued as that domain controller"
+        ],
+        "correct": 3,
+        "explanation": "noPac chains sAMAccountName spoofing (looking like a DC without $) with Kerberos TGT/TGS handling so the PAC is issued for the impersonated DC. It is not a simple HKLM flip by any user, not LLMNR-to-Silver-Ticket alone, and not PrintNightmare on a workstation.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "An attacker obtains the Directory Services Restore Mode (DSRM) password for a domain controller. In what situation does that credential become especially dangerous for persistence or recovery abuse?",
+        "options": [
+          "When DSRM login is allowed as a local break-glass account on a DC that is online (registry DsrmAdminLogonBehavior), the password acts like a local Administrator secret that survives many domain password rotations",
+          "When the DSRM password is typed into any member workstation's local Administrator account, it automatically syncs through SYSVOL and becomes the domain krbtgt password on the next replication cycle across every site",
+          "When Azure AD Connect is installed, the DSRM secret is mirrored into the cloud tenant as a Global Admin app password that cannot be rotated from on-premises tools under any supported hybrid topology today",
+          "When Credential Guard is enabled, DSRM credentials are the only secrets still stored in cleartext LSASS and therefore the preferred target for every dump tool on that host during an offline forensic capture"
+        ],
+        "correct": 0,
+        "explanation": "DSRM is the local SAM Administrator-equivalent on a DC. With DsrmAdminLogonBehavior allowing logon while AD DS is running, it is a durable break-glass secret independent of normal domain account rotation. It does not become krbtgt, does not auto-become Azure Global Admin, and Credential Guard is unrelated to inventing that property.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "A principal in the DNSAdmins group can load a DLL via the DNS Server's server-level plugin path. Why is that often treated as a privilege-escalation path to the Domain Controller?",
+        "options": [
+          "Because DNSAdmins membership alone grants Domain Admin rights in every forest functional level, so the DLL load is only a cosmetic log event and not needed for privilege gain on the DC across every site in the forest without needing any further ACL change on the DNS zone or service account.",
+          "Because the plugin path writes a scheduled task under SYSTEM that runs once at next reboot and then removes the principal from DNSAdmins, leaving no lasting code execution on the server after which the assessor loses the DLL path and must re-join DNSAdmins before another load attempt can succeed on that host.",
+          "Because loading any DLL into dns.exe requires the SeDebugPrivilege that only Enterprise Admins hold, so DNSAdmins cannot actually force the load without a second privileged account even when the server-level plugin registry value is already writable by that nested security group on the DC.",
+          "Because the Microsoft DNS Server service often runs as SYSTEM on a DC, so a malicious server-level plugin DLL (for example via serverlevelplugindll) executes code in that high-privilege context"
+        ],
+        "correct": 3,
+        "explanation": "On many DCs the DNS Server service runs as SYSTEM. Members of DNSAdmins can configure a server-level plugin DLL that dns.exe loads, yielding SYSTEM code execution and a path toward Domain Admin. DNSAdmins is not Domain Admin by itself; the risk is the privileged service context, not a scheduled-task trick or a SeDebugPrivilege gate that blocks DNSAdmins entirely.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "During an AD assessment you want the current password of a group Managed Service Account (gMSA). Which attribute / API path is typically used to retrieve the managed password blob for principals allowed to do so?",
+        "options": [
+          "Reading msDS-ManagedPassword (via LDAP with the right principals in PrincipalsAllowedToRetrieveManagedPassword) returns a blob the client can use to derive the current gMSA password",
+          "Dumping the clear-text password from the userPassword attribute on the gMSA object, which Active Directory always stores reversibly for every managed service account by default",
+          "Calling NetUserGetInfo level 3 against the gMSA sAMAccountName from any domain user, because gMSA passwords are intentionally readable by Authenticated Users for Kerberos SPN checks",
+          "Extracting the password from the gMSA's UnicodePwd attribute over anonymous LDAP bind, which Windows permits specifically for msDS-GroupManagedServiceAccount objects"
+        ],
+        "correct": 0,
+        "explanation": "gMSA passwords are retrieved by allowed principals through the constructed attribute msDS-ManagedPassword (often via LDAP), not from a world-readable clear-text userPassword, not via NetUserGetInfo for any domain user, and not over anonymous UnicodePwd binds. Membership in PrincipalsAllowedToRetrieveManagedPassword (or equivalent rights) controls who can get the blob.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "Why do hardening guides push LDAP signing and LDAP channel binding on domain controllers?",
+        "options": [
+          "They replace Kerberos entirely with NTLM for directory binds, which simplifies ticket handling and removes the need to rotate krbtgt after a suspected compromise of a domain controller and without renewing any service account passwords that bind to the directory over LDAP.",
+          "They force every LDAP client to use LDAPS on port 636 only, so plain TCP/389 is firewalled and no unsigned Simple binds can ever reach the directory from inside the corporate network without needing StartTLS, client certificates, or any per-site firewall exception list.",
+          "Signing protects LDAP traffic integrity and channel binding ties the LDAP session to the TLS channel, reducing relay and tampering risks against directory binds (including StartTLS / LDAPS scenarios)",
+          "They disable all Simple binds and anonymous rootDSE queries, which alone stops BloodHound enumeration even when a valid domain user credential is already available to the assessor and without locking down SMB signing or other lateral-movement paths on member servers."
+        ],
+        "correct": 2,
+        "explanation": "LDAP signing ensures integrity of LDAP messages; channel binding associates the LDAP exchange with the underlying TLS channel so a relayed bind is harder to pull off. They do not replace Kerberos with NTLM, do not by themselves firewall 389, and do not alone stop BloodHound when a user credential exists.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "An admin account is added to the Active Directory 'Protected Users' group. Which effect does that membership have?",
+        "options": [
+          "The account becomes exempt from password expiry and lockout policies so that domain administrators are never blocked out during an incident or a brute-force attack",
+          "NTLM, DES/RC4 Kerberos pre-auth and credential delegation are blocked for it, and its TGTs are short and non-renewable, which limits credential theft and reuse",
+          "Its password hash is removed from the domain controllers, so the account can only sign in with a smart card and replication never copies its credentials to other DCs",
+          "All of its logons are routed through a jump server automatically, so its sessions can never reach workstations even when the user types its credentials there"
+        ],
+        "correct": 1,
+        "explanation": "Protected Users hardens member accounts: no NTLM, no DES or RC4 in Kerberos pre-authentication, no unconstrained or constrained delegation, no cached plaintext credentials via CredSSP/WDigest, and a 4-hour non-renewable TGT. It does not remove lockout, delete hashes from DCs, or force jump-server logons. It is meant for user accounts, not service or computer accounts.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "In a 'Timeroasting' attack, an unauthenticated attacker sends MS-SNTP time requests to a domain controller. What do they gain, and when is it dangerous?",
+        "options": [
+          "The DC returns the clear-text krbtgt password inside the NTP reply, so any host that can reach UDP 123 can forge Golden Tickets without cracking anything offline",
+          "The DC shifts its clock by the offset in the request, so Kerberos tickets across the domain expire and users fall back to NTLM, which the attacker then relays freely",
+          "Replies are signed with a MAC derived from the requested computer account's NT hash, which can be cracked offline when machine passwords are weak or set by hand",
+          "The DC discloses every user's last logon time and source IP in the reply, giving the attacker a full session map without needing any domain credentials at all"
+        ],
+        "correct": 2,
+        "explanation": "With MS-SNTP, a DC signs time responses using a key derived from the NT hash of the computer account whose RID is in the request. An attacker can ask for many RIDs without authenticating and crack the results offline. It mainly hits computer accounts with weak or manually set passwords (for example pre-created or 'pre-Windows 2000' accounts); normal auto-rotated machine passwords are effectively uncrackable. It does not leak krbtgt, change the DC clock, or list user logons.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "In the Active Directory tiered administration model, what is the core rule for Tier 0 admin accounts?",
+        "options": [
+          "They log on only to Tier 0 assets (DCs, AD CS, identity sync servers), never to servers or workstations in lower tiers, so their credentials cannot be stolen there",
+          "They must log on to every workstation once a week to verify patches, because only Tier 0 accounts have rights to read the local security logs on user endpoints",
+          "They are shared by the whole help desk under one password, so that any technician can reset users quickly and audit trails stay limited to a single privileged identity",
+          "They are allowed anywhere as long as MFA is enabled, since MFA prevents their password hashes and Kerberos tickets from being left in the memory of lower-tier hosts"
+        ],
+        "correct": 0,
+        "explanation": "Tier 0 covers the identity control plane: domain controllers, AD CS, AD FS, sync servers and their admins. Those credentials must only be used on Tier 0 systems; logging on to a Tier 1 server or a Tier 2 workstation leaves hashes or tickets there for an attacker to steal. Routine endpoint work belongs to lower-tier accounts, shared admin accounts break accountability, and MFA at sign-in does not stop credentials being cached in memory.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Why do AD hardening guides recommend setting ms-DS-MachineAccountQuota to 0 on the domain?",
+        "options": [
+          "Because a non-zero quota lets every computer account log on interactively to domain controllers, which exposes them to credential theft by any user of that machine",
+          "Because the default quota of 10 makes each domain controller replicate computer objects ten times, which slows logons and lets attackers inject fake replication data",
+          "By default any authenticated user can join up to 10 computers, giving attackers a machine account they control for attacks such as RBCD abuse or noPac",
+          "Because a quota above zero disables Kerberos for new computers and forces them to use NTLM, which attackers can relay to the domain controller to obtain admin rights"
+        ],
+        "correct": 2,
+        "explanation": "ms-DS-MachineAccountQuota defaults to 10, so any authenticated user can create up to 10 computer accounts. An attacker-controlled machine account (with a known password and SPN) is a key step in attacks such as resource-based constrained delegation abuse, noPac and some relay chains. Setting it to 0 and delegating domain joins to a specific group removes that foothold. It does not affect DC logon rights, replication or Kerberos versus NTLM.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "In an AD-integrated DNS zone, an attacker with only a normal domain user account adds a wildcard (*) record pointing to their own IP. What does this achieve?",
+        "options": [
+          "It replaces the A records of all domain controllers, so every Kerberos ticket request is sent to the attacker, who can then issue forged TGTs to any user in the domain",
+          "Names that have no existing record now resolve to the attacker, so mistyped or stale hostnames send traffic and NTLM authentication to them, much like LLMNR poisoning",
+          "It turns on DNS zone transfers to the attacker's IP, letting them download every record in the zone, but no client traffic is redirected and no credentials are exposed",
+          "It forces all clients to drop DNSSEC validation, so the attacker can now answer for any public domain on the Internet and steal TLS certificates issued for those sites"
+        ],
+        "correct": 1,
+        "explanation": "By default authenticated users can create new records in AD-integrated DNS zones (ADIDNS). A wildcard record answers for any name that does not already exist, so typos and decommissioned hostnames resolve to the attacker, who can capture or relay NTLM authentication, similar to LLMNR/NBT-NS poisoning but domain-wide. Existing records such as DC A records are not overwritten, zone transfers and DNSSEC are separate settings. Mitigate by restricting record creation and pre-creating a wildcard record.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "What does enabling LSA protection (RunAsPPL) on a Windows host mainly do?",
+        "options": [
+          "It encrypts the SAM database with a key stored in the TPM, so offline attackers who copy the disk cannot read local password hashes without the original motherboard",
+          "It blocks all NTLM authentication from the host and forces Kerberos for every connection, so pass-the-hash tools fail even when the attacker already has local admin",
+          "It moves cached domain credentials into a virtual machine isolated by the hypervisor, so even code running in the kernel of the host cannot read those secrets",
+          "It runs LSASS as a Protected Process Light, so even local admins cannot open it to read memory or load unsigned plugins, blocking common credential dumping"
+        ],
+        "correct": 3,
+        "explanation": "LSA protection runs lsass.exe as a Protected Process Light (PPL). Non-protected processes, even with admin rights and SeDebugPrivilege, cannot open it to read memory or inject code, and only signed LSA plugins load, which blocks tools like Mimikatz's sekurlsa without a kernel driver. Isolating secrets in a hypervisor-protected VM is Credential Guard; it does not encrypt the SAM with the TPM or disable NTLM.",
         "difficulty": "Medium"
       }
     ]

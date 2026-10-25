@@ -2639,5 +2639,137 @@
     "correct": 3,
     "explanation": "Protected ports (PVLAN edge / switchport protected) impedem comunicação L2 direta entre portas marcadas protected na mesma VLAN; o tráfego para portas unprotected (muitas vezes o uplink/gateway) continua a funcionar. Não ativam MACsec a partir do ID da VLAN, não transformam cada acesso numa /30, nem desativam a política STP/PortFast.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "O que oferece principalmente um túnel GRE (Generic Routing Encapsulation) entre dois routers Cisco?",
+    "options": [
+      "Um link virtual ponto-a-ponto que pode encapsular vários protocolos Layer-3 (comummente IPv4/IPv6) através de uma rede de transporte IP",
+      "Cifra com MACsec em hardware de cada trama Ethernet no underlay para IP em claro nunca aparecer em qualquer hop intermédio da path",
+      "Substituição automática completa de OSPF por BGP nas duas pontas do túnel para só se trocarem rotas default no caminho overlay",
+      "Um serviço LAN Layer-2 transparente que faz flood de broadcasts entre todos os sites sem interfaces de túnel nem qualquer routing underlay"
+    ],
+    "correct": 0,
+    "explanation": "O GRE cria uma interface de túnel que encapsula pacotes passageiros (muitas vezes IP) dentro de GRE/IP para transporte num underlay. Não é MACsec por si, não força OSPF→BGP só com defaults, nem é um serviço LAN L2 multiponto estilo VPLS sem interfaces de túnel.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que permite principalmente o Proxy ARP a um router Cisco para hosts numa subnet ligada?",
+    "options": [
+      "Substituir o gateway por omissão de cada host por uma floating static para respostas ARP transportarem LSAs OSPF sem qualquer tabela de routing no host",
+      "Desativar por completo o ARP na LAN e forçar todas as tramas Ethernet a usarem só o MAC do router como único destino L2 para qualquer destino IP",
+      "Traduzir endereços privados internos para um pool público como o PAT, usando pedidos ARP em vez dos temporizadores clássicos de tradução NAT",
+      "Responder a ARP de IPs remotos com o seu próprio MAC para os hosts alcançarem alvos fora da subnet sem gateway por omissão"
+    ],
+    "correct": 3,
+    "explanation": "Com Proxy ARP ativo, o router pode responder a ARP de IPs que sabe encaminhar, colocando o seu MAC na resposta para o host enviar tramas ao router mesmo sem default gateway. Não é OSPF-sobre-ARP, nem desligar o ARP na LAN, nem PAT.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num segmento multiponto Frame Relay ou NBMA semelhante, o que evita principalmente o tipo de rede OSPF point-to-multipoint?",
+    "options": [
+      "Quaisquer pacotes hello OSPF de todo, porque os LSAs só inundam depois de subir uma sessão BGP no mesmo DLCI para cada spoke remoto",
+      "A eleição de Designated Router e o mapeamento manual de vizinhos típicos do OSPF broadcast ou nonbroadcast clássico",
+      "Alcance IP a cada router spoke da cloud, porque o OSPF substitui em silêncio cada PVC por um túnel GRE automático até ao hub",
+      "Um router-id OSPF estável no hub da topologia, porque cada PVC herda um process ID OSPF único das definições da map-class Frame Relay"
+    ],
+    "correct": 1,
+    "explanation": "O OSPF point-to-multipoint trata a cloud como adjacências ponto-a-ponto: sem eleição DR/BDR e tipicamente sem os neighbor manuais comuns em nonbroadcast. Continua a usar hellos e router-ids e não cria GRE por cada PVC.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que protege principalmente a funcionalidade BGP neighbor maximum-prefix num router?",
+    "options": [
+      "Receber qualquer AS-path com mais de quatro hops, que a funcionalidade trunca em silêncio antes de atualizar o Loc-RIB a partir desse peer",
+      "Anunciar números de AS privados para a Internet, porque o maximum-prefix remove sempre AS 64512-65535 de cada UPDATE de saída enviado",
+      "Aceitar mais prefixos de um peer do que o esperado, o que pode esgotar memória ou CPU se um peer mal configurado inundar rotas",
+      "Perder a sessão TCP em cada soft clear, porque o maximum-prefix força um hard reset sempre que se edita um route-map de entrada no router"
+    ],
+    "correct": 2,
+    "explanation": "O maximum-prefix limita quantos prefixos um vizinho pode anunciar; ultrapassar o limiar pode avisar ou derrubar a sessão, protegendo recursos de uma inundação. Não trunca AS-paths, não remove AS privados nem redefine soft clears.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Dois routers OSPF no mesmo segmento Ethernet ficam presos no estado EXSTART/EXCHANGE e nunca chegam a FULL. Os timers hello e dead coincidem. Qual é uma causa clássica?",
+    "options": [
+      "Um MTU de interface diferente, pelo que o router com MTU menor descarta os pacotes de descrição da base de dados maiores e a troca nunca termina",
+      "IDs de processo OSPF diferentes nos dois routers, porque o ID de processo tem de coincidir antes de os routers sequer trocarem pacotes hello entre si",
+      "Ambos os routers usam loopbacks para o router ID, o que faz o OSPF recusar eleger um DR e mantém cada vizinho preso no estado 2-WAY",
+      "O segmento usa máscara /30, que o OSPF trata só como ponto a ponto e bloqueia a troca da base de dados até se definir o tipo broadcast"
+    ],
+    "correct": 0,
+    "explanation": "Vizinhos presos em EXSTART/EXCHANGE apontam muitas vezes para MTU diferente: pacotes DBD maiores que o MTU do peer são descartados. Os IDs de processo são locais, router IDs em loopback são normais e uma máscara /30 não bloqueia a troca.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O HSRP está ativo em dois routers. A ligação uplink do router ativo para o core falha, mas a interface HSRP na LAN mantém-se up. Como é que o tracking de interface ajuda o failover?",
+    "options": [
+      "Apaga de imediato toda a configuração do grupo HSRP no router standby, para ficar só o ativo e os clientes usarem para sempre o mesmo MAC de gateway na LAN",
+      "Força ambos os routers para o estado listen até o STP reconvergir por completo, o que impede qualquer gateway de responder a ARP até o uplink voltar a ficar up",
+      "Pode decrementar a prioridade HSRP do router ativo quando o uplink monitorizado cai, para o standby com prioridade restante mais alta passar a ativo",
+      "Reescreve o gateway por omissão de cada anfitrião para o IP do standby via opções DHCP, tratado como a única forma suportada de o HSRP mover tráfego após falha de uplink"
+    ],
+    "correct": 2,
+    "explanation": "O tracking de interface no HSRP baixa (ou ajusta) a prioridade do router ativo quando um uplink monitorizado falha, permitindo que o standby faça preempt e assuma. Não apaga grupos, não congela ambos em listen nem reescreve gateways no DHCP.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um switch a funcionar como relay DHCP insere a Opção 82. O que é que a Opção 82 permite sobretudo ao servidor DHCP fazer?",
+    "options": [
+      "Identificar de que agente relay, porta e VLAN veio o pedido, para o servidor aplicar política ou atribuir endereços com base nessa informação de localização",
+      "Cifrar toda a troca DHCP ponto a ponto com TLS para que nenhum dispositivo no segmento de broadcast consiga alguma vez ler o endereço oferecido ou os parâmetros da lease",
+      "Dispensar por completo o comando ip helper-address, porque a Opção 82 sozinha encaminha o DISCOVER em broadcast por todos os saltos encaminhados sem relay configurado",
+      "Obrigar todos os clientes a renovar a lease a cada sessenta segundos independentemente do tempo de lease, que é o propósito documentado de inserir a opção de informação de relay"
+    ],
+    "correct": 0,
+    "explanation": "A Opção 82 (relay information) marca os pedidos com detalhes de circuit/remote-ID que identificam o relay, a porta e a VLAN, permitindo política por localização. Não cifra o DHCP, não substitui o ip helper-address nem encurta temporizadores de lease.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um anúncio de router IPv6 define a flag M a 1 e a flag O a 1. Que comportamento de endereçamento devem esperar os hosts nessa ligação?",
+    "options": [
+      "Os hosts devem ignorar todos os Router Advertisements e obter cada endereço e gateway predefinido só de um servidor DHCPv4, porque as flags M e O desactivam sempre o IPv6 no segmento",
+      "Os hosts geram só endereços link-local e nunca usam um prefixo global, porque M=1 e O=1 em conjunto proíbem o SLAAC e proíbem o DHCPv6 para qualquer opção de configuração",
+      "Os hosts usam só SLAAC para o endereço global e nunca contactam um servidor DHCPv6, porque pôr ambas as flags a 1 é o sinal documentado de que o DHCPv6 stateful está desactivado na LAN",
+      "Os hosts obtêm endereços IPv6 de um servidor DHCPv6 stateful (M=1) e podem também pedir outra configuração como DNS via DHCPv6 (O=1), em vez de depender do SLAAC para o endereço"
+    ],
+    "correct": 3,
+    "explanation": "Nas flags do RA, M=1 significa que os hosts devem usar DHCPv6 stateful para endereços, e O=1 significa que outra configuração (por exemplo DNS) está disponível via DHCPv6. As flags não forçam só IPv4, não proíbem endereços globais nem significam só SLAAC.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Depois de subir um túnel GRE (ou GRE over IPsec), o router regista que a interface de túnel oscila e as rotas da LAN remota desaparecem. O IP de destino do túnel é aprendido por uma rota que aponta para o próprio túnel. Qual é a causa clássica?",
+    "options": [
+      "Encaminhamento recursivo: o melhor caminho para o destino do túnel passa recursivamente pelo túnel, por isso a rota exterior de encapsulamento desaparece e o túnel cai até a rota do underlay voltar",
+      "O MTU da interface de origem do túnel está abaixo de 1500, por isso cada cabeçalho GRE é descartado pelo checksum do peer remoto e a tabela de encaminhamento limpa esses prefixos como inalcançáveis para sempre nessa VRF",
+      "O OSPF recusa formar adjacência sobre GRE a menos que o network type seja broadcast, e sem essa adjacência o IGP do underlay retira o destino do túnel de todos os VRF configurados neste equipamento",
+      "O NAT no underlay reescreve a origem do túnel para um endereço público, o que obriga o CEF a puntar todos os pacotes encapsulados e marca o túnel administrativamente down após três tentativas no mesmo peer"
+    ],
+    "correct": 0,
+    "explanation": "O encaminhamento recursivo ocorre quando a rota para o destino do túnel prefere o próprio túnel, removendo o caminho de underlay que o encapsulamento precisa. MTU, network type OSPF e NAT podem causar outras falhas, mas este padrão de flap é o clássico da recursão.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um portátil Windows mostra um endereço SLAAC estável e também um endereço IPv6 'temporário' que muda com o tempo. Para que serve o endereço temporário?",
+    "options": [
+      "As extensões de privacidade dão ao host interface IDs aleatórios e curtos para ligações de saída, para os sites remotos não o seguirem por um identificador IPv6 fixo",
+      "É um endereço de reserva que o DHCPv6 atribui só enquanto o router está em baixo e que é apagado logo que volta a chegar um Router Advertisement com a flag A",
+      "É o endereço link-local renumerado de hora a hora para os vizinhos repetirem a Duplicate Address Detection antes de encaminharem quaisquer tramas para o gateway por omissão",
+      "É um endereço de tradução NAT64 dado pelo ISP para o portátil chegar a sites só IPv4, enquanto o endereço estável fica limitado apenas a destinos IPv6"
+    ],
+    "correct": 0,
+    "explanation": "As extensões de privacidade IPv6 (RFC 8981, antes RFC 4941) criam endereços globais temporários com interface IDs aleatórios, usados nas ligações de saída e trocados ao longo do tempo, o que dificulta seguir o host. O endereço estável mantém-se para tráfego de entrada. Não são um recurso do DHCPv6, um link-local nem um endereço NAT64.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um switch de acesso Layer 2 tem 'interface vlan 10' com o IP 10.1.10.5/24 e 'no ip routing'. Consegues fazer SSH a partir da VLAN 10, mas não da sub-rede de administração 10.9.0.0/24. O que falta?",
+    "options": [
+      "Um trunk até à sub-rede de administração, porque os pacotes SSH para a SVI de um switch só são aceites se chegarem marcados com o mesmo VLAN ID em que a própria SVI está configurada",
+      "Uma rota estática 'ip route 0.0.0.0 0.0.0.0', porque um switch com o routing desligado precisa de uma entrada na tabela de rotas antes de o servidor SSH aceitar novas sessões",
+      "O comando 'ip ssh version 2', porque as sessões SSH versão 1 são descartadas em silêncio sempre que vêm de uma sub-rede diferente da que está ligada diretamente à SVI",
+      "O comando 'ip default-gateway' a apontar para o router da VLAN 10, porque com o IP routing desligado o switch usa-o para responder a hosts de outras sub-redes"
+    ],
+    "correct": 3,
+    "explanation": "Com 'no ip routing', um switch Layer 2 comporta-se como um host: chega à sub-rede da sua SVI, mas para responder a outras sub-redes precisa de 'ip default-gateway <IP do router>'. As rotas estáticas só são usadas com o IP routing ligado, não é preciso trunk para tráfego de gestão encaminhado, e a versão do SSH nada tem a ver com a sub-rede de origem.",
+    "difficulty": "Médio"
   }
 ]

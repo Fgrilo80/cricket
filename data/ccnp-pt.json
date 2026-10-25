@@ -2586,5 +2586,113 @@
     "correct": 0,
     "explanation": "O VPLS emula uma LAN partilhada (L2 VPN multiponto) sobre um backbone packet/MPLS com pseudowires/bridging VSI para o domínio Ethernet do cliente abranger vários sites. Não é IPsec por CE a substituir VRFs, não é truque de redistribuição OSPF Area 0 para IS-IS, nem uma L3VPN só-unicast que proíba flooding de ARP.",
     "difficulty": "Difícil"
+  },
+  {
+    "question": "Num fabric VXLAN EVPN, em que diferem principalmente as rotas EVPN Type-2 e Type-5?",
+    "options": [
+      "Type-2 só anuncia joins PIM multicast no underlay, enquanto Type-5 só transporta BPDUs de Spanning Tree entre VTEPs através do core",
+      "Type-2 anuncia alcançabilidade MAC/IP de hosts bridged; Type-5 anuncia prefixos IP para alcançabilidade inter-subnet / estilo L3VPN",
+      "Type-2 substitui por completo o BGP por flooding IS-IS Level-1 de tabelas MAC, enquanto Type-5 fica reservado a bindings LDP de cada VLAN",
+      "Type-2 e Type-5 são NLRIs idênticos; a única diferença é o VTEP usar OSPF ou EIGRP como IGP do underlay na fabric"
+    ],
+    "correct": 1,
+    "explanation": "EVPN Type-2 (MAC/IP Advertisement) transporta MAC do host e opcionalmente IP para adjacência L2/L2+L3 dentro de um VNI. Type-5 (IP Prefix Route) anuncia prefixos para routing entre subnets ou redes externas. Não são só PIM vs BPDUs, não substituem IS-IS/LDP, nem são NLRI idênticos.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Num desenho iBGP com route reflector, o que ajudam principalmente a evitar os atributos ORIGINATOR_ID e CLUSTER_LIST?",
+    "options": [
+      "Loops de routing e a reflexão do mesmo caminho de volta para o originador dentro da topologia do cluster de reflectors",
+      "Que todas as sessões eBGP aceitem valores MED só se cada peer também negociar primeiro a capability add-path",
+      "Que áreas OSPF formem virtual links quando um cliente RR corre também IS-IS Level-2 no mesmo endereço de loopback",
+      "Que o IPv6 ND instale entradas de vizinho só se o RR carimbar cada prefixo com um identificador Site-Local Scope único"
+    ],
+    "correct": 0,
+    "explanation": "ORIGINATOR_ID regista o router que originou a rota no cluster RR; CLUSTER_LIST acompanha os clusters que a refletiram. Juntos permitem detetar e descartar reflexões em loop. Não dizem respeito a MED/add-path em eBGP, virtual links OSPF/IS-IS, nem regras Site-Local do IPv6 ND.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Depois de alterar um route-map BGP de entrada, porque se prefere normalmente route refresh a neighbor soft-reconfiguration inbound?",
+    "options": [
+      "O route refresh pede ao peer para reenviar rotas sem guardar uma cópia extra completa do Adj-RIB-In, enquanto o soft-reconfiguration inbound mantém essa duplicata",
+      "O route refresh só funciona em eBGP e derruba sempre o TCP primeiro, enquanto o soft-reconfiguration inbound é obrigatório antes de qualquer sessão iBGP subir de todo",
+      "O soft-reconfiguration inbound nunca aplica uma nova política de entrada, pelo que só um hard clear instala no Loc-RIB os resultados do route-map atualizado para sempre",
+      "O route refresh desativa a seleção de best-path até o peer terminar de enviar, enquanto o soft-reconfiguration inbound congela o RIB-Out para nenhum UPDATE sair"
+    ],
+    "correct": 0,
+    "explanation": "O soft-reconfiguration inbound guarda uma cópia extra do Adj-RIB-In sem filtros (custo de memória). O route refresh (RFC 2918) pede ao peer para reenviar, aplicando a nova política sem essa cópia nem reset da sessão. O soft-reconfig aplica política na cópia guardada; não é magia só de eBGP.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Utilizadores atrás de um túnel GRE sobre IPsec abrem páginas web pequenas, mas downloads grandes ficam parados. Porque se aplica ip tcp adjust-mss (por exemplo 1360) na interface do túnel?",
+    "options": [
+      "Aumenta o MTU do túnel acima de 1500 bytes para os pacotes encapsulados levarem payloads Ethernet completos sem a ligação física os fragmentar",
+      "Desativa a verificação anti-replay do IPsec para fluxos TCP, porque segmentos grandes chegam fora de ordem e seriam descartados pelo peer recetor",
+      "Reescreve o MSS nos pacotes TCP SYN para os hosts enviarem segmentos que cabem após o overhead do túnel, evitando fragmentação e falhas de PMTUD",
+      "Diz ao router para limpar o bit DF em cada pacote que entra no túnel, para segmentos TCP grandes serem sempre fragmentados depois da cifragem"
+    ],
+    "correct": 2,
+    "explanation": "Os cabeçalhos do túnel reduzem o MTU útil. O ip tcp adjust-mss reescreve a opção MSS nos SYN TCP que passam, para os hosts enviarem segmentos menores que cabem, evitando fragmentação e PMTUD partido quando o ICMP é bloqueado. Não aumenta o MTU, não desativa anti-replay nem limpa o DF.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Quer que um router execute automaticamente comandos show e os guarde sempre que uma interface específica regista um evento de down, sem servidor externo. Que funcionalidade IOS encaixa melhor?",
+    "options": [
+      "Configurar strings de comunidade SNMP só de leitura, porque o SNMP read-only consegue executar comandos show no CLI localmente e escrever o resultado em flash a cada mudança de estado da interface",
+      "Ativar NetFlow na interface, já que os registos NetFlow são concebidos para correr comandos EXEC arbitrários e arquivar automaticamente o texto quando a ligação passa a down",
+      "Agendar um reload de poucos em poucos minutos, porque reiniciar é o mecanismo suportado para capturar o estado da interface e o arranque escreve diagnósticos em flash a cada boot",
+      "Um applet Embedded Event Manager (EEM) despoletado pelo padrão de syslog dessa interface a cair, a correr os comandos show e a guardar o resultado localmente"
+    ],
+    "correct": 3,
+    "explanation": "Os applets EEM observam eventos como padrões de syslog e executam ações de CLI no próprio equipamento, por isso uma mensagem de link-down pode despoletar comandos show guardados em flash sem sistema externo. SNMP, NetFlow e reloads periódicos não fazem automação local orientada a eventos.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Precisa que um router de bordo BGP anuncie um prefixo de backup a um peer só enquanto um prefixo primário estiver ausente da tabela BGP local. Que mecanismo Cisco encaixa?",
+    "options": [
+      "Advertisement condicional BGP com um advertise-map ligado a um non-exist-map (ou exist-map), para o prefixo de backup ser anunciado só quando o prefixo primário observado estiver ausente (ou presente)",
+      "Uma rota estática null0 para o prefixo de backup com distância administrativa 1, porque uma rota null sozinha faz o BGP retirar e reanunciar prefixos sempre que o caminho primário oscila",
+      "Activar soft-reconfiguration inbound do BGP em todos os vizinhos, porque a soft-reconfiguration guarda uma segunda RIB que alterna automaticamente os anúncios de saída quando os prefixos desaparecem do peer",
+      "Configurar maximum-prefix no peer com limiar de restart, porque atingir o limite de prefixos é a forma suportada de publicar uma rota de backup só durante falhas do primário"
+    ],
+    "correct": 0,
+    "explanation": "O advertisement condicional usa advertise-map com non-exist-map ou exist-map para um prefixo ser anunciado só quando outro prefixo observado está ausente ou presente. Rotas null0, soft-reconfiguration e maximum-prefix não implementam essa lógica condicional de saída.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Numa ligação point-to-point serial ou Ethernet configura ip unnumbered Loopback0 em ambas as extremidades. Qual é o principal efeito operacional, e que restrição continua a aplicar-se?",
+    "options": [
+      "Cada extremo toma um /32 único de um pool DHCP para a ligação se tornar automaticamente um /30 numerado, e o OSPF recusa anunciar esse endereço emprestado até também haver um IP secundário na mesma interface para a adjacência sem alterar o desenho do underlay",
+      "ip unnumbered desactiva o CEF nessa interface e força process switching em todos os pacotes, o que é obrigatório antes de se poderem impor labels MPLS em circuitos WAN point-to-point em qualquer backbone de produção actual com labels de serviço",
+      "Ambos os extremos partilham um espaço IPv4 emprestado de outra interface, eliminando a necessidade de uma subnet de trânsito dedicada, mas não se pode fazer ping ao remoto por um IP de ligação distinto porque nenhum existe no fio nesse desenho sem IP dedicado",
+      "Ambos os extremos emprestam o endereço IPv4 de uma interface referenciada (muitas vezes um loopback), por isso a ligação não precisa de subnet de trânsito dedicada; o forwarding continua, mas não se deve esperar um host on-link único por peer"
+    ],
+    "correct": 3,
+    "explanation": "ip unnumbered empresta o endereço de outra interface para a ligação point-to-point não precisar de subnet dedicada; o forwarding e os IGPs ainda podem usar a ligação, mas não há um IP de host único no fio por peer. Não inventa /30 via DHCP, não exige desactivar CEF, e a formulação correcta é o empréstimo da interface referenciada.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Num ABR OSPF configuras 'area 2 filter-list prefix BLOCK in'. Que rotas é que isto filtra de facto?",
+    "options": [
+      "LSAs Type-1 e Type-2 dentro da Área 2, por isso os routers internos dessa área perdem os prefixos negados da LSDB e da árvore SPF enquanto o ABR os mantém na tabela de rotas",
+      "LSAs externos Type-5 de qualquer ASBR, por isso as rotas redistribuídas que batem na lista desaparecem de todas as áreas, incluindo o backbone, sem mexer nos sumários inter-área",
+      "Só a tabela de rotas do próprio ABR: os LSAs continuam a ser inundados para a Área 2, mas o ABR deixa de instalar os prefixos negados e de encaminhar tráfego para eles",
+      "LSAs de sumário Type-3 que o ABR originaria para a Área 2, por isso os prefixos negados não são anunciados nessa área como rotas inter-área; os LSAs intra-área não mudam"
+    ],
+    "correct": 3,
+    "explanation": "O 'area X filter-list prefix NOME in|out' aplica-se num ABR e filtra LSAs de sumário Type-3: 'in' controla o que é anunciado para dentro da área X e 'out' o que sai dela. Não filtra LSAs Type-1/2 dentro de uma área nem externos Type-5, e muda o que é inundado, não só a tabela de rotas do ABR (isso seria um distribute-list in).",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "O R1 tem a Loopback0 10.50.0.1/24 no OSPF, mas os vizinhos aprendem 10.50.0.1/32 em vez de 10.50.0.0/24. Porquê, e como fazer o OSPF anunciar o /24?",
+    "options": [
+      "O OSPF trata a loopback como host stub e anuncia-a como /32; configurar 'ip ospf network point-to-point' na Loopback0 faz anunciar a máscara /24 configurada",
+      "Os vizinhos correm auto-summary, que encurta todas as loopbacks para rotas de host; 'no auto-summary' no processo OSPF de cada vizinho repõe o prefixo /24",
+      "A loopback está numa área stub, que só permite rotas de host; converter a área em área normal ou totally stubby passa a anunciar a máscara /24 configurada",
+      "Os hellos OSPF só levam o router ID, por isso as loopbacks aparecem sempre como /32; repetir 'network 10.50.0.0 0.0.0.255 area 0' força um LSA Type-3 com /24"
+    ],
+    "correct": 0,
+    "explanation": "Por omissão o OSPF usa o tipo de rede LOOPBACK nas interfaces loopback e anuncia-as como rotas de host /32, seja qual for a máscara configurada. Com 'ip ospf network point-to-point' na loopback o OSPF anuncia o prefixo real (/24). O OSPF não tem auto-summary, as áreas stub não limitam máscaras e repetir o comando network não muda nada.",
+    "difficulty": "Difícil"
   }
 ]

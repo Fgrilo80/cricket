@@ -2556,5 +2556,89 @@
     "correct": 1,
     "explanation": "Um loopback plug faz curto ou mapeia TX para RX no mesmo conector para LEDs de link/atividade e diagnósticos locais provarem o caminho de hardware da interface sem um peer remoto. Não é conversor de fibra, não substitui STP/Auto-MDIX e não é autenticador 802.1X.",
     "difficulty": "Fácil"
+  },
+  {
+    "question": "Para que serve principalmente um Time Domain Reflectometer (TDR) de cobre na resolução de problemas de cablagem Ethernet de par entrançado?",
+    "options": [
+      "Mede return loss ótico e reflectância de emendas em fibra monomodo da mesma forma que um OTDR completo faz em cada fio",
+      "Substitui wiremap e testes de comprimento ao certificar automaticamente margens de alien crosstalk Cat-6A face aos limites ISO",
+      "Envia um impulso nos pares de cobre e estima a distância a opens, shorts ou mudanças de impedância ao longo do cabo",
+      "Força Auto-MDIX e classificação PoE para cada jack RJ-45 negociar potência 802.3bt Type 4 antes de qualquer link de dados"
+    ],
+    "correct": 2,
+    "explanation": "Um TDR de cobre injeta um impulso e cronometra reflexões para localizar opens, shorts e falhas graves de impedância no par entrançado. O OTDR é o equivalente em fibra; o TDR não certifica sozinho alien crosstalk, não substitui por completo wiremap/comprimento nem negoceia PoE/Auto-MDIX.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Na cablagem de fibra dúplex, o que garante principalmente manter a polaridade A-to-B (Method A / cruzada)?",
+    "options": [
+      "Que ambos os fios transportem sempre comprimentos de onda idênticos para muxes CWDM ignorarem rótulos TX/RX em cada par de transceivers",
+      "Que cada transmissor chegue ao receptor do peer para a luz do TX num extremo atingir o RX no outro extremo",
+      "Que multimodo OM3 e monomodo OS2 partilhem a mesma cassete sem quaisquer regras de polaridade nos adaptadores",
+      "Que a classificação PoE continue a funcionar sobre fibra para o switch remoto alimentar o conversor SFP-para-RJ45"
+    ],
+    "correct": 1,
+    "explanation": "Em fibra dúplex o TX de um extremo tem de encontrar o RX do outro. A polaridade A-to-B (Method A) troca as posições dos fios para cada transmissor aterrar no receptor do peer. Não força comprimentos de onda iguais, não mistura OM3 com OS2 à vontade, nem entrega PoE sobre fibra.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "O que verifica principalmente um certificador de cabo que um simples toner/sonda tipicamente não consegue?",
+    "options": [
+      "Que a classificação PoE concluiu com sucesso para cada pino RJ-45 transportar DC independentemente da categoria do cabo ou do comprimento do patch",
+      "Que o switch remoto já aprendeu o endereço MAC do patch cord para o Spanning Tree saltar PortFast nesse porto de acesso para sempre",
+      "Que o permanent link cumpre os limites da categoria para comprimento, atenuação, NEXT e métricas elétricas relacionadas",
+      "Que o Auto-MDIX fica forçado a off em ambos os portos do switch para só cabos crossover passarem um teste simples de continuidade de ponta a ponta"
+    ],
+    "correct": 2,
+    "explanation": "Um certificador mede o desempenho elétrico face aos limites TIA/ISO da categoria (comprimento, perda, NEXT, etc.). Um toner/sonda serve sobretudo para localizar e identificar cabos; não certifica a categoria, não prova PoE em todos os pinos nem depende do estado STP/Auto-MDIX.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Num switch Cisco com definições por omissão, o que acontece a um MAC aprendido dinamicamente após cerca de 300 segundos sem tramas dessa origem?",
+    "options": [
+      "Passa a entrada sticky estática para o porto aceitar só esse MAC para sempre e entrar em err-disable se aparecer outro endereço de origem",
+      "Expira da tabela de endereços MAC, pelo que as tramas para esse MAC são inundadas na VLAN até o switch o reaprender pelo tráfego",
+      "É copiado para cada vizinho trunk via CDP para todos os switches continuarem a encaminhar para esse porto mesmo com o host desligado",
+      "Dispara uma alteração de topologia Spanning Tree que bloqueia o porto de acesso até o host enviar uma BPDU a provar que continua ligado"
+    ],
+    "correct": 1,
+    "explanation": "As entradas MAC dinâmicas expiram (300 s por omissão na Cisco). Quando desaparecem, o unicast desconhecido para esse MAC inunda até ser reaprendido. O aging não cria sticky, não usa CDP nem bloqueia portos via STP.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Um switch PoE já alimenta muitos telefones e access points. Liga-se uma câmara nova que não recebe energia, embora os dados funcionem noutros portos. Qual é a razão mais provável?",
+    "options": [
+      "A câmara precisa de um cabo cruzado, porque o PoE só passa quando os pares de transmissão e receção são trocados à mão numa ponta da ligação",
+      "O PoE só funciona em portos trunk, por isso o porto de acesso tem de passar a trunk 802.1Q antes de o switch enviar energia para a câmara",
+      "O switch desliga o PoE sempre que um porto funciona a 1 Gbps, por isso o porto da câmara tem de ser forçado a 100 Mbps full duplex primeiro",
+      "O switch esgotou o orçamento total de energia PoE, por isso recusa alimentar o novo dispositivo até reduzir a carga ou haver mais energia"
+    ],
+    "correct": 3,
+    "explanation": "Um switch PoE tem um orçamento total de energia partilhado por todos os portos. Quando se esgota, novos dispositivos alimentados ficam sem energia mesmo com o porto a funcionar. Cabos cruzados, modo trunk e velocidade não controlam a entrega de PoE.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Um armário só tem Ethernet em cobre até à secretária, mas o uplink para o core é fibra monomodo. Que dispositivo permite juntar esses meios sem substituir todo o percurso?",
+    "options": [
+      "Um cabo patch direto sozinho, porque o UTP de cobre e a fibra monomodo usam a mesma sinalização eléctrica e ligam-se um ao outro sem qualquer hardware de conversão em qualquer lado da ligação óptica",
+      "Um conversor de meios (ou um switch com portas de cobre e fibra compatíveis), que traduz entre o PHY Ethernet de cobre e o transmissor óptico para ambos os segmentos transportarem as mesmas tramas",
+      "Uma ferramenta de punch-down, porque terminar as fibras num jack RJ45 é a forma padrão de ligar uplinks ópticos a drops de cobre em armários de campus de rede local",
+      "Um gerador de tom e sonda, que injecta uma portadora óptica no par de cobre e prova que a fibra e o UTP já são electricamente compatíveis sem dispositivo intermédio adicional no armário"
+    ],
+    "correct": 1,
+    "explanation": "Um conversor de meios (ou um switch multi-meios) faz a ponte entre Ethernet em cobre e fibra óptica para as tramas atravessarem a mudança de meio. Um patch sozinho não junta PHY eléctrico e óptico; punch-down e toner servem para terminação e rastreio em cobre, não para conversão de meios.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Um técnico precisa que um desktop desligado na LAN arranque para as ferramentas de gestão remota o alcançarem. Que mecanismo envia normalmente uma trama Ethernet especial que a NIC trata como sinal de wake?",
+    "options": [
+      "Uma inundação de DHCP Discover de qualquer cliente na VLAN, porque os pacotes de renovação de lease trazem sempre uma flag de wake no BIOS que toda a NIC moderna tem de honrar antes de pedir endereço nesse segmento da rede",
+      "Um Hello OSPF com o bit reservado activo, que os switches de Camada 2 reinterpretam como comando de ligar para todos os hosts que partilham o mesmo process ID OSPF nesse segmento de broadcast do campus",
+      "Wake-on-LAN (WoL): um magic packet que contém o MAC do alvo repetido no payload, que uma NIC compatível reconhece e sinaliza à motherboard para ligar a alimentação",
+      "Um anúncio de vizinho CDP com um Power TLV, que obriga o orçamento PoE do switch a energizar o drop de cobre do PC mesmo quando o PC não tem circuitos PoE próprios do lado da motherboard"
+    ],
+    "correct": 2,
+    "explanation": "O Wake-on-LAN usa um magic packet cujo payload repete o MAC do alvo; uma NIC capaz activa um sinal de wake na placa. DHCP, Hellos OSPF e Power TLVs do CDP não ligam um PC desligado sobre Ethernet normal.",
+    "difficulty": "Fácil"
   }
 ]
