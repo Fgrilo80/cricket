@@ -2771,5 +2771,41 @@ window.QUIZ_BANK = [
     "correct": 3,
     "explanation": "With 'no ip routing', a Layer 2 switch behaves like a host: it can reach its own SVI subnet, but replies to other subnets need 'ip default-gateway <router IP>'. Static routes are only used when IP routing is enabled, trunks are not needed for routed management traffic, and the SSH version has nothing to do with the source subnet.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "How does WPA3-Personal mainly improve authentication compared with classic WPA2-Personal (PSK)?",
+    "options": [
+      "It replaces the PSK four-way handshake with SAE (Simultaneous Authentication of Equals), resisting offline dictionary attacks on a captured handshake",
+      "It encrypts every management frame with a pre-shared AES key burned into the AP firmware, so open probe requests and beacons can no longer be forged by nearby rogue clients at all",
+      "It forces every personal SSID to use 802.1X with a full RADIUS server backend, so a simple passphrase is no longer accepted on any WPA3-capable access point in the field",
+      "It shortens the GTK lifetime to one beacon interval and rotates the PMK on every association, which stops an attacker who already knows the PSK from joining the BSS later on"
+    ],
+    "correct": 0,
+    "explanation": "WPA3-Personal keeps a passphrase for users but runs SAE (Dragonfly) instead of the WPA2 PSK four-way handshake. SAE is a password-authenticated key exchange that does not hand an attacker a value they can crack offline from a captured handshake. It does not require RADIUS, burn AES keys into the AP, or rely on shorter GTK/PMK timers as the main improvement.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "On a router you configure 'ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/0' with no next-hop IP, and Gi0/0 is an Ethernet link to the ISP. Why is this usually discouraged?",
+    "options": [
+      "Because a static route that names only an interface gets administrative distance 255, so it is never installed while any dynamic route to 0.0.0.0/0 is present",
+      "Because IOS rejects exit-interface static routes on Ethernet and silently converts them into a floating route that is used only after the interface goes down",
+      "Because the router then load-balances per packet across every directly connected subnet on that interface, which reorders TCP segments and breaks sessions",
+      "Because the router treats every destination as directly connected and must ARP for each one, relying on proxy ARP upstream and filling the ARP table"
+    ],
+    "correct": 3,
+    "explanation": "With only an exit interface on a multi-access Ethernet link, the router considers each destination to be on that segment, so it sends an ARP request for every remote address. It works only if the upstream device answers with proxy ARP, and it fills the ARP cache. Using a next-hop IP (or interface plus next-hop) avoids this. The route is not given AD 255, is not refused by IOS, and does not cause per-packet balancing across subnets.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "'show ip interface brief' shows Serial0/0/0 as Status up, Protocol down on both routers of a point-to-point link. Cabling and clocking were checked. One router uses 'encapsulation ppp'. What is the most likely cause?",
+    "options": [
+      "The other router still uses the default HDLC encapsulation, so Layer 1 is up but the Layer 2 protocols do not match",
+      "The interface on the other router was shut down by an administrator, which always appears as up/down on the neighbour that still has the cable connected",
+      "The two routers have IP addresses in different subnets, and IOS keeps the line protocol down until both ends agree on the same network and mask",
+      "The serial link has no routing protocol running on it yet, so the line protocol stays down until OSPF or EIGRP forms an adjacency across the link"
+    ],
+    "correct": 0,
+    "explanation": "Status up means Layer 1 is fine (carrier detected); Protocol down means the data-link layer is not working. On serial links a classic cause is an encapsulation mismatch: Cisco's default is HDLC, so if only one side is set to PPP the keepalives are not understood and the line protocol stays down. A shutdown far end shows as down/down locally, an IP subnet mismatch does not affect the line protocol, and no routing protocol is needed for it to come up.",
+    "difficulty": "Medium"
   }
 ];

@@ -2640,5 +2640,41 @@
     "correct": 2,
     "explanation": "Wake-on-LAN uses a magic packet whose payload repeats the target MAC; a capable NIC asserts a wake signal to the board. DHCP, OSPF Hellos, and CDP Power TLVs do not boot a powered-off PC over standard Ethernet.",
     "difficulty": "Easy"
+  },
+  {
+    "question": "A technician needs to measure how much optical power is lost across a fibre patch cord and a short run of installed fibre. Which pair of tools is the usual choice for that insertion-loss test?",
+    "options": [
+      "An OTDR alone, because it always reports exact end-to-end loss in dB without needing a second device or a known launch cable at the far end",
+      "A copper TDR and a toner/probe pair, because optical loss is derived from the round-trip delay of a high-frequency electrical pulse on the same cable",
+      "A calibrated light source at one end and an optical power meter at the other, comparing the launched power to the received power in dBm",
+      "A fusion splicer in test mode, because it injects a reference wavelength and reads back the splice-machine estimate of whole-span attenuation"
+    ],
+    "correct": 2,
+    "explanation": "Insertion loss is measured by launching a known optical level with a light source and reading what arrives with a power meter; the difference in dB is the loss. An OTDR is better for locating breaks, splices and reflections along the span, not for a simple end-to-end loss figure. Copper TDR and fusion-splicer estimates do not replace a source/meter pair for certification of optical loss.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "A new Cat6 run passes a simple continuity/wire-map tester (pins 1-8 all connect end to end), yet the link is unstable at 1 Gbps. A cable certifier reports a split pair. What does that mean?",
+    "options": [
+      "One conductor is broken inside the jacket, so the cheap tester only saw continuity because it measures the shield drain wire instead of the copper pairs",
+      "Pin-to-pin continuity is correct, but wires from two different twisted pairs were used together for one signal, so the twist no longer cancels crosstalk (NEXT fails)",
+      "The cable is longer than 100 m, so the certifier splits the measured length into two segments and marks the second segment as out of specification for Gigabit",
+      "Both ends were terminated with different standards (T568A at one end, T568B at the other), which always produces a split pair and must be replaced by a crossover cable"
+    ],
+    "correct": 1,
+    "explanation": "A split pair is a wiring error where each pin reaches the right pin at the far end, so a basic wire-map or continuity check passes, but the wires carrying one signal come from two different twisted pairs. Without the twist working on that signal, near-end crosstalk (NEXT) rises and the link fails or flaps at higher speeds. Only a tester that measures crosstalk, such as a certifier, catches it. It is not a broken conductor, a length fault, or a T568A/B mismatch (that one shows as crossed pairs on a wire map).",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "A small office plugs its switch and NAS into a surge-protected power strip. During a short power cut both devices still switch off and the NAS has to rebuild its array. Which device would have kept them running?",
+    "options": [
+      "A higher-joule surge protector, because a bigger joule rating also stores energy that keeps devices powered for several minutes during a cut",
+      "A power conditioner with a line filter, because it smooths the incoming voltage and therefore removes short power cuts before they reach the devices",
+      "An uninterruptible power supply (UPS), whose battery keeps the devices powered and can signal the NAS to shut down cleanly",
+      "A PoE injector on each device, because Power over Ethernet takes its energy from the network cable instead of the mains supply in the office"
+    ],
+    "correct": 2,
+    "explanation": "A surge protector only diverts voltage spikes; it has no stored energy, so when the mains drops the devices lose power at once, whatever its joule rating. A UPS has a battery that carries the load through short cuts, and many models tell a NAS or server over USB or the network to shut down safely before the battery runs out. A power conditioner smooths noise and small sags but does not bridge an outage, and a PoE injector still draws its power from the mains.",
+    "difficulty": "Easy"
   }
 ]

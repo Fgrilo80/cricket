@@ -4,9 +4,9 @@
   "apkUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/download/v1.2.11/CiscoQuiz-1.2.11-arm64.apk",
   "windowsUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/download/v1.2.11/CiscoQuiz-1.2.11-Windows.zip",
   "releasesUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/tag/v1.2.11",
-  "bankTotal": 1574,
-  "bankClassic": 1348,
-  "bankCyber": 226,
+  "bankTotal": 1610,
+  "bankClassic": 1366,
+  "bankCyber": 244,
   "windowsNote": "Windows: https://github.com/Fgrilo80/cisco-quiz-app/releases/download/v1.2.11/CiscoQuiz-1.2.11-Windows.zip (ou flutter build windows --release na branch app, 1.2.11+13). O banco de perguntas atualiza-se na app sem reinstalar.",
-  "notes": "App 1.2.11+13. Bank refresh is SHA-256 of the remote body, so 1574 questions still update when the text changes. Android uses apkUrl; Windows uses windowsUrl. APK is release-signed (stable key); 1.2.11 is the last version that needs an uninstall."
+  "notes": "App 1.2.11+13. Bank refresh is SHA-256 of the remote body, so 1610 questions still update when the text changes. Android uses apkUrl; Windows uses windowsUrl. APK is release-signed (stable key); 1.2.11 is the last version that needs an uninstall."
 }
