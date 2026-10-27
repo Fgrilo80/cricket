@@ -2642,6 +2642,42 @@ window.QUIZ_BANK = {
         "correct": 2,
         "explanation": "O Wake-on-LAN usa um magic packet cujo payload repete o MAC do alvo; uma NIC capaz activa um sinal de wake na placa. DHCP, Hellos OSPF e Power TLVs do CDP não ligam um PC desligado sobre Ethernet normal.",
         "difficulty": "Fácil"
+      },
+      {
+        "question": "Um técnico precisa de medir quanta potência óptica se perde num cabo de fibra e num troço curto já instalado. Qual é o par de ferramentas habitual para esse teste de perda de inserção?",
+        "options": [
+          "Só um OTDR, porque reporta sempre a perda ponta-a-ponta exacta em dB sem precisar de um segundo aparelho nem de cabo de lançamento na outra ponta",
+          "Um TDR de cobre e um toner/probe, porque a perda óptica se calcula a partir do atraso de ida e volta de um impulso eléctrico de alta frequência no mesmo cabo",
+          "Uma fonte de luz calibrada numa ponta e um medidor de potência óptica na outra, comparando a potência lançada com a recebida em dBm",
+          "Uma máquina de fusão em modo de teste, porque injecta um comprimento de onda de referência e lê a estimativa de atenuação de todo o troço"
+        ],
+        "correct": 2,
+        "explanation": "A perda de inserção mede-se lançando um nível óptico conhecido com uma fonte de luz e lendo o que chega com um medidor de potência; a diferença em dB é a perda. O OTDR serve melhor para localizar cortes, emendas e reflexões ao longo do troço, não para um valor simples de perda ponta-a-ponta. TDR de cobre e estimativas da máquina de fusão não substituem o par fonte/medidor na certificação da perda óptica.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Um novo cabo Cat6 passa num testador simples de continuidade/wire map (os pinos 1-8 ligam todos ponta a ponta), mas a ligação fica instável a 1 Gbps. Um certificador de cabos indica split pair. O que significa?",
+        "options": [
+          "Um condutor está partido dentro da bainha, e o testador barato só viu continuidade porque mede o fio de dreno da blindagem em vez dos pares de cobre",
+          "A continuidade pino a pino está certa, mas o mesmo sinal usa fios de dois pares entrançados diferentes, e a torção já não anula a diafonia (NEXT falha)",
+          "O cabo tem mais de 100 m, por isso o certificador divide o comprimento medido em dois segmentos e marca o segundo como fora da especificação para Gigabit",
+          "As pontas foram cravadas com normas diferentes (T568A numa, T568B na outra), o que dá sempre split pair e obriga a trocar por um cabo cruzado"
+        ],
+        "correct": 1,
+        "explanation": "Um split pair é um erro de cablagem em que cada pino chega ao pino certo na outra ponta, por isso um teste básico de wire map ou continuidade passa, mas os fios que levam um sinal vêm de dois pares entrançados diferentes. Sem a torção a funcionar nesse sinal, a diafonia próxima (NEXT) sobe e a ligação falha ou oscila a velocidades mais altas. Só um testador que meça diafonia, como um certificador, o apanha. Não é um condutor partido, uma falha de comprimento nem uma mistura T568A/B (essa aparece como pares cruzados no wire map).",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Um pequeno escritório liga o switch e o NAS a uma extensão com proteção contra picos. Num corte de luz curto os dois equipamentos desligam-se na mesma e o NAS tem de reconstruir o array. Que equipamento os teria mantido a funcionar?",
+        "options": [
+          "Um protetor contra picos com mais joules, porque um valor de joules maior também guarda energia que mantém os equipamentos ligados durante vários minutos",
+          "Um condicionador de energia com filtro de linha, porque suaviza a tensão de entrada e por isso elimina os cortes de luz curtos antes de chegarem aos equipamentos",
+          "Uma UPS (fonte de alimentação ininterrupta), cuja bateria mantém os equipamentos ligados e pode avisar o NAS para desligar em segurança",
+          "Um injetor PoE em cada equipamento, porque o Power over Ethernet tira a energia do cabo de rede em vez da rede elétrica do escritório"
+        ],
+        "correct": 2,
+        "explanation": "Um protetor contra picos só desvia sobretensões; não guarda energia, por isso quando a rede elétrica falha os equipamentos desligam-se logo, seja qual for o valor de joules. Uma UPS tem uma bateria que aguenta a carga em cortes curtos, e muitos modelos avisam o NAS ou servidor por USB ou pela rede para desligar em segurança antes de a bateria acabar. Um condicionador de energia suaviza ruído e pequenas quedas mas não cobre um corte, e um injetor PoE continua a tirar energia da rede elétrica.",
+        "difficulty": "Fácil"
       }
     ],
     "en": [
@@ -5285,6 +5321,42 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Wake-on-LAN uses a magic packet whose payload repeats the target MAC; a capable NIC asserts a wake signal to the board. DHCP, OSPF Hellos, and CDP Power TLVs do not boot a powered-off PC over standard Ethernet.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "A technician needs to measure how much optical power is lost across a fibre patch cord and a short run of installed fibre. Which pair of tools is the usual choice for that insertion-loss test?",
+        "options": [
+          "An OTDR alone, because it always reports exact end-to-end loss in dB without needing a second device or a known launch cable at the far end",
+          "A copper TDR and a toner/probe pair, because optical loss is derived from the round-trip delay of a high-frequency electrical pulse on the same cable",
+          "A calibrated light source at one end and an optical power meter at the other, comparing the launched power to the received power in dBm",
+          "A fusion splicer in test mode, because it injects a reference wavelength and reads back the splice-machine estimate of whole-span attenuation"
+        ],
+        "correct": 2,
+        "explanation": "Insertion loss is measured by launching a known optical level with a light source and reading what arrives with a power meter; the difference in dB is the loss. An OTDR is better for locating breaks, splices and reflections along the span, not for a simple end-to-end loss figure. Copper TDR and fusion-splicer estimates do not replace a source/meter pair for certification of optical loss.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "A new Cat6 run passes a simple continuity/wire-map tester (pins 1-8 all connect end to end), yet the link is unstable at 1 Gbps. A cable certifier reports a split pair. What does that mean?",
+        "options": [
+          "One conductor is broken inside the jacket, so the cheap tester only saw continuity because it measures the shield drain wire instead of the copper pairs",
+          "Pin-to-pin continuity is correct, but wires from two different twisted pairs were used together for one signal, so the twist no longer cancels crosstalk (NEXT fails)",
+          "The cable is longer than 100 m, so the certifier splits the measured length into two segments and marks the second segment as out of specification for Gigabit",
+          "Both ends were terminated with different standards (T568A at one end, T568B at the other), which always produces a split pair and must be replaced by a crossover cable"
+        ],
+        "correct": 1,
+        "explanation": "A split pair is a wiring error where each pin reaches the right pin at the far end, so a basic wire-map or continuity check passes, but the wires carrying one signal come from two different twisted pairs. Without the twist working on that signal, near-end crosstalk (NEXT) rises and the link fails or flaps at higher speeds. Only a tester that measures crosstalk, such as a certifier, catches it. It is not a broken conductor, a length fault, or a T568A/B mismatch (that one shows as crossed pairs on a wire map).",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "A small office plugs its switch and NAS into a surge-protected power strip. During a short power cut both devices still switch off and the NAS has to rebuild its array. Which device would have kept them running?",
+        "options": [
+          "A higher-joule surge protector, because a bigger joule rating also stores energy that keeps devices powered for several minutes during a cut",
+          "A power conditioner with a line filter, because it smooths the incoming voltage and therefore removes short power cuts before they reach the devices",
+          "An uninterruptible power supply (UPS), whose battery keeps the devices powered and can signal the NAS to shut down cleanly",
+          "A PoE injector on each device, because Power over Ethernet takes its energy from the network cable instead of the mains supply in the office"
+        ],
+        "correct": 2,
+        "explanation": "A surge protector only diverts voltage spikes; it has no stored energy, so when the mains drops the devices lose power at once, whatever its joule rating. A UPS has a battery that carries the load through short cuts, and many models tell a NAS or server over USB or the network to shut down safely before the battery runs out. A power conditioner smooths noise and small sags but does not bridge an outage, and a PoE injector still draws its power from the mains.",
         "difficulty": "Easy"
       }
     ]
@@ -8063,6 +8135,42 @@ window.QUIZ_BANK = {
         "correct": 3,
         "explanation": "Com 'no ip routing', um switch Layer 2 comporta-se como um host: chega à sub-rede da sua SVI, mas para responder a outras sub-redes precisa de 'ip default-gateway <IP do router>'. As rotas estáticas só são usadas com o IP routing ligado, não é preciso trunk para tráfego de gestão encaminhado, e a versão do SSH nada tem a ver com a sub-rede de origem.",
         "difficulty": "Médio"
+      },
+      {
+        "question": "Como é que o WPA3-Personal melhora principalmente a autenticação face ao WPA2-Personal clássico (PSK)?",
+        "options": [
+          "Substitui o handshake de quatro mensagens do PSK pelo SAE (Simultaneous Authentication of Equals), que resiste a ataques de dicionário offline mesmo com o handshake capturado",
+          "Encripta todas as tramas de gestão com uma chave AES pré-partilhada gravada no firmware do AP, para que pedidos probe e beacons abertos já não possam ser forjados por clientes rogue próximos",
+          "Obriga todos os SSID pessoais a usar 802.1X com um servidor RADIUS completo, por isso uma passphrase simples deixa de ser aceite em qualquer access point com WPA3 no terreno",
+          "Encurta a vida do GTK para um intervalo de beacon e roda o PMK em cada associação, o que impede um atacante que já saiba o PSK de se juntar mais tarde ao BSS sem nova credencial"
+        ],
+        "correct": 0,
+        "explanation": "O WPA3-Personal mantém uma passphrase para os utilizadores, mas corre SAE (Dragonfly) em vez do handshake PSK de quatro mensagens do WPA2. O SAE é uma troca de chaves autenticada por palavra-passe que não entrega ao atacante um valor que possa partir offline a partir de um handshake capturado. Não exige RADIUS, não grava chaves AES no AP nem depende de temporizadores GTK/PMK mais curtos como melhoria principal.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Num router configuras 'ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/0' sem IP de next hop, e a Gi0/0 é uma ligação Ethernet ao ISP. Porque é que isto costuma ser desaconselhado?",
+        "options": [
+          "Porque uma rota estática que só indica a interface fica com distância administrativa 255, por isso nunca é instalada enquanto houver uma rota dinâmica para 0.0.0.0/0",
+          "Porque o IOS recusa rotas estáticas com interface de saída em Ethernet e converte-as em silêncio numa rota flutuante usada só quando a interface cai",
+          "Porque o router passa a balancear por pacote entre todas as sub-redes ligadas nessa interface, o que reordena segmentos TCP e parte as sessões",
+          "Porque o router trata cada destino como directamente ligado e tem de fazer ARP para cada um, dependendo de proxy ARP a montante e enchendo a tabela ARP"
+        ],
+        "correct": 3,
+        "explanation": "Só com a interface de saída numa ligação Ethernet multi-acesso, o router considera que cada destino está nesse segmento e envia um pedido ARP para cada endereço remoto. Só funciona se o equipamento a montante responder com proxy ARP, e enche a cache ARP. Usar um IP de next hop (ou interface mais next hop) evita isto. A rota não fica com AD 255, não é recusada pelo IOS e não provoca balanceamento por pacote entre sub-redes.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O 'show ip interface brief' mostra a Serial0/0/0 com Status up e Protocol down nos dois routers de uma ligação ponto a ponto. A cablagem e o clock já foram verificados. Um dos routers usa 'encapsulation ppp'. Qual é a causa mais provável?",
+        "options": [
+          "O outro router continua com o encapsulamento HDLC por omissão, por isso a camada 1 está up mas os protocolos da camada 2 não coincidem",
+          "A interface do outro router foi desligada por um administrador, o que aparece sempre como up/down no vizinho que ainda tem o cabo ligado",
+          "Os dois routers têm endereços IP em sub-redes diferentes, e o IOS mantém o line protocol em baixo até as duas pontas usarem a mesma rede e máscara",
+          "A ligação série ainda não tem nenhum protocolo de encaminhamento, por isso o line protocol fica em baixo até o OSPF ou o EIGRP formar adjacência"
+        ],
+        "correct": 0,
+        "explanation": "Status up quer dizer que a camada 1 está bem (há portadora); Protocol down quer dizer que a camada de ligação de dados não está a funcionar. Em ligações série uma causa clássica é encapsulamento diferente: o padrão da Cisco é HDLC, por isso se só um lado estiver em PPP os keepalives não são entendidos e o line protocol fica em baixo. Uma ponta em shutdown aparece localmente como down/down, sub-redes IP diferentes não afetam o line protocol e não é preciso protocolo de encaminhamento para ele subir.",
+        "difficulty": "Médio"
       }
     ],
     "en": [
@@ -10838,6 +10946,42 @@ window.QUIZ_BANK = {
         "correct": 3,
         "explanation": "With 'no ip routing', a Layer 2 switch behaves like a host: it can reach its own SVI subnet, but replies to other subnets need 'ip default-gateway <router IP>'. Static routes are only used when IP routing is enabled, trunks are not needed for routed management traffic, and the SSH version has nothing to do with the source subnet.",
         "difficulty": "Medium"
+      },
+      {
+        "question": "How does WPA3-Personal mainly improve authentication compared with classic WPA2-Personal (PSK)?",
+        "options": [
+          "It replaces the PSK four-way handshake with SAE (Simultaneous Authentication of Equals), resisting offline dictionary attacks on a captured handshake",
+          "It encrypts every management frame with a pre-shared AES key burned into the AP firmware, so open probe requests and beacons can no longer be forged by nearby rogue clients at all",
+          "It forces every personal SSID to use 802.1X with a full RADIUS server backend, so a simple passphrase is no longer accepted on any WPA3-capable access point in the field",
+          "It shortens the GTK lifetime to one beacon interval and rotates the PMK on every association, which stops an attacker who already knows the PSK from joining the BSS later on"
+        ],
+        "correct": 0,
+        "explanation": "WPA3-Personal keeps a passphrase for users but runs SAE (Dragonfly) instead of the WPA2 PSK four-way handshake. SAE is a password-authenticated key exchange that does not hand an attacker a value they can crack offline from a captured handshake. It does not require RADIUS, burn AES keys into the AP, or rely on shorter GTK/PMK timers as the main improvement.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "On a router you configure 'ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/0' with no next-hop IP, and Gi0/0 is an Ethernet link to the ISP. Why is this usually discouraged?",
+        "options": [
+          "Because a static route that names only an interface gets administrative distance 255, so it is never installed while any dynamic route to 0.0.0.0/0 is present",
+          "Because IOS rejects exit-interface static routes on Ethernet and silently converts them into a floating route that is used only after the interface goes down",
+          "Because the router then load-balances per packet across every directly connected subnet on that interface, which reorders TCP segments and breaks sessions",
+          "Because the router treats every destination as directly connected and must ARP for each one, relying on proxy ARP upstream and filling the ARP table"
+        ],
+        "correct": 3,
+        "explanation": "With only an exit interface on a multi-access Ethernet link, the router considers each destination to be on that segment, so it sends an ARP request for every remote address. It works only if the upstream device answers with proxy ARP, and it fills the ARP cache. Using a next-hop IP (or interface plus next-hop) avoids this. The route is not given AD 255, is not refused by IOS, and does not cause per-packet balancing across subnets.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "'show ip interface brief' shows Serial0/0/0 as Status up, Protocol down on both routers of a point-to-point link. Cabling and clocking were checked. One router uses 'encapsulation ppp'. What is the most likely cause?",
+        "options": [
+          "The other router still uses the default HDLC encapsulation, so Layer 1 is up but the Layer 2 protocols do not match",
+          "The interface on the other router was shut down by an administrator, which always appears as up/down on the neighbour that still has the cable connected",
+          "The two routers have IP addresses in different subnets, and IOS keeps the line protocol down until both ends agree on the same network and mask",
+          "The serial link has no routing protocol running on it yet, so the line protocol stays down until OSPF or EIGRP forms an adjacency across the link"
+        ],
+        "correct": 0,
+        "explanation": "Status up means Layer 1 is fine (carrier detected); Protocol down means the data-link layer is not working. On serial links a classic cause is an encapsulation mismatch: Cisco's default is HDLC, so if only one side is set to PPP the keepalives are not understood and the line protocol stays down. A shutdown far end shows as down/down locally, an IP subnet mismatch does not affect the line protocol, and no routing protocol is needed for it to come up.",
+        "difficulty": "Medium"
       }
     ]
   },
@@ -13538,6 +13682,42 @@ window.QUIZ_BANK = {
         "correct": 0,
         "explanation": "Por omissão o OSPF usa o tipo de rede LOOPBACK nas interfaces loopback e anuncia-as como rotas de host /32, seja qual for a máscara configurada. Com 'ip ospf network point-to-point' na loopback o OSPF anuncia o prefixo real (/24). O OSPF não tem auto-summary, as áreas stub não limitam máscaras e repetir o comando network não muda nada.",
         "difficulty": "Difícil"
+      },
+      {
+        "question": "Activas 'neighbor 203.0.113.2 ttl-security hops 1' numa sessão eBGP para um router ISP ligado directamente. Contra o que é que isto protege principalmente?",
+        "options": [
+          "Obriga o peer ISP a enviar só communities que reconheces, descartando qualquer update cujo atributo COMMUNITY falte ou venha marcado no-export antes mesmo de o caminho ser considerado para o Loc-RIB",
+          "Encripta o payload TCP do BGP com IPsec usando uma PSK derivada do valor TTL, por isso um pacote com hop count errado falha de imediato a verificação de integridade e é descartado pela stack",
+          "Sobe o hold timer do BGP para acompanhar o TTL IP de cada peer, para um speaker a mais de um salto Layer-3 expirar antes de injectar um OPEN ou UPDATE forjado na sessão",
+          "Aceita só pacotes BGP cujo TTL IP prove que atravessaram no máximo um salto (em geral a chegar com TTL 255), bloqueando sessões TCP forjadas à porta 179 a partir de longe"
+        ],
+        "correct": 3,
+        "explanation": "A segurança TTL do BGP (GTSH) verifica o TTL IP dos pacotes BGP recebidos. Com hops 1 num peer eBGP ligado directamente, o pacote tem de chegar com TTL 255 (enviado com 255 e sem decrementos em saltos L3), o que atacantes remotos a forjar TCP/179 a vários saltos de distância não conseguem facilmente. Não encripta o BGP, não altera hold timers nem filtra communities.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Um ASBR origina um LSA Type-5 para 198.51.100.0/24 com forwarding address não nulo 10.9.9.1. Os routers do domínio vêem o LSA mas não instalam a rota externa. Qual é a causa mais provável?",
+        "options": [
+          "Um forwarding address não nulo só é válido em LSAs Type-7, por isso todos os routers descartam o Type-5 como mal formado e esperam que o ASBR o reenvie com 0.0.0.0",
+          "A rota externa é E2, e as rotas E2 só são instaladas quando o ASBR está na área backbone, por isso mover o ASBR para a área 0 é a única solução",
+          "Não existe rota OSPF intra-área nem inter-área para 10.9.9.1, por isso os routers não resolvem o forwarding address e não usam esse LSA externo",
+          "O forwarding address tem de ser igual ao router ID do ASBR; quando diferem, o SPF trata o LSA como vindo de um segundo ASBR e suprime-o como duplicado"
+        ],
+        "correct": 2,
+        "explanation": "Quando um LSA Type-5 traz um forwarding address não nulo, os routers têm de chegar a esse endereço por uma rota OSPF intra-área ou inter-área; se não conseguirem, a rota externa não é instalada. Uma causa comum é a sub-rede do FA não estar anunciada no OSPF (por exemplo falta o network statement) ou estar filtrada. O forwarding address é válido em LSAs Type-5, as rotas E2 não precisam do ASBR na área 0 e o FA não tem de coincidir com o router ID.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "A área 2 liga-se ao backbone só através da área 1. Configuras 'area 1 virtual-link 2.2.2.2' nos dois ABRs, mas o virtual link nunca sobe. A área 1 está configurada como 'area 1 stub'. Qual é o problema?",
+        "options": [
+          "Os virtual links precisam que os dois ABRs estejam diretamente ligados na mesma sub-rede da área 1, por isso um caminho com vários saltos mantém-no sempre em baixo",
+          "O virtual link tem de ser configurado na área 0 em vez da área 1, porque pertence ao backbone e o IOS ignora-o quando indica uma área normal",
+          "Os virtual links só funcionam quando a área 2 é totally stubby, por isso a área 2 tem de mudar antes de os ABRs criarem a adjacência virtual pela área 1",
+          "Um virtual link não pode atravessar uma área stub; a área de trânsito tem de ser normal, por isso a área 1 tem de deixar de ser stub"
+        ],
+        "correct": 3,
+        "explanation": "Um virtual link OSPF é uma parte lógica da área 0 que passa por dentro de uma área de trânsito, e essa área tem de ter a informação de encaminhamento completa. Áreas stub, totally stubby e NSSA não podem ser de trânsito, por isso o IOS não sobe o virtual link enquanto a área 1 for stub. Os ABRs não precisam de partilhar sub-rede (o link segue o caminho intra-área até ao outro router ID), o comando leva o número da área de trânsito e o tipo da área 2 não interessa.",
+        "difficulty": "Difícil"
       }
     ],
     "en": [
@@ -16236,6 +16416,42 @@ window.QUIZ_BANK = {
         "correct": 0,
         "explanation": "By default OSPF uses the LOOPBACK network type for loopback interfaces and advertises them as /32 host routes, whatever mask is configured. 'ip ospf network point-to-point' on the loopback makes OSPF advertise the real prefix (/24). OSPF has no auto-summary, stub areas do not restrict masks, and repeating the network statement changes nothing.",
         "difficulty": "Hard"
+      },
+      {
+        "question": "You enable 'neighbor 203.0.113.2 ttl-security hops 1' on an eBGP session to a directly connected ISP router. What does this mainly protect against?",
+        "options": [
+          "It forces the ISP peer to send only communities you recognise, dropping any update whose COMMUNITY attribute is missing or marked no-export before the path is even considered for the Loc-RIB",
+          "It encrypts the TCP payload of BGP with IPsec using a PSK derived from the TTL value, so a packet with the wrong hop count fails integrity checks immediately and is discarded by the stack",
+          "It raises the BGP hold timer to match the IP TTL of each peer, so a speaker that is more than one Layer-3 hop away times out before it can inject a forged OPEN or UPDATE into the session",
+          "It accepts only BGP packets whose IP TTL proves they crossed at most one hop (typically arriving as TTL 255), blocking remote spoofed TCP sessions aimed at port 179"
+        ],
+        "correct": 3,
+        "explanation": "BGP TTL Security (GTSH) checks the IP TTL of incoming BGP packets. With hops 1 on a directly connected eBGP peer, the packet must arrive with TTL 255 (sent with 255 and decremented zero times across L3 hops), which remote attackers spoofing TCP/179 cannot easily forge from several hops away. It does not encrypt BGP, alter hold timers, or filter communities.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "An ASBR originates a Type-5 LSA for 198.51.100.0/24 with a non-zero forwarding address of 10.9.9.1. Routers in the domain list the LSA but do not install the external route. What is the most likely cause?",
+        "options": [
+          "A non-zero forwarding address is only legal in Type-7 LSAs, so every router discards the Type-5 as malformed and waits for the ASBR to resend it with 0.0.0.0",
+          "The external route is E2, and E2 routes are installed only when the ASBR is in the backbone area, so moving it to area 0 is the only fix for this behaviour",
+          "No OSPF intra-area or inter-area route to 10.9.9.1 exists, so routers cannot resolve the forwarding address and will not use that external LSA",
+          "The forwarding address must equal the ASBR router ID; when they differ, SPF treats the LSA as coming from a second ASBR and suppresses it as a duplicate"
+        ],
+        "correct": 2,
+        "explanation": "When a Type-5 LSA carries a non-zero forwarding address, routers must reach that address through an OSPF intra-area or inter-area route; if they cannot, the external route is not installed. A common cause is the FA subnet not being advertised into OSPF (for example a passive or missing network statement) or being filtered. Forwarding addresses are valid in Type-5 LSAs, E2 routes do not need the ASBR in area 0, and the FA does not have to match the router ID.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "Area 2 is connected to the backbone only through area 1. You configure 'area 1 virtual-link 2.2.2.2' on both ABRs, but the virtual link never comes up. Area 1 is configured as 'area 1 stub'. What is the problem?",
+        "options": [
+          "Virtual links need the two ABRs to be directly connected on the same subnet in area 1, so a multi-hop path through area 1 always keeps the link down",
+          "The virtual link must be configured under area 0 instead of area 1, because it belongs to the backbone and IOS ignores it when it names a normal area",
+          "Virtual links only work when area 2 is a totally stubby area, so area 2 must be changed before the ABRs can build a virtual adjacency through area 1",
+          "A virtual link cannot cross a stub area; the transit area must be a normal area, so area 1 has to stop being stub"
+        ],
+        "correct": 3,
+        "explanation": "An OSPF virtual link is a logical part of area 0 tunnelled through a transit area, and the transit area must carry full routing information. Stub, totally stubby and NSSA areas cannot be transit areas, so IOS will not bring the virtual link up while area 1 is stub. The ABRs do not need to share a subnet (the link follows the intra-area path to the other router ID), the command is entered with the transit area number, and area 2's type does not matter.",
+        "difficulty": "Hard"
       }
     ]
   },
@@ -17596,6 +17812,114 @@ window.QUIZ_BANK = {
         "correct": 3,
         "explanation": "A proteção LSA corre o lsass.exe como Protected Process Light (PPL). Processos não protegidos, mesmo com direitos de admin e SeDebugPrivilege, não o conseguem abrir para ler memória nem injetar código, e só carregam plugins LSA assinados, o que trava ferramentas como o sekurlsa do Mimikatz sem um driver de kernel. Isolar segredos numa VM protegida pelo hypervisor é o Credential Guard; não cifra a SAM com o TPM nem desliga o NTLM.",
         "difficulty": "Médio"
+      },
+      {
+        "question": "Porque é que os guias de hardening pedem muitas vezes que o SMB signing seja obrigatório nos clientes e servidores Windows?",
+        "options": [
+          "Porque as sessões SMB assinadas encriptam todo o conteúdo dos ficheiros com uma chave AES por ligação, por isso cópias offline das partilhas não se leem depois sem também roubar o hash krbtgt do domínio",
+          "Porque uma troca SMB assinada liga cada resposta à chave de sessão, por isso um atacante que reencaminhe autenticação NTLM capturada não consegue falar SMB útilmente como esse utilizador",
+          "Porque o SMB signing substitui o NTLM por Kerberos em todos os acessos a partilhas por política, por isso o pass-the-hash contra contas locais deixa de funcionar só com esta alteração feita",
+          "Porque a política de signing desliga sessões guest e null em todo o parque, que é a única forma prática de parar a enumeração anónima de partilhas e de utilizadores locais na rede"
+        ],
+        "correct": 1,
+        "explanation": "O SMB signing usa a chave de sessão para proteger a integridade das mensagens SMB. Depois de um relay NTLM, o atacante não tem essa chave, por isso um servidor que exija signing rejeita a sessão SMB reencaminhada. Signing não é encriptação completa dos ficheiros, não substitui por si o NTLM por Kerberos e é independente de desligar sessões guest/null.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que consegue principalmente o Microsoft LAPS (Local Administrator Password Solution) nas máquinas Windows juntas ao domínio?",
+        "options": [
+          "Guarda uma única palavra-passe de admin local partilhada para toda a OU numa preferência de GPO, rodada mensalmente, para o helpdesk nunca precisar de uma conta de domínio para acesso de emergência a qualquer PC",
+          "Desactiva por completo a conta Administrator local embutida e substitui-a por um gMSA cuja palavra-passe só é obtida do AD por principais com a permissão Enroll nessa conta de serviço",
+          "Move os hashes de palavra-passe SAM locais para o Credential Guard, para nem admins de domínio com sessão interactiva no posto conseguirem despejar a palavra-passe do Administrator local com Mimikatz",
+          "Define uma palavra-passe aleatória e única do Administrator local por máquina, guarda-a no AD e deixa só grupos delegados lê-la, acabando com admins locais partilhados"
+        ],
+        "correct": 3,
+        "explanation": "O LAPS (e o Windows LAPS) dá a cada PC do domínio uma palavra-passe aleatória diferente para o Administrator local, guardada no Active Directory (ms-Mcs-AdmPwd ou os atributos novos do Windows LAPS) e legível só pelos grupos que delegares. Isso trava o movimento lateral que reutilizava uma palavra-passe de admin local em muitas máquinas. Não é uma palavra-passe única da OU numa GPO, não substitui o admin local por gMSA e não é o Credential Guard.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Depois de um incidente com suspeita de golden ticket, porque é que os guias de recuperação pedem para repor a palavra-passe da conta krbtgt duas vezes, com replicação pelo meio?",
+        "options": [
+          "Porque os golden tickets usam as chaves krbtgt actual e anterior; duas reposições limpam as duas, e TGTs forjados com qualquer chave antiga falham a validação em todos os DC",
+          "Porque a primeira reposição só marca o krbtgt para apagar e a segunda recria a conta, o que é preciso antes de a ownership do PDC emulator passar para um DC limpo",
+          "Porque o Kerberos guarda o hash krbtgt no LSASS durante um ciclo de replicação; uma só reposição deixa o hash antigo em memória em todos os DC até reiniciares a máquina duas vezes",
+          "Porque o AD guarda o histórico do krbtgt como três palavras-passe, e a Microsoft exige três reposições, mas os operadores param muitas vezes em duas quando não há RODC no domínio"
+        ],
+        "correct": 0,
+        "explanation": "Um golden ticket é um TGT forjado assinado com um hash da palavra-passe do krbtgt. O AD lembra as chaves krbtgt actual e anterior para desencriptar tickets, por isso uma só reposição ainda deixa a chave antiga válida. Repor duas vezes (à espera da replicação após cada uma) reformula as duas chaves e invalida tickets forjados com qualquer delas. Não se trata de apagar/recriar a conta, de cache no LSASS entre reboots, nem de uma terceira reposição obrigatória em todas as florestas.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Porque é que os guias de hardening do Active Directory recomendam que os admins de domínio trabalhem a partir de uma Privileged Access Workstation (PAW)?",
+        "options": [
+          "Porque um equipamento dedicado e trancado, usado só para tarefas de administração, mantém as credenciais privilegiadas longe de máquinas que navegam na web ou lêem email",
+          "Porque a PAW guarda todas as palavras-passe de admin no TPM, por isso os controladores de domínio deixam de aceitar logons NTLM e Kerberos vindos de qualquer outro cliente",
+          "Porque a PAW substitui o controlador de domínio nas janelas de manutenção, deixando os admins mudar Group Policy sem replicar as alterações para os DC reais",
+          "Porque o Windows só permite alterar o grupo Domain Admins a partir de uma máquina cujo nome comece por PAW, o que impede atacantes remotos de o editar"
+        ],
+        "correct": 0,
+        "explanation": "Uma PAW é uma estação de trabalho endurecida reservada à administração privilegiada, sem email, navegação nem aplicações gerais. Se os admins só iniciarem sessão aí, as credenciais de alto valor nunca ficam expostas em máquinas do dia-a-dia onde phishing ou malware as possam roubar. Não move palavras-passe para o TPM para mudar a forma como os DC aceitam logons, não funciona como DC e não há regra de nome de máquina.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O que é que o PowerShell Just Enough Administration (JEA) oferece principalmente num servidor Windows?",
+        "options": [
+          "Uma política de scripts assinados que recusa qualquer comando PowerShell que não tenha sido escrito por um admin de domínio, dispensando contas de administrador separadas",
+          "Uma elevação temporária que junta o utilizador ao grupo Administrators local durante uma hora e depois termina a sessão, dando uma shell de admin completa nesse período",
+          "Um endpoint de remoting limitado onde o utilizador só corre os cmdlets e parâmetros de uma role capability, muitas vezes através de uma conta virtual temporária",
+          "Um substituto do WinRM que encaminha o PowerShell por SMB, para a administração remota funcionar mesmo com a Firewall do Windows a bloquear as portas TCP 5985 e 5986"
+        ],
+        "correct": 2,
+        "explanation": "O JEA publica um endpoint de remoting PowerShell cujas role capabilities indicam exactamente que cmdlets, funções e parâmetros cada grupo pode usar. Os comandos correm normalmente com uma conta virtual temporária ou uma conta gerida de grupo, por isso o helpdesk pode, por exemplo, reiniciar um serviço sem ser admin local. Não é uma política de assinatura, não é uma entrada temporária no grupo Administrators e continua a usar WinRM.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "No Active Directory activas o Kerberos armoring (FAST, Flexible Authentication Secure Tunneling) nos clientes e DC. O que é que acrescenta principalmente?",
+        "options": [
+          "Substitui RC4 e AES por uma cifra pós-quântica em todos os service tickets, por isso os hashes de Kerberoasting deixam de poder ser partidos offline para qualquer conta",
+          "Envolve a troca AS num canal com chave do ticket do próprio computador, para a pré-autenticação não ser partida offline nem os erros forjados",
+          "Obriga todos os utilizadores a apresentar um smart card antes de receberem um TGT, por isso os logons com palavra-passe falham em todas as máquinas do domínio",
+          "Impede os DC de emitir TGTs a contas em Protected Users e, em vez disso, emite service tickets de curta duração directamente do KDC em cada logon"
+        ],
+        "correct": 1,
+        "explanation": "O FAST cria um túnel blindado para a troca AS-REQ/AS-REP usando uma chave do TGT da conta de computador. Isso protege os dados de pré-autenticação do utilizador contra adivinhação offline da palavra-passe, permite ao KDC enviar erros assinados que não podem ser forjados e suporta compound claims para o Dynamic Access Control. Não muda as cifras dos service tickets, não exige smart cards e não altera a forma como as contas Protected Users recebem TGTs.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Uma equipa de segurança ativa a regra Attack Surface Reduction (ASR) do Microsoft Defender 'Block all Office applications from creating child processes'. Que ataque é que esta regra trava principalmente?",
+        "options": [
+          "Páginas de phishing que copiam o ecrã de início de sessão do Microsoft 365, porque a regra verifica cada link de um documento Office numa lista de sites falsos",
+          "Uma macro maliciosa num ficheiro Word que lança PowerShell ou cmd.exe para descarregar e correr a fase seguinte",
+          "Ransomware que cifra documentos Office em partilhas, porque a regra torna os ficheiros .docx e .xlsx só de leitura para todos os processos exceto as apps Office",
+          "Atacantes que roubam chaves de licença do Office do registo, porque a regra impede outros processos de ler as chaves de registo da instalação do Office"
+        ],
+        "correct": 1,
+        "explanation": "Muitas campanhas de malware começam com um documento cuja macro ou exploit faz o Word ou o Excel lançar PowerShell, cmd.exe, wscript ou outro binário para ir buscar o payload. Esta regra ASR impede as apps Office de criar processos filhos, partindo essa cadeia mesmo que o utilizador ative as macros. Não filtra links de phishing, não protege ficheiros contra ransomware (isso é o Controlled Folder Access) e não tem nada a ver com chaves de licença.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Porque é que os guias de hardening de Active Directory tratam ser membro do grupo integrado Backup Operators nos controladores de domínio como quase igual a Domain Admin?",
+        "options": [
+          "Porque os Backup Operators são adicionados automaticamente ao grupo Enterprise Admins em cada backup agendado, e assim podem alterar o schema da floresta",
+          "Porque o grupo pode repor a palavra-passe de qualquer conta, incluindo a conta krbtgt, sem que essa alteração fique escrita no registo de segurança",
+          "Porque os membros podem entrar em todos os postos como a conta local SYSTEM, o que lhes permite desativar o Microsoft Defender em todas as máquinas",
+          "Porque o SeBackupPrivilege lhes permite ler o NTDS.dit e as hives do registo, e assim extrair todos os hashes de palavras-passe do domínio"
+        ],
+        "correct": 3,
+        "explanation": "Os Backup Operators têm SeBackupPrivilege e SeRestorePrivilege e podem iniciar sessão nos controladores de domínio. O privilégio de backup passa por cima das ACLs dos ficheiros, por isso um membro pode copiar o NTDS.dit (por exemplo de uma shadow copy) e a hive SYSTEM e depois extrair offline os hashes de todas as contas, krbtgt incluída. Por isso o grupo pertence ao Tier 0 e normalmente deve estar vazio. Não entra nos Enterprise Admins, não repõe palavras-passe às escondidas nem dá SYSTEM nos postos.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Num controlador de domínio, que padrão de registos é um sinal comum de Kerberoasting num ambiente que normalmente usa AES no Kerberos?",
+        "options": [
+          "Muitos eventos 4769 (pedido de ticket de serviço) de um utilizador para várias contas de serviço com tipo de cifra 0x17 (RC4)",
+          "Muitos eventos 4625 (início de sessão falhado) para uma conta a partir de muitos IPs de origem em poucos minutos, seguidos do bloqueio dessa conta",
+          "Evento 4720 (conta de utilizador criada) para uma conta com nome parecido com um serviço, seguida da adição dessa conta aos Domain Admins",
+          "Evento 1102 (registo de auditoria limpo) no controlador de domínio logo depois de um servidor membro reiniciar fora da janela de manutenção"
+        ],
+        "correct": 0,
+        "explanation": "No Kerberoasting o atacante pede ao KDC tickets de serviço para contas com SPN e quebra-os offline; pedir RC4 torna a quebra muito mais rápida. Num DC isto aparece como evento 4769 com Ticket Encryption Type 0x17, muitas vezes uma rajada de um utilizador para muitos SPNs. Rajadas de 4625 apontam para password spraying ou força bruta, 4720 com mudanças de grupo para persistência, e 1102 para alguém a apagar rastos.",
+        "difficulty": "Médio"
       }
     ],
     "en": [
@@ -18953,6 +19277,114 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "LSA protection runs lsass.exe as a Protected Process Light (PPL). Non-protected processes, even with admin rights and SeDebugPrivilege, cannot open it to read memory or inject code, and only signed LSA plugins load, which blocks tools like Mimikatz's sekurlsa without a kernel driver. Isolating secrets in a hypervisor-protected VM is Credential Guard; it does not encrypt the SAM with the TPM or disable NTLM.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Why do hardening guides often require SMB signing on Windows clients and servers?",
+        "options": [
+          "Because signed SMB sessions encrypt the entire file payload with a per-connection AES key, so offline copies of shares cannot be read later without also stealing the domain krbtgt hash",
+          "Because a signed SMB exchange binds each response to the session key, so an attacker who relays captured NTLM auth cannot usefully speak SMB as that user",
+          "Because SMB signing replaces NTLM with Kerberos on every share access by policy, so pass-the-hash against local accounts stops working even when signing is the only change made",
+          "Because the signing policy disables guest and null sessions globally across the estate, which is the only practical way to stop anonymous enumeration of shares and local users"
+        ],
+        "correct": 1,
+        "explanation": "SMB signing uses the session key to integrity-protect SMB messages. After an NTLM relay, the attacker does not have that key, so a server that requires signing rejects the relayed SMB session. Signing is not full encryption of file data, does not by itself replace NTLM with Kerberos, and is separate from disabling guest/null sessions.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What does Microsoft LAPS (Local Administrator Password Solution) mainly achieve on domain-joined Windows machines?",
+        "options": [
+          "It stores one shared local-admin password for the whole OU in a GPO preference item, rotated monthly, so helpdesk staff never need a domain account for break-glass access to any PC",
+          "It disables the built-in local Administrator account entirely and replaces it with a gMSA whose password is fetched from AD only by principals that hold the Enroll permission on that account",
+          "It moves local SAM password hashes into Credential Guard so even domain admins interactively logged on to the workstation cannot dump the local Administrator password with Mimikatz",
+          "It sets a unique random local Administrator password per machine, stores it in AD, and lets only delegated groups read it, ending shared local-admin passwords"
+        ],
+        "correct": 3,
+        "explanation": "LAPS (and Windows LAPS) gives each domain-joined PC a different random local Administrator password, saved in Active Directory (ms-Mcs-AdmPwd or the newer Windows LAPS attributes) and readable only by groups you delegate. That stops lateral movement that reused one local-admin password across many machines. It is not a single OU-wide password in a GPO, not a gMSA replacement for the local admin, and not Credential Guard.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "After a suspected golden-ticket incident, why do recovery guides tell you to reset the krbtgt account password twice, with replication in between?",
+        "options": [
+          "Because golden tickets are keyed with the current and previous krbtgt keys; two resets flush both, so forged TGTs signed with either old key fail validation on every DC",
+          "Because the first reset only marks krbtgt for deletion and the second reset recreates the account, which is required before PDC emulator ownership can move to a clean DC",
+          "Because Kerberos caches the krbtgt hash in LSASS for one replication cycle; a single reset leaves the old hash in memory on every DC until the machine is rebooted twice",
+          "Because AD stores krbtgt history as three passwords, and Microsoft requires three resets, but operators commonly stop at two when no RODC is present in the domain"
+        ],
+        "correct": 0,
+        "explanation": "A golden ticket is a forged TGT signed with a krbtgt password hash. AD remembers the current and previous krbtgt keys for ticket decryption, so a single password reset still leaves the old key valid. Resetting twice (waiting for replication after each) retires both keys and invalidates tickets forged with either. It is not about deleting/recreating the account, LSASS caching across reboots, or a mandatory third reset for every forest.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "Why do Active Directory hardening guides recommend that domain admins work from a Privileged Access Workstation (PAW)?",
+        "options": [
+          "Because a dedicated, locked-down device used only for admin tasks keeps privileged credentials off machines that browse the web or read email",
+          "Because a PAW stores every admin password in its TPM, so the domain controllers stop accepting NTLM and Kerberos logons that originate from any other client",
+          "Because the PAW replaces the domain controller during maintenance windows, letting admins change Group Policy without replicating changes to the real DCs",
+          "Because Windows only allows changes to the Domain Admins group from a machine whose hostname begins with PAW, which blocks remote attackers from editing it"
+        ],
+        "correct": 0,
+        "explanation": "A PAW is a hardened workstation reserved for privileged administration, with no email, browsing or general apps. If admins sign in only there, their high-value credentials are never exposed on everyday machines where phishing or drive-by malware could steal them. It does not move passwords into a TPM to change how DCs accept logons, does not act as a DC, and has no hostname rule.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "What does PowerShell Just Enough Administration (JEA) mainly provide on a Windows server?",
+        "options": [
+          "A signed-script policy that refuses any PowerShell command unless it was written by a domain admin, which removes the need for separate administrator accounts",
+          "A temporary elevation that adds the user to the local Administrators group for one hour and then logs the user off, giving a full admin shell for that window",
+          "A constrained remoting endpoint where a user can run only the cmdlets and parameters in a role capability, often through a temporary virtual account",
+          "A replacement for WinRM that tunnels PowerShell over SMB, so remote admin works even when the Windows Firewall blocks TCP ports 5985 and 5986"
+        ],
+        "correct": 2,
+        "explanation": "JEA publishes a PowerShell remoting endpoint whose role capabilities list exactly which cmdlets, functions and parameters each group may use. Commands usually run as a temporary virtual or group-managed account, so helpdesk staff can, for example, restart a service without being local admins. It is not a signing policy, not a time-boxed membership of Administrators, and it still runs over WinRM.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "In Active Directory you enable Kerberos armoring (FAST, Flexible Authentication Secure Tunneling) for clients and DCs. What does it mainly add?",
+        "options": [
+          "It replaces RC4 and AES with a post-quantum cipher for all service tickets, so Kerberoasting hashes can no longer be cracked offline for any account",
+          "It wraps the AS exchange in a channel keyed from the computer's own ticket, so pre-auth data cannot be cracked offline and errors cannot be spoofed",
+          "It forces every user to present a smart card before a TGT is issued, so password logons fail on all domain-joined machines once armoring is required",
+          "It stops DCs from issuing TGTs to accounts in Protected Users, and instead issues short-lived service tickets directly from the KDC for each logon"
+        ],
+        "correct": 1,
+        "explanation": "FAST builds an armored tunnel for the AS-REQ/AS-REP exchange using a key from the machine account's TGT. That protects the user's pre-authentication data from offline password guessing, lets the KDC send signed errors that cannot be forged, and supports compound claims for Dynamic Access Control. It does not change service-ticket ciphers, does not require smart cards, and does not change how Protected Users get TGTs.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "A security team enables the Microsoft Defender Attack Surface Reduction (ASR) rule 'Block all Office applications from creating child processes'. Which attack does this mainly disrupt?",
+        "options": [
+          "Phishing pages that copy the Microsoft 365 sign-in screen, because the rule checks every link in an Office document against a list of known fake sites",
+          "A malicious macro in a Word file that launches PowerShell or cmd.exe to download and run the next stage",
+          "Ransomware that encrypts Office documents on file shares, because the rule makes .docx and .xlsx files read-only for every process except the Office apps",
+          "Attackers stealing Office license keys from the registry, because the rule blocks other processes from reading the Office installation registry keys"
+        ],
+        "correct": 1,
+        "explanation": "Many malware campaigns start with a document whose macro or exploit makes Word or Excel spawn PowerShell, cmd.exe, wscript or another binary to fetch the payload. This ASR rule stops Office apps from creating child processes, breaking that chain even if the user enables macros. It does not filter phishing links, does not protect files from ransomware (that is Controlled Folder Access) and has nothing to do with license keys.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Why do Active Directory hardening guides treat membership of the built-in Backup Operators group on domain controllers as almost equal to Domain Admin?",
+        "options": [
+          "Because Backup Operators are automatically added to the Enterprise Admins group during every scheduled backup, so they can change the forest schema",
+          "Because the group can reset the password of any user account, including the krbtgt account, without that change being written to the security log",
+          "Because members can log on to every workstation as the local SYSTEM account, which lets them disable Microsoft Defender on all machines at once",
+          "Because SeBackupPrivilege lets them read NTDS.dit and the registry hives, so they can extract every domain password hash"
+        ],
+        "correct": 3,
+        "explanation": "Backup Operators hold SeBackupPrivilege and SeRestorePrivilege and can log on to domain controllers. Backup privilege bypasses file ACLs, so a member can copy NTDS.dit (for example from a shadow copy) and the SYSTEM hive, then extract all account hashes offline, krbtgt included. That is why the group belongs in Tier 0 and should normally be empty. It does not join Enterprise Admins, reset passwords silently or grant SYSTEM on workstations.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "On a domain controller, which log pattern is a common sign of Kerberoasting in an environment that normally uses AES for Kerberos?",
+        "options": [
+          "Many event 4769 (service ticket requested) entries from one user for several service accounts with ticket encryption type 0x17 (RC4)",
+          "Many event 4625 (failed logon) entries for one account from many source IPs within a few minutes, followed by the account being locked out",
+          "Event 4720 (user account created) for an account with a name that looks like a service, followed by that account being added to Domain Admins",
+          "Event 1102 (audit log cleared) on the domain controller right after a member server was restarted outside the normal maintenance window"
+        ],
+        "correct": 0,
+        "explanation": "In Kerberoasting an attacker asks the KDC for service tickets for accounts with SPNs and cracks them offline; requesting RC4 makes cracking much faster. On a DC this shows up as event 4769 with Ticket Encryption Type 0x17, often a burst from one user for many SPNs. Event 4625 bursts point to password spraying or brute force, 4720 plus group changes to persistence, and 1102 to someone hiding tracks.",
         "difficulty": "Medium"
       }
     ]

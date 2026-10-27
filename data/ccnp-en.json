@@ -2694,5 +2694,41 @@
     "correct": 0,
     "explanation": "By default OSPF uses the LOOPBACK network type for loopback interfaces and advertises them as /32 host routes, whatever mask is configured. 'ip ospf network point-to-point' on the loopback makes OSPF advertise the real prefix (/24). OSPF has no auto-summary, stub areas do not restrict masks, and repeating the network statement changes nothing.",
     "difficulty": "Hard"
+  },
+  {
+    "question": "You enable 'neighbor 203.0.113.2 ttl-security hops 1' on an eBGP session to a directly connected ISP router. What does this mainly protect against?",
+    "options": [
+      "It forces the ISP peer to send only communities you recognise, dropping any update whose COMMUNITY attribute is missing or marked no-export before the path is even considered for the Loc-RIB",
+      "It encrypts the TCP payload of BGP with IPsec using a PSK derived from the TTL value, so a packet with the wrong hop count fails integrity checks immediately and is discarded by the stack",
+      "It raises the BGP hold timer to match the IP TTL of each peer, so a speaker that is more than one Layer-3 hop away times out before it can inject a forged OPEN or UPDATE into the session",
+      "It accepts only BGP packets whose IP TTL proves they crossed at most one hop (typically arriving as TTL 255), blocking remote spoofed TCP sessions aimed at port 179"
+    ],
+    "correct": 3,
+    "explanation": "BGP TTL Security (GTSH) checks the IP TTL of incoming BGP packets. With hops 1 on a directly connected eBGP peer, the packet must arrive with TTL 255 (sent with 255 and decremented zero times across L3 hops), which remote attackers spoofing TCP/179 cannot easily forge from several hops away. It does not encrypt BGP, alter hold timers, or filter communities.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "An ASBR originates a Type-5 LSA for 198.51.100.0/24 with a non-zero forwarding address of 10.9.9.1. Routers in the domain list the LSA but do not install the external route. What is the most likely cause?",
+    "options": [
+      "A non-zero forwarding address is only legal in Type-7 LSAs, so every router discards the Type-5 as malformed and waits for the ASBR to resend it with 0.0.0.0",
+      "The external route is E2, and E2 routes are installed only when the ASBR is in the backbone area, so moving it to area 0 is the only fix for this behaviour",
+      "No OSPF intra-area or inter-area route to 10.9.9.1 exists, so routers cannot resolve the forwarding address and will not use that external LSA",
+      "The forwarding address must equal the ASBR router ID; when they differ, SPF treats the LSA as coming from a second ASBR and suppresses it as a duplicate"
+    ],
+    "correct": 2,
+    "explanation": "When a Type-5 LSA carries a non-zero forwarding address, routers must reach that address through an OSPF intra-area or inter-area route; if they cannot, the external route is not installed. A common cause is the FA subnet not being advertised into OSPF (for example a passive or missing network statement) or being filtered. Forwarding addresses are valid in Type-5 LSAs, E2 routes do not need the ASBR in area 0, and the FA does not have to match the router ID.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Area 2 is connected to the backbone only through area 1. You configure 'area 1 virtual-link 2.2.2.2' on both ABRs, but the virtual link never comes up. Area 1 is configured as 'area 1 stub'. What is the problem?",
+    "options": [
+      "Virtual links need the two ABRs to be directly connected on the same subnet in area 1, so a multi-hop path through area 1 always keeps the link down",
+      "The virtual link must be configured under area 0 instead of area 1, because it belongs to the backbone and IOS ignores it when it names a normal area",
+      "Virtual links only work when area 2 is a totally stubby area, so area 2 must be changed before the ABRs can build a virtual adjacency through area 1",
+      "A virtual link cannot cross a stub area; the transit area must be a normal area, so area 1 has to stop being stub"
+    ],
+    "correct": 3,
+    "explanation": "An OSPF virtual link is a logical part of area 0 tunnelled through a transit area, and the transit area must carry full routing information. Stub, totally stubby and NSSA areas cannot be transit areas, so IOS will not bring the virtual link up while area 1 is stub. The ABRs do not need to share a subnet (the link follows the intra-area path to the other router ID), the command is entered with the transit area number, and area 2's type does not matter.",
+    "difficulty": "Hard"
   }
 ]

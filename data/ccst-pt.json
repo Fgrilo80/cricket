@@ -2640,5 +2640,41 @@
     "correct": 2,
     "explanation": "O Wake-on-LAN usa um magic packet cujo payload repete o MAC do alvo; uma NIC capaz activa um sinal de wake na placa. DHCP, Hellos OSPF e Power TLVs do CDP não ligam um PC desligado sobre Ethernet normal.",
     "difficulty": "Fácil"
+  },
+  {
+    "question": "Um técnico precisa de medir quanta potência óptica se perde num cabo de fibra e num troço curto já instalado. Qual é o par de ferramentas habitual para esse teste de perda de inserção?",
+    "options": [
+      "Só um OTDR, porque reporta sempre a perda ponta-a-ponta exacta em dB sem precisar de um segundo aparelho nem de cabo de lançamento na outra ponta",
+      "Um TDR de cobre e um toner/probe, porque a perda óptica se calcula a partir do atraso de ida e volta de um impulso eléctrico de alta frequência no mesmo cabo",
+      "Uma fonte de luz calibrada numa ponta e um medidor de potência óptica na outra, comparando a potência lançada com a recebida em dBm",
+      "Uma máquina de fusão em modo de teste, porque injecta um comprimento de onda de referência e lê a estimativa de atenuação de todo o troço"
+    ],
+    "correct": 2,
+    "explanation": "A perda de inserção mede-se lançando um nível óptico conhecido com uma fonte de luz e lendo o que chega com um medidor de potência; a diferença em dB é a perda. O OTDR serve melhor para localizar cortes, emendas e reflexões ao longo do troço, não para um valor simples de perda ponta-a-ponta. TDR de cobre e estimativas da máquina de fusão não substituem o par fonte/medidor na certificação da perda óptica.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Um novo cabo Cat6 passa num testador simples de continuidade/wire map (os pinos 1-8 ligam todos ponta a ponta), mas a ligação fica instável a 1 Gbps. Um certificador de cabos indica split pair. O que significa?",
+    "options": [
+      "Um condutor está partido dentro da bainha, e o testador barato só viu continuidade porque mede o fio de dreno da blindagem em vez dos pares de cobre",
+      "A continuidade pino a pino está certa, mas o mesmo sinal usa fios de dois pares entrançados diferentes, e a torção já não anula a diafonia (NEXT falha)",
+      "O cabo tem mais de 100 m, por isso o certificador divide o comprimento medido em dois segmentos e marca o segundo como fora da especificação para Gigabit",
+      "As pontas foram cravadas com normas diferentes (T568A numa, T568B na outra), o que dá sempre split pair e obriga a trocar por um cabo cruzado"
+    ],
+    "correct": 1,
+    "explanation": "Um split pair é um erro de cablagem em que cada pino chega ao pino certo na outra ponta, por isso um teste básico de wire map ou continuidade passa, mas os fios que levam um sinal vêm de dois pares entrançados diferentes. Sem a torção a funcionar nesse sinal, a diafonia próxima (NEXT) sobe e a ligação falha ou oscila a velocidades mais altas. Só um testador que meça diafonia, como um certificador, o apanha. Não é um condutor partido, uma falha de comprimento nem uma mistura T568A/B (essa aparece como pares cruzados no wire map).",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Um pequeno escritório liga o switch e o NAS a uma extensão com proteção contra picos. Num corte de luz curto os dois equipamentos desligam-se na mesma e o NAS tem de reconstruir o array. Que equipamento os teria mantido a funcionar?",
+    "options": [
+      "Um protetor contra picos com mais joules, porque um valor de joules maior também guarda energia que mantém os equipamentos ligados durante vários minutos",
+      "Um condicionador de energia com filtro de linha, porque suaviza a tensão de entrada e por isso elimina os cortes de luz curtos antes de chegarem aos equipamentos",
+      "Uma UPS (fonte de alimentação ininterrupta), cuja bateria mantém os equipamentos ligados e pode avisar o NAS para desligar em segurança",
+      "Um injetor PoE em cada equipamento, porque o Power over Ethernet tira a energia do cabo de rede em vez da rede elétrica do escritório"
+    ],
+    "correct": 2,
+    "explanation": "Um protetor contra picos só desvia sobretensões; não guarda energia, por isso quando a rede elétrica falha os equipamentos desligam-se logo, seja qual for o valor de joules. Uma UPS tem uma bateria que aguenta a carga em cortes curtos, e muitos modelos avisam o NAS ou servidor por USB ou pela rede para desligar em segurança antes de a bateria acabar. Um condicionador de energia suaviza ruído e pequenas quedas mas não cobre um corte, e um injetor PoE continua a tirar energia da rede elétrica.",
+    "difficulty": "Fácil"
   }
 ]

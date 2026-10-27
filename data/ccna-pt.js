@@ -2771,5 +2771,41 @@ window.QUIZ_BANK = [
     "correct": 3,
     "explanation": "Com 'no ip routing', um switch Layer 2 comporta-se como um host: chega à sub-rede da sua SVI, mas para responder a outras sub-redes precisa de 'ip default-gateway <IP do router>'. As rotas estáticas só são usadas com o IP routing ligado, não é preciso trunk para tráfego de gestão encaminhado, e a versão do SSH nada tem a ver com a sub-rede de origem.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Como é que o WPA3-Personal melhora principalmente a autenticação face ao WPA2-Personal clássico (PSK)?",
+    "options": [
+      "Substitui o handshake de quatro mensagens do PSK pelo SAE (Simultaneous Authentication of Equals), que resiste a ataques de dicionário offline mesmo com o handshake capturado",
+      "Encripta todas as tramas de gestão com uma chave AES pré-partilhada gravada no firmware do AP, para que pedidos probe e beacons abertos já não possam ser forjados por clientes rogue próximos",
+      "Obriga todos os SSID pessoais a usar 802.1X com um servidor RADIUS completo, por isso uma passphrase simples deixa de ser aceite em qualquer access point com WPA3 no terreno",
+      "Encurta a vida do GTK para um intervalo de beacon e roda o PMK em cada associação, o que impede um atacante que já saiba o PSK de se juntar mais tarde ao BSS sem nova credencial"
+    ],
+    "correct": 0,
+    "explanation": "O WPA3-Personal mantém uma passphrase para os utilizadores, mas corre SAE (Dragonfly) em vez do handshake PSK de quatro mensagens do WPA2. O SAE é uma troca de chaves autenticada por palavra-passe que não entrega ao atacante um valor que possa partir offline a partir de um handshake capturado. Não exige RADIUS, não grava chaves AES no AP nem depende de temporizadores GTK/PMK mais curtos como melhoria principal.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num router configuras 'ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/0' sem IP de next hop, e a Gi0/0 é uma ligação Ethernet ao ISP. Porque é que isto costuma ser desaconselhado?",
+    "options": [
+      "Porque uma rota estática que só indica a interface fica com distância administrativa 255, por isso nunca é instalada enquanto houver uma rota dinâmica para 0.0.0.0/0",
+      "Porque o IOS recusa rotas estáticas com interface de saída em Ethernet e converte-as em silêncio numa rota flutuante usada só quando a interface cai",
+      "Porque o router passa a balancear por pacote entre todas as sub-redes ligadas nessa interface, o que reordena segmentos TCP e parte as sessões",
+      "Porque o router trata cada destino como directamente ligado e tem de fazer ARP para cada um, dependendo de proxy ARP a montante e enchendo a tabela ARP"
+    ],
+    "correct": 3,
+    "explanation": "Só com a interface de saída numa ligação Ethernet multi-acesso, o router considera que cada destino está nesse segmento e envia um pedido ARP para cada endereço remoto. Só funciona se o equipamento a montante responder com proxy ARP, e enche a cache ARP. Usar um IP de next hop (ou interface mais next hop) evita isto. A rota não fica com AD 255, não é recusada pelo IOS e não provoca balanceamento por pacote entre sub-redes.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O 'show ip interface brief' mostra a Serial0/0/0 com Status up e Protocol down nos dois routers de uma ligação ponto a ponto. A cablagem e o clock já foram verificados. Um dos routers usa 'encapsulation ppp'. Qual é a causa mais provável?",
+    "options": [
+      "O outro router continua com o encapsulamento HDLC por omissão, por isso a camada 1 está up mas os protocolos da camada 2 não coincidem",
+      "A interface do outro router foi desligada por um administrador, o que aparece sempre como up/down no vizinho que ainda tem o cabo ligado",
+      "Os dois routers têm endereços IP em sub-redes diferentes, e o IOS mantém o line protocol em baixo até as duas pontas usarem a mesma rede e máscara",
+      "A ligação série ainda não tem nenhum protocolo de encaminhamento, por isso o line protocol fica em baixo até o OSPF ou o EIGRP formar adjacência"
+    ],
+    "correct": 0,
+    "explanation": "Status up quer dizer que a camada 1 está bem (há portadora); Protocol down quer dizer que a camada de ligação de dados não está a funcionar. Em ligações série uma causa clássica é encapsulamento diferente: o padrão da Cisco é HDLC, por isso se só um lado estiver em PPP os keepalives não são entendidos e o line protocol fica em baixo. Uma ponta em shutdown aparece localmente como down/down, sub-redes IP diferentes não afetam o line protocol e não é preciso protocolo de encaminhamento para ele subir.",
+    "difficulty": "Médio"
   }
 ];

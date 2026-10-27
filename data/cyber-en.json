@@ -1354,5 +1354,113 @@
     "correct": 3,
     "explanation": "LSA protection runs lsass.exe as a Protected Process Light (PPL). Non-protected processes, even with admin rights and SeDebugPrivilege, cannot open it to read memory or inject code, and only signed LSA plugins load, which blocks tools like Mimikatz's sekurlsa without a kernel driver. Isolating secrets in a hypervisor-protected VM is Credential Guard; it does not encrypt the SAM with the TPM or disable NTLM.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "Why do hardening guides often require SMB signing on Windows clients and servers?",
+    "options": [
+      "Because signed SMB sessions encrypt the entire file payload with a per-connection AES key, so offline copies of shares cannot be read later without also stealing the domain krbtgt hash",
+      "Because a signed SMB exchange binds each response to the session key, so an attacker who relays captured NTLM auth cannot usefully speak SMB as that user",
+      "Because SMB signing replaces NTLM with Kerberos on every share access by policy, so pass-the-hash against local accounts stops working even when signing is the only change made",
+      "Because the signing policy disables guest and null sessions globally across the estate, which is the only practical way to stop anonymous enumeration of shares and local users"
+    ],
+    "correct": 1,
+    "explanation": "SMB signing uses the session key to integrity-protect SMB messages. After an NTLM relay, the attacker does not have that key, so a server that requires signing rejects the relayed SMB session. Signing is not full encryption of file data, does not by itself replace NTLM with Kerberos, and is separate from disabling guest/null sessions.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does Microsoft LAPS (Local Administrator Password Solution) mainly achieve on domain-joined Windows machines?",
+    "options": [
+      "It stores one shared local-admin password for the whole OU in a GPO preference item, rotated monthly, so helpdesk staff never need a domain account for break-glass access to any PC",
+      "It disables the built-in local Administrator account entirely and replaces it with a gMSA whose password is fetched from AD only by principals that hold the Enroll permission on that account",
+      "It moves local SAM password hashes into Credential Guard so even domain admins interactively logged on to the workstation cannot dump the local Administrator password with Mimikatz",
+      "It sets a unique random local Administrator password per machine, stores it in AD, and lets only delegated groups read it, ending shared local-admin passwords"
+    ],
+    "correct": 3,
+    "explanation": "LAPS (and Windows LAPS) gives each domain-joined PC a different random local Administrator password, saved in Active Directory (ms-Mcs-AdmPwd or the newer Windows LAPS attributes) and readable only by groups you delegate. That stops lateral movement that reused one local-admin password across many machines. It is not a single OU-wide password in a GPO, not a gMSA replacement for the local admin, and not Credential Guard.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "After a suspected golden-ticket incident, why do recovery guides tell you to reset the krbtgt account password twice, with replication in between?",
+    "options": [
+      "Because golden tickets are keyed with the current and previous krbtgt keys; two resets flush both, so forged TGTs signed with either old key fail validation on every DC",
+      "Because the first reset only marks krbtgt for deletion and the second reset recreates the account, which is required before PDC emulator ownership can move to a clean DC",
+      "Because Kerberos caches the krbtgt hash in LSASS for one replication cycle; a single reset leaves the old hash in memory on every DC until the machine is rebooted twice",
+      "Because AD stores krbtgt history as three passwords, and Microsoft requires three resets, but operators commonly stop at two when no RODC is present in the domain"
+    ],
+    "correct": 0,
+    "explanation": "A golden ticket is a forged TGT signed with a krbtgt password hash. AD remembers the current and previous krbtgt keys for ticket decryption, so a single password reset still leaves the old key valid. Resetting twice (waiting for replication after each) retires both keys and invalidates tickets forged with either. It is not about deleting/recreating the account, LSASS caching across reboots, or a mandatory third reset for every forest.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Why do Active Directory hardening guides recommend that domain admins work from a Privileged Access Workstation (PAW)?",
+    "options": [
+      "Because a dedicated, locked-down device used only for admin tasks keeps privileged credentials off machines that browse the web or read email",
+      "Because a PAW stores every admin password in its TPM, so the domain controllers stop accepting NTLM and Kerberos logons that originate from any other client",
+      "Because the PAW replaces the domain controller during maintenance windows, letting admins change Group Policy without replicating changes to the real DCs",
+      "Because Windows only allows changes to the Domain Admins group from a machine whose hostname begins with PAW, which blocks remote attackers from editing it"
+    ],
+    "correct": 0,
+    "explanation": "A PAW is a hardened workstation reserved for privileged administration, with no email, browsing or general apps. If admins sign in only there, their high-value credentials are never exposed on everyday machines where phishing or drive-by malware could steal them. It does not move passwords into a TPM to change how DCs accept logons, does not act as a DC, and has no hostname rule.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "What does PowerShell Just Enough Administration (JEA) mainly provide on a Windows server?",
+    "options": [
+      "A signed-script policy that refuses any PowerShell command unless it was written by a domain admin, which removes the need for separate administrator accounts",
+      "A temporary elevation that adds the user to the local Administrators group for one hour and then logs the user off, giving a full admin shell for that window",
+      "A constrained remoting endpoint where a user can run only the cmdlets and parameters in a role capability, often through a temporary virtual account",
+      "A replacement for WinRM that tunnels PowerShell over SMB, so remote admin works even when the Windows Firewall blocks TCP ports 5985 and 5986"
+    ],
+    "correct": 2,
+    "explanation": "JEA publishes a PowerShell remoting endpoint whose role capabilities list exactly which cmdlets, functions and parameters each group may use. Commands usually run as a temporary virtual or group-managed account, so helpdesk staff can, for example, restart a service without being local admins. It is not a signing policy, not a time-boxed membership of Administrators, and it still runs over WinRM.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "In Active Directory you enable Kerberos armoring (FAST, Flexible Authentication Secure Tunneling) for clients and DCs. What does it mainly add?",
+    "options": [
+      "It replaces RC4 and AES with a post-quantum cipher for all service tickets, so Kerberoasting hashes can no longer be cracked offline for any account",
+      "It wraps the AS exchange in a channel keyed from the computer's own ticket, so pre-auth data cannot be cracked offline and errors cannot be spoofed",
+      "It forces every user to present a smart card before a TGT is issued, so password logons fail on all domain-joined machines once armoring is required",
+      "It stops DCs from issuing TGTs to accounts in Protected Users, and instead issues short-lived service tickets directly from the KDC for each logon"
+    ],
+    "correct": 1,
+    "explanation": "FAST builds an armored tunnel for the AS-REQ/AS-REP exchange using a key from the machine account's TGT. That protects the user's pre-authentication data from offline password guessing, lets the KDC send signed errors that cannot be forged, and supports compound claims for Dynamic Access Control. It does not change service-ticket ciphers, does not require smart cards, and does not change how Protected Users get TGTs.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "A security team enables the Microsoft Defender Attack Surface Reduction (ASR) rule 'Block all Office applications from creating child processes'. Which attack does this mainly disrupt?",
+    "options": [
+      "Phishing pages that copy the Microsoft 365 sign-in screen, because the rule checks every link in an Office document against a list of known fake sites",
+      "A malicious macro in a Word file that launches PowerShell or cmd.exe to download and run the next stage",
+      "Ransomware that encrypts Office documents on file shares, because the rule makes .docx and .xlsx files read-only for every process except the Office apps",
+      "Attackers stealing Office license keys from the registry, because the rule blocks other processes from reading the Office installation registry keys"
+    ],
+    "correct": 1,
+    "explanation": "Many malware campaigns start with a document whose macro or exploit makes Word or Excel spawn PowerShell, cmd.exe, wscript or another binary to fetch the payload. This ASR rule stops Office apps from creating child processes, breaking that chain even if the user enables macros. It does not filter phishing links, does not protect files from ransomware (that is Controlled Folder Access) and has nothing to do with license keys.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Why do Active Directory hardening guides treat membership of the built-in Backup Operators group on domain controllers as almost equal to Domain Admin?",
+    "options": [
+      "Because Backup Operators are automatically added to the Enterprise Admins group during every scheduled backup, so they can change the forest schema",
+      "Because the group can reset the password of any user account, including the krbtgt account, without that change being written to the security log",
+      "Because members can log on to every workstation as the local SYSTEM account, which lets them disable Microsoft Defender on all machines at once",
+      "Because SeBackupPrivilege lets them read NTDS.dit and the registry hives, so they can extract every domain password hash"
+    ],
+    "correct": 3,
+    "explanation": "Backup Operators hold SeBackupPrivilege and SeRestorePrivilege and can log on to domain controllers. Backup privilege bypasses file ACLs, so a member can copy NTDS.dit (for example from a shadow copy) and the SYSTEM hive, then extract all account hashes offline, krbtgt included. That is why the group belongs in Tier 0 and should normally be empty. It does not join Enterprise Admins, reset passwords silently or grant SYSTEM on workstations.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "On a domain controller, which log pattern is a common sign of Kerberoasting in an environment that normally uses AES for Kerberos?",
+    "options": [
+      "Many event 4769 (service ticket requested) entries from one user for several service accounts with ticket encryption type 0x17 (RC4)",
+      "Many event 4625 (failed logon) entries for one account from many source IPs within a few minutes, followed by the account being locked out",
+      "Event 4720 (user account created) for an account with a name that looks like a service, followed by that account being added to Domain Admins",
+      "Event 1102 (audit log cleared) on the domain controller right after a member server was restarted outside the normal maintenance window"
+    ],
+    "correct": 0,
+    "explanation": "In Kerberoasting an attacker asks the KDC for service tickets for accounts with SPNs and cracks them offline; requesting RC4 makes cracking much faster. On a DC this shows up as event 4769 with Ticket Encryption Type 0x17, often a burst from one user for many SPNs. Event 4625 bursts point to password spraying or brute force, 4720 plus group changes to persistence, and 1102 to someone hiding tracks.",
+    "difficulty": "Medium"
   }
 ]

@@ -1354,5 +1354,113 @@ window.QUIZ_BANK = [
     "correct": 3,
     "explanation": "A proteção LSA corre o lsass.exe como Protected Process Light (PPL). Processos não protegidos, mesmo com direitos de admin e SeDebugPrivilege, não o conseguem abrir para ler memória nem injetar código, e só carregam plugins LSA assinados, o que trava ferramentas como o sekurlsa do Mimikatz sem um driver de kernel. Isolar segredos numa VM protegida pelo hypervisor é o Credential Guard; não cifra a SAM com o TPM nem desliga o NTLM.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Porque é que os guias de hardening pedem muitas vezes que o SMB signing seja obrigatório nos clientes e servidores Windows?",
+    "options": [
+      "Porque as sessões SMB assinadas encriptam todo o conteúdo dos ficheiros com uma chave AES por ligação, por isso cópias offline das partilhas não se leem depois sem também roubar o hash krbtgt do domínio",
+      "Porque uma troca SMB assinada liga cada resposta à chave de sessão, por isso um atacante que reencaminhe autenticação NTLM capturada não consegue falar SMB útilmente como esse utilizador",
+      "Porque o SMB signing substitui o NTLM por Kerberos em todos os acessos a partilhas por política, por isso o pass-the-hash contra contas locais deixa de funcionar só com esta alteração feita",
+      "Porque a política de signing desliga sessões guest e null em todo o parque, que é a única forma prática de parar a enumeração anónima de partilhas e de utilizadores locais na rede"
+    ],
+    "correct": 1,
+    "explanation": "O SMB signing usa a chave de sessão para proteger a integridade das mensagens SMB. Depois de um relay NTLM, o atacante não tem essa chave, por isso um servidor que exija signing rejeita a sessão SMB reencaminhada. Signing não é encriptação completa dos ficheiros, não substitui por si o NTLM por Kerberos e é independente de desligar sessões guest/null.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que consegue principalmente o Microsoft LAPS (Local Administrator Password Solution) nas máquinas Windows juntas ao domínio?",
+    "options": [
+      "Guarda uma única palavra-passe de admin local partilhada para toda a OU numa preferência de GPO, rodada mensalmente, para o helpdesk nunca precisar de uma conta de domínio para acesso de emergência a qualquer PC",
+      "Desactiva por completo a conta Administrator local embutida e substitui-a por um gMSA cuja palavra-passe só é obtida do AD por principais com a permissão Enroll nessa conta de serviço",
+      "Move os hashes de palavra-passe SAM locais para o Credential Guard, para nem admins de domínio com sessão interactiva no posto conseguirem despejar a palavra-passe do Administrator local com Mimikatz",
+      "Define uma palavra-passe aleatória e única do Administrator local por máquina, guarda-a no AD e deixa só grupos delegados lê-la, acabando com admins locais partilhados"
+    ],
+    "correct": 3,
+    "explanation": "O LAPS (e o Windows LAPS) dá a cada PC do domínio uma palavra-passe aleatória diferente para o Administrator local, guardada no Active Directory (ms-Mcs-AdmPwd ou os atributos novos do Windows LAPS) e legível só pelos grupos que delegares. Isso trava o movimento lateral que reutilizava uma palavra-passe de admin local em muitas máquinas. Não é uma palavra-passe única da OU numa GPO, não substitui o admin local por gMSA e não é o Credential Guard.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Depois de um incidente com suspeita de golden ticket, porque é que os guias de recuperação pedem para repor a palavra-passe da conta krbtgt duas vezes, com replicação pelo meio?",
+    "options": [
+      "Porque os golden tickets usam as chaves krbtgt actual e anterior; duas reposições limpam as duas, e TGTs forjados com qualquer chave antiga falham a validação em todos os DC",
+      "Porque a primeira reposição só marca o krbtgt para apagar e a segunda recria a conta, o que é preciso antes de a ownership do PDC emulator passar para um DC limpo",
+      "Porque o Kerberos guarda o hash krbtgt no LSASS durante um ciclo de replicação; uma só reposição deixa o hash antigo em memória em todos os DC até reiniciares a máquina duas vezes",
+      "Porque o AD guarda o histórico do krbtgt como três palavras-passe, e a Microsoft exige três reposições, mas os operadores param muitas vezes em duas quando não há RODC no domínio"
+    ],
+    "correct": 0,
+    "explanation": "Um golden ticket é um TGT forjado assinado com um hash da palavra-passe do krbtgt. O AD lembra as chaves krbtgt actual e anterior para desencriptar tickets, por isso uma só reposição ainda deixa a chave antiga válida. Repor duas vezes (à espera da replicação após cada uma) reformula as duas chaves e invalida tickets forjados com qualquer delas. Não se trata de apagar/recriar a conta, de cache no LSASS entre reboots, nem de uma terceira reposição obrigatória em todas as florestas.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Porque é que os guias de hardening do Active Directory recomendam que os admins de domínio trabalhem a partir de uma Privileged Access Workstation (PAW)?",
+    "options": [
+      "Porque um equipamento dedicado e trancado, usado só para tarefas de administração, mantém as credenciais privilegiadas longe de máquinas que navegam na web ou lêem email",
+      "Porque a PAW guarda todas as palavras-passe de admin no TPM, por isso os controladores de domínio deixam de aceitar logons NTLM e Kerberos vindos de qualquer outro cliente",
+      "Porque a PAW substitui o controlador de domínio nas janelas de manutenção, deixando os admins mudar Group Policy sem replicar as alterações para os DC reais",
+      "Porque o Windows só permite alterar o grupo Domain Admins a partir de uma máquina cujo nome comece por PAW, o que impede atacantes remotos de o editar"
+    ],
+    "correct": 0,
+    "explanation": "Uma PAW é uma estação de trabalho endurecida reservada à administração privilegiada, sem email, navegação nem aplicações gerais. Se os admins só iniciarem sessão aí, as credenciais de alto valor nunca ficam expostas em máquinas do dia-a-dia onde phishing ou malware as possam roubar. Não move palavras-passe para o TPM para mudar a forma como os DC aceitam logons, não funciona como DC e não há regra de nome de máquina.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O que é que o PowerShell Just Enough Administration (JEA) oferece principalmente num servidor Windows?",
+    "options": [
+      "Uma política de scripts assinados que recusa qualquer comando PowerShell que não tenha sido escrito por um admin de domínio, dispensando contas de administrador separadas",
+      "Uma elevação temporária que junta o utilizador ao grupo Administrators local durante uma hora e depois termina a sessão, dando uma shell de admin completa nesse período",
+      "Um endpoint de remoting limitado onde o utilizador só corre os cmdlets e parâmetros de uma role capability, muitas vezes através de uma conta virtual temporária",
+      "Um substituto do WinRM que encaminha o PowerShell por SMB, para a administração remota funcionar mesmo com a Firewall do Windows a bloquear as portas TCP 5985 e 5986"
+    ],
+    "correct": 2,
+    "explanation": "O JEA publica um endpoint de remoting PowerShell cujas role capabilities indicam exactamente que cmdlets, funções e parâmetros cada grupo pode usar. Os comandos correm normalmente com uma conta virtual temporária ou uma conta gerida de grupo, por isso o helpdesk pode, por exemplo, reiniciar um serviço sem ser admin local. Não é uma política de assinatura, não é uma entrada temporária no grupo Administrators e continua a usar WinRM.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "No Active Directory activas o Kerberos armoring (FAST, Flexible Authentication Secure Tunneling) nos clientes e DC. O que é que acrescenta principalmente?",
+    "options": [
+      "Substitui RC4 e AES por uma cifra pós-quântica em todos os service tickets, por isso os hashes de Kerberoasting deixam de poder ser partidos offline para qualquer conta",
+      "Envolve a troca AS num canal com chave do ticket do próprio computador, para a pré-autenticação não ser partida offline nem os erros forjados",
+      "Obriga todos os utilizadores a apresentar um smart card antes de receberem um TGT, por isso os logons com palavra-passe falham em todas as máquinas do domínio",
+      "Impede os DC de emitir TGTs a contas em Protected Users e, em vez disso, emite service tickets de curta duração directamente do KDC em cada logon"
+    ],
+    "correct": 1,
+    "explanation": "O FAST cria um túnel blindado para a troca AS-REQ/AS-REP usando uma chave do TGT da conta de computador. Isso protege os dados de pré-autenticação do utilizador contra adivinhação offline da palavra-passe, permite ao KDC enviar erros assinados que não podem ser forjados e suporta compound claims para o Dynamic Access Control. Não muda as cifras dos service tickets, não exige smart cards e não altera a forma como as contas Protected Users recebem TGTs.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Uma equipa de segurança ativa a regra Attack Surface Reduction (ASR) do Microsoft Defender 'Block all Office applications from creating child processes'. Que ataque é que esta regra trava principalmente?",
+    "options": [
+      "Páginas de phishing que copiam o ecrã de início de sessão do Microsoft 365, porque a regra verifica cada link de um documento Office numa lista de sites falsos",
+      "Uma macro maliciosa num ficheiro Word que lança PowerShell ou cmd.exe para descarregar e correr a fase seguinte",
+      "Ransomware que cifra documentos Office em partilhas, porque a regra torna os ficheiros .docx e .xlsx só de leitura para todos os processos exceto as apps Office",
+      "Atacantes que roubam chaves de licença do Office do registo, porque a regra impede outros processos de ler as chaves de registo da instalação do Office"
+    ],
+    "correct": 1,
+    "explanation": "Muitas campanhas de malware começam com um documento cuja macro ou exploit faz o Word ou o Excel lançar PowerShell, cmd.exe, wscript ou outro binário para ir buscar o payload. Esta regra ASR impede as apps Office de criar processos filhos, partindo essa cadeia mesmo que o utilizador ative as macros. Não filtra links de phishing, não protege ficheiros contra ransomware (isso é o Controlled Folder Access) e não tem nada a ver com chaves de licença.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Porque é que os guias de hardening de Active Directory tratam ser membro do grupo integrado Backup Operators nos controladores de domínio como quase igual a Domain Admin?",
+    "options": [
+      "Porque os Backup Operators são adicionados automaticamente ao grupo Enterprise Admins em cada backup agendado, e assim podem alterar o schema da floresta",
+      "Porque o grupo pode repor a palavra-passe de qualquer conta, incluindo a conta krbtgt, sem que essa alteração fique escrita no registo de segurança",
+      "Porque os membros podem entrar em todos os postos como a conta local SYSTEM, o que lhes permite desativar o Microsoft Defender em todas as máquinas",
+      "Porque o SeBackupPrivilege lhes permite ler o NTDS.dit e as hives do registo, e assim extrair todos os hashes de palavras-passe do domínio"
+    ],
+    "correct": 3,
+    "explanation": "Os Backup Operators têm SeBackupPrivilege e SeRestorePrivilege e podem iniciar sessão nos controladores de domínio. O privilégio de backup passa por cima das ACLs dos ficheiros, por isso um membro pode copiar o NTDS.dit (por exemplo de uma shadow copy) e a hive SYSTEM e depois extrair offline os hashes de todas as contas, krbtgt incluída. Por isso o grupo pertence ao Tier 0 e normalmente deve estar vazio. Não entra nos Enterprise Admins, não repõe palavras-passe às escondidas nem dá SYSTEM nos postos.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Num controlador de domínio, que padrão de registos é um sinal comum de Kerberoasting num ambiente que normalmente usa AES no Kerberos?",
+    "options": [
+      "Muitos eventos 4769 (pedido de ticket de serviço) de um utilizador para várias contas de serviço com tipo de cifra 0x17 (RC4)",
+      "Muitos eventos 4625 (início de sessão falhado) para uma conta a partir de muitos IPs de origem em poucos minutos, seguidos do bloqueio dessa conta",
+      "Evento 4720 (conta de utilizador criada) para uma conta com nome parecido com um serviço, seguida da adição dessa conta aos Domain Admins",
+      "Evento 1102 (registo de auditoria limpo) no controlador de domínio logo depois de um servidor membro reiniciar fora da janela de manutenção"
+    ],
+    "correct": 0,
+    "explanation": "No Kerberoasting o atacante pede ao KDC tickets de serviço para contas com SPN e quebra-os offline; pedir RC4 torna a quebra muito mais rápida. Num DC isto aparece como evento 4769 com Ticket Encryption Type 0x17, muitas vezes uma rajada de um utilizador para muitos SPNs. Rajadas de 4625 apontam para password spraying ou força bruta, 4720 com mudanças de grupo para persistência, e 1102 para alguém a apagar rastos.",
+    "difficulty": "Médio"
   }
 ];
