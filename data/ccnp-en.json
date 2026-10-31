@@ -2754,5 +2754,17 @@
     "correct": 3,
     "explanation": "An EIGRP stub tells its neighbours not to query it, and the stub keyword decides what it advertises: connected, summary, static, redistributed, leak-map or receive-only. receive-only advertises nothing, so the hub learns no prefixes from the branch, even though the adjacency and the network statement are fine. The usual fix is 'eigrp stub connected summary' (the default) or at least 'connected', or a static route on the hub.",
     "difficulty": "Hard"
+  },
+  {
+    "question": "Two sites are joined by a GRE tunnel over the internet. Pings and SSH across the tunnel work, but HTTPS pages and file copies hang after the first few packets. The physical links have an MTU of 1500. What is the usual fix on the tunnel interfaces?",
+    "options": [
+      "Set 'ip mtu 1400' and 'ip tcp adjust-mss 1360', so large TCP segments fit with the GRE and IP headers added",
+      "Set 'tunnel mode ipip', because GRE cannot carry TCP sessions longer than a few packets and IP-in-IP removes that limit",
+      "Set 'keepalive 10 3', because the tunnel goes down between keepalives and the long transfers are cut each time it does",
+      "Set 'bandwidth 1500' on the tunnel, because the default tunnel bandwidth is too low and large flows get policed to zero"
+    ],
+    "correct": 0,
+    "explanation": "GRE adds 24 bytes of headers, so a full 1500-byte packet no longer fits on a 1500-byte path. Small packets like pings and SSH keystrokes pass, but large TCP segments with DF set are dropped, and if ICMP 'fragmentation needed' is filtered, path MTU discovery fails and the session hangs. Lowering the tunnel IP MTU to 1400 and clamping the TCP MSS to 1360 avoids it. IP-in-IP has the same overhead problem, keepalives only track tunnel state and the bandwidth command only affects routing metrics and QoS.",
+    "difficulty": "Hard"
   }
 ]
