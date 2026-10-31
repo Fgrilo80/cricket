@@ -2831,5 +2831,17 @@ window.QUIZ_BANK = [
     "correct": 0,
     "explanation": "A CRC error means the frame's checksum did not match what arrived, so bits were corrupted on the way. With duplex matching and no collisions, the usual causes are physical: bad or poorly crimped cabling, a faulty patch port, interference or a failing transceiver. Swap the cable or run a cable test. A native VLAN mismatch, an STP blocking state and port-security drops are logged differently and do not corrupt frames.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "Two routers run HSRP group 10 for VLAN 10. 'show standby brief' shows Active on both of them at the same time, and users see intermittent drops. What should you check first?",
+    "options": [
+      "The priority values, because two routers with the same priority always both become Active until one of them is reloaded",
+      "The virtual MAC address, because HSRP version 2 gives each router its own virtual MAC and so both of them report Active",
+      "Whether the HSRP hellos reach each other: VLAN 10 must be up and allowed on the link between them, with no filter on it",
+      "The preempt setting, because without preempt neither router will ever step down and both stay Active after they boot"
+    ],
+    "correct": 2,
+    "explanation": "Each HSRP router becomes Active only when it stops hearing hellos from a better peer. If both are Active, they are not receiving each other's hellos, which usually means VLAN 10 is missing from the trunk between them, a link is down, or an ACL drops the multicast hellos. Equal priorities are broken by the highest IP, the virtual MAC is shared by the group, and preempt only controls taking over from a lower-priority Active router.",
+    "difficulty": "Medium"
   }
 ];

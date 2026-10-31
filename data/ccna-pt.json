@@ -2831,5 +2831,17 @@
     "correct": 0,
     "explanation": "Um erro de CRC significa que o checksum da frame não bate certo com o que chegou, ou seja, houve bits corrompidos pelo caminho. Com o duplex igual e sem colisões, as causas habituais são físicas: cabo estragado ou mal cravado, porta de patch avariada, interferência ou um transceiver a falhar. Troca o cabo ou faz um teste de cabo. Uma native VLAN diferente, o estado blocking do STP e as rejeições do port-security aparecem de outra forma e não corrompem frames.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Dois routers correm HSRP grupo 10 na VLAN 10. O 'show standby brief' mostra Active nos dois ao mesmo tempo e os utilizadores têm quebras intermitentes. O que deves verificar primeiro?",
+    "options": [
+      "Os valores de prioridade, porque dois routers com a mesma prioridade ficam sempre os dois Active até um deles ser reiniciado",
+      "O endereço MAC virtual, porque o HSRP versão 2 dá a cada router o seu próprio MAC virtual e por isso ambos aparecem Active",
+      "Se os hellos HSRP chegam de um ao outro: a VLAN 10 tem de estar ativa e permitida na ligação entre eles, sem filtro nenhum",
+      "A opção preempt, porque sem preempt nenhum dos routers abdica e os dois continuam Active depois de arrancarem os dois"
+    ],
+    "correct": 2,
+    "explanation": "Um router HSRP só fica Active quando deixa de ouvir hellos de um par melhor. Se os dois estão Active, não estão a receber os hellos um do outro, o que normalmente significa que a VLAN 10 não está no trunk entre eles, uma ligação está em baixo ou uma ACL descarta os hellos multicast. Prioridades iguais são desempatadas pelo IP mais alto, o MAC virtual é partilhado pelo grupo e o preempt só controla tomar o lugar de um Active com prioridade mais baixa.",
+    "difficulty": "Médio"
   }
 ]

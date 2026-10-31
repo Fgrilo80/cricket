@@ -2754,5 +2754,17 @@ window.QUIZ_BANK = [
     "correct": 3,
     "explanation": "Um stub EIGRP diz aos vizinhos para não o consultarem (queries), e a palavra a seguir a stub decide o que anuncia: connected, summary, static, redistributed, leak-map ou receive-only. O receive-only não anuncia nada, por isso o hub não aprende prefixos da filial, mesmo com a adjacência e o comando network corretos. A correção habitual é 'eigrp stub connected summary' (o padrão) ou pelo menos 'connected', ou uma rota estática no hub.",
     "difficulty": "Difícil"
+  },
+  {
+    "question": "Dois sites estão ligados por um túnel GRE pela internet. Os pings e o SSH pelo túnel funcionam, mas as páginas HTTPS e as cópias de ficheiros param depois dos primeiros pacotes. As ligações físicas têm MTU 1500. Qual é a correção habitual nas interfaces do túnel?",
+    "options": [
+      "Configurar 'ip mtu 1400' e 'ip tcp adjust-mss 1360', para os segmentos TCP grandes caberem com os cabeçalhos GRE e IP",
+      "Configurar 'tunnel mode ipip', porque o GRE não aguenta sessões TCP com mais de alguns pacotes e o IP-in-IP tira esse limite",
+      "Configurar 'keepalive 10 3', porque o túnel cai entre keepalives e as transferências longas são cortadas sempre que isso acontece",
+      "Configurar 'bandwidth 1500' no túnel, porque a largura de banda padrão do túnel é baixa e os fluxos grandes são limitados a zero"
+    ],
+    "correct": 0,
+    "explanation": "O GRE acrescenta 24 bytes de cabeçalhos, por isso um pacote de 1500 bytes já não cabe num caminho de 1500. Pacotes pequenos como pings e teclas de SSH passam, mas os segmentos TCP grandes com DF ligado são descartados e, se o ICMP 'fragmentation needed' estiver filtrado, o path MTU discovery falha e a sessão para. Baixar o IP MTU do túnel para 1400 e limitar o MSS do TCP a 1360 resolve. O IP-in-IP tem o mesmo problema de overhead, os keepalives só seguem o estado do túnel e o comando bandwidth só afeta métricas de routing e QoS.",
+    "difficulty": "Difícil"
   }
 ];

