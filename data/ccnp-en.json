@@ -2730,5 +2730,29 @@
     "correct": 3,
     "explanation": "An OSPF virtual link is a logical part of area 0 tunnelled through a transit area, and the transit area must carry full routing information. Stub, totally stubby and NSSA areas cannot be transit areas, so IOS will not bring the virtual link up while area 1 is stub. The ABRs do not need to share a subnet (the link follows the intra-area path to the other router ID), the command is entered with the transit area number, and area 2's type does not matter.",
     "difficulty": "Hard"
+  },
+  {
+    "question": "A router has eBGP sessions to ISP-A (AS 65001) and ISP-B (AS 65002). Both advertise 203.0.113.0/24 with equal attributes and an AS path of length 1. 'maximum-paths 2' is set, yet only one path is installed. Why?",
+    "options": [
+      "By default eBGP multipath requires identical AS_PATH attributes; 'bgp bestpath as-path multipath-relax' allows different paths of equal length",
+      "The maximum-paths command only applies to iBGP routes, so eBGP routes from two providers need 'maximum-paths ibgp 2' before both are installed",
+      "BGP never installs more than one path for a prefix learned from different neighbour ASes, so load sharing needs a static route to each provider",
+      "Both paths must also have the same BGP router ID, so one provider has to change its router ID before the router treats them as equal-cost paths"
+    ],
+    "correct": 0,
+    "explanation": "For BGP multipath, candidate paths must match on weight, local preference, origin, MED and AS_PATH. Without extra configuration IOS demands the AS_PATH be identical, not just equally long, so paths via AS 65001 and AS 65002 are not multipath candidates. 'bgp bestpath as-path multipath-relax' loosens this to equal length. 'maximum-paths ibgp' is the iBGP knob, BGP can load share across ASes once relaxed, and the router ID is only a tie-breaker.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "A branch router runs 'eigrp stub receive-only' towards the hub. The branch LAN 10.50.0.0/24 is in the EIGRP network statement and the adjacency is up, but the hub has no route to 10.50.0.0/24. Why?",
+    "options": [
+      "The stub option stops the hub from forming a full adjacency, so it keeps the neighbour but ignores every update until the hold timer expires",
+      "Stub routers only send routes after the hub queries them, and the hub never queries a stub, so the LAN route appears only after a flap",
+      "receive-only makes the branch send its connected routes only as summaries, and the hub drops the summary because auto-summary is off",
+      "receive-only tells the branch to advertise no routes at all, so the hub learns nothing from it; use 'eigrp stub connected' to send the LAN"
+    ],
+    "correct": 3,
+    "explanation": "An EIGRP stub tells its neighbours not to query it, and the stub keyword decides what it advertises: connected, summary, static, redistributed, leak-map or receive-only. receive-only advertises nothing, so the hub learns no prefixes from the branch, even though the adjacency and the network statement are fine. The usual fix is 'eigrp stub connected summary' (the default) or at least 'connected', or a static route on the hub.",
+    "difficulty": "Hard"
   }
 ]

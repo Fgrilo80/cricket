@@ -1462,5 +1462,77 @@
     "correct": 0,
     "explanation": "In Kerberoasting an attacker asks the KDC for service tickets for accounts with SPNs and cracks them offline; requesting RC4 makes cracking much faster. On a DC this shows up as event 4769 with Ticket Encryption Type 0x17, often a burst from one user for many SPNs. Event 4625 bursts point to password spraying or brute force, 4720 plus group changes to persistence, and 1102 to someone hiding tracks.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "An analyst suspects PsExec-style lateral movement onto a file server. Which entry in that server's logs is the classic sign?",
+    "options": [
+      "Event 4740 (user account locked out) for the administrator account, because PsExec always tries several wrong passwords before it gets in",
+      "Event 5156 (connection allowed by Windows Filtering Platform) on port 3389, because PsExec opens a hidden Remote Desktop session on the target",
+      "System event 7045 (a service was installed), for example a new PSEXESVC service, usually just after a network logon (4624 type 3)",
+      "Event 4800 (workstation locked) for the logged-on user, because PsExec locks the console so the user cannot see the commands being run"
+    ],
+    "correct": 2,
+    "explanation": "PsExec copies a service binary to the target's ADMIN$ share and creates a service (PSEXESVC by default) to run commands, so the target logs System event 7045, plus Security event 4697 if auditing is on, next to a type 3 network logon from the source. Renamed services still show the same pattern. PsExec uses SMB on port 445, not RDP, and it does not need failed logons or lock the console.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Attackers on a network run heavily obfuscated PowerShell (Base64 and string concatenation). Which Windows logging feature best shows the defenders what code actually ran?",
+    "options": [
+      "PowerShell transcription only, because it saves an exact copy of the Base64 command line typed at the console in a text file in each user profile",
+      "PowerShell Script Block Logging, which writes event 4104 with the script blocks as executed, after much of the obfuscation is removed",
+      "Windows Firewall logging with dropped packets enabled, because every PowerShell command creates a network connection that the log then records",
+      "Audit Logon events on the domain controllers, because each PowerShell command is checked against Kerberos and appears in event 4768 entries"
+    ],
+    "correct": 1,
+    "explanation": "Script Block Logging (event 4104 in Microsoft-Windows-PowerShell/Operational) records the code of each script block as PowerShell compiles it, so Base64 or concatenated strings show up in their decoded form, and Windows auto-logs blocks that look suspicious even when the policy is off. Transcription is useful but records console input and output rather than the decoded script. Firewall and Kerberos logon logs do not contain the PowerShell code at all.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "On a workstation with Sysmon, which event is the most direct sign that a tool such as Mimikatz is trying to read credentials from memory?",
+    "options": [
+      "Sysmon Event ID 3 (network connection) from lsass.exe to an external IP, because Mimikatz makes LSASS upload the hashes to the attacker's server",
+      "Sysmon Event ID 11 (file created) for a .kirbi file in C:\\Windows\\System32, because Mimikatz must write every ticket there before reading hashes",
+      "Sysmon Event ID 7 (image loaded) showing lsass.exe loading ntdll.dll, because LSASS only loads that library when a dumping tool has attached",
+      "Sysmon Event ID 10 (process access) with lsass.exe as the target and an access mask such as 0x1010 from an unusual process"
+    ],
+    "correct": 3,
+    "explanation": "Credential dumpers open a handle to lsass.exe with memory-read rights. Sysmon Event ID 10 (ProcessAccess) records the source process, the target and the GrantedAccess mask, and masks like 0x1010 or 0x1410 from a process that has no business touching LSASS are a classic detection. LSASS does not send hashes out over the network, .kirbi files are optional ticket exports saved wherever the attacker chooses, and every process loads ntdll.dll.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "A user's domain account locks out every few minutes, even after a password reset. Where do you look first to find which machine is sending the bad passwords?",
+    "options": [
+      "Event 4625 on the user's own laptop, because each failed logon is only ever recorded on the computer where the user is sitting",
+      "Event 4740 on the domain controller with the PDC emulator role, where Caller Computer Name shows the source of the lockout",
+      "Event 4720 on any domain controller, because the account is recreated every time it locks and the event lists the source host",
+      "Event 4624 on the file server, because a lockout is logged as a successful logon with logon type 3 from the computer that caused it"
+    ],
+    "correct": 1,
+    "explanation": "Bad password attempts are forwarded to the PDC emulator, which locks the account and logs event 4740 with the Caller Computer Name. That host is usually where a stale password lives: a mapped drive, a phone's mail app, a scheduled task or a service. Follow up with 4771 or 4776 failures on the DCs if needed. 4625 is a failed logon on the target machine, 4720 is account creation and 4624 is a successful logon.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "You suspect a DCSync attack. With Directory Service Access auditing on, which domain controller event best shows it?",
+    "options": [
+      "Event 4769 for the krbtgt service from a workstation, because DCSync asks the KDC for a service ticket for every account it wants to copy",
+      "Event 5136 showing the domain root object was modified, because DCSync writes the stolen hashes into an attribute of that object first",
+      "Event 4662 on the domain object with the DS-Replication-Get-Changes-All right, made by an account or host that is not a domain controller",
+      "Event 4740 for many accounts at once, because DCSync pulls each password by trying logons until the domain controller locks the account"
+    ],
+    "correct": 2,
+    "explanation": "DCSync uses the directory replication protocol (MS-DRSR) to ask a DC for password data, as a real DC would. With auditing on, the DC logs 4662 on the domain object with the replication rights, Get-Changes (1131f6aa-...) and Get-Changes-All (1131f6ad-...). Only DCs, and sometimes tools like Azure AD Connect, should do that, so the same request from a user account or workstation is a strong sign. DCSync does not modify objects, request krbtgt tickets or cause lockouts.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "Hunting for AS-REP roasting, which detail in the domain controller logs is the strongest lead?",
+    "options": [
+      "Event 4768 with Pre-Authentication Type 0 for accounts that have 'Do not require Kerberos preauthentication' set, from an unusual host",
+      "Event 4769 with ticket encryption 0x17 for a service account, because AS-REP roasting always asks for RC4 service tickets from the KDC",
+      "Event 4624 with logon type 10 on the domain controller, because AS-REP roasting needs an interactive RDP session to the KDC to work",
+      "Event 4625 with status 0xC000006A for many users, because AS-REP roasting guesses passwords online until one of the logons succeeds"
+    ],
+    "correct": 0,
+    "explanation": "In AS-REP roasting the attacker asks for a TGT for accounts that don't need Kerberos pre-authentication; the KDC answers with data encrypted with the user's key, which is then cracked offline. The DC logs 4768 with Pre-Authentication Type 0. Find those accounts with PowerShell (DoesNotRequirePreAuth) and clear the flag. 4769 with 0x17 points to Kerberoasting, and the attack needs neither RDP nor online password guessing.",
+    "difficulty": "Medium"
   }
 ]

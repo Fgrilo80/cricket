@@ -2678,6 +2678,30 @@ window.QUIZ_BANK = {
         "correct": 2,
         "explanation": "Um protetor contra picos só desvia sobretensões; não guarda energia, por isso quando a rede elétrica falha os equipamentos desligam-se logo, seja qual for o valor de joules. Uma UPS tem uma bateria que aguenta a carga em cortes curtos, e muitos modelos avisam o NAS ou servidor por USB ou pela rede para desligar em segurança antes de a bateria acabar. Um condicionador de energia suaviza ruído e pequenas quedas mas não cobre um corte, e um injetor PoE continua a tirar energia da rede elétrica.",
         "difficulty": "Fácil"
+      },
+      {
+        "question": "A informática mudou o site da intranet para um servidor novo e atualizou o registo DNS há uma hora. Todos os PCs chegam ao servidor novo exceto um portátil Windows, que continua a abrir o endereço antigo. Que comando nesse portátil resolve mais depressa?",
+        "options": [
+          "ipconfig /release seguido de ipconfig /renew, porque um novo lease DHCP também descarrega uma cópia nova de todos os registos DNS do servidor",
+          "ipconfig /flushdns, que limpa a cache local do resolver DNS para a próxima consulta voltar a perguntar ao servidor DNS",
+          "netsh winsock reset, porque o endereço antigo fica guardado no catálogo Winsock e só sai de lá quando a pilha de rede é refeita",
+          "arp -d *, porque o Windows guarda o IP do servidor web antigo na tabela ARP e usa-o em vez de voltar a perguntar ao servidor DNS"
+        ],
+        "correct": 1,
+        "explanation": "O Windows guarda as respostas DNS em cache durante o TTL do registo, por isso um portátil que consultou o nome antes da mudança pode continuar a usar o endereço antigo durante algum tempo. O ipconfig /flushdns esvazia essa cache e a próxima consulta vai ao servidor DNS (o ipconfig /displaydns mostra o que está em cache). Renovar o lease DHCP não atualiza registos DNS, o reset do Winsock repara a camada de sockets e a tabela ARP liga endereços IP a MACs, não nomes a IPs.",
+        "difficulty": "Fácil"
+      },
+      {
+        "question": "Um utilizador não chega a um servidor web. Corres tracert até ele: os saltos 1 a 3 respondem com tempos e, a partir do salto 4, todas as linhas mostram '* * * Pedido excedeu o tempo limite' até ao limite de 30 saltos. O que é que isto te diz primeiro?",
+        "options": [
+          "O PC do utilizador tem o default gateway errado, porque um gateway mal configurado é a única coisa que põe asteriscos nos saltos seguintes",
+          "O servidor DNS está em baixo, porque o tracert tem de resolver o nome outra vez em cada salto e para quando o DNS deixa de responder",
+          "O tráfego chega ao salto 3, por isso vê o que vem depois desse router: o equipamento ou ligação seguinte não responde ou descarta",
+          "O servidor web está sobrecarregado, porque um servidor ocupado responde com asteriscos a todos os saltos do caminho até a CPU baixar"
+        ],
+        "correct": 2,
+        "explanation": "O tracert mostra cada router que devolve uma mensagem ICMP Time Exceeded. Se os saltos 1 a 3 respondem, o PC, o gateway e os primeiros routers funcionam, portanto o gateway está bem. Asteriscos a partir do salto 4 indicam que o equipamento seguinte não responde ou descarta o tráfego (também pode só filtrar ICMP, por isso confirma). A resolução do nome é feita uma vez no início e o servidor web não entra nos saltos intermédios.",
+        "difficulty": "Fácil"
       }
     ],
     "en": [
@@ -5357,6 +5381,30 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "A surge protector only diverts voltage spikes; it has no stored energy, so when the mains drops the devices lose power at once, whatever its joule rating. A UPS has a battery that carries the load through short cuts, and many models tell a NAS or server over USB or the network to shut down safely before the battery runs out. A power conditioner smooths noise and small sags but does not bridge an outage, and a PoE injector still draws its power from the mains.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "IT moved the intranet site to a new server and updated its DNS record an hour ago. Every PC reaches the new server except one Windows laptop, which still opens the old address. Which command on that laptop is the quickest fix?",
+        "options": [
+          "ipconfig /release followed by ipconfig /renew, because a new DHCP lease also downloads a fresh copy of every DNS record from the server",
+          "ipconfig /flushdns, which clears the local DNS resolver cache so the next lookup asks the DNS server again",
+          "netsh winsock reset, because the old address is stored in the Winsock catalogue and stays there until the network stack is rebuilt",
+          "arp -d *, because Windows keeps the old web server's IP address in the ARP table and uses it instead of asking the DNS server again"
+        ],
+        "correct": 1,
+        "explanation": "Windows caches DNS answers for the record's TTL, so a laptop that looked the name up before the change can keep using the old address for a while. ipconfig /flushdns empties that cache and the next lookup goes to the DNS server (ipconfig /displaydns shows what is cached). Renewing the DHCP lease does not refresh DNS records, Winsock reset repairs the socket layer, and the ARP table maps IP addresses to MAC addresses, not names to IPs.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "A user can't reach a web server. You run tracert to it: hops 1 to 3 answer with times, and from hop 4 onwards every line shows '* * * Request timed out' until the 30-hop limit. What does this tell you first?",
+        "options": [
+          "The user's PC has the wrong default gateway, because a bad gateway is the only thing that makes tracert print asterisks on later hops",
+          "The DNS server is down, because tracert has to resolve the name again at every hop and stops answering once DNS fails to reply",
+          "Traffic reaches hop 3, so check what comes after that router: the next device or link is not answering or drops the probes",
+          "The web server is overloaded, because a busy server replies with asterisks to every hop on the path until its CPU load drops"
+        ],
+        "correct": 2,
+        "explanation": "tracert lists each router that sends back an ICMP Time Exceeded message. Hops 1 to 3 answering means the PC, its gateway and the first routers work, so the gateway is fine. Asterisks from hop 4 on mean the next device is not replying or is dropping the traffic (it could also just filter ICMP, so confirm). Name resolution happens once at the start, and the web server is not involved in the middle hops.",
         "difficulty": "Easy"
       }
     ]
@@ -8171,6 +8219,30 @@ window.QUIZ_BANK = {
         "correct": 0,
         "explanation": "Status up quer dizer que a camada 1 está bem (há portadora); Protocol down quer dizer que a camada de ligação de dados não está a funcionar. Em ligações série uma causa clássica é encapsulamento diferente: o padrão da Cisco é HDLC, por isso se só um lado estiver em PPP os keepalives não são entendidos e o line protocol fica em baixo. Uma ponta em shutdown aparece localmente como down/down, sub-redes IP diferentes não afetam o line protocol e não é preciso protocolo de encaminhamento para ele subir.",
         "difficulty": "Médio"
+      },
+      {
+        "question": "O SW1 está sempre a registar '%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet0/1 (1), with SW2 GigabitEthernet0/1 (99)'. O que deves fazer?",
+        "options": [
+          "Desativar o CDP na Gi0/1 dos dois switches, porque a mensagem só aparece quando o CDP corre num trunk e o próprio trunk está a funcionar bem",
+          "Mudar a Gi0/1 do SW1 para porta de acesso na VLAN 99, porque o CDP indica native VLAN diferente quando um lado é porta de acesso noutra VLAN",
+          "Juntar a VLAN 99 à lista de VLANs permitidas do trunk no SW1, porque uma native VLAN que não está permitida no trunk gera sempre esta mensagem",
+          "Configurar a mesma native VLAN nas duas pontas do trunk, por exemplo 'switchport trunk native vlan 99' na Gi0/1 do SW1"
+        ],
+        "correct": 3,
+        "explanation": "O CDP envia a native VLAN de cada lado, por isso consegue avisar quando as duas pontas de um trunk 802.1Q não coincidem (aqui VLAN 1 no SW1 e VLAN 99 no SW2). As tramas sem tag de uma native VLAN caem na outra, o que mistura tráfego entre VLANs e pode estragar o STP. A solução é configurar a mesma native VLAN nas duas pontas. Desativar o CDP só esconde o aviso, e mexer na lista de VLANs permitidas ou passar a porta de acesso não corrige a diferença.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Num switch, o 'show interfaces Gi0/12' mostra full duplex a 1 Gbps nas duas pontas, e os contadores de input errors e CRC sobem a cada minuto, sem colisões. Os utilizadores dessa porta queixam-se de transferências lentas. Qual é a causa mais provável?",
+        "options": [
+          "Um problema físico na ligação, como um cabo danificado ou mal cravado, uma porta do patch panel avariada ou interferência elétrica",
+          "Uma native VLAN diferente nas duas pontas, porque as frames marcadas com a VLAN errada falham a verificação de CRC quando chegam ao switch",
+          "O spanning tree pôs a Gi0/12 em estado blocking, por isso cada frame que lá chega é contada como erro de CRC e depois descartada",
+          "Foi atingido o máximo do port-security e as frames de MACs a mais são descartadas e registadas no contador de CRC da interface"
+        ],
+        "correct": 0,
+        "explanation": "Um erro de CRC significa que o checksum da frame não bate certo com o que chegou, ou seja, houve bits corrompidos pelo caminho. Com o duplex igual e sem colisões, as causas habituais são físicas: cabo estragado ou mal cravado, porta de patch avariada, interferência ou um transceiver a falhar. Troca o cabo ou faz um teste de cabo. Uma native VLAN diferente, o estado blocking do STP e as rejeições do port-security aparecem de outra forma e não corrompem frames.",
+        "difficulty": "Médio"
       }
     ],
     "en": [
@@ -10982,6 +11054,30 @@ window.QUIZ_BANK = {
         "correct": 0,
         "explanation": "Status up means Layer 1 is fine (carrier detected); Protocol down means the data-link layer is not working. On serial links a classic cause is an encapsulation mismatch: Cisco's default is HDLC, so if only one side is set to PPP the keepalives are not understood and the line protocol stays down. A shutdown far end shows as down/down locally, an IP subnet mismatch does not affect the line protocol, and no routing protocol is needed for it to come up.",
         "difficulty": "Medium"
+      },
+      {
+        "question": "SW1 keeps logging '%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet0/1 (1), with SW2 GigabitEthernet0/1 (99)'. What should you do?",
+        "options": [
+          "Disable CDP on Gi0/1 of both switches, because the message only appears when CDP runs on a trunk and the trunk itself is working correctly",
+          "Change Gi0/1 on SW1 to an access port in VLAN 99, because CDP reports a native VLAN mismatch when one side is an access port in another VLAN",
+          "Add VLAN 99 to the allowed VLAN list of the trunk on SW1, because a native VLAN that is not allowed on the trunk always triggers this message",
+          "Set the same native VLAN on both trunk ends, for example 'switchport trunk native vlan 99' on SW1 Gi0/1"
+        ],
+        "correct": 3,
+        "explanation": "CDP carries each side's native VLAN, so it can warn when the two ends of an 802.1Q trunk disagree (here VLAN 1 on SW1 and VLAN 99 on SW2). Untagged frames from one native VLAN land in the other, which leaks traffic between VLANs and can break STP. The fix is to configure the same native VLAN on both ends. Disabling CDP only hides the warning, and the allowed-list or access-port changes do not fix the mismatch.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "On a switch, 'show interfaces Gi0/12' shows full duplex at 1 Gbps on both ends, and the input errors and CRC counters keep going up every minute, with no collisions. Users on that port complain of slow transfers. What is the most likely cause?",
+        "options": [
+          "A physical problem on the link, such as a damaged or badly terminated cable, a bad patch panel port or electrical interference",
+          "A native VLAN mismatch on the port, because frames tagged with the wrong VLAN fail the CRC check when the switch receives them",
+          "Spanning tree has put Gi0/12 in the blocking state, so every frame that arrives on it is counted as a CRC error and then dropped",
+          "The port-security maximum has been reached, and frames from extra MAC addresses are dropped and recorded under the CRC counter"
+        ],
+        "correct": 0,
+        "explanation": "A CRC error means the frame's checksum did not match what arrived, so bits were corrupted on the way. With duplex matching and no collisions, the usual causes are physical: bad or poorly crimped cabling, a faulty patch port, interference or a failing transceiver. Swap the cable or run a cable test. A native VLAN mismatch, an STP blocking state and port-security drops are logged differently and do not corrupt frames.",
+        "difficulty": "Medium"
       }
     ]
   },
@@ -13718,6 +13814,30 @@ window.QUIZ_BANK = {
         "correct": 3,
         "explanation": "Um virtual link OSPF é uma parte lógica da área 0 que passa por dentro de uma área de trânsito, e essa área tem de ter a informação de encaminhamento completa. Áreas stub, totally stubby e NSSA não podem ser de trânsito, por isso o IOS não sobe o virtual link enquanto a área 1 for stub. Os ABRs não precisam de partilhar sub-rede (o link segue o caminho intra-área até ao outro router ID), o comando leva o número da área de trânsito e o tipo da área 2 não interessa.",
         "difficulty": "Difícil"
+      },
+      {
+        "question": "Um router tem sessões eBGP para o ISP-A (AS 65001) e o ISP-B (AS 65002). Os dois anunciam 203.0.113.0/24 com atributos iguais e AS path de comprimento 1. O 'maximum-paths 2' está configurado, mas só um caminho é instalado. Porquê?",
+        "options": [
+          "Por omissão o multipath eBGP exige AS_PATH idêntico; o 'bgp bestpath as-path multipath-relax' aceita caminhos diferentes do mesmo comprimento",
+          "O comando maximum-paths só se aplica a rotas iBGP, por isso as rotas eBGP de dois fornecedores precisam de 'maximum-paths ibgp 2' para entrarem as duas",
+          "O BGP nunca instala mais de um caminho para um prefixo aprendido de AS vizinhos diferentes, por isso a partilha de carga precisa de rotas estáticas",
+          "Os dois caminhos também têm de ter o mesmo router ID de BGP, por isso um dos fornecedores tem de mudar o router ID para serem tratados como iguais"
+        ],
+        "correct": 0,
+        "explanation": "Para multipath BGP, os caminhos candidatos têm de coincidir em weight, local preference, origin, MED e AS_PATH. Sem configuração extra o IOS exige que o AS_PATH seja idêntico, não só do mesmo comprimento, por isso os caminhos pelo AS 65001 e pelo AS 65002 não são candidatos. O 'bgp bestpath as-path multipath-relax' relaxa isto para o mesmo comprimento. O 'maximum-paths ibgp' é a opção para iBGP, o BGP consegue partilhar carga entre AS depois de relaxado e o router ID é só critério de desempate.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Um router de filial corre 'eigrp stub receive-only' para o hub. A LAN da filial 10.50.0.0/24 está no comando network do EIGRP e a adjacência está up, mas o hub não tem rota para 10.50.0.0/24. Porquê?",
+        "options": [
+          "A opção stub impede o hub de formar uma adjacência completa, por isso mantém o vizinho mas ignora todas as atualizações até o hold timer expirar",
+          "Os routers stub só enviam rotas depois de o hub os consultar, e o hub nunca consulta um stub, por isso a rota da LAN só aparece depois de um flap",
+          "O receive-only faz a filial enviar as redes ligadas apenas como sumários, e o hub descarta o sumário porque o auto-summary está desligado",
+          "O receive-only diz à filial para não anunciar rota nenhuma, por isso o hub não aprende nada dela; usa 'eigrp stub connected' para enviar a LAN"
+        ],
+        "correct": 3,
+        "explanation": "Um stub EIGRP diz aos vizinhos para não o consultarem (queries), e a palavra a seguir a stub decide o que anuncia: connected, summary, static, redistributed, leak-map ou receive-only. O receive-only não anuncia nada, por isso o hub não aprende prefixos da filial, mesmo com a adjacência e o comando network corretos. A correção habitual é 'eigrp stub connected summary' (o padrão) ou pelo menos 'connected', ou uma rota estática no hub.",
+        "difficulty": "Difícil"
       }
     ],
     "en": [
@@ -16452,6 +16572,30 @@ window.QUIZ_BANK = {
         "correct": 3,
         "explanation": "An OSPF virtual link is a logical part of area 0 tunnelled through a transit area, and the transit area must carry full routing information. Stub, totally stubby and NSSA areas cannot be transit areas, so IOS will not bring the virtual link up while area 1 is stub. The ABRs do not need to share a subnet (the link follows the intra-area path to the other router ID), the command is entered with the transit area number, and area 2's type does not matter.",
         "difficulty": "Hard"
+      },
+      {
+        "question": "A router has eBGP sessions to ISP-A (AS 65001) and ISP-B (AS 65002). Both advertise 203.0.113.0/24 with equal attributes and an AS path of length 1. 'maximum-paths 2' is set, yet only one path is installed. Why?",
+        "options": [
+          "By default eBGP multipath requires identical AS_PATH attributes; 'bgp bestpath as-path multipath-relax' allows different paths of equal length",
+          "The maximum-paths command only applies to iBGP routes, so eBGP routes from two providers need 'maximum-paths ibgp 2' before both are installed",
+          "BGP never installs more than one path for a prefix learned from different neighbour ASes, so load sharing needs a static route to each provider",
+          "Both paths must also have the same BGP router ID, so one provider has to change its router ID before the router treats them as equal-cost paths"
+        ],
+        "correct": 0,
+        "explanation": "For BGP multipath, candidate paths must match on weight, local preference, origin, MED and AS_PATH. Without extra configuration IOS demands the AS_PATH be identical, not just equally long, so paths via AS 65001 and AS 65002 are not multipath candidates. 'bgp bestpath as-path multipath-relax' loosens this to equal length. 'maximum-paths ibgp' is the iBGP knob, BGP can load share across ASes once relaxed, and the router ID is only a tie-breaker.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "A branch router runs 'eigrp stub receive-only' towards the hub. The branch LAN 10.50.0.0/24 is in the EIGRP network statement and the adjacency is up, but the hub has no route to 10.50.0.0/24. Why?",
+        "options": [
+          "The stub option stops the hub from forming a full adjacency, so it keeps the neighbour but ignores every update until the hold timer expires",
+          "Stub routers only send routes after the hub queries them, and the hub never queries a stub, so the LAN route appears only after a flap",
+          "receive-only makes the branch send its connected routes only as summaries, and the hub drops the summary because auto-summary is off",
+          "receive-only tells the branch to advertise no routes at all, so the hub learns nothing from it; use 'eigrp stub connected' to send the LAN"
+        ],
+        "correct": 3,
+        "explanation": "An EIGRP stub tells its neighbours not to query it, and the stub keyword decides what it advertises: connected, summary, static, redistributed, leak-map or receive-only. receive-only advertises nothing, so the hub learns no prefixes from the branch, even though the adjacency and the network statement are fine. The usual fix is 'eigrp stub connected summary' (the default) or at least 'connected', or a static route on the hub.",
+        "difficulty": "Hard"
       }
     ]
   },
@@ -17920,6 +18064,78 @@ window.QUIZ_BANK = {
         "correct": 0,
         "explanation": "No Kerberoasting o atacante pede ao KDC tickets de serviço para contas com SPN e quebra-os offline; pedir RC4 torna a quebra muito mais rápida. Num DC isto aparece como evento 4769 com Ticket Encryption Type 0x17, muitas vezes uma rajada de um utilizador para muitos SPNs. Rajadas de 4625 apontam para password spraying ou força bruta, 4720 com mudanças de grupo para persistência, e 1102 para alguém a apagar rastos.",
         "difficulty": "Médio"
+      },
+      {
+        "question": "Um analista suspeita de movimento lateral ao estilo PsExec para um servidor de ficheiros. Que registo nesse servidor é o sinal clássico?",
+        "options": [
+          "Evento 4740 (conta de utilizador bloqueada) para a conta de administrador, porque o PsExec tenta sempre várias palavras-passe erradas antes de entrar",
+          "Evento 5156 (ligação permitida pela Windows Filtering Platform) na porta 3389, porque o PsExec abre uma sessão Remote Desktop escondida no alvo",
+          "Evento de sistema 7045 (serviço instalado), por exemplo um novo serviço PSEXESVC, normalmente logo após um logon de rede (4624 tipo 3)",
+          "Evento 4800 (estação bloqueada) para o utilizador com sessão aberta, porque o PsExec bloqueia a consola para o utilizador não ver os comandos"
+        ],
+        "correct": 2,
+        "explanation": "O PsExec copia um binário de serviço para a partilha ADMIN$ do alvo e cria um serviço (PSEXESVC por omissão) para correr comandos, por isso o alvo regista o evento de sistema 7045, mais o evento de segurança 4697 se a auditoria estiver ativa, junto a um logon de rede tipo 3 vindo da origem. Serviços com outro nome mostram o mesmo padrão. O PsExec usa SMB na porta 445, não RDP, e não precisa de logons falhados nem bloqueia a consola.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Atacantes numa rede correm PowerShell muito ofuscado (Base64 e concatenação de strings). Que funcionalidade de registo do Windows mostra melhor aos defensores o código que correu de facto?",
+        "options": [
+          "Só a transcrição do PowerShell, porque guarda uma cópia exata da linha de comandos Base64 escrita na consola num ficheiro de texto no perfil",
+          "O Script Block Logging do PowerShell, que escreve o evento 4104 com os blocos de script tal como correram, já sem grande parte da ofuscação",
+          "O registo da Firewall do Windows com pacotes descartados, porque cada comando PowerShell cria uma ligação de rede que depois fica no registo",
+          "A auditoria de logons nos controladores de domínio, porque cada comando PowerShell é validado pelo Kerberos e aparece em eventos 4768"
+        ],
+        "correct": 1,
+        "explanation": "O Script Block Logging (evento 4104 em Microsoft-Windows-PowerShell/Operational) regista o código de cada bloco de script quando o PowerShell o compila, por isso Base64 ou strings concatenadas aparecem já descodificadas, e o Windows regista automaticamente blocos com ar suspeito mesmo com a política desligada. A transcrição é útil mas guarda a entrada e saída da consola, não o script descodificado. Os registos da firewall e de logons Kerberos não contêm o código PowerShell.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Num posto com Sysmon, que evento é o sinal mais direto de que uma ferramenta como o Mimikatz está a tentar ler credenciais da memória?",
+        "options": [
+          "Sysmon Event ID 3 (ligação de rede) do lsass.exe para um IP externo, porque o Mimikatz faz o LSASS enviar os hashes para o servidor do atacante",
+          "Sysmon Event ID 11 (ficheiro criado) de um ficheiro .kirbi em C:\\Windows\\System32, porque o Mimikatz tem de escrever lá cada ticket antes de ler hashes",
+          "Sysmon Event ID 7 (imagem carregada) a mostrar o lsass.exe a carregar o ntdll.dll, porque o LSASS só carrega essa biblioteca quando há uma ferramenta ligada",
+          "Sysmon Event ID 10 (acesso a processo) com o lsass.exe como alvo e uma máscara de acesso como 0x1010 vinda de um processo invulgar"
+        ],
+        "correct": 3,
+        "explanation": "As ferramentas que extraem credenciais abrem um handle para o lsass.exe com direitos de leitura de memória. O Sysmon Event ID 10 (ProcessAccess) regista o processo de origem, o alvo e a máscara GrantedAccess, e máscaras como 0x1010 ou 0x1410 vindas de um processo que não tem nada a ver com o LSASS são uma deteção clássica. O LSASS não envia hashes pela rede, os ficheiros .kirbi são exportações opcionais de tickets guardadas onde o atacante quiser e todos os processos carregam o ntdll.dll.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "A conta de domínio de um utilizador bloqueia de poucos em poucos minutos, mesmo depois de mudar a password. Onde procuras primeiro para descobrir que máquina está a enviar as passwords erradas?",
+        "options": [
+          "No evento 4625 do portátil do próprio utilizador, porque cada logon falhado fica registado só no computador onde o utilizador está",
+          "No evento 4740 do controlador de domínio com o papel de PDC emulator, cujo campo Caller Computer Name mostra de onde veio o bloqueio",
+          "No evento 4720 de qualquer controlador de domínio, porque a conta é recriada sempre que bloqueia e o evento indica o host de origem",
+          "No evento 4624 do servidor de ficheiros, porque um bloqueio é registado como logon bem-sucedido do tipo 3 vindo do computador culpado"
+        ],
+        "correct": 1,
+        "explanation": "As tentativas com password errada são reencaminhadas para o PDC emulator, que bloqueia a conta e regista o evento 4740 com o Caller Computer Name. Esse host costuma ter uma password antiga guardada: uma unidade mapeada, a app de email de um telemóvel, uma tarefa agendada ou um serviço. Se precisares, segue com as falhas 4771 ou 4776 nos DCs. O 4625 é um logon falhado na máquina de destino, o 4720 é a criação de uma conta e o 4624 é um logon com sucesso.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "Suspeitas de um ataque DCSync. Com a auditoria de Directory Service Access ligada, que evento do controlador de domínio mostra isso melhor?",
+        "options": [
+          "O evento 4769 para o serviço krbtgt vindo de um posto, porque o DCSync pede ao KDC um ticket de serviço por cada conta que quer copiar",
+          "O evento 5136 a mostrar que o objeto raiz do domínio foi alterado, porque o DCSync escreve primeiro os hashes roubados num atributo dele",
+          "O evento 4662 no objeto do domínio com o direito DS-Replication-Get-Changes-All, feito por uma conta ou host que não é controlador de domínio",
+          "O evento 4740 para muitas contas de uma vez, porque o DCSync tira cada password a tentar logons até o controlador de domínio bloquear a conta"
+        ],
+        "correct": 2,
+        "explanation": "O DCSync usa o protocolo de replicação do diretório (MS-DRSR) para pedir dados de passwords a um DC, como faria um DC verdadeiro. Com a auditoria ligada, o DC regista o 4662 no objeto do domínio com os direitos de replicação Get-Changes (1131f6aa-...) e Get-Changes-All (1131f6ad-...). Só os DCs, e às vezes ferramentas como o Azure AD Connect, devem fazer isso, por isso o mesmo pedido vindo de uma conta de utilizador ou de um posto é um forte sinal. O DCSync não altera objetos, não pede tickets do krbtgt nem causa bloqueios.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "À procura de AS-REP roasting, que detalhe nos registos do controlador de domínio é a pista mais forte?",
+        "options": [
+          "O evento 4768 com Pre-Authentication Type 0 para contas com 'Do not require Kerberos preauthentication' ativo, vindo de um host invulgar",
+          "O evento 4769 com encriptação de ticket 0x17 para uma conta de serviço, porque o AS-REP roasting pede sempre tickets de serviço RC4 ao KDC",
+          "O evento 4624 com logon do tipo 10 no controlador de domínio, porque o AS-REP roasting precisa de uma sessão RDP interativa ao KDC",
+          "O evento 4625 com estado 0xC000006A para muitos utilizadores, porque o AS-REP roasting adivinha passwords online até um logon funcionar"
+        ],
+        "correct": 0,
+        "explanation": "No AS-REP roasting o atacante pede um TGT para contas que não precisam de pré-autenticação Kerberos; o KDC responde com dados cifrados com a chave do utilizador, que depois são quebrados offline. O DC regista o 4768 com Pre-Authentication Type 0. Encontra essas contas com PowerShell (DoesNotRequirePreAuth) e desliga a opção. O 4769 com 0x17 aponta para Kerberoasting, e o ataque não precisa de RDP nem de adivinhar passwords online.",
+        "difficulty": "Médio"
       }
     ],
     "en": [
@@ -19385,6 +19601,78 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "In Kerberoasting an attacker asks the KDC for service tickets for accounts with SPNs and cracks them offline; requesting RC4 makes cracking much faster. On a DC this shows up as event 4769 with Ticket Encryption Type 0x17, often a burst from one user for many SPNs. Event 4625 bursts point to password spraying or brute force, 4720 plus group changes to persistence, and 1102 to someone hiding tracks.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "An analyst suspects PsExec-style lateral movement onto a file server. Which entry in that server's logs is the classic sign?",
+        "options": [
+          "Event 4740 (user account locked out) for the administrator account, because PsExec always tries several wrong passwords before it gets in",
+          "Event 5156 (connection allowed by Windows Filtering Platform) on port 3389, because PsExec opens a hidden Remote Desktop session on the target",
+          "System event 7045 (a service was installed), for example a new PSEXESVC service, usually just after a network logon (4624 type 3)",
+          "Event 4800 (workstation locked) for the logged-on user, because PsExec locks the console so the user cannot see the commands being run"
+        ],
+        "correct": 2,
+        "explanation": "PsExec copies a service binary to the target's ADMIN$ share and creates a service (PSEXESVC by default) to run commands, so the target logs System event 7045, plus Security event 4697 if auditing is on, next to a type 3 network logon from the source. Renamed services still show the same pattern. PsExec uses SMB on port 445, not RDP, and it does not need failed logons or lock the console.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Attackers on a network run heavily obfuscated PowerShell (Base64 and string concatenation). Which Windows logging feature best shows the defenders what code actually ran?",
+        "options": [
+          "PowerShell transcription only, because it saves an exact copy of the Base64 command line typed at the console in a text file in each user profile",
+          "PowerShell Script Block Logging, which writes event 4104 with the script blocks as executed, after much of the obfuscation is removed",
+          "Windows Firewall logging with dropped packets enabled, because every PowerShell command creates a network connection that the log then records",
+          "Audit Logon events on the domain controllers, because each PowerShell command is checked against Kerberos and appears in event 4768 entries"
+        ],
+        "correct": 1,
+        "explanation": "Script Block Logging (event 4104 in Microsoft-Windows-PowerShell/Operational) records the code of each script block as PowerShell compiles it, so Base64 or concatenated strings show up in their decoded form, and Windows auto-logs blocks that look suspicious even when the policy is off. Transcription is useful but records console input and output rather than the decoded script. Firewall and Kerberos logon logs do not contain the PowerShell code at all.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "On a workstation with Sysmon, which event is the most direct sign that a tool such as Mimikatz is trying to read credentials from memory?",
+        "options": [
+          "Sysmon Event ID 3 (network connection) from lsass.exe to an external IP, because Mimikatz makes LSASS upload the hashes to the attacker's server",
+          "Sysmon Event ID 11 (file created) for a .kirbi file in C:\\Windows\\System32, because Mimikatz must write every ticket there before reading hashes",
+          "Sysmon Event ID 7 (image loaded) showing lsass.exe loading ntdll.dll, because LSASS only loads that library when a dumping tool has attached",
+          "Sysmon Event ID 10 (process access) with lsass.exe as the target and an access mask such as 0x1010 from an unusual process"
+        ],
+        "correct": 3,
+        "explanation": "Credential dumpers open a handle to lsass.exe with memory-read rights. Sysmon Event ID 10 (ProcessAccess) records the source process, the target and the GrantedAccess mask, and masks like 0x1010 or 0x1410 from a process that has no business touching LSASS are a classic detection. LSASS does not send hashes out over the network, .kirbi files are optional ticket exports saved wherever the attacker chooses, and every process loads ntdll.dll.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "A user's domain account locks out every few minutes, even after a password reset. Where do you look first to find which machine is sending the bad passwords?",
+        "options": [
+          "Event 4625 on the user's own laptop, because each failed logon is only ever recorded on the computer where the user is sitting",
+          "Event 4740 on the domain controller with the PDC emulator role, where Caller Computer Name shows the source of the lockout",
+          "Event 4720 on any domain controller, because the account is recreated every time it locks and the event lists the source host",
+          "Event 4624 on the file server, because a lockout is logged as a successful logon with logon type 3 from the computer that caused it"
+        ],
+        "correct": 1,
+        "explanation": "Bad password attempts are forwarded to the PDC emulator, which locks the account and logs event 4740 with the Caller Computer Name. That host is usually where a stale password lives: a mapped drive, a phone's mail app, a scheduled task or a service. Follow up with 4771 or 4776 failures on the DCs if needed. 4625 is a failed logon on the target machine, 4720 is account creation and 4624 is a successful logon.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "You suspect a DCSync attack. With Directory Service Access auditing on, which domain controller event best shows it?",
+        "options": [
+          "Event 4769 for the krbtgt service from a workstation, because DCSync asks the KDC for a service ticket for every account it wants to copy",
+          "Event 5136 showing the domain root object was modified, because DCSync writes the stolen hashes into an attribute of that object first",
+          "Event 4662 on the domain object with the DS-Replication-Get-Changes-All right, made by an account or host that is not a domain controller",
+          "Event 4740 for many accounts at once, because DCSync pulls each password by trying logons until the domain controller locks the account"
+        ],
+        "correct": 2,
+        "explanation": "DCSync uses the directory replication protocol (MS-DRSR) to ask a DC for password data, as a real DC would. With auditing on, the DC logs 4662 on the domain object with the replication rights, Get-Changes (1131f6aa-...) and Get-Changes-All (1131f6ad-...). Only DCs, and sometimes tools like Azure AD Connect, should do that, so the same request from a user account or workstation is a strong sign. DCSync does not modify objects, request krbtgt tickets or cause lockouts.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "Hunting for AS-REP roasting, which detail in the domain controller logs is the strongest lead?",
+        "options": [
+          "Event 4768 with Pre-Authentication Type 0 for accounts that have 'Do not require Kerberos preauthentication' set, from an unusual host",
+          "Event 4769 with ticket encryption 0x17 for a service account, because AS-REP roasting always asks for RC4 service tickets from the KDC",
+          "Event 4624 with logon type 10 on the domain controller, because AS-REP roasting needs an interactive RDP session to the KDC to work",
+          "Event 4625 with status 0xC000006A for many users, because AS-REP roasting guesses passwords online until one of the logons succeeds"
+        ],
+        "correct": 0,
+        "explanation": "In AS-REP roasting the attacker asks for a TGT for accounts that don't need Kerberos pre-authentication; the KDC answers with data encrypted with the user's key, which is then cracked offline. The DC logs 4768 with Pre-Authentication Type 0. Find those accounts with PowerShell (DoesNotRequirePreAuth) and clear the flag. 4769 with 0x17 points to Kerberoasting, and the attack needs neither RDP nor online password guessing.",
         "difficulty": "Medium"
       }
     ]

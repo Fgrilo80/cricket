@@ -2730,5 +2730,29 @@ window.QUIZ_BANK = [
     "correct": 3,
     "explanation": "Um virtual link OSPF é uma parte lógica da área 0 que passa por dentro de uma área de trânsito, e essa área tem de ter a informação de encaminhamento completa. Áreas stub, totally stubby e NSSA não podem ser de trânsito, por isso o IOS não sobe o virtual link enquanto a área 1 for stub. Os ABRs não precisam de partilhar sub-rede (o link segue o caminho intra-área até ao outro router ID), o comando leva o número da área de trânsito e o tipo da área 2 não interessa.",
     "difficulty": "Difícil"
+  },
+  {
+    "question": "Um router tem sessões eBGP para o ISP-A (AS 65001) e o ISP-B (AS 65002). Os dois anunciam 203.0.113.0/24 com atributos iguais e AS path de comprimento 1. O 'maximum-paths 2' está configurado, mas só um caminho é instalado. Porquê?",
+    "options": [
+      "Por omissão o multipath eBGP exige AS_PATH idêntico; o 'bgp bestpath as-path multipath-relax' aceita caminhos diferentes do mesmo comprimento",
+      "O comando maximum-paths só se aplica a rotas iBGP, por isso as rotas eBGP de dois fornecedores precisam de 'maximum-paths ibgp 2' para entrarem as duas",
+      "O BGP nunca instala mais de um caminho para um prefixo aprendido de AS vizinhos diferentes, por isso a partilha de carga precisa de rotas estáticas",
+      "Os dois caminhos também têm de ter o mesmo router ID de BGP, por isso um dos fornecedores tem de mudar o router ID para serem tratados como iguais"
+    ],
+    "correct": 0,
+    "explanation": "Para multipath BGP, os caminhos candidatos têm de coincidir em weight, local preference, origin, MED e AS_PATH. Sem configuração extra o IOS exige que o AS_PATH seja idêntico, não só do mesmo comprimento, por isso os caminhos pelo AS 65001 e pelo AS 65002 não são candidatos. O 'bgp bestpath as-path multipath-relax' relaxa isto para o mesmo comprimento. O 'maximum-paths ibgp' é a opção para iBGP, o BGP consegue partilhar carga entre AS depois de relaxado e o router ID é só critério de desempate.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Um router de filial corre 'eigrp stub receive-only' para o hub. A LAN da filial 10.50.0.0/24 está no comando network do EIGRP e a adjacência está up, mas o hub não tem rota para 10.50.0.0/24. Porquê?",
+    "options": [
+      "A opção stub impede o hub de formar uma adjacência completa, por isso mantém o vizinho mas ignora todas as atualizações até o hold timer expirar",
+      "Os routers stub só enviam rotas depois de o hub os consultar, e o hub nunca consulta um stub, por isso a rota da LAN só aparece depois de um flap",
+      "O receive-only faz a filial enviar as redes ligadas apenas como sumários, e o hub descarta o sumário porque o auto-summary está desligado",
+      "O receive-only diz à filial para não anunciar rota nenhuma, por isso o hub não aprende nada dela; usa 'eigrp stub connected' para enviar a LAN"
+    ],
+    "correct": 3,
+    "explanation": "Um stub EIGRP diz aos vizinhos para não o consultarem (queries), e a palavra a seguir a stub decide o que anuncia: connected, summary, static, redistributed, leak-map ou receive-only. O receive-only não anuncia nada, por isso o hub não aprende prefixos da filial, mesmo com a adjacência e o comando network corretos. A correção habitual é 'eigrp stub connected summary' (o padrão) ou pelo menos 'connected', ou uma rota estática no hub.",
+    "difficulty": "Difícil"
   }
 ];

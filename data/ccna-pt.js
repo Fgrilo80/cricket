@@ -2807,5 +2807,29 @@ window.QUIZ_BANK = [
     "correct": 0,
     "explanation": "Status up quer dizer que a camada 1 está bem (há portadora); Protocol down quer dizer que a camada de ligação de dados não está a funcionar. Em ligações série uma causa clássica é encapsulamento diferente: o padrão da Cisco é HDLC, por isso se só um lado estiver em PPP os keepalives não são entendidos e o line protocol fica em baixo. Uma ponta em shutdown aparece localmente como down/down, sub-redes IP diferentes não afetam o line protocol e não é preciso protocolo de encaminhamento para ele subir.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "O SW1 está sempre a registar '%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet0/1 (1), with SW2 GigabitEthernet0/1 (99)'. O que deves fazer?",
+    "options": [
+      "Desativar o CDP na Gi0/1 dos dois switches, porque a mensagem só aparece quando o CDP corre num trunk e o próprio trunk está a funcionar bem",
+      "Mudar a Gi0/1 do SW1 para porta de acesso na VLAN 99, porque o CDP indica native VLAN diferente quando um lado é porta de acesso noutra VLAN",
+      "Juntar a VLAN 99 à lista de VLANs permitidas do trunk no SW1, porque uma native VLAN que não está permitida no trunk gera sempre esta mensagem",
+      "Configurar a mesma native VLAN nas duas pontas do trunk, por exemplo 'switchport trunk native vlan 99' na Gi0/1 do SW1"
+    ],
+    "correct": 3,
+    "explanation": "O CDP envia a native VLAN de cada lado, por isso consegue avisar quando as duas pontas de um trunk 802.1Q não coincidem (aqui VLAN 1 no SW1 e VLAN 99 no SW2). As tramas sem tag de uma native VLAN caem na outra, o que mistura tráfego entre VLANs e pode estragar o STP. A solução é configurar a mesma native VLAN nas duas pontas. Desativar o CDP só esconde o aviso, e mexer na lista de VLANs permitidas ou passar a porta de acesso não corrige a diferença.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num switch, o 'show interfaces Gi0/12' mostra full duplex a 1 Gbps nas duas pontas, e os contadores de input errors e CRC sobem a cada minuto, sem colisões. Os utilizadores dessa porta queixam-se de transferências lentas. Qual é a causa mais provável?",
+    "options": [
+      "Um problema físico na ligação, como um cabo danificado ou mal cravado, uma porta do patch panel avariada ou interferência elétrica",
+      "Uma native VLAN diferente nas duas pontas, porque as frames marcadas com a VLAN errada falham a verificação de CRC quando chegam ao switch",
+      "O spanning tree pôs a Gi0/12 em estado blocking, por isso cada frame que lá chega é contada como erro de CRC e depois descartada",
+      "Foi atingido o máximo do port-security e as frames de MACs a mais são descartadas e registadas no contador de CRC da interface"
+    ],
+    "correct": 0,
+    "explanation": "Um erro de CRC significa que o checksum da frame não bate certo com o que chegou, ou seja, houve bits corrompidos pelo caminho. Com o duplex igual e sem colisões, as causas habituais são físicas: cabo estragado ou mal cravado, porta de patch avariada, interferência ou um transceiver a falhar. Troca o cabo ou faz um teste de cabo. Uma native VLAN diferente, o estado blocking do STP e as rejeições do port-security aparecem de outra forma e não corrompem frames.",
+    "difficulty": "Médio"
   }
 ];

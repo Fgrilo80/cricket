@@ -1462,5 +1462,77 @@ window.QUIZ_BANK = [
     "correct": 0,
     "explanation": "No Kerberoasting o atacante pede ao KDC tickets de serviço para contas com SPN e quebra-os offline; pedir RC4 torna a quebra muito mais rápida. Num DC isto aparece como evento 4769 com Ticket Encryption Type 0x17, muitas vezes uma rajada de um utilizador para muitos SPNs. Rajadas de 4625 apontam para password spraying ou força bruta, 4720 com mudanças de grupo para persistência, e 1102 para alguém a apagar rastos.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Um analista suspeita de movimento lateral ao estilo PsExec para um servidor de ficheiros. Que registo nesse servidor é o sinal clássico?",
+    "options": [
+      "Evento 4740 (conta de utilizador bloqueada) para a conta de administrador, porque o PsExec tenta sempre várias palavras-passe erradas antes de entrar",
+      "Evento 5156 (ligação permitida pela Windows Filtering Platform) na porta 3389, porque o PsExec abre uma sessão Remote Desktop escondida no alvo",
+      "Evento de sistema 7045 (serviço instalado), por exemplo um novo serviço PSEXESVC, normalmente logo após um logon de rede (4624 tipo 3)",
+      "Evento 4800 (estação bloqueada) para o utilizador com sessão aberta, porque o PsExec bloqueia a consola para o utilizador não ver os comandos"
+    ],
+    "correct": 2,
+    "explanation": "O PsExec copia um binário de serviço para a partilha ADMIN$ do alvo e cria um serviço (PSEXESVC por omissão) para correr comandos, por isso o alvo regista o evento de sistema 7045, mais o evento de segurança 4697 se a auditoria estiver ativa, junto a um logon de rede tipo 3 vindo da origem. Serviços com outro nome mostram o mesmo padrão. O PsExec usa SMB na porta 445, não RDP, e não precisa de logons falhados nem bloqueia a consola.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Atacantes numa rede correm PowerShell muito ofuscado (Base64 e concatenação de strings). Que funcionalidade de registo do Windows mostra melhor aos defensores o código que correu de facto?",
+    "options": [
+      "Só a transcrição do PowerShell, porque guarda uma cópia exata da linha de comandos Base64 escrita na consola num ficheiro de texto no perfil",
+      "O Script Block Logging do PowerShell, que escreve o evento 4104 com os blocos de script tal como correram, já sem grande parte da ofuscação",
+      "O registo da Firewall do Windows com pacotes descartados, porque cada comando PowerShell cria uma ligação de rede que depois fica no registo",
+      "A auditoria de logons nos controladores de domínio, porque cada comando PowerShell é validado pelo Kerberos e aparece em eventos 4768"
+    ],
+    "correct": 1,
+    "explanation": "O Script Block Logging (evento 4104 em Microsoft-Windows-PowerShell/Operational) regista o código de cada bloco de script quando o PowerShell o compila, por isso Base64 ou strings concatenadas aparecem já descodificadas, e o Windows regista automaticamente blocos com ar suspeito mesmo com a política desligada. A transcrição é útil mas guarda a entrada e saída da consola, não o script descodificado. Os registos da firewall e de logons Kerberos não contêm o código PowerShell.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Num posto com Sysmon, que evento é o sinal mais direto de que uma ferramenta como o Mimikatz está a tentar ler credenciais da memória?",
+    "options": [
+      "Sysmon Event ID 3 (ligação de rede) do lsass.exe para um IP externo, porque o Mimikatz faz o LSASS enviar os hashes para o servidor do atacante",
+      "Sysmon Event ID 11 (ficheiro criado) de um ficheiro .kirbi em C:\\Windows\\System32, porque o Mimikatz tem de escrever lá cada ticket antes de ler hashes",
+      "Sysmon Event ID 7 (imagem carregada) a mostrar o lsass.exe a carregar o ntdll.dll, porque o LSASS só carrega essa biblioteca quando há uma ferramenta ligada",
+      "Sysmon Event ID 10 (acesso a processo) com o lsass.exe como alvo e uma máscara de acesso como 0x1010 vinda de um processo invulgar"
+    ],
+    "correct": 3,
+    "explanation": "As ferramentas que extraem credenciais abrem um handle para o lsass.exe com direitos de leitura de memória. O Sysmon Event ID 10 (ProcessAccess) regista o processo de origem, o alvo e a máscara GrantedAccess, e máscaras como 0x1010 ou 0x1410 vindas de um processo que não tem nada a ver com o LSASS são uma deteção clássica. O LSASS não envia hashes pela rede, os ficheiros .kirbi são exportações opcionais de tickets guardadas onde o atacante quiser e todos os processos carregam o ntdll.dll.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "A conta de domínio de um utilizador bloqueia de poucos em poucos minutos, mesmo depois de mudar a password. Onde procuras primeiro para descobrir que máquina está a enviar as passwords erradas?",
+    "options": [
+      "No evento 4625 do portátil do próprio utilizador, porque cada logon falhado fica registado só no computador onde o utilizador está",
+      "No evento 4740 do controlador de domínio com o papel de PDC emulator, cujo campo Caller Computer Name mostra de onde veio o bloqueio",
+      "No evento 4720 de qualquer controlador de domínio, porque a conta é recriada sempre que bloqueia e o evento indica o host de origem",
+      "No evento 4624 do servidor de ficheiros, porque um bloqueio é registado como logon bem-sucedido do tipo 3 vindo do computador culpado"
+    ],
+    "correct": 1,
+    "explanation": "As tentativas com password errada são reencaminhadas para o PDC emulator, que bloqueia a conta e regista o evento 4740 com o Caller Computer Name. Esse host costuma ter uma password antiga guardada: uma unidade mapeada, a app de email de um telemóvel, uma tarefa agendada ou um serviço. Se precisares, segue com as falhas 4771 ou 4776 nos DCs. O 4625 é um logon falhado na máquina de destino, o 4720 é a criação de uma conta e o 4624 é um logon com sucesso.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "Suspeitas de um ataque DCSync. Com a auditoria de Directory Service Access ligada, que evento do controlador de domínio mostra isso melhor?",
+    "options": [
+      "O evento 4769 para o serviço krbtgt vindo de um posto, porque o DCSync pede ao KDC um ticket de serviço por cada conta que quer copiar",
+      "O evento 5136 a mostrar que o objeto raiz do domínio foi alterado, porque o DCSync escreve primeiro os hashes roubados num atributo dele",
+      "O evento 4662 no objeto do domínio com o direito DS-Replication-Get-Changes-All, feito por uma conta ou host que não é controlador de domínio",
+      "O evento 4740 para muitas contas de uma vez, porque o DCSync tira cada password a tentar logons até o controlador de domínio bloquear a conta"
+    ],
+    "correct": 2,
+    "explanation": "O DCSync usa o protocolo de replicação do diretório (MS-DRSR) para pedir dados de passwords a um DC, como faria um DC verdadeiro. Com a auditoria ligada, o DC regista o 4662 no objeto do domínio com os direitos de replicação Get-Changes (1131f6aa-...) e Get-Changes-All (1131f6ad-...). Só os DCs, e às vezes ferramentas como o Azure AD Connect, devem fazer isso, por isso o mesmo pedido vindo de uma conta de utilizador ou de um posto é um forte sinal. O DCSync não altera objetos, não pede tickets do krbtgt nem causa bloqueios.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "À procura de AS-REP roasting, que detalhe nos registos do controlador de domínio é a pista mais forte?",
+    "options": [
+      "O evento 4768 com Pre-Authentication Type 0 para contas com 'Do not require Kerberos preauthentication' ativo, vindo de um host invulgar",
+      "O evento 4769 com encriptação de ticket 0x17 para uma conta de serviço, porque o AS-REP roasting pede sempre tickets de serviço RC4 ao KDC",
+      "O evento 4624 com logon do tipo 10 no controlador de domínio, porque o AS-REP roasting precisa de uma sessão RDP interativa ao KDC",
+      "O evento 4625 com estado 0xC000006A para muitos utilizadores, porque o AS-REP roasting adivinha passwords online até um logon funcionar"
+    ],
+    "correct": 0,
+    "explanation": "No AS-REP roasting o atacante pede um TGT para contas que não precisam de pré-autenticação Kerberos; o KDC responde com dados cifrados com a chave do utilizador, que depois são quebrados offline. O DC regista o 4768 com Pre-Authentication Type 0. Encontra essas contas com PowerShell (DoesNotRequirePreAuth) e desliga a opção. O 4769 com 0x17 aponta para Kerberoasting, e o ataque não precisa de RDP nem de adivinhar passwords online.",
+    "difficulty": "Médio"
   }
 ];
