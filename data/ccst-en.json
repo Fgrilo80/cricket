@@ -2676,5 +2676,29 @@
     "correct": 2,
     "explanation": "A surge protector only diverts voltage spikes; it has no stored energy, so when the mains drops the devices lose power at once, whatever its joule rating. A UPS has a battery that carries the load through short cuts, and many models tell a NAS or server over USB or the network to shut down safely before the battery runs out. A power conditioner smooths noise and small sags but does not bridge an outage, and a PoE injector still draws its power from the mains.",
     "difficulty": "Easy"
+  },
+  {
+    "question": "IT moved the intranet site to a new server and updated its DNS record an hour ago. Every PC reaches the new server except one Windows laptop, which still opens the old address. Which command on that laptop is the quickest fix?",
+    "options": [
+      "ipconfig /release followed by ipconfig /renew, because a new DHCP lease also downloads a fresh copy of every DNS record from the server",
+      "ipconfig /flushdns, which clears the local DNS resolver cache so the next lookup asks the DNS server again",
+      "netsh winsock reset, because the old address is stored in the Winsock catalogue and stays there until the network stack is rebuilt",
+      "arp -d *, because Windows keeps the old web server's IP address in the ARP table and uses it instead of asking the DNS server again"
+    ],
+    "correct": 1,
+    "explanation": "Windows caches DNS answers for the record's TTL, so a laptop that looked the name up before the change can keep using the old address for a while. ipconfig /flushdns empties that cache and the next lookup goes to the DNS server (ipconfig /displaydns shows what is cached). Renewing the DHCP lease does not refresh DNS records, Winsock reset repairs the socket layer, and the ARP table maps IP addresses to MAC addresses, not names to IPs.",
+    "difficulty": "Easy"
+  },
+  {
+    "question": "A user can't reach a web server. You run tracert to it: hops 1 to 3 answer with times, and from hop 4 onwards every line shows '* * * Request timed out' until the 30-hop limit. What does this tell you first?",
+    "options": [
+      "The user's PC has the wrong default gateway, because a bad gateway is the only thing that makes tracert print asterisks on later hops",
+      "The DNS server is down, because tracert has to resolve the name again at every hop and stops answering once DNS fails to reply",
+      "Traffic reaches hop 3, so check what comes after that router: the next device or link is not answering or drops the probes",
+      "The web server is overloaded, because a busy server replies with asterisks to every hop on the path until its CPU load drops"
+    ],
+    "correct": 2,
+    "explanation": "tracert lists each router that sends back an ICMP Time Exceeded message. Hops 1 to 3 answering means the PC, its gateway and the first routers work, so the gateway is fine. Asterisks from hop 4 on mean the next device is not replying or is dropping the traffic (it could also just filter ICMP, so confirm). Name resolution happens once at the start, and the web server is not involved in the middle hops.",
+    "difficulty": "Easy"
   }
 ]

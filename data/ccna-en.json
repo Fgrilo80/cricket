@@ -2807,5 +2807,29 @@
     "correct": 0,
     "explanation": "Status up means Layer 1 is fine (carrier detected); Protocol down means the data-link layer is not working. On serial links a classic cause is an encapsulation mismatch: Cisco's default is HDLC, so if only one side is set to PPP the keepalives are not understood and the line protocol stays down. A shutdown far end shows as down/down locally, an IP subnet mismatch does not affect the line protocol, and no routing protocol is needed for it to come up.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "SW1 keeps logging '%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet0/1 (1), with SW2 GigabitEthernet0/1 (99)'. What should you do?",
+    "options": [
+      "Disable CDP on Gi0/1 of both switches, because the message only appears when CDP runs on a trunk and the trunk itself is working correctly",
+      "Change Gi0/1 on SW1 to an access port in VLAN 99, because CDP reports a native VLAN mismatch when one side is an access port in another VLAN",
+      "Add VLAN 99 to the allowed VLAN list of the trunk on SW1, because a native VLAN that is not allowed on the trunk always triggers this message",
+      "Set the same native VLAN on both trunk ends, for example 'switchport trunk native vlan 99' on SW1 Gi0/1"
+    ],
+    "correct": 3,
+    "explanation": "CDP carries each side's native VLAN, so it can warn when the two ends of an 802.1Q trunk disagree (here VLAN 1 on SW1 and VLAN 99 on SW2). Untagged frames from one native VLAN land in the other, which leaks traffic between VLANs and can break STP. The fix is to configure the same native VLAN on both ends. Disabling CDP only hides the warning, and the allowed-list or access-port changes do not fix the mismatch.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "On a switch, 'show interfaces Gi0/12' shows full duplex at 1 Gbps on both ends, and the input errors and CRC counters keep going up every minute, with no collisions. Users on that port complain of slow transfers. What is the most likely cause?",
+    "options": [
+      "A physical problem on the link, such as a damaged or badly terminated cable, a bad patch panel port or electrical interference",
+      "A native VLAN mismatch on the port, because frames tagged with the wrong VLAN fail the CRC check when the switch receives them",
+      "Spanning tree has put Gi0/12 in the blocking state, so every frame that arrives on it is counted as a CRC error and then dropped",
+      "The port-security maximum has been reached, and frames from extra MAC addresses are dropped and recorded under the CRC counter"
+    ],
+    "correct": 0,
+    "explanation": "A CRC error means the frame's checksum did not match what arrived, so bits were corrupted on the way. With duplex matching and no collisions, the usual causes are physical: bad or poorly crimped cabling, a faulty patch port, interference or a failing transceiver. Swap the cable or run a cable test. A native VLAN mismatch, an STP blocking state and port-security drops are logged differently and do not corrupt frames.",
+    "difficulty": "Medium"
   }
 ]

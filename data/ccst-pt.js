@@ -2676,5 +2676,29 @@ window.QUIZ_BANK = [
     "correct": 2,
     "explanation": "Um protetor contra picos só desvia sobretensões; não guarda energia, por isso quando a rede elétrica falha os equipamentos desligam-se logo, seja qual for o valor de joules. Uma UPS tem uma bateria que aguenta a carga em cortes curtos, e muitos modelos avisam o NAS ou servidor por USB ou pela rede para desligar em segurança antes de a bateria acabar. Um condicionador de energia suaviza ruído e pequenas quedas mas não cobre um corte, e um injetor PoE continua a tirar energia da rede elétrica.",
     "difficulty": "Fácil"
+  },
+  {
+    "question": "A informática mudou o site da intranet para um servidor novo e atualizou o registo DNS há uma hora. Todos os PCs chegam ao servidor novo exceto um portátil Windows, que continua a abrir o endereço antigo. Que comando nesse portátil resolve mais depressa?",
+    "options": [
+      "ipconfig /release seguido de ipconfig /renew, porque um novo lease DHCP também descarrega uma cópia nova de todos os registos DNS do servidor",
+      "ipconfig /flushdns, que limpa a cache local do resolver DNS para a próxima consulta voltar a perguntar ao servidor DNS",
+      "netsh winsock reset, porque o endereço antigo fica guardado no catálogo Winsock e só sai de lá quando a pilha de rede é refeita",
+      "arp -d *, porque o Windows guarda o IP do servidor web antigo na tabela ARP e usa-o em vez de voltar a perguntar ao servidor DNS"
+    ],
+    "correct": 1,
+    "explanation": "O Windows guarda as respostas DNS em cache durante o TTL do registo, por isso um portátil que consultou o nome antes da mudança pode continuar a usar o endereço antigo durante algum tempo. O ipconfig /flushdns esvazia essa cache e a próxima consulta vai ao servidor DNS (o ipconfig /displaydns mostra o que está em cache). Renovar o lease DHCP não atualiza registos DNS, o reset do Winsock repara a camada de sockets e a tabela ARP liga endereços IP a MACs, não nomes a IPs.",
+    "difficulty": "Fácil"
+  },
+  {
+    "question": "Um utilizador não chega a um servidor web. Corres tracert até ele: os saltos 1 a 3 respondem com tempos e, a partir do salto 4, todas as linhas mostram '* * * Pedido excedeu o tempo limite' até ao limite de 30 saltos. O que é que isto te diz primeiro?",
+    "options": [
+      "O PC do utilizador tem o default gateway errado, porque um gateway mal configurado é a única coisa que põe asteriscos nos saltos seguintes",
+      "O servidor DNS está em baixo, porque o tracert tem de resolver o nome outra vez em cada salto e para quando o DNS deixa de responder",
+      "O tráfego chega ao salto 3, por isso vê o que vem depois desse router: o equipamento ou ligação seguinte não responde ou descarta",
+      "O servidor web está sobrecarregado, porque um servidor ocupado responde com asteriscos a todos os saltos do caminho até a CPU baixar"
+    ],
+    "correct": 2,
+    "explanation": "O tracert mostra cada router que devolve uma mensagem ICMP Time Exceeded. Se os saltos 1 a 3 respondem, o PC, o gateway e os primeiros routers funcionam, portanto o gateway está bem. Asteriscos a partir do salto 4 indicam que o equipamento seguinte não responde ou descarta o tráfego (também pode só filtrar ICMP, por isso confirma). A resolução do nome é feita uma vez no início e o servidor web não entra nos saltos intermédios.",
+    "difficulty": "Fácil"
   }
 ];
