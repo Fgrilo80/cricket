@@ -2843,5 +2843,17 @@
     "correct": 2,
     "explanation": "Each HSRP router becomes Active only when it stops hearing hellos from a better peer. If both are Active, they are not receiving each other's hellos, which usually means VLAN 10 is missing from the trunk between them, a link is down, or an ACL drops the multicast hellos. Equal priorities are broken by the highest IP, the virtual MAC is shared by the group, and preempt only controls taking over from a lower-priority Active router.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "A trunk between two switches carried VLANs 10 and 20. An engineer adds VLAN 30 with 'switchport trunk allowed vlan 30'. Right after, users in VLANs 10 and 20 lose access to the other switch. Why?",
+    "options": [
+      "Without the 'add' keyword the command replaces the allowed list, so only VLAN 30 now crosses the trunk",
+      "VLAN 30 became the new native VLAN, so frames from VLANs 10 and 20 are now sent untagged and then dropped at the far end",
+      "The trunk renegotiated with DTP after the change and fell back to access mode, which only carries the first VLAN it sees",
+      "Adding a third VLAN goes over the default limit of two VLANs per trunk, so the switch blocks the oldest ones by itself"
+    ],
+    "correct": 0,
+    "explanation": "'switchport trunk allowed vlan <list>' sets the whole allowed list, so typing only 30 removes 10 and 20 from the trunk. The safe way is 'switchport trunk allowed vlan add 30', and the fix now is to put 10 and 20 back. The command does not change the native VLAN or the trunk mode, and a trunk can carry far more than two VLANs.",
+    "difficulty": "Medium"
   }
 ]

@@ -2700,5 +2700,17 @@ window.QUIZ_BANK = [
     "correct": 2,
     "explanation": "tracert lists each router that sends back an ICMP Time Exceeded message. Hops 1 to 3 answering means the PC, its gateway and the first routers work, so the gateway is fine. Asterisks from hop 4 on mean the next device is not replying or is dropping the traffic (it could also just filter ICMP, so confirm). Name resolution happens once at the start, and the web server is not involved in the middle hops.",
     "difficulty": "Easy"
+  },
+  {
+    "question": "An office network printer gets its IP address from DHCP. Every few weeks users can no longer print, and the printer is found working at a different address. What is the simplest lasting fix?",
+    "options": [
+      "Lower the DHCP lease time to one hour, so the printer renews more often and always keeps the address the users have",
+      "Turn off DHCP on the router for the whole office, so every PC and printer stops changing addresses at the same moment",
+      "Create a DHCP reservation for the printer's MAC address, so it always receives the same IP address",
+      "Plug the printer into a different switch port each time, so the switch learns the new address and updates the PCs"
+    ],
+    "correct": 2,
+    "explanation": "A DHCP reservation ties one IP address to the printer's MAC address, so the server hands it the same address every time and the PCs keep finding it. A shorter lease makes changes more likely, not less, turning off DHCP for everyone breaks the other devices, and the switch port has nothing to do with the IP address the printer gets.",
+    "difficulty": "Easy"
   }
 ];

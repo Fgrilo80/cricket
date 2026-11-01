@@ -1570,5 +1570,41 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "certutil is a signed Windows binary meant for certificates, but '-urlcache -split -f <url> <file>' makes it download any file. Attackers use it to pull payloads without bringing their own downloader, which is why it is a well-known LOLBin. A .txt from a raw IP saved as an .exe in C:\\Users\\Public is a strong sign of malware staging, so isolate the host, collect the file and check its hash. CRL checks don't write executables, and Windows Update doesn't use certutil.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "During an investigation of a file server, the Security log starts at 02:47 today with event 1102, and there is nothing older. No admin planned any maintenance. What does this tell you?",
+    "options": [
+      "The log simply reached its maximum size and Windows started a new file, which always writes 1102 as its first event",
+      "Someone cleared the Security log on purpose, often to hide tracks; find who did it and check the SIEM copies",
+      "The server was patched and rebooted overnight, and 1102 is the normal startup event written by the Event Log service",
+      "A backup job archived the old entries to tape, and 1102 marks where the archive ends so the backup can continue later"
+    ],
+    "correct": 1,
+    "explanation": "Event 1102 means the audit log was cleared, and the event records the account that did it. With no planned work, a wiped Security log is a classic anti-forensics step, so check which account cleared it and look at the copies already forwarded to the SIEM or a log collector. A full log either overwrites old events or archives them without 1102, and service startup is logged as other events in the System log.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "Sysmon shows this on a server: rundll32.exe C:\\Windows\\System32\\comsvcs.dll, MiniDump 712 C:\\Temp\\d.bin full. Process 712 is lsass.exe. How should you treat it?",
+    "options": [
+      "As a normal crash report, because Windows Error Reporting uses comsvcs.dll to save a dump whenever LSASS stops answering",
+      "As a harmless COM+ repair, because comsvcs.dll rebuilds the COM+ catalogue and saves the old copy to C:\\Temp as a backup",
+      "As credential theft: a built-in DLL is used to dump LSASS memory, so contain the host and reset the exposed accounts",
+      "As a routine memory check by Defender, which calls rundll32 on comsvcs.dll to scan protected processes for hidden malware"
+    ],
+    "correct": 2,
+    "explanation": "comsvcs.dll exports a MiniDump function, and calling it through rundll32 with the LSASS process ID writes a full memory dump of LSASS. Tools like Mimikatz can then pull password hashes and Kerberos tickets from that file offline. It is a well-known living-off-the-land technique, so isolate the host, treat the credentials of anyone logged on as exposed, and turn on LSA protection (RunAsPPL) and Credential Guard. Windows Error Reporting uses its own tools, and Defender doesn't scan through rundll32.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "On a domain controller you see event 4720 for a new account 'svc_backup2' at 23:40, followed two minutes later by event 4732 adding it to the local Administrators group. Nobody opened a ticket for it. What is the right reading?",
+    "options": [
+      "A likely backdoor admin account; check who created it, disable it and review what it did",
+      "A normal service account created by Windows Server Backup, which makes svc_ accounts on its own when the first job runs",
+      "A failed password spray, because 4720 and 4732 are written each time an attacker tries a new user name against the DC",
+      "An automatic cleanup of old accounts, because 4720 marks an account being archived and 4732 moves it to a safe group"
+    ],
+    "correct": 0,
+    "explanation": "Event 4720 means a user account was created and 4732 means a member was added to a security-enabled local group, here Administrators. A new admin-level account created late at night without a change request is a typical persistence move, so find the creator in the event details, disable the account and check its logons and actions. Windows Server Backup doesn't create accounts, password spraying shows up as failed logons such as 4625 or 4771, and neither event is about archiving.",
+    "difficulty": "Medium"
   }
 ];

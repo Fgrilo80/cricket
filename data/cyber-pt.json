@@ -1570,5 +1570,41 @@
     "correct": 1,
     "explanation": "O certutil é um binário assinado do Windows para certificados, mas '-urlcache -split -f <url> <ficheiro>' põe-no a descarregar qualquer ficheiro. Os atacantes usam-no para trazer payloads sem precisarem de um downloader próprio, por isso é um LOLBin bem conhecido. Um .txt vindo de um IP direto e gravado como .exe em C:\\Users\\Public é um forte sinal de preparação de malware: isola o host, recolhe o ficheiro e verifica o hash. As verificações de CRL não gravam executáveis e o Windows Update não usa o certutil.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Durante a investigação de um servidor de ficheiros, o registo Security começa hoje às 02:47 com o evento 1102 e não há nada mais antigo. Nenhum administrador tinha manutenção planeada. O que é que isto te diz?",
+    "options": [
+      "O registo só chegou ao tamanho máximo e o Windows começou um ficheiro novo, que escreve sempre o 1102 como primeiro evento",
+      "Alguém limpou de propósito o registo Security, muitas vezes para esconder rastos; descobre quem foi e vê as cópias no SIEM",
+      "O servidor foi atualizado e reiniciado durante a noite, e o 1102 é o evento normal de arranque escrito pelo serviço Event Log",
+      "Uma tarefa de backup arquivou as entradas antigas em fita, e o 1102 marca onde o arquivo termina para o backup continuar depois"
+    ],
+    "correct": 1,
+    "explanation": "O evento 1102 significa que o registo de auditoria foi limpo e indica a conta que o fez. Sem trabalho planeado, um registo Security apagado é um passo clássico de anti-forense, por isso verifica que conta o limpou e consulta as cópias já enviadas para o SIEM ou para um coletor de registos. Um registo cheio ou escreve por cima dos eventos antigos ou arquiva-os sem 1102, e o arranque dos serviços fica registado com outros eventos no registo System.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O Sysmon mostra isto num servidor: rundll32.exe C:\\Windows\\System32\\comsvcs.dll, MiniDump 712 C:\\Temp\\d.bin full. O processo 712 é o lsass.exe. Como deves tratar isto?",
+    "options": [
+      "Como um relatório de falha normal, porque o Windows Error Reporting usa o comsvcs.dll para guardar um dump quando o LSASS bloqueia",
+      "Como uma reparação inofensiva do COM+, porque o comsvcs.dll reconstrói o catálogo COM+ e guarda a cópia antiga em C:\\Temp",
+      "Como roubo de credenciais: uma DLL do sistema serve para extrair a memória do LSASS; isola o host e repõe as contas expostas",
+      "Como uma verificação de memória normal do Defender, que chama o rundll32 com o comsvcs.dll para analisar processos protegidos"
+    ],
+    "correct": 2,
+    "explanation": "O comsvcs.dll exporta uma função MiniDump e, chamada pelo rundll32 com o ID do processo LSASS, grava um dump completo da memória do LSASS. Ferramentas como o Mimikatz conseguem depois tirar desse ficheiro hashes de passwords e tickets Kerberos offline. É uma técnica living-off-the-land bem conhecida, por isso isola o host, considera expostas as credenciais de quem tinha sessão aberta e liga a proteção LSA (RunAsPPL) e o Credential Guard. O Windows Error Reporting usa as suas próprias ferramentas e o Defender não analisa através do rundll32.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Num controlador de domínio vês o evento 4720 para uma conta nova 'svc_backup2' às 23:40 e, dois minutos depois, o evento 4732 a adicioná-la ao grupo local Administrators. Ninguém abriu um pedido para isso. Qual é a leitura certa?",
+    "options": [
+      "Uma provável conta de administrador backdoor; vê quem a criou, desativa-a e revê o que ela fez",
+      "Uma conta de serviço normal criada pelo Windows Server Backup, que cria contas svc_ sozinho quando corre a primeira tarefa",
+      "Um password spray falhado, porque o 4720 e o 4732 são escritos sempre que um atacante tenta um novo nome de utilizador no DC",
+      "Uma limpeza automática de contas antigas, porque o 4720 marca uma conta a ser arquivada e o 4732 move-a para um grupo seguro"
+    ],
+    "correct": 0,
+    "explanation": "O evento 4720 significa que foi criada uma conta de utilizador e o 4732 que foi adicionado um membro a um grupo local com segurança ativa, aqui o Administrators. Uma conta nova com nível de administrador criada à noite sem pedido de alteração é uma jogada típica de persistência, por isso encontra o criador nos detalhes do evento, desativa a conta e verifica os logons e as ações dela. O Windows Server Backup não cria contas, o password spraying aparece como logons falhados como o 4625 ou o 4771, e nenhum dos eventos tem a ver com arquivo.",
+    "difficulty": "Médio"
   }
 ]

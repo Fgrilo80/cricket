@@ -2766,5 +2766,17 @@ window.QUIZ_BANK = [
     "correct": 0,
     "explanation": "GRE adds 24 bytes of headers, so a full 1500-byte packet no longer fits on a 1500-byte path. Small packets like pings and SSH keystrokes pass, but large TCP segments with DF set are dropped, and if ICMP 'fragmentation needed' is filtered, path MTU discovery fails and the session hangs. Lowering the tunnel IP MTU to 1400 and clamping the TCP MSS to 1360 avoids it. IP-in-IP has the same overhead problem, keepalives only track tunnel state and the bandwidth command only affects routing metrics and QoS.",
     "difficulty": "Hard"
+  },
+  {
+    "question": "An edge router has 'network 10.20.0.0 mask 255.255.0.0' under BGP. Its routing table holds 10.20.1.0/24, 10.20.2.0/24 and 10.20.3.0/24 learned through OSPF, but the ISP never receives 10.20.0.0/16. What is wrong?",
+    "options": [
+      "The BGP network command only advertises classful networks, so a /16 inside 10.0.0.0/8 has to be written as 10.0.0.0",
+      "BGP never advertises prefixes learned through OSPF unless 'redistribute ospf' is also configured under the BGP process",
+      "The ISP filters every prefix longer than /8, so the /16 is dropped on arrival and the local router shows it as sent",
+      "The network command needs an exact match in the routing table; add 'ip route 10.20.0.0 255.255.0.0 Null0'"
+    ],
+    "correct": 3,
+    "explanation": "A BGP network statement is injected only when the routing table has that exact prefix and mask. The /24s don't match a /16, so nothing is sent. A static route to Null0 for 10.20.0.0/16 creates the exact entry (and drops traffic for unused parts of the range), or 'aggregate-address' can build the summary from the /24s. The mask keyword allows classless prefixes, OSPF routes can be advertised by a network statement when they match exactly, and the ISP never saw the prefix at all.",
+    "difficulty": "Hard"
   }
 ];
