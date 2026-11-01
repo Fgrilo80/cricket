@@ -2700,5 +2700,17 @@ window.QUIZ_BANK = [
     "correct": 2,
     "explanation": "O tracert mostra cada router que devolve uma mensagem ICMP Time Exceeded. Se os saltos 1 a 3 respondem, o PC, o gateway e os primeiros routers funcionam, portanto o gateway está bem. Asteriscos a partir do salto 4 indicam que o equipamento seguinte não responde ou descarta o tráfego (também pode só filtrar ICMP, por isso confirma). A resolução do nome é feita uma vez no início e o servidor web não entra nos saltos intermédios.",
     "difficulty": "Fácil"
+  },
+  {
+    "question": "Uma impressora de rede do escritório recebe o endereço IP por DHCP. De poucas em poucas semanas os utilizadores deixam de conseguir imprimir e a impressora aparece a funcionar noutro endereço. Qual é a correção duradoura mais simples?",
+    "options": [
+      "Baixar o tempo de concessão DHCP para uma hora, para a impressora renovar mais vezes e ficar sempre com o endereço que os PCs usam",
+      "Desligar o DHCP no router para o escritório inteiro, para nenhum PC nem impressora voltar a mudar de endereço ao mesmo tempo",
+      "Criar uma reserva DHCP para o endereço MAC da impressora, para ela receber sempre o mesmo endereço IP",
+      "Ligar a impressora a uma porta diferente do switch de cada vez, para o switch aprender o endereço novo e avisar os PCs"
+    ],
+    "correct": 2,
+    "explanation": "Uma reserva DHCP associa um endereço IP ao MAC da impressora, por isso o servidor dá-lhe sempre o mesmo endereço e os PCs continuam a encontrá-la. Uma concessão mais curta torna as mudanças mais prováveis, não menos, desligar o DHCP para todos estraga os outros dispositivos e a porta do switch não tem nada a ver com o IP que a impressora recebe.",
+    "difficulty": "Fácil"
   }
 ];

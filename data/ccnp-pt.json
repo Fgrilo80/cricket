@@ -2766,5 +2766,17 @@
     "correct": 0,
     "explanation": "O GRE acrescenta 24 bytes de cabeçalhos, por isso um pacote de 1500 bytes já não cabe num caminho de 1500. Pacotes pequenos como pings e teclas de SSH passam, mas os segmentos TCP grandes com DF ligado são descartados e, se o ICMP 'fragmentation needed' estiver filtrado, o path MTU discovery falha e a sessão para. Baixar o IP MTU do túnel para 1400 e limitar o MSS do TCP a 1360 resolve. O IP-in-IP tem o mesmo problema de overhead, os keepalives só seguem o estado do túnel e o comando bandwidth só afeta métricas de routing e QoS.",
     "difficulty": "Difícil"
+  },
+  {
+    "question": "Um router de fronteira tem 'network 10.20.0.0 mask 255.255.0.0' no BGP. A tabela de routing tem 10.20.1.0/24, 10.20.2.0/24 e 10.20.3.0/24 aprendidas por OSPF, mas o ISP nunca recebe o 10.20.0.0/16. O que está errado?",
+    "options": [
+      "O comando network do BGP só anuncia redes classful, por isso uma /16 dentro de 10.0.0.0/8 tem de ser escrita como 10.0.0.0",
+      "O BGP nunca anuncia prefixos aprendidos por OSPF a não ser que também se configure 'redistribute ospf' no processo BGP",
+      "O ISP filtra todos os prefixos maiores do que /8, por isso a /16 é descartada à chegada e o router local mostra-a como enviada",
+      "O comando network precisa de uma entrada exata na tabela; acrescenta 'ip route 10.20.0.0 255.255.0.0 Null0'"
+    ],
+    "correct": 3,
+    "explanation": "Um network statement do BGP só é injetado quando a tabela de routing tem exatamente esse prefixo e essa máscara. As /24 não correspondem a uma /16, por isso nada é enviado. Uma rota estática para Null0 de 10.20.0.0/16 cria a entrada exata (e descarta o tráfego para partes do intervalo não usadas), ou o 'aggregate-address' pode construir o resumo a partir das /24. A palavra mask permite prefixos classless, as rotas OSPF podem ser anunciadas por network statement quando coincidem exatamente e o ISP nunca chegou a ver o prefixo.",
+    "difficulty": "Difícil"
   }
 ]

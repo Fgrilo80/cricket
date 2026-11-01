@@ -2843,5 +2843,17 @@ window.QUIZ_BANK = [
     "correct": 2,
     "explanation": "Um router HSRP só fica Active quando deixa de ouvir hellos de um par melhor. Se os dois estão Active, não estão a receber os hellos um do outro, o que normalmente significa que a VLAN 10 não está no trunk entre eles, uma ligação está em baixo ou uma ACL descarta os hellos multicast. Prioridades iguais são desempatadas pelo IP mais alto, o MAC virtual é partilhado pelo grupo e o preempt só controla tomar o lugar de um Active com prioridade mais baixa.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Um trunk entre dois switches levava as VLANs 10 e 20. Um técnico acrescenta a VLAN 30 com 'switchport trunk allowed vlan 30'. Logo a seguir, os utilizadores das VLANs 10 e 20 perdem o acesso ao outro switch. Porquê?",
+    "options": [
+      "Sem a palavra 'add' o comando substitui a lista de VLANs permitidas, e agora só a VLAN 30 passa no trunk",
+      "A VLAN 30 passou a ser a nova VLAN nativa, por isso as tramas das VLANs 10 e 20 seguem sem tag e são descartadas do outro lado",
+      "O trunk voltou a negociar por DTP depois da mudança e caiu para modo access, que só leva a primeira VLAN que encontra",
+      "Uma terceira VLAN ultrapassa o limite padrão de duas VLANs por trunk, por isso o switch bloqueia sozinho as mais antigas"
+    ],
+    "correct": 0,
+    "explanation": "O 'switchport trunk allowed vlan <lista>' define a lista inteira, por isso escrever só 30 tira a 10 e a 20 do trunk. A forma segura é 'switchport trunk allowed vlan add 30' e a correção agora é voltar a pôr a 10 e a 20. O comando não muda a VLAN nativa nem o modo do trunk, e um trunk leva muito mais do que duas VLANs.",
+    "difficulty": "Médio"
   }
 ];
