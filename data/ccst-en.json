@@ -2712,5 +2712,17 @@
     "correct": 2,
     "explanation": "A DHCP reservation ties one IP address to the printer's MAC address, so the server hands it the same address every time and the PCs keep finding it. A shorter lease makes changes more likely, not less, turning off DHCP for everyone breaks the other devices, and the switch port has nothing to do with the IP address the printer gets.",
     "difficulty": "Easy"
+  },
+  {
+    "question": "A user sets a static IP address on a new PC. Soon Windows warns about an IP address conflict, and another PC on the same network starts losing its connection at random. What is the most likely cause?",
+    "options": [
+      "The new PC has a faulty network cable, which makes the switch copy its frames to every port and confuses the other PC",
+      "The static address is already in use by the other PC, or sits inside the DHCP pool and was handed out to it",
+      "The DNS server is giving both PCs the same name, so Windows thinks the two machines are sharing one address",
+      "The default gateway on the new PC is wrong, so the router answers for both PCs and mixes up their traffic all day"
+    ],
+    "correct": 1,
+    "explanation": "Windows shows an IP conflict when another device answers ARP for the same address. A static address must be unique and should sit outside the DHCP pool, or be reserved, so the server never gives it to someone else. A bad cable, a DNS name or a wrong gateway don't make two hosts claim the same IP address.",
+    "difficulty": "Easy"
   }
 ]

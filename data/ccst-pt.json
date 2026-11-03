@@ -2712,5 +2712,17 @@
     "correct": 2,
     "explanation": "Uma reserva DHCP associa um endereço IP ao MAC da impressora, por isso o servidor dá-lhe sempre o mesmo endereço e os PCs continuam a encontrá-la. Uma concessão mais curta torna as mudanças mais prováveis, não menos, desligar o DHCP para todos estraga os outros dispositivos e a porta do switch não tem nada a ver com o IP que a impressora recebe.",
     "difficulty": "Fácil"
+  },
+  {
+    "question": "Um utilizador configura um IP estático num PC novo. Pouco depois o Windows avisa de um conflito de endereço IP e outro PC da mesma rede começa a perder a ligação ao acaso. Qual é a causa mais provável?",
+    "options": [
+      "O PC novo tem um cabo de rede com defeito, que faz o switch copiar as tramas para todas as portas e baralha o outro PC",
+      "O endereço estático já está a ser usado pelo outro PC, ou está dentro da gama do DHCP e foi-lhe atribuído",
+      "O servidor DNS está a dar o mesmo nome aos dois PCs, por isso o Windows acha que as duas máquinas partilham um endereço",
+      "O gateway predefinido do PC novo está errado, por isso o router responde pelos dois PCs e mistura o tráfego o dia todo"
+    ],
+    "correct": 1,
+    "explanation": "O Windows mostra um conflito de IP quando outro dispositivo responde ao ARP com o mesmo endereço. Um endereço estático tem de ser único e deve ficar fora da gama do DHCP, ou estar reservado, para o servidor nunca o dar a outro. Um cabo estragado, um nome DNS ou um gateway errado não fazem dois equipamentos usar o mesmo IP.",
+    "difficulty": "Fácil"
   }
 ]
