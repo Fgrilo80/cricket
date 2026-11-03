@@ -26,5 +26,25 @@ window.QUIZ_COUNTS = {
   "field": {
     "pt": 77,
     "en": 77
+  },
+  "automation": {
+    "pt": 138,
+    "en": 138
+  },
+  "wireless": {
+    "pt": 125,
+    "en": 125
+  },
+  "sdx": {
+    "pt": 148,
+    "en": 148
+  },
+  "dc": {
+    "pt": 68,
+    "en": 68
+  },
+  "collab": {
+    "pt": 76,
+    "en": 76
   }
 };

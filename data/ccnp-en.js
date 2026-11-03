@@ -479,7 +479,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Intersight provides unified management, automation, and insights for Cisco UCS, HyperFlex, and more infrastructure.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "dccor",
+    "domain": "2.6"
   },
   {
     "question": "What is 'Cisco ACI' (Application Centric Infrastructure)?",
@@ -491,7 +493,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "ACI is Cisco's SDN solution for data centers with VXLAN fabric, APIC controller, and application-centric policies.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "dccor",
+    "domain": "1.4"
   },
   {
     "question": "What is the function of 'Cisco Nexus Dashboard'?",
@@ -503,7 +507,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Nexus Dashboard provides unified management, automation, and services for ACI and NX-OS fabrics.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "dccor",
+    "domain": "1.11"
   },
   {
     "question": "What is 'Cisco HyperFlex'?",
@@ -527,7 +533,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "UCS integrates compute, networking, and storage with centralized management and stateless service profiles.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "dccor",
+    "domain": "2.1"
   },
   {
     "question": "What is the function of 'Cisco Intersight Workload Optimizer'?",
@@ -815,7 +823,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "vPC (Nexus) presents a multi-chassis EtherChannel to downstream devices without requiring a classic stack cable domain.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "dccor",
+    "domain": "1.2"
   },
   {
     "question": "SD-Access control plane typically uses:",
@@ -1263,7 +1273,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Subscriptions target YANG paths. Second-level cadence and on-change notifications give visibility SNMP cannot scale.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "autocor",
+    "domain": "3.1"
   },
   {
     "question": "What is YANG in network programmability?",
@@ -1395,7 +1407,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Branches with a weak WAN use FlexConnect: local DHCP/data. Local/centrally switched is the campus model. The WLC still manages RRM while the tunnel is up.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "wlsi",
+    "domain": "1.1"
   },
   {
     "question": "Which main functions does RRM run on a WLC?",
@@ -1407,7 +1421,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "The WLC measures neighbors (NDP), avoids co-channel interference, raises/lowers dBm, and covers holes. Without RRM, channels and power stay static.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "wlsd",
+    "domain": "2.3.a"
   },
   {
     "question": "What does IGMP snooping do on a switch?",
@@ -1785,7 +1801,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "If the peer hosting the orphan fails, the device loses connectivity even if the other side's vPC is up. Mitigation: dual-attach (vPC) or orphan-port suspend. Peer-gateway / orphan-port may be needed for routed traffic.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "dccor",
+    "domain": "1.2"
   },
   {
     "question": "In LISP as used by SD-Access, what does the Map-Server/Map-Resolver do?",
@@ -2195,7 +2213,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Radio Resource Management optimizes RF (channel, TX power, etc.). It does not forward IP in the core or replace OSPF/BGP.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "wlsd",
+    "domain": "2.3.a"
   },
   {
     "question": "Network assurance on ENCOR: Flexible NetFlow + IP SLA together mainly help with what?",
@@ -2357,7 +2377,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "MDT uses YANG models and subscriptions (often gRPC dial-out or dial-in) to push telemetry to collectors. Compared with SNMP polling, you get continuous, structured updates with less chatter and better scale for modern assurance.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "autocor",
+    "domain": "3.1"
   },
   {
     "question": "IEEE 802.11ax (Wi-Fi 6) improves high-density WLAN efficiency primarily with:",
@@ -2369,7 +2391,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "802.11ax focuses on efficiency in dense environments: OFDMA schedules multi-user resource units, improved MU-MIMO, BSS coloring reduces co-channel interference impact, and TWT saves client power. It is not about dropping CAPWAP or using WEP.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "wlsd",
+    "domain": "2.5"
   },
   {
     "question": "What is the main operational reason to use ERSPAN instead of local SPAN?",
@@ -2395,7 +2419,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "FlexConnect (H-REAP) local switching lets the AP bridge client traffic onto a local branch VLAN, reducing WAN hairpinning to the controller. Central switching tunnels user data to the WLC; local auth/switching options cover WAN failure modes.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "wlsi",
+    "domain": "1.1"
   },
   {
     "question": "What does IPv6 RA Guard protect against on an access switch?",
@@ -2433,7 +2459,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "An EPG is the fundamental policy object for endpoints that should be treated alike. Endpoints in an EPG live under a Bridge Domain (and VRF/tenant hierarchy). Communication between EPGs is controlled by contracts (provided/consumed), not by simply sharing a BD. The APIC still remains the controller; spines are fabric underlay, not EPGs.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "dccor",
+    "domain": "1.4"
   },
   {
     "question": "In Cisco ACI, how do two EPGs normally communicate in a secure, policy-driven way?",
@@ -2457,7 +2485,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "A Bridge Domain is the ACI Layer-2 construct: flooding scope, often holding the gateway subnet for connected EPGs. EPGs classify endpoints; contracts control EPG-to-EPG policy; VRFs separate L3 contexts. The BD is not the APIC, not BGP-only spine peering, and not a wireless cipher.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "dccor",
+    "domain": "1.4"
   },
   {
     "question": "What is Guest Shell on Cisco IOS XE used for?",
@@ -2469,7 +2499,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Guest Shell is an on-box Linux container (often CentOS-based) on IOS XE where you can run Python, install packages, and use guestshell/run commands for automation without leaving the device. It complements EEM/on-box Python but does not replace TCAM, redefine SSIDs, or set BGP communities by itself.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccnaauto",
+    "domain": "3.6"
   },
   {
     "question": "What is Cisco pyATS primarily used for in network automation and operations?",
@@ -2481,7 +2513,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "pyATS (often paired with Genie parsers/models) is Cisco’s Python framework for automated network testing: connect to devices, snapshot/parse operational state, diff before/after, and build reusable test suites for CI/CD or change windows. It is not a routing protocol, not the ACI contract GUI, and not an 802.1X/RADIUS replacement.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccnaauto",
+    "domain": "5.3"
   },
   {
     "question": "In Cisco ISE, what does a posture assessment typically check before (or as part of) granting full network access?",
@@ -2841,7 +2875,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "EVPN Type-2 (MAC/IP Advertisement) carries host MAC and optional IP bindings for L2/L2+L3 adjacency inside a VNI. Type-5 (IP Prefix Route) advertises prefixes for routing between subnets or external networks. They are not PIM-only vs BPDU carriers, not IS-IS/LDP substitutes, and not identical NLRI.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "dccor",
+    "domain": "1.3"
   },
   {
     "question": "In an iBGP route-reflector design, what do the ORIGINATOR_ID and CLUSTER_LIST attributes mainly help prevent?",

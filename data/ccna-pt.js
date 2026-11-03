@@ -1675,7 +1675,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "CoS (PCP) perde-se quando o tag 802.1Q é retirado. DSCP (p.ex. EF 46, AF41) vai no cabeçalho IP. Trust boundary: classificar/marcar o mais perto da origem e confiar DSCP no núcleo.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "clcor",
+    "domain": "6.3"
   },
   {
     "question": "RESTCONF no IOS-XE usa tipicamente que transporte e URI base?",
@@ -1687,7 +1689,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "RESTCONF mapeia HTTP GET/POST/PUT/PATCH/DELETE em datastores YANG. NETCONF usa SSH 830 e XML RPC. AAA e certificados protegem ambos.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccnaauto",
+    "domain": "3.8"
   },
   {
     "question": "Numa rede controller-based (SDN), a API northbound liga o quê?",
@@ -1699,7 +1703,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Northbound: apps → controller (REST). Southbound: controller → network devices (NETCONF, RESTCONF, OpenFlow, CLI/SSH). O plano de dados continua nos switches.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccnaauto",
+    "domain": "5.2"
   },
   {
     "question": "Qual endereço multicast e MAC virtual usa o HSRP versão 2 (IPv4)?",
@@ -1843,7 +1849,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Ansible não instala agente no IOS. O inventário lista hosts; os módulos (ios_config, ios_command, ios_facts) usam SSH. Puppet/Chef clássicos usam agente. YAML descreve o estado desejado.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccnaauto",
+    "domain": "5.6"
   },
   {
     "question": "NTP autenticado (ntp authenticate / ntp trusted-key) serve para quê?",
@@ -1978,7 +1986,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 3,
     "explanation": "Blueprint recente enfatiza Terraform e removeu Chef/Puppet como nomes a memorizar. Terraform = IaC declarativo (estado); Ansible = playbooks/automação tipicamente agentless via SSH/API.",
-    "difficulty": "Difícil"
+    "difficulty": "Difícil",
+    "exam": "ccnaauto",
+    "domain": "5.6"
   },
   {
     "question": "BPDU Filter numa porta de acesso — qual efeito típico?",
@@ -2002,7 +2012,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "APIs REST de controladores usam HTTPS + autenticação (tokens/OAuth/API keys). SNMP communities e WEP não são o modelo de API northbound moderno.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccnaauto",
+    "domain": "2.7"
   },
   {
     "question": "Containers e VRFs no CCNA: qual afirmação é a mais correta?",
@@ -2146,7 +2158,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O `priority` ativa Low Latency Queuing (LLQ): fila prioritária para a classe (tipicamente voz), normalmente com um policer para não esgotar a interface.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "clcor",
+    "domain": "6.4"
   },
   {
     "question": "Entre um AP lightweight e um WLC, qual afirmação sobre CAPWAP está correta?",
@@ -2374,7 +2388,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O Band Select (band steering) empurra clientes dual-band para 5 GHz, respondendo mais lentamente (ou não de imediato) a probes em 2,4 GHz, reduzindo a congestão nessa banda. Não coloca clientes legacy em 6 GHz, não substitui o CAPWAP e não desativa OFDM em 5 GHz.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "2.5"
   },
   {
     "question": "Num EtherChannel Cisco, que combinação de modos LACP forma com sucesso um canal entre dois switches?",
@@ -2554,7 +2570,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "Com apenas os canais 1, 6 e 11 sem sobreposição a 20 MHz, um canal de 40 MHz quase impede um plano de canais limpo e aumenta a interferência. 40 MHz é tecnicamente permitido (802.11n), o DFS aplica-se a 5 GHz e a largura de canal nada tem a ver com encriptação.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "2.5"
   },
   {
     "question": "Depois de ativar DHCP snooping num switch de acesso, os clientes deixam de obter endereço de um servidor DHCP Cisco IOS noutro router. O switch está a inserir a opção 82 com giaddr 0.0.0.0. Qual é uma correção válida?",

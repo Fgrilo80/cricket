@@ -1,0 +1,2074 @@
+window.QUIZ_BANK = [
+  {
+    "question": "Which Catalyst SD-WAN component (formerly vBond) authenticates devices first and helps with NAT traversal?",
+    "options": [
+      "SD-WAN Controller",
+      "SD-WAN Manager, which also stores all device templates",
+      "SD-WAN Validator",
+      "The WAN Edge router acting as a hub for its region"
+    ],
+    "correct": 2,
+    "explanation": "The Validator (vBond) is the orchestration plane: first point of contact, authenticates components and tells them about the others, and helps behind NAT.",
+    "difficulty": "Easy",
+    "exam": "ensdwi",
+    "domain": "1.1.a"
+  },
+  {
+    "question": "Why must the Validator normally have a public (or 1:1 static NAT) IP address?",
+    "options": [
+      "It acts as the default gateway for each LAN",
+      "It forwards all user data traffic between the sites",
+      "It stores the licences for every edge router",
+      "All edges and controllers must reach it first"
+    ],
+    "correct": 3,
+    "explanation": "Every component connects to the Validator to join; it cannot sit behind a NAT type that blocks inbound connections.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "1.1.a"
+  },
+  {
+    "question": "Which component provides the GUI, templates and monitoring for the fabric?",
+    "options": [
+      "SD-WAN Validator, through its web portal",
+      "SD-WAN Manager (vManage)",
+      "SD-WAN Controller (vSmart)",
+      "The local WAN Edge's own HTTP server"
+    ],
+    "correct": 1,
+    "explanation": "The Manager is the management plane: configuration, templates/config groups, policies, monitoring and APIs.",
+    "difficulty": "Easy",
+    "exam": "ensdwi",
+    "domain": "1.1.b"
+  },
+  {
+    "question": "What does the SD-WAN Controller (vSmart) do?",
+    "options": [
+      "Forwards user traffic between branch sites",
+      "Runs OMP and applies control policy",
+      "Hosts the GUI for administrators",
+      "Assigns IP addresses to clients on every branch LAN"
+    ],
+    "correct": 1,
+    "explanation": "The Controller is the control plane: it receives OMP routes and TLOCs from edges, applies policy and reflects them back. It forwards no data.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "1.1.c"
+  },
+  {
+    "question": "Which protocol runs between WAN Edges and Controllers to exchange routes, TLOCs and keys?",
+    "options": [
+      "BFD",
+      "OMP",
+      "OSPF",
+      "VRRP"
+    ],
+    "correct": 1,
+    "explanation": "Overlay Management Protocol runs inside DTLS/TLS control connections and carries OMP routes, TLOC routes and service routes.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "1.1.c"
+  },
+  {
+    "question": "Which three values identify a TLOC?",
+    "options": [
+      "Hostname, serial number and hardware model",
+      "Site ID, service VPN and next-hop address",
+      "System IP, colour, encapsulation",
+      "Public IP, private IP and port"
+    ],
+    "correct": 2,
+    "explanation": "A TLOC (transport locator) is the tuple system-IP, colour and encapsulation (IPsec or GRE); other attributes are carried with it.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "1.1.c (i)"
+  },
+  {
+    "question": "What is an OMP route (vRoute)?",
+    "options": [
+      "A BFD session between two edges",
+      "A static route to the Validator on the transport VPN",
+      "A LAN prefix with its TLOC as next hop",
+      "A route used only by the Manager GUI"
+    ],
+    "correct": 2,
+    "explanation": "Edges learn LAN prefixes (connected, static, OSPF, BGP) and advertise them in OMP with the originating TLOC(s) as next hop.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "1.1.c (ii)"
+  },
+  {
+    "question": "Which encapsulation is used by default for data plane tunnels between WAN Edges?",
+    "options": [
+      "MPLS labels",
+      "GRE without encryption",
+      "VXLAN",
+      "IPsec"
+    ],
+    "correct": 3,
+    "explanation": "Edges build IPsec tunnels by default; GRE can be used where encryption is not needed or for some service chaining.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "1.1.d (i)"
+  },
+  {
+    "question": "What does BFD do on SD-WAN tunnels?",
+    "options": [
+      "Distributes the encryption keys between the controllers",
+      "Checks liveness and path quality",
+      "Assigns colours to transport interfaces",
+      "Advertises LAN prefixes into OMP"
+    ],
+    "correct": 1,
+    "explanation": "BFD probes run on every tunnel to detect failures and gather the SLA data used by application-aware routing.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "1.1.d (ii)"
+  },
+  {
+    "question": "What does Multi-Region Fabric add to a large SD-WAN?",
+    "options": [
+      "A separate Manager instance for each branch site",
+      "One flat full mesh of every edge in the world",
+      "Regions joined by a core region",
+      "Replacing OMP with BGP between all edges"
+    ],
+    "correct": 2,
+    "explanation": "MRF splits the overlay into access regions and a core region; border routers connect them, which scales and allows different transports per region.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "1.1.e"
+  },
+  {
+    "question": "Which platforms can run as Catalyst SD-WAN WAN Edges?",
+    "options": [
+      "Catalyst 8000 and ISR in controller mode",
+      "Only Meraki MX security appliances",
+      "Catalyst 9300 access switches",
+      "Only virtual routers in a public cloud"
+    ],
+    "correct": 0,
+    "explanation": "IOS XE SD-WAN devices (Catalyst 8200/8300/8500, 8000V, ISR 1000/4000) run in controller mode; vEdge is legacy.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "1.2"
+  },
+  {
+    "question": "What does Cloud OnRamp for SaaS do for Microsoft 365?",
+    "options": [
+      "Hosts a copy of Microsoft 365 in each branch",
+      "Probes paths and uses the best exit",
+      "Encrypts all mail with its own SD-WAN certificate",
+      "Blocks Microsoft 365 traffic on DIA links"
+    ],
+    "correct": 1,
+    "explanation": "It measures loss and latency to the SaaS app via local DIA and gateway sites, then steers traffic to the best path.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "1.3.a"
+  },
+  {
+    "question": "What does Cloud OnRamp for IaaS (multicloud) automate?",
+    "options": [
+      "Cloud gateways linking the fabric to VPCs/VNets",
+      "The purchase of public cloud credits",
+      "The migration of servers into AWS",
+      "DNS records for every SaaS app used by the branches"
+    ],
+    "correct": 0,
+    "explanation": "It deploys and attaches cloud routers (e.g. Catalyst 8000V or cloud transit gateways) so cloud workloads join the SD-WAN segments.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "1.3.b"
+  },
+  {
+    "question": "What is the purpose of Cloud OnRamp for Colocation?",
+    "options": [
+      "Creating a second Manager cluster inside the colo site",
+      "Moving branch routers into a colo rack",
+      "Selling spare colo bandwidth to partners",
+      "Hosting VNFs in a colo hub"
+    ],
+    "correct": 3,
+    "explanation": "It uses Cisco CSP hosts and switches at a colocation site to run chained VNFs (routers, firewalls) close to clouds and users.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "1.3.c"
+  },
+  {
+    "question": "Cloud OnRamp Multicloud Interconnect is used with providers like Equinix or Megaport. What does it provide?",
+    "options": [
+      "Wireless backup links for branches",
+      "Free internet transit for every branch site",
+      "A replacement for BFD on cloud links",
+      "Private cloud links via the provider"
+    ],
+    "correct": 3,
+    "explanation": "It automates Interconnect Gateways in the provider fabric and private links to AWS, Azure or Google, and site-to-site via the provider.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "1.3.d"
+  },
+  {
+    "question": "What is the most common way to deploy Catalyst SD-WAN controllers today?",
+    "options": [
+      "On the Meraki dashboard",
+      "On every branch router",
+      "Inside the customer's ISE nodes",
+      "Cisco-hosted cloud controllers"
+    ],
+    "correct": 3,
+    "explanation": "Cisco (or a partner) hosts Manager, Validator and Controllers in the cloud, giving quick setup and managed operations; on-prem is also possible.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "2.1"
+  },
+  {
+    "question": "Which hypervisors can host on-premises SD-WAN controllers?",
+    "options": [
+      "The router's Guest Shell",
+      "Only Microsoft Hyper-V",
+      "Docker Desktop on a laptop",
+      "VMware ESXi and KVM"
+    ],
+    "correct": 3,
+    "explanation": "Controllers ship as OVA/qcow2 images for ESXi and KVM, and are also available in public clouds (AWS, Azure).",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "2.2.a"
+  },
+  {
+    "question": "When installing controllers on-prem, which settings must be configured on each before they can join the fabric?",
+    "options": [
+      "Only a hostname and a default route in VPN 0",
+      "System IP, site ID, org name, Validator",
+      "The OMP hold timers and the BFD intervals",
+      "A WLAN profile and RF profile"
+    ],
+    "correct": 1,
+    "explanation": "Each controller needs system-ip, site-id, organization-name, the vbond address and a VPN 0 transport interface, plus certificates.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "2.2.b"
+  },
+  {
+    "question": "How is the SD-WAN Manager scaled for many devices and made redundant?",
+    "options": [
+      "More BFD sessions per tunnel",
+      "A second Validator in the same site",
+      "A cluster of Manager nodes",
+      "A larger MTU on VPN 0"
+    ],
+    "correct": 2,
+    "explanation": "Manager clusters (typically 3 or 6 nodes) share the load and data; Validators and Controllers are scaled by adding more instances.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "2.2.c"
+  },
+  {
+    "question": "How many Controllers does each WAN Edge connect to by default?",
+    "options": [
+      "One, with no option to change",
+      "Two (max-control-connections)",
+      "Every Controller in the overlay",
+      "None, it only uses the Validator"
+    ],
+    "correct": 1,
+    "explanation": "By default edges keep two control connections per transport to different Controllers for redundancy; this is tunable.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "2.2.c"
+  },
+  {
+    "question": "Why must a WAN Edge's serial number be in the Manager's device list (WAN Edge list) before it joins?",
+    "options": [
+      "It tells the router which LAN VLANs to create",
+      "It sets the speed of the device's WAN link",
+      "It chooses the colour of every TLOC",
+      "Only listed devices are accepted"
+    ],
+    "correct": 3,
+    "explanation": "The authorised serial/chassis list is synced from the Plug and Play portal and pushed to Validators and Controllers; unknown devices are rejected.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "2.3"
+  },
+  {
+    "question": "Controllers fail to authenticate each other after a new enterprise CA was introduced. What is the likely cause?",
+    "options": [
+      "OMP graceful restart is disabled",
+      "The new root CA is missing on some nodes",
+      "The BFD multiplier is too low on the hubs",
+      "The colour on VPN 0 is 'default'"
+    ],
+    "correct": 1,
+    "explanation": "With enterprise certificates, every controller and edge must trust the root CA chain; otherwise DTLS/TLS authentication fails.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "2.3"
+  },
+  {
+    "question": "Which command on an IOS XE WAN Edge shows the state of its DTLS control connections?",
+    "options": [
+      "show interface status",
+      "show sdwan omp routes summary",
+      "show sdwan control connections",
+      "show crypto pki trustpoints"
+    ],
+    "correct": 2,
+    "explanation": "show sdwan control connections (and control local-properties, connection-history) shows peers, state and errors.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "2.4"
+  },
+  {
+    "question": "show sdwan control connection-history shows error CRTVERFL. What does it point to?",
+    "options": [
+      "OMP has no routes",
+      "The tunnel MTU is too small for the payload",
+      "Certificate check failed",
+      "The TLOC colour is invalid"
+    ],
+    "correct": 2,
+    "explanation": "CRTVERFL is a certificate verification failure (e.g. untrusted root, expired or wrong serial); check certificates and time (NTP).",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "2.4"
+  },
+  {
+    "question": "A new edge cannot reach the Validator by its FQDN. What should you check first?",
+    "options": [
+      "The QoS map on the tunnel",
+      "The OSPF area on the LAN side",
+      "DNS and VPN 0 routing",
+      "The firewall policy in VPN 10"
+    ],
+    "correct": 2,
+    "explanation": "Control connections start from VPN 0 (transport); the edge needs a route and working DNS to resolve and reach the Validator.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "2.4"
+  },
+  {
+    "question": "How does a new WAN Edge on a DHCP internet link find its controllers with zero-touch?",
+    "options": [
+      "It scans the internet for open SD-WAN ports",
+      "It waits for an engineer to type the config on the console",
+      "It asks PnP Connect, which points it to the Validator",
+      "It copies the config from the nearest edge by Bluetooth"
+    ],
+    "correct": 2,
+    "explanation": "ZTP/PnP: the device gets an address, reaches devicehelper/PnP cloud, learns its Validator and organisation and then downloads its config.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "3.1.a"
+  },
+  {
+    "question": "When is bootstrap (a generated config file) used instead of ZTP?",
+    "options": [
+      "When PnP cannot be reached",
+      "When the device has more than two WAN links",
+      "When the device runs an older BFD version",
+      "When the site uses OSPF on the LAN"
+    ],
+    "correct": 0,
+    "explanation": "A bootstrap file from the Manager (on USB or flash) provides the initial transport settings and identity where ZTP is not possible.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "3.1.a"
+  },
+  {
+    "question": "Why deploy two WAN Edges in a data centre or regional hub?",
+    "options": [
+      "To avoid using any Controllers",
+      "To double the number of OMP routes per prefix",
+      "Because each edge supports only one VPN",
+      "Redundancy and capacity"
+    ],
+    "correct": 3,
+    "explanation": "Hubs aggregate many tunnels; dual edges with LAN-side routing (BGP/OSPF, VRRP) give resilience and scale.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "3.1.b"
+  },
+  {
+    "question": "A branch has two edges, each with only one of the two WAN circuits. How can both edges use both circuits?",
+    "options": [
+      "TLOC extension between the two edges",
+      "OMP graceful restart on the circuits",
+      "A second Validator at the branch",
+      "Cloud OnRamp for SaaS on one edge"
+    ],
+    "correct": 0,
+    "explanation": "TLOC extension links the routers so each can build tunnels over the circuit terminated on its peer.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "3.2.a"
+  },
+  {
+    "question": "What are on-demand (dynamic) tunnels in SD-WAN?",
+    "options": [
+      "Spoke-to-spoke tunnels built when needed",
+      "Tunnels that change colour every hour",
+      "Tunnels between controllers only",
+      "Backup tunnels that use only the 4G/LTE link"
+    ],
+    "correct": 0,
+    "explanation": "With on-demand tunnels, spokes use the hub by default and bring up direct tunnels when traffic flows, saving resources on small devices.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "3.2.b"
+  },
+  {
+    "question": "Two edges use 'private' colours (mpls) on one side and 'public' (biz-internet) on the other. When do tunnels use public IPs?",
+    "options": [
+      "Never, tunnels always use private IPs",
+      "When a public colour is involved",
+      "Only when restrict is set on both colours",
+      "Only for traffic in VPN 0"
+    ],
+    "correct": 1,
+    "explanation": "Edges use private (pre-NAT) addresses between private colours and post-NAT public addresses when a public colour is involved.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "3.2.c"
+  },
+  {
+    "question": "What does the 'restrict' keyword on a TLOC colour do?",
+    "options": [
+      "Limits the link to 10 Mb/s",
+      "Blocks all control connections on that link",
+      "Stops BFD on that colour",
+      "Tunnels only to the same colour"
+    ],
+    "correct": 3,
+    "explanation": "restrict prevents tunnels to other colours, for example keeping MPLS traffic only between MPLS TLOCs.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "3.2.c"
+  },
+  {
+    "question": "How does OMP choose the best route when several edges advertise the same prefix?",
+    "options": [
+      "The edge with the highest serial number wins",
+      "Preference, TLOC preference, origin",
+      "The route learned first is always kept forever",
+      "OMP picks one at random each minute"
+    ],
+    "correct": 1,
+    "explanation": "OMP best path compares preference, TLOC preference, origin type and metric, among others; control policy can change these attributes.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "3.3"
+  },
+  {
+    "question": "By default, which LAN routes does an edge advertise into OMP?",
+    "options": [
+      "No routes until a policy is applied",
+      "BGP and OSPF routes only",
+      "Connected and static routes",
+      "Only the default route"
+    ],
+    "correct": 2,
+    "explanation": "Connected and static are redistributed by default; OSPF, BGP and EIGRP must be enabled under OMP advertise.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "3.3"
+  },
+  {
+    "question": "Why set a higher TLOC preference on the MPLS colour at a hub?",
+    "options": [
+      "It encrypts the MPLS tunnel twice",
+      "Remote sites prefer that TLOC",
+      "It gives the MPLS link more bandwidth",
+      "It disables the internet TLOC"
+    ],
+    "correct": 1,
+    "explanation": "TLOC preference influences OMP path choice for remote edges; higher is preferred.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "3.4"
+  },
+  {
+    "question": "In SD-WAN Manager, how is a device template built from feature templates?",
+    "options": [
+      "It is created automatically by the Validator after ZTP",
+      "It is a single text file copied from another vendor's router",
+      "It combines feature templates",
+      "It contains only the device serial number and licence"
+    ],
+    "correct": 2,
+    "explanation": "Device templates reference feature templates; device-specific values are filled in through variables when attaching.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "3.5"
+  },
+  {
+    "question": "When would you use a CLI add-on template?",
+    "options": [
+      "To push a firmware image to all edges at the same time",
+      "To replace OMP with a CLI-only routing protocol on every edge",
+      "For a few commands that no feature template supports",
+      "To create the certificate signing request for the Validator"
+    ],
+    "correct": 2,
+    "explanation": "The CLI add-on adds raw CLI to a feature-based device template, avoiding a full CLI template for small gaps.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "3.5"
+  },
+  {
+    "question": "A branch has two edges serving one LAN. Which protocol gives hosts a single default gateway?",
+    "options": [
+      "Cloud OnRamp for SaaS with a gateway site",
+      "OMP on the service VPN between the two edges",
+      "BFD",
+      "VRRP"
+    ],
+    "correct": 3,
+    "explanation": "VRRP on the service-side interfaces provides a virtual gateway; it can track OMP or interfaces.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "3.5.a"
+  },
+  {
+    "question": "A hub edge learns OSPF routes from the DC and must advertise them to branches. What is required?",
+    "options": [
+      "Configure OSPF in VPN 512 so the Manager can see it",
+      "Nothing, OSPF routes are sent into OMP by default with all their LSAs",
+      "Run OSPF between all edges across the internet links",
+      "Advertise OSPF into OMP in the service VPN"
+    ],
+    "correct": 3,
+    "explanation": "OSPF must be redistributed into OMP (omp advertise ospf) in that VPN; also redistribute OMP into OSPF for the reverse path.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "3.5.b"
+  },
+  {
+    "question": "Edges redistribute OMP into BGP at a DC that also has MPLS CE routers. What prevents a routing loop?",
+    "options": [
+      "Route tagging or BGP communities with filters",
+      "Raising the BFD hello interval on every tunnel in the overlay",
+      "Disabling OMP graceful restart on the hub",
+      "Using GRE instead of IPsec on all of the tunnels"
+    ],
+    "correct": 0,
+    "explanation": "Mutual redistribution at multiple points needs tags/communities (or SoO, AS-path) to stop routes learned from the overlay coming back.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "3.5.c"
+  },
+  {
+    "question": "Where can EIGRP be used on a Catalyst SD-WAN edge?",
+    "options": [
+      "Only in VPN 0 to reach the Validator over the internet",
+      "As the overlay protocol between all edges instead of OMP",
+      "On the service side, redistributed into OMP",
+      "Only between the Manager cluster nodes"
+    ],
+    "correct": 2,
+    "explanation": "EIGRP is supported on IOS XE SD-WAN service VPNs and can be advertised into OMP like OSPF or BGP.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "3.5.d"
+  },
+  {
+    "question": "How is multicast handled in Catalyst SD-WAN overlay?",
+    "options": [
+      "Multicast is not supported in any SD-WAN release",
+      "Every edge floods multicast to all other edges in every VPN",
+      "Replicators copy traffic to receivers' edges",
+      "The Controller forwards the multicast data itself"
+    ],
+    "correct": 2,
+    "explanation": "Edges run PIM on the service side; OMP signals joins and designated replicators reduce the head-end replication load.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "3.6"
+  },
+  {
+    "question": "What are configuration groups in SD-WAN Manager?",
+    "options": [
+      "A newer model built from feature profiles",
+      "A list of administrators allowed to change the overlay settings",
+      "Groups of BFD sessions that share timers",
+      "The Validator's list of authorised serials"
+    ],
+    "correct": 0,
+    "explanation": "Configuration groups (with system, transport, service and policy profiles) and guided workflows simplify the older template model.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "3.7"
+  },
+  {
+    "question": "Where is a centralized control policy applied?",
+    "options": [
+      "On the Controller, to OMP routes and TLOCs",
+      "On each edge's LAN interface as an access list for all traffic",
+      "On the Validator for NAT traversal",
+      "On the Manager's GUI login page"
+    ],
+    "correct": 0,
+    "explanation": "Control policies run on Controllers and change what OMP routes/TLOCs are advertised to which sites, building topologies such as hub-and-spoke.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "4.1"
+  },
+  {
+    "question": "A control policy for hub-and-spoke sets the spokes' routes' TLOC to the hub. What is the effect?",
+    "options": [
+      "Spoke-to-spoke traffic goes through the hub",
+      "Spokes lose all routes to the data centre and to each other",
+      "BFD stops on all tunnels to the hub site",
+      "The hub becomes the Validator for the region"
+    ],
+    "correct": 0,
+    "explanation": "By setting the next-hop TLOC (or filtering spoke TLOCs), spokes reach each other via the hub instead of direct tunnels.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "4.1"
+  },
+  {
+    "question": "What does a centralized data policy act on?",
+    "options": [
+      "Only OMP routes reflected by the Controller to the sites",
+      "Traffic matched by ports or DSCP",
+      "The Manager's scheduled database backups",
+      "Certificates on the edges"
+    ],
+    "correct": 1,
+    "explanation": "Data policies are defined on the Controller but enforced on edges: match packet fields, then drop, set next hop, TLOC, NAT, etc.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "4.2"
+  },
+  {
+    "question": "Which policy type is configured on the edge itself, such as an interface ACL or QoS?",
+    "options": [
+      "VPN membership policy",
+      "Centralized control policy pushed via OMP to all sites",
+      "Application-aware routing policy on the Validator",
+      "Localized policy"
+    ],
+    "correct": 3,
+    "explanation": "Localized policies (ACLs, QoS, route policies) are attached to device templates/config groups and run locally.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "4.2"
+  },
+  {
+    "question": "What is a VPN in Catalyst SD-WAN?",
+    "options": [
+      "A single tunnel between two edges",
+      "An IPsec remote-access client for laptops on the road",
+      "A segment like a VRF, tagged in the data plane",
+      "A group of Manager users with the same role"
+    ],
+    "correct": 2,
+    "explanation": "Service VPNs (1–511 etc.) are isolated routing tables; the VPN label travels in packets so segments stay separate end to end.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "4.3.a"
+  },
+  {
+    "question": "Which VPN is reserved for the transport (WAN) side?",
+    "options": [
+      "VPN 65535",
+      "VPN 512, also used for the out-of-band management port",
+      "VPN 1",
+      "VPN 0"
+    ],
+    "correct": 3,
+    "explanation": "VPN 0 is transport; VPN 512 is out-of-band management; service VPNs carry user traffic.",
+    "difficulty": "Easy",
+    "exam": "ensdwi",
+    "domain": "4.3.a"
+  },
+  {
+    "question": "Guest traffic (VPN 20) must reach only the internet via the DC, never other VPNs. Which approach fits?",
+    "options": [
+      "Use the same VPN for guests and staff with an ACL",
+      "Put guest users in VPN 0 so that they share the transport interface",
+      "Disable BFD for VPN 20 on every branch",
+      "A topology policy for VPN 20 to the DC hub"
+    ],
+    "correct": 3,
+    "explanation": "Per-VPN topologies (hub-and-spoke for VPN 20) plus keeping VPN separation give isolation; route leaking is only done if explicitly configured.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "4.3.b"
+  },
+  {
+    "question": "What does application-aware routing do?",
+    "options": [
+      "Picks tunnels meeting an app's SLA class",
+      "Assigns a separate VPN to each application automatically",
+      "Blocks applications that are not in the list",
+      "Compresses application traffic"
+    ],
+    "correct": 0,
+    "explanation": "AAR uses BFD measurements of loss, latency and jitter against SLA classes and moves traffic when a path breaks the SLA.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "4.4"
+  },
+  {
+    "question": "No path meets the voice SLA class. What happens with a default AAR policy without 'strict'?",
+    "options": [
+      "Traffic still uses an available path",
+      "Voice traffic is dropped at the branch until a path recovers",
+      "The edge reboots to reset BFD",
+      "The Controller blocks all OMP routes for that site"
+    ],
+    "correct": 0,
+    "explanation": "Without strict, traffic falls back to available paths (or the configured fallback/backup colour); strict drops it.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "4.4"
+  },
+  {
+    "question": "What does Enhanced AAR improve over classic AAR?",
+    "options": [
+      "Faster SLA detection with inline data",
+      "It removes the need for SLA classes in all policies",
+      "It runs on the Validator instead of the edges",
+      "It turns off BFD to save bandwidth"
+    ],
+    "correct": 0,
+    "explanation": "Enhanced AAR uses inline data-plane measurements for sub-second detection; Predictive Path Recommendations use analytics to suggest better preferences.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "4.4"
+  },
+  {
+    "question": "How is direct internet access (DIA) usually done at a branch?",
+    "options": [
+      "Backhauling every flow to the DC first through IPsec",
+      "NAT on VPN 0 plus a route or policy",
+      "Turning off the IPsec tunnels at that branch",
+      "Using VPN 512 for user traffic"
+    ],
+    "correct": 1,
+    "explanation": "DIA enables NAT on the VPN 0 interface and sends chosen traffic there with a service-VPN NAT route or a centralized data policy.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "4.5"
+  },
+  {
+    "question": "What does service insertion (service chaining) do?",
+    "options": [
+      "Inserts the Manager GUI into each branch router as a container",
+      "Steers chosen traffic through a firewall or IPS",
+      "Adds a second Controller to every region",
+      "Replaces OMP with static routes"
+    ],
+    "correct": 1,
+    "explanation": "Edges advertise services (FW, IDS, netsvc) in OMP; policies set traffic to traverse them, often at a hub.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "5.1"
+  },
+  {
+    "question": "What is the application-aware enterprise firewall on SD-WAN edges?",
+    "options": [
+      "A cloud-only firewall that needs SIG on every branch link",
+      "A zone-based stateful firewall that matches apps",
+      "A stateless ACL applied on the VPN 0 interface",
+      "A firewall that only inspects OMP"
+    ],
+    "correct": 1,
+    "explanation": "It is IOS XE zone-based firewall with NBAR application matching, configured as a security policy in the Manager.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "5.2.a"
+  },
+  {
+    "question": "Where do IPS, URL filtering and AMP run on an IOS XE SD-WAN edge?",
+    "options": [
+      "In a security virtual image (UTD container)",
+      "On the Validator, which inspects all user traffic for every site",
+      "On the Manager cluster nodes in the data centre",
+      "In the BFD process of the data plane"
+    ],
+    "correct": 0,
+    "explanation": "UTD (Snort-based) runs as a container on the router; the image must match the IOS XE version and the platform needs enough memory.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "5.2.b"
+  },
+  {
+    "question": "A URL filtering policy blocks gambling sites. How are sites classified?",
+    "options": [
+      "By web reputation and category",
+      "By the source IP address of each user on the LAN",
+      "By the TLOC colour of the link",
+      "By the OMP route tags sent by the Controller"
+    ],
+    "correct": 0,
+    "explanation": "URL filtering uses Talos categories and reputation scores, with allow/block lists for exceptions.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "5.2.c"
+  },
+  {
+    "question": "What does AMP do on an SD-WAN edge?",
+    "options": [
+      "Encrypts management traffic between the edge and Manager",
+      "Measures latency for AAR on every tunnel",
+      "Checks file reputation and blocks known malware",
+      "Assigns QoS classes"
+    ],
+    "correct": 2,
+    "explanation": "Advanced Malware Protection looks up file hashes in the cloud and can send unknown files to Threat Grid for analysis.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "5.2.d"
+  },
+  {
+    "question": "Why enable the SSL/TLS proxy on edges with IPS and URL filtering?",
+    "options": [
+      "To encrypt BFD probes, which are sent in clear text by default",
+      "To inspect inside encrypted flows",
+      "To replace IPsec on the overlay",
+      "To speed up control connections"
+    ],
+    "correct": 1,
+    "explanation": "Most traffic is HTTPS; the proxy decrypts (with a CA trusted by clients) so UTD can inspect, then re-encrypts.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "5.2.e"
+  },
+  {
+    "question": "How does TrustSec integrate with Catalyst SD-WAN?",
+    "options": [
+      "It is not supported on any edge",
+      "By replacing every VPN with a separate SGT in the Manager database",
+      "By using SGTs as TLOC colours",
+      "SGTs carried inline across the overlay"
+    ],
+    "correct": 3,
+    "explanation": "Edges can propagate SGT in the data plane (or learn via SXP) and enforce identity-based policy (SGACL, firewall).",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "5.2.f"
+  },
+  {
+    "question": "How does Umbrella DNS security work on an SD-WAN edge?",
+    "options": [
+      "Umbrella replaces BFD",
+      "The edge resolves every name locally from a downloaded list of domains",
+      "The Validator answers all DNS queries",
+      "The edge redirects DNS queries to Umbrella"
+    ],
+    "correct": 3,
+    "explanation": "The edge intercepts DNS (DNS redirect) and sends it to Umbrella with device/VPN identity, blocking malicious domains.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "5.3.a"
+  },
+  {
+    "question": "How do branch edges send internet traffic to a Secure Internet Gateway (SIG)?",
+    "options": [
+      "Only by backhauling traffic to the DC and from there to a proxy server",
+      "Auto IPsec/GRE tunnels to the SIG",
+      "By changing the DNS server of each PC",
+      "Through OMP to the Controller"
+    ],
+    "correct": 1,
+    "explanation": "SIG templates/features build tunnels to Umbrella/Secure Access or third-party SIGs, and routes/policy send traffic into them.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "5.3.b"
+  },
+  {
+    "question": "How many forwarding queues does a Catalyst SD-WAN IOS XE edge use for QoS on an interface?",
+    "options": [
+      "Eight (queue 0 is low latency)",
+      "Two, one for control and one for all other data",
+      "Sixteen per tunnel interface",
+      "One shared queue for all classes"
+    ],
+    "correct": 0,
+    "explanation": "There are eight queues; queue 0 is the LLQ, others share bandwidth by weight; class maps tie classes to queues.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "5.4.a"
+  },
+  {
+    "question": "Which queuing method protects voice with a strict priority queue?",
+    "options": [
+      "FIFO",
+      "Weighted random early detection applied to the default queue",
+      "LLQ",
+      "Round-robin across tunnels"
+    ],
+    "correct": 2,
+    "explanation": "Low Latency Queuing serves the priority queue first (policed to avoid starvation), others get CBWFQ shares.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "5.4.b"
+  },
+  {
+    "question": "A branch has a 100 Mb/s port but a 20 Mb/s internet contract. What is needed for QoS to work?",
+    "options": [
+      "Marking all traffic EF",
+      "Policing incoming traffic to 100 Mb/s on the LAN interfaces",
+      "A higher BFD multiplier",
+      "Shaping to 20 Mb/s"
+    ],
+    "correct": 3,
+    "explanation": "Without shaping, the queue builds in the provider network; shaping to the contract makes the edge's queues take effect.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "5.4.c"
+  },
+  {
+    "question": "What does a policer do to traffic above its rate?",
+    "options": [
+      "Drops or re-marks it",
+      "Buffers it until the link is idle and then sends it in order",
+      "Sends it over a different VPN",
+      "Encrypts it again"
+    ],
+    "correct": 0,
+    "explanation": "Policing does not queue: excess traffic is dropped or re-marked; shaping buffers instead.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "5.4.d"
+  },
+  {
+    "question": "Where is DSCP for overlay traffic copied so the underlay provider can honour it?",
+    "options": [
+      "Nowhere, it is lost",
+      "To the OMP route attributes for each of the prefixes",
+      "To the BFD session ID",
+      "To the outer IPsec/GRE header"
+    ],
+    "correct": 3,
+    "explanation": "Edges copy (or rewrite) the inner DSCP to the tunnel's outer header so the transport can apply its own QoS.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "5.4.e"
+  },
+  {
+    "question": "What problem does per-tunnel QoS solve at a hub?",
+    "options": [
+      "Spokes exceeding the number of OMP routes allowed by the Controller",
+      "A hub overrunning small spoke links",
+      "BFD sessions failing at night",
+      "DNS failures"
+    ],
+    "correct": 1,
+    "explanation": "Per-tunnel QoS shapes each hub-to-spoke tunnel to the spoke's bandwidth; adaptive QoS adjusts the shaper to measured link capacity.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "5.4.f"
+  },
+  {
+    "question": "What does AppQoE TCP optimization do?",
+    "options": [
+      "Proxies TCP to improve long-delay links",
+      "Converts all TCP sessions to UDP so that they can be sent faster",
+      "Blocks TCP retransmissions",
+      "Limits TCP to one session per user"
+    ],
+    "correct": 0,
+    "explanation": "TCP optimization terminates and re-originates TCP with better congestion control (BBR), helping high-latency or lossy paths.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "5.5.a"
+  },
+  {
+    "question": "How does DRE save WAN bandwidth?",
+    "options": [
+      "Sends references instead of repeated data",
+      "Drops duplicate users from the network",
+      "Removes BFD packets from the tunnels",
+      "Turns off encryption to shrink the headers"
+    ],
+    "correct": 0,
+    "explanation": "Data Redundancy Elimination caches byte patterns at both ends and replaces repeated chunks with short signatures.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "5.5.b"
+  },
+  {
+    "question": "A voice site has two poor-quality links. Which AppQoE feature sends each packet over both?",
+    "options": [
+      "Forward error correction using parity packets on a single link",
+      "Packet duplication",
+      "TCP optimization",
+      "DRE"
+    ],
+    "correct": 1,
+    "explanation": "Packet duplication sends copies over two tunnels and discards the duplicate at the far end, hiding loss on one path.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "5.5.c"
+  },
+  {
+    "question": "What does FEC do on a lossy tunnel?",
+    "options": [
+      "Compresses the packet headers on the tunnel",
+      "Encrypts packets a second time with a new key",
+      "Moves the traffic to another TLOC colour",
+      "Adds parity to rebuild lost packets"
+    ],
+    "correct": 3,
+    "explanation": "Forward Error Correction sends a parity packet for each group so the receiver can recover a lost packet without retransmission.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "5.5.d"
+  },
+  {
+    "question": "What is AppNav in the AppQoE design?",
+    "options": [
+      "The controller that redirects flows to service nodes",
+      "A GPS-based feature that maps every branch on a global map",
+      "A replacement for OMP in large hub sites",
+      "A GUI theme in the Manager dashboard"
+    ],
+    "correct": 0,
+    "explanation": "AppNav controllers intercept and distribute flows to service nodes (external or internal) that run TCP optimization and DRE.",
+    "difficulty": "Hard",
+    "exam": "ensdwi",
+    "domain": "5.5.e"
+  },
+  {
+    "question": "How can SD-WAN Manager administrators be authenticated against a central server?",
+    "options": [
+      "Using BFD keys",
+      "Only local accounts created on each edge router in VPN 512",
+      "RADIUS, TACACS+ or SSO",
+      "Using the device certificate serial"
+    ],
+    "correct": 2,
+    "explanation": "The Manager supports local users, RADIUS/TACACS+ and SAML SSO, with user groups for RBAC.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "6.1"
+  },
+  {
+    "question": "Where in SD-WAN Manager do you check tunnel loss, latency and jitter for a site?",
+    "options": [
+      "Administration > Settings > Alarms",
+      "Configuration > Certificates for the edge and its controllers",
+      "Monitor > Devices > Tunnel / App Route",
+      "Maintenance > Software Repository"
+    ],
+    "correct": 2,
+    "explanation": "The device monitoring pages show tunnels, AAR statistics (app route), interfaces and events per device.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "6.2"
+  },
+  {
+    "question": "How does an external tool authenticate to the SD-WAN Manager REST API?",
+    "options": [
+      "An SNMPv1 community string sent in every API request",
+      "Session cookie plus an XSRF token",
+      "A BFD key",
+      "No authentication is needed"
+    ],
+    "correct": 1,
+    "explanation": "A POST to j_security_check returns JSESSIONID; a GET to /dataservice/client/token returns the X-XSRF-TOKEN needed for changes (newer releases also support tokens).",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "6.3"
+  },
+  {
+    "question": "How does SD-WAN Manager upgrade edge software safely?",
+    "options": [
+      "Upload, activate, and auto-rollback if contact is lost",
+      "Copy the image to each edge by TFTP and reload them all at the same time",
+      "The Validator upgrades edges at random",
+      "Software cannot be upgraded from the Manager"
+    ],
+    "correct": 0,
+    "explanation": "Images go into the repository; devices install, then activate; if the device does not reach the Manager within the timer, it rolls back.",
+    "difficulty": "Medium",
+    "exam": "ensdwi",
+    "domain": "6.4"
+  },
+  {
+    "question": "Which component automates and manages an SD-Access fabric?",
+    "options": [
+      "Catalyst Center",
+      "Catalyst SD-WAN Validator in the cloud",
+      "Meraki dashboard",
+      "Prime Infrastructure 1.x"
+    ],
+    "correct": 0,
+    "explanation": "Catalyst Center (formerly DNA Center) provisions the underlay and overlay, policy and assurance; ISE provides identity and policy.",
+    "difficulty": "Easy",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "Which protocol is the control plane of an SD-Access fabric?",
+    "options": [
+      "LISP",
+      "OSPF in a single area across all of the fabric nodes",
+      "OMP",
+      "VTP"
+    ],
+    "correct": 0,
+    "explanation": "LISP maps endpoint identifiers (EIDs) to routing locators (RLOCs); fabric nodes register and query the control plane node (map server/resolver). BGP EVPN is a newer option.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "Which encapsulation forms the SD-Access data plane?",
+    "options": [
+      "802.1Q trunks only",
+      "IPsec in transport mode between every pair of nodes",
+      "MPLS",
+      "VXLAN"
+    ],
+    "correct": 3,
+    "explanation": "VXLAN-GPO carries the VN (VNI) and the scalable group tag (SGT) in its header between fabric nodes.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "Which technology carries policy (who can talk to whom) in SD-Access?",
+    "options": [
+      "Port numbers in the ACLs configured on each switch by hand",
+      "Cisco TrustSec SGTs",
+      "OSPF tags",
+      "DHCP option 82"
+    ],
+    "correct": 1,
+    "explanation": "SGTs are assigned by ISE at authentication, carried in VXLAN and enforced with SGACLs (group-based policy).",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "What is the recommended underlay design for SD-Access?",
+    "options": [
+      "A hub-and-spoke GRE design to the core",
+      "A large layer 2 domain with spanning tree on every link",
+      "Only static routes between the switches",
+      "A routed layer 3 network, often IS-IS"
+    ],
+    "correct": 3,
+    "explanation": "The underlay is routed access with loopbacks reachable; LAN Automation builds an IS-IS underlay; manual OSPF/IS-IS also works.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "What does LAN Automation in Catalyst Center do?",
+    "options": [
+      "Upgrades the firmware of access points",
+      "Writes the SGACL matrix in ISE for every pair of groups",
+      "Discovers new switches and builds the underlay",
+      "Creates guest portals for visitors"
+    ],
+    "correct": 2,
+    "explanation": "Using a seed device and PnP, it onboards switches, assigns addressing and configures IS-IS and multicast for the underlay.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "What is the role of a fabric edge node?",
+    "options": [
+      "Runs ISE",
+      "Connects the fabric to the WAN and to the data centre via eBGP handoffs",
+      "Holds the host database only",
+      "Connects endpoints and registers them"
+    ],
+    "correct": 3,
+    "explanation": "Edge nodes are the access switches: they authenticate endpoints, register EIDs with the control plane node and encapsulate traffic.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "What is the role of the control plane node?",
+    "options": [
+      "The WLC for all the fabric APs",
+      "The device that hosts the anycast gateway for every endpoint on the floor",
+      "The host tracking database",
+      "The NTP server for the fabric nodes"
+    ],
+    "correct": 2,
+    "explanation": "It stores EID-to-RLOC mappings and answers queries from edge and border nodes; it is often collocated with the border.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "What does a fabric border node do?",
+    "options": [
+      "Authenticates every wired endpoint with 802.1X on its access ports",
+      "Connects the fabric to external networks",
+      "Hosts the Catalyst Center GUI",
+      "Assigns SGTs"
+    ],
+    "correct": 1,
+    "explanation": "Border nodes are the gateway between fabric and outside (internal or external borders), handing off VNs (often per VRF eBGP) and translating policy.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "What is the anycast gateway in SD-Access?",
+    "options": [
+      "The same gateway IP/MAC on every edge",
+      "A single router that all edge nodes forward to with a GRE tunnel",
+      "An HSRP pair running on the border nodes",
+      "A DHCP relay configured on ISE"
+    ],
+    "correct": 0,
+    "explanation": "Every edge node hosts the same SVI IP/MAC for a subnet, so endpoints can move anywhere without changing gateway.",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "What does ISE contribute to an SD-Access fabric?",
+    "options": [
+      "The underlay routing protocol for all the switches in the fabric",
+      "Authentication and SGT assignment",
+      "VXLAN encapsulation on the edges",
+      "The map server for the fabric"
+    ],
+    "correct": 1,
+    "explanation": "ISE authenticates (802.1X/MAB), assigns VN/SGT, stores the group-based policy matrix and integrates with Catalyst Center via pxGrid/ERS.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "Where are SGACLs typically enforced in SD-Access?",
+    "options": [
+      "In Catalyst Center",
+      "At the ingress border of the internet provider before the firewall",
+      "On the WLC only",
+      "On the egress fabric edge"
+    ],
+    "correct": 3,
+    "explanation": "Policy is enforced at egress, where the destination SGT is known; the source SGT arrives in the VXLAN header.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "How does SD-Access provide macro-segmentation?",
+    "options": [
+      "SGTs inside a single routing table for the whole campus",
+      "Virtual networks",
+      "Port security on edge ports",
+      "Private VLANs on each switch"
+    ],
+    "correct": 1,
+    "explanation": "VNs are separate routing domains (VRFs); traffic between them must go through a fusion device or firewall. SGTs give micro-segmentation within a VN.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "Two VNs (Employees and IoT) need some shared services such as DHCP and DNS. What is a common design?",
+    "options": [
+      "Use the same SGT for both groups",
+      "Put DHCP and DNS servers in each VN as copies on every edge node",
+      "Merge both VNs into one single VN",
+      "A fusion device leaks routes"
+    ],
+    "correct": 3,
+    "explanation": "Shared services usually sit outside the fabric; a fusion device performs inter-VRF route leaking (or the border can do selective leaking).",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "How do wireless endpoints join an SD-Access fabric (fabric-enabled wireless)?",
+    "options": [
+      "APs VXLAN client traffic to the edge",
+      "APs build CAPWAP tunnels carrying all data to the WLC in the DC",
+      "APs act as border nodes",
+      "APs do not support fabric"
+    ],
+    "correct": 0,
+    "explanation": "In fabric wireless, the WLC handles the control plane (CAPWAP) and registers clients in LISP, while data is VXLAN from the AP to the edge.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "Where must fabric APs connect?",
+    "options": [
+      "To the internet through a firewall",
+      "To any switch outside the fabric with a trunk to the WLC",
+      "Only to the border node of the site",
+      "Directly to fabric edge nodes"
+    ],
+    "correct": 3,
+    "explanation": "Fabric APs connect to edge nodes (or extended nodes) in the INFRA VN so they can build VXLAN tunnels to the edge.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "What is an extended node in SD-Access?",
+    "options": [
+      "A small switch extending the fabric",
+      "A switch that runs the full LISP control plane for the whole campus",
+      "A second Catalyst Center appliance",
+      "An ISE policy service node"
+    ],
+    "correct": 0,
+    "explanation": "Extended nodes (e.g. Catalyst IE or compact switches) connect to an edge via 802.1Q and let IoT/industrial devices join the fabric; policy is enforced on the edge.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "Why does SD-Access use Layer 2 flooding only when enabled per pool?",
+    "options": [
+      "To save licences",
+      "Because VXLAN cannot carry broadcast frames under any circumstances",
+      "Because ARP is not used",
+      "To reduce broadcast in the fabric"
+    ],
+    "correct": 3,
+    "explanation": "By default the fabric converts ARP to unicast using the control plane; Layer 2 flooding (via underlay multicast) is enabled only for apps that need broadcast.",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "In SD-Access, what is the difference between the underlay and the overlay?",
+    "options": [
+      "They are two names for the same OSPF process",
+      "Underlay carries user traffic; overlay carries only management",
+      "Underlay is the routed network; overlay is the VXLAN VNs",
+      "The overlay is used only for wireless"
+    ],
+    "correct": 2,
+    "explanation": "The underlay provides RLOC reachability between nodes; overlays (VNs) run on top in VXLAN, independent of physical topology.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "An endpoint roams from one edge node to another. How does the fabric update forwarding?",
+    "options": [
+      "The DHCP server gives it a new IP",
+      "Spanning tree reconverges across the entire campus",
+      "The new edge registers the EID",
+      "The border floods ARP to all edges"
+    ],
+    "correct": 2,
+    "explanation": "The new edge registers the EID with the control plane node, which notifies the previous edge (away table), and remote nodes refresh via SMR.",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "What does Catalyst Center Assurance add to an SD-Access fabric?",
+    "options": [
+      "Encryption of all the VXLAN traffic between the fabric nodes",
+      "Health scores and issues",
+      "Additional SGTs for each client",
+      "Underlay routing between nodes"
+    ],
+    "correct": 1,
+    "explanation": "Assurance collects telemetry and gives health of network, clients and apps, with guided remediation and path trace.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "What is a fabric site?",
+    "options": [
+      "An ISE deployment with two nodes",
+      "Only a single access switch that has been provisioned by LAN Automation",
+      "Any building that has Wi-Fi coverage",
+      "A fabric with its own control plane and border"
+    ],
+    "correct": 3,
+    "explanation": "A fabric site has its own edge, control plane and border nodes; several sites are interconnected with SD-Access transit.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "What does Fabric in a Box (FiaB) mean?",
+    "options": [
+      "Only a WLC embedded inside a switch",
+      "A pre-built rack that contains Catalyst Center, ISE and all of the switches",
+      "A virtual fabric hosted in the cloud",
+      "One switch as border, control plane and edge"
+    ],
+    "correct": 3,
+    "explanation": "FiaB suits small sites: a single switch (or stack) performs all three fabric roles, optionally with embedded wireless.",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "Which role does the WLC play in fabric wireless?",
+    "options": [
+      "It forwards all wireless client data to the border in CAPWAP",
+      "Control plane for APs and clients, not data",
+      "It replaces the control plane node",
+      "None, WLC is not used"
+    ],
+    "correct": 1,
+    "explanation": "The fabric WLC manages APs and RF, authenticates clients and updates the control plane node with wireless client locations.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "Why does SD-Access need the WLC and fabric APs to have low latency to the control plane?",
+    "options": [
+      "Because the WLC replicates multicast",
+      "Because LISP only runs on links faster than 100 Gb/s",
+      "Fabric wireless needs about 20 ms RTT WLC to APs",
+      "Because ISE is in the WLC"
+    ],
+    "correct": 2,
+    "explanation": "Fabric mode wireless requires the WLC to be close to APs (typically RTT ≤20 ms) since client onboarding updates the fabric control plane in real time.",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "Which MTU consideration applies to the SD-Access underlay?",
+    "options": [
+      "Keep 1500 everywhere; VXLAN adds nothing",
+      "Lower the MTU to 1400 on all client ports",
+      "Raise MTU (about 9100) for VXLAN overhead",
+      "Use a different MTU per virtual network"
+    ],
+    "correct": 2,
+    "explanation": "VXLAN adds 50 bytes; the underlay should use jumbo MTU so 1500-byte client frames are not fragmented. LAN Automation sets 9100.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "Why should each fabric node have a /32 loopback advertised in the underlay?",
+    "options": [
+      "It is required for DHCP option 43 on the APs",
+      "It is the anycast gateway used by every client",
+      "It is the node's RLOC for VXLAN",
+      "It replaces the management VLAN on access ports"
+    ],
+    "correct": 2,
+    "explanation": "The Loopback0 /32 is the routing locator; the underlay must carry host routes (no summarisation hiding RLOCs) for reachability tracking.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "How many control plane nodes are recommended per fabric site for resilience?",
+    "options": [
+      "One, since LISP cannot replicate its database",
+      "Two",
+      "Four, one per building in every case",
+      "One per edge node, collocated on each access switch"
+    ],
+    "correct": 1,
+    "explanation": "Two control plane nodes are deployed; edges register with both, so either can answer queries. Large sites may use more (up to six with LISP pub/sub).",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "What is the difference between an internal border and an external border?",
+    "options": [
+      "Internal: known networks; external: default route out",
+      "Internal borders run on access switches; external borders run on the WLC",
+      "There is no difference in any release",
+      "External borders only connect wireless clients"
+    ],
+    "correct": 0,
+    "explanation": "Internal borders import specific prefixes (e.g. DC, shared services); external borders are the gateway of last resort (internet/unknown). An 'anywhere' border does both.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "How does a border node usually hand off VNs to the fusion device?",
+    "options": [
+      "GRE tunnels to the WLC for each VN",
+      "A single OSPF session that carries all VNs in the global table",
+      "A VRF-lite eBGP session per VN",
+      "Static routes only in the global table"
+    ],
+    "correct": 2,
+    "explanation": "Catalyst Center automates IP transit: a subinterface/SVI per VN with eBGP to the peer, which keeps VRF separation outside the fabric.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "SGTs must be kept when traffic leaves the fabric through an IP transit. What can carry them?",
+    "options": [
+      "The DSCP field of every packet, rewritten by the border",
+      "Inline tagging or SXP",
+      "The VLAN ID of the subinterface",
+      "They cannot leave the fabric at all"
+    ],
+    "correct": 1,
+    "explanation": "With IP transit the VXLAN header is removed; SGT can be kept with inline tagging (CMD) on the handoff or exchanged as IP-SGT mappings with SXP/pxGrid.",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "What is SD-Access transit used for?",
+    "options": [
+      "Linking fabric sites while keeping VXLAN/SGT",
+      "Connecting the fabric to the internet provider with plain IP",
+      "Linking APs to the WLC across a WAN",
+      "Replacing ISE between sites"
+    ],
+    "correct": 0,
+    "explanation": "SD-Access transit (LISP pub/sub with transit control plane nodes) carries native VXLAN with VN and SGT end to end between sites, usually over a metro or campus core.",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "When is SD-WAN a better transit between fabric sites than SD-Access transit?",
+    "options": [
+      "When no ISE is deployed anywhere",
+      "Sites in one building with dark fibre between them",
+      "When there are fewer than ten edge nodes",
+      "Sites connected over WAN links"
+    ],
+    "correct": 3,
+    "explanation": "Across a WAN, SD-WAN transit (integrated with Catalyst SD-WAN) carries VN and SGT over the SD-WAN overlay; SD-Access transit needs high bandwidth, low latency and jumbo MTU.",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "Which segmentation tool should separate employees from contractors in the same VN?",
+    "options": [
+      "An extra MTU setting",
+      "A separate VN for every single user",
+      "A new fabric site for contractors",
+      "Different SGTs with an SGACL"
+    ],
+    "correct": 3,
+    "explanation": "Within a VN, micro-segmentation via SGTs and group-based policy is simpler than creating more VNs; VNs are for full isolation.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "Why should the number of virtual networks be kept small?",
+    "options": [
+      "Each VN adds VRFs, handoffs and route leaking",
+      "VNs cannot carry more than one SGT in any release",
+      "Each VN requires a separate Catalyst Center",
+      "VNs disable wireless"
+    ],
+    "correct": 0,
+    "explanation": "Every VN needs a VRF on all nodes, a border handoff and often fusion leaking; use VNs for strong isolation and SGTs for finer policy.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "Which VN is used by default for fabric APs and extended nodes?",
+    "options": [
+      "DEFAULT_VN, shared with all wired endpoints",
+      "INFRA_VN",
+      "GUEST_VN",
+      "A new VN per AP"
+    ],
+    "correct": 1,
+    "explanation": "INFRA_VN is in the global routing table and carries AP and extended node infrastructure; DEFAULT_VN is a user VN.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "A site needs 40,000 endpoints. Which factor most limits the design?",
+    "options": [
+      "Node host-table scale limits",
+      "The number of SSIDs on each AP",
+      "The MTU of client ports",
+      "The length of the VLAN names used"
+    ],
+    "correct": 0,
+    "explanation": "Scale depends on platform limits for host entries in the control plane, edge node host tables, VNs and SGACLs; large sites may need multiple sites or dedicated control plane nodes.",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "What is over-the-top (OTT) wireless in an SD-Access site?",
+    "options": [
+      "A cloud-hosted WLC reached over the internet",
+      "APs that act as fabric edge nodes with VXLAN",
+      "CAPWAP carried over the fabric",
+      "Wireless clients without any SSID"
+    ],
+    "correct": 2,
+    "explanation": "OTT keeps the traditional centralized model: CAPWAP control and data pass over the fabric as normal traffic, without fabric policy for wireless clients.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "When might OTT wireless be chosen over fabric wireless?",
+    "options": [
+      "During migration or when the WLC is too far",
+      "When the site needs SGT policy for wireless clients",
+      "When the APs connect directly to edge nodes",
+      "When latency to the WLC is under 5 ms"
+    ],
+    "correct": 0,
+    "explanation": "OTT suits migration, unsupported AP/WLC models or high latency to the WLC; fabric wireless gives the same policy and mobility as wired.",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "What advantage does fabric wireless give compared with OTT?",
+    "options": [
+      "Fewer access points needed on each floor",
+      "All traffic always passes through the WLC in the DC",
+      "No need for any WLC at all in the site",
+      "Same VN/SGT policy for wired and wireless"
+    ],
+    "correct": 3,
+    "explanation": "Wireless clients are registered in the fabric and their traffic is distributed at the edge, using the same segmentation and anycast gateway as wired.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "How is multicast supported for overlay traffic in SD-Access?",
+    "options": [
+      "Only through the WLC in the data centre",
+      "Multicast is converted to broadcast on all edge nodes",
+      "Head-end or native multicast",
+      "It is not supported in the overlay"
+    ],
+    "correct": 2,
+    "explanation": "Overlay multicast uses PIM in the VN with RPs; it is transported either by head-end replication (unicast copies) or native multicast in the underlay for efficiency.",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "Where is the rendezvous point (RP) for overlay multicast usually placed?",
+    "options": [
+      "Inside the ISE PAN",
+      "On every client device",
+      "On the border nodes",
+      "On the AP"
+    ],
+    "correct": 2,
+    "explanation": "RPs for overlay PIM-SM are typically on borders (or external), possibly with anycast RP and MSDP for redundancy.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "Which underlay feature is needed when native multicast or Layer 2 flooding is used?",
+    "options": [
+      "Spanning tree on every routed link",
+      "PIM and multicast in the underlay",
+      "An SSID for each virtual network",
+      "802.1X on all routed uplinks"
+    ],
+    "correct": 1,
+    "explanation": "Native multicast and L2 flooding map overlay groups to underlay multicast groups, so the underlay needs PIM (often SSM or ASM with an RP).",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "A site has existing traditional switches that cannot become edge nodes. What can be used to migrate gradually?",
+    "options": [
+      "Rip out all switches on the same night",
+      "A Layer 2 border handoff",
+      "Put old switches in INFRA_VN as edges",
+      "Enable VTP pruning"
+    ],
+    "correct": 1,
+    "explanation": "The L2 handoff on a border extends a fabric subnet to a traditional VLAN so hosts in both share the same subnet during migration.",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "Why is a dedicated, routed link between border nodes recommended?",
+    "options": [
+      "It is needed for ISE to work with the borders",
+      "It carries the client DHCP traffic",
+      "Gives a path if one border loses uplinks",
+      "It replaces the control plane node"
+    ],
+    "correct": 2,
+    "explanation": "An iBGP/IGP link between the pair lets one border reach external networks via the other if its handoff fails, avoiding black holes.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "Which port authentication template does Catalyst Center offer to keep endpoints working while 802.1X is introduced?",
+    "options": [
+      "WPA3 on wired ports",
+      "Closed authentication with no fallback",
+      "No authentication on all ports forever",
+      "Open authentication (monitor mode)"
+    ],
+    "correct": 3,
+    "explanation": "Open/low-impact templates allow traffic while authenticating so failures are visible without outages; closed mode is applied later.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "Where should the DHCP server be placed and what must the edge do for clients in the fabric?",
+    "options": [
+      "Outside; the edge relays with option 82",
+      "On every edge node as a local DHCP server",
+      "Inside each access point on the floor",
+      "On the control plane node only"
+    ],
+    "correct": 0,
+    "explanation": "Edges relay DHCP (anycast gateway) and add option 82 with RLOC information so the reply can be returned to the right edge through the border.",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "Which policy model in Catalyst Center defines which groups can communicate?",
+    "options": [
+      "Per-port ACLs typed on each switch",
+      "Group-based policy matrix",
+      "OSPF route maps on borders",
+      "SSID priority list on the WLC"
+    ],
+    "correct": 1,
+    "explanation": "The group-based policy matrix (source SGT × destination SGT) is authored in Catalyst Center and pushed to ISE, which downloads SGACLs to enforcing nodes.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "Why is a default 'deny' between SGTs risky as a first step?",
+    "options": [
+      "Unknown needed flows break",
+      "Because SGACLs cannot contain permit entries",
+      "Because ISE cannot push deny rules",
+      "Because VXLAN drops all denied traffic twice"
+    ],
+    "correct": 0,
+    "explanation": "A deny-by-default matrix requires knowing all required flows; most deployments start with permit plus logging/analytics, then tighten.",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "What should be checked before choosing switch models for SD-Access roles?",
+    "options": [
+      "The compatibility matrix per role",
+      "Only the number of access ports",
+      "The colour of the chassis and its bezel",
+      "Whether the switch has a console port"
+    ],
+    "correct": 0,
+    "explanation": "Each release lists supported platforms and scale per role (edge, border, control plane, extended node) and supported WLC/AP models.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "What does SD-Access stand for in Cisco campus networks?",
+    "options": [
+      "Secure Data Access for WAN sites",
+      "Software-Defined Access",
+      "Switched Domain Access",
+      "Standard Distribution Access layer"
+    ],
+    "correct": 1,
+    "explanation": "SD-Access is Cisco's intent-based campus fabric, automated by Catalyst Center with ISE policy.",
+    "difficulty": "Easy",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "In LISP terms, what is an EID?",
+    "options": [
+      "The IP address of the fabric node loopback",
+      "The endpoint's IP or MAC identity",
+      "The VXLAN header checksum",
+      "A Catalyst Center licence key"
+    ],
+    "correct": 1,
+    "explanation": "Endpoint Identifiers are host addresses; Routing Locators (RLOCs) are the fabric node addresses where those hosts sit.",
+    "difficulty": "Easy",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "In an SD-Access fabric, what does the routing locator (RLOC) refer to?",
+    "options": [
+      "The SGT number assigned to a group",
+      "The MAC address of the endpoint itself",
+      "The node address behind which a host sits",
+      "The name of a virtual network"
+    ],
+    "correct": 2,
+    "explanation": "RLOCs are underlay addresses (usually Loopback0) used as VXLAN tunnel endpoints.",
+    "difficulty": "Easy",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "In SD-Access policy, what is an SGT and what does the acronym mean?",
+    "options": [
+      "Security (scalable) Group Tag",
+      "Switch Gateway Table entry",
+      "Segment Group Tunnel identifier",
+      "Static Gateway Translation"
+    ],
+    "correct": 0,
+    "explanation": "A Security Group Tag (also called scalable group tag) is a 16-bit value identifying a group of users or devices.",
+    "difficulty": "Easy",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "Which VXLAN header field carries the SGT in SD-Access?",
+    "options": [
+      "The VNI field",
+      "The outer IP TTL field of each packet",
+      "The UDP destination port",
+      "The Group Policy ID in VXLAN-GPO"
+    ],
+    "correct": 3,
+    "explanation": "VXLAN Group Policy Option adds a 16-bit Group Policy ID; the 24-bit VNI identifies the VN or L2 segment.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "A wired user plugs in and authenticates with 802.1X. Which device tells the edge which VN and SGT to use?",
+    "options": [
+      "The border node through an eBGP update",
+      "ISE, in the RADIUS authorisation",
+      "The control plane node",
+      "The DHCP server"
+    ],
+    "correct": 1,
+    "explanation": "ISE returns the VLAN/pool (mapped to a VN) and SGT in the authorisation result; the edge then registers the endpoint.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "An edge node needs to send traffic to an unknown destination outside the fabric. Where does it send it?",
+    "options": [
+      "To all edge nodes as a broadcast frame",
+      "To the external border",
+      "Back to the source edge node",
+      "To the WLC for the floor"
+    ],
+    "correct": 1,
+    "explanation": "If the control plane has no mapping, the edge uses the external border as the default (proxy) to reach networks outside the fabric.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "Which Catalyst Center workflow assigns IP pools to VNs at a site?",
+    "options": [
+      "Assurance health dashboard",
+      "Software image management for switches",
+      "Host onboarding / VN-to-pool mapping",
+      "Backup and restore"
+    ],
+    "correct": 2,
+    "explanation": "In Provision > Fabric Sites, host onboarding binds IP pools to VNs, sets authentication templates and assigns ports.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "Why is pxGrid integration between Catalyst Center and ISE important?",
+    "options": [
+      "Shares groups, policy and context",
+      "It is the transport for VXLAN data",
+      "It runs the LISP map server",
+      "It assigns IP addresses"
+    ],
+    "correct": 0,
+    "explanation": "Catalyst Center uses ERS/pxGrid to read and write SGTs, policies and endpoint context in ISE, keeping one source of truth.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "Two fabric sites share a subnet for a legacy app across a campus core with jumbo MTU. Which transit preserves VN and SGT?",
+    "options": [
+      "SD-Access transit",
+      "IP transit with static routes only",
+      "SD-WAN transit through the internet",
+      "No transit is possible"
+    ],
+    "correct": 0,
+    "explanation": "SD-Access transit keeps native VXLAN with VN and SGT between sites over a high-performance core.",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "What is a common place for a firewall in an SD-Access design for inter-VN traffic?",
+    "options": [
+      "Between the edge and the client",
+      "Inside each access point radio",
+      "On the control plane node only",
+      "Beyond the border as the fusion device"
+    ],
+    "correct": 3,
+    "explanation": "A firewall acting as fusion (or behind the border) inspects traffic between VNs and to shared services or the internet.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "Why are critical VLANs/pools configured on edge ports?",
+    "options": [
+      "To disable 802.1X permanently",
+      "To give guests faster Wi-Fi",
+      "To allow spanning tree on edge ports",
+      "Access continues if ISE is down"
+    ],
+    "correct": 3,
+    "explanation": "If RADIUS servers are unreachable, critical authorisation puts endpoints in a defined pool/VN so business continues.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "Silent hosts (e.g. printers that never send traffic first) cause reachability issues. Which feature helps?",
+    "options": [
+      "Removing the anycast gateway",
+      "Lowering the underlay MTU",
+      "L2 flooding in that pool",
+      "Disabling LISP on the edge nodes"
+    ],
+    "correct": 2,
+    "explanation": "Because the fabric learns hosts when they talk, silent hosts may be unknown; L2 flooding lets ARP reach them (or static/known registration).",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "Where should Catalyst Center and ISE be placed relative to fabric sites?",
+    "options": [
+      "Inside every fabric edge as containers",
+      "In a shared services block",
+      "On the access points of each floor",
+      "Only in the public internet"
+    ],
+    "correct": 1,
+    "explanation": "They are management/policy components reached via the underlay or a border; they are not part of the fabric data path.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "Catalyst Center is unreachable for a day. What happens to an operating SD-Access fabric?",
+    "options": [
+      "Traffic keeps flowing; changes stop",
+      "All VXLAN tunnels go down at once",
+      "Clients lose their SGTs and their VN",
+      "The underlay stops routing between nodes"
+    ],
+    "correct": 0,
+    "explanation": "Catalyst Center is the management plane; the control, data and policy planes keep running on the nodes and ISE.",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "Which access-layer switch design best suits SD-Access edge redundancy for endpoints?",
+    "options": [
+      "Wireless mesh only between floors",
+      "A single switch with one uplink",
+      "Daisy-chained hubs on each floor",
+      "Stacks with dual uplinks"
+    ],
+    "correct": 3,
+    "explanation": "Endpoints attach to one edge; stacks (or StackWise Virtual at distribution) plus routed dual uplinks give resilience.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "A distribution switch between edges and borders runs no fabric features. Which statement describes it?",
+    "options": [
+      "A node that terminates CAPWAP",
+      "A node that holds the LISP database",
+      "An intermediate node routing only underlay",
+      "A node that runs ISE for the fabric"
+    ],
+    "correct": 2,
+    "explanation": "Intermediate nodes (e.g. distribution/core) only route underlay traffic; they do not encapsulate VXLAN or need fabric features.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "A guest VN must use a separate internet path. What design is typical?",
+    "options": [
+      "A separate SSID with no VN mapping",
+      "Guest users in the same VN as employees",
+      "Guest VN handed off to a guest firewall",
+      "Guests routed via the control plane"
+    ],
+    "correct": 2,
+    "explanation": "The guest VN is handed off at the border (or dedicated guest border/control plane) to a DMZ firewall for isolated internet access.",
+    "difficulty": "Hard",
+    "exam": "sda",
+    "domain": "2.5"
+  },
+  {
+    "question": "Which protocol can optionally replace LISP as the SD-Access control plane in newer releases?",
+    "options": [
+      "RIPv2 with authentication",
+      "BGP EVPN",
+      "HSRP version 2",
+      "VTP version 3"
+    ],
+    "correct": 1,
+    "explanation": "Recent Catalyst Center releases support a BGP EVPN-based fabric option alongside the classic LISP control plane.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.4"
+  },
+  {
+    "question": "What does an SGACL contain?",
+    "options": [
+      "Rules between two groups",
+      "A list of VLANs per access port",
+      "The map of RLOC addresses",
+      "Routing table entries for the VN"
+    ],
+    "correct": 0,
+    "explanation": "An SGACL is an ACL (e.g. permit tcp 443, deny ip) applied to traffic from a source SGT to a destination SGT.",
+    "difficulty": "Medium",
+    "exam": "sda",
+    "domain": "2.5"
+  }
+];
