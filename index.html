@@ -305,7 +305,7 @@
             <div class="flex items-center gap-x-2 text-sm">
                 <div class="px-3 py-1.5 bg-slate-900 rounded-2xl flex items-center gap-x-2 border border-slate-700">
                     <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                    <span class="text-emerald-400 text-xs font-medium">BASE ATUALIZADA • 2642 PERGUNTAS</span>
+                    <span class="text-emerald-400 text-xs font-medium">BASE ATUALIZADA • 3752 PERGUNTAS</span>
                 </div>
                 <button onclick="showDatabaseInfo()" 
                         class="px-4 py-2 text-xs font-medium flex items-center gap-x-2 hover:bg-slate-800 transition-colors rounded-2xl border border-slate-700">
@@ -320,10 +320,10 @@
     <div id="home-screen" class="max-w-screen-xl mx-auto px-6 py-10">
         <div class="max-w-2xl mx-auto text-center mb-12">
             <div class="inline-flex items-center gap-x-2 bg-slate-900 px-4 py-1.5 rounded-3xl border border-slate-700 mb-4">
-                <span class="text-xs font-bold tracking-[2px] text-blue-400">VERSÃO 4.1.0 • 2026</span>
+                <span class="text-xs font-bold tracking-[2px] text-blue-400">VERSÃO 4.2.0 • 2026</span>
             </div>
             <h1 class="text-5xl sm:text-6xl font-display font-bold tracking-tighter mb-3">Domine as<br>Certificações Cisco</h1>
-            <p class="text-lg sm:text-xl text-slate-400 max-w-md mx-auto">Pratique com 2642 perguntas: 1556 CCST/CCNA/CCNP, 606 Cybersegurança e 480 IIoT/IT Support/Field.<br>CCST • CCNA • CCNP • ENCOR • Cyber • IIoT • Field • PT &amp; EN</p>
+            <p class="text-lg sm:text-xl text-slate-400 max-w-md mx-auto">Pratique com 3752 perguntas: 1556 CCST/CCNA/CCNP, 606 Cybersegurança, 480 IIoT/IT Support/Field e 1110 Automação/Wireless/SD-WAN/Data Center/Colaboração.<br>CCST • CCNA • CCNP • ENCOR • Cyber • IIoT • Field • Automation • Wireless • SD-WAN • DC • Collab • PT &amp; EN</p>
         </div>
 
         <!-- Exam vs Practice (compact, above cert cards) -->
@@ -620,6 +620,218 @@
                         <i class="fa-solid fa-globe"></i><span>Português</span>
                     </button>
                     <button onclick="startQuiz('field', 'en')"
+                            class="flex-1 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm border border-slate-700">
+                        <i class="fa-solid fa-globe"></i><span>English</span>
+                    </button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Phase 3 quizzes (v4.2.0): automation / wireless / sdx / dc / collab tracks; exam quizzes may also draw tagged ccna/ccnp items (catalog alsoFrom) -->
+        <div class="max-w-6xl mx-auto px-1 mt-10">
+            <div class="flex items-end justify-between mb-4 gap-3">
+                <div>
+                    <h2 class="text-2xl font-display font-bold tracking-tight">Automação, wireless, SD-WAN, data center e colaboração</h2>
+                    <p class="text-slate-400 text-sm mt-1">Trilhos novos por blueprint oficial · alguns quizzes reutilizam perguntas CCNA/CCNP etiquetadas</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="quiz-card bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-7 modern-shadow">
+                <div class="flex items-start justify-between mb-5">
+                    <div>
+                        <div class="cert-badge bg-cyan-500/10 text-cyan-400 mb-3">CCNAAUTO</div>
+                        <h3 class="text-xl sm:text-2xl font-display font-bold tracking-tighter leading-tight">CCNA Automation (200-901 CCNAAUTO)</h3>
+                        <p class="text-slate-400 text-xs mt-2">Python · APIs · Git · CI/CD · IaC</p>
+                    </div>
+                    <i class="fa-solid fa-code text-3xl text-cyan-400/70"></i>
+                </div>
+                <div class="flex items-center text-xs mb-5">
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                    <span class="px-3 text-slate-500" data-quiz-count="ccnaauto">71 PT • 71 EN</span>
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="startQuiz('automation', 'pt', 'ccnaauto')"
+                            class="flex-1 bg-cyan-600 hover:bg-cyan-700 active:bg-cyan-800 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm">
+                        <i class="fa-solid fa-globe"></i><span>Português</span>
+                    </button>
+                    <button onclick="startQuiz('automation', 'en', 'ccnaauto')"
+                            class="flex-1 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm border border-slate-700">
+                        <i class="fa-solid fa-globe"></i><span>English</span>
+                    </button>
+                </div>
+            </div>
+            <div class="quiz-card bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-7 modern-shadow">
+                <div class="flex items-start justify-between mb-5">
+                    <div>
+                        <div class="cert-badge bg-sky-500/10 text-sky-400 mb-3">AUTOCOR</div>
+                        <h3 class="text-xl sm:text-2xl font-display font-bold tracking-tighter leading-tight">CCNP Automation AUTOCOR (350-901)</h3>
+                        <p class="text-slate-400 text-xs mt-2">Design de software · APIs · automação · segurança</p>
+                    </div>
+                    <i class="fa-solid fa-gears text-3xl text-sky-400/70"></i>
+                </div>
+                <div class="flex items-center text-xs mb-5">
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                    <span class="px-3 text-slate-500" data-quiz-count="autocor">76 PT • 76 EN</span>
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="startQuiz('automation', 'pt', 'autocor')"
+                            class="flex-1 bg-sky-600 hover:bg-sky-700 active:bg-sky-800 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm">
+                        <i class="fa-solid fa-globe"></i><span>Português</span>
+                    </button>
+                    <button onclick="startQuiz('automation', 'en', 'autocor')"
+                            class="flex-1 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm border border-slate-700">
+                        <i class="fa-solid fa-globe"></i><span>English</span>
+                    </button>
+                </div>
+            </div>
+            <div class="quiz-card bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-7 modern-shadow">
+                <div class="flex items-start justify-between mb-5">
+                    <div>
+                        <div class="cert-badge bg-indigo-500/10 text-indigo-400 mb-3">WLSD</div>
+                        <h3 class="text-xl sm:text-2xl font-display font-bold tracking-tighter leading-tight">CCNP Wireless WLSD — Design (300-110)</h3>
+                        <p class="text-slate-400 text-xs mt-2">Site survey · RF · roaming · alta densidade</p>
+                    </div>
+                    <i class="fa-solid fa-wifi text-3xl text-indigo-400/70"></i>
+                </div>
+                <div class="flex items-center text-xs mb-5">
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                    <span class="px-3 text-slate-500" data-quiz-count="wlsd">65 PT • 65 EN</span>
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="startQuiz('wireless', 'pt', 'wlsd')"
+                            class="flex-1 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm">
+                        <i class="fa-solid fa-globe"></i><span>Português</span>
+                    </button>
+                    <button onclick="startQuiz('wireless', 'en', 'wlsd')"
+                            class="flex-1 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm border border-slate-700">
+                        <i class="fa-solid fa-globe"></i><span>English</span>
+                    </button>
+                </div>
+            </div>
+            <div class="quiz-card bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-7 modern-shadow">
+                <div class="flex items-start justify-between mb-5">
+                    <div>
+                        <div class="cert-badge bg-blue-500/10 text-blue-400 mb-3">WLSI</div>
+                        <h3 class="text-xl sm:text-2xl font-display font-bold tracking-tighter leading-tight">CCNP Wireless WLSI — Implementação (300-120)</h3>
+                        <p class="text-slate-400 text-xs mt-2">Catalyst 9800 · FlexConnect · QoS · segurança</p>
+                    </div>
+                    <i class="fa-solid fa-tower-broadcast text-3xl text-blue-400/70"></i>
+                </div>
+                <div class="flex items-center text-xs mb-5">
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                    <span class="px-3 text-slate-500" data-quiz-count="wlsi">67 PT • 67 EN</span>
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="startQuiz('wireless', 'pt', 'wlsi')"
+                            class="flex-1 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm">
+                        <i class="fa-solid fa-globe"></i><span>Português</span>
+                    </button>
+                    <button onclick="startQuiz('wireless', 'en', 'wlsi')"
+                            class="flex-1 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm border border-slate-700">
+                        <i class="fa-solid fa-globe"></i><span>English</span>
+                    </button>
+                </div>
+            </div>
+            <div class="quiz-card bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-7 modern-shadow">
+                <div class="flex items-start justify-between mb-5">
+                    <div>
+                        <div class="cert-badge bg-green-500/10 text-green-400 mb-3">ENSDWI</div>
+                        <h3 class="text-xl sm:text-2xl font-display font-bold tracking-tighter leading-tight">Cisco SD-WAN ENSDWI (300-415)</h3>
+                        <p class="text-slate-400 text-xs mt-2">Controladores · OMP · políticas · segurança</p>
+                    </div>
+                    <i class="fa-solid fa-cloud text-3xl text-green-400/70"></i>
+                </div>
+                <div class="flex items-center text-xs mb-5">
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                    <span class="px-3 text-slate-500" data-quiz-count="ensdwi">78 PT • 78 EN</span>
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="startQuiz('sdx', 'pt', 'ensdwi')"
+                            class="flex-1 bg-green-600 hover:bg-green-700 active:bg-green-800 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm">
+                        <i class="fa-solid fa-globe"></i><span>Português</span>
+                    </button>
+                    <button onclick="startQuiz('sdx', 'en', 'ensdwi')"
+                            class="flex-1 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm border border-slate-700">
+                        <i class="fa-solid fa-globe"></i><span>English</span>
+                    </button>
+                </div>
+            </div>
+            <div class="quiz-card bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-7 modern-shadow">
+                <div class="flex items-start justify-between mb-5">
+                    <div>
+                        <div class="cert-badge bg-emerald-500/10 text-emerald-400 mb-3">SD-ACCESS</div>
+                        <h3 class="text-xl sm:text-2xl font-display font-bold tracking-tighter leading-tight">SD-Access (ENSLD 300-420, tópicos 2.4–2.5)</h3>
+                        <p class="text-slate-400 text-xs mt-2">Fabric · LISP/VXLAN · SGT · Catalyst Center</p>
+                    </div>
+                    <i class="fa-solid fa-sitemap text-3xl text-emerald-400/70"></i>
+                </div>
+                <div class="flex items-center text-xs mb-5">
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                    <span class="px-3 text-slate-500" data-quiz-count="sda">70 PT • 70 EN</span>
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="startQuiz('sdx', 'pt', 'sda')"
+                            class="flex-1 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm">
+                        <i class="fa-solid fa-globe"></i><span>Português</span>
+                    </button>
+                    <button onclick="startQuiz('sdx', 'en', 'sda')"
+                            class="flex-1 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm border border-slate-700">
+                        <i class="fa-solid fa-globe"></i><span>English</span>
+                    </button>
+                </div>
+            </div>
+            <div class="quiz-card bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-7 modern-shadow">
+                <div class="flex items-start justify-between mb-5">
+                    <div>
+                        <div class="cert-badge bg-orange-500/10 text-orange-400 mb-3">DCCOR</div>
+                        <h3 class="text-xl sm:text-2xl font-display font-bold tracking-tighter leading-tight">CCNP Data Center DCCOR (350-601)</h3>
+                        <p class="text-slate-400 text-xs mt-2">Nexus · ACI · UCS · storage · automação</p>
+                    </div>
+                    <i class="fa-solid fa-server text-3xl text-orange-400/70"></i>
+                </div>
+                <div class="flex items-center text-xs mb-5">
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                    <span class="px-3 text-slate-500" data-quiz-count="dccor">77 PT • 77 EN</span>
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="startQuiz('dc', 'pt', 'dccor')"
+                            class="flex-1 bg-orange-600 hover:bg-orange-700 active:bg-orange-800 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm">
+                        <i class="fa-solid fa-globe"></i><span>Português</span>
+                    </button>
+                    <button onclick="startQuiz('dc', 'en', 'dccor')"
+                            class="flex-1 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm border border-slate-700">
+                        <i class="fa-solid fa-globe"></i><span>English</span>
+                    </button>
+                </div>
+            </div>
+            <div class="quiz-card bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-7 modern-shadow">
+                <div class="flex items-start justify-between mb-5">
+                    <div>
+                        <div class="cert-badge bg-pink-500/10 text-pink-400 mb-3">CLCOR</div>
+                        <h3 class="text-xl sm:text-2xl font-display font-bold tracking-tighter leading-tight">CCNP Collaboration CLCOR (350-801)</h3>
+                        <p class="text-slate-400 text-xs mt-2">UCM · CUBE · Webex · SIP · QoS</p>
+                    </div>
+                    <i class="fa-solid fa-phone-volume text-3xl text-pink-400/70"></i>
+                </div>
+                <div class="flex items-center text-xs mb-5">
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                    <span class="px-3 text-slate-500" data-quiz-count="clcor">78 PT • 78 EN</span>
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="startQuiz('collab', 'pt', 'clcor')"
+                            class="flex-1 bg-pink-600 hover:bg-pink-700 active:bg-pink-800 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm">
+                        <i class="fa-solid fa-globe"></i><span>Português</span>
+                    </button>
+                    <button onclick="startQuiz('collab', 'en', 'clcor')"
                             class="flex-1 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm border border-slate-700">
                         <i class="fa-solid fa-globe"></i><span>English</span>
                     </button>
@@ -1009,8 +1221,8 @@
             document.documentElement.style.setProperty('--accent', '#0a66c2');
         }
 
-        // Contagens alinhadas com data/*.js / quiz-catalog (ccst 267, ccna 238, ccnp 273, cyber 303, iiot 82, ccstit 81, field 77 por língua)
-        // Estrutura idêntica entre PT e EN. v4.1.0: + iiot/ccstit/field tracks; ccst-net and encor exam views. Total = 2642.
+        // Contagens alinhadas com data/*.js / quiz-catalog (ccst 267, ccna 238, ccnp 273, cyber 303, iiot 82, ccstit 81, field 77, automation 138, wireless 125, sdx 148, dc 68, collab 76 por língua)
+        // Estrutura idêntica entre PT e EN. v4.1.0: + iiot/ccstit/field tracks; ccst-net and encor exam views. v4.2.0: + automation/wireless/sdx/dc/collab tracks (catalog alsoFrom pulls tagged ccna/ccnp items). Total = 3752.
         
         const databases = {
             ccst: { pt: [], en: [] },
@@ -1019,7 +1231,12 @@
             cyber: { pt: [], en: [] },
             iiot: { pt: [], en: [] },
             ccstit: { pt: [], en: [] },
-            field: { pt: [], en: [] }
+            field: { pt: [], en: [] },
+            automation: { pt: [], en: [] },
+            wireless: { pt: [], en: [] },
+            sdx: { pt: [], en: [] },
+            dc: { pt: [], en: [] },
+            collab: { pt: [], en: [] }
         };
         let currentQuizId = null; // optional catalog quiz id (exam/topic filter over a track)
         function filterBank(pool, quizId) {
@@ -1028,7 +1245,18 @@
             if (!qz || !qz.filter) return pool;
             return pool.filter(item => Object.entries(qz.filter).every(([k, v]) => item && item[k] === v));
         }
-        const QUIZ_COUNTS = {"ccst": {"pt": 267, "en": 267}, "ccna": {"pt": 238, "en": 238}, "ccnp": {"pt": 273, "en": 273}, "cyber": {"pt": 303, "en": 303}, "iiot": {"pt": 82, "en": 82}, "ccstit": {"pt": 81, "en": 81}, "field": {"pt": 77, "en": 77}};
+        function quizAlsoFrom(quizId) {
+            if (!quizId || !window.QUIZ_CATALOG) return [];
+            const qz = (window.QUIZ_CATALOG.quizzes || []).find(q => q.id === quizId);
+            return (qz && Array.isArray(qz.alsoFrom)) ? qz.alsoFrom.filter(t => databases[t]) : [];
+        }
+        // Pool for a quiz: its own track filtered, plus tagged items from catalog alsoFrom tracks (v4.2.0).
+        function poolFor(cert, lang, quizId) {
+            let pool = filterBank(databases[cert][lang], quizId);
+            quizAlsoFrom(quizId).forEach(t => { pool = pool.concat(filterBank(databases[t][lang] || [], quizId)); });
+            return pool;
+        }
+        const QUIZ_COUNTS = {"ccst": {"pt": 267, "en": 267}, "ccna": {"pt": 238, "en": 238}, "ccnp": {"pt": 273, "en": 273}, "cyber": {"pt": 303, "en": 303}, "iiot": {"pt": 82, "en": 82}, "ccstit": {"pt": 81, "en": 81}, "field": {"pt": 77, "en": 77}, "automation": {"pt": 138, "en": 138}, "wireless": {"pt": 125, "en": 125}, "sdx": {"pt": 148, "en": 148}, "dc": {"pt": 68, "en": 68}, "collab": {"pt": 76, "en": 76}};
         const I18N = {
             pt: {
                 prev: 'Anterior', pause: 'Pausar', next: 'Responder e Avançar', finish: 'Finalizar Quiz',
@@ -1228,7 +1456,7 @@
         }
 
         function getRandomQuestions(cert, lang, num, quizId) {
-            const pool = filterBank(databases[cert][lang], quizId);
+            const pool = poolFor(cert, lang, quizId);
             if (!pool || pool.length === 0) {
                 alert(t('dbMissing'));
                 return [];
@@ -1287,6 +1515,7 @@
             currentQuizId = quizId || null;
 
             try {
+                for (const t of quizAlsoFrom(currentQuizId)) await loadBank(t, lang);
                 await loadBank(cert, lang);
             } catch (err) {
                 alert(err.message || String(err));
@@ -1321,7 +1550,12 @@
                 'cyber': 'Cybersegurança',
                 'iiot': lang === 'en' ? 'IIoT and industrial networks' : 'IIoT e redes industriais',
                 'ccstit': 'CCST IT Support (100-140)',
-                'field': lang === 'en' ? 'Field Support (on-site scenarios)' : 'Field Support (cenários de terreno)'
+                'field': lang === 'en' ? 'Field Support (on-site scenarios)' : 'Field Support (cenários de terreno)',
+                'automation': lang === 'en' ? 'Automation (CCNA/CCNP Automation)' : 'Automação (CCNA/CCNP Automation)',
+                'wireless': 'Wireless (CCNP Wireless)',
+                'sdx': lang === 'en' ? 'SD-WAN and SD-Access' : 'SD-WAN e SD-Access',
+                'dc': 'Data Center (CCNP Data Center)',
+                'collab': lang === 'en' ? 'Collaboration (CCNP Collaboration)' : 'Colaboração (CCNP Collaboration)'
             };
             let quizTitle = certNames[cert] || cert;
             if (currentQuizId && window.QUIZ_CATALOG) {
@@ -1343,7 +1577,7 @@
             let badgeClass = '';
             let badgeText = '';
             
-            const poolN = filterBank(databases[cert][lang], currentQuizId).length || liveCount(cert, lang);
+            const poolN = poolFor(cert, lang, currentQuizId).length || liveCount(cert, lang);
             const quizTag = currentQuizId ? currentQuizId.toUpperCase().slice(0, 12) : '';
             if (cert === 'ccst') {
                 badgeClass = 'bg-emerald-500/20 text-emerald-400';
@@ -1363,6 +1597,21 @@
             } else if (cert === 'field') {
                 badgeClass = 'bg-lime-500/20 text-lime-400';
                 badgeText = 'FIELD • ' + quizLen + '/' + poolN;
+            } else if (cert === 'automation') {
+                badgeClass = 'bg-cyan-500/20 text-cyan-400';
+                badgeText = (quizTag || 'AUTOMATION') + ' • ' + quizLen + '/' + poolN;
+            } else if (cert === 'wireless') {
+                badgeClass = 'bg-indigo-500/20 text-indigo-400';
+                badgeText = (quizTag || 'WIRELESS') + ' • ' + quizLen + '/' + poolN;
+            } else if (cert === 'sdx') {
+                badgeClass = 'bg-green-500/20 text-green-400';
+                badgeText = (quizTag || 'SD-WAN/SDA') + ' • ' + quizLen + '/' + poolN;
+            } else if (cert === 'dc') {
+                badgeClass = 'bg-orange-500/20 text-orange-400';
+                badgeText = (quizTag || 'DATA CENTER') + ' • ' + quizLen + '/' + poolN;
+            } else if (cert === 'collab') {
+                badgeClass = 'bg-pink-500/20 text-pink-400';
+                badgeText = (quizTag || 'COLLAB') + ' • ' + quizLen + '/' + poolN;
             } else {
                 badgeClass = 'bg-violet-500/20 text-violet-400';
                 badgeText = (quizTag || 'PROFESSIONAL') + ' • ' + quizLen + '/' + poolN;
@@ -1829,10 +2078,10 @@
                     if (data.ccst && data.ccna && data.ccnp) {
                         Object.assign(databases, data);
                         if (data.cyber) databases.cyber = data.cyber;
-                        ['iiot','ccstit','field'].forEach(k => { if (data[k]) databases[k] = data[k]; });
+                        ['iiot','ccstit','field','automation','wireless','sdx','dc','collab'].forEach(k => { if (data[k]) databases[k] = data[k]; });
                         alert('✅ Base de dados atualizada com sucesso!\n\nRecarregue a página (Ctrl+Shift+R) para aplicar as novas perguntas.');
                     } else {
-                        throw new Error('O JSON não tem a estrutura correta (ccst, ccna, ccnp; cyber/iiot/ccstit/field opcionais).');
+                        throw new Error('O JSON não tem a estrutura correta (ccst, ccna, ccnp; cyber/iiot/ccstit/field/automation/wireless/sdx/dc/collab opcionais).');
                     }
                 })
                 .catch(err => {
@@ -1858,8 +2107,13 @@
                   `• Cyber English: ${liveCount("cyber","en")}\n` +
                   `• IIoT Português/English: ${liveCount("iiot","pt")} / ${liveCount("iiot","en")}\n` +
                   `• CCST IT Support Português/English: ${liveCount("ccstit","pt")} / ${liveCount("ccstit","en")}\n` +
-                  `• Field Support Português/English: ${liveCount("field","pt")} / ${liveCount("field","en")}\n\n` +
-                  `Trilhos clássicos (CCST/CCNA/CCNP): ${liveCount("ccst","pt")+liveCount("ccst","en")+liveCount("ccna","pt")+liveCount("ccna","en")+liveCount("ccnp","pt")+liveCount("ccnp","en")}. Cybersegurança: ${liveCount("cyber","pt")+liveCount("cyber","en")}. IIoT/IT/Field: ${["iiot","ccstit","field"].reduce((a,c)=>a+liveCount(c,"pt")+liveCount(c,"en"),0)}.\n` +
+                  `• Field Support Português/English: ${liveCount("field","pt")} / ${liveCount("field","en")}\n` +
+                  `• Automação Português/English: ${liveCount("automation","pt")} / ${liveCount("automation","en")}\n` +
+                  `• Wireless Português/English: ${liveCount("wireless","pt")} / ${liveCount("wireless","en")}\n` +
+                  `• SD-WAN/SD-Access Português/English: ${liveCount("sdx","pt")} / ${liveCount("sdx","en")}\n` +
+                  `• Data Center Português/English: ${liveCount("dc","pt")} / ${liveCount("dc","en")}\n` +
+                  `• Colaboração Português/English: ${liveCount("collab","pt")} / ${liveCount("collab","en")}\n\n` +
+                  `Trilhos clássicos (CCST/CCNA/CCNP): ${liveCount("ccst","pt")+liveCount("ccst","en")+liveCount("ccna","pt")+liveCount("ccna","en")+liveCount("ccnp","pt")+liveCount("ccnp","en")}. Cybersegurança: ${liveCount("cyber","pt")+liveCount("cyber","en")}. IIoT/IT/Field: ${["iiot","ccstit","field"].reduce((a,c)=>a+liveCount(c,"pt")+liveCount(c,"en"),0)}. Automação/Wireless/SD-WAN/DC/Colab: ${["automation","wireless","sdx","dc","collab"].reduce((a,c)=>a+liveCount(c,"pt")+liveCount(c,"en"),0)}.\n` +
                   `As perguntas estão em data/*.js, podes acrescentar mais sem mexer no HTML.\n` +
                   `O quiz seleciona até 50 aleatórias de cada vez.\n\n` +
                   `Funcionalidade de auto-atualização online disponível via botão "Atualizar Agora".`);
@@ -1924,7 +2178,7 @@
             
             setMode(currentMode);
 
-            ['ccst','ccna','ccnp','cyber','iiot','ccstit','field'].forEach(cert => {
+            ['ccst','ccna','ccnp','cyber','iiot','ccstit','field','automation','wireless','sdx','dc','collab'].forEach(cert => {
                 const el = document.getElementById('count-' + cert);
                 if (el && QUIZ_COUNTS[cert]) {
                     el.textContent = QUIZ_COUNTS[cert].pt + ' PT • ' + QUIZ_COUNTS[cert].en + ' EN';

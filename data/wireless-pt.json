@@ -1,0 +1,1752 @@
+[
+  {
+    "question": "Um anfiteatro tem 400 lugares, cada aluno com portátil e telemóvel. Que requisito determina mais o número de AP?",
+    "options": [
+      "O número de portas de switch na sala técnica",
+      "Só a área total do piso em metros quadrados",
+      "A cor e o material dos painéis do teto do anfiteatro",
+      "A densidade de clientes e o tempo de antena por utilizador"
+    ],
+    "correct": 3,
+    "explanation": "Em espaços de alta densidade é a capacidade (clientes por rádio e tempo de antena), e não a cobertura, que define o número de AP.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "1.1.a"
+  },
+  {
+    "question": "Um hospital vai usar crachás de voz em Wi-Fi. Que objetivo de desenho é típico para a cobertura de voz?",
+    "options": [
+      "Cobertura só nos postos de enfermagem",
+      "-85 dBm, porque o tráfego de voz precisa de muito pouco sinal",
+      "Qualquer nível de sinal, desde que o SSID seja visível",
+      "-67 dBm ou melhor, com um segundo AP audível"
+    ],
+    "correct": 3,
+    "explanation": "Os desenhos de voz visam habitualmente cerca de -67 dBm de sinal principal, SNR de cerca de 25 dB e sobreposição para se ouvir um segundo AP no roaming.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "1.1.b"
+  },
+  {
+    "question": "Um armazém tem estantes com 12 m de altura e corredores. Que escolha de AP costuma resultar melhor?",
+    "options": [
+      "AP com antenas externas direcionais apontadas aos corredores",
+      "Só AP omni internos montados no teto, a 12 m acima do chão",
+      "Um único AP de alta potência no centro do edifício",
+      "AP mesh de exterior colocados no telhado"
+    ],
+    "correct": 0,
+    "explanation": "As antenas direcionais (patch) moldam a cobertura ao longo dos corredores entre estantes; AP omni muito altos espalham energia onde não é precisa.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "1.1.c"
+  },
+  {
+    "question": "Um desenho tem de suportar a localização de ativos com precisão de poucos metros. Como muda isto a disposição dos AP?",
+    "options": [
+      "Só se ativa a banda de 2,4 GHz para chegar mais longe",
+      "São precisos menos AP do que num desenho só de dados",
+      "Os AP ficam todos numa linha ao centro",
+      "Há AP também no perímetro, não só no interior"
+    ],
+    "correct": 3,
+    "explanation": "A localização precisa de vários AP a ouvir cada cliente de ângulos diferentes (perímetro e colocação desfasada), pelo que a densidade costuma ser maior.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "1.1.d"
+  },
+  {
+    "question": "Os portáteis da empresa precisam de 802.1X e os convidados de acesso simples. Que impacto tem isto no desenho?",
+    "options": [
+      "Um SSID aberto partilhado por funcionários e convidados",
+      "WLAN separadas, cada uma com segurança própria",
+      "WEP para os convidados, para manter o acesso simples",
+      "Nenhum, porque a segurança não afeta o desenho RF"
+    ],
+    "correct": 1,
+    "explanation": "Cada modelo de segurança implica normalmente um SSID próprio (WPA3/WPA2-Enterprise vs portal de convidados ou OWE). Mantenha poucos SSID para poupar tempo de antena.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "1.1.e"
+  },
+  {
+    "question": "Que material de construção costuma atenuar mais o Wi-Fi?",
+    "options": [
+      "Uma divisória de escritório em pladur",
+      "Uma parede de betão com armadura metálica",
+      "Uma porta interior comum de madeira",
+      "Uma janela de vidro simples sem revestimento"
+    ],
+    "correct": 1,
+    "explanation": "O betão armado e o metal causam grande perda (muitas vezes 15–25 dB ou mais). O pladur e a madeira causam poucos dB.",
+    "difficulty": "Fácil",
+    "exam": "wlsd",
+    "domain": "1.2"
+  },
+  {
+    "question": "Um escritório novo tem janelas com revestimento low-E. O que deve esperar o projetista?",
+    "options": [
+      "Interferência só em 2,4 GHz causada pelo revestimento",
+      "Nenhuma mudança, porque o vidro é transparente a todo o RF",
+      "Melhor sinal no exterior porque o revestimento o reflete para fora",
+      "Grande atenuação através do vidro"
+    ],
+    "correct": 3,
+    "explanation": "Os revestimentos metálicos low-E atenuam muito o RF, o que ajuda a conter o sinal mas bloqueia a cobertura vinda de fora.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "1.2"
+  },
+  {
+    "question": "O que procura um site survey de camada 1?",
+    "options": [
+      "A versão de firmware de cada AP existente",
+      "Nomes de SSID e as respetivas definições de segurança",
+      "O tempo de concessão DHCP em cada VLAN",
+      "Fontes RF não Wi-Fi, como micro-ondas e radares"
+    ],
+    "correct": 3,
+    "explanation": "Um survey de camada 1 (espectro) usa um analisador de espectro para encontrar energia RF e interferências. O de camada 2 analisa redes 802.11.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "1.3"
+  },
+  {
+    "question": "Um analisador de espectro mostra um sinal contínuo com duty cycle de 100% em todo o canal 6 numa zona. Qual é o impacto?",
+    "options": [
+      "Aumenta o débito ao juntar energia ao canal",
+      "Só os clientes com WPA3 e tramas de gestão protegidas são afetados",
+      "O Wi-Fi no canal 6 fica inutilizável ali enquanto existir",
+      "Nenhum, porque o Wi-Fi ignora sinais não 802.11"
+    ],
+    "correct": 2,
+    "explanation": "Uma fonte constante de duty cycle alto (p. ex. transmissor de vídeo ou jammer) mantém o CCA ocupado e os equipamentos 802.11 não conseguem transmitir.",
+    "difficulty": "Difícil",
+    "exam": "wlsd",
+    "domain": "1.3"
+  },
+  {
+    "question": "O que é um survey 'AP-on-a-stick' (APoS)?",
+    "options": [
+      "Um survey pré-implementação com um AP real temporário",
+      "Um survey feito só em software a partir da planta e dos tipos de parede",
+      "Percorrer o local após a implementação com um telemóvel",
+      "Um levantamento do stock de AP no armazém"
+    ],
+    "correct": 0,
+    "explanation": "O técnico monta o modelo de AP previsto nos locais e alturas previstos, mede a cobertura real e afina a colocação antes da instalação.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "1.4"
+  },
+  {
+    "question": "Porque usar no survey de pré-implementação o mesmo modelo de AP e antena do desenho final?",
+    "options": [
+      "A cobertura depende do rádio e do padrão da antena",
+      "Os surveys só funcionam com modelos de AP Cisco",
+      "Torna o software de survey gratuito",
+      "Modelos diferentes não podem ser alimentados por PoE"
+    ],
+    "correct": 0,
+    "explanation": "O ganho, o padrão e a sensibilidade do recetor diferem entre modelos, pelo que as medições só valem para o hardware usado.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "1.4"
+  },
+  {
+    "question": "Qual é o objetivo principal de um survey pós-implementação?",
+    "options": [
+      "Contar quantas pessoas usam o edifício por dia",
+      "Escolher pontos de montagem dos AP antes de passar cabos",
+      "Verificar se a rede real cumpre os requisitos do desenho",
+      "Configurar a interface de gestão do controlador"
+    ],
+    "correct": 2,
+    "explanation": "Valida cobertura, sobreposição, SNR, plano de canais e roaming face aos requisitos e encontra falhas a corrigir.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "1.5"
+  },
+  {
+    "question": "Um survey pós-implementação com um portátil mostra -65 dBm em todo o lado, mas os telefones fazem mau roaming. Qual é uma falha provável?",
+    "options": [
+      "Os surveys pós-implementação não medem sinal",
+      "O portátil usou WPA3 e os telefones usam WPA2",
+      "O equipamento de survey ouve melhor do que os telefones",
+      "O edifício tem poucas tomadas elétricas junto aos locais dos AP"
+    ],
+    "correct": 2,
+    "explanation": "Os clientes diferem; os telefones recebem muitas vezes vários dB menos do que um adaptador de survey. Valide com o cliente real ou aplique um desvio.",
+    "difficulty": "Difícil",
+    "exam": "wlsd",
+    "domain": "1.5"
+  },
+  {
+    "question": "O que é um survey preditivo?",
+    "options": [
+      "Um modelo em software da cobertura a partir das plantas",
+      "Um percurso a medir um AP temporário num tripé",
+      "Uma análise de espectro à procura de interferências",
+      "Um survey feito pelos telefones dos utilizadores após arranque"
+    ],
+    "correct": 0,
+    "explanation": "Ferramentas como Ekahau ou Hamina simulam AP numa planta calibrada com atenuação das paredes. A precisão depende dos dados de entrada.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "1.6"
+  },
+  {
+    "question": "Um desenho preditivo parece perfeito, mas a planta nunca foi posta à escala. O que acontece?",
+    "options": [
+      "A ferramenta ajusta a escala sozinha a partir do Wi-Fi",
+      "Só os números dos canais atribuídos são afetados",
+      "Todas as distâncias e resultados de cobertura ficam errados",
+      "Nada, porque as paredes definem a escala"
+    ],
+    "correct": 2,
+    "explanation": "A perda de propagação é calculada a partir da distância, por isso um mapa sem escala ou com escala errada torna todas as previsões pouco fiáveis.",
+    "difficulty": "Difícil",
+    "exam": "wlsd",
+    "domain": "1.6"
+  },
+  {
+    "question": "Que métrica no Ekahau ou Hamina mostra melhor se os clientes vão ouvir dois AP para roaming?",
+    "options": [
+      "Largura do canal",
+      "Número de SSID principais por AP",
+      "Intensidade do sinal secundário",
+      "Débito do AP mais forte"
+    ],
+    "correct": 2,
+    "explanation": "Um mapa de sinal secundário (segundo mais forte) mostra a sobreposição; os desenhos de voz pedem-no muitas vezes acima de -67 dBm.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "1.7"
+  },
+  {
+    "question": "O que acrescenta o Chanalyzer (ou a vista de um analisador de espectro) que um scanner Wi-Fi não consegue?",
+    "options": [
+      "Lista as concessões DHCP por SSID",
+      "Decifra o tráfego WPA2 entre clientes do mesmo SSID",
+      "Mede o comprimento do cabo até cada AP",
+      "Mostra a energia RF bruta e o duty cycle"
+    ],
+    "correct": 3,
+    "explanation": "As ferramentas de espectro mostram waterfall, densidade e duty cycle, pelo que as interferências não Wi-Fi ficam visíveis.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "1.7"
+  },
+  {
+    "question": "Um novo AP Wi-Fi 6E com três rádios precisa de todas as funções. O que deve dar a porta do switch?",
+    "options": [
+      "Classe PoE suficiente e velocidade multigigabit",
+      "Uma porta de 10 Mb/s sem PoE",
+      "Só uma porta de fibra sem qualquer fornecimento de energia",
+      "Um cabo de consola até ao controlador"
+    ],
+    "correct": 0,
+    "explanation": "Verifique a classe de energia de cada AP; um AP com pouca energia pode desligar rádios ou o USB. O multigig evita estrangulamento no uplink.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "2.1"
+  },
+  {
+    "question": "Qual é o comprimento máximo normalizado de cabo de cobre do switch ao AP?",
+    "options": [
+      "500 metros",
+      "100 metros",
+      "30 metros",
+      "1000 metros"
+    ],
+    "correct": 1,
+    "explanation": "A Ethernet em par entrançado está especificada até 100 m (90 m de ligação permanente mais cabos de ligação). Distâncias maiores precisam de fibra ou extensores.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "2.1"
+  },
+  {
+    "question": "Uma empresa quer um controlador Catalyst 9800 com assurance do Catalyst Center para os AP. Que licenciamento tem de planear?",
+    "options": [
+      "Nenhuma licença, porque os controladores 9800 são gratuitos",
+      "Níveis de subscrição por AP",
+      "Uma licença só para o hardware do controlador",
+      "Uma licença separada por cada SSID"
+    ],
+    "correct": 1,
+    "explanation": "O Catalyst 9800 usa Smart Licensing com níveis de subscrição por AP (Essentials/Advantage); as funções avançadas exigem o nível superior.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "2.2"
+  },
+  {
+    "question": "Uma pequena filial tem 10 AP e nenhum servidor local. Que arquitetura lógica evita um controlador separado?",
+    "options": [
+      "Dois appliances 9800-80 dedicados",
+      "Embedded Wireless Controller num AP Catalyst",
+      "Um controlador anchor na DMZ",
+      "Uma licença Mobility Express instalada no switch de acesso"
+    ],
+    "correct": 1,
+    "explanation": "O EWC corre a função de controlador num AP Catalyst 9100 para locais pequenos; locais maiores usam controladores em appliance, cloud ou embebidos no switch.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "2.2"
+  },
+  {
+    "question": "O que faz o Transmit Power Control (TPC) do RRM?",
+    "options": [
+      "Atribui canais sem sobreposição aos AP",
+      "Ajusta a potência dos AP à sobreposição prevista",
+      "Deteta AP rogue e contém-nos",
+      "Cifra as tramas de gestão entre AP"
+    ],
+    "correct": 1,
+    "explanation": "O TPC baixa ou sobe a potência conforme os AP se ouvem uns aos outros; o DCA trata dos canais e o CHD deteta buracos de cobertura.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "2.3.a"
+  },
+  {
+    "question": "O que acrescenta o AI-Enhanced RRM do Catalyst Center ao RRM clássico?",
+    "options": [
+      "Uma nova banda de rádio reservada para equipamentos Cisco",
+      "Análise na cloud do histórico RF para afinar o RRM",
+      "Planeamento manual de canais sem qualquer automação",
+      "A remoção do DCA e do TPC do controlador"
+    ],
+    "correct": 1,
+    "explanation": "O AI-Enhanced RRM usa dados históricos e IA para recomendar ou aplicar melhores parâmetros RRM (DCA, TPC, DBS), mantendo o RRM no WLC.",
+    "difficulty": "Difícil",
+    "exam": "wlsd",
+    "domain": "2.3.a"
+  },
+  {
+    "question": "Porque aplicar um RF profile separado aos AP de um grande auditório?",
+    "options": [
+      "Para evitar o 802.1X só no auditório",
+      "Para dar ao auditório um nome de SSID próprio",
+      "Para definir débitos e limites de potência próprios",
+      "Para usar outra versão de software do controlador"
+    ],
+    "correct": 2,
+    "explanation": "Os RF profiles agrupam AP com definições ajustadas (débitos, TPC mín./máx., canais DCA, RxSOP) para zonas de alta densidade ou especiais.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "2.3.b"
+  },
+  {
+    "question": "O que faz o Receiver Start of Packet Detection Threshold (RxSOP)?",
+    "options": [
+      "Muda o canal quando o ruído aumenta",
+      "Sobe a potência de emissão do AP para clientes distantes",
+      "Ignora tramas abaixo de um nível definido",
+      "Bloqueia clientes sem suporte de WPA3"
+    ],
+    "correct": 2,
+    "explanation": "Subir o RxSOP (p. ex. para -80 dBm) reduz a célula efetiva em alta densidade ao não descodificar tramas fracas. Demasiado alto prejudica a cobertura.",
+    "difficulty": "Difícil",
+    "exam": "wlsd",
+    "domain": "2.3.c"
+  },
+  {
+    "question": "Para um desenho de escritório só de dados, que objetivo comum se usa?",
+    "options": [
+      "Cerca de -70 dBm com cerca de 20 dB de SNR",
+      "-90 dBm com apenas 5 dB de SNR",
+      "-40 dBm em todo o edifício",
+      "Nenhum objetivo de sinal, só um plano de canais"
+    ],
+    "correct": 0,
+    "explanation": "As redes de dados visam muitas vezes cerca de -70 dBm e 20 dB de SNR; a voz e a localização precisam de objetivos mais exigentes.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "2.4.a"
+  },
+  {
+    "question": "Que escolha de desenho ajuda mais as videochamadas na WLAN?",
+    "options": [
+      "Preferir 5/6 GHz com WMM e QoS de ponta a ponta",
+      "Usar só 2,4 GHz com canais de 40 MHz",
+      "Desligar o WMM para reduzir sobrecarga",
+      "Permitir débitos de 1 e 2 Mb/s para mais alcance"
+    ],
+    "correct": 0,
+    "explanation": "O vídeo precisa de capacidade e pouco atraso: canais limpos em 5/6 GHz, filas WMM e mapeamento DSCP/UP coerente. Débitos antigos baixos gastam tempo de antena.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "2.4.b"
+  },
+  {
+    "question": "Que plataforma Cisco dá serviços de localização interior e analítica a partir dos AP?",
+    "options": [
+      "Cisco Webex Control Hub",
+      "Cisco Spaces",
+      "Cisco Unity Connection",
+      "Cisco Secure Firewall"
+    ],
+    "correct": 1,
+    "explanation": "O Cisco Spaces (sucessor do CMX na maioria dos usos) recebe dados de localização dos controladores/AP para orientação, analítica e seguimento de ativos.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "2.4.c"
+  },
+  {
+    "question": "Num desenho para um estádio, porque desligar os débitos mais baixos?",
+    "options": [
+      "As tramas lentas gastam mais tempo de antena",
+      "Os débitos baixos não são suportados por nenhum cliente atual",
+      "Dispensa mais AP",
+      "Ativa automaticamente o roaming 802.11r"
+    ],
+    "correct": 0,
+    "explanation": "Beacons e tramas a 1–6 Mb/s demoram muito mais no ar; subir o débito mínimo obrigatório reduz as células e poupa capacidade.",
+    "difficulty": "Difícil",
+    "exam": "wlsd",
+    "domain": "2.5"
+  },
+  {
+    "question": "Que largura de canal é geralmente melhor numa implementação de 5 GHz com densidade muito alta?",
+    "options": [
+      "160 MHz, para a maior velocidade possível por cliente",
+      "20 MHz, para ter mais canais sem sobreposição",
+      "80 MHz em todos os AP para encher a banda",
+      "40 MHz em 2,4 GHz para mais capacidade"
+    ],
+    "correct": 1,
+    "explanation": "Canais estreitos dão mais canais para reutilização e reduzem a interferência co-canal, o que importa mais do que a velocidade máxima em zonas densas.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "2.5"
+  },
+  {
+    "question": "Numa mesh Cisco, qual é a diferença entre um RAP e um MAP?",
+    "options": [
+      "São a mesma função com antenas diferentes",
+      "O RAP é só de interior e o MAP só de exterior",
+      "O MAP é o controlador e o RAP é o switch",
+      "O RAP tem fios; o MAP liga-se por rádio"
+    ],
+    "correct": 3,
+    "explanation": "O Root AP tem o uplink com fios; os Mesh AP juntam-se pelo rádio de backhaul, salto a salto, até um RAP.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "2.6.a"
+  },
+  {
+    "question": "Porque limitar o número de saltos mesh num desenho?",
+    "options": [
+      "Os controladores rejeitam MAP para lá do primeiro salto",
+      "Mais saltos fazem a mesh usar só 2,4 GHz",
+      "Cada salto sem fios reduz o débito e aumenta a latência",
+      "Os saltos aumentam a energia PoE necessária no RAP"
+    ],
+    "correct": 2,
+    "explanation": "O backhaul é partilhado em cada salto, por isso o débito cai a cada salto; a Cisco recomenda poucos saltos (muitas vezes 3–4).",
+    "difficulty": "Difícil",
+    "exam": "wlsd",
+    "domain": "2.6.a"
+  },
+  {
+    "question": "Uma câmara está ligada por cabo à porta Ethernet de um MAP de exterior. Que funcionalidade tem de estar ativa para funcionar?",
+    "options": [
+      "FlexConnect local switching",
+      "Ethernet bridging",
+      "Band select na WLAN",
+      "Aironet IE no SSID"
+    ],
+    "correct": 1,
+    "explanation": "O Ethernet bridging permite que equipamentos com fios atrás de um MAP (ou entre RAP e MAP) façam bridge pela mesh, com etiquetas de VLAN se necessário.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "2.6.b"
+  },
+  {
+    "question": "Um empilhador tem vários equipamentos com fios que precisam de acesso Wi-Fi em movimento. Que solução serve?",
+    "options": [
+      "Um workgroup bridge (WGB) no empilhador",
+      "Um RAP montado no empilhador",
+      "Um controlador EWC instalado no próprio empilhador",
+      "Um segundo SSID para cada equipamento"
+    ],
+    "correct": 0,
+    "explanation": "Um WGB associa-se como cliente e faz bridge dos seus equipamentos com fios; as definições de roaming do WGB ajustam a forma como muda entre AP.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "2.6.c"
+  },
+  {
+    "question": "O que define um mobility group nos controladores Catalyst 9800?",
+    "options": [
+      "WLC com o mesmo nome de grupo e contexto dos clientes",
+      "Todos os AP que usam o mesmo RF profile num piso do edifício",
+      "Todos os SSID que usam a mesma VLAN no controlador",
+      "Os AP que partilham um switch PoE no bastidor"
+    ],
+    "correct": 0,
+    "explanation": "Os membros de um mobility group partilham o nome do grupo e são pares entre si, pelo que os clientes fazem roaming com contexto (chaves, política) entre eles.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "3.1"
+  },
+  {
+    "question": "Num desenho de convidados, que papel de mobilidade tem o controlador da DMZ?",
+    "options": [
+      "AP primário",
+      "Foreign",
+      "Mesh root",
+      "Anchor"
+    ],
+    "correct": 3,
+    "explanation": "O tráfego da WLAN de convidados é encapsulado desde o controlador foreign (ou export), onde o cliente se associa, até ao anchor na DMZ.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "3.1"
+  },
+  {
+    "question": "O que tem de coincidir para dois WLC 9800 formarem um túnel de mobilidade?",
+    "options": [
+      "Apenas as passphrases dos SSID",
+      "O número e os modelos dos AP que cada controlador tem associados",
+      "IP, MAC e grupo dos pares, e alcance entre eles",
+      "Os nomes de anfitrião dos controladores no DNS"
+    ],
+    "correct": 2,
+    "explanation": "Cada WLC é configurado com o IP de gestão, MAC e grupo do outro; o controlo CAPWAP (UDP 16666) e os dados (16667) têm de passar entre eles.",
+    "difficulty": "Difícil",
+    "exam": "wlsd",
+    "domain": "3.1"
+  },
+  {
+    "question": "Que norma permite ao cliente fazer transição rápida criando previamente chaves com o AP de destino?",
+    "options": [
+      "802.11e",
+      "802.11h",
+      "802.11r",
+      "802.11d"
+    ],
+    "correct": 2,
+    "explanation": "O 802.11r (FT) encurta a troca de chaves 802.1X/PSK no momento do roaming. O 802.11k dá listas de vizinhos e o 802.11v ajuda a orientar clientes.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "3.2"
+  },
+  {
+    "question": "O que acrescenta o 802.11k ao roaming?",
+    "options": [
+      "O AP dá ao cliente um relatório dos AP vizinhos",
+      "Cifra todas as tramas de broadcast com uma chave de grupo",
+      "Permite ao AP mudar o endereço IP do cliente",
+      "Reserva um canal só para clientes de voz"
+    ],
+    "correct": 0,
+    "explanation": "Os relatórios de vizinhos deixam o cliente analisar só alguns canais, o que acelera a decisão de roaming.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "3.2"
+  },
+  {
+    "question": "Clientes antigos deixam de se associar depois de ativar FT num SSID. Qual é uma correção comum?",
+    "options": [
+      "Desligar por completo o WMM na WLAN",
+      "Usar FT adaptive ou um SSID separado",
+      "Pôr o débito mínimo obrigatório em 1 Mb/s",
+      "Passar todos os clientes só para 2,4 GHz"
+    ],
+    "correct": 1,
+    "explanation": "Alguns drivers antigos rejeitam o AKM FT nos beacons. O FT adaptive (para clientes suportados) ou modo misto/SSID separado mantém-nos a funcionar.",
+    "difficulty": "Difícil",
+    "exam": "wlsd",
+    "domain": "3.2"
+  },
+  {
+    "question": "Os telefones ficam ligados a um AP distante a -80 dBm em vez de fazer roaming. Que funcionalidade do controlador pode ajudar?",
+    "options": [
+      "Band select, que atrasa as respostas a probes em 2,4 GHz",
+      "Optimized roaming, com um limiar de RSSI",
+      "Load balancing agressivo em todas as WLAN",
+      "Subir a potência de emissão do AP ao máximo"
+    ],
+    "correct": 1,
+    "explanation": "O optimized roaming desliga ou recusa clientes com RSSI abaixo de um nível definido, empurrando-os para um AP melhor. Mais potência agrava os clientes 'pegajosos'.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "3.2"
+  },
+  {
+    "question": "Qual é a diferença entre roaming de camada 2 e camada 3 entre WLC?",
+    "options": [
+      "Não há diferença no Catalyst 9800",
+      "O roaming L2 precisa sempre de um novo endereço DHCP para o cliente",
+      "O roaming L3 só é possível dentro de um AP",
+      "No L3, o novo WLC tem outra sub-rede de cliente"
+    ],
+    "correct": 3,
+    "explanation": "Se a VLAN do cliente existe nos dois WLC é um roaming L2 (a entrada é movida). Caso contrário o WLC original fica anchor e o tráfego é encapsulado (L3/simétrico).",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "3.2"
+  },
+  {
+    "question": "Porque ativar o 802.11v BSS Transition Management num escritório denso?",
+    "options": [
+      "Duplica automaticamente a largura do canal",
+      "O AP pode sugerir ao cliente um AP melhor",
+      "Substitui o 802.1X por uma chave partilhada",
+      "Desliga o roaming para manter os clientes estáveis"
+    ],
+    "correct": 1,
+    "explanation": "O BTM permite à rede enviar um pedido com os AP preferidos; os clientes compatíveis usam-no para roaming ou equilíbrio de carga.",
+    "difficulty": "Difícil",
+    "exam": "wlsd",
+    "domain": "3.2"
+  },
+  {
+    "question": "No túnel de mobilidade simétrico, como circula o tráfego depois de um roaming L3 entre controladores?",
+    "options": [
+      "Cada AP comuta o tráfego localmente",
+      "A subida vai direta ao router e a descida pelo anchor",
+      "O tráfego é descartado até o cliente ter novo IP",
+      "Os dois sentidos passam pelo WLC anchor"
+    ],
+    "correct": 3,
+    "explanation": "Com túnel simétrico (por omissão no 9800), o foreign encaminha os dois sentidos até ao anchor, evitando problemas de uRPF.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "3.3"
+  },
+  {
+    "question": "O show wireless mobility summary mostra um par com caminho de controlo up mas caminho de dados down. Qual é a causa provável?",
+    "options": [
+      "UDP 16667 bloqueada ou problema de MTU",
+      "Uma passphrase de SSID errada configurada no controlador par",
+      "AP a mais associados ao controlador par",
+      "O par tem o RRM desligado"
+    ],
+    "correct": 0,
+    "explanation": "O controlo usa UDP 16666 e os dados UDP 16667 (CAPWAP). Uma firewall ou problema de fragmentação na porta de dados quebra só o caminho de dados.",
+    "difficulty": "Difícil",
+    "exam": "wlsd",
+    "domain": "3.3"
+  },
+  {
+    "question": "Como pode validar que os clientes convidados estão de facto ancorados ao WLC da DMZ?",
+    "options": [
+      "Ver o consumo PoE do AP no switch",
+      "Fazer ping ao IP de gestão do AP a partir de um portátil",
+      "Contar os SSID emitidos na receção",
+      "Ver o papel de mobilidade do cliente nos dois WLC"
+    ],
+    "correct": 3,
+    "explanation": "O detalhe do cliente deve mostrar 'Export Foreign' no foreign e 'Export Anchor' no anchor, com IP da VLAN da DMZ.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "3.3"
+  },
+  {
+    "question": "O que faz uma site tag num Catalyst 9800?",
+    "options": [
+      "Guarda o certificado de gestão do controlador",
+      "Atribui SSID aos AP de cada piso",
+      "Define os canais de rádio e os níveis de potência de cada banda",
+      "Liga os AP a um AP join profile e flex profile"
+    ],
+    "correct": 3,
+    "explanation": "A site tag leva o AP join profile e, em FlexConnect, o flex profile. A policy tag liga WLAN a políticas e a RF tag define RF profiles.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "3.4"
+  },
+  {
+    "question": "Porque recomenda a Cisco agrupar na mesma site tag os AP entre os quais os clientes fazem roaming?",
+    "options": [
+      "Os AP em site tags diferentes usam bandas diferentes",
+      "Site tags diferentes não podem partilhar nem SSID nem perfil de política",
+      "Os roamings numa site tag ficam num só WNCd",
+      "Dispensa os mobility groups"
+    ],
+    "correct": 2,
+    "explanation": "No 9800, cada site tag corresponde a um processo WNCd; roamings dentro do mesmo processo são mais eficientes, por isso as site tags devem cobrir os domínios de roaming.",
+    "difficulty": "Difícil",
+    "exam": "wlsd",
+    "domain": "3.4"
+  },
+  {
+    "question": "Que três tags tem de ter cada AP num Catalyst 9800?",
+    "options": [
+      "VLAN, SSID e RADIUS tags",
+      "Mobility, guest e anchor tags",
+      "Policy, site e RF tags",
+      "Tags primária, secundária e terciária"
+    ],
+    "correct": 2,
+    "explanation": "A policy tag liga perfis WLAN a perfis de política, a site tag associa perfis de join/flex e a RF tag associa RF profiles de 2,4/5/6 GHz.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "3.4"
+  },
+  {
+    "question": "O que dá o LAG num appliance Catalyst 9800?",
+    "options": [
+      "VLAN separadas para cada modelo de AP",
+      "Um segundo controlador que assume em caso de falha",
+      "Planeamento automático de canais em todos os AP",
+      "Portas agregadas para débito e redundância"
+    ],
+    "correct": 3,
+    "explanation": "A agregação de ligações junta os uplinks num port-channel para o switch; se uma ligação falhar, o tráfego continua nas outras.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "4.1.a"
+  },
+  {
+    "question": "O que acontece aos AP e clientes depois de uma falha num par 9800 com SSO?",
+    "options": [
+      "Todos os AP voltam a associar-se e cada cliente volta a autenticar-se",
+      "Ficam ligados, porque o standby já tem o seu estado",
+      "Só os AP em 2,4 GHz ficam ligados",
+      "Os clientes têm de voltar a ligar-se manualmente ao SSID"
+    ],
+    "correct": 1,
+    "explanation": "O stateful switchover sincroniza o estado dos AP e clientes com o standby, pelo que a falha é transparente para a maioria das sessões.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "4.1.b"
+  },
+  {
+    "question": "Que ligação leva a sincronização de estado entre dois appliances 9800 num par SSO?",
+    "options": [
+      "A ligação da porta de redundância (RP) dedicada",
+      "A service port usada para a gestão fora de banda",
+      "O cabo de consola entre as duas unidades",
+      "Um túnel CAPWAP através de um dos AP"
+    ],
+    "correct": 0,
+    "explanation": "O SSO usa a porta RP (direta ou sobre L2) e uma interface de gestão de redundância para verificar o gateway; é preciso o mesmo modelo e software.",
+    "difficulty": "Difícil",
+    "exam": "wlsd",
+    "domain": "4.1.b"
+  },
+  {
+    "question": "O que é a redundância de controladores N+1?",
+    "options": [
+      "Um WLC de reserva partilhado por vários primários",
+      "Cada WLC tem exatamente um AP de reserva",
+      "Um WLC com N rádios e um módulo de rádio de reserva",
+      "Dois WLC em SSO para cada local"
+    ],
+    "correct": 0,
+    "explanation": "No N+1, os AP têm um WLC primário e uma reserva partilhada como secundário; após uma falha voltam a juntar-se a ela (com uma interrupção curta, ao contrário do SSO).",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "4.1.c"
+  },
+  {
+    "question": "Como pode o acesso de convidados sobreviver à perda do único anchor na DMZ?",
+    "options": [
+      "Tornar cada AP um anchor de convidados",
+      "Apontar a WLAN de convidados para o próprio WLC foreign como anchor",
+      "Ativar FlexConnect local switching no anchor",
+      "Configurar dois anchors para a WLAN, com prioridades"
+    ],
+    "correct": 3,
+    "explanation": "Vários anchors por WLAN podem repartir carga ou funcionar como primário/reserva por prioridade; os clientes passam para um anchor que sobreviva.",
+    "difficulty": "Difícil",
+    "exam": "wlsd",
+    "domain": "4.1.c"
+  },
+  {
+    "question": "Depois de uma falha de WLC, a reserva só tem capacidade para metade dos AP. Como mantém os mais importantes?",
+    "options": [
+      "Dar prioridade de AP mais alta aos AP críticos",
+      "Baixar a potência de emissão nesses AP para gastarem menos capacidade",
+      "Dar aos AP críticos um nome de anfitrião mais curto",
+      "Desligar o RRM no controlador de reserva"
+    ],
+    "correct": 0,
+    "explanation": "Com a prioridade de failover dos AP ativa, um WLC cheio desliga AP de prioridade mais baixa para aceitar os de prioridade mais alta (critical, high, medium, low).",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "4.2.a"
+  },
+  {
+    "question": "Onde se definem os controladores primário, secundário e terciário dos AP num 9800?",
+    "options": [
+      "No RF profile de 5 GHz",
+      "Nas definições de segurança de camada 2 da WLAN",
+      "No AP join profile ou na HA de cada AP",
+      "Na opção DHCP 43 de cada cliente"
+    ],
+    "correct": 2,
+    "explanation": "As definições de HA dos AP listam os controladores por nome e IP, por ordem; a opção 43 ou o DNS ajudam na descoberta inicial, não na ordem de reserva.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "4.2.b"
+  },
+  {
+    "question": "Os AP passam para o WLC secundário e depois voltam ao primário a meio do dia, desligando clientes. Que definição evita isto?",
+    "options": [
+      "Subir o RxSOP em todos os RF profiles",
+      "Baixar o temporizador de heartbeat CAPWAP para um segundo em todos os AP",
+      "Mover os AP para outra site tag",
+      "Desligar o AP fallback ou planeá-lo"
+    ],
+    "correct": 3,
+    "explanation": "O AP fallback devolve os AP quando o primário regressa, o que reinicia os clientes. Desligá-lo mantém-nos no secundário até uma mudança planeada.",
+    "difficulty": "Difícil",
+    "exam": "wlsd",
+    "domain": "4.2.b"
+  },
+  {
+    "question": "Como se pode tornar mais rápido o failover dos AP entre WLC?",
+    "options": [
+      "Aumentar o tempo de concessão DHCP na VLAN de gestão dos AP",
+      "Baixar os temporizadores de heartbeat dos AP",
+      "Usar canais de 40 MHz nos rádios de 5 GHz",
+      "Desligar o CleanAir nos AP"
+    ],
+    "correct": 1,
+    "explanation": "Intervalos de heartbeat (e fast heartbeat) mais curtos deixam os AP detetar mais cedo a perda do primário e passar para o controlador seguinte.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "4.2.b"
+  },
+  {
+    "question": "Numa rede EWC, o que acontece se o AP que corre o controlador ativo falhar?",
+    "options": [
+      "Os AP passam para modo autónomo com a config por omissão",
+      "Todos os AP deixam de servir clientes de vez",
+      "Outro AP capaz assume essa função",
+      "A cloud assume todos os SSID"
+    ],
+    "correct": 2,
+    "explanation": "O EWC elege um ativo e um standby entre os AP capazes; o standby assume a função de controlador após uma falha.",
+    "difficulty": "Médio",
+    "exam": "wlsd",
+    "domain": "4.2.c"
+  },
+  {
+    "question": "Quando é que o EWC é má escolha para um local?",
+    "options": [
+      "Quando todos os AP são modelos Catalyst 9100",
+      "Quando o local tem menos de dez AP",
+      "Quando excede a escala de AP ou clientes do EWC",
+      "Quando o local não tem servidor local nem centro de dados"
+    ],
+    "correct": 2,
+    "explanation": "O EWC escala até um número limitado de AP e clientes e tem menos funções; locais maiores precisam de um 9800 em appliance, cloud ou embebido no switch.",
+    "difficulty": "Difícil",
+    "exam": "wlsd",
+    "domain": "4.2.c"
+  },
+  {
+    "question": "Um AP FlexConnect perde a ligação WAN ao WLC. Em que modo fica e o que continua a funcionar?",
+    "options": [
+      "Connected; todo o tráfego continua a ser encapsulado até ao WLC",
+      "Standalone; as WLAN comutadas localmente continuam",
+      "Bridge; o AP passa a RAP de mesh para a filial",
+      "Sniffer; o AP só captura tramas até a ligação voltar"
+    ],
+    "correct": 1,
+    "explanation": "No modo standalone, as WLAN com comutação local continuam e novos clientes podem entrar se houver autenticação local. A comutação central para.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "1.1"
+  },
+  {
+    "question": "Num Catalyst 9800, onde se ativa a comutação local de uma WLAN FlexConnect?",
+    "options": [
+      "Na RF tag do rádio de 5 GHz dos AP da filial",
+      "No policy profile, desativando a comutação central",
+      "No AP join profile, nos temporizadores CAPWAP",
+      "No WLAN profile, no separador de segurança de camada 2"
+    ],
+    "correct": 1,
+    "explanation": "O policy profile controla a comutação central ou local, o DHCP e a autenticação; a site tag tem de levar um flex profile com as VLAN.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "1.1"
+  },
+  {
+    "question": "Porque colocar os AP FlexConnect da filial no mesmo flex profile/grupo?",
+    "options": [
+      "Para poderem usar um único IP de gestão partilhado na WAN",
+      "Partilham chaves para roaming rápido dos clientes",
+      "Transforma-os num só AP com mais rádios",
+      "Faz o tráfego deles contornar por completo o switch da filial"
+    ],
+    "correct": 1,
+    "explanation": "Os AP agrupados partilham chaves dos clientes (caches CCKM/OKC/FT) e definições como autenticação local e VLAN, pelo que o roaming em standalone é rápido.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "1.2.a"
+  },
+  {
+    "question": "Uma WLAN com comutação central tem de deixar os utilizadores da filial imprimir localmente. O que serve?",
+    "options": [
+      "Mudar a impressora para a VLAN do próprio controlador",
+      "Desligar o CAPWAP DTLS nos AP da filial e no WLC",
+      "Split tunneling com Flex ACL para a rede local",
+      "Usar um segundo SSID aberto a todos no edifício"
+    ],
+    "correct": 2,
+    "explanation": "O split tunneling envia localmente o tráfego que coincide com a ACL (NAT/PAT no AP), enquanto o resto é encapsulado até ao WLC.",
+    "difficulty": "Difícil",
+    "exam": "wlsi",
+    "domain": "1.2.b"
+  },
+  {
+    "question": "O que permite aos clientes FlexConnect continuarem a autenticar-se enquanto o WLC está inalcançável?",
+    "options": [
+      "Aumentar o heartbeat CAPWAP do AP para uma hora",
+      "Um controlador anchor colocado na DMZ da sede",
+      "Autenticação local com RADIUS de reserva na filial",
+      "Pôr a WLAN em WPA3-Personal com SAE só à noite"
+    ],
+    "correct": 2,
+    "explanation": "As funções de tolerância a falhas permitem aos AP autenticar através de um RADIUS local ou do servidor interno do AP (local EAP) em standalone.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "1.2.b"
+  },
+  {
+    "question": "Com VLAN-based central switching, o que acontece quando o ISE devolve uma VLAN não definida no AP FlexConnect?",
+    "options": [
+      "O tráfego do cliente é comutado centralmente no WLC",
+      "O cliente é bloqueado e tem de voltar a autenticar-se",
+      "O AP cria a VLAN no próprio switch da filial",
+      "O cliente fica na VLAN nativa da porta trunk do AP"
+    ],
+    "correct": 0,
+    "explanation": "O VLAN-based central switching mantém a comutação local nas VLAN conhecidas e encaminha para o WLC os clientes cuja VLAN não existe localmente.",
+    "difficulty": "Difícil",
+    "exam": "wlsi",
+    "domain": "1.2.c"
+  },
+  {
+    "question": "O que poupa o Smart AP image upgrade do FlexConnect?",
+    "options": [
+      "Espaço em flash, porque a imagem fica guardada no switch",
+      "Licenças do controlador, atualizando só AP com imagem antiga",
+      "Energia dos AP, porque cada AP reinicia numa hora aleatória",
+      "Largura de banda WAN: um AP mestre por modelo descarrega"
+    ],
+    "correct": 3,
+    "explanation": "Um AP por modelo no grupo descarrega a imagem pela WAN; os outros recebem-na localmente desse AP mestre.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "1.2.d"
+  },
+  {
+    "question": "O que dá um AP OfficeExtend a quem trabalha em casa?",
+    "options": [
+      "Um hotspot público a que os vizinhos se juntam com um código",
+      "O SSID da empresa em casa, por um túnel seguro até ao WLC",
+      "Uma ligação de banda larga mais rápida ao fornecedor",
+      "Um controlador local que gere o router de casa do utilizador"
+    ],
+    "correct": 1,
+    "explanation": "O OEAP é um AP para teletrabalho que se junta ao WLC por CAPWAP protegido com DTLS pela internet e pode oferecer também um SSID pessoal.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "1.3"
+  },
+  {
+    "question": "O tráfego de voz está marcado com DSCP EF (46). Para que user priority 802.11 e categoria WMM é mapeado?",
+    "options": [
+      "UP 4, Video (AC_VI), depois de o WLC o remarcar para AF41",
+      "UP 0, Best Effort (AC_BE), com limite de repetições maior",
+      "UP 1, Background (AC_BK)",
+      "UP 6, Voice (AC_VO)"
+    ],
+    "correct": 3,
+    "explanation": "O mapeamento comum coloca o EF em UP 6 / AC_VO. O WLC mapeia DSCP para UP no sentido descendente e UP/DSCP para o cabeçalho exterior CAPWAP.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "2.1"
+  },
+  {
+    "question": "Os pacotes de voz chegam ao WLC marcados EF mas saem do AP como best effort. O que deve verificar primeiro?",
+    "options": [
+      "O tempo de concessão DHCP na VLAN de voz da filial",
+      "O ganho da antena do AP no RF profile",
+      "O número de SSID no rádio do AP nesse local",
+      "As portas de switch a confiar no DSCP e a política QoS da WLAN"
+    ],
+    "correct": 3,
+    "explanation": "As marcações perdem-se se uma porta de switch as reescrever (sem trust) ou se a WLAN/policy profile limitar a QoS (p. ex. Silver). Verifique todo o caminho.",
+    "difficulty": "Difícil",
+    "exam": "wlsi",
+    "domain": "2.1"
+  },
+  {
+    "question": "Que nível de QoS de WLAN num WLC Cisco se destina a voz?",
+    "options": [
+      "Gold, que se destina a streaming e conferências de vídeo",
+      "Bronze, que é o mais baixo e poupa tempo de antena",
+      "Silver",
+      "Platinum"
+    ],
+    "correct": 3,
+    "explanation": "Platinum = voz, Gold = vídeo, Silver = best effort, Bronze = background. O nível limita a marcação mais alta que os clientes podem ter.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "2.2"
+  },
+  {
+    "question": "Como pode um WLC limitar cada cliente convidado a 2 Mb/s?",
+    "options": [
+      "Com um limite de débito por cliente na política QoS",
+      "Reduzindo a largura de canal do AP para 20 MHz em todos os rádios",
+      "Desligando o WMM na WLAN de convidados para os abrandar",
+      "Atribuindo a VLAN de convidados a uma porta de uplink mais lenta"
+    ],
+    "correct": 0,
+    "explanation": "Os contratos de largura de banda por cliente (e por SSID) ou as políticas QoS limitam os débitos de subida e descida no 9800.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "2.2"
+  },
+  {
+    "question": "Para que serve o AVC (Application Visibility and Control) num Catalyst 9800?",
+    "options": [
+      "Cifra os fluxos de vídeo entre AP e WLC com uma chave mais forte",
+      "Reconhece aplicações com NBAR2 para as mostrar e controlar",
+      "Atribui clientes de voz ao canal menos ocupado do grupo RF",
+      "Converte automaticamente vídeo multicast em unicast para cada cliente"
+    ],
+    "correct": 1,
+    "explanation": "O Application Visibility and Control classifica o tráfego por inspeção profunda de pacotes e permite marcar, limitar ou descartar por aplicação.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "2.3"
+  },
+  {
+    "question": "Os utilizadores fazem streaming de vídeo e as aplicações de negócio ficam lentas na WLAN. Como pode o AVC ajudar sem bloquear o vídeo?",
+    "options": [
+      "Passar os utilizadores de negócio só para a banda de 2,4 GHz",
+      "Descartar todo o tráfego UDP na WLAN em horário de expediente",
+      "Remarcar o streaming para baixo ou limitar o débito",
+      "Desligar o AVC para o NBAR2 deixar de usar CPU do controlador"
+    ],
+    "correct": 2,
+    "explanation": "Uma política AVC pode remarcar o streaming para uma classe mais baixa ou limitar o débito, mantendo as aplicações de negócio rápidas.",
+    "difficulty": "Difícil",
+    "exam": "wlsi",
+    "domain": "2.3"
+  },
+  {
+    "question": "Que protocolo usam os clientes sem fios para se juntar a um grupo multicast, que o WLC escuta?",
+    "options": [
+      "IGMP (MLD em IPv6)",
+      "PIM sparse mode entre os clientes e o router por omissão",
+      "Mensagens de controlo CAPWAP enviadas do cliente ao AP",
+      "Pedidos ARP para o endereço MAC multicast do grupo"
+    ],
+    "correct": 0,
+    "explanation": "Os clientes enviam relatórios IGMP/MLD; com snooping, o WLC acompanha as adesões e só encaminha os grupos pedidos.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "3.1"
+  },
+  {
+    "question": "No modo multicast-multicast num WLC, como envia este o multicast aos AP?",
+    "options": [
+      "Como cópia unicast separada para cada um dos AP associados ao controlador",
+      "Uma vez, para um grupo multicast a que os AP aderem",
+      "Só para o AP com o sinal de cliente mais forte",
+      "Através de um túnel GRE até ao router de core primeiro"
+    ],
+    "correct": 1,
+    "explanation": "O modo multicast-multicast envia um fluxo CAPWAP multicast para o grupo dos AP; a rede com fios tem de suportar encaminhamento multicast.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "3.1"
+  },
+  {
+    "question": "Porque pode o multicast prejudicar o desempenho Wi-Fi?",
+    "options": [
+      "Desativa a cifra WPA2 na WLAN",
+      "Usa sempre canais de 160 MHz e bloqueia todos os AP vizinhos",
+      "Obriga todos os clientes a fazer roaming para outro AP",
+      "Vai a um débito básico baixo e sem ACK"
+    ],
+    "correct": 3,
+    "explanation": "O multicast 802.11 vai a um débito obrigatório (muitas vezes baixo) para todos os clientes o ouvirem, gastando muito tempo de antena, e não é confirmado.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "3.2"
+  },
+  {
+    "question": "O multicast está ativo globalmente no 9800, mas os clientes de uma WLAN não recebem o fluxo. O que é muitas vezes ainda necessário?",
+    "options": [
+      "Uma rota estática para 224.0.0.0/4 no AP",
+      "Um controlador anchor para a fonte multicast",
+      "A WLAN configurada só para 2,4 GHz",
+      "IGMP snooping e a VLAN certa na WLAN"
+    ],
+    "correct": 3,
+    "explanation": "Verifique o modo multicast global, o IGMP/MLD snooping, o mapeamento da VLAN do cliente e se a rede com fios entrega o grupo ao WLC.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "3.3"
+  },
+  {
+    "question": "Os alunos não veem uma Apple TV noutra VLAN. Que funcionalidade resolve isto no WLC?",
+    "options": [
+      "Band select",
+      "mDNS gateway",
+      "Aironet IE",
+      "Opção DHCP 82"
+    ],
+    "correct": 1,
+    "explanation": "O Bonjour usa mDNS link-local, que não atravessa sub-redes. O mDNS gateway guarda e reencaminha serviços entre VLAN, com políticas.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "3.4"
+  },
+  {
+    "question": "Com centenas de equipamentos Bonjour num campus, como se mantém o mDNS controlado?",
+    "options": [
+      "Políticas que limitam os serviços vistos por cada utilizador",
+      "Permitir todos os serviços a cada cliente em cada VLAN de todo o campus",
+      "Desligar o IGMP snooping para o mDNS circular livremente",
+      "Mudar todos os equipamentos Apple para o SSID de convidados"
+    ],
+    "correct": 0,
+    "explanation": "As listas de serviços mDNS, serviços por localização e políticas (p. ex. por utilizador ou local) evitam listas enormes e reduzem a carga.",
+    "difficulty": "Difícil",
+    "exam": "wlsi",
+    "domain": "3.4"
+  },
+  {
+    "question": "O que faz o Multicast Direct (VideoStream)?",
+    "options": [
+      "Converte multicast em unicast por cliente",
+      "Envia todo o multicast ao débito mais baixo duas vezes, por fiabilidade",
+      "Bloqueia por omissão o vídeo multicast em todas as WLAN",
+      "Encaminha multicast entre dois WLC por PIM"
+    ],
+    "correct": 0,
+    "explanation": "As tramas unicast vão ao débito do cliente com ACK, o que torna o vídeo fiável; o controlo de admissão limita o número de fluxos.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "3.5"
+  },
+  {
+    "question": "Como envia hoje normalmente um Catalyst 9800 dados de localização para o Cisco Spaces?",
+    "options": [
+      "Por traps SNMP enviados por cada AP diretamente para a cloud",
+      "Enviando por e-mail, todas as noites, uma exportação CSV do WLC",
+      "Através de um Cisco Spaces Connector, ou ligação direta à cloud",
+      "Copiando a configuração em execução do WLC para o Spaces por TFTP"
+    ],
+    "correct": 2,
+    "explanation": "O Spaces recebe dados através do Spaces Connector (VM ou docker local) ou de ligação direta do WLC; o CMX local usava NMSP a partir do WLC.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "4.1"
+  },
+  {
+    "question": "Que protocolo leva os dados de localização entre um WLC e o CMX?",
+    "options": [
+      "Dados CAPWAP",
+      "NMSP",
+      "RADIUS accounting",
+      "NetFlow v9"
+    ],
+    "correct": 1,
+    "explanation": "O Network Mobility Services Protocol (TCP 16113) leva dados de RSSI, clientes e tags do WLC para o CMX/MSE.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "4.1"
+  },
+  {
+    "question": "A localização mostra um portátil a saltar entre pisos. Qual é uma causa comum?",
+    "options": [
+      "AP de vários pisos ouvem-no com RSSI semelhante",
+      "O portátil usa WPA3 em vez de WPA2 no SSID",
+      "O servidor DHCP dá ao portátil uma concessão curta",
+      "O WLC tem demasiados pares de mobilidade configurados"
+    ],
+    "correct": 0,
+    "explanation": "A localização por RSSI pode confundir pisos quando o sinal passa entre eles; definições de piso, colocação dos AP e dados de atenuação ajudam.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "4.2.a"
+  },
+  {
+    "question": "O que tem de estar ativo para as tags RFID ativas serem seguidas pelo CMX ou Spaces?",
+    "options": [
+      "O seguimento de tags RFID no WLC",
+      "Fast transition 802.11r em todas as WLAN",
+      "Band select nos rádios de 2,4 GHz",
+      "AVC na WLAN usada pelas tags"
+    ],
+    "correct": 0,
+    "explanation": "O WLC tem de recolher os dados das tags (seguimento RFID com temporizadores) e enviá-los por NMSP ou pelo connector.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "4.2.b"
+  },
+  {
+    "question": "Que capacidade dos AP permite ao serviço de localização colocar um micro-ondas no mapa?",
+    "options": [
+      "Cifra DTLS",
+      "WMM power save",
+      "Cache de chaves OKC",
+      "Deteção CleanAir"
+    ],
+    "correct": 3,
+    "explanation": "O CleanAir classifica interferências não Wi-Fi; com vários AP a reportar, os serviços de localização podem localizar a fonte.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "4.2.c"
+  },
+  {
+    "question": "Porque é mais útil localizar um AP rogue do que apenas detetá-lo?",
+    "options": [
+      "Impede o rogue de usar qualquer canal de rádio na zona",
+      "Permite ao WLC adotar o rogue como AP gerido",
+      "A equipa pode encontrar e retirar fisicamente o equipamento",
+      "Bloqueia automaticamente o servidor DHCP do rogue"
+    ],
+    "correct": 2,
+    "explanation": "A deteção diz que existe um rogue; a localização indica onde está, para o seguir e retirar ou reclassificar.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "4.2.d"
+  },
+  {
+    "question": "A localização dos telefones é fraca, mas a dos portáteis é precisa. O que pode explicar isto?",
+    "options": [
+      "Os telefones ligam-se sempre só em 6 GHz e nunca fazem probe em 5 GHz",
+      "Os telefones fazem poucos probes e usam MAC aleatório",
+      "Os portáteis enviam beacons mais fortes do que os AP",
+      "Os telefones não podem ser vistos pelo CleanAir"
+    ],
+    "correct": 1,
+    "explanation": "A localização precisa de probes ou tramas de dados frequentes; telefones inativos fazem poucos probes e MAC aleatórios quebram o seguimento de não associados.",
+    "difficulty": "Difícil",
+    "exam": "wlsi",
+    "domain": "4.2.e"
+  },
+  {
+    "question": "O que é a função 'detect and locate' no Cisco Spaces?",
+    "options": [
+      "Uma ferramenta que mede o comprimento dos cabos dos AP",
+      "Uma firewall que bloqueia clientes sem fios desconhecidos",
+      "Uma vista em mapa de equipamentos e clientes nos pisos",
+      "Uma função que muda os canais dos AP por localização"
+    ],
+    "correct": 2,
+    "explanation": "O Detect and Locate mostra clientes, interferências, rogues e tags em mapas importados do WLC ou do Catalyst Center.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "5.1.a"
+  },
+  {
+    "question": "Um retalhista quer tempo de permanência e contagem de visitantes repetidos por loja. Que capacidade do Spaces serve?",
+    "options": [
+      "Analítica de localização",
+      "Só login social no captive portal",
+      "Assinaturas wIPS",
+      "Contenção de rogues"
+    ],
+    "correct": 0,
+    "explanation": "A analítica do Spaces dá visitas, tempo de permanência, visitantes repetidos e tendências de afluência a partir dos dados de localização.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "5.1.b"
+  },
+  {
+    "question": "O que conta o serviço de presença?",
+    "options": [
+      "O número de tags RFID com bateria fraca",
+      "Só os clientes que passaram 802.1X no SSID da empresa",
+      "O número de AP associados a cada WLC",
+      "Equipamentos por perto, incluindo os não ligados"
+    ],
+    "correct": 3,
+    "explanation": "A presença usa probes e associações para classificar quem passa, visitantes e equipamentos ligados num local.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "5.1.c"
+  },
+  {
+    "question": "Uma loja quer uma página de boas-vindas com a sua marca e termos de uso no Wi-Fi de convidados através do Spaces. Para onde tem a WLAN de redirecionar?",
+    "options": [
+      "Para o captive portal do Spaces, com ACL de pré-autenticação",
+      "Para o servidor web interno do WLC, com WPA3-Enterprise",
+      "Para o portal de postura do ISE para portáteis da empresa",
+      "Para nenhum lado, porque o Spaces injeta a página nos beacons"
+    ],
+    "correct": 0,
+    "explanation": "A WLAN usa web auth com redirecionamento para o portal do Spaces; uma ACL de pré-autenticação ou filtro de URL permite chegar ao Spaces antes do login.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "5.1.d"
+  },
+  {
+    "question": "Qual é o papel do Cisco Spaces Connector?",
+    "options": [
+      "É um servidor RADIUS para os logins de convidados de cada filial",
+      "Substitui o WLC em pequenas filiais",
+      "Envia com segurança os dados do WLC ao Spaces",
+      "É um AP que só procura rogues"
+    ],
+    "correct": 2,
+    "explanation": "O connector corre localmente, recolhe dados dos controladores (e de serviços como IoT) e envia-os por um túnel seguro para o Spaces.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "5.1.e"
+  },
+  {
+    "question": "Os convidados fazem login com conta de rede social no captive portal, mas a página nunca carrega. O que deve verificar?",
+    "options": [
+      "Que o AP tem um endereço IP estático",
+      "Que o fast transition 802.11r está ligado na WLAN de convidados",
+      "Que a ACL de pré-autenticação permite os domínios sociais",
+      "Que o DCA do RRM corre a cada dez minutos"
+    ],
+    "correct": 2,
+    "explanation": "Antes da autenticação, o cliente tem de chegar ao portal e aos URL OAuth do fornecedor social; entradas em falta no walled garden quebram o login.",
+    "difficulty": "Difícil",
+    "exam": "wlsi",
+    "domain": "5.2"
+  },
+  {
+    "question": "Como torna a localização os serviços de convidados 'sensíveis à localização'?",
+    "options": [
+      "O conteúdo ou as ofertas do portal mudam com o local",
+      "O nome do SSID muda automaticamente em cada piso do recinto",
+      "Os convidados recebem uma VLAN conforme o modelo do telefone",
+      "O AP baixa a potência quando há convidados perto"
+    ],
+    "correct": 0,
+    "explanation": "O Spaces pode escolher páginas de portal, notificações ou regras por zona, piso ou local.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "5.2"
+  },
+  {
+    "question": "A precisão de localização é fraca num piso. Que correção tem mais probabilidade de ajudar?",
+    "options": [
+      "Aumentar ao máximo a potência de emissão dos AP em todos os rádios",
+      "Verificar colocação e altura dos AP e escala do mapa",
+      "Desligar os 5 GHz para os clientes usarem 2,4 GHz",
+      "Reduzir o número de AP para baixar interferência"
+    ],
+    "correct": 1,
+    "explanation": "A precisão depende de posições, altura, orientação dos AP corretas, escala do mapa e AP suficientes a ouvir cada cliente; a calibração também ajuda.",
+    "difficulty": "Difícil",
+    "exam": "wlsi",
+    "domain": "5.3"
+  },
+  {
+    "question": "Como se garante a alta disponibilidade do Spaces Connector?",
+    "options": [
+      "Dois SSID a apontar para o mesmo connector",
+      "Um connector com um disco maior e mais memória atribuída",
+      "Uma cópia de reserva do connector numa pen USB",
+      "Dois connectors num par ativo/standby"
+    ],
+    "correct": 3,
+    "explanation": "Os connectors podem ser instalados em pares HA; se o ativo falhar, o standby assume o caminho de dados para o Spaces.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "5.4"
+  },
+  {
+    "question": "O par HA do Spaces Connector mostra os dois nós ativos e dados duplicados. Qual é o problema provável?",
+    "options": [
+      "O portal de convidados tem duas línguas",
+      "O WLC tem duas VLAN de gestão configuradas no uplink",
+      "O connector usa CPU a mais",
+      "Os nós não se veem um ao outro"
+    ],
+    "correct": 3,
+    "explanation": "Se os heartbeats HA falharem, os dois nós podem assumir-se ativos. Reponha a conectividade entre os nós ou a configuração do IP virtual.",
+    "difficulty": "Difícil",
+    "exam": "wlsi",
+    "domain": "5.4"
+  },
+  {
+    "question": "Como se gere o aWIPS quando se usa o Catalyst Center?",
+    "options": [
+      "Por um script CLI em cada AP",
+      "Só através de um appliance MSE separado no centro de dados",
+      "O Catalyst Center ativa-o e mostra alarmes",
+      "Não pode ser usado com o Catalyst Center"
+    ],
+    "correct": 2,
+    "explanation": "O Catalyst Center pode ativar o Advanced wIPS nos AP Catalyst 9800 e mostrar assinaturas de ataque e alarmes (app Rogue and aWIPS).",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "5.5"
+  },
+  {
+    "question": "O que envia o WLC ao ISE para o ajudar a identificar o perfil dos clientes sem fios?",
+    "options": [
+      "Atributos DHCP e HTTP via RADIUS accounting",
+      "Capturas completas de todas as sessões dos clientes",
+      "As passwords Wi-Fi guardadas pelo cliente",
+      "SNMP walks de todas as portas de switch"
+    ],
+    "correct": 0,
+    "explanation": "Com device sensor/profiling ativo, o WLC inclui opções DHCP e o user agent HTTP no RADIUS accounting para o ISE classificar os equipamentos.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "6.1"
+  },
+  {
+    "question": "Depois de o ISE identificar um equipamento como telefone IP, este deve passar para a VLAN de voz. O que faz isto acontecer?",
+    "options": [
+      "O cliente tem de reiniciar para apanhar a nova VLAN",
+      "Um CoA do ISE dispara nova autorização",
+      "O AP muda sozinho de VLAN ao fim de um dia de tráfego",
+      "O WLC lê o modelo do telefone por CDP"
+    ],
+    "correct": 1,
+    "explanation": "Quando o perfil muda, o ISE envia um RADIUS Change of Authorization para o WLC voltar a aplicar a autorização (VLAN, ACL, QoS).",
+    "difficulty": "Difícil",
+    "exam": "wlsi",
+    "domain": "6.1"
+  },
+  {
+    "question": "Na Central Web Authentication com ISE, o que acontece primeiro quando um convidado se liga?",
+    "options": [
+      "O WLC mostra a sua própria página de login",
+      "O convidado escreve uma PSK WPA2 impressa num aviso na parede",
+      "O MAB no ISE devolve um URL de redirect e uma ACL",
+      "O convidado vai logo para a VLAN de internet"
+    ],
+    "correct": 2,
+    "explanation": "CWA: MAB no ISE, o ISE devolve url-redirect e uma ACL de redirecionamento; após o login no portal, o ISE envia CoA e a política final.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "6.2.a"
+  },
+  {
+    "question": "O que permite um portal de convidados com autorregisto no ISE?",
+    "options": [
+      "Que os convidados criem as suas contas",
+      "Que os convidados usem as credenciais 802.1X do anfitrião",
+      "Que os convidados evitem por completo o captive portal",
+      "Que os convidados escolham a sua VLAN"
+    ],
+    "correct": 0,
+    "explanation": "O autorregisto deixa os visitantes preencher um formulário e receber credenciais (SMS/e-mail), com aprovação opcional de um sponsor.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "6.2.a"
+  },
+  {
+    "question": "Em que difere a Local Web Authentication da CWA?",
+    "options": [
+      "A LWA não precisa de página web",
+      "A LWA usa só 802.1X com certificados de cliente",
+      "Na LWA é o próprio WLC que trata do login web",
+      "A LWA só funciona em AP FlexConnect"
+    ],
+    "correct": 2,
+    "explanation": "Com LWA, o WLC interceta o HTTP e apresenta o seu portal (ou um externo), autenticando depois o utilizador por RADIUS ou base local.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "6.2.b"
+  },
+  {
+    "question": "No native supplicant provisioning do ISE para BYOD, o que recebe o equipamento do utilizador?",
+    "options": [
+      "Uma password de convidado válida por uma hora",
+      "Um endereço IP estático e um código QR impresso",
+      "Um perfil Wi-Fi e um certificado para EAP-TLS",
+      "Um cliente VPN que substitui o Wi-Fi"
+    ],
+    "correct": 2,
+    "explanation": "O fluxo NSP integra o equipamento: descarrega um assistente ou perfil, recebe um certificado da CA do ISE e volta a ligar-se com EAP-TLS.",
+    "difficulty": "Difícil",
+    "exam": "wlsi",
+    "domain": "6.2.c"
+  },
+  {
+    "question": "Os convidados veem um aviso de certificado na página de web auth do WLC. O que o resolve?",
+    "options": [
+      "Instalar um certificado fiável para a web auth",
+      "Desligar o HTTPS para a página carregar em HTTP",
+      "Mudar o SSID de convidados para WPA3-Personal",
+      "Usar um endereço IP virtual mais curto na página de web auth"
+    ],
+    "correct": 0,
+    "explanation": "Instale um certificado assinado por CA que coincida com o nome do IP virtual (ou use um certificado de confiança no portal externo).",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "6.2.d"
+  },
+  {
+    "question": "Os AP FlexConnect da filial com autenticação local têm de usar o ISE para 802.1X enquanto a WAN está ativa. Onde corre a autenticação?",
+    "options": [
+      "Na base de utilizadores local do switch da filial",
+      "Só no próprio equipamento do cliente",
+      "Centralmente, pelo WLC até ao ISE",
+      "Em lado nenhum, porque o FlexConnect não usa 802.1X"
+    ],
+    "correct": 2,
+    "explanation": "Por omissão o FlexConnect autentica centralmente; a autenticação local ou um RADIUS local é usado como recurso ou por desenho.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "6.3"
+  },
+  {
+    "question": "O ISE devolve uma VLAN, o nome de uma ACL e um nível de QoS para um utilizador. Como se chama isto?",
+    "options": [
+      "Band steering",
+      "Mapeamento estático de VLAN por SSID",
+      "Política baseada em RRM",
+      "AAA override"
+    ],
+    "correct": 3,
+    "explanation": "Com o AAA override ativo, os atributos RADIUS do ISE sobrepõem-se aos valores por omissão da WLAN por utilizador ou equipamento.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "6.4"
+  },
+  {
+    "question": "O ISE devolve o nome de uma ACL, mas o tráfego do utilizador não é filtrado. Qual é a causa provável?",
+    "options": [
+      "O SSID está oculto nos beacons",
+      "O utilizador tem uma password longa",
+      "O AP usa canais de 80 MHz",
+      "A ACL não existe no WLC"
+    ],
+    "correct": 3,
+    "explanation": "Uma ACL com nome tem de estar definida no controlador (e enviada aos AP Flex) com exatamente o mesmo nome, e o AAA override tem de estar ativo.",
+    "difficulty": "Difícil",
+    "exam": "wlsi",
+    "domain": "6.4"
+  },
+  {
+    "question": "Que funcionalidade do Catalyst Center dá relatórios agendados de número de clientes e uso dos AP?",
+    "options": [
+      "Reports",
+      "Plug and Play",
+      "Gestão de imagens de software",
+      "Editor de templates"
+    ],
+    "correct": 0,
+    "explanation": "A função Reports cria relatórios agendados ou a pedido (clientes, AP, rogues, conformidade) em formatos como CSV ou PDF.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "7.1"
+  },
+  {
+    "question": "Um AP rogue na rede com fios emite o SSID da empresa. Como deve uma regra do WLC classificá-lo?",
+    "options": [
+      "Ignorado, porque não está no WLC",
+      "Amigável, porque usa o mesmo SSID",
+      "Não classificado, porque o SSID não importa",
+      "Malicioso, considerando a contenção"
+    ],
+    "correct": 3,
+    "explanation": "Um SSID falsificado com ligação à rede com fios é um rogue de alto risco; as regras podem classificá-lo como malicioso e, onde for legal, contê-lo.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "7.2.a"
+  },
+  {
+    "question": "Porque deve a contenção de rogues ser usada com cuidado?",
+    "options": [
+      "Desativa para sempre o hardware do rogue",
+      "Não gasta qualquer tempo de antena",
+      "Só funciona em 2,4 GHz",
+      "Pode afetar vizinhos e ser ilegal"
+    ],
+    "correct": 3,
+    "explanation": "A contenção envia tramas deauth contra os clientes do rogue; contra redes de vizinhos pode violar a lei. Use-a só contra ameaças no seu espaço.",
+    "difficulty": "Difícil",
+    "exam": "wlsi",
+    "domain": "7.2.a"
+  },
+  {
+    "question": "Onde se veem no Catalyst Center as ameaças rogue e aWIPS de vários locais?",
+    "options": [
+      "No repositório de imagens de software",
+      "Na lista de equipamentos Plug and Play",
+      "Na página de definições da hierarquia de rede",
+      "No painel Rogue and aWIPS em Assurance"
+    ],
+    "correct": 3,
+    "explanation": "A aplicação Rogue Management and aWIPS mostra ameaças, tendências e permite regras e ações de contenção.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "7.2.b"
+  },
+  {
+    "question": "Que vista do WLC mostra interferências não Wi-Fi como Bluetooth ou micro-ondas detetadas pelos AP?",
+    "options": [
+      "Relatórios CleanAir",
+      "O histórico de roaming dos clientes",
+      "As estatísticas de associação dos AP",
+      "O resumo dos túneis de mobilidade"
+    ],
+    "correct": 0,
+    "explanation": "Os AP com CleanAir classificam as interferências e reportam gravidade, duty cycle e canais afetados ao WLC.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "7.3.a"
+  },
+  {
+    "question": "Como ajuda o Catalyst Center com interferências RF?",
+    "options": [
+      "Remove as interferências desligando equipamentos próximos",
+      "Mapas e análises de IA mostram onde afetam",
+      "Move os AP fisicamente com motores",
+      "Muda os materiais do edifício representados no mapa"
+    ],
+    "correct": 1,
+    "explanation": "O Assurance mostra eventos de interferência em mapas, o impacto na Air Quality e tendências, ligando-os a mudanças de RRM.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "7.3.b"
+  },
+  {
+    "question": "Um cliente não se consegue associar e precisa de ver cada passo no 9800. Que ferramenta ajuda mais?",
+    "options": [
+      "show ap summary",
+      "show running-config no WLC",
+      "Um ping do WLC ao gateway por omissão",
+      "RadioActive tracing do MAC"
+    ],
+    "correct": 3,
+    "explanation": "O RadioActive (RA) tracing recolhe debugs detalhados de um MAC em todos os processos (associação, autenticação, DHCP, mobilidade).",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "7.4.a"
+  },
+  {
+    "question": "Onde se verifica no ISE porque falhou um login sem fios 802.1X?",
+    "options": [
+      "Nos RADIUS Live Logs",
+      "Só no armazém de certificados",
+      "No portal de sponsor de convidados",
+      "Na página de cópia e reposição"
+    ],
+    "correct": 0,
+    "explanation": "Os Live Logs mostram cada autenticação com o motivo de falha, a política aplicada e os passos.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "7.4.b"
+  },
+  {
+    "question": "Os Live Logs do ISE mostram 'Supplicant stopped responding to ISE'. Qual é uma causa provável?",
+    "options": [
+      "O AP está em modo FlexConnect",
+      "O cliente rejeita o certificado do ISE",
+      "O SSID usa canais de 20 MHz",
+      "O WLC faz parte de um par SSO"
+    ],
+    "correct": 1,
+    "explanation": "Os clientes abandonam muitas vezes a troca EAP em silêncio quando rejeitam o certificado do servidor; instale a CA nos clientes ou corrija o certificado.",
+    "difficulty": "Difícil",
+    "exam": "wlsi",
+    "domain": "7.4.b"
+  },
+  {
+    "question": "Que funcionalidade do Assurance do Catalyst Center mostra os eventos de entrada e a saúde de um cliente ao longo do tempo?",
+    "options": [
+      "Device 360 do switch de core",
+      "Client 360",
+      "Command Runner",
+      "Repositório de imagens"
+    ],
+    "correct": 1,
+    "explanation": "O Client 360 mostra as fases de entrada (associação, autenticação, DHCP), qualidade RF, roaming e problemas de um cliente.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "7.4.c"
+  },
+  {
+    "question": "Porque usar TACACS+ em vez de RADIUS para o acesso de administração ao WLC?",
+    "options": [
+      "Autoriza cada comando e cifra o corpo",
+      "É o único protocolo que suporta passwords de administração",
+      "É mais rápido para clientes sem fios 802.1X",
+      "Não precisa de qualquer servidor"
+    ],
+    "correct": 0,
+    "explanation": "O TACACS+ separa o AAA, suporta autorização e registo por comando e cifra todo o corpo; o RADIUS só cifra a password.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "8.1"
+  },
+  {
+    "question": "O que deve existir para o caso de os servidores TACACS+ estarem inalcançáveis?",
+    "options": [
+      "Nenhuma conta, para ninguém entrar",
+      "Uma conta de admin local de recurso",
+      "Um SSID aberto de convidados para admins",
+      "Acesso de escrita SNMP v1"
+    ],
+    "correct": 1,
+    "explanation": "Configure a lista de métodos com local como recurso e mantenha as credenciais locais protegidas.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "8.1"
+  },
+  {
+    "question": "Porque ativar 802.1X nas portas de switch onde os AP se ligam?",
+    "options": [
+      "Para os AP se juntarem mais depressa ao WLC após reiniciar",
+      "Para só AP autenticados terem acesso",
+      "Para dar mais energia PoE aos AP",
+      "Para cifrar o tráfego dos clientes no ar"
+    ],
+    "correct": 1,
+    "explanation": "O AP funciona como supplicant (EAP-FAST, PEAP ou EAP-TLS), pelo que um atacante não pode simplesmente ligar-se à porta de um AP.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "8.2"
+  },
+  {
+    "question": "Onde se configuram as credenciais de supplicant 802.1X dos AP num 9800?",
+    "options": [
+      "No RF profile",
+      "No WLAN profile",
+      "No AP join profile",
+      "Nas definições do mobility group"
+    ],
+    "correct": 2,
+    "explanation": "O AP join profile guarda as definições de gestão dos AP, incluindo o tipo EAP 802.1X e as credenciais enviadas aos AP associados.",
+    "difficulty": "Difícil",
+    "exam": "wlsi",
+    "domain": "8.2"
+  },
+  {
+    "question": "O que protege uma ACL do plano de controlo no WLC?",
+    "options": [
+      "O tráfego entre dois AP no mesmo switch",
+      "O tráfego de clientes entre dois SSID",
+      "O tráfego destinado ao próprio controlador",
+      "Só o tráfego multicast enviado para os clientes sem fios"
+    ],
+    "correct": 2,
+    "explanation": "Uma ACL CP filtra o tráfego de gestão e controlo dirigido ao WLC (SSH, HTTPS, SNMP, CAPWAP) vindo de origens não fiáveis.",
+    "difficulty": "Médio",
+    "exam": "wlsi",
+    "domain": "8.3"
+  },
+  {
+    "question": "Depois de aplicar uma ACL do plano de controlo, todos os AP se desligam. O que terá faltado?",
+    "options": [
+      "Negar SSH a partir da sub-rede de admin",
+      "Permitir ICMP a partir da internet",
+      "Permitir CAPWAP UDP 5246/5247",
+      "Permitir NTP a partir dos clientes"
+    ],
+    "correct": 2,
+    "explanation": "Os AP usam controlo CAPWAP (5246) e dados (5247); a ACL tem de os permitir (e DHCP, DNS, RADIUS se necessário) antes do deny implícito.",
+    "difficulty": "Difícil",
+    "exam": "wlsi",
+    "domain": "8.3"
+  }
+]

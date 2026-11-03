@@ -20,7 +20,11 @@ ROOT = Path(__file__).resolve().parents[1]
 BANK_PATH = ROOT / "cricket.json"
 # App 1.2.11 reads only ccst/ccna/ccnp/cyber; the extra tracks (v4.1.0) are
 # ignored by it and read by the site and by catalog-aware apps (1.3+).
-CERTS = ("ccst", "ccna", "ccnp", "cyber", "iiot", "ccstit", "field")
+# v4.2.0 adds automation, wireless, sdx (SD-WAN/SD-Access), dc and collab.
+CERTS = (
+    "ccst", "ccna", "ccnp", "cyber", "iiot", "ccstit", "field",
+    "automation", "wireless", "sdx", "dc", "collab",
+)
 LANGS = ("pt", "en")
 
 UNIQUE_LONGEST_MAX = 0.40

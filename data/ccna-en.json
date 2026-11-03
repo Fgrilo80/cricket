@@ -1675,7 +1675,9 @@
     ],
     "correct": 1,
     "explanation": "CoS (PCP) is lost when the 802.1Q tag is stripped. DSCP (e.g. EF 46, AF41) lives in the IP header. Trust boundary: classify/mark closest to the source and trust DSCP in the core.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "clcor",
+    "domain": "6.3"
   },
   {
     "question": "RESTCONF on IOS-XE typically uses which transport and base URI?",
@@ -1687,7 +1689,9 @@
     ],
     "correct": 1,
     "explanation": "RESTCONF maps HTTP GET/POST/PUT/PATCH/DELETE onto YANG datastores. NETCONF uses SSH 830 and XML RPC. AAA and certificates protect both.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccnaauto",
+    "domain": "3.8"
   },
   {
     "question": "In a controller-based (SDN) network, what does the northbound API connect?",
@@ -1699,7 +1703,9 @@
     ],
     "correct": 1,
     "explanation": "Northbound: apps → controller (REST). Southbound: controller → network devices (NETCONF, RESTCONF, OpenFlow, CLI/SSH). The data plane remains on the switches.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccnaauto",
+    "domain": "5.2"
   },
   {
     "question": "Which multicast address and virtual MAC does HSRP version 2 (IPv4) use?",
@@ -1843,7 +1849,9 @@
     ],
     "correct": 1,
     "explanation": "Ansible installs no agent on IOS. Inventory lists hosts; modules (ios_config, ios_command, ios_facts) use SSH. Classic Puppet/Chef use an agent. YAML describes desired state.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccnaauto",
+    "domain": "5.6"
   },
   {
     "question": "What is authenticated NTP (ntp authenticate / ntp trusted-key) for?",
@@ -1978,7 +1986,9 @@
     ],
     "correct": 3,
     "explanation": "Recent blueprints emphasize Terraform and dropped Chef/Puppet name-dropping. Terraform = declarative IaC; Ansible = playbooks, often agentless over SSH/API.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "ccnaauto",
+    "domain": "5.6"
   },
   {
     "question": "BPDU Filter on an access port — typical effect?",
@@ -2002,7 +2012,9 @@
     ],
     "correct": 1,
     "explanation": "Controller REST APIs use HTTPS plus tokens/OAuth/API keys. SNMP communities and WEP are not the modern northbound auth model.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccnaauto",
+    "domain": "2.7"
   },
   {
     "question": "Containers and VRFs on CCNA: which statement is most accurate?",
@@ -2146,7 +2158,9 @@
     ],
     "correct": 1,
     "explanation": "`priority` enables Low Latency Queuing (LLQ): a strict-priority queue for the class (typically voice), usually with a policer so it cannot starve the link.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "clcor",
+    "domain": "6.4"
   },
   {
     "question": "Between a lightweight AP and a WLC, which statement about CAPWAP is correct?",
@@ -2374,7 +2388,9 @@
     ],
     "correct": 1,
     "explanation": "Band Select (band steering) nudges dual-band capable clients toward 5 GHz by responding more slowly (or not at first) to 2.4 GHz probes, reducing 2.4 GHz congestion. It does not magically put legacy clients on 6 GHz, does not replace CAPWAP, and does not disable OFDM on 5 GHz.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "wlsd",
+    "domain": "2.5"
   },
   {
     "question": "On Cisco EtherChannel, which LACP mode pairing will successfully form a channel between two switches?",
@@ -2554,7 +2570,9 @@
     ],
     "correct": 0,
     "explanation": "With only channels 1, 6 and 11 non-overlapping at 20 MHz, a 40 MHz channel leaves almost no room for a clean channel plan and increases interference. 40 MHz is technically allowed (802.11n), DFS applies to 5 GHz, and channel width has nothing to do with encryption.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "wlsd",
+    "domain": "2.5"
   },
   {
     "question": "After DHCP snooping is enabled on an access switch, clients stop getting addresses from a Cisco IOS DHCP server on a different router. The switch is inserting option 82 with giaddr 0.0.0.0. What is a valid fix?",

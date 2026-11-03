@@ -21,14 +21,14 @@ def among_longest(question: dict) -> bool:
 def row(cert: str, lang: str, questions: list[dict]) -> str:
     n = len(questions)
     if n == 0:
-        return f"{cert:6} {lang:4} n={0:4}"
+        return f"{cert:10} {lang:4} n={0:4}"
     strict = sum(1 for q in questions if is_unique_longest(q))
     among = sum(1 for q in questions if among_longest(q))
     gt = sum(1 for q in questions if exceeds_ratio(q))
     ratios = [length_ratio(q) for q in questions]
     over = "YES" if (strict / n) > 0.40 else "no"
     return (
-        f"{cert:6} {lang:4} {n:5}  {100 * strict / n:6.1f}%  {100 * among / n:6.1f}%  "
+        f"{cert:10} {lang:4} {n:5}  {100 * strict / n:6.1f}%  {100 * among / n:6.1f}%  "
         f"{100 * gt / n:6.1f}%  {gt:6}  {statistics.mean(ratios):5.2f}  "
         f"{statistics.median(ratios):5.2f}  {over}"
     )
@@ -37,7 +37,7 @@ def row(cert: str, lang: str, questions: list[dict]) -> str:
 def main() -> int:
     bank = load_bank()
     print(
-        f"{'cert':6} {'lang':4} {'n':>5}  {'%strict':>7}  {'%among':>7}  "
+        f"{'cert':10} {'lang':4} {'n':>5}  {'%strict':>7}  {'%among':>7}  "
         f"{'%>1.5x':>7}  {'n>1.5x':>6}  {'meanR':>5}  {'medR':>5}  >40%?"
     )
     classic: list[dict] = []

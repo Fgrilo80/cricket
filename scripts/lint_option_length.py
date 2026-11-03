@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Fail when the question bank shows a correct-answer length bias.
 
-Rules (per track: CCST, CCNA, CCNP, Cyber, IIoT, CCST IT and Field; each language separately
+Rules (per track: CCST, CCNA, CCNP, Cyber, IIoT, CCST IT, Field, Automation,
+Wireless, SD-WAN/SD-Access, Data Center and Collaboration; each language separately
 and pooled):
 
 1. The correct option is the unique longest in more than 40% of questions.

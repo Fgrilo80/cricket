@@ -1,5 +1,19 @@
 # Changelog — Cricket / Cisco Quiz (web)
 
+## v4.2.0 — 2026-11-03
+
+- **Fase 3 (novos quizzes):** 5 trilhos novos e 8 quizzes por exame. Todas as perguntas novas são pares PT/EN originais, com explicação, `exam` e `domain` do blueprint atual.
+  - **Automação** (`automation`): CCNA Automation 200-901 CCNAAUTO (`ccnaauto`, **71**) e CCNP Automation AUTOCOR 350-901 v2.0 (`autocor`, **76**). São os sucessores do DevNet.
+  - **Wireless** (`wireless`): WLSD 300-110 (`wlsd`, **65**) e WLSI 300-120 (`wlsi`, **67**). Substituem o ENWLSD 300-425 e o ENWLSI 300-430, retirados.
+  - **SD-WAN e SD-Access** (`sdx`): ENSDWI 300-415 (`ensdwi`, **78**) e SD-Access segundo o ENSLD 300-420, tópicos 2.4–2.5 (`sda`, **70**). Não existe um exame SD-Access próprio.
+  - **Data Center** (`dc`): DCCOR 350-601 v1.2 (`dccor`, **77**).
+  - **Colaboração** (`collab`): CLCOR 350-801 v2.0 (`clcor`, **78**).
+- Os quizzes podem também tirar perguntas `ccna`/`ccnp` existentes que receberam `exam`/`domain` (só acrescentos, 27 perguntas). Isto é feito pelo campo novo `alsoFrom` no catálogo. O `index.html` carrega esses trilhos e junta-os no pool (`poolFor`).
+- Totais por língua: automation 138 · wireless 125 · sdx 148 · dc 68 · collab 76. Total do site: **2642 → 3752**.
+- Compatibilidade: `ccst`/`ccna`/`ccnp`/`cyber` mantêm o formato (só ganharam campos opcionais). Nenhuma pergunta nova tem `topic`. O catálogo passa a `4.2.0`. Detalhes e URLs em `docs/quiz-blueprints-phase3.md`.
+- Validação: lint `question-bank-length` e unittest OK. Paridade PT/EN OK. Semelhança < 0.8 com o banco existente.
+- `app-version.json` **não** foi alterado.
+
 ## v4.1.0 — 2026-11-03
 
 - **Fase 2 (novos quizzes):** 5 quizzes novos. Todas as perguntas novas são pares PT/EN originais, com explicação e domínio do blueprint.
