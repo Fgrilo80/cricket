@@ -9,7 +9,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Switches operam na Camada 2 (Data Link) do modelo OSI e usam endereços MAC para encaminhar frames dentro da mesma LAN.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "O que significa a sigla OSI?",
@@ -21,7 +23,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "O modelo OSI (Open Systems Interconnection) é um modelo conceitual de 7 camadas usado para descrever como os dispositivos de rede se comunicam.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "Qual camada do modelo OSI é responsável pelo endereçamento lógico e encaminhamento?",
@@ -33,7 +37,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "A Camada de Rede (Camada 3) é responsável pelo endereçamento lógico (IP) e pelo encaminhamento de pacotes entre redes diferentes.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "Qual é a diferença entre um hub e um switch?",
@@ -45,7 +51,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Hubs são dispositivos de camada 1 que replicam o sinal para todas as portas. Switches são inteligentes e usam tabela MAC.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "O que é um endereço IP privado?",
@@ -57,7 +65,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Endereços IP privados (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) não são roteáveis na internet e são usados em redes internas.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "2.1"
   },
   {
     "question": "Qual comando Cisco IOS mostra a tabela de endereços MAC aprendidos?",
@@ -69,7 +79,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O comando 'show mac address-table' exibe a tabela de endereços MAC aprendidos pelo switch.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "O que é um VLAN?",
@@ -81,7 +93,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "VLANs (Virtual LANs) permitem segmentar logicamente uma rede física em múltiplas redes isoladas no mesmo switch.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "Qual é a velocidade padrão de uma porta Ethernet Gigabit?",
@@ -93,7 +107,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Ethernet Gigabit em cobre (1000BASE-T) opera a 1000 Mbps (1 Gbps) em Cat5e/Cat6. Não é Fast Ethernet (100 Mbps) nem 10 Gbps.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.2"
   },
   {
     "question": "O que faz o comando 'ping'?",
@@ -105,7 +121,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O comando ping usa o protocolo ICMP para testar a conectividade entre dois dispositivos.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "Qual é a máscara de sub-rede padrão para uma rede Classe C?",
@@ -117,7 +135,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Redes IPv4 Classe C usam máscara padrão 255.255.255.0 (/24): 24 bits de rede e 8 de host. Classe A é /8 e Classe B é /16.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "O que é PoE (Power over Ethernet)?",
@@ -129,7 +149,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "PoE permite que dispositivos como câmeras IP e telefones IP recebam energia através do mesmo cabo Ethernet usado para dados.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "Qual protocolo é usado para atribuição automática de endereços IP?",
@@ -141,7 +163,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "DHCP (Dynamic Host Configuration Protocol) atribui automaticamente endereços IP e outras configurações de rede.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "Qual é a função do protocolo ARP?",
@@ -153,7 +177,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "ARP (Address Resolution Protocol) mapeia endereços IP para endereços MAC na mesma rede local.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "O que é um default gateway?",
@@ -165,7 +191,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O default gateway é o dispositivo (geralmente um router) que encaminha pacotes destinados a redes externas.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "4.4"
   },
   {
     "question": "O que é uma colisão em uma rede Ethernet?",
@@ -177,7 +205,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "Colisões ocorrem em redes half-duplex quando dois dispositivos transmitem simultaneamente.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "Qual é a função principal de um firewall?",
@@ -189,7 +219,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Firewalls inspecionam e controlam o tráfego de rede com base em regras de segurança predefinidas.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "6.1"
   },
   {
     "question": "O que é SSID em uma rede wireless?",
@@ -201,7 +233,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "SSID (Service Set Identifier) é o nome da rede wireless que os clientes veem ao procurar redes disponíveis.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.4"
   },
   {
     "question": "Qual protocolo é usado para gerenciamento remoto seguro de dispositivos Cisco?",
@@ -213,7 +247,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "SSH (Secure Shell) fornece acesso remoto criptografado e seguro, ao contrário do Telnet que é inseguro.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.4"
   },
   {
     "question": "O que significa 'crossover cable'?",
@@ -225,7 +261,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "Cabo crossover é usado para conectar dispositivos semelhantes (switch a switch ou PC a PC) diretamente.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Qual é a porta padrão do protocolo HTTP?",
@@ -237,7 +275,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "HTTP usa a porta TCP 80 por padrão; HTTPS (HTTP sobre TLS) usa a 443. Não confundir com DNS (53), SSH (22) ou Telnet (23).",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "O que é um loopback interface?",
@@ -261,7 +301,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Este comando salva a configuração em execução (RAM) na configuração de inicialização (NVRAM).",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "O que é NAT (Network Address Translation)?",
@@ -273,7 +315,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "NAT permite que múltiplos dispositivos em uma rede privada compartilhem um único endereço IP público.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "2.1"
   },
   {
     "question": "Qual é a diferença entre TCP e UDP?",
@@ -285,7 +329,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "TCP oferece entrega confiável com controle de fluxo e retransmissão. UDP é mais rápido mas não garante entrega.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "O que é um trunk port em um switch?",
@@ -297,7 +343,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Trunk ports transportam tráfego de múltiplas VLANs entre switches usando tags 802.1Q.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "Qual comando exibe a tabela de encaminhamento em um router Cisco?",
@@ -309,7 +357,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "O comando 'show ip route' exibe a tabela de encaminhamento com todas as rotas conhecidas.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "O que é um endereço MAC?",
@@ -321,7 +371,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O endereço MAC é um identificador físico único de 48 bits atribuído pelo fabricante à interface de rede.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "Qual é a função do protocolo STP (Spanning Tree Protocol)?",
@@ -345,7 +397,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "'up/up' significa que a interface está ativa fisicamente (Layer 1) e logicamente (Layer 2).",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "Qual é a porta padrão do protocolo SSH?",
@@ -357,7 +411,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O SSH usa a porta TCP 22 por padrão e cifra a sessão de gestão. Telnet usa 23 em claro; HTTPS é 443.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "O que é um broadcast domain?",
@@ -369,7 +425,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Broadcast domain é o conjunto de dispositivos que recebem mensagens de broadcast enviadas por qualquer um deles.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "Qual comando é usado para configurar uma interface com endereço IP?",
@@ -393,7 +451,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "WPA3 é o padrão de segurança wireless mais recente, oferecendo melhor proteção contra ataques.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "6.3"
   },
   {
     "question": "Qual é a função do comando 'show version'?",
@@ -405,7 +465,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "O comando 'show version' exibe a versão do software IOS, modelo do hardware e tempo de atividade.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "O que é um patch panel?",
@@ -417,7 +479,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "Patch panel é um dispositivo passivo que organiza e facilita as conexões de cabos em um rack de rede.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "4.2"
   },
   {
     "question": "Qual é a função do comando 'show interfaces status'?",
@@ -429,7 +493,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "O comando 'show interfaces status' exibe o status operacional de todas as portas do switch.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "Qual é a diferença entre half-duplex e full-duplex?",
@@ -441,7 +507,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Half-duplex permite comunicação em apenas um sentido por vez (com colisões). Full-duplex permite ambos os sentidos simultaneamente.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "O que é um console cable?",
@@ -453,7 +521,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Console cable (geralmente RJ45 para DB9) é usado para conexão serial direta ao dispositivo para configuração inicial via CLI.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "Qual protocolo é usado para sincronização de tempo em redes?",
@@ -465,7 +535,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "NTP (Network Time Protocol) é usado para sincronizar relógios de dispositivos em rede com alta precisão.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "O que é um 'err-disabled' em uma interface Cisco?",
@@ -477,7 +549,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Err-disabled é um estado de proteção onde a interface é automaticamente desabilitada devido a erros como loops ou violação de port-security.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "Qual é a função principal de um Access Point wireless?",
@@ -489,7 +563,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Access Points (APs) permitem que dispositivos wireless se conectem à rede cabeada, atuando como bridge.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "O que é CDP (Cisco Discovery Protocol)?",
@@ -501,7 +577,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "CDP permite que dispositivos Cisco descubram informações sobre dispositivos vizinhos diretamente conectados.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "O que acontece quando você usa o comando 'no shutdown' em uma interface?",
@@ -537,7 +615,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Management VLAN é usada para tráfego de gerenciamento (SSH, SNMP, etc.) e deve ser isolada por segurança.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "Qual é a principal vantagem de usar switches gerenciáveis?",
@@ -549,7 +629,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Switches gerenciáveis oferecem recursos avançados como VLANs, QoS, SNMP, port-security e CLI.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "O que é 'port-security' em switches Cisco?",
@@ -561,7 +643,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "Port-security permite restringir o acesso a uma porta com base em endereços MAC autorizados.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "Qual é a função do comando 'show cdp neighbors'?",
@@ -573,7 +657,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "O comando 'show cdp neighbors' exibe dispositivos Cisco vizinhos descobertos pelo CDP.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "O que é um 'SFP' em equipamentos Cisco?",
@@ -585,7 +671,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "SFP (Small Form-factor Pluggable) é um módulo compacto hot-swappable para portas de fibra ou cobre.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "Qual cabo Ethernet usa conector RJ-45?",
@@ -597,7 +685,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Ethernet em cobre usa tipicamente par trançado terminado em RJ-45. Fibra usa conectores óticos (ex.: LC/SC), não RJ-45 no caminho ótico.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Qual dispositivo encaminha com base no IP de destino?",
@@ -609,7 +699,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Os routers encaminham entre redes IP diferentes com base no IP de destino na tabela de rotas. Switches encaminham na LAN com base no MAC.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "4.4"
   },
   {
     "question": "Qual protocolo resolve nomes de host para IP?",
@@ -621,7 +713,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O DNS traduz nomes legíveis em endereços IP (e o inverso). Não é DHCP (atribuição de endereços) nem NAT (tradução de endereços).",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "Um switch unmanaged permite criar VLANs?",
@@ -633,7 +727,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Switches unmanaged são plug-and-play: sem CLI/GUI, sem VLANs nem afinação de STP. Switches managed suportam VLANs, segurança e monitorização.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "O que é phishing?",
@@ -645,7 +741,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Phishing usa engenharia social para induzir a revelar credenciais ou abrir links maliciosos. Por si só não é um exploit de buffer overflow.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "Qual cabo transmite dados por luz?",
@@ -657,7 +755,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "A fibra ótica transporta dados em pulsos de luz e é imune a interferência eletromagnética (EMI). Cobre pode sofrer EMI; wireless sofre ruído RF.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "SSH é preferível a Telnet porque?",
@@ -669,7 +769,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "SSH (TCP 22) cifra sessões CLI remotas; Telnet (TCP 23) envia credenciais e tráfego em claro e deve evitar-se em produção.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.4"
   },
   {
     "question": "Qual camada OSI trata de segmentos TCP/UDP?",
@@ -681,7 +783,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "A camada OSI 4 (Transporte) trata segmentos extremo-a-extremo com TCP (fiável) e UDP (sem conexão). A 3 é encaminhamento IP; a 2 são tramas/MAC.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "Qual é um bom hábito de palavra-passe?",
@@ -693,7 +797,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Passwords únicas e fortes mais MFA reduzem o impacto de roubo de credenciais. Partilhar uma password ou desativar atualizações aumenta o risco.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "Qual comando Windows mostra o IP da máquina?",
@@ -705,7 +811,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "No Windows, ipconfig (ou ipconfig /all) mostra IP, máscara, gateway e DNS. Em Linux/macOS usa-se tipicamente ip addr ou ifconfig.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.4"
   },
   {
     "question": "Qual incidente de segurança deves reportar?",
@@ -717,7 +825,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Pedidos inesperados de credenciais por email/chat são phishing clássico: verificar por outro canal e reportar ao IT/SOC. Não enviar passwords.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "Cat5e/Cat6 descrevem o que?",
@@ -729,7 +839,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "A categoria UTP (Cat5e, Cat6, etc.) define os limites de desempenho do cabo (velocidade/frequência). O conector sozinho não define a categoria.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Qual é o comprimento máximo recomendado de um cabo de par trançado de cobre (UTP) em Ethernet?",
@@ -741,7 +853,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "A norma Ethernet limita o canal de cobre a 100 m (90 m de horizontal + 10 m de patch cords) para manter o orçamento de atenuação e o tempo de ida e volta. Distâncias maiores exigem fibra ou um repetidor/switch intermediário.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Qual é a principal diferença prática entre as pinagens T568A e T568B?",
@@ -753,7 +867,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Ambos os padrões usam os mesmos quatro pares; apenas os pares laranja e verde estão invertidos. Um cabo com T568A numa ponta e T568B na outra é crossover. Em instalações modernas o T568B é o mais comum nos EUA.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Quando se deve preferir fibra monomodo em vez de multimodo?",
@@ -765,7 +881,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Fibra monomodo tem núcleo estreito (~9 µm) e usa laser; a dispersão é baixa, permitindo dezenas de km. Multimodo (50/62,5 µm) é mais barata em transceivers de curta distância (até algumas centenas de metros) mas não escala bem em longas ligações.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "O que faz a função Auto-MDIX numa porta Ethernet?",
@@ -777,7 +895,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Auto-MDIX cruza eletronicamente os pares de TX/RX quando necessário, pelo que um cabo straight-through funciona entre switch-switch, PC-PC ou switch-PC. Em equipamento moderno o Auto-MDIX está normalmente ativo com auto-negociação.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Um PC sem DHCP mostra o endereço 169.254.23.10. O que isso indica?",
@@ -789,7 +909,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "169.254.0.0/16 é a gama APIPA (Automatic Private IP Addressing). O sistema operacional escolhe um endereço nessa gama quando o DHCP falha, permitindo comunicação local limitada mas sem encaminhamento para outras redes.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "Quantos endereços de host utilizáveis existem numa sub-rede IPv4 /26?",
@@ -801,7 +923,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Uma máscara /26 deixa 6 bits de host: 2^6 = 64 endereços no total. Reservam-se o endereço de rede e o de broadcast, restando 62 hosts utilizáveis.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "Qual prefixo identifica um endereço IPv6 link-local?",
@@ -813,7 +937,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Endereços link-local começam por FE80::/10 e são obrigatórios em cada interface IPv6. Servem para NDP e comunicação no mesmo enlace; os routers não os encaminham para outros links.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "Qual é o endereço de loopback IPv6?",
@@ -825,7 +951,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "::1/128 é o loopback IPv6, equivalente a 127.0.0.1 em IPv4. Pacotes para ::1 nunca saem da máquina e servem para testar a stack IPv6 local.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "Qual é a função principal do ICMP?",
@@ -837,7 +965,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "ICMP (e ICMPv6) transporta sinalização da camada 3: echo request/reply (ping), destination unreachable, time exceeded (usado pelo traceroute), redirect, etc. Não atribui endereços nem cifra dados de aplicação.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "Como é que o traceroute descobre cada salto até ao destino?",
@@ -849,7 +979,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Cada sonda parte com TTL 1, 2, 3… Quando o TTL chega a zero, o router descarta o pacote e devolve ICMP Time Exceeded. O endereço de origem dessa mensagem identifica o salto. No destino chega uma resposta (porta unreachable ou echo reply).",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "Qual é a porta padrão do DNS?",
@@ -861,7 +993,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "DNS usa a porta 53/UDP para consultas típicas e 53/TCP para transferências de zona e respostas grandes. Confundi-la com 67 (DHCP servidor), 22 (SSH) ou 80 (HTTP) é um erro comum de troubleshooting.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "O que define um domínio de colisão em Ethernet?",
@@ -873,7 +1007,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Num hub, todas as portas formam um único domínio de colisão. Um switch cria um domínio de colisão por porta (full-duplex elimina colisões). Isto é distinto do domínio de broadcast, que coincide tipicamente com a VLAN.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "O que é CSMA/CD?",
@@ -885,7 +1021,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Carrier Sense Multiple Access with Collision Detection era usado em Ethernet partilhada (hubs, half-duplex). Hoje as redes switched full-duplex não precisam de CSMA/CD porque cada lado transmite em pares/canais distintos.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Quais são as três gamas de endereços IPv4 privados definidas no RFC 1918?",
@@ -897,7 +1035,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "RFC 1918 reserva 10.0.0.0/8, 172.16.0.0/12 (172.16–172.31) e 192.168.0.0/16 para uso interno. Estes prefixos não são encaminhados na Internet pública; a saída usa NAT ou um proxy.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "2.1"
   },
   {
     "question": "O que significa CIDR?",
@@ -909,7 +1049,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "CIDR abandonou as classes fixas (/8, /16, /24) e permite prefixos como /22 ou /13. Isso torna o endereçamento e o sumarização na Internet (e nas LANs) muito mais eficientes.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "Para que serve o endereço IPv4 127.0.0.1?",
@@ -921,7 +1063,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Toda a gama 127.0.0.0/8 é loopback; 127.0.0.1 é o mais usado. Um ping a 127.0.0.1 confirma que a stack IP da máquina está operacional, independentemente do cabo ou do NIC.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "Qual afirmação descreve corretamente unicast, broadcast e multicast?",
@@ -933,7 +1077,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Unicast entrega a um único endereço. Broadcast (255.255.255.255 ou o broadcast da sub-rede) chega a todos os nós do domínio de broadcast. Multicast (224.0.0.0/4 ou FF00::/8) entrega apenas aos recetores que aderiram ao grupo.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "Qual é a vantagem do cabo STP (Shielded Twisted Pair) face ao UTP?",
@@ -945,7 +1091,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "STP adiciona blindagem que rejeita EMI em ambientes industriais, junto a motores ou elevadores. Exige ligação correta à terra; caso contrário a blindagem pode piorar o ruído. UTP basta na maioria dos escritórios.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Qual é a potência aproximada disponível em PoE+ (IEEE 802.3at) na porta PD?",
@@ -957,7 +1105,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "802.3af (PoE) entrega até 15,4 W no PSE (~12,95 W no PD). 802.3at (PoE+) sobe para 30 W no PSE (~25,5 W no PD), o bastante para APs e câmaras PTZ. 802.3bt (PoE++) vai ainda mais alto.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "Qual comando Cisco dá um resumo rápido do estado IP de todas as interfaces?",
@@ -969,7 +1119,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "show ip interface brief lista cada interface com IP, estado de linha (up/down) e protocolo (up/down). É o primeiro comando de troubleshooting de Camada 3 numa caixa Cisco.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "Um link Ethernet está up mas com muitos CRC errors e desempenho baixo. Qual causa é mais provável?",
@@ -981,7 +1133,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Duplex mismatch gera colisões tardias, CRC e throughput péssimo porque um lado transmite quando o outro não espera. Cabo mau, SFP sujo ou EMI também produzem CRC. DNS ou ACLs não incrementam contadores CRC.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Qual camada do modelo OSI trata de bits, voltagens, conectores e meios físicos?",
@@ -993,7 +1147,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "A Camada Física define o meio (cobre, fibra, rádio), conectores, sinalização elétrica/ótica e bit timing. Problemas de cabo, SFP ou potência PoE são quase sempre Camada 1.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "Qual é a sequência correta do three-way handshake TCP?",
@@ -1005,7 +1161,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O cliente envia SYN, o servidor responde SYN-ACK e o cliente fecha o handshake com ACK. Só depois começa a transferência de dados. FIN inicia o encerramento; RST aborta a sessão.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "Porque se prefere 'enable secret' a 'enable password' no IOS?",
@@ -1017,7 +1175,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "enable password é legado e pode aparecer em claro ou com cifração tipo 7 (reversível). enable secret armazena um hash unidirecional. Em IOS recente usa-se ainda type 8/9 (scrypt/PBKDF2) via 'enable algorithm-type'.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "Qual é a VLAN predefinida nas portas de acesso de um switch Cisco não configurado?",
@@ -1029,7 +1189,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Por omissão todas as portas pertencem à VLAN 1, que também é a native VLAN de trunks 802.1Q. Boas práticas movem dados e gestão para fora da VLAN 1 para reduzir risco de hopping e tráfego de controlo misturado.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "O que caracteriza uma porta de acesso (access port) num switch?",
@@ -1041,7 +1203,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Uma access port mapeia para uma VLAN (switchport access vlan X). O frame para o PC não leva tag 802.1Q. Trunks, pelo contrário, marcam as VLANs para o vizinho (exceto a native).",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "O que é o LLDP?",
@@ -1053,7 +1217,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "LLDP é o equivalente aberto ao CDP. Permite descobrir fabricante, hostname, port ID e capacidades (incluindo LLDP-MED para telefones). Útil em ambientes multi-vendor onde o CDP não existe.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "Qual é o MTU Ethernet clássico (payload) em bytes?",
@@ -1065,7 +1231,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O MTU padrão de Ethernet é 1500 bytes de payload IP. Frames menores que 64 bytes são runts; frames jumbo (~9000) exigem suporte ponta-a-ponta. 576 é o IPv4 minimum reassembly MTU, não o Ethernet.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "Porque é que cabos de cobre mal afastados de motores elétricos falham mais vezes?",
@@ -1077,7 +1245,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Campos eletromagnéticos induzem tensão nos pares. Isso corrompe bits, sobe CRC/input errors e pode derrubar o link. A mitigação é afastamento, cabo blindado, fibra (imune a EMI) e boa terra.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Quantos bits tem um endereço MAC IEEE e como se escreve habitualmente?",
@@ -1089,7 +1259,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O MAC clássico tem 48 bits: 24 bits de OUI (fabricante) + 24 bits de série. Representa-se em hex. Endereços MAC-64 existem em alguns contextos IEEE, mas Ethernet usa 48 bits.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "Qual é o tamanho de um endereço IPv4 e de um endereço IPv6?",
@@ -1101,7 +1273,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "IPv4 usa 32 bits (notação decimal pontuada). IPv6 usa 128 bits (oito grupos hexadecimais). O espaço IPv6 é o que permite SLAAC, múltiplos endereços por interface e o fim prático do esgotamento de IPv4 público.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "Qual é a máscara de sub-rede predefinida de uma rede Classe A?",
@@ -1113,7 +1287,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Classe A (1.0.0.0–126.0.0.0) usa /8, ou 255.0.0.0. Classe B é /16 e Classe C /24. Em redes modernas pensa-se em CIDR, mas as máscaras de classe ainda aparecem em exames e em equipamento legado.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "2.1"
   },
   {
     "question": "Qual porta TCP usa o SMTP para envio clássico de correio entre servidores?",
@@ -1125,7 +1301,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "SMTP usa a porta 25 entre MTAs. Submissão autenticada de clientes costuma ser 587 (submission) ou 465 (SMTPS). 110 é POP3, 143 é IMAP e 443 é HTTPS.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "Qual é a ordem correta do processo DORA do DHCP?",
@@ -1137,7 +1315,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O cliente faz broadcast DHCPDISCOVER; o servidor responde DHCPOFFER; o cliente escolhe com DHCPREQUEST; o servidor confirma com DHCPACK e o lease fica ativo. Sem este diálogo o host cai em APIPA.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "Porque é que Wi-Fi usa CSMA/CA em vez de CSMA/CD?",
@@ -1149,7 +1329,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Num meio half-duplex partilhado, o recetor do próprio emissor fica saturado — não dá para 'ouvir a colisão' como no cobre partilhado. 802.11 usa collision avoidance: carrier sense, intervalos IFS, backoff aleatório e opcionalmente RTS/CTS.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Qual é uma diferença típica entre 2,4 GHz e 5 GHz em Wi-Fi?",
@@ -1161,7 +1343,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Frequências mais baixas penetram melhor e chegam mais longe; 2,4 GHz só tem três canais não sobrepostos (1, 6, 11) e sofre de Bluetooth/micro-ondas. 5 GHz (e 6 GHz) oferece mais espectro e débito, com menor alcance.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "O padrão 802.11ax é comercialmente conhecido como?",
@@ -1173,7 +1357,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "802.11ax = Wi-Fi 6 (e 6E na banda de 6 GHz). Introduz OFDMA, TWT e 1024-QAM para melhor eficiência em ambientes densos. Wi-Fi 5 é 802.11ac; Wi-Fi 4 é 802.11n.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Numa avaria de conectividade, qual deve ser o primeiro ponto a verificar segundo a abordagem por camadas?",
@@ -1185,7 +1371,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Sem sinal físico (LED apagado, cabo partido, SFP ausente, interface administratively down) nada nas camadas superiores funciona. Confirmar Camada 1 evita horas a depurar OSPF ou DNS em vão.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.1"
   },
   {
     "question": "Em que cenário a fibra ótica é claramente preferível ao cobre UTP?",
@@ -1197,7 +1385,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Fibra ignora EMI, não conduz eletricidade (evita loops de terra entre edifícios) e alcança km. Cobre continua certo para PoE e runs curtos até 100 m. A consola usa cabo série/USB, não Ethernet.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Qual comando mostra a configuração atualmente ativa na RAM de um dispositivo Cisco?",
@@ -1209,7 +1399,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "running-config é a configuração em RAM, a que o dispositivo está a usar. startup-config está em NVRAM e só é lida no boot. Alterações em running-config perdem-se no reload se não forem gravadas com copy run start.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "Como se distingue o modo User EXEC do Privilege EXEC no IOS?",
@@ -1221,7 +1413,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O prompt '>' é User EXEC (pings, alguns shows). O comando enable (com secret) sobe para '#' Privilege EXEC, de onde se entra em configuration terminal. Separar estes níveis é a base do controlo de acesso CLI.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "Qual é a porta padrão do HTTPS e o que o distingue do HTTP?",
@@ -1233,7 +1427,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "HTTPS encapsula HTTP sobre TLS na porta 443, protegendo confidencialidade e integridade. HTTP na 80 não cifra — credenciais e cookies viajam visíveis. Em gestão de equipamento deve preferir-se HTTPS/SSH a HTTP/Telnet.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "Numa sub-rede 192.168.10.0/24, qual é o endereço de broadcast?",
@@ -1245,7 +1441,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Com /24 os 8 bits de host a 1 dão .255. O .0 é o endereço de rede; .1–.254 são hosts. Enviar para 192.168.10.255 entrega o frame a todos os nós desse domínio de broadcast.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "O cabo Cat6, relativamente ao Cat5e, destina-se sobretudo a quê?",
@@ -1257,7 +1455,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Cat6 tem especificações mais apertadas de crosstalk até 250 MHz e permite 10GBASE-T em canais curtos. Cat5e chega bem a 1 Gb/s em 100 m. Cat6A estende 10 Gb/s aos 100 m.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Qual conetor ótico é o mais comum em transceivers SFP/SFP+ modernos?",
@@ -1269,7 +1469,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "SFP usa quase sempre duplex LC. SC é mais antigo e maior (ainda visto em GBIC/patch panels). ST é baioneta legado. BNC é coaxial; DB-9 é consola série; RJ-11 é telefone.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Um utilizador faz ping ao IP do servidor com sucesso mas o browser não abre o site pelo nome. Qual é a causa mais provável?",
@@ -1281,7 +1483,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Ping por IP prova Camadas 1–3 até ao servidor. Resolver o nome exige DNS (porta 53). Verificar ipconfig/ifconfig, o servidor DNS configurado e um nslookup/dig isola o problema em segundos.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "Um cabo Ethernet straight-through (direto) liga tipicamente que dispositivos?",
@@ -1293,7 +1497,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O cabo direto mantém a pinagem igual nas duas pontas e liga MDI (NIC/router) a MDI-X (switch/hub). PC-PC ou switch-switch clássicos usavam crossover; o Auto-MDIX moderno torna o tipo quase irrelevante.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Quantos domínios de colisão cria um switch Ethernet de 24 portas em full-duplex?",
@@ -1305,7 +1511,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 3,
     "explanation": "Cada porta de switch é um domínio de colisão próprio. Em full-duplex as colisões deixam de ocorrer, mas o isolamento por porta mantém-se: 24 portas = 24 domínios. Um hub de 24 portas seria um único domínio.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "O que delimita um domínio de broadcast IPv4 numa LAN clássica?",
@@ -1317,7 +1525,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Broadcasts L2 (ff:ff:ff:ff:ff:ff) ficam dentro da VLAN. Um router (ou SVI/L3) não reencaminha broadcasts entre redes, por isso cada VLAN/sub-rede é um domínio de broadcast.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.4"
   },
   {
     "question": "No modelo OSI, como se chamam as PDUs das camadas Transporte, Rede, Enlace e Física?",
@@ -1329,7 +1539,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Convenção comum: L4 segmento (TCP) ou datagrama (UDP), L3 pacote, L2 frame, L1 bits. A encapsulação adiciona cabeçalhos ao descer as camadas.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "Qual camada OSI é responsável por HTTP, DNS e SMTP?",
@@ -1341,7 +1553,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "HTTP, DNS e SMTP são protocolos de aplicação. No TCP/IP a camada de Aplicação absorve também sessão e apresentação do OSI.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "A camada Internet do modelo TCP/IP corresponde principalmente a que camada OSI?",
@@ -1353,7 +1567,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "A camada Internet trata de IP, ICMP e encaminhamento — funções da camada de Rede (L3) do OSI. Enlace+Física mapeiam para Network Access/Link.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "Quantos endereços IPv4 de host utilizáveis há numa sub-rede /30?",
@@ -1365,7 +1581,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Uma /30 tem 2 bits de host: 4 endereços no total. Reservam-se rede e broadcast, restam 2 hosts — típico em ligações ponto-a-ponto entre routers.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "Para que se usa por vezes uma IPv4 /31 em ligações ponto-a-ponto?",
@@ -1389,7 +1607,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Os GUA atuais estão em 2000::/3 (começam frequentemente por 2 ou 3). FE80::/10 é link-local, FF00::/8 multicast, FC00::/7 unique local (fd00::/8 na prática).",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "Qual prefixo identifica multicast IPv6?",
@@ -1401,7 +1621,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Todo o multicast IPv6 começa por FF. Exemplos: FF02::1 all-nodes link-local, FF02::2 all-routers. Não há broadcast IPv6; usa-se multicast.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "O que representa o endereço IPv6 :: (dois dois-pontos só)?",
@@ -1413,7 +1635,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": ":: é o endereço unspecified (::/128), usado como origem antes de o host ter endereço. Loopback é ::1. Não se atribui :: a uma interface.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "Wi-Fi 5 corresponde a que padrão IEEE?",
@@ -1425,7 +1649,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Wi-Fi 4 = 802.11n, Wi-Fi 5 = 802.11ac (sobretudo 5 GHz), Wi-Fi 6 = 802.11ax, Wi-Fi 7 = 802.11be.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Quais canais de 20 MHz em 2,4 GHz são os clássicos sem sobreposição?",
@@ -1437,7 +1663,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Em 2,4 GHz os canais 1, 6 e 11 (espaçados 25 MHz) são a escolha clássica para minimizar sobreposição. Canais adjacentes interferem uns com os outros.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Um micro-ondas na sala de estar costuma degradar sobretudo que banda Wi-Fi?",
@@ -1449,7 +1677,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Muitos micro-ondas emitem ruído em torno de 2,4 GHz. A banda de 5/6 GHz está noutro intervalo e sofre menos desta interferência (mas tem menos alcance).",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Qual é o risco principal de uma rede Wi-Fi aberta (sem palavra-passe)?",
@@ -1461,7 +1691,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Sem encriptação de camada 2, quem estiver associado (ou por vezes mesmo à escuta) pode ler frames. Use WPA2/WPA3 e, em redes públicas, um VPN.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "6.3"
   },
   {
     "question": "O que caracteriza um ataque de ransomware?",
@@ -1473,7 +1705,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Ransomware é malware que cifra dados e pede pagamento. Mitigação: backups offline, atualizações, filtros de correio e não abrir anexos duvidosos. Não se deve treinar o pagamento como solução.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "Um 'técnico' desconhecido liga para o help-desk a pedir a palavra-passe do administrador. Isto é sobretudo:",
@@ -1485,7 +1719,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Engenharia social explora pessoas, não bugs de protocolo. Nunca se revelam credenciais por telefone sem procedimento de verificação. Reporta-se o incidente.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "Deixar a palavra-passe de fábrica num router doméstico é perigoso porque:",
@@ -1497,7 +1733,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Fabricantes publicam defaults (admin/admin, etc.). Qualquer cliente Wi-Fi ou WAN exposta pode usá-las. Altera-se na instalação e desativa-se WPS fraco.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "6.3"
   },
   {
     "question": "Olha para este output de ping. O que indica o resultado?",
@@ -1510,6 +1748,8 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "Quatro ecos ICMP respondidos, 0% loss e RTT ~12 ms mostram alcance IP até ao destino. Isto não prova HTTP/DNS; só ICMP echo.",
     "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.3",
     "cli": "PC> ping 8.8.8.8\nPinging 8.8.8.8 with 32 bytes of data:\nReply from 8.8.8.8: bytes=32 time=12ms TTL=117\nReply from 8.8.8.8: bytes=32 time=11ms TTL=117\nReply from 8.8.8.8: bytes=32 time=13ms TTL=117\nReply from 8.8.8.8: bytes=32 time=12ms TTL=117\n\nPing statistics for 8.8.8.8:\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\nApproximate round trip times in milli-seconds:\n    Minimum = 11ms, Maximum = 13ms, Average = 12ms"
   },
   {
@@ -1523,6 +1763,8 @@ window.QUIZ_BANK = [
     "correct": 1,
     "explanation": "Cada salto recebe um probe com TTL crescente. Se o router não enviar Time Exceeded (política ICMP, firewall, perda), vê-se * * *. O traceroute pode mesmo assim chegar ao destino nos saltos seguintes.",
     "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.3",
     "cli": "PC> tracert 203.0.113.10\nTracing route to 203.0.113.10 over a maximum of 30 hops\n\n  1    <1 ms    <1 ms    <1 ms  192.168.1.1\n  2     4 ms     4 ms     5 ms  10.20.0.1\n  3    12 ms    11 ms    12 ms  198.51.100.1\n  4     *        *        *\n  5    28 ms    27 ms    29 ms  203.0.113.10\n\nTrace complete."
   },
   {
@@ -1535,7 +1777,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Ping ao gateway prova L2/L3 local. Falha para um IP público aponta para WAN, NAT, firewall de perímetro ou rota default em falta — não para DNS (usou-se um IP).",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "Dois PCs na mesma VLAN têm o mesmo endereço IPv4. Qual sintoma é típico?",
@@ -1547,7 +1791,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "IPs duplicados geram conflitos ARP: o tráfego oscila entre os dois MACs. Windows mostra 'IP address conflict'. Cada host na VLAN precisa de um IPv4 único.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "O LED de link de uma porta de switch está apagado. Qual deve ser o primeiro passo de help-desk?",
@@ -1559,7 +1805,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Sem link light não há camada 1. Confirma-se cabo, porta, speed/duplex só depois de haver link. Problemas L3 (IP/DNS) vêm a seguir.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "4.1"
   },
   {
     "question": "Quando um switch recebe um frame unicast cujo MAC de destino ainda não está na tabela CAM, o que faz?",
@@ -1571,7 +1819,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Unknown unicast flooding: o switch trata o destino desconhecido como se precisasse de chegar a toda a VLAN. Assim que vê o MAC de origem numa resposta, grava a porta na CAM.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "Qual registo DNS traduz um nome de host para um endereço IPv6?",
@@ -1583,7 +1833,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "A mapeia nome→IPv4; AAAA (quad-A) mapeia nome→IPv6; MX é correio; PTR é o inverso (IP→nome).",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "Para que serve o comando nslookup (ou dig) no troubleshooting?",
@@ -1595,7 +1847,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "nslookup/dig interrogam um resolvedor DNS. Se o ping a um IP funciona mas o nome falha, o problema é DNS, não a WAN.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "Um PC comunica com outros da mesma VLAN mas não com a Internet, e o default gateway está em branco. O que falta?",
@@ -1607,7 +1861,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Tráfego intra-VLAN não precisa de gateway. Para outras redes o host envia ao default gateway (router/SVI da VLAN). Sem gateway, só a sub-rede local.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.4"
   },
   {
     "question": "Qual é a diferença essencial entre running-config e startup-config num dispositivo Cisco?",
@@ -1619,7 +1875,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Alterações na RAM perdem-se no reload se não se fizer copy running-config startup-config. show running-config vê o ativo; show startup-config vê o guardado.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "O cabo Cat6A, relativamente ao Cat6, destina-se sobretudo a quê?",
@@ -1631,7 +1889,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Cat6 costuma limitar 10 Gb/s a distâncias curtas (~55 m em alguns canais). Cat6A foi desenhado para 10GBASE-T a 100 m. Cat5e fica-se tipicamente por 1 Gb/s a 100 m.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "O endereço IPv4 255.255.255.255 é:",
@@ -1643,7 +1903,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "255.255.255.255 não é encaminhado por routers. É o broadcast local. O broadcast dirigido de uma /24 seria, por exemplo, 192.168.1.255.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "O endereço IPv4 224.0.0.1 é usado como:",
@@ -1655,7 +1917,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "224.0.0.0/24 são multicasts locais de link (não são encaminhados). 224.0.0.1 = all hosts; 224.0.0.2 = all routers; 224.0.0.5/6 = OSPF; 224.0.0.10 = EIGRP.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "Qual métrica descreve a variação do atraso entre pacotes, crítica para voz?",
@@ -1667,7 +1931,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Jitter é a variação da latência. A voz é sensível a jitter e perda; usa-se jitter buffer e QoS (EF). Largura de banda é capacidade; latência é atraso médio.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.2"
   },
   {
     "question": "Os primeiros 24 bits de um endereço MAC IEEE identificam o quê?",
@@ -1679,7 +1945,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Um MAC de 48 bits divide-se em OUI (24 bits, fabricante) e identificador de dispositivo (24 bits). O bit U/L e o bit I/G no primeiro octeto têm significado especial.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "O que é um ataque de negação de serviço (DoS) numa rede?",
@@ -1691,7 +1959,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "DoS (e DDoS distribuído) torna o serviço indisponível por sobrecarga. Mitigação: ACLs, rate-limit, anti-DDoS no perímetro, CoPP nos routers. Não é ransomware.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "O princípio do menor privilégio no acesso de help-desk significa:",
@@ -1703,7 +1973,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Least privilege reduz o impacto de uma conta comprometida. Em Cisco usa-se AAA (RADIUS/TACACS+) com privilégios por utilizador, não uma password enable partilhada.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "No Windows, ipconfig /all mostra o servidor DHCP. Para que serve essa informação?",
@@ -1715,7 +1987,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "DHCP Server e DHCP Lease Obtained/Expires distinguem um IP dinâmico de um estático. Se o servidor for inesperado, pode haver rogue DHCP.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.4"
   },
   {
     "question": "Aproximadamente quantos watts entrega o PoE clássico IEEE 802.3af na porta PD?",
@@ -1727,7 +2001,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "802.3af (PoE): 15,4 W na PSE, cerca de 12,95 W no PD após perdas no cabo. 802.3at (PoE+) ~30/25,5 W. 802.3bt (Type 3/4) sobe a 60/90 W.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "Quando se prefere traceroute a um simples ping?",
@@ -1739,7 +2015,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Ping testa um destino. Traceroute lista o caminho (TTL expirado) e ajuda a ver se a falha é LAN, WAN do ISP ou o servidor remoto.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "Ocultar o SSID (não difundir o nome da rede) é uma defesa forte?",
@@ -1751,7 +2029,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Beacons sem SSID não escondem a rede de quem captura probes/data. Use WPA2/WPA3 e 802.1X quando precisar de controlo real. Hidden SSID ainda complica o cliente legítimo.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "6.3"
   },
   {
     "question": "Um pedido DHCP Discover é enviado como:",
@@ -1763,7 +2043,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "No DORA, Discover e Request são broadcasts. O cliente usa 0.0.0.0 como origem. Offer e Ack vêm do servidor (por vezes também em broadcast).",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "Porque é que UDP é usado por DHCP, DNS (queries) e NTP em vez de TCP?",
@@ -1775,7 +2057,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "UDP é connectionless e de baixo overhead. A aplicação trata de retries (DHCP reenvia Discover; DNS pode repetir ou ir a outro servidor). Transferências de zona DNS podem usar TCP.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "Qual afirmação descreve melhor a encapsulação ao descer o modelo OSI?",
@@ -1787,7 +2071,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "A aplicação passa dados a L4, que adiciona o cabeçalho TCP/UDP, L3 adiciona IP, L2 adiciona cabeçalho e FCS Ethernet, L1 serializa bits. Na subida, os cabeçalhos são retirados.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "Numa rede 10.0.0.0/8, 172.16.0.0/12 ou 192.168.0.0/16 o tráfego para a Internet pública exige normalmente:",
@@ -1799,7 +2085,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "RFC 1918 não é encaminhável na Internet. O CPE/router faz PAT para um IP público, ou usa-se IPv6 GUA. Sem gateway e sem tradução, os privados não saem.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "2.1"
   },
   {
     "question": "Wi-Fi 4 corresponde a que padrão IEEE?",
@@ -1811,7 +2099,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "802.11n (Wi-Fi 4) introduziu MIMO e 40 MHz e opera em 2,4 e 5 GHz. 802.11g é só 2,4 GHz a 54 Mb/s; 802.11ac é Wi-Fi 5.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Um toner/cable tester no help-desk serve sobretudo para:",
@@ -1823,7 +2113,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Ferramentas de camada 1: toner (probe) acha o cabo no painel; tester certifica continuidade e mapa de fios. Não substitui ping/DNS, mas evita horas a caçar o par errado.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Em redes públicas (café, aeroporto), qual hábito reduz o risco de interceptação?",
@@ -1835,7 +2127,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Wi-Fi público pode ser aberto ou partilhado. VPN cifram até ao concentrador; HTTPS protege o sítio. Evite operações bancárias em portais cativos sem TLS visível.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "Um ping a um endereço fe80:: de IPv6 no Windows falha sem zona. O que falta?",
@@ -1847,7 +2141,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Link-local existe em todas as interfaces. Sem %zone o SO não sabe por que NIC enviar. ping fe80::1%Ethernet  ou -6 com zone id.",
-    "difficulty": "Difícil"
+    "difficulty": "Difícil",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "Num cabo UTP com mapa de fios 1-2 abertos e 3-6 ok, que velocidade Ethernet é mais provável e porquê?",
@@ -1859,7 +2155,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "10/100BASE-TX usa sobretudo os pares 1-2 e 3-6. 1000BASE-T exige os quatro pares. Um tester a mostrar apenas dois pares bons aponta tipicamente para Fast Ethernet, não Gigabit.",
-    "difficulty": "Difícil"
+    "difficulty": "Difícil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Um AP anuncia Wi-Fi 6E. Que banda adicional fica disponível relativamente ao Wi-Fi 6 clássico?",
@@ -1871,7 +2169,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Wi-Fi 6E é 802.11ax na banda de 6 GHz. Oferece mais espectro e canais largos com menos interferência herdada de 2,4/5 GHz, mas alcance tipicamente menor e clientes têm de ser 6E.",
-    "difficulty": "Difícil"
+    "difficulty": "Difícil",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Em troubleshooting CCST, o PC tem IP, gateway e DNS corretos, ping ao gateway ok, mas HTTPS a um site falha e HTTP na porta 80 também. Ping a 8.8.8.8 falha. Qual hipótese é a mais sólida?",
@@ -1883,7 +2183,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "L3 local está ok (IP/gateway/ping LAN). Falha para IPs públicos indica caminho WAN, NAT ou firewall de perímetro — não DNS (usou-se IP) nem só TLS.",
-    "difficulty": "Difícil"
+    "difficulty": "Difícil",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "Qual afirmação sobre PoE IEEE 802.3bt (Type 3/4) é a mais correta para suporte técnico?",
@@ -1895,7 +2197,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "802.3bt (PoE++) sobe a potência face a af/at. Continua a haver classificação/negociação PSE-PD; um PD incompatível ou cabo mau pode ficar sem energia suficiente.",
-    "difficulty": "Difícil"
+    "difficulty": "Difícil",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "Um switch mostra a porta em err-disabled após ligar um hub barato em cascata. Qual causa CCST é plausível?",
@@ -1907,7 +2211,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Err-disabled é estado de proteção. Hubs e loops geram BPDUs inesperados, colisões ou flaps; com BPDU Guard ou storm control a porta pode ir a err-disabled. Recupera-se com shutdown / no shutdown após corrigir a causa.",
-    "difficulty": "Difícil"
+    "difficulty": "Difícil",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "Em IPv6, um host tem só FE80::/10 e consegue pingar vizinhos no mesmo enlace, mas não abre sites na Internet. O que falta tipicamente?",
@@ -1919,7 +2225,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "Link-local serve no enlace. Tráfego off-link precisa de GUA (2000::/3) ou mecanismo de tradução, mais um router default aprendido por Router Advertisement ou DHCPv6.",
-    "difficulty": "Difícil"
+    "difficulty": "Difícil",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "O que distingue Wi-Fi 6E de Wi-Fi 6 (802.11ax) em termos de espectro?",
@@ -1931,7 +2239,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Wi-Fi 6 e 6E partilham a física 802.11ax; o “E” (Extension) refere-se ao uso da banda de 6 GHz, com mais canais largos e menos ruído legado.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Um cliente antigo só 802.11ac (Wi-Fi 5) consegue associar-se a um SSID exclusivo 6 GHz de um AP Wi-Fi 6E?",
@@ -1943,7 +2253,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "A banda de 6 GHz exige hardware 6E no cliente. Dispositivos Wi-Fi 5/6 sem rádio 6 GHz continuam nas bandas 2,4/5 GHz do AP, se existirem.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Qual vantagem típica da banda de 6 GHz em ambientes densos de escritório?",
@@ -1955,7 +2267,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "6 GHz oferece canais novos e menos ocupados; a penetração é em geral pior que 2,4 GHz. Planeia-se mais APs e cobertura, não só débito de pico.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Num switch de acesso, a porta Gi1/0/12 fica em estado err-disabled e o syslog mostra %PM-4-ERR_DISABLE: bpduguard. Qual é a causa mais provável?",
@@ -1979,7 +2293,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Na banda de 6 GHz o Wi-Fi Alliance exige WPA3. Clientes só-WPA2 ficam de fora desse SSID (podem usar 2,4/5 GHz se o AP anunciar SSIDs nessas bandas).",
-    "difficulty": "Difícil"
+    "difficulty": "Difícil",
+    "exam": "ccst-net",
+    "domain": "6.3"
   },
   {
     "question": "Ferramenta de cabo: mapa OK, mas certificação falha em NEXT elevado entre pares. Qual interpretação CCST é a mais correta?",
@@ -1991,7 +2307,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "NEXT (near-end crosstalk) alto indica interferência entre pares — terminacão má, destorção excessiva ou cabo danificado. Re-terminar ou substituir o cabo; não é um sintoma de VLAN/DNS.",
-    "difficulty": "Difícil"
+    "difficulty": "Difícil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "PC obtém IP via DHCP, ping ao gateway falha, e `arp -a` não mostra o MAC do gateway. Qual passo de troubleshooting é o mais útil a seguir?",
@@ -2003,7 +2321,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Sem ARP do gateway não há L2 até ao default gateway. Confirma cabo, VLAN correta, estado da porta e se o gateway está no mesmo broadcast domain — DNS/HTTP só depois.",
-    "difficulty": "Difícil"
+    "difficulty": "Difícil",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "PoE: um AP Class 4 (802.3at) não liga num switch só 802.3af. Qual é a explicação mais correta?",
@@ -2015,7 +2335,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Tipo/classe PoE limita a potência. Dispositivos at/bt em portas só-af podem não negociar potência suficiente. Cat5e/Cat6 transportam PoE; o limite é o PSE.",
-    "difficulty": "Difícil"
+    "difficulty": "Difícil",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "Um utilizador liga-se ao Wi-Fi certo, recebe IP, mas o portal cativo não abre e a Internet falha. Ping a 8.8.8.8 funciona. Qual hipótese CCST é a mais plausível?",
@@ -2027,7 +2349,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Ping a um IP público OK indica encaminhamento básico. Portais cativos dependem de DNS/HTTP redirect — DNS errado, HTTPS estrito ou bloqueio do domínio do portal são causas típicas.",
-    "difficulty": "Difícil"
+    "difficulty": "Difícil",
+    "exam": "ccst-net",
+    "domain": "3.4"
   },
   {
     "question": "Em troubleshooting, `ipconfig` mostra APIPA 169.254.x.x. O que isto indica tipicamente num PC Ethernet corporativo?",
@@ -2039,7 +2363,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "169.254.0.0/16 é APIPA: o host desistiu do DHCP. Verifica cabo, VLAN de acesso, interface up, servidor DHCP e ip helper-address no gateway da VLAN.",
-    "difficulty": "Difícil"
+    "difficulty": "Difícil",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "Um telefone IP PoE liga-se, mas o PC atrás do telefone (passthrough) não tem rede. O telefone tem voz OK. Qual verificação é a mais relevante?",
@@ -2051,7 +2377,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Telefone+PC no mesmo cabo usa voice VLAN + data VLAN (ou multi-VLAN no telefone). Voz OK com dados mortos aponta para VLAN de dados/cabo PC ou config do telefone — não para Wi-Fi.",
-    "difficulty": "Difícil"
+    "difficulty": "Difícil",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "Como um host IPv6 tipicamente obtém o prefixo de rede com SLAAC?",
@@ -2063,7 +2391,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Com SLAAC, o host usa informações do Router Advertisement (ICMPv6) do router local para saber o prefixo e parâmetros; pode combinar com EUI-64/privacy.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "Qual prática reduz melhor o risco de phishing no email corporativo?",
@@ -2075,7 +2405,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Phishing explora confiança humana: validar remetente e links, MFA e reportar ao SOC/IT são controlos práticos de primeira linha.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "Porque ativar STP PortFast numa porta de acesso para um PC ou impressora?",
@@ -2099,7 +2431,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Fixar speed/duplex num extremo enquanto o outro faz auto-negociação costuma criar mismatch de duplex: CRC, runts e late collisions sob carga.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "O que é que o `switchport port-security` protege principalmente numa porta de acesso?",
@@ -2111,7 +2445,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Port security limita quais MACs podem usar uma porta de acesso (estático, dinâmico ou sticky). Em violação pode protect, restrict ou shutdown — controlo L2 básico para hosts finais.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "O DHCP snooping num switch de acesso serve principalmente para:",
@@ -2159,7 +2495,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 3,
     "explanation": "O TFTP (Trivial File Transfer Protocol) usa UDP 69 e serve sobretudo para copiar imagens IOS e configs running/startup de/para um servidor. É leve, mas sem autenticação nem encriptação; use só em redes de gestão confiáveis. O FTP acrescenta login e TCP; SCP/SFTP são mais seguros quando disponíveis.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "O que permite tipicamente configurar ip helper-address numa interface de router?",
@@ -2183,7 +2521,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Um rogue AP é um access point wireless não autorizado—muitas vezes ligado a um switch corporativo por um utilizador, ou um evil twin de um atacante. Pode contornar NAC/802.1X, expor tráfego e interferir no plano RF. Controllers e WIDS/WIPS ajudam a detetar e conter rogues; esconder o SSID não os impede.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "Em wireless 802.1X (WPA2/WPA3-Enterprise), como é que o EAP-TLS autentica tipicamente o cliente em comparação com o PEAP?",
@@ -2195,7 +2535,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "O EAP-TLS baseia-se em certificados: o cliente apresenta um certificado (e valida o servidor). O PEAP cria um túnel TLS até ao servidor de autenticação e costuma correr um método interno com palavra-passe (ex. MSCHAPv2), por isso os clientes precisam mais de credenciais do que de certificados. Ambos usam 802.1X com backend RADIUS (ex. ISE); nenhum é um PSK partilhado.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "6.3"
   },
   {
     "question": "Para que serve principalmente o Cisco CleanAir numa rede wireless?",
@@ -2255,7 +2597,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O CDP (Cisco Discovery Protocol) é proprietário e costuma estar ligado por omissão em equipamento Cisco. O LLDP (IEEE 802.1AB) é neutro quanto ao fabricante e preferível em ambientes mistos. Ambos anunciam identidade e capacidades no enlace; nenhum elege papéis OSPF/STP nem cifra a base de vizinhos com IPsec por omissão.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "Um técnico monta um cabo de rede Ethernet copper straight-through segundo as normas TIA-568. Qual afirmação está correta?",
@@ -2267,7 +2611,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 3,
     "explanation": "Um cabo straight-through termina os dois extremos com a mesma cablagem TIA-568 (A-A ou B-B). Misturar 568A num extremo e 568B no outro produz um crossover (pares TX/RX trocados). Mapeamento aleatório invertido não define straight-through, e os jumpers de fibra não usam o esquema de cores 568A/B do cobre.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Para que se usa tipicamente o 802.1Q tunneling (Q-in-Q / double tagging)?",
@@ -2315,7 +2661,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 3,
     "explanation": "UPC (Ultra Physical Contact) tem face polida plana; APC (Angled Physical Contact) tem tipicamente ~8° de ângulo para a reflexão ir para o cladding em vez de voltar para o laser — importante em ligações analógicas/PON e muitas monomodo. APC e UPC não se devem acoplar: o desalinhamento geométrico causa perda elevada e possível dano. A cor do boot costuma indicar (verde APC, azul UPC), mas a cor sozinha não define o polimento, e o estilo não é “só multimodo vs só monomodo”.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Face ao PoE mais antigo (IEEE 802.3af/at), o que é que o IEEE 802.3bt (Type 3/Type 4, muitas vezes chamado PoE++) permite principalmente numa porta de switch compatível?",
@@ -2327,7 +2675,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "O IEEE 802.3bt alarga o Power over Ethernet além do 802.3af (~15 W) e 802.3at/PoE+ (~30 W), usando mais pares e orçamentos mais altos (tipicamente ~60 W Type 3 e ~90 W Type 4 no equipamento que fornece energia). Continua em cabos Ethernet de cobre com dados e energia a partilhar pares após negociação — não é SFP de fibra, não é “só DC em vez de dados”, e não é um protocolo de routing.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "No Wi-Fi 6 (802.11ax), qual é o objetivo principal do OFDMA (Orthogonal Frequency-Division Multiple Access)?",
@@ -2351,7 +2701,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O port security associa uma porta de acesso a um conjunto limitado de MACs de origem permitidos (estáticos, sticky ou aprendizagem dinâmica até um máximo) e aplica uma ação de violação (protect, restrict ou shutdown). Serve para controlar que endpoints podem usar a porta — não é encriptação MACsec de todas as tramas, não desativa STP/VLANs no uplink, e não transforma a porta numa routed /30.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "Na gestão de vulnerabilidades, o que representam CVE e CVSS?",
@@ -2363,7 +2715,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "O CVE (Common Vulnerabilities and Exposures) atribui um ID público (ex.: CVE-2024-12345) a uma vulnerabilidade conhecida para vendors e defensores falarem do mesmo problema. O CVSS (Common Vulnerability Scoring System) produz uma pontuação de gravidade 0–10 a partir de métricas de explorabilidade e impacto, para priorizar patches. Não é sintaxe ACL/VLAN Cisco, hash de malware, nem capacidade PPS de firewall.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "Em cibersegurança, qual é a diferença entre uma vulnerabilidade e um exploit?",
@@ -2375,7 +2729,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Uma vulnerabilidade é uma falha ou fraqueza (bug de software, má configuração, processo fraco) que um atacante pode abusar. Um exploit é a técnica ou código concreto que usa essa fraqueza para obter um efeito (elevação de privilégios, crash, roubo de dados). Malware, assinaturas AV, MTU, regras de firewall e túneis VPN são conceitos diferentes.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "Em que difere principalmente um ataque evil twin de um access point rogue simples?",
@@ -2387,7 +2743,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Um rogue AP é qualquer access point wireless não autorizado na ou perto da rede. Um evil twin é um AP hostil que imita deliberadamente um SSID legítimo (e muitas vezes um portal cativo) para os clientes se ligarem e abusarem de credenciais ou tráfego. Nem todo rogue AP é evil twin; portais WLC, PoE, Bluetooth e DNS DHCP são temas diferentes.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "No controlo de acesso físico, em que diferem principalmente os cartões RFID dos telemóveis/cartões NFC num leitor de porta?",
@@ -2411,7 +2769,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Uma DMZ é uma zona de perímetro segmentada para serviços expostos à Internet, isolando-os da LAN confiável com acesso externo controlado. Não substitui o firewall por um hub, não desativa DHCP/DNS no campus nem achata o endereçamento num /8 do ISP.",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "6.1"
   },
   {
     "question": "Em que difere principalmente o switching cut-through do store-and-forward num switch Ethernet típico?",
@@ -2435,7 +2795,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "A cache ARP (tabela ARP) mapeia endereços IPv4 para MAC para entrega no enlace. As entradas costumam expirar para o host voltar a resolver se o MAC ou o endereçamento do peer mudar. Não é cache DNS, nem cópia da CAM via CDP, e o ARP continua a aplicar-se a IPv4 (IPv6 usa Neighbor Discovery).",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "Num contador de interface de um switch Cisco, o que indicam principalmente os “giants” (oversized) e os “runts” (undersized)?",
@@ -2447,7 +2809,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Giants excedem o tamanho máximo de frame Ethernet/MTU e runts ficam abaixo do mínimo (~64 bytes). Contagens elevadas apontam muitas vezes para mismatch de duplex, má cablagem ou NICs com falha. Não se explicam só por STP a bloquear, por “tráfego OSPF/keepalive normal”, nem por bindings de DHCP snooping.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "Para que serve principalmente um OTDR (Optical Time Domain Reflectometer) em links de fibra ótica?",
@@ -2459,7 +2823,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Um OTDR injeta impulsos óticos e usa backscatter/reflexões para mapear eventos (ruturas, emendas, conectores) e estimar a perda ao longo da fibra. Não é ferramenta ICMP/duplex em cobre, não se limita a Cat6A/PoE, nem polisca conectores.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Em que diferem principalmente os conectores de fibra LC, SC e ST na prática comum de cablagem campus?",
@@ -2471,7 +2837,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "LC é um conector pequeno com trinco, muito usado em óticas SFP/SFP+; SC é quadrado push-pull maior; ST usa baioneta e é comum em instalações multimodo antigas. São conectores óticos (não RJ-45), não limitados por regras PoE em cobre, e o duplex refere-se a duas fibras/portas—não a uma propriedade CWDM exclusiva do SC.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Fisicamente, em que diferem principalmente a fibra monomodo (SMF) e a multimodo (MMF) na planta campus/WAN comum?",
@@ -2483,7 +2851,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "SMF tem núcleo ~9 µm e é alimentada por lasers para longas distâncias campus/WAN. MMF tem núcleo 50/62,5 µm e costuma usar LED/VCSEL em troços curtos dentro de edifícios. Nenhuma é cobre/PoE, e o duplex refere-se a duas fibras—não a uma propriedade CWDM exclusiva da SMF.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Um cliente Wi-Fi mostra RSSI de -65 dBm e o noise floor é -90 dBm. Qual é a relação sinal-ruído (SNR) e porque é importante?",
@@ -2495,7 +2865,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 3,
     "explanation": "SNR = RSSI − noise floor = -65 − (-90) = 25 dB. Quanto maior a margem acima do ruído, maior a modulação/débito que o cliente sustenta com menos retransmissões. Não é uma soma nem apenas um dos dois valores.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Um técnico está a fazer um cabo de patch novo e já tem os fios UTP na ordem T568B. Que ferramenta fixa de forma permanente o conector RJ-45 ao cabo?",
@@ -2507,7 +2879,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O crimper empurra os pinos dourados do conector através do isolamento de cada condutor e prende o conector à bainha. A punch-down termina fios em patch panels e tomadas keystone (blocos 110/Krone), o gerador de tom e sonda serve para identificar cabos e o certificador apenas testa a ligação.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Um PC Windows recebeu um endereço do scope DHCP errado. O scope já foi corrigido. Que comandos fazem o PC largar o lease atual e pedir logo um novo?",
@@ -2519,7 +2893,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 0,
     "explanation": "O ipconfig /release envia um DHCPRELEASE e remove o endereço, e o ipconfig /renew inicia um novo pedido DHCP (DORA). /flushdns e /registerdns tratam só de DNS, arp -d limpa os mapeamentos MAC-IP e netstat -r e route print apenas mostram rotas.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "Estás a passar cabo acima de um teto falso usado como retorno de ar (espaço plenum). Que tipo de capa é obrigatório e porquê?",
@@ -2531,7 +2907,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Os espaços plenum transportam ar ambiental. As capas CMP (plenum) usam materiais de baixo fumo e baixo halogéneo para um incêndio não empurrar fumo tóxico pelo HVAC. PVC CM/CMR serve para percursos não-plenum; gel é para exterior húmido; a blindagem trata de EMI, não do código de fumo/fogo.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Antes de acoplar dois patch cords de fibra num armário de campus, qual é a melhor prática para evitar perda elevada ou falhas por conector sujo?",
@@ -2543,7 +2921,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Contaminação nas faces de fibra é causa frequente de perda de inserção elevada e ligações intermitentes. Inspecione com microscópio e limpe com cassete/toalhete aprovado antes de acoplar. Laços apertados arriscam dano; crimps RJ45 são para UTP de cobre; o PoE não limpa ferrules óticas.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Para que serve principalmente um loopback plug RJ-45 Ethernet na resolução de problemas de um PC ou porta de switch?",
@@ -2555,7 +2935,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Um loopback plug faz curto ou mapeia TX para RX no mesmo conector para LEDs de link/atividade e diagnósticos locais provarem o caminho de hardware da interface sem um peer remoto. Não é conversor de fibra, não substitui STP/Auto-MDIX e não é autenticador 802.1X.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "Para que serve principalmente um Time Domain Reflectometer (TDR) de cobre na resolução de problemas de cablagem Ethernet de par entrançado?",
@@ -2567,7 +2949,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Um TDR de cobre injeta um impulso e cronometra reflexões para localizar opens, shorts e falhas graves de impedância no par entrançado. O OTDR é o equivalente em fibra; o TDR não certifica sozinho alien crosstalk, não substitui por completo wiremap/comprimento nem negoceia PoE/Auto-MDIX.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Na cablagem de fibra dúplex, o que garante principalmente manter a polaridade A-to-B (Method A / cruzada)?",
@@ -2579,7 +2963,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Em fibra dúplex o TX de um extremo tem de encontrar o RX do outro. A polaridade A-to-B (Method A) troca as posições dos fios para cada transmissor aterrar no receptor do peer. Não força comprimentos de onda iguais, não mistura OM3 com OS2 à vontade, nem entrega PoE sobre fibra.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "O que verifica principalmente um certificador de cabo que um simples toner/sonda tipicamente não consegue?",
@@ -2591,7 +2977,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Um certificador mede o desempenho elétrico face aos limites TIA/ISO da categoria (comprimento, perda, NEXT, etc.). Um toner/sonda serve sobretudo para localizar e identificar cabos; não certifica a categoria, não prova PoE em todos os pinos nem depende do estado STP/Auto-MDIX.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Num switch Cisco com definições por omissão, o que acontece a um MAC aprendido dinamicamente após cerca de 300 segundos sem tramas dessa origem?",
@@ -2603,7 +2991,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "As entradas MAC dinâmicas expiram (300 s por omissão na Cisco). Quando desaparecem, o unicast desconhecido para esse MAC inunda até ser reaprendido. O aging não cria sticky, não usa CDP nem bloqueia portos via STP.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "Um switch PoE já alimenta muitos telefones e access points. Liga-se uma câmara nova que não recebe energia, embora os dados funcionem noutros portos. Qual é a razão mais provável?",
@@ -2615,7 +3005,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 3,
     "explanation": "Um switch PoE tem um orçamento total de energia partilhado por todos os portos. Quando se esgota, novos dispositivos alimentados ficam sem energia mesmo com o porto a funcionar. Cabos cruzados, modo trunk e velocidade não controlam a entrega de PoE.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "Um armário só tem Ethernet em cobre até à secretária, mas o uplink para o core é fibra monomodo. Que dispositivo permite juntar esses meios sem substituir todo o percurso?",
@@ -2627,7 +3019,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Um conversor de meios (ou um switch multi-meios) faz a ponte entre Ethernet em cobre e fibra óptica para as tramas atravessarem a mudança de meio. Um patch sozinho não junta PHY eléctrico e óptico; punch-down e toner servem para terminação e rastreio em cobre, não para conversão de meios.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "Um técnico precisa que um desktop desligado na LAN arranque para as ferramentas de gestão remota o alcançarem. Que mecanismo envia normalmente uma trama Ethernet especial que a NIC trata como sinal de wake?",
@@ -2639,7 +3033,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "O Wake-on-LAN usa um magic packet cujo payload repete o MAC do alvo; uma NIC capaz activa um sinal de wake na placa. DHCP, Hellos OSPF e Power TLVs do CDP não ligam um PC desligado sobre Ethernet normal.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.3"
   },
   {
     "question": "Um técnico precisa de medir quanta potência óptica se perde num cabo de fibra e num troço curto já instalado. Qual é o par de ferramentas habitual para esse teste de perda de inserção?",
@@ -2651,7 +3047,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "A perda de inserção mede-se lançando um nível óptico conhecido com uma fonte de luz e lendo o que chega com um medidor de potência; a diferença em dB é a perda. O OTDR serve melhor para localizar cortes, emendas e reflexões ao longo do troço, não para um valor simples de perda ponta-a-ponta. TDR de cobre e estimativas da máquina de fusão não substituem o par fonte/medidor na certificação da perda óptica.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Um novo cabo Cat6 passa num testador simples de continuidade/wire map (os pinos 1-8 ligam todos ponta a ponta), mas a ligação fica instável a 1 Gbps. Um certificador de cabos indica split pair. O que significa?",
@@ -2663,7 +3061,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "Um split pair é um erro de cablagem em que cada pino chega ao pino certo na outra ponta, por isso um teste básico de wire map ou continuidade passa, mas os fios que levam um sinal vêm de dois pares entrançados diferentes. Sem a torção a funcionar nesse sinal, a diafonia próxima (NEXT) sobe e a ligação falha ou oscila a velocidades mais altas. Só um testador que meça diafonia, como um certificador, o apanha. Não é um condutor partido, uma falha de comprimento nem uma mistura T568A/B (essa aparece como pares cruzados no wire map).",
-    "difficulty": "Médio"
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Um pequeno escritório liga o switch e o NAS a uma extensão com proteção contra picos. Num corte de luz curto os dois equipamentos desligam-se na mesma e o NAS tem de reconstruir o array. Que equipamento os teria mantido a funcionar?",
@@ -2675,7 +3075,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Um protetor contra picos só desvia sobretensões; não guarda energia, por isso quando a rede elétrica falha os equipamentos desligam-se logo, seja qual for o valor de joules. Uma UPS tem uma bateria que aguenta a carga em cortes curtos, e muitos modelos avisam o NAS ou servidor por USB ou pela rede para desligar em segurança antes de a bateria acabar. Um condicionador de energia suaviza ruído e pequenas quedas mas não cobre um corte, e um injetor PoE continua a tirar energia da rede elétrica.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "4.2"
   },
   {
     "question": "A informática mudou o site da intranet para um servidor novo e atualizou o registo DNS há uma hora. Todos os PCs chegam ao servidor novo exceto um portátil Windows, que continua a abrir o endereço antigo. Que comando nesse portátil resolve mais depressa?",
@@ -2687,7 +3089,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O Windows guarda as respostas DNS em cache durante o TTL do registo, por isso um portátil que consultou o nome antes da mudança pode continuar a usar o endereço antigo durante algum tempo. O ipconfig /flushdns esvazia essa cache e a próxima consulta vai ao servidor DNS (o ipconfig /displaydns mostra o que está em cache). Renovar o lease DHCP não atualiza registos DNS, o reset do Winsock repara a camada de sockets e a tabela ARP liga endereços IP a MACs, não nomes a IPs.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "Um utilizador não chega a um servidor web. Corres tracert até ele: os saltos 1 a 3 respondem com tempos e, a partir do salto 4, todas as linhas mostram '* * * Pedido excedeu o tempo limite' até ao limite de 30 saltos. O que é que isto te diz primeiro?",
@@ -2699,7 +3103,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "O tracert mostra cada router que devolve uma mensagem ICMP Time Exceeded. Se os saltos 1 a 3 respondem, o PC, o gateway e os primeiros routers funcionam, portanto o gateway está bem. Asteriscos a partir do salto 4 indicam que o equipamento seguinte não responde ou descarta o tráfego (também pode só filtrar ICMP, por isso confirma). A resolução do nome é feita uma vez no início e o servidor web não entra nos saltos intermédios.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "Uma impressora de rede do escritório recebe o endereço IP por DHCP. De poucas em poucas semanas os utilizadores deixam de conseguir imprimir e a impressora aparece a funcionar noutro endereço. Qual é a correção duradoura mais simples?",
@@ -2711,7 +3117,9 @@ window.QUIZ_BANK = [
     ],
     "correct": 2,
     "explanation": "Uma reserva DHCP associa um endereço IP ao MAC da impressora, por isso o servidor dá-lhe sempre o mesmo endereço e os PCs continuam a encontrá-la. Uma concessão mais curta torna as mudanças mais prováveis, não menos, desligar o DHCP para todos estraga os outros dispositivos e a porta do switch não tem nada a ver com o IP que a impressora recebe.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "Um utilizador configura um IP estático num PC novo. Pouco depois o Windows avisa de um conflito de endereço IP e outro PC da mesma rede começa a perder a ligação ao acaso. Qual é a causa mais provável?",
@@ -2723,6 +3131,568 @@ window.QUIZ_BANK = [
     ],
     "correct": 1,
     "explanation": "O Windows mostra um conflito de IP quando outro dispositivo responde ao ARP com o mesmo endereço. Um endereço estático tem de ser único e deve ficar fora da gama do DHCP, ou estar reservado, para o servidor nunca o dar a outro. Um cabo estragado, um nome DNS ou um gateway errado não fazem dois equipamentos usar o mesmo IP.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.3"
+  },
+  {
+    "question": "Um link é de 1 Gb/s, mas uma cópia de ficheiro só chega aos 380 Mb/s. Que termo descreve os 380 Mb/s?",
+    "options": [
+      "Latência, medida em megabits",
+      "Largura de banda, que é sempre o valor medido",
+      "Débito efetivo (throughput)",
+      "Jitter, a variação do tamanho dos pacotes"
+    ],
+    "correct": 2,
+    "explanation": "A largura de banda é a capacidade do link (1 Gb/s); o throughput é o débito realmente obtido, reduzido por overhead, congestionamento e pelos equipamentos.",
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.2"
+  },
+  {
+    "question": "Quer medir o throughput entre dois hosts dentro da LAN, sem usar a Internet. Que ferramenta serve?",
+    "options": [
+      "iPerf entre os dois hosts",
+      "Um site público de teste de velocidade",
+      "nslookup contra o servidor DNS interno",
+      "tracert ao default gateway com tempos ativos"
+    ],
+    "correct": 0,
+    "explanation": "O iPerf gera tráfego entre um servidor e um cliente que controla, por isso mede o caminho na LAN. Os testes de velocidade web medem o caminho até um servidor de teste na Internet.",
+    "difficulty": "Difícil",
+    "exam": "ccst-net",
+    "domain": "1.2"
+  },
+  {
+    "question": "Uma videochamada está aos solavancos, embora o teste de velocidade mostre 200 Mb/s. Que medidas importam mais para voz e vídeo em tempo real?",
+    "options": [
+      "Latência, jitter e perda de pacotes",
+      "O código de resposta do servidor DNS",
+      "Só a velocidade de download em Mb/s",
+      "A duração da concessão DHCP"
+    ],
+    "correct": 0,
+    "explanation": "O tráfego em tempo real precisa de atraso baixo e estável. Jitter ou perdas altas estragam o áudio e o vídeo mesmo com largura de banda de sobra.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.2"
+  },
+  {
+    "question": "Uma universidade liga edifícios num mesmo campus com fibra própria. Como se chama normalmente este tipo de rede?",
+    "options": [
+      "CAN (rede de campus)",
+      "WAN que abrange vários países",
+      "MAN que cobre toda uma região urbana",
+      "PAN (rede pessoal)"
+    ],
+    "correct": 0,
+    "explanation": "Uma CAN liga várias LAN em edifícios de um só campus. Uma MAN abrange uma cidade, uma WAN grandes distâncias e uma PAN alguns metros à volta de uma pessoa.",
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.3"
+  },
+  {
+    "question": "Um relógio inteligente, um telemóvel e uns auriculares sem fios comunicam por Bluetooth. Que tipo de rede é esta?",
+    "options": [
+      "SAN de armazenamento",
+      "MAN",
+      "WAN",
+      "PAN"
+    ],
+    "correct": 3,
+    "explanation": "Uma rede pessoal (PAN) cobre equipamentos a poucos metros de uma pessoa, normalmente por Bluetooth.",
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "1.3"
+  },
+  {
+    "question": "Numa topologia em estrela, o que acontece quando o cabo de um único PC é cortado?",
+    "options": [
+      "Só esse PC perde ligação",
+      "Toda a rede vai abaixo",
+      "Todos os PC do mesmo switch reiniciam",
+      "O tráfego passa pelo PC seguinte"
+    ],
+    "correct": 0,
+    "explanation": "Cada equipamento tem o seu próprio link ao switch central, por isso a falha de um cabo só afeta esse equipamento; o ponto único de falha é o equipamento central.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.3"
+  },
+  {
+    "question": "Que topologia dá a cada local um link direto a todos os outros, com a maior redundância e custo?",
+    "options": [
+      "Barramento com um cabo partilhado",
+      "Hub-and-spoke com um local central",
+      "Ponto a ponto só entre dois locais",
+      "Malha completa (full mesh)"
+    ],
+    "correct": 3,
+    "explanation": "Uma malha completa liga cada nó a todos os outros: n(n-1)/2 links. Aguenta muitas falhas, mas é cara; a malha parcial e o hub-and-spoke custam menos.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.3"
+  },
+  {
+    "question": "Uma empresa aluga máquinas virtuais na cloud e gere ela própria o SO e as aplicações. Que modelo de cloud é este?",
+    "options": [
+      "SaaS",
+      "PaaS",
+      "IaaS",
+      "Um cluster privado nas instalações"
+    ],
+    "correct": 2,
+    "explanation": "No IaaS o fornecedor gere o hardware e a virtualização, e o cliente gere o SO, o middleware e as aplicações. No PaaS o fornecedor gere também o SO e o runtime; o SaaS entrega a aplicação inteira.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.4"
+  },
+  {
+    "question": "Os programadores enviam código e o fornecedor trata dos servidores, das atualizações do SO e da escala do runtime. Que modelo é este?",
+    "options": [
+      "IaaS",
+      "PaaS",
+      "Colocation num data center",
+      "Um hipervisor tipo 2"
+    ],
+    "correct": 1,
+    "explanation": "O PaaS fornece uma plataforma gerida (runtime, SO, escala) onde os programadores publicam código sem gerirem servidores.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.4"
+  },
+  {
+    "question": "Porque se prefere SFTP a FTP para enviar cópias de configuração para um servidor?",
+    "options": [
+      "O SFTP cifra as credenciais e os dados via SSH",
+      "O SFTP usa UDP e por isso é mais rápido",
+      "O FTP não consegue transferir ficheiros de texto",
+      "O SFTP não precisa de nome de utilizador"
+    ],
+    "correct": 0,
+    "explanation": "O FTP (TCP 20/21) envia utilizador, password e dados em texto simples. O SFTP corre sobre SSH (TCP 22) e cifra a sessão.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "1.5"
+  },
+  {
+    "question": "Um técnico encontra um conector pequeno de 6 posições numa linha telefónica analógica. Que conector é?",
+    "options": [
+      "RJ-45",
+      "LC duplex",
+      "RJ-11",
+      "Coaxial tipo F"
+    ],
+    "correct": 2,
+    "explanation": "O RJ-11 é o conector mais estreito usado em linhas telefónicas analógicas e DSL; o RJ-45 (8P8C) é usado em Ethernet.",
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
+  },
+  {
+    "question": "Um modem de cabo liga-se à rede do operador através de que cabo e conector?",
+    "options": [
+      "Fibra monomodo com conector LC",
+      "Cat6 com conector RJ-45",
+      "Cabo coaxial com conector tipo F",
+      "Twinax com ponta SFP+ e adaptador de média"
+    ],
+    "correct": 2,
+    "explanation": "A Internet por cabo (DOCSIS) usa cabo coaxial com conectores roscados tipo F até ao modem; o modem depois disponibiliza Ethernet à LAN.",
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.1"
+  },
+  {
+    "question": "Uma filial usa um router 4G/5G como Internet de recurso. Qual é uma limitação típica face a uma linha de fibra?",
+    "options": [
+      "Precisa sempre de um IPv4 público estático",
+      "Não consegue transportar nenhum tráfego IP",
+      "Velocidade e latência variam com o sinal e a carga da célula",
+      "Só funciona com switches PoE"
+    ],
+    "correct": 2,
+    "explanation": "As ligações celulares dependem da força do sinal, das interferências e do número de utilizadores na célula, e usam muitas vezes CGNAT e limites de dados.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.2"
+  },
+  {
+    "question": "Onde se deve colocar a antena externa de um router 5G de recurso para ter o melhor sinal?",
+    "options": [
+      "Dentro de um armário metálico na cave",
+      "Atrás do bastidor de servidores para partilhar a ventilação",
+      "Junto a uma janela ou no exterior",
+      "Colada ao switch para o cabo ser curto"
+    ],
+    "correct": 2,
+    "explanation": "O sinal celular é atenuado por paredes, metal e profundidade. Coloque a antena alta, junto a uma janela ou no exterior, e verifique os valores de RSRP/SINR.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.2"
+  },
+  {
+    "question": "Que comando em Linux mostra os endereços IP das interfaces de rede?",
+    "options": [
+      "ipconfig /all",
+      "show ip interface brief",
+      "netsh interface show",
+      "ip addr (ou ip a)"
+    ],
+    "correct": 3,
+    "explanation": "Em Linux moderno, o ip addr mostra as interfaces e os endereços (o ifconfig é mais antigo). O ipconfig e o netsh são do Windows; o show ip interface brief é do Cisco IOS.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.4"
+  },
+  {
+    "question": "Num Mac, que comando mostra o endereço IP da interface Wi-Fi (normalmente en0)?",
+    "options": [
+      "ipconfig /release en0",
+      "ipconfig getifaddr en0",
+      "nslookup en0",
+      "show interfaces en0 status detail"
+    ],
+    "correct": 1,
+    "explanation": "O macOS tem o seu próprio utilitário ipconfig: ipconfig getifaddr en0 mostra o endereço IPv4. O ifconfig en0 também o mostra.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.4"
+  },
+  {
+    "question": "Num telemóvel Android, onde se costuma ver o endereço IP e o gateway da rede Wi-Fi atual?",
+    "options": [
+      "Na página de atualizações da loja de apps",
+      "No marcador do telefone, escrevendo o IP",
+      "No ecrã de utilização da bateria em Manutenção do dispositivo",
+      "Nos detalhes da rede Wi-Fi ligada, nas Definições"
+    ],
+    "correct": 3,
+    "explanation": "Abrir a rede ligada em Definições > Wi-Fi mostra o IP, gateway, DNS e sinal (os menus variam por fabricante). O iOS mostra o mesmo no botão (i) da rede.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.4"
+  },
+  {
+    "question": "Em Linux, que ferramenta verifica que processo está à escuta na porta TCP 22?",
+    "options": [
+      "ping -t localhost",
+      "ss -tlnp",
+      "dig +short port 22",
+      "route print -4"
+    ],
+    "correct": 1,
+    "explanation": "O ss -tlnp lista os sockets TCP à escuta com o processo dono (pode ser preciso root para ver o nome do processo).",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "3.4"
+  },
+  {
+    "question": "Num switch Cisco, o LED de uma porta está verde fixo. O que significa normalmente?",
+    "options": [
+      "A porta está err-disabled",
+      "Há link ativo nessa porta",
+      "A porta está em falha PoE",
+      "A porta está desligada administrativamente"
+    ],
+    "correct": 1,
+    "explanation": "Verde fixo indica link; verde a piscar indica atividade; âmbar pode indicar bloqueio pelo STP, falha ou POST. O significado depende do modo de LED escolhido.",
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "4.1"
+  },
+  {
+    "question": "O LED SYST de um switch fica âmbar depois de arrancar. O que deve verificar?",
+    "options": [
+      "O âmbito DHCP do router",
+      "O nome da VLAN configurado na porta de acesso 1",
+      "O POST, ventoinhas e fontes",
+      "O sufixo DNS dos PC"
+    ],
+    "correct": 2,
+    "explanation": "Um LED SYST âmbar indica que o sistema ligou mas tem uma falha, como um POST falhado, ventoinha ou energia. Veja show environment e os registos.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.1"
+  },
+  {
+    "question": "Um diagrama do bastidor (elevação) está desatualizado. Porque é que isso importa durante uma falha?",
+    "options": [
+      "Muda o endereço MAC do switch",
+      "Torna mais lentas as concessões DHCP",
+      "Faz as VLAN deixarem de funcionar nos uplinks",
+      "Alguém pode desligar o equipamento errado"
+    ],
+    "correct": 3,
+    "explanation": "As elevações de bastidor mostram o que está em cada U, com nomes e ligações. Diagramas errados levam a enganos sob pressão; mantenha-os atualizados a cada alteração.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.2"
+  },
+  {
+    "question": "Que diagrama mostra sub-redes IP, VLAN e o routing entre equipamentos, em vez dos percursos dos cabos?",
+    "options": [
+      "Um diagrama físico",
+      "Uma planta do piso com as tomadas numeradas",
+      "Uma elevação de bastidor",
+      "Um diagrama lógico da rede"
+    ],
+    "correct": 3,
+    "explanation": "Os diagramas lógicos mostram endereçamento, VLAN e o percurso do tráfego. Os diagramas físicos mostram cabos, portas, bastidores e localizações.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.2"
+  },
+  {
+    "question": "Um switch novo tem uma porta de consola USB-C/mini-USB e outra RJ-45. O que é verdade?",
+    "options": [
+      "As duas ficam ativas ao mesmo tempo com duas sessões",
+      "Normalmente só uma fica ativa, a USB primeiro",
+      "Só a porta RJ-45 pode ser usada na configuração",
+      "A porta USB serve só para carregar o switch"
+    ],
+    "correct": 1,
+    "explanation": "Em muitos modelos Catalyst, quando se liga um cabo de consola USB, passa a ser a consola ativa e a consola RJ-45 é desativada. Pode ser preciso um driver USB no PC.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.3"
+  },
+  {
+    "question": "No PuTTY, que definições se usam normalmente numa consola série Cisco?",
+    "options": [
+      "1200 baud, 7 bits de dados, paridade par",
+      "115200 baud, 7 bits de dados, 2 stop bits",
+      "Telnet na porta 23 para 192.168.1.1",
+      "9600 baud, 8 bits de dados, sem paridade, 1 stop bit"
+    ],
+    "correct": 3,
+    "explanation": "A consola Cisco por omissão é 9600 8N1 sem controlo de fluxo. Escolha a porta COM certa no Gestor de Dispositivos do PC.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.3"
+  },
+  {
+    "question": "Um switch de camada 3 faz algo que um switch só de camada 2 não faz. O quê?",
+    "options": [
+      "Um switch de camada 3 também encaminha entre VLAN",
+      "Um switch de camada 2 usa endereços IP para encaminhar",
+      "Um switch de camada 3 não tem tabela de MAC",
+      "Os switches de camada 2 não podem ter VLAN"
+    ],
+    "correct": 0,
+    "explanation": "Ambos encaminham tramas por MAC dentro de uma VLAN; um switch de camada 3 também encaminha pacotes entre VLAN/sub-redes através de SVI ou portas roteadas.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "4.4"
+  },
+  {
+    "question": "Chegam vários tickets ao mesmo tempo. Qual deve ser tratado primeiro, normalmente?",
+    "options": [
+      "O ticket mais antigo, seja qual for o impacto",
+      "A falha que afeta um departamento inteiro",
+      "Um pedido de um rato novo",
+      "Uma dúvida sobre atualizar um driver de impressora"
+    ],
+    "correct": 1,
+    "explanation": "A prioridade combina impacto e urgência: uma falha que afeta muitos utilizadores ou um serviço crítico vem antes de pedidos de um só utilizador.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.1"
+  },
+  {
+    "question": "Ao escalar um ticket de rede para o nível 2, o que é que o ticket já deve conter?",
+    "options": [
+      "Só 'não funciona, por favor resolvam'",
+      "Os contactos pessoais e a agenda do telefone do utilizador",
+      "Sintomas, testes feitos e resultados",
+      "Uma cópia do histórico do navegador do utilizador"
+    ],
+    "correct": 2,
+    "explanation": "Boas notas deixam o nível seguinte continuar sem repetir trabalho: o problema, o âmbito, os testes feitos e os resultados, as horas e os identificadores dos equipamentos.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.1"
+  },
+  {
+    "question": "Fez uma captura com o Wireshark e só quer ver pacotes DNS. Que filtro de visualização funciona?",
+    "options": [
+      "dns",
+      "show dns",
+      "filter udp 53 deny",
+      "port == 53 apenas"
+    ],
+    "correct": 0,
+    "explanation": "Os filtros de visualização do Wireshark usam nomes de protocolo como dns, http ou dhcp (e expressões como ip.addr == x). As capturas podem ser guardadas como .pcap/.pcapng para análise posterior.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.2"
+  },
+  {
+    "question": "Um engenheiro de nível 2 pede-lhe uma captura de pacotes. Que ficheiro envia?",
+    "options": [
+      "Um ficheiro .pcap/.pcapng guardado no Wireshark",
+      "Uma captura de ecrã do ecrã inicial do Wireshark",
+      "Só o registo de eventos do Windows do PC",
+      "Uma cópia em texto do ipconfig"
+    ],
+    "correct": 0,
+    "explanation": "Um .pcap ou .pcapng contém os pacotes capturados para o engenheiro os abrir e filtrar no seu analisador. Atenção à privacidade: as capturas podem ter dados sensíveis.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.2"
+  },
+  {
+    "question": "Que ferramenta é um emulador de terminal usado para abrir sessões SSH para equipamentos de rede?",
+    "options": [
+      "PuTTY (ou Tera Term)",
+      "Wireshark",
+      "Gestão de Discos",
+      "Gestor de Tarefas do Windows"
+    ],
+    "correct": 0,
+    "explanation": "O PuTTY, o Tera Term e o SecureCRT são emuladores de terminal com suporte de SSH, Telnet e consola série.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.4"
+  },
+  {
+    "question": "Uma pequena empresa gere os switches, AP e firewall a partir de um painel web na cloud. Que plataforma Cisco se ajusta?",
+    "options": [
+      "Um servidor de consolas série",
+      "Cisco Meraki Dashboard",
+      "Um hipervisor tipo 2",
+      "Um servidor TFTP na LAN"
+    ],
+    "correct": 1,
+    "explanation": "Os equipamentos Meraki são geridos a partir do Dashboard alojado na cloud, que oferece configuração, monitorização e alertas a partir de qualquer navegador.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.4"
+  },
+  {
+    "question": "O que faz tipicamente um sistema de monitorização de rede (NMS)?",
+    "options": [
+      "Atribui endereços IP aos clientes",
+      "Cifra o tráfego entre locais",
+      "Dispensa a necessidade de firewall na saída para a Internet",
+      "Consulta equipamentos e gera alertas"
+    ],
+    "correct": 3,
+    "explanation": "Um NMS recolhe estado e métricas (SNMP, syslog, NetFlow) dos equipamentos, faz gráficos e gera alertas quando são ultrapassados limites.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.4"
+  },
+  {
+    "question": "No prompt do IOS, o que faz escrever um comando parcial seguido de '?'?",
+    "options": [
+      "Guarda a configuração em execução",
+      "Apaga o comando do histórico",
+      "Lista as conclusões possíveis",
+      "Reinicia o equipamento diretamente em modo ROMMON"
+    ],
+    "correct": 2,
+    "explanation": "Ajuda contextual: 'sh?' lista os comandos começados por sh e 'show ?' lista o que pode vir a seguir. O Tab completa uma palavra parcial única.",
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "5.5"
+  },
+  {
+    "question": "Que comando mostra os números de série e de peça do chassis e dos módulos de um switch?",
+    "options": [
+      "show clock",
+      "show inventory",
+      "show history all",
+      "show users"
+    ],
+    "correct": 1,
+    "explanation": "O show inventory lista PID, VID e número de série do chassis, fontes, módulos e transceivers.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.5"
+  },
+  {
+    "question": "O prompt é 'Switch>'. O que significa e como chega ao modo privilegiado?",
+    "options": [
+      "Modo de configuração global; escrever exit",
+      "Modo user EXEC (nível 1); escrever enable",
+      "Modo ROMMON; escrever boot",
+      "Modo de interface; escrever end"
+    ],
+    "correct": 1,
+    "explanation": "'>' é o user EXEC com comandos limitados; o 'enable' passa ao EXEC privilegiado ('#', nível 15), a partir do qual o configure terminal entra na configuração global.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.5"
+  },
+  {
+    "question": "Numa stack de switches Catalyst, que comando mostra os membros, os papéis e as prioridades?",
+    "options": [
+      "show vlan brief",
+      "show ip route",
+      "show interfaces trunk",
+      "show switch"
+    ],
+    "correct": 3,
+    "explanation": "O show switch lista os membros da stack com número, papel (ativo, standby, membro), prioridade, MAC e estado.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "5.5"
+  },
+  {
+    "question": "Uma firewall tem estas regras por ordem: 1) negar tudo de 10.1.1.0/24, 2) permitir 10.1.1.5 ao servidor web. O 10.1.1.5 chega ao servidor?",
+    "options": [
+      "Só aos fins de semana",
+      "Sim, regras específicas ganham sempre",
+      "Sim, porque permitir vence negar",
+      "Não, a regra 1 coincide primeiro"
+    ],
+    "correct": 3,
+    "explanation": "As regras são processadas de cima para baixo e aplica-se a primeira que coincide. Coloque as permissões específicas acima das negações mais gerais.",
+    "difficulty": "Difícil",
+    "exam": "ccst-net",
+    "domain": "6.1"
+  },
+  {
+    "question": "No AAA, o que fornece o 'accounting'?",
+    "options": [
+      "Um registo das ações dos utilizadores",
+      "A prova de quem é",
+      "A lista de comandos que cada utilizador pode correr no equipamento",
+      "A cifra da password de login"
+    ],
+    "correct": 0,
+    "explanation": "A autenticação verifica a identidade, a autorização decide o que é permitido e o accounting regista ações e sessões, por exemplo via RADIUS ou TACACS+.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "6.2"
+  },
+  {
+    "question": "Um navegador mostra um aviso de certificado ao abrir a página HTTPS do switch. Qual é a causa mais comum em equipamentos novos?",
+    "options": [
+      "O switch não tem endereço IP",
+      "O equipamento usa um certificado autoassinado",
+      "O navegador está desatualizado",
+      "O HTTPS está bloqueado pela VLAN"
+    ],
+    "correct": 1,
+    "explanation": "Equipamentos novos criam muitas vezes um certificado autoassinado em que os navegadores não confiam. Instale um certificado da CA da empresa em vez de habituar os utilizadores a ignorar avisos.",
+    "difficulty": "Difícil",
+    "exam": "ccst-net",
+    "domain": "6.2"
+  },
+  {
+    "question": "Uma empresa quer que cada colaborador entre no Wi-Fi com a sua conta de domínio e não com uma password partilhada. Que modo serve?",
+    "options": [
+      "WPA2/WPA3-Personal com uma PSK longa",
+      "Rede aberta com portal cativo",
+      "WPA2/WPA3-Enterprise com 802.1X",
+      "WEP com chave de 128 bits"
+    ],
+    "correct": 2,
+    "explanation": "O modo Enterprise autentica cada utilizador via 802.1X e um servidor RADIUS (ex. ligado ao Active Directory). O modo Personal usa uma chave pré-partilhada para todos.",
+    "difficulty": "Médio",
+    "exam": "ccst-net",
+    "domain": "6.3"
   }
 ];

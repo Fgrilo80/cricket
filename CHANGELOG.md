@@ -1,5 +1,18 @@
 # Changelog — Cricket / Cisco Quiz (web)
 
+## v4.1.0 — 2026-11-03
+
+- **Fase 2 (novos quizzes):** 5 quizzes novos. Todas as perguntas novas são pares PT/EN originais, com explicação e domínio do blueprint.
+  - **CCST Networking (100-150)** (`ccst-net`): é uma vista do trilho `ccst`. 205 perguntas existentes foram etiquetadas com `exam`/`domain` e entraram +40 pares para cobrir lacunas. **245** por língua.
+  - **CCNP Enterprise ENCOR (350-401 v1.2)** (`encor`): é uma vista do trilho `ccnp`. 132 perguntas existentes foram etiquetadas e entraram +41 pares. **173** por língua.
+  - **CCST IT Support (100-140)**: trilho novo `ccstit`, com **81** por língua.
+  - **IIoT e redes industriais**: trilho novo `iiot`, com **82** por língua.
+  - **Field Support** (cenários de terreno): trilho novo `field`, com **77** por língua.
+- Totais por língua: CCST 227 → 267 · CCNA 238 · CCNP 232 → 273 · Cyber 303 · IIoT 82 · CCST IT 81 · Field 77. Total do site: **2000 → 2642**.
+- Compatibilidade: `ccst`/`ccna`/`ccnp`/`cyber` mantêm o mesmo formato (a app 1.2.11 ignora as chaves novas). Nenhuma pergunta nova tem `topic`. O catálogo passa a `4.1.0` com os novos `tracks` e os quizzes `ccst-net` e `encor`. Detalhes e URLs dos blueprints em `docs/quiz-blueprints-phase2.md`.
+- Validação: lint `question-bank-length` e unittest OK. Paridade PT/EN (tamanho e índice correto) OK.
+- `app-version.json` **não** foi alterado: continua com bankTotal 2000 e só deve ser atualizado no sync aprovado.
+
 ## v4.0.0 — 2026-11-03
 
 - **Cyber split (phase 1):** o trilho `cyber` mantém-se (app 1.2.11 continua compatível) e cada pergunta ganha campos opcionais `exam`, `topic` e `domain`.

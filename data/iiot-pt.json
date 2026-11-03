@@ -1,0 +1,1068 @@
+[
+  {
+    "question": "Numa rede de controlo industrial, que objetivo de segurança costuma ter prioridade sobre os outros?",
+    "options": [
+      "Compressão dos dados do historian",
+      "Confidencialidade de todos os fluxos e ficheiros",
+      "Anonimato dos operadores",
+      "Disponibilidade do processo e segurança física"
+    ],
+    "correct": 3,
+    "explanation": "Nas redes OT a ordem habitual é Disponibilidade, depois Integridade e só depois Confidencialidade (AIC), porque parar o processo custa dinheiro ou pode causar danos.",
+    "difficulty": "Fácil",
+    "domain": "1"
+  },
+  {
+    "question": "Porque é que os sistemas OT são atualizados muito menos vezes do que os PCs de escritório?",
+    "options": [
+      "Os patches exigem validação do fabricante e paragem",
+      "Nunca se ligam a nenhuma rede, por isso os patches são inúteis",
+      "Os sistemas operativos em OT não se atualizam",
+      "O antivírus já substitui todos os patches"
+    ],
+    "correct": 0,
+    "explanation": "Os patches em OT costumam ser certificados pelo fabricante de automação e aplicados em paragens planeadas, porque uma alteração não testada pode parar a produção.",
+    "difficulty": "Fácil",
+    "domain": "1"
+  },
+  {
+    "question": "No modelo Purdue, em que nível costumam estar os PLC que executam a lógica de controlo?",
+    "options": [
+      "Nível 1",
+      "Nível 3",
+      "Nível 0",
+      "Nível 4"
+    ],
+    "correct": 0,
+    "explanation": "O nível 0 tem sensores e atuadores, o nível 1 os controladores básicos (PLC, DCS), o nível 2 as HMI/SCADA de supervisão e o nível 3 as operações do site.",
+    "difficulty": "Fácil",
+    "domain": "2"
+  },
+  {
+    "question": "Que sistemas pertencem ao nível 4 do modelo Purdue?",
+    "options": [
+      "Sensores de campo e variadores",
+      "HMI de operador na linha",
+      "ERP, email e planeamento do negócio",
+      "Relés de segurança e barreiras óticas da máquina"
+    ],
+    "correct": 2,
+    "explanation": "O nível 4 é planeamento e logística do negócio (email, acesso ao ERP, relatórios) e é tratado como extensão da rede empresarial.",
+    "difficulty": "Fácil",
+    "domain": "2"
+  },
+  {
+    "question": "Qual é a regra principal para o tráfego que atravessa uma DMZ industrial (nível 3.5)?",
+    "options": [
+      "Só o ICMP é bloqueado entre as zonas",
+      "Qualquer tráfego pode passar direto se estiver cifrado com HTTPS",
+      "Nenhuma sessão passa direta; os dados são intermediados",
+      "PCs empresariais podem chegar diretamente aos PLC na porta TCP 502"
+    ],
+    "correct": 2,
+    "explanation": "Numa IDMZ nenhum fluxo vai diretamente da zona empresarial para a industrial: as sessões terminam em brokers, jump hosts ou servidores espelhados (por exemplo um historian replicado).",
+    "difficulty": "Médio",
+    "domain": "2"
+  },
+  {
+    "question": "Os analistas do negócio precisam de dados de produção do historian da fábrica. Qual é o desenho habitual com IDMZ?",
+    "options": [
+      "Abrir uma regra de firewall do escritório diretamente para os PLC",
+      "Pôr os PCs dos analistas na zona de célula/área",
+      "Espelhar o historian na IDMZ para eles consultarem",
+      "Fazer bridge da VLAN do escritório para a de controlo"
+    ],
+    "correct": 2,
+    "explanation": "Um historian replicado ou espelhado na IDMZ permite aos utilizadores empresariais ler dados sem qualquer sessão direta para os níveis 0 a 3.",
+    "difficulty": "Médio",
+    "domain": "2"
+  },
+  {
+    "question": "Que porta TCP usa o Modbus TCP por omissão?",
+    "options": [
+      "102",
+      "44818",
+      "20000",
+      "502"
+    ],
+    "correct": 3,
+    "explanation": "O Modbus TCP escuta na porta TCP 502. A 102 é ISO-TSAP (S7comm, MMS do IEC 61850), a 44818 é a mensagem explícita EtherNet/IP e a 20000 é DNP3.",
+    "difficulty": "Fácil",
+    "domain": "3"
+  },
+  {
+    "question": "Que afirmação sobre a segurança do Modbus está correta?",
+    "options": [
+      "Cada trama Modbus TCP é assinada com certificado por omissão",
+      "O Modbus RTU cifra os dados com AES-128",
+      "O Modbus pede uma password ao cliente antes de cada escrita",
+      "O Modbus clássico não tem autenticação nem cifra"
+    ],
+    "correct": 3,
+    "explanation": "O Modbus RTU/TCP clássico envia comandos em claro e sem autenticação, por isso qualquer host que chegue ao equipamento pode ler ou escrever. O Modbus/TCP Security junta TLS numa porta separada.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Um cliente Modbus tem de ler um setpoint de 16 bits que também pode alterar. Em que tipo de dado está?",
+    "options": [
+      "Coil",
+      "Input register",
+      "Discrete input",
+      "Holding register"
+    ],
+    "correct": 3,
+    "explanation": "Os holding registers são valores de 16 bits de leitura/escrita. Os input registers são de 16 bits só de leitura, as coils de 1 bit leitura/escrita e as discrete inputs de 1 bit só de leitura.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Que código de função Modbus lê holding registers?",
+    "options": [
+      "03",
+      "01",
+      "05",
+      "16"
+    ],
+    "correct": 0,
+    "explanation": "A função 03 lê holding registers. A 01 lê coils, a 05 escreve uma coil e a 16 (0x10) escreve vários registos.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Num barramento Modbus RTU em RS-485, o que identifica o equipamento que deve responder a um pedido?",
+    "options": [
+      "O seu endereço MAC transportado no cabeçalho da trama",
+      "O seu endereço IP e a porta 502",
+      "O endereço de escravo (unidade) no primeiro byte",
+      "A tag de VLAN adicionada pela gateway"
+    ],
+    "correct": 2,
+    "explanation": "As tramas Modbus RTU começam pelo endereço de escravo (1 a 247), seguido do código de função, dos dados e de um CRC-16. No barramento série não há MAC nem IP.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Uma gateway Modbus TCP-RTU tem timeouts só nos equipamentos no fim de um troço RS-485 comprido. O que deve verificar primeiro?",
+    "options": [
+      "O servidor DNS configurado na gateway Modbus",
+      "A terminação e a polarização nas pontas",
+      "O custo OSPF configurado no uplink da gateway",
+      "O certificado TLS instalado no PLC do fim da linha"
+    ],
+    "correct": 1,
+    "explanation": "Troços RS-485 compridos precisam de terminação de 120 Ω nas duas pontas e polarização correta; sem terminação há reflexões que corrompem as tramas dos nós distantes.",
+    "difficulty": "Difícil",
+    "domain": "3"
+  },
+  {
+    "question": "No EtherNet/IP, como são normalmente transportados os dados de I/O cíclicos (mensagens implícitas)?",
+    "options": [
+      "TCP porta 44818 dentro de uma sessão TLS",
+      "TCP porta 502 com um CRC no fim",
+      "UDP porta 2222, muitas vezes em multicast",
+      "Tramas Layer 2 puras com Ethertype 0x8892"
+    ],
+    "correct": 2,
+    "explanation": "As mensagens implícitas (Classe 1) de I/O do EtherNet/IP usam UDP 2222, em unicast ou multicast. As explícitas usam TCP 44818. O Ethertype 0x8892 é do PROFINET RT.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "O que define o RPI (Requested Packet Interval) numa ligação de I/O EtherNet/IP?",
+    "options": [
+      "O tamanho máximo da trama Ethernet",
+      "O número de sessões CIP que o adaptador permite",
+      "O temporizador de retransmissão TCP",
+      "A frequência com que o produtor envia os dados"
+    ],
+    "correct": 3,
+    "explanation": "O RPI é a cadência acordada de uma ligação de I/O CIP, por exemplo de 10 em 10 ms. Um RPI mais pequeno significa mais pacotes por segundo na rede.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Qual é a diferença entre mensagens CIP explícitas e implícitas?",
+    "options": [
+      "As explícitas são vídeo multicast; as implícitas voz",
+      "As explícitas usam UDP; as implícitas usam sempre TCP",
+      "As explícitas exigem PROFINET; as implícitas exigem Modbus RTU",
+      "As explícitas são pedido/resposta; as implícitas I/O cíclico"
+    ],
+    "correct": 3,
+    "explanation": "As mensagens explícitas são transações pedido/resposta a pedido (configuração, diagnóstico) sobre TCP. As implícitas transportam I/O em tempo real de forma cíclica sobre UDP.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "O modelo produtor/consumidor do CIP significa que:",
+    "options": [
+      "Cada consumidor interroga o produtor à vez",
+      "Só um consumidor pode ler cada tag",
+      "Um produtor envia dados que muitos equipamentos consomem",
+      "Cada consumidor tem de confirmar todos os pacotes que recebe"
+    ],
+    "correct": 2,
+    "explanation": "Com produtor/consumidor, um equipamento produz os dados uma vez (por exemplo em multicast) e qualquer número de consumidores os usa, em vez de cada um interrogar separadamente.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "O I/O multicast EtherNet/IP inunda todas as portas de uma célula Layer 2 plana e torna lentos os variadores antigos. Qual é a correção padrão?",
+    "options": [
+      "IGMP snooping com um IGMP querier ativo na VLAN",
+      "Desligar o spanning tree em todos os switches IE",
+      "Subir o MTU para 9000 bytes em todo o lado",
+      "Ativar port security com um MAC por porta"
+    ],
+    "correct": 0,
+    "explanation": "O IGMP snooping limita o multicast às portas que aderiram ao grupo, mas numa célula só Layer 2 precisa de um IGMP querier (muitas vezes no switch IE ou de distribuição) para manter as adesões.",
+    "difficulty": "Difícil",
+    "domain": "4"
+  },
+  {
+    "question": "Como é que o PROFINET RT transporta os dados cíclicos em tempo real?",
+    "options": [
+      "Dentro de sessões ISO-TSAP na porta TCP 102",
+      "Diretamente em tramas Ethernet com Ethertype 0x8892",
+      "Em pacotes UDP 2222 em multicast para todas as células",
+      "Em tópicos MQTT publicados num broker central"
+    ],
+    "correct": 1,
+    "explanation": "O PROFINET RT salta a pilha IP/UDP nos dados cíclicos e usa tramas Layer 2 com Ethertype 0x8892, normalmente com prioridade 802.1Q. Por isso não pode ser encaminhado por routers.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Que ficheiro descreve à ferramenta de engenharia os módulos e parâmetros de um equipamento PROFINET?",
+    "options": [
+      "Ficheiro GSDML",
+      "Ficheiro MIB",
+      "Ficheiro EDS",
+      "Módulo YANG"
+    ],
+    "correct": 0,
+    "explanation": "Os equipamentos PROFINET trazem um ficheiro GSDML (descrição geral da estação em XML). Os ficheiros EDS têm o mesmo papel em EtherNet/IP e DeviceNet.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Um IO-Device PROFINET substituído não começa a trocar dados. Por que é que o IO-Controller o identifica?",
+    "options": [
+      "Pelo número de série impresso na etiqueta de características",
+      "Pelo tempo de concessão e hostname DHCP",
+      "Apenas pelo endereço MAC gravado de fábrica",
+      "Pelo nome de dispositivo PROFINET, definido por DCP"
+    ],
+    "correct": 3,
+    "explanation": "O PROFINET identifica os equipamentos pelo nome. O controlador encontra o nome através do DCP e só depois atribui o IP; um equipamento novo sem o nome certo (ou sem nomeação por topologia) fica calado.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Que variante de PROFINET é necessária para controlo de movimento bem sincronizado com jitter abaixo de 1 µs?",
+    "options": [
+      "PROFINET IRT (Conformance Class C)",
+      "PROFINET RT sobre Wi-Fi",
+      "PROFINET sobre Modbus TCP",
+      "PROFINET NRT sobre UDP"
+    ],
+    "correct": 0,
+    "explanation": "O IRT (tempo real isócrono, Conformance Class C) reserva janelas de tempo em switches com suporte em hardware e consegue jitter abaixo do microssegundo. O RT (classes A/B) chega para a maior parte do I/O.",
+    "difficulty": "Difícil",
+    "domain": "3"
+  },
+  {
+    "question": "O que é o PROFIsafe?",
+    "options": [
+      "Uma camada de segurança funcional sobre 'canal negro'",
+      "Uma firewall feita só para tráfego PROFINET em células",
+      "Um túnel VPN cifrado entre dois PLC remotos",
+      "Um cabo PROFINET verde com blindagem dupla extra"
+    ],
+    "correct": 0,
+    "explanation": "O PROFIsafe acrescenta mecanismos de segurança funcional (contadores, watchdog, CRC, identificadores) sobre PROFINET ou PROFIBUS, tratando a rede como canal negro não fiável. É segurança funcional, não cibersegurança.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Que protocolo de redundância em anel está normalizado na IEC 62439-2 e é muito usado com PROFINET?",
+    "options": [
+      "DLR",
+      "REP",
+      "HSRP",
+      "MRP"
+    ],
+    "correct": 3,
+    "explanation": "O MRP (Media Redundancy Protocol, IEC 62439-2) tem um gestor de anel que bloqueia uma porta até o anel partir. O DLR é o anel EtherNet/IP da ODVA e o REP é da Cisco.",
+    "difficulty": "Médio",
+    "domain": "4"
+  },
+  {
+    "question": "O que faz o Cisco REP (Resilient Ethernet Protocol) num anel de switches IE?",
+    "options": [
+      "Duplica cada trama em duas LAN separadas",
+      "Bloqueia uma porta por segmento e desbloqueia-a na falha",
+      "Substitui todas as VLAN por um único segmento encaminhado",
+      "Cifra as tramas entre vizinhos do anel"
+    ],
+    "correct": 1,
+    "explanation": "O REP organiza um segmento de switches, mantém uma porta alternativa bloqueada para evitar o loop e desbloqueia-a depressa quando um link falha. É mais rápido do que o STP clássico em anéis.",
+    "difficulty": "Médio",
+    "domain": "4"
+  },
+  {
+    "question": "Porque é que o PRP (IEC 62439-3) tem tempo de recuperação zero depois de uma falha de link?",
+    "options": [
+      "O controlador retransmite mais depressa do que o RPI",
+      "Os switches pré-calculam um caminho de reserva com OSPF LFA",
+      "O gestor do anel desbloqueia a porta em 1 ms",
+      "Cada trama vai por duas LAN independentes e o recetor descarta o duplicado"
+    ],
+    "correct": 3,
+    "explanation": "Um nó PRP com dupla ligação envia cada trama pela LAN A e pela LAN B ao mesmo tempo; o recetor fica com a primeira cópia e descarta a segunda, por isso uma falha única não perde nada.",
+    "difficulty": "Difícil",
+    "domain": "4"
+  },
+  {
+    "question": "Em que é que o HSR difere do PRP?",
+    "options": [
+      "O HSR envia as duas cópias à volta de um único anel",
+      "O HSR precisa de duas redes paralelas totalmente separadas",
+      "O HSR só funciona em ligações sem fios",
+      "O HSR é um protocolo de routing para WAN OT"
+    ],
+    "correct": 0,
+    "explanation": "O HSR (High-availability Seamless Redundancy) envia as duas cópias em sentidos opostos à volta de um anel de nós com suporte HSR. O PRP usa duas LAN paralelas independentes.",
+    "difficulty": "Difícil",
+    "domain": "4"
+  },
+  {
+    "question": "Um PLC com uma só ligação tem de entrar numa rede PRP. Que equipamento o liga às duas LAN?",
+    "options": [
+      "Um conversor de media de cobre para fibra",
+      "Uma RedBox (caixa de redundância)",
+      "Uma workgroup bridge Wi-Fi",
+      "Um injetor PoE de 802.3at na linha"
+    ],
+    "correct": 1,
+    "explanation": "Uma RedBox liga nós com uma só ligação (SAN) a PRP ou HSR, enviando e recebendo as tramas duplicadas em nome deles.",
+    "difficulty": "Médio",
+    "domain": "4"
+  },
+  {
+    "question": "Que protocolo em anel foi definido pela ODVA para equipamentos EtherNet/IP com switch embutido de duas portas?",
+    "options": [
+      "MRP",
+      "PRP",
+      "DLR",
+      "REP"
+    ],
+    "correct": 2,
+    "explanation": "O DLR (Device Level Ring) permite a equipamentos EtherNet/IP com duas portas formar um anel; um supervisor de anel envia beacons e desbloqueia a sua porta quando o anel parte.",
+    "difficulty": "Médio",
+    "domain": "4"
+  },
+  {
+    "question": "Que característica é típica de um switch Ethernet industrial (IE) em comparação com um de escritório?",
+    "options": [
+      "Montagem em calha DIN e gama de temperatura alargada",
+      "Um controlador wireless incorporado",
+      "Só portas de 10 Mb/s por compatibilidade",
+      "Arrefecimento obrigatório com ventoinha interna"
+    ],
+    "correct": 0,
+    "explanation": "Os switches IE são robustos: montagem em calha DIN ou painel, sem ventoinha, temperatura alargada, resistência a vibração, duas entradas de alimentação e relés de alarme.",
+    "difficulty": "Fácil",
+    "domain": "4"
+  },
+  {
+    "question": "Para que serve o contacto de relé de alarme em muitos switches IE?",
+    "options": [
+      "Fazer reset ao switch remotamente com uma escrita Modbus",
+      "Alimentar diretamente sensores de campo a 24 V DC",
+      "Sinalizar falhas, como perda de alimentação, a um PLC",
+      "Sincronizar os relógios da célula com o grandmaster PTP"
+    ],
+    "correct": 2,
+    "explanation": "O relé de alarme de contacto seco muda de estado em falhas configuradas (perda de uma fonte, porta em baixo, temperatura) para que uma entrada de PLC ou um sinalizador possa reagir.",
+    "difficulty": "Médio",
+    "domain": "4"
+  },
+  {
+    "question": "Um fabricante de máquinas entrega dez células idênticas, todas com 192.168.1.0/24. Como podem entrar numa só rede de fábrica sem mudar endereços?",
+    "options": [
+      "Pôr as dez células na mesma VLAN e deixar o ARP resolver",
+      "Usar NAT de Layer 2 (1:1) nas células",
+      "Usar PROFIsafe nos uplinks das células para a fábrica",
+      "Desligar o ARP nos controladores de cada linha"
+    ],
+    "correct": 1,
+    "explanation": "O NAT de Layer 2 nos switches IE traduz 1:1 os endereços privados de cada célula para endereços únicos da fábrica, permitindo instalar várias vezes a mesma imagem de máquina.",
+    "difficulty": "Difícil",
+    "domain": "4"
+  },
+  {
+    "question": "Porque é que uma linha de produção longa pode usar topologia em anel em vez de estrela redundante?",
+    "options": [
+      "Os anéis dão sempre menos latência ponta a ponta do que as estrelas",
+      "Um anel precisa de muito menos cabo ao longo da linha",
+      "Os anéis dispensam qualquer protocolo de redundância ou de loop",
+      "As estrelas não transportam protocolos industriais"
+    ],
+    "correct": 1,
+    "explanation": "Ao longo de uma linha comprida, encadear os switches num anel gasta muito menos cabo do que levar dois uplinks de cada switch até à distribuição, e continua a aguentar a falha de um link.",
+    "difficulty": "Médio",
+    "domain": "4"
+  },
+  {
+    "question": "Que protocolo usa uma subestação ou sistema de movimento quando precisa de precisão de relógio abaixo do microssegundo?",
+    "options": [
+      "Carimbos de tempo do syslog",
+      "NTP pela Internet",
+      "SNTP a partir de um PC",
+      "IEEE 1588 PTP"
+    ],
+    "correct": 3,
+    "explanation": "O IEEE 1588 Precision Time Protocol chega a precisão abaixo do microssegundo com carimbo de tempo em hardware; o NTP fica normalmente na ordem dos milissegundos.",
+    "difficulty": "Médio",
+    "domain": "5"
+  },
+  {
+    "question": "No PTP, como é escolhido o relógio grandmaster?",
+    "options": [
+      "Pelo endereço IP mais baixo configurado na VLAN",
+      "Pelo Best Master Clock Algorithm (BMCA)",
+      "Pelo switch com mais portas ativas no anel",
+      "Pelo stratum NTP anunciado pelo PLC"
+    ],
+    "correct": 1,
+    "explanation": "Os relógios trocam mensagens Announce e o BMCA compara priority1, classe do relógio, exatidão, variância, priority2 e identidade para eleger o melhor grandmaster.",
+    "difficulty": "Médio",
+    "domain": "5"
+  },
+  {
+    "question": "O que faz um switch que é transparent clock no PTP?",
+    "options": [
+      "Passa a grandmaster quando o GPS falha",
+      "Termina o PTP e começa um domínio novo",
+      "Junta o seu tempo de residência num campo de correção",
+      "Bloqueia as mensagens Sync que chegam às portas de acesso"
+    ],
+    "correct": 2,
+    "explanation": "Um transparent clock mede quanto tempo cada mensagem de evento PTP ficou dentro do switch e escreve-o no correctionField, para que o atraso de fila não estrague a precisão. Um boundary clock, pelo contrário, termina e regenera o PTP.",
+    "difficulty": "Difícil",
+    "domain": "5"
+  },
+  {
+    "question": "Que perfil PTP é usado em subestações IEC 61850?",
+    "options": [
+      "O perfil telecom da ITU-T",
+      "O Power Profile (IEEE C37.238 / IEC 61850-9-3)",
+      "O perfil de áudio/vídeo bridging IEEE 802.1AS",
+      "O perfil default com recurso a NTP"
+    ],
+    "correct": 1,
+    "explanation": "As subestações usam o Power Profile (IEEE C37.238, IEC/IEEE 61850-9-3), com transporte Layer 2 e atraso peer-to-peer. As fábricas usam normalmente o perfil default (CIP Sync).",
+    "difficulty": "Difícil",
+    "domain": "5"
+  },
+  {
+    "question": "Na IEC 62443, o que é uma conduta (conduit)?",
+    "options": [
+      "Uma calha para cabos OT blindados",
+      "Um caminho de comunicação controlado entre zonas",
+      "Uma cópia de segurança dos programas do PLC",
+      "Uma alimentação redundante de um armário de controlo"
+    ],
+    "correct": 1,
+    "explanation": "A IEC 62443 junta em zonas os ativos com necessidades de segurança parecidas; as condutas são os canais de comunicação entre zonas, onde se aplicam controlos como firewalls.",
+    "difficulty": "Médio",
+    "domain": "6"
+  },
+  {
+    "question": "O que descrevem os níveis de segurança (SL 1 a 4) da IEC 62443?",
+    "options": [
+      "Quantas firewalls a fábrica tem de comprar para cada zona",
+      "O número máximo de contas de utilizador permitidas por zona",
+      "O nível de integridade de segurança (SIL) exigido a uma máquina",
+      "Proteção contra atacantes mais capazes"
+    ],
+    "correct": 3,
+    "explanation": "O SL 1 protege contra violações casuais ou acidentais e o SL 4 contra atacantes sofisticados com muitos recursos. Os SL são definidos como alvo por zona e conduta.",
+    "difficulty": "Médio",
+    "domain": "6"
+  },
+  {
+    "question": "Que parte da IEC 62443 lista os requisitos técnicos de segurança de um sistema de controlo no seu conjunto?",
+    "options": [
+      "62443-4-1",
+      "62443-2-1",
+      "62443-3-3",
+      "62443-1-1"
+    ],
+    "correct": 2,
+    "explanation": "A 62443-3-3 define os requisitos de segurança do sistema e os níveis de segurança. A 4-1 trata do ciclo de desenvolvimento seguro do fabricante, a 4-2 dos requisitos por componente e a 2-1 do programa de segurança do dono do ativo.",
+    "difficulty": "Difícil",
+    "domain": "6"
+  },
+  {
+    "question": "Porque é que a monitorização passiva é preferida à análise ativa para o inventário de ativos OT?",
+    "options": [
+      "As ferramentas passivas encontram mais portas TCP",
+      "As análises ativas são proibidas por lei em todas as fábricas",
+      "A monitorização passiva não precisa de qualquer acesso à rede",
+      "Alguns PLC podem bloquear ou falhar quando analisados"
+    ],
+    "correct": 3,
+    "explanation": "Controladores frágeis ou antigos podem bloquear com análises agressivas. Ferramentas passivas como o Cisco Cyber Vision aprendem os ativos a partir de tráfego espelhado e inspeção profunda dos protocolos industriais.",
+    "difficulty": "Médio",
+    "domain": "6"
+  },
+  {
+    "question": "O que normaliza principalmente a ISA-95?",
+    "options": [
+      "Os algoritmos de cifra exigidos nas atualizações de firmware dos PLC",
+      "As cores de cabo e pinagens dos conectores Ethernet da fábrica",
+      "A integração entre sistemas empresariais e o controlo da produção",
+      "Os canais de rádio permitidos para sensores sem fios na fábrica"
+    ],
+    "correct": 2,
+    "explanation": "A ISA-95 (IEC 62264) define funções, níveis e modelos de dados para integrar os sistemas do negócio (nível 4, ERP) com as operações de produção (nível 3, MOM/MES).",
+    "difficulty": "Médio",
+    "domain": "2"
+  },
+  {
+    "question": "No modelo Purdue, que nível contém os próprios sensores, válvulas e motores?",
+    "options": [
+      "Nível 0",
+      "Nível 2",
+      "Nível 3",
+      "Nível 1"
+    ],
+    "correct": 0,
+    "explanation": "O nível 0 é o processo físico: sensores, atuadores, válvulas, motores. Os controladores que os leem e comandam estão no nível 1.",
+    "difficulty": "Fácil",
+    "domain": "2"
+  },
+  {
+    "question": "Onde colocaria normalmente o historian da fábrica, o controlador de domínio OT e os servidores de patches da linha?",
+    "options": [
+      "Nível 3, operações do site na zona industrial",
+      "Nível 4, no datacenter da empresa junto ao ERP",
+      "Nível 1, junto aos PLC de cada célula",
+      "Nível 0, na rede de instrumentos do processo"
+    ],
+    "correct": 0,
+    "explanation": "O nível 3 (operações do site) aloja serviços de toda a fábrica, como o historian, o AD de OT, servidores de patches e antivírus e estações de engenharia, ainda dentro da zona industrial.",
+    "difficulty": "Médio",
+    "domain": "2"
+  },
+  {
+    "question": "Porque é que os desenhos CPwE da Cisco/Rockwell mantêm cada zona de célula/área pequena, com a sua própria VLAN?",
+    "options": [
+      "Para conter broadcasts, falhas e tráfego em tempo real localmente",
+      "Para não precisar de firewall nenhuma na IDMZ",
+      "Para dar a cada célula a sua própria root bridge de spanning tree diferente",
+      "Para permitir encaminhar PROFINET RT entre áreas"
+    ],
+    "correct": 0,
+    "explanation": "Zonas de célula/área pequenas limitam os domínios de broadcast e multicast, mantêm local o I/O crítico e impedem que uma falha ou tempestade numa célula se espalhe a toda a fábrica.",
+    "difficulty": "Difícil",
+    "domain": "2"
+  },
+  {
+    "question": "O que torna o OPC UA atrativo para troca de dados entre IT e OT?",
+    "options": [
+      "Só funcionar entre equipamentos do mesmo fabricante e da mesma gama",
+      "Tramas Layer 2 que dispensam qualquer endereço IP",
+      "Substituir a cablagem de fieldbus por loops 4–20 mA",
+      "Segurança incorporada e um modelo de informação rico"
+    ],
+    "correct": 3,
+    "explanation": "O OPC UA é independente do fabricante, usa um modelo de informação estruturado e inclui autenticação, assinatura e cifra. O protocolo binário usa por omissão TCP 4840.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Como é que o MQTT entrega os dados de sensores de muitos equipamentos edge?",
+    "options": [
+      "Os publicadores enviam para tópicos num broker; os subscritores recebem",
+      "Cada cliente interroga todos os sensores, um a um, num ciclo round-robin fixo",
+      "Os equipamentos enviam tramas em multicast com Ethertype 0x88B8",
+      "Os sensores escrevem diretamente nas tabelas da base de dados do ERP central"
+    ],
+    "correct": 0,
+    "explanation": "O MQTT é publish/subscribe sobre TCP (1883, ou 8883 com TLS): os equipamentos publicam em tópicos num broker e qualquer cliente subscrito recebe as mensagens.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "O que garante o QoS 2 do MQTT?",
+    "options": [
+      "A mensagem é entregue no máximo uma vez, sem nova tentativa",
+      "A mensagem é entregue exatamente uma vez ao recetor",
+      "O broker comprime a carga útil antes de a reencaminhar",
+      "A mensagem é cifrada ponta a ponta sem precisar de TLS"
+    ],
+    "correct": 1,
+    "explanation": "O QoS 0 é no máximo uma vez, o QoS 1 pelo menos uma vez (pode haver duplicados) e o QoS 2 exatamente uma vez, com um handshake de quatro passos. O QoS não tem nada a ver com cifra.",
+    "difficulty": "Difícil",
+    "domain": "3"
+  },
+  {
+    "question": "Que protocolo é típico entre um SCADA master de uma utility e as estações remotas, usando TCP/UDP 20000?",
+    "options": [
+      "BACnet/IP",
+      "PROFINET IRT",
+      "Modbus RTU",
+      "DNP3"
+    ],
+    "correct": 3,
+    "explanation": "O DNP3 é muito usado em utilities elétricas e de águas para telemetria master–estação remota, com armazenamento de eventos e carimbos de tempo; sobre IP usa a porta 20000.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Numa subestação IEC 61850, como são transportadas as mensagens GOOSE de disparo?",
+    "options": [
+      "Tópicos MQTT com QoS 2 para a sala de controlo",
+      "Sessões TCP ao servidor MMS na porta 102",
+      "Tramas Layer 2 multicast com prioridade alta",
+      "Traps SNMP enviadas para o gestor de rede"
+    ],
+    "correct": 2,
+    "explanation": "As mensagens GOOSE são publicadas diretamente como multicast Layer 2 (Ethertype 0x88B8) com prioridade de VLAN e repetidas depressa, para cumprir tempos de proteção de poucos milissegundos.",
+    "difficulty": "Difícil",
+    "domain": "3"
+  },
+  {
+    "question": "Que protocolo se encontra sobretudo em automação de edifícios (AVAC, iluminação) e usa UDP 47808?",
+    "options": [
+      "IEC 60870-5-104",
+      "BACnet/IP",
+      "EtherCAT",
+      "CC-Link IE"
+    ],
+    "correct": 1,
+    "explanation": "O BACnet/IP é o protocolo comum de automação de edifícios e usa UDP 47808 (0xBAC0). O IEC 104 é para telecomando da rede elétrica sobre TCP 2404.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Porque é que as firewalls normais de escritório, sozinhas, protegem mal os protocolos industriais?",
+    "options": [
+      "Não conseguem filtrar tráfego nenhum que use a porta TCP 502",
+      "Só funcionam com equipamentos industriais em IPv6",
+      "Muitas vezes não inspecionam comandos como escritas no PLC",
+      "Bloqueiam automaticamente todo o tráfego multicast"
+    ],
+    "correct": 2,
+    "explanation": "Uma regra por porta não distingue uma leitura Modbus de uma escrita nem um comando CIP 'parar PLC'. Firewalls e IDS com conhecimento industrial usam DPI para permitir ou alertar por função.",
+    "difficulty": "Fácil",
+    "domain": "3"
+  },
+  {
+    "question": "Que parte da IEC 62443 se dirige às práticas de desenvolvimento seguro dos fabricantes de produtos?",
+    "options": [
+      "62443-3-2",
+      "62443-2-4",
+      "62443-4-1",
+      "62443-3-3"
+    ],
+    "correct": 2,
+    "explanation": "A 62443-4-1 define o ciclo de desenvolvimento seguro de produtos para fornecedores. A 3-2 trata da avaliação de risco e desenho de zonas/condutas e a 2-4 dos requisitos para prestadores de serviços.",
+    "difficulty": "Médio",
+    "domain": "6"
+  },
+  {
+    "question": "Numa avaliação IEC 62443-3-2, qual é o resultado para cada zona e conduta?",
+    "options": [
+      "Uma lista obrigatória de marcas",
+      "Um nível de segurança alvo (SL-T)",
+      "Um prémio de seguro para a fábrica",
+      "Um valor fixo de MTBF para os switches"
+    ],
+    "correct": 1,
+    "explanation": "A 62443-3-2 divide o sistema em zonas e condutas e, com base na avaliação de risco, atribui a cada uma um nível de segurança alvo (SL-T) que depois orienta os controlos exigidos.",
+    "difficulty": "Difícil",
+    "domain": "6"
+  },
+  {
+    "question": "Qual destes é um dos sete requisitos fundamentais (FR) da IEC 62443?",
+    "options": [
+      "Comprimento máximo de cabo",
+      "Fluxo de dados restrito",
+      "Dependência do fabricante",
+      "Taxas anuais de auditoria"
+    ],
+    "correct": 1,
+    "explanation": "Os FR são controlo de identificação e autenticação, controlo de uso, integridade do sistema, confidencialidade dos dados, fluxo de dados restrito, resposta atempada a eventos e disponibilidade de recursos.",
+    "difficulty": "Médio",
+    "domain": "6"
+  },
+  {
+    "question": "Um fornecedor precisa de acesso remoto a um PLC para suporte. Que abordagem segue as boas práticas de OT?",
+    "options": [
+      "Um reencaminhamento permanente de porta no router de internet",
+      "Um modem 4G instalado dentro do armário de controlo da máquina",
+      "Partilhar a password do portátil de engenharia com o fornecedor",
+      "Um jump host na IDMZ com MFA, aprovação e registo da sessão"
+    ],
+    "correct": 3,
+    "explanation": "O acesso remoto deve terminar na IDMZ (ou num serviço ZTNA), exigir MFA e aprovação por sessão, ter tempo limitado e ser gravado. Modems escondidos e reencaminhamentos de porta contornam todos os controlos.",
+    "difficulty": "Médio",
+    "domain": "7"
+  },
+  {
+    "question": "Que malware ficou conhecido por atacar um sistema instrumentado de segurança (SIS) numa petroquímica?",
+    "options": [
+      "Ransomware WannaCry",
+      "Triton (Trisis)",
+      "Trojan bancário Emotet",
+      "Mirai"
+    ],
+    "correct": 1,
+    "explanation": "O Triton/Trisis atacou controladores de segurança Schneider Triconex em 2017. O Stuxnet atacou PLC Siemens em centrifugadoras e o Industroyer protocolos da rede elétrica.",
+    "difficulty": "Médio",
+    "domain": "7"
+  },
+  {
+    "question": "O que oferece um díodo de dados entre a rede OT e a empresa?",
+    "options": [
+      "Atualização automática dos hosts OT a partir de servidores IT",
+      "Débito TCP mais alto graças a aceleração em hardware",
+      "Fluxo físico estritamente num só sentido, saindo da OT",
+      "Tráfego nos dois sentidos, mas com cifra mais forte"
+    ],
+    "correct": 2,
+    "explanation": "Um díodo de dados força a transferência num só sentido em hardware (por exemplo só com uma fibra de transmissão), para que os dados saiam da OT sem que nada, nem confirmações, possa entrar.",
+    "difficulty": "Difícil",
+    "domain": "7"
+  },
+  {
+    "question": "Para que é usado principalmente o Cisco Cyber Vision numa rede industrial?",
+    "options": [
+      "Descobrir ativos e fluxos OT a partir do tráfego, para segurança",
+      "Enviar firmware novo a todos os PLC da fábrica de uma só vez",
+      "Sincronizar relógios com boundary clocks IEEE 1588",
+      "Substituir a firewall da IDMZ por uma função do switch"
+    ],
+    "correct": 0,
+    "explanation": "Os sensores Cyber Vision, muitas vezes embutidos nos switches IE, usam DPI nos protocolos industriais para fazer o inventário de ativos, mapear comunicações, ver vulnerabilidades e detetar anomalias.",
+    "difficulty": "Médio",
+    "domain": "7"
+  },
+  {
+    "question": "Um operador liga uma pen USB pessoal a uma HMI. Que risco OT isto cria mais diretamente?",
+    "options": [
+      "Um loop de spanning tree nos switches da rede da célula",
+      "Entrada de malware contornando os controlos da rede",
+      "Um erro de duplex no uplink da HMI",
+      "Uma eleição de grandmaster PTP na área"
+    ],
+    "correct": 1,
+    "explanation": "Os suportes amovíveis contornam firewalls e segmentação; o Stuxnet espalhou-se assim. As fábricas usam políticas USB, quiosques de análise e controlo de dispositivos.",
+    "difficulty": "Fácil",
+    "domain": "7"
+  },
+  {
+    "question": "Em que consiste uma abordagem de lista de permissões (allow-list) numa HMI OT?",
+    "options": [
+      "Executar só programas aprovados e bloquear o resto",
+      "Permitir qualquer programa que tenha uma assinatura de código válida",
+      "Deixar instalar software depois de um aviso",
+      "Bloquear só os IP de uma lista de ameaças"
+    ],
+    "correct": 0,
+    "explanation": "O allow-listing de aplicações é adequado a hosts OT cujo software muda pouco: só correm programas conhecidos e aprovados, o que trava a maior parte do malware sem atualizações frequentes de assinaturas.",
+    "difficulty": "Médio",
+    "domain": "7"
+  },
+  {
+    "question": "Que tecnologia sem fios foi desenhada como malha auto-organizada a 2,4 GHz para instrumentos de processo?",
+    "options": [
+      "Beacons Bluetooth Low Energy",
+      "LoRaWAN em 868 MHz",
+      "WirelessHART (IEC 62591)",
+      "Wi-Fi 6 na banda dos 6 GHz"
+    ],
+    "correct": 2,
+    "explanation": "O WirelessHART usa rádios IEEE 802.15.4 a 2,4 GHz com saltos de canal sincronizados no tempo, em malha, para instrumentos de campo de processo. O ISA100.11a é uma norma parecida.",
+    "difficulty": "Médio",
+    "domain": "8"
+  },
+  {
+    "question": "Uma empresa de águas precisa de sensores a bateria espalhados por muitos quilómetros que enviam poucos bytes por hora. Qual se adequa melhor?",
+    "options": [
+      "Access points Wi-Fi 6 em cada poste",
+      "LoRaWAN na banda sub-GHz",
+      "PROFINET sobre cobre até cada local",
+      "EtherNet/IP num anel DLR em fibra"
+    ],
+    "correct": 1,
+    "explanation": "O LoRaWAN (868 MHz na Europa) dá grande alcance e anos de bateria para cargas pequenas e raras, o que serve a telemetria remota. O NB-IoT e o LTE-M são alternativas celulares licenciadas.",
+    "difficulty": "Médio",
+    "domain": "8"
+  },
+  {
+    "question": "Os AGV que circulam num armazém precisam de ligar por Wi-Fi os equipamentos Ethernet de bordo. Qual é o bloco Cisco habitual?",
+    "options": [
+      "Um injetor PoE no carregador do veículo",
+      "Uma workgroup bridge (WGB) em cada veículo",
+      "Um switch IE a correr PRP para dois access points",
+      "Um AP root de malha dentro de cada AGV"
+    ],
+    "correct": 1,
+    "explanation": "Uma WGB é um rádio cliente que faz bridge dos equipamentos com fios do veículo para a WLAN. Para veículos rápidos que exigem handoffs muito curtos usa-se o Cisco Ultra-Reliable Wireless Backhaul (URWB).",
+    "difficulty": "Difícil",
+    "domain": "8"
+  },
+  {
+    "question": "Qual é o principal benefício de correr análise de dados no edge (fog) de uma fábrica?",
+    "options": [
+      "Menos latência e menos dados brutos enviados para cima",
+      "Pôr todos os ciclos de scan dos PLC abaixo de um microssegundo",
+      "Transformar tráfego Layer 2 em tráfego encaminhado",
+      "Dispensar qualquer segurança de rede"
+    ],
+    "correct": 0,
+    "explanation": "O edge computing (por exemplo apps Cisco IOx em switches IE ou routers IR) processa os dados junto às máquinas, reage mais depressa e só envia resultados filtrados para a cloud ou datacenter.",
+    "difficulty": "Médio",
+    "domain": "8"
+  },
+  {
+    "question": "Que abordagem de QoS aplicam normalmente os desenhos industriais ao I/O crítico e ao PTP?",
+    "options": [
+      "Marcar o I/O como scavenger para nunca atrasar o tráfego do escritório",
+      "Pôr todo o tráfego numa fila best-effort por justiça",
+      "Limitar o PTP a 64 kb/s em todas as portas para proteger os uplinks",
+      "Confiar e dar prioridade às marcas DSCP/CoS sobre o tráfego em massa"
+    ],
+    "correct": 3,
+    "explanation": "Os modelos de switch IE confiam nas marcas CIP ou PROFINET e põem as mensagens de evento PTP e o I/O em tempo real em filas prioritárias, para que transferências de ficheiros e vídeo não as atrasem.",
+    "difficulty": "Médio",
+    "domain": "4"
+  },
+  {
+    "question": "Foi acrescentado um pequeno switch não gerido dentro de um armário de máquina. Que problema causa isto muitas vezes?",
+    "options": [
+      "Obriga todos os PLC do armário a funcionar em half duplex",
+      "Duplica o orçamento PoE do armário",
+      "Converte tramas PROFINET em Modbus",
+      "Sem IGMP snooping, proteção de loops ou diagnóstico"
+    ],
+    "correct": 3,
+    "explanation": "Os switches não geridos inundam o I/O multicast, não correm protocolos de anel nem proteção de loops, não dão diagnóstico e não se monitorizam, por isso um loop ou tempestade ali é difícil de encontrar.",
+    "difficulty": "Difícil",
+    "domain": "4"
+  },
+  {
+    "question": "Que meio se escolhe normalmente para ligações entre edifícios ou junto a grandes variadores numa fábrica?",
+    "options": [
+      "Cabos de patch Cat5e sem blindagem",
+      "Cabo coaxial com conectores BNC e peças em T",
+      "Fibra ótica, imune ao ruído elétrico",
+      "Cabo telefónico plano RJ-11"
+    ],
+    "correct": 2,
+    "explanation": "A fibra não capta EMI de motores e variadores e evita diferenças de potencial de terra entre edifícios, por isso é preferida em backbones e zonas ruidosas.",
+    "difficulty": "Médio",
+    "domain": "4"
+  },
+  {
+    "question": "Que conector é comum em Ethernet industrial em ambientes agressivos e com vibração?",
+    "options": [
+      "M12, código D ou X",
+      "Ficha coaxial BNC",
+      "Ficha série DB-25",
+      "Ficha telefónica RJ-11"
+    ],
+    "correct": 0,
+    "explanation": "Os conectores circulares M12 vedam contra pó e água (IP67) e trancam contra vibração. A codificação D é usada em 100 Mb/s e a X em Gigabit.",
+    "difficulty": "Fácil",
+    "domain": "4"
+  },
+  {
+    "question": "Que mensagens PTP usa um escravo para medir o atraso do caminho no modo end-to-end?",
+    "options": [
+      "Hello e Keepalive",
+      "Mensagens Announce e Signaling",
+      "Delay_Req e Delay_Resp",
+      "Só Pdelay_Req"
+    ],
+    "correct": 2,
+    "explanation": "No mecanismo end-to-end, as mensagens Sync/Follow_Up dão o tempo do mestre e o escravo envia Delay_Req; o mestre responde com Delay_Resp, o que permite calcular o atraso médio do caminho. O peer-to-peer usa mensagens Pdelay.",
+    "difficulty": "Médio",
+    "domain": "5"
+  },
+  {
+    "question": "O que faz um boundary clock PTP?",
+    "options": [
+      "É escravo numa porta e mestre nas outras",
+      "Reencaminha o PTP sem alterações e só conta tramas",
+      "Passa sempre a grandmaster do domínio",
+      "Traduz PTP em NTP para PLC antigos"
+    ],
+    "correct": 0,
+    "explanation": "Um boundary clock sincroniza-se com o mestre a montante numa porta e serve de mestre nas portas a jusante, dividindo uma rede grande em saltos de sincronização mais pequenos.",
+    "difficulty": "Difícil",
+    "domain": "5"
+  },
+  {
+    "question": "Porque é que as redes PTP dependem de carimbo de tempo em hardware nos switches e equipamentos?",
+    "options": [
+      "Os carimbos em software não podem ir em UDP",
+      "O carimbo em hardware torna o PTP cifrado",
+      "Permite ao PTP substituir o spanning tree nos anéis da fábrica",
+      "A pilha de software junta atraso variável que estraga a precisão"
+    ],
+    "correct": 3,
+    "explanation": "O carimbo de tempo na PHY/MAC elimina a latência imprevisível das filas e interrupções do sistema operativo, o que é necessário para precisão abaixo do microssegundo.",
+    "difficulty": "Médio",
+    "domain": "5"
+  },
+  {
+    "question": "Que afirmação descreve melhor o desafio da convergência IT/OT?",
+    "options": [
+      "Os equipamentos OT nunca usam TCP/IP, por isso não se ligam",
+      "IT e OT usam as mesmas janelas de patches e de alterações",
+      "As redes IP partilhadas têm de cumprir os requisitos da OT",
+      "A segurança OT fica resolvida quando a fábrica tem antivírus instalado"
+    ],
+    "correct": 2,
+    "explanation": "As fábricas já partilham Ethernet/IP com a IT, mas a OT mantém prioridades diferentes: tráfego determinístico, ciclos de vida longos, segurança física e disponibilidade. Os desenhos e as equipas têm de respeitar ambos.",
+    "difficulty": "Médio",
+    "domain": "1"
+  },
+  {
+    "question": "Qual é a vida útil típica de um PLC ou DCS instalado numa fábrica?",
+    "options": [
+      "1 a 2 anos, como portáteis de escritório",
+      "15 a 25 anos",
+      "6 meses",
+      "3 a 4 anos"
+    ],
+    "correct": 1,
+    "explanation": "Os sistemas de controlo funcionam muitas vezes durante décadas, por isso as redes têm de suportar equipamentos antigos, protocolos legados e sistemas operativos já sem suporte.",
+    "difficulty": "Fácil",
+    "domain": "1"
+  },
+  {
+    "question": "No desenho de zonas, onde deve ficar normalmente um sistema instrumentado de segurança (SIS)?",
+    "options": [
+      "Na mesma VLAN plana das impressoras do escritório",
+      "Na sua própria zona, com condutas muito controladas",
+      "Na IDMZ, para os fornecedores lá chegarem facilmente",
+      "Na rede Wi-Fi de convidados para simplificar verificações"
+    ],
+    "correct": 1,
+    "explanation": "Um SIS é o sistema cujo compromisso tem consequências mais graves, por isso fica numa zona própria (muitas vezes com SL-T mais alto) e só com condutas mínimas e monitorizadas para o BPCS.",
+    "difficulty": "Médio",
+    "domain": "6"
+  },
+  {
+    "question": "Uma rede PRP transporta o tráfego de um IED com dupla ligação. Na LAN A um switch vê as tramas, mas a LAN B não mostra nenhuma. Qual é o efeito?",
+    "options": [
+      "Sem perda de dados, mas sem redundância até corrigir a B",
+      "Cada trama passa a ser entregue duas vezes",
+      "O IED deixa de enviar nas duas LAN até a LAN B voltar",
+      "O PRP passa automaticamente para modo HSR"
+    ],
+    "correct": 0,
+    "explanation": "O PRP continua a funcionar só com uma LAN, por isso a aplicação não nota nada; mas uma segunda falha na LAN A já causaria perda, por isso a LAN B tem de ser supervisionada e reparada.",
+    "difficulty": "Difícil",
+    "domain": "4"
+  },
+  {
+    "question": "Porque é que o Express Setup de um switch IE não chega depois do comissionamento?",
+    "options": [
+      "Desliga todos os protocolos industriais ao fim de um dia",
+      "Obriga o switch a passar a modo não gerido",
+      "Retira o switch da topologia PROFINET e do anel MRP",
+      "As predefinições precisam de reforço (passwords, SNMP, portas)"
+    ],
+    "correct": 3,
+    "explanation": "Os assistentes de configuração rápida põem o switch a funcionar, mas a boa prática exige credenciais únicas, SNMPv3 em vez de comunidades por omissão, desligar portas e serviços sem uso e ativar registos.",
+    "difficulty": "Médio",
+    "domain": "4"
+  },
+  {
+    "question": "O que descreve melhor o IO-Link numa máquina?",
+    "options": [
+      "É uma ligação ponto a ponto de um master a um único sensor",
+      "É um protocolo em anel para switches IE",
+      "É a versão cifrada do Modbus TCP para sensores",
+      "É um perfil PTP para subestações elétricas"
+    ],
+    "correct": 0,
+    "explanation": "O IO-Link (IEC 61131-9) é uma ligação ponto a ponto a três fios entre uma porta de master IO-Link e um sensor ou atuador inteligente, com dados de processo e parâmetros. O master liga depois para cima por PROFINET ou EtherNet/IP.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Porque é que o EtherCAT precisa de hardware próprio nos escravos em vez de switches normais entre os equipamentos?",
+    "options": [
+      "Só funciona em fibra e não corre em cobre",
+      "Precisa de um controlador Wi-Fi em cada segmento",
+      "Os escravos processam a trama em andamento, quando ela passa",
+      "Depende das retransmissões TCP para manter o tempo de ciclo"
+    ],
+    "correct": 2,
+    "explanation": "No EtherCAT uma só trama percorre todos os escravos e cada um lê e insere os seus dados em andamento, em hardware, antes de a reencaminhar. Switches normais quebrariam esta cadeia.",
+    "difficulty": "Difícil",
+    "domain": "3"
+  },
+  {
+    "question": "Que prática limita melhor os danos se uma estação de engenharia de uma célula ficar infetada?",
+    "options": [
+      "Usar a mesma password de admin em todos os PLC para acelerar o suporte",
+      "Segmentar as células e permitir só os fluxos necessários entre elas",
+      "Deixar o Telnet ativo para diagnóstico do fornecedor",
+      "Ligar todas as células diretamente à rede empresarial"
+    ],
+    "correct": 1,
+    "explanation": "A segmentação com condutas de privilégio mínimo (por exemplo firewalls de zona ou políticas por SGT nos switches IE) impede que uma infeção numa célula chegue às outras.",
+    "difficulty": "Médio",
+    "domain": "7"
+  },
+  {
+    "question": "Que porta usa a mensagem explícita EtherNet/IP para pedidos CIP ligados e não ligados?",
+    "options": [
+      "Só UDP 2222 em multicast",
+      "UDP 47808 para um endereço de broadcast",
+      "TCP 4840 com a segurança do OPC UA",
+      "TCP 44818"
+    ],
+    "correct": 3,
+    "explanation": "As mensagens explícitas (configuração, leitura de tags, diagnóstico) usam TCP 44818 e UDP 44818 para alguma descoberta. O I/O cíclico usa UDP 2222.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "O Cyber Vision mostra um portátil de engenharia a enviar 'program download' a um PLC fora de qualquer janela de alterações. Qual é a primeira ação correta?",
+    "options": [
+      "Reiniciar o PLC para apagar já o programa novo",
+      "Confirmar com a operação se a alteração foi autorizada",
+      "Ignorar porque o portátil está dentro da zona da célula",
+      "Bloquear todo o tráfego CIP no core da fábrica"
+    ],
+    "correct": 1,
+    "explanation": "Uma alteração inesperada de programa é um alerta OT importante, mas bloquear ou reiniciar às cegas pode parar a produção. Primeiro confirma-se com a operação e com o processo de alterações; depois contém-se se não tiver sido autorizada.",
+    "difficulty": "Difícil",
+    "domain": "7"
+  },
+  {
+    "question": "Que equipamento fica no topo de uma zona de célula/área e a liga à distribuição da fábrica no CPwE?",
+    "options": [
+      "Um switch Layer 3 que serve de gateway da célula",
+      "Um access point Wi-Fi a funcionar em modo bridge",
+      "Um PLC com duas portas Ethernet",
+      "Um switch não gerido de cinco portas no armário"
+    ],
+    "correct": 0,
+    "explanation": "Cada VLAN de célula/área tem normalmente o gateway num switch de distribuição Layer 3 (ou switch IE Layer 3), que encaminha entre células e para o nível 3, mantendo o Layer 2 local.",
+    "difficulty": "Médio",
+    "domain": "4"
+  }
+]

@@ -1,0 +1,1003 @@
+[
+  {
+    "question": "Um troço Cat6 novo tem o mapa de fios correto, mas o certificador chumba-o por NEXT e o link do PC cai com carga. O instalador usou os pinos certos mas emparelhou o 3 com o 4 e o 5 com o 6. Que avaria é esta?",
+    "options": [
+      "Um par dividido (split pair)",
+      "Um par invertido",
+      "Um curto-circuito entre dois pinos",
+      "Um condutor aberto no pino 8"
+    ],
+    "correct": 0,
+    "explanation": "Um split pair mantém a continuidade pino a pino (por isso um mapa de fios simples passa), mas os sinais de um par viajam em dois pares torcidos diferentes, o que destrói o cancelamento de diafonia.",
+    "difficulty": "Médio",
+    "domain": "1"
+  },
+  {
+    "question": "Um testador indica 'invertido' nos pinos 1 e 2 de um cabo acabado de cravar. O que aconteceu?",
+    "options": [
+      "O cabo tem mais de 100 m",
+      "Os dois fios desse par foram trocados numa ponta",
+      "O cabo é blindado mas a ficha não",
+      "O par está bem; o testador precisa de calibração"
+    ],
+    "correct": 1,
+    "explanation": "Um par invertido significa que os dois fios de um par estão trocados numa ponta (1 vai ao 2 e 2 ao 1). Volte a terminar essa ponta na ordem T568 correta.",
+    "difficulty": "Fácil",
+    "domain": "1"
+  },
+  {
+    "question": "Um link de secretária só sobe a 100 Mb/s com switch e placa Gigabit. O testador mostra o par 7-8 aberto. Porque é que ainda funciona a 100 Mb/s?",
+    "options": [
+      "O 100BASE-TX usa os quatro pares a menor velocidade",
+      "O Auto-MDIX passa os dados para a blindagem",
+      "O 100BASE-TX só precisa dos pares 1-2 e 3-6",
+      "O switch converte o link em PoE"
+    ],
+    "correct": 2,
+    "explanation": "O 100BASE-TX usa só dois pares, enquanto o 1000BASE-T precisa dos quatro. Com um par partido, a autonegociação (ou downshift) fica nos 100 Mb/s.",
+    "difficulty": "Médio",
+    "domain": "1"
+  },
+  {
+    "question": "O certificador chumba um link por NEXT só na ponta do patch panel. Qual é uma causa comum de mão de obra ali?",
+    "options": [
+      "Pares destorcidos demasiado para trás na cravação",
+      "O cabo foi identificado com uma etiqueta impressa",
+      "O painel está montado na unidade de bastidor errada",
+      "A cor da bainha do cabo não condiz com o painel"
+    ],
+    "correct": 0,
+    "explanation": "Em Cat6, a torção deve manter-se até cerca de 13 mm da terminação. Destorcer mais na cravação no painel aumenta o NEXT nessa ponta.",
+    "difficulty": "Médio",
+    "domain": "1"
+  },
+  {
+    "question": "O teste de canal mostra 112 m e chumba a perda de inserção. Qual é o comprimento máximo normalizado de um canal Ethernet em par entrançado?",
+    "options": [
+      "90 m sem nenhum cabo de patch permitido",
+      "150 m se o cabo for Cat6A",
+      "100 m, incluindo os cabos de patch",
+      "200 m só para 1000BASE-T"
+    ],
+    "correct": 2,
+    "explanation": "A TIA/ISO permitem um canal de 100 m: até 90 m de link permanente mais até 10 m de cabos de patch e de equipamento no total. Troços maiores precisam de switch ou fibra.",
+    "difficulty": "Médio",
+    "domain": "1"
+  },
+  {
+    "question": "O link de um utilizador cai sempre que a secretária é mexida. Com tudo parado o cabo testa bem. O que suspeita primeiro?",
+    "options": [
+      "Um âmbito DHCP demasiado pequeno",
+      "Um SSID duplicado ali perto",
+      "Um sufixo DNS errado no PC",
+      "Um conector solto ou mal cravado"
+    ],
+    "correct": 3,
+    "explanation": "Avarias intermitentes que acompanham o movimento apontam para a camada física: uma ficha mal cravada, uma keystone danificada ou um cabo esmagado debaixo da secretária. Volte a terminar ou troque por um cabo bom conhecido.",
+    "difficulty": "Fácil",
+    "domain": "1"
+  },
+  {
+    "question": "Que ferramenta usa para terminar Cat6 de condutor sólido numa keystone tipo 110?",
+    "options": [
+      "Um alicate de cravar RJ-45 com roquete",
+      "Uma ferramenta de impacto com lâmina 110",
+      "Uma clivadora de fibra com lâmina de diamante e batente",
+      "Uma sonda de gerador de tom"
+    ],
+    "correct": 1,
+    "explanation": "As keystones e os patch panels usam contactos IDC: a ferramenta de impacto assenta o fio e corta o excesso. Os alicates RJ-45 são para fichas de cabos de patch.",
+    "difficulty": "Médio",
+    "domain": "1"
+  },
+  {
+    "question": "Foi instalado um sistema de cablagem blindada (F/UTP), mas o patch panel não está ligado à terra do bastidor. Qual é o risco?",
+    "options": [
+      "O cabo deixa de conseguir transportar PoE",
+      "A blindagem pode funcionar como antena e juntar ruído",
+      "As tomadas deixam de aceitar fichas RJ-45",
+      "O link é obrigado a ficar em half duplex"
+    ],
+    "correct": 1,
+    "explanation": "Uma blindagem sem ligação à terra não escoa o ruído, por isso pode captar e irradiar interferências, por vezes pior do que UTP. Os sistemas blindados têm de ser ligados à terra segundo a TIA-607.",
+    "difficulty": "Difícil",
+    "domain": "1"
+  },
+  {
+    "question": "O TDR de um testador mostra uma falha aos 23 m num troço de 40 m. Como usa esta informação?",
+    "options": [
+      "Trocar o troço inteiro de 40 m sem procurar",
+      "Procurar ao longo do percurso a cerca de 23 m da ponta do testador",
+      "Assumir que a tomada da outra ponta está avariada",
+      "Voltar a cravar só a ficha do lado do testador e repetir o teste completo"
+    ],
+    "correct": 1,
+    "explanation": "A reflectometria no domínio do tempo dá a distância até um aberto, curto ou alteração de impedância. Meça ao longo do percurso a partir da ponta do testador para encontrar danos como um cabo esmagado ou um agrafo.",
+    "difficulty": "Médio",
+    "domain": "1"
+  },
+  {
+    "question": "Para um novo troço 10GBASE-T de 90 m num feixe cheio de cabos, que categoria deve ser especificada?",
+    "options": [
+      "Cat6A",
+      "Cat5e",
+      "Cat3",
+      "Cat6 em qualquer comprimento"
+    ],
+    "correct": 0,
+    "explanation": "O Cat6A suporta 10GBASE-T até 100 m e limita a diafonia externa (alien crosstalk) entre cabos do feixe. O Cat6 só suporta 10G até cerca de 37–55 m, conforme as condições.",
+    "difficulty": "Médio",
+    "domain": "1"
+  },
+  {
+    "question": "Um switch mostra um uplink de fibra em baixo nas duas pontas. Os dois transceivers mostram potência Tx, mas o Rx está a -40 dBm. Qual é uma primeira verificação rápida?",
+    "options": [
+      "Trocar a polaridade Tx/Rx do cabo de patch duplex",
+      "Atualizar primeiro o IOS dos dois switches",
+      "Mudar a VLAN do uplink",
+      "Desligar o spanning tree nas duas portas de uplink"
+    ],
+    "correct": 0,
+    "explanation": "Há luz a ser enviada mas não recebida em nenhum dos lados, sinal típico de Tx ligado a Tx. Inverter o conector duplex (ou a polaridade do patch) numa ponta costuma repor o link.",
+    "difficulty": "Fácil",
+    "domain": "2"
+  },
+  {
+    "question": "Calcule a perda esperada de um link monomodo de 3 km a 1310 nm: fibra a 0,35 dB/km, dois pares de conectores a 0,5 dB cada e duas fusões a 0,1 dB cada.",
+    "options": [
+      "2,25 dB",
+      "1,05 dB",
+      "3,15 dB",
+      "0,35 dB"
+    ],
+    "correct": 0,
+    "explanation": "Fibra: 3 × 0,35 = 1,05 dB; conectores: 2 × 0,5 = 1,0 dB; fusões: 2 × 0,1 = 0,2 dB. Total 2,25 dB, que o orçamento de potência do transceiver tem de superar com margem.",
+    "difficulty": "Difícil",
+    "domain": "2"
+  },
+  {
+    "question": "Um patch monomodo curto de 2 m liga dois ópticos 1000BASE-ZX no laboratório e o link tem erros. A potência Rx está acima do máximo do recetor. O que resolve?",
+    "options": [
+      "Mudar para um cabo RJ-45 cruzado entre os dois switches",
+      "Um cabo de patch multimodo mais comprido",
+      "Limpar só a ponta do transmissor",
+      "Um atenuador em linha para pôr o Rx dentro da gama"
+    ],
+    "correct": 3,
+    "explanation": "Os ópticos de longo alcance transmitem tanta potência que um link curto satura o recetor. Um atenuador (ou um óptico de menor potência) põe o Rx dentro da janela da ficha técnica.",
+    "difficulty": "Médio",
+    "domain": "2"
+  },
+  {
+    "question": "Porque é que se liga uma bobina de lançamento (fibra de zona morta) entre o OTDR e o link em teste?",
+    "options": [
+      "Para aumentar a potência do laser do OTDR",
+      "Para se conseguir medir o primeiro conector do link",
+      "Para converter multimodo em monomodo",
+      "Para filtrar a luz ambiente da sala que distorceria o traço"
+    ],
+    "correct": 1,
+    "explanation": "O OTDR fica cego durante alguns metros depois do seu próprio conector (a zona morta). A bobina de lançamento põe o primeiro conector do link para lá dessa zona; uma bobina de receção faz o mesmo na outra ponta.",
+    "difficulty": "Médio",
+    "domain": "2"
+  },
+  {
+    "question": "Num traço OTDR vê um degrau de perda sem pico refletivo aos 1,2 km, maior a 1550 nm do que a 1310 nm. Qual é a causa mais provável?",
+    "options": [
+      "Um par de conectores acoplados",
+      "A ponta aberta da fibra",
+      "Um fantasma causado pela bobina de lançamento",
+      "Uma curva apertada (macrocurvatura) no cabo"
+    ],
+    "correct": 3,
+    "explanation": "Eventos não refletivos são fusões ou curvas. Uma curva perde muito mais a 1550 nm do que a 1310 nm, enquanto uma fusão perde quase o mesmo nos dois comprimentos de onda. Os conectores mostram picos refletivos.",
+    "difficulty": "Difícil",
+    "domain": "2"
+  },
+  {
+    "question": "Um OTDR mostra um 'ganho' aparente numa fusão quando testado de uma ponta. Qual é a forma correta de obter a perda real da fusão?",
+    "options": [
+      "Ignorar o evento porque ganhos são impossíveis",
+      "Refazer logo a fusão na caixa de junção, sem voltar a medir",
+      "Testar só a 850 nm em monomodo",
+      "Testar das duas pontas e fazer a média das leituras"
+    ],
+    "correct": 3,
+    "explanation": "Juntar fibras com coeficientes de retrodifusão diferentes faz um sentido mostrar ganho e o outro uma perda exagerada. A média bidirecional dá a perda real da fusão.",
+    "difficulty": "Difícil",
+    "domain": "2"
+  },
+  {
+    "question": "Que ferramenta portátil injeta um laser vermelho visível na fibra para encontrar quebras e curvas apertadas perto do bastidor?",
+    "options": [
+      "Gerador de tom e sonda indutiva",
+      "Localizador visual de falhas (VFL)",
+      "Medidor de potência ótica e fonte",
+      "Ficha de loopback"
+    ],
+    "correct": 1,
+    "explanation": "O VFL injeta luz vermelha visível que brilha através da bainha em quebras, conectores maus ou curvas apertadas nos primeiros quilómetros. Nunca olhe para a ponta da fibra com ele ligado.",
+    "difficulty": "Fácil",
+    "domain": "2"
+  },
+  {
+    "question": "Um conector verde foi acoplado a um conector azul num painel monomodo e a perda é muito alta. Porquê?",
+    "options": [
+      "Um conector APC (angular) foi acoplado a um UPC (plano)",
+      "Verde quer dizer multimodo e azul monomodo",
+      "As cores indicam comprimentos de onda diferentes",
+      "Os conectores azuis são só para cobre"
+    ],
+    "correct": 0,
+    "explanation": "Verde é APC (ângulo de 8°) e azul é UPC. Acoplá-los deixa uma folga de ar e desalinhamento, com perda alta e possíveis danos nas faces.",
+    "difficulty": "Médio",
+    "domain": "2"
+  },
+  {
+    "question": "Cabos de patch multimodo antigos cor de laranja de 62,5 µm são usados num backbone novo OM4 aqua (50 µm). Qual é o efeito?",
+    "options": [
+      "Nenhum, porque toda a fibra multimodo é igual",
+      "Perda extra pela diferença de tamanho do núcleo",
+      "O link passa a comportar-se como monomodo automaticamente",
+      "Passa a poder haver PoE pela fibra"
+    ],
+    "correct": 1,
+    "explanation": "A luz de um núcleo de 62,5 µm para um de 50 µm falha em parte o núcleo menor, juntando vários dB de perda nesse sentido. Mantenha o mesmo tipo de fibra de ponta a ponta.",
+    "difficulty": "Médio",
+    "domain": "2"
+  },
+  {
+    "question": "Qual é a primeira regra antes de ligar qualquer cabo de patch de fibra a um transceiver?",
+    "options": [
+      "Dobrá-lo com força para testar a bainha",
+      "Olhar para a ponta para confirmar que há luz",
+      "Inspecionar a face com um microscópio e limpar se preciso",
+      "Soprar na face para tirar o pó"
+    ],
+    "correct": 2,
+    "explanation": "'Inspecionar antes de ligar': veja a face com um microscópio de fibra, limpe com um limpador próprio se estiver suja e volte a inspecionar. Nunca olhe para uma fibra com os olhos nem sopre nela.",
+    "difficulty": "Fácil",
+    "domain": "2"
+  },
+  {
+    "question": "Com fonte de luz e medidor de potência faz a referência e depois mede um link a -2,8 dB. O orçamento calculado é 2,1 dB. O que fazer a seguir?",
+    "options": [
+      "Trocar o medidor por um certificador de cobre",
+      "Aceitar, porque qualquer valor abaixo de 3 dB passa",
+      "Inspecionar e limpar os conectores e voltar a testar",
+      "Substituir o switch da outra ponta"
+    ],
+    "correct": 2,
+    "explanation": "Uma perda 0,7 dB acima do calculado costuma indicar um conector sujo ou danificado ou uma fusão má. Limpe e inspecione cada ligação e volte a testar antes de trocar alguma coisa.",
+    "difficulty": "Médio",
+    "domain": "2"
+  },
+  {
+    "question": "Um SFP+ 10GBASE-SR está ligado por fibra monomodo OS2 a um 10GBASE-LR na outra ponta. O que acontece?",
+    "options": [
+      "Funciona, porque ambos são de 10 Gb/s",
+      "O link passa a funcionar a 1 Gb/s",
+      "Falha: óptico MMF 850 nm vs SMF 1310 nm",
+      "Perde-se só o PoE no link"
+    ],
+    "correct": 2,
+    "explanation": "Os ópticos SR usam 850 nm em multimodo e os LR 1310 nm em monomodo. As duas pontas têm de usar o mesmo tipo de óptico e a fibra que esse tipo espera.",
+    "difficulty": "Médio",
+    "domain": "4"
+  },
+  {
+    "question": "Dois SFP BiDi numa só fibra não fazem link. Um está identificado como Tx 1310 nm/Rx 1490 nm. Como tem de ser o outro?",
+    "options": [
+      "O par complementar: Tx 1490 nm/Rx 1310 nm",
+      "Um transceiver LX duplex normal",
+      "Igual: Tx 1310 nm/Rx 1490 nm",
+      "Qualquer SFP BiDi do mesmo fabricante e da mesma velocidade"
+    ],
+    "correct": 0,
+    "explanation": "Os ópticos BiDi transmitem e recebem em comprimentos de onda diferentes numa só fibra, por isso vendem-se em pares complementares (por exemplo tipos U e D). Duas unidades iguais não comunicam.",
+    "difficulty": "Difícil",
+    "domain": "4"
+  },
+  {
+    "question": "Depois de inserir um SFP de terceiros, uma porta Catalyst passa a err-disabled com a mensagem 'gbic-invalid'. O que indica?",
+    "options": [
+      "A fibra é demasiado longa para o alcance do óptico",
+      "A VLAN da porta está errada",
+      "O switch rejeitou o módulo como não suportado",
+      "O spanning tree bloqueou a porta"
+    ],
+    "correct": 2,
+    "explanation": "Os switches Cisco verificam a identidade do transceiver; um módulo não suportado ou não reconhecido pode ser posto em err-disabled (gbic-invalid). Use uma peça suportada da matriz de compatibilidade Cisco TMG.",
+    "difficulty": "Médio",
+    "domain": "4"
+  },
+  {
+    "question": "Que comando mostra a potência ótica Tx/Rx e a temperatura de um SFP em IOS XE?",
+    "options": [
+      "show running-config | include vlan",
+      "show ip interface brief",
+      "show vlan brief",
+      "show interfaces transceiver detail"
+    ],
+    "correct": 3,
+    "explanation": "Com ópticos com DOM, o show interfaces transceiver (detail) lista temperatura, tensão, corrente de polarização e potência Tx/Rx com os limites de alarme.",
+    "difficulty": "Médio",
+    "domain": "4"
+  },
+  {
+    "question": "Um técnico precisa do número de peça exato (PID) e do número de série dos SFP de um switch para uma RMA. Que comando ajuda?",
+    "options": [
+      "show interfaces status",
+      "show inventory",
+      "show mac address-table",
+      "show cdp neighbors"
+    ],
+    "correct": 1,
+    "explanation": "O show inventory lista o chassis, módulos e transceivers com PID, VID e número de série, que é o que o processo de RMA pede.",
+    "difficulty": "Médio",
+    "domain": "4"
+  },
+  {
+    "question": "Um cabo twinax de 1 m com pontas SFP+ liga dois switches no mesmo bastidor. Como se chama?",
+    "options": [
+      "Um conversor de media",
+      "Um cabo Direct Attach Copper (DAC)",
+      "Uma bobina de lançamento de OTDR",
+      "Um cabo de consola rollover"
+    ],
+    "correct": 1,
+    "explanation": "Um DAC é cobre twinax com pontas SFP+ (ou QSFP) fixas, barato e de baixa latência para ligações curtas no bastidor. Os Active Optical Cables (AOC) fazem o mesmo com fibra para maior alcance.",
+    "difficulty": "Médio",
+    "domain": "4"
+  },
+  {
+    "question": "Antes de comprar ópticos para um switch novo, que fonte confirma que transceivers ele suporta?",
+    "options": [
+      "Qualquer anúncio de um marketplace online",
+      "A matriz Cisco Transceiver Module Group (TMG)",
+      "Os registos do servidor DHCP",
+      "A cor do painel frontal do switch"
+    ],
+    "correct": 1,
+    "explanation": "A matriz de compatibilidade Cisco TMG lista os transceivers suportados por plataforma e versão de software, incluindo versões mínimas e suporte DOM.",
+    "difficulty": "Fácil",
+    "domain": "4"
+  },
+  {
+    "question": "O show power inline mostra: Disponível 370 W, Usado 362 W. Uma câmara nova de 25 W não recebe energia. Qual é a causa?",
+    "options": [
+      "A porta está na VLAN errada",
+      "A câmara precisa de um cabo cruzado",
+      "O orçamento PoE está quase esgotado",
+      "A câmara só funciona com fibra"
+    ],
+    "correct": 2,
+    "explanation": "Só restam 8 W, menos do que a câmara precisa, por isso o switch recusa a energia. Liberte orçamento (alocações menores via LLDP/CDP, mudar equipamentos) ou junte uma fonte.",
+    "difficulty": "Médio",
+    "domain": "5"
+  },
+  {
+    "question": "Um switch aloca PoE por classe. Estão ligados vinte AP de classe 4. Quanto orçamento fica reservado no PSE?",
+    "options": [
+      "20 × 15,4 W = 308 W",
+      "20 × 60 W = 1200 W",
+      "20 × 25,5 W = 510 W",
+      "20 × 30 W = 600 W"
+    ],
+    "correct": 3,
+    "explanation": "A classe 4 (802.3at) reserva 30 W por porta no PSE (25,5 W no equipamento depois da perda no cabo). Sem negociação LLDP, o switch reserva o valor total da classe.",
+    "difficulty": "Difícil",
+    "domain": "5"
+  },
+  {
+    "question": "Os telefones são classe 4 por hardware, mas usam na prática uns 7 W. Como evita que o switch reserve 30 W para cada um?",
+    "options": [
+      "Usar cabos de patch cruzados para os telefones",
+      "Desligar o PoE e usar transformadores locais",
+      "Deixar a negociação de energia CDP/LLDP definir a alocação real",
+      "Passar os telefones para a VLAN nativa"
+    ],
+    "correct": 2,
+    "explanation": "Com a negociação de energia por CDP ou LLDP-MED, o equipamento pede o que realmente precisa e o switch atualiza a alocação, libertando orçamento face à reserva estática por classe.",
+    "difficulty": "Difícil",
+    "domain": "5"
+  },
+  {
+    "question": "Uma câmara PTZ nova com aquecimento precisa de 60 W, mas o switch de acesso só suporta 802.3at. Qual é a correção mais simples no terreno?",
+    "options": [
+      "Usar dois cabos de patch em paralelo até à câmara",
+      "Pôr a porta a 100 Mb/s half duplex",
+      "Trocar o cabo por Cat3 para reduzir a perda",
+      "Instalar um injetor midspan 802.3bt"
+    ],
+    "correct": 3,
+    "explanation": "O 802.3at chega no máximo a 30 W no PSE. Para um equipamento de 60 W é preciso um injetor midspan 802.3bt (tipo 3/4) ou uma porta de switch UPOE/bt.",
+    "difficulty": "Médio",
+    "domain": "5"
+  },
+  {
+    "question": "Quando um switch PoE perde uma de duas fontes, alguns telefones reiniciam. Que definição decide que portas mantêm energia?",
+    "options": [
+      "O valor de MTU definido em cada interface",
+      "O campo de descrição de cada interface",
+      "O custo de spanning tree da porta",
+      "A prioridade PoE de cada porta"
+    ],
+    "correct": 3,
+    "explanation": "Se o orçamento encolhe, o switch corta primeiro as portas de menor prioridade. Defina prioridade alta para AP, câmaras e telefones de emergência.",
+    "difficulty": "Médio",
+    "domain": "5"
+  },
+  {
+    "question": "O show power inline Gi1/0/7 mostra 'faulty'. Um telefone que se sabe estar bom também falha nessa porta. O que verifica?",
+    "options": [
+      "Os servidores DNS entregues no âmbito DHCP da VLAN de voz",
+      "A cablagem (curtos) e a porta com um testador PoE",
+      "O nome de domínio VTP do switch",
+      "As definições de toque e de ecrã do telefone"
+    ],
+    "correct": 1,
+    "explanation": "O estado 'faulty' significa que o switch detetou um erro, como curto ou sobrecarga. Teste a cablagem e depois a porta com um testador PoE ou outro equipamento; pode ser preciso fazer reset ao power inline.",
+    "difficulty": "Médio",
+    "domain": "5"
+  },
+  {
+    "question": "Um feixe grande de cabos com PoE de alta potência aquece num teto falso. Porque é que isto importa?",
+    "options": [
+      "O calor muda a VLAN das portas",
+      "O calor aumenta a perda de inserção e pode danificar os cabos",
+      "Cabos quentes transportam mais potência PoE",
+      "Cabos quentes precisam de outro endereço IP"
+    ],
+    "correct": 1,
+    "explanation": "A corrente em muitos condutores aquece o feixe; a temperatura mais alta aumenta a perda de inserção e pode ultrapassar os limites do cabo. Use feixes menores, melhor ventilação ou cabo próprio para potência.",
+    "difficulty": "Fácil",
+    "domain": "5"
+  },
+  {
+    "question": "Um PC numa sala de reuniões recebe endereço da sub-rede de convidados em vez da sub-rede de colaboradores. Qual é o erro mais provável do lado do switch?",
+    "options": [
+      "A porta de acesso está na VLAN errada",
+      "O orçamento PoE do switch está esgotado nessa porta",
+      "O duplex da porta está em full",
+      "O switch tem a versão de IOS errada"
+    ],
+    "correct": 0,
+    "explanation": "A VLAN da porta de acesso decide a que sub-rede chega o pedido DHCP do PC. Verifique show interfaces switchport ou show vlan brief e corrija a VLAN de acesso.",
+    "difficulty": "Médio",
+    "domain": "6"
+  },
+  {
+    "question": "Um lado de um link está fixo em 100/full e o outro em auto. O lado auto mostra 'a-100 a-half'. Que sintomas surgem?",
+    "options": [
+      "Só o tráfego de broadcast e multicast é afetado no link",
+      "Nenhum erro, só débito mais lento nos dois",
+      "O link fica em baixo até ambos estarem em auto",
+      "Colisões tardias no lado half e erros CRC no lado full"
+    ],
+    "correct": 3,
+    "explanation": "O lado auto não consegue negociar com um par fixo, por isso deteta 100 Mb/s mas cai para half duplex. O lado half vê colisões tardias e o lado full vê CRC/runts, com transferências lentas.",
+    "difficulty": "Difícil",
+    "domain": "6"
+  },
+  {
+    "question": "Um utilizador ligou um pequeno switch doméstico debaixo da secretária e a porta passou a err-disabled. Que funcionalidade é mais provável ter feito isto?",
+    "options": [
+      "BPDU Guard numa porta de acesso PortFast",
+      "DHCP snooping na VLAN",
+      "Jumbo frames ativas no trunk de uplink do piso",
+      "Autenticação NTP com o switch de núcleo"
+    ],
+    "correct": 0,
+    "explanation": "O BPDU Guard põe em err-disabled uma porta de extremidade quando recebe um BPDU, o que acontece se ligarem um switch. Retire o equipamento e recupere a porta (shutdown/no shutdown ou errdisable recovery).",
+    "difficulty": "Médio",
+    "domain": "6"
+  },
+  {
+    "question": "Tem de descobrir a que porta do switch está ligada uma tomada de parede e faltam as etiquetas. Qual é um método rápido?",
+    "options": [
+      "Ler as opções do âmbito no servidor DHCP",
+      "Ligar um portátil e ler o LLDP/CDP",
+      "Ver as traduções na tabela NAT do router",
+      "Fazer ping ao endereço de broadcast da sub-rede"
+    ],
+    "correct": 1,
+    "explanation": "Um portátil com uma ferramenta LLDP/CDP (ou um testador de link que mostra nome do switch e porta) revela o switch vizinho e a interface. Em alternativa, procure o MAC do portátil no show mac address-table.",
+    "difficulty": "Médio",
+    "domain": "6"
+  },
+  {
+    "question": "Que norma define a rotulagem e administração da cablagem de telecomunicações (identificadores de painéis, portas e cabos)?",
+    "options": [
+      "ANSI/TIA-606",
+      "IEEE 802.3af",
+      "ISO 9001 de gestão da qualidade",
+      "IEC 61850"
+    ],
+    "correct": 0,
+    "explanation": "A ANSI/TIA-606 define formatos de identificadores e registos para espaços, bastidores, painéis, portas e cabos, para qualquer técnico conseguir seguir um link pela documentação.",
+    "difficulty": "Fácil",
+    "domain": "3"
+  },
+  {
+    "question": "Onde se deve identificar um cabo horizontal?",
+    "options": [
+      "Só na ponta do patch panel, porque a da secretária se vê",
+      "A meio do percurso, acima das placas do teto falso",
+      "Só na folha de documentação, nunca no próprio cabo",
+      "Nas duas pontas, perto de cada terminação"
+    ],
+    "correct": 3,
+    "explanation": "Identifique as duas pontas de cada cabo perto da terminação (e também a tomada e a porta do painel), com etiquetas impressas duráveis que coincidam com os registos.",
+    "difficulty": "Fácil",
+    "domain": "3"
+  },
+  {
+    "question": "Uma tomada de parede tem a etiqueta '2B-A12-24'. Num esquema típico ao estilo TIA-606, o que é mais provável que identifique?",
+    "options": [
+      "Piso 2 sala B, painel A12, porta 24",
+      "Edifício 2, VLAN 12, 24 utilizadores ligados",
+      "VLAN 2, sub-rede B, host 12, porta 24",
+      "Um cabo de 24 m de categoria 2B"
+    ],
+    "correct": 0,
+    "explanation": "Os identificadores costumam codificar o espaço técnico, o painel e a porta, para se seguir a tomada diretamente até à posição no patch panel. O formato exato vem do plano de rotulagem do local.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Qual é a melhor forma de agrupar cabos de patch num bastidor?",
+    "options": [
+      "Fitas de velcro, sem apertar demais",
+      "Fita adesiva à volta de todo o feixe",
+      "Dar nós aos cabos para poupar espaço",
+      "Abraçadeiras de plástico bem apertadas a cada 10 cm"
+    ],
+    "correct": 0,
+    "explanation": "As fitas de velcro seguram os feixes sem esmagar o cabo; abraçadeiras demasiado apertadas deformam os pares e degradam o desempenho, além de dificultarem alterações.",
+    "difficulty": "Fácil",
+    "domain": "3"
+  },
+  {
+    "question": "Como regra prática, qual é o raio de curvatura mínimo de um cabo UTP de 4 pares instalado?",
+    "options": [
+      "Exatamente 90 graus num canto vivo",
+      "Qualquer raio, porque o cobre não se importa",
+      "Cerca de 1 vez o diâmetro do cabo",
+      "Cerca de 4 vezes o diâmetro do cabo"
+    ],
+    "correct": 3,
+    "explanation": "A orientação TIA é cerca de 4× o diâmetro exterior para UTP instalado (a fibra precisa de mais, muitas vezes 10–20×). Curvas mais apertadas alteram a torção e pioram return loss e NEXT.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Um switch novo de 1U, um patch panel de 2U com organizador e uma prateleira de 1U têm de caber no bastidor. Quantas unidades são precisas?",
+    "options": [
+      "3U",
+      "2U",
+      "4U",
+      "6U"
+    ],
+    "correct": 2,
+    "explanation": "1U + 2U + 1U = 4U. Uma unidade de bastidor tem 44,45 mm (1,75 pol.); planear em U evita surpresas na instalação.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Porque não se devem passar cabos de dados apertados junto a cabos de energia na mesma calha sem separação?",
+    "options": [
+      "Os cabos de energia tornam os de dados mais pesados",
+      "Altera aos poucos a cor e a textura das bainhas dos cabos de dados",
+      "Obriga as portas do switch a entrar em modo PoE",
+      "O ruído elétrico pode acoplar-se aos pares de dados"
+    ],
+    "correct": 3,
+    "explanation": "Os cabos de energia geram interferência eletromagnética que se pode acoplar aos pares torcidos. Mantenha separação ou use separador/calha própria, como recomendam as normas.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Depois de mudar utilizadores de lugar, o que deve atualizar antes de fechar o ticket?",
+    "options": [
+      "Nada, porque o switch volta a aprender os MAC",
+      "Só o título do ticket, a dizer 'feito'",
+      "A política de fundo de ecrã e de proteção de ecrã do utilizador",
+      "Os registos de patching e as descrições das portas"
+    ],
+    "correct": 3,
+    "explanation": "Registos desatualizados tornam a próxima avaria mais lenta de resolver. Atualize os registos de ligações, as etiquetas e as descrições das portas como parte da alteração.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Um bastidor tem switches com fluxo de ar da frente para trás, mas um foi montado ao contrário. Qual é o problema?",
+    "options": [
+      "Muda o IP de gestão do switch",
+      "Faz o switch funcionar em half duplex",
+      "Inverte a polaridade PoE em todas as suas portas de acesso",
+      "Sopra ar quente para o corredor frio"
+    ],
+    "correct": 3,
+    "explanation": "Misturar sentidos de fluxo de ar recircula ar quente para as entradas. Ajuste o fluxo do equipamento (ou o módulo de ventilação) ao corredor quente/frio.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Porque se deixa uma pequena reserva de cabo arrumada atrás de um patch panel?",
+    "options": [
+      "Para poder voltar a terminar sem puxar cabo novo",
+      "Para aumentar a velocidade de dados do cabo",
+      "Para servir de dissipador de calor do PoE",
+      "Para reduzir o número de etiquetas precisas no painel e nas tomadas"
+    ],
+    "correct": 0,
+    "explanation": "Uma reserva moderada dá folga para voltar a terminar ou mudar o painel. Deve estar arrumada e dentro do raio de curvatura, não uma grande bobina que passe o comprimento para lá dos 90 m.",
+    "difficulty": "Fácil",
+    "domain": "3"
+  },
+  {
+    "question": "Os bastidores e as calhas numa sala técnica têm de ser ligados ao barramento de terra de telecomunicações. Que norma trata disto?",
+    "options": [
+      "ANSI/TIA-607",
+      "ANSI/TIA-568",
+      "IEEE 802.1X",
+      "IEEE 802.3bt"
+    ],
+    "correct": 0,
+    "explanation": "A TIA-607 trata da ligação à terra e equipotencialidade da infraestrutura de telecomunicações; a TIA-568 trata da cablagem e a TIA-606 da sua administração.",
+    "difficulty": "Médio",
+    "domain": "3"
+  },
+  {
+    "question": "Um telefone IP funciona, mas o PC ligado atrás dele fica na sub-rede da VLAN de voz. Qual é a configuração errada mais provável na porta?",
+    "options": [
+      "O PoE está desligado na porta",
+      "As VLAN de acesso e de voz trocadas",
+      "O switch não tem default gateway",
+      "O firmware do telefone é demasiado recente para o call manager"
+    ],
+    "correct": 1,
+    "explanation": "O telefone marca o tráfego de voz com a VLAN de voz, e o PC envia tramas sem marcação que vão para a VLAN de acesso. Se as duas estiverem trocadas, o PC cai na sub-rede de voz.",
+    "difficulty": "Médio",
+    "domain": "6"
+  },
+  {
+    "question": "O show interfaces status mostra uma porta 'err-disabled' depois de um utilizador ligar um segundo portátil por um mini-switch. Além do BPDU Guard, que funcionalidade é a causa provável?",
+    "options": [
+      "O spanning tree PortFast no uplink",
+      "O port security a passar o limite de MAC",
+      "O tempo de concessão DHCP configurado no servidor Windows",
+      "O stratum NTP do switch"
+    ],
+    "correct": 1,
+    "explanation": "O port security com um limite baixo de MAC (muitas vezes 1 ou 2) desliga a porta numa violação quando aparece um equipamento extra. Veja show port-security interface e recupere a porta.",
+    "difficulty": "Médio",
+    "domain": "6"
+  },
+  {
+    "question": "No show interfaces status, uma porta com cabo ligado mostra 'notconnect'. O que isso lhe diz?",
+    "options": [
+      "A porta está na VLAN errada",
+      "A porta está bloqueada pelo spanning tree",
+      "Não há link de camada 1 nessa porta",
+      "O equipamento não tem endereço IP"
+    ],
+    "correct": 2,
+    "explanation": "'notconnect' significa sem link: verifique o cabo, o patching, o equipamento da outra ponta e a sua placa. Problemas de VLAN e IP só aparecem depois de a porta estar 'connected'.",
+    "difficulty": "Fácil",
+    "domain": "6"
+  },
+  {
+    "question": "Sabe-se o IP de uma impressora, mas ninguém sabe em que porta de switch está. Que comandos a encontram num switch Cisco?",
+    "options": [
+      "show version e depois show clock",
+      "show vlan brief e depois show running-config | section interface",
+      "show power inline e depois show inventory",
+      "show ip arp e depois show mac address-table"
+    ],
+    "correct": 3,
+    "explanation": "O ARP dá o MAC da impressora e a tabela de MAC mostra a porta onde foi aprendido. Siga os uplinks com CDP/LLDP até chegar a uma porta de acesso.",
+    "difficulty": "Médio",
+    "domain": "6"
+  },
+  {
+    "question": "Um AP novo numa porta trunk recebe o IP de gestão, mas os clientes do SSID de colaboradores (VLAN 30) não recebem DHCP. Os outros SSID funcionam. O que verifica primeiro?",
+    "options": [
+      "A VLAN 30 em cada trunk do caminho",
+      "A orientação das antenas do AP",
+      "O intervalo de beacon do SSID configurado no controlador",
+      "A classe PoE do AP"
+    ],
+    "correct": 0,
+    "explanation": "Uma falha só numa VLAN de um trunk costuma significar que essa VLAN falta na lista permitida ou não foi criada num switch do caminho. Veja show interfaces trunk em cada salto.",
+    "difficulty": "Difícil",
+    "domain": "6"
+  },
+  {
+    "question": "O contador de uma porta de acesso mostra erros de entrada e CRC a subir, com as duas pontas a 1000/full. Qual é a causa mais provável?",
+    "options": [
+      "Um default gateway errado configurado no PC",
+      "Um problema físico de cablagem",
+      "Um servidor DNS demasiado lento",
+      "Um âmbito DHCP cheio"
+    ],
+    "correct": 1,
+    "explanation": "Com duplex igual, erros CRC apontam para a camada 1: cabo danificado ou de má qualidade, terminações más ou interferência. Troque o cabo de patch e teste o link permanente.",
+    "difficulty": "Médio",
+    "domain": "6"
+  },
+  {
+    "question": "Antes de reconfigurar um switch no local, o que deve fazer primeiro?",
+    "options": [
+      "Apagar a configuração de arranque",
+      "Reiniciá-lo para limpar os contadores",
+      "Fazer cópia da configuração em execução",
+      "Desligar já todas as portas não usadas para reduzir o risco"
+    ],
+    "correct": 2,
+    "explanation": "Uma cópia da running config permite reverter se a alteração correr mal. Trabalhe dentro de uma janela de alteração aprovada quando a produção é afetada.",
+    "difficulty": "Fácil",
+    "domain": "7"
+  },
+  {
+    "question": "Um link está em baixo e tem um cabo de patch sobressalente que sabe estar bom. Porque é que o troca primeiro?",
+    "options": [
+      "Aumenta a velocidade do link",
+      "Repõe a configuração da porta do switch nos valores de fábrica",
+      "Isola depressa se o cabo é a avaria",
+      "Limpa a cache ARP do PC"
+    ],
+    "correct": 2,
+    "explanation": "Substituir por uma peça que se sabe estar boa divide o problema depressa. Se o link sobe, o cabo antigo estava mau; se não, passe à tomada, ao link permanente ou à porta.",
+    "difficulty": "Fácil",
+    "domain": "7"
+  },
+  {
+    "question": "Qual é uma prática correta de segurança laser ao trabalhar em fibra ativa?",
+    "options": [
+      "Olhar rapidamente para o conector para ver se há luz",
+      "Nunca olhar para a fibra; confirmar com um medidor",
+      "Tapar a ponta da fibra com o dedo para bloquear a luz",
+      "Usar a câmara do telemóvel só a 1550 nm"
+    ],
+    "correct": 1,
+    "explanation": "A luz infravermelha é invisível e pode danificar o olho. Assuma que as fibras estão ativas, tape as pontas sem uso e confirme a luz com um medidor, não com os olhos.",
+    "difficulty": "Médio",
+    "domain": "7"
+  },
+  {
+    "question": "Antes de manusear uma carta ou SFP num switch, o que protege o hardware?",
+    "options": [
+      "Segurar firmemente nos contactos dourados",
+      "Só luvas de borracha",
+      "Uma pulseira antiestática ligada à terra",
+      "Trabalhar em cima de alcatifa"
+    ],
+    "correct": 2,
+    "explanation": "As descargas eletrostáticas podem danificar componentes sem sinais visíveis. Use uma pulseira ligada à terra e pegue nos módulos pelas bordas ou pela alça, não nos contactos.",
+    "difficulty": "Fácil",
+    "domain": "7"
+  },
+  {
+    "question": "Um utilizador diz que 'a rede está lenta'. Qual é um primeiro passo sensato no local?",
+    "options": [
+      "Trocar já o switch de acesso",
+      "Reiniciar o router de núcleo em horário de trabalho",
+      "Reproduzir o problema e definir o seu âmbito",
+      "Mudar a VLAN do utilizador para testar"
+    ],
+    "correct": 2,
+    "explanation": "Confirme o sintoma e o âmbito (um utilizador, um piso, uma aplicação) antes de mudar alguma coisa. Isso orienta para a camada certa e evita interrupções desnecessárias.",
+    "difficulty": "Médio",
+    "domain": "7"
+  },
+  {
+    "question": "Porque tirar fotografias ao patch panel antes de refazer o patching de um bastidor?",
+    "options": [
+      "Dão um registo rápido para repor ligações se preciso",
+      "Melhoram o desempenho NEXT dos cabos",
+      "As fotos são precisas para ativar a licença do switch",
+      "O sistema de tickets não fecha sem uma imagem"
+    ],
+    "correct": 0,
+    "explanation": "Uma fotografia do antes é um registo barato para reverter. Com os registos de patching atualizados, torna as alterações reversíveis e auditáveis.",
+    "difficulty": "Médio",
+    "domain": "7"
+  },
+  {
+    "question": "Ao trabalhar acima do teto falso numa escada para puxar cabo, que prática é correta?",
+    "options": [
+      "Três pontos de apoio e tensão de tração limitada",
+      "Encostar a escada à estrutura das placas do teto",
+      "Puxar o cabo com toda a força para poupar tempo na obra",
+      "Subir ao último degrau para chegar mais longe"
+    ],
+    "correct": 0,
+    "explanation": "Use a escada em segurança (três pontos de apoio, nunca nos últimos degraus). Passar a tensão de tração do cabo (cerca de 110 N para UTP de 4 pares) pode esticar os pares.",
+    "difficulty": "Médio",
+    "domain": "7"
+  },
+  {
+    "question": "Um troço novo de secretária testa como cruzado: os pinos 1-2 numa ponta chegam aos 3-6 na outra. Como deve ser ligado um link permanente horizontal?",
+    "options": [
+      "Por qualquer ordem, desde que os pinos 1 e 2 estejam certos",
+      "T568A no painel e T568B na tomada",
+      "Com o mesmo esquema (T568A ou T568B) nas duas pontas",
+      "Cruzado, para os switches ligarem a PCs"
+    ],
+    "correct": 2,
+    "explanation": "Os links permanentes têm de ser diretos, com o mesmo esquema nas duas pontas (o local escolhe um). O Auto-MDIX trata do cruzamento no equipamento, não na cablagem.",
+    "difficulty": "Médio",
+    "domain": "1"
+  },
+  {
+    "question": "Um cabo passa no mapa de fios e no NEXT, mas chumba a return loss na ponta remota, junto a um cabo de patch barato. Qual é a causa provável?",
+    "options": [
+      "Desadaptação de impedância de um cabo ou conector fraco",
+      "O cabo é demasiado curto para ser testado",
+      "Uma VLAN diferente entre os dois switches",
+      "O certificador estava com os limites de teste Cat5e errados"
+    ],
+    "correct": 0,
+    "explanation": "A return loss mede reflexões causadas por mudanças de impedância. Cabos de patch de má qualidade, componentes de categorias diferentes ou más terminações refletem o sinal; troque o cabo e volte a testar.",
+    "difficulty": "Difícil",
+    "domain": "1"
+  },
+  {
+    "question": "O resultado de um certificador mostra 'PASS*' (com asterisco) numa margem. Como o deve tratar?",
+    "options": [
+      "Como uma falha total que obriga a recablar",
+      "Como prova de que o link suporta 40G",
+      "Como aprovação marginal a voltar a testar",
+      "Como sinal de que a bateria do testador está fraca"
+    ],
+    "correct": 2,
+    "explanation": "O asterisco marca um resultado dentro da faixa de precisão do instrumento. Muitas especificações aceitam-no, mas merece nova terminação ou novo teste quando a margem importa.",
+    "difficulty": "Médio",
+    "domain": "1"
+  },
+  {
+    "question": "Que tipo de fibra usa bainha aqua nas instalações modernas?",
+    "options": [
+      "Monomodo OS2",
+      "Multimodo OM1 de 62,5 µm",
+      "Multimodo OM3/OM4",
+      "Fibra ótica de plástico"
+    ],
+    "correct": 2,
+    "explanation": "Aqua é típico de OM3/OM4 (OM5 é verde-lima), amarelo de monomodo OS1/OS2 e laranja das antigas OM1/OM2. As cores ajudam a não misturar tipos.",
+    "difficulty": "Fácil",
+    "domain": "2"
+  },
+  {
+    "question": "O medidor de potência mostra uma leitura boa a 1310 nm, mas o link usa ópticos de 1550 nm. Porque deve testar também a 1550 nm?",
+    "options": [
+      "O medidor não pode ser referenciado a 1310 nm",
+      "Os 1550 nm só servem para testar cobre",
+      "A perda por curvas aparece mais a 1550 nm",
+      "A 1550 nm os conectores mudam de tipo"
+    ],
+    "correct": 2,
+    "explanation": "Os links monomodo testam-se normalmente nos dois comprimentos de onda: curvas e esforço afetam muito mais os 1550 nm, enquanto a atenuação da fibra é ali menor.",
+    "difficulty": "Médio",
+    "domain": "2"
+  },
+  {
+    "question": "Depois da limpeza, o microscópio ainda mostra uma picada no núcleo da face de um conector. Qual é a ação correta?",
+    "options": [
+      "Limpar mais dez vezes com o mesmo toalhete",
+      "Substituir ou repolir o conector",
+      "Ligar na mesma, porque as picadas não importam",
+      "Rodar o conector 180 graus"
+    ],
+    "correct": 1,
+    "explanation": "Picadas, riscos ou lascas no núcleo não saem com limpeza. Troque o cabo de patch ou volte a terminar; ligá-lo pode também danificar a outra face.",
+    "difficulty": "Médio",
+    "domain": "2"
+  },
+  {
+    "question": "Um traço OTDR termina com um grande pico refletivo aos 850 m, mas o plano diz 2,4 km. O que isto sugere?",
+    "options": [
+      "Uma quebra ou conector aberto por volta dos 850 m",
+      "A bobina de lançamento é demasiado curta",
+      "Uma fusão com um pouco de perda",
+      "Um fim normal porque o OTDR mostra metade do comprimento"
+    ],
+    "correct": 0,
+    "explanation": "Uma reflexão forte seguida de ruído marca o fim da fibra. Se aparece antes do comprimento documentado, há uma quebra ou uma ligação aberta perto dessa distância.",
+    "difficulty": "Difícil",
+    "domain": "2"
+  },
+  {
+    "question": "Um AP liga mas funciona com os rádios limitados e regista um aviso de energia. O show power inline mostra 15,4 W. O que é provável?",
+    "options": [
+      "Recebeu menos energia do que o modo completo pede",
+      "O switch está em modo VTP transparente para essa VLAN",
+      "O AP precisa de um cabo cruzado até ao switch",
+      "O AP tem o SSID errado"
+    ],
+    "correct": 0,
+    "explanation": "Muitos AP arrancam com energia 802.3af, mas desligam rádios ou portas até terem energia 802.3at/bt. Verifique a classe da porta, a negociação LLDP e a capacidade PoE do switch.",
+    "difficulty": "Médio",
+    "domain": "5"
+  },
+  {
+    "question": "Que afirmação sobre o perpetual PoE da Cisco é correta?",
+    "options": [
+      "Duplica o orçamento PoE do switch",
+      "Os PD mantêm energia num reload do switch",
+      "Elimina a necessidade de classes PoE",
+      "Só funciona em portas de fibra"
+    ],
+    "correct": 1,
+    "explanation": "O perpetual PoE mantém a energia nas portas PoE enquanto o plano de controlo do switch reinicia, para telefones e câmaras não reiniciarem. O fast PoE repõe a energia depressa depois de uma falha.",
+    "difficulty": "Médio",
+    "domain": "5"
+  },
+  {
+    "question": "Uma câmara funciona através de um injetor PoE. Onde devem ir as portas 'data in' e 'PoE out' do injetor?",
+    "options": [
+      "Data in para a câmara e PoE out para o switch",
+      "As duas portas para o switch, por redundância",
+      "Data in para o switch e PoE out para a câmara",
+      "Tanto faz, porque o injetor é simétrico"
+    ],
+    "correct": 2,
+    "explanation": "Um injetor midspan passa os dados do switch e junta energia no sentido do equipamento alimentado. Trocar as portas pode deixar a câmara sem energia.",
+    "difficulty": "Fácil",
+    "domain": "5"
+  },
+  {
+    "question": "Uma porta com um SFP de 1G numa ranhura SFP+ de 10G fica em baixo, embora o óptico seja suportado. O que deve verificar?",
+    "options": [
+      "O código de cor do SFP",
+      "O valor da opção DHCP 43",
+      "A prioridade de spanning tree da porta em cada VLAN",
+      "Se é preciso configurar speed 1000"
+    ],
+    "correct": 3,
+    "explanation": "Muitas portas SFP+ aceitam SFP de 1G, mas algumas plataformas ou grupos de portas precisam de speed 1000 configurado ou só o suportam em certas portas. Veja a documentação da plataforma.",
+    "difficulty": "Difícil",
+    "domain": "4"
+  },
+  {
+    "question": "Porque se devem manter as tampas de pó em portas SFP e ópticos sem uso?",
+    "options": [
+      "Melhoram a entrega de PoE",
+      "Evitam ciclos de spanning tree",
+      "Marcam a porta como administrativamente em baixo",
+      "Mantêm o pó longe das superfícies óticas"
+    ],
+    "correct": 3,
+    "explanation": "A contaminação é uma das principais causas de avarias óticas. Tape ópticos e portas sem uso e limpe o transceiver e o cabo de patch antes de ligar.",
+    "difficulty": "Médio",
+    "domain": "4"
+  },
+  {
+    "question": "Depois de resolver uma avaria, o que completa bem o trabalho?",
+    "options": [
+      "Reiniciar o switch por precaução",
+      "Sair assim que o LED do link fica verde",
+      "Fechar o ticket só com 'resolvido', sem mais notas",
+      "Confirmar com o utilizador e documentar"
+    ],
+    "correct": 3,
+    "explanation": "Confirme que o serviço funciona para o utilizador e registe a causa, a solução e as etiquetas ou registos alterados, para o próximo técnico beneficiar.",
+    "difficulty": "Médio",
+    "domain": "7"
+  },
+  {
+    "question": "Um uplink foi mudado e agora o registo CDP reporta um duplex mismatch. Qual é a correção certa?",
+    "options": [
+      "Desligar o CDP para a mensagem parar de aparecer no registo",
+      "Aumentar o custo de spanning tree da porta",
+      "Mudar a VLAN nativa nas duas pontas",
+      "Pôr as duas pontas iguais: ambas auto, ou ambas fixas"
+    ],
+    "correct": 3,
+    "explanation": "O duplex mismatch vem de um lado fixo e o outro em auto (ou ambos fixos de forma diferente). Configure as duas pontas de forma consistente, de preferência auto/auto em equipamento moderno.",
+    "difficulty": "Médio",
+    "domain": "6"
+  }
+]

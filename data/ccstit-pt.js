@@ -1,0 +1,1136 @@
+window.QUIZ_BANK = [
+  {
+    "question": "Um utilizador liga para o help desk. O que deve fazer antes de começar a diagnosticar?",
+    "options": [
+      "Abrir ou encontrar o ticket e registar o contacto e o problema",
+      "Entrar logo no PC por acesso remoto sem dizer nada ao utilizador",
+      "Escalar diretamente para a equipa de redes para poupar tempo",
+      "Pedir ao utilizador que reinstale primeiro o sistema operativo"
+    ],
+    "correct": 0,
+    "explanation": "Cada interação começa com um ticket: identificar o utilizador, registar contactos, sintomas e impacto. Assim fica o histórico e outra pessoa pode pegar no caso.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "1"
+  },
+  {
+    "question": "Chegam dois tickets ao mesmo tempo: o fundo de ecrã do CEO está errado e todo o piso de vendas não consegue imprimir faturas. Qual vem primeiro?",
+    "options": [
+      "O do CEO, por causa da hierarquia",
+      "O ticket que tiver a descrição mais comprida e detalhada",
+      "O do piso de vendas, pelo impacto no negócio",
+      "O que chegou uns segundos antes, sempre"
+    ],
+    "correct": 2,
+    "explanation": "A prioridade segue o impacto e a urgência, muitas vezes definidos no SLA. Um problema que impede muitos utilizadores de trabalhar passa à frente de algo cosmético, seja quem for que o reporte.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "1"
+  },
+  {
+    "question": "O que define um SLA para um help desk?",
+    "options": [
+      "A marca de portáteis que a empresa compra",
+      "As passwords que os técnicos podem partilhar",
+      "O esquema de cores e o logótipo do portal de tickets",
+      "Metas acordadas, como tempos de resposta e resolução"
+    ],
+    "correct": 3,
+    "explanation": "Um Service Level Agreement fixa compromissos mensuráveis, por exemplo primeira resposta em 1 hora para tickets de prioridade alta e resolução em 8 horas.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "1"
+  },
+  {
+    "question": "No método de resolução de problemas CompTIA/Cisco, o que vem logo a seguir a identificar o problema?",
+    "options": [
+      "Implementar a solução em todos os PC",
+      "Estabelecer uma teoria de causa provável",
+      "Escalar de imediato para o fabricante",
+      "Documentar as conclusões e fechar o ticket"
+    ],
+    "correct": 1,
+    "explanation": "A ordem é: identificar o problema, estabelecer uma teoria, testá-la, planear e implementar a correção, verificar o funcionamento total e documentar.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "1"
+  },
+  {
+    "question": "A sua teoria de causa provável foi testada e mostrou-se errada. Qual é o passo seguinte?",
+    "options": [
+      "Aplicar na mesma a correção original",
+      "Fechar o ticket como 'não reproduzível'",
+      "Estabelecer uma nova teoria ou escalar",
+      "Substituir o PC do utilizador por um novo"
+    ],
+    "correct": 2,
+    "explanation": "Se o teste falhar, forma-se uma nova teoria (recolhendo mais informação se preciso) ou escala-se para o nível seguinte. Não se aplica uma correção que o teste contrariou.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "1"
+  },
+  {
+    "question": "Porque é que as notas do ticket devem descrever cada passo que tentou, mesmo os que falharam?",
+    "options": [
+      "Os tickets só são válidos se forem compridos",
+      "Os auditores exigem pelo menos dez passos por ticket",
+      "Ajuda outros a não repetir passos e alimenta a base de conhecimento",
+      "Os passos falhados são faturados ao departamento do utilizador no fim do mês"
+    ],
+    "correct": 2,
+    "explanation": "Notas claras sobre o que foi tentado, o que resultou e o que não resultou poupam tempo ao técnico seguinte e alimentam artigos da base de conhecimento para problemas recorrentes.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "1"
+  },
+  {
+    "question": "Um utilizador frustrado está a gritar ao telefone. Qual é a resposta mais profissional?",
+    "options": [
+      "Pôr a chamada em espera até ele se acalmar",
+      "Dizer-lhe com firmeza que o problema é culpa dele e seguir em frente",
+      "Manter a calma, ouvir e repetir o problema para confirmar",
+      "Desligar e enviar-lhe antes um email comprido"
+    ],
+    "correct": 2,
+    "explanation": "Ouvir com atenção, manter a calma e reformular o problema mostra empatia e confirma que se percebeu. Discutir ou desligar só piora a situação.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "1"
+  },
+  {
+    "question": "Quando é que um técnico de nível 1 deve escalar um ticket?",
+    "options": [
+      "Quando ultrapassa o seu acesso, competência ou SLA",
+      "Só quando o utilizador pede para falar com um chefe",
+      "Nunca, porque o nível 1 tem de resolver tudo sozinho",
+      "Assim que qualquer ticket novo é aberto"
+    ],
+    "correct": 0,
+    "explanation": "Escalar é correto quando a correção exige mais permissões ou conhecimento, ou quando o ticket arrisca ultrapassar o SLA. A escalada deve levar todas as notas recolhidas até ali.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "1"
+  },
+  {
+    "question": "Antes de abrir um PC de secretária para trocar a RAM, o que deve fazer primeiro?",
+    "options": [
+      "Desligar da corrente e usar uma pulseira antiestática",
+      "Mantê-lo ligado para ver a mudança acontecer",
+      "Soprar ar comprimido para dentro da fonte de alimentação",
+      "Retirar a pilha CMOS e deixá-la de fora"
+    ],
+    "correct": 0,
+    "explanation": "Desligue a alimentação (e carregue no botão de ligar para descarregar a energia residual) e depois ligue-se à terra com uma pulseira ou tapete antiestático para não danificar componentes.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Que classe de extintor é adequada para um servidor a arder ou outro equipamento elétrico sob tensão?",
+    "options": [
+      "Classe A (água)",
+      "Classe C (CO2 ou agente limpo)",
+      "Classe K (óleos de cozinha)",
+      "Classe D (metais combustíveis)"
+    ],
+    "correct": 1,
+    "explanation": "No esquema dos EUA, a classe C cobre incêndios elétricos sob tensão; extintores de CO2 ou agente limpo não conduzem eletricidade. Na Europa usa-se o CO2 marcado para risco elétrico.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Que ferramenta do Windows mostra os processos em execução e o seu uso de CPU e memória?",
+    "options": [
+      "Visualizador de Eventos",
+      "Gestor de Tarefas",
+      "Gestão de Discos",
+      "Editor de Registo"
+    ],
+    "correct": 1,
+    "explanation": "O Gestor de Tarefas (Ctrl+Shift+Esc) lista processos, gráficos de desempenho e apps de arranque. O Visualizador de Eventos mostra registos e a Gestão de Discos trata das partições.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Num Mac, que app é o equivalente ao Gestor de Tarefas do Windows?",
+    "options": [
+      "Finder (navegador de ficheiros)",
+      "Utilitário de Disco (discos)",
+      "Monitor de Atividade",
+      "Consola (registos do sistema)"
+    ],
+    "correct": 2,
+    "explanation": "O Monitor de Atividade mostra uso de CPU, memória, energia, disco e rede por processo. A Consola mostra registos do sistema e o Utilitário de Disco gere discos.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Um PC reiniciou-se sozinho durante a noite. Onde procura a causa no Windows?",
+    "options": [
+      "Painel de Controlo, Tipos de letra",
+      "Gestor de Dispositivos, secção Portas",
+      "Visualizador de Eventos, registo Sistema",
+      "Explorador de Ficheiros, pasta Transferências"
+    ],
+    "correct": 2,
+    "explanation": "O registo Sistema do Visualizador de Eventos guarda encerramentos, falhas (por exemplo eventos Kernel-Power ou BugCheck) e reinícios do Windows Update, com data e hora.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Que conector transporta vídeo e áudio digitais e é comum em televisores e projetores?",
+    "options": [
+      "HDMI",
+      "VGA",
+      "DVI-A",
+      "PS/2"
+    ],
+    "correct": 0,
+    "explanation": "O HDMI leva vídeo e áudio digitais num só cabo. O VGA e o DVI-A são só vídeo analógico e o PS/2 é uma porta antiga de teclado/rato.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "O portátil de um utilizador tem uma única porta USB-C com um ícone de raio. O que costuma significar esse ícone?",
+    "options": [
+      "A porta serve só para carregar e não tem dados",
+      "A porta só liga a equipamentos e acessórios da Apple",
+      "A porta transporta tensão da rede elétrica e é perigosa",
+      "Suporte Thunderbolt para ecrãs, docks e armazenamento rápido"
+    ],
+    "correct": 3,
+    "explanation": "O logótipo de raio junto a uma porta USB-C indica Thunderbolt 3/4, que suporta dados de alta velocidade, vídeo DisplayPort, docks e alimentação num só cabo.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Um monitor novo só tem DisplayPort e o PC antigo só tem VGA. O que é preciso?",
+    "options": [
+      "Um cabo simples DisplayPort-VGA sem qualquer eletrónica",
+      "Um conversor ativo entre vídeo digital e analógico",
+      "Um splitter HDMI com duas saídas",
+      "Um cabo de impressora USB-A para USB-B"
+    ],
+    "correct": 1,
+    "explanation": "O VGA é analógico e o DisplayPort é digital, por isso é preciso um adaptador ativo que converta o sinal (aqui de VGA para DisplayPort). Um cabo passivo não faz essa conversão.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Um portátil está lento e o LED do disco está sempre aceso. O Gestor de Tarefas mostra o disco a 100%. Que melhoria ajuda mais?",
+    "options": [
+      "Trocar o disco rígido por um SSD",
+      "Juntar um segundo teclado",
+      "Mudar o fundo do ambiente de trabalho",
+      "Instalar outro navegador web"
+    ],
+    "correct": 0,
+    "explanation": "Um disco rígido sempre a 100% é um gargalo clássico. Um SSD (SATA ou NVMe) tem latência muito menor e acelera bastante o arranque e a abertura de aplicações.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Que interface de armazenamento dá a maior velocidade numa ranhura M.2?",
+    "options": [
+      "SATA III",
+      "IDE/PATA (cabo plano)",
+      "USB 2.0 Hi-Speed",
+      "NVMe sobre PCIe"
+    ],
+    "correct": 3,
+    "explanation": "Uma ranhura M.2 pode ter SATA ou PCIe. O NVMe sobre pistas PCIe é várias vezes mais rápido do que o limite de 6 Gb/s do SATA III. Confirme o tipo de ranhura antes de comprar.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Um equipamento aparece com um ponto de exclamação amarelo no Gestor de Dispositivos. O que indica normalmente?",
+    "options": [
+      "Há um problema de driver ou de recursos com o equipamento",
+      "O equipamento foi desativado pelo utilizador",
+      "O equipamento é o mais rápido do sistema",
+      "O equipamento é um periférico novo, verificado e assinado"
+    ],
+    "correct": 0,
+    "explanation": "Um ícone de aviso amarelo significa que o Windows encontrou o equipamento, mas o driver falta, está errado ou está a falhar. Uma seta para baixo indica desativado.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Os portáteis antigos estão a ser substituídos. O que deve acontecer aos discos e equipamentos velhos?",
+    "options": [
+      "Pô-los no lixo do escritório para poupar tempo",
+      "Vendê-los online com os dados ainda lá",
+      "Apagar ou destruir os dados e usar reciclagem certificada",
+      "Oferecê-los aos colaboradores sem verificar primeiro os dados"
+    ],
+    "correct": 2,
+    "explanation": "Os dados têm de ser apagados de forma segura ou os discos destruídos, e os equipamentos reciclados por canais certificados de REEE, porque contêm materiais perigosos e dados da empresa.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Um PC não dá imagem, ventoinhas nem luzes quando se carrega no botão. O que verifica primeiro?",
+    "options": [
+      "O estado de ativação do Windows",
+      "A versão do driver gráfico instalado",
+      "O cabo, a tomada e o interruptor da fonte",
+      "A password de email e VPN do utilizador"
+    ],
+    "correct": 2,
+    "explanation": "Sem qualquer sinal de vida, comece pela cadeia de alimentação: tomada, extensão, cabo, interruptor da fonte e ligações à motherboard. Ainda não pode ser um problema de software.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Um utilizador instalou um software CAD que falha ao abrir num PC antigo. O que deve verificar cedo?",
+    "options": [
+      "Os requisitos mínimos de hardware da aplicação",
+      "A cor e o modelo da caixa do PC",
+      "O número de marcadores no navegador",
+      "A configuração do esquema e idioma do teclado"
+    ],
+    "correct": 0,
+    "explanation": "Compare CPU, RAM, placa gráfica e versão do sistema operativo do PC com os requisitos mínimos do fabricante. Aplicações exigentes falham muitas vezes em hardware abaixo do pedido.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Uma atualização de firmware do fabricante corrige um erro conhecido nas docks dos portáteis. Qual é a boa prática?",
+    "options": [
+      "Instalá-la em todas as docks ao mesmo tempo em horário de trabalho",
+      "Nunca atualizar firmware depois de o equipamento estar instalado",
+      "Testar em poucas unidades e depois distribuir numa janela planeada",
+      "Pedir aos utilizadores que a descarreguem de qualquer site"
+    ],
+    "correct": 2,
+    "explanation": "Atualizações de firmware podem inutilizar equipamentos se forem interrompidas. Teste num grupo piloto, garanta alimentação estável e distribua numa janela de manutenção, a partir da fonte oficial.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "O que mostra a janela 'Acerca deste Mac'?",
+    "options": [
+      "Os processos em execução e o seu consumo de energia",
+      "As passwords Wi-Fi guardadas de cada rede e hotspot conhecidos",
+      "A versão do macOS, o chip, a memória e o n.º de série",
+      "As rotas de rede e o gateway por omissão"
+    ],
+    "correct": 2,
+    "explanation": "O 'Acerca deste Mac' dá um resumo rápido da versão do macOS, processador, memória e número de série, com ligação para o Relatório do Sistema completo.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Um utilizador mudou a password, mas o PC ainda mostra uma política de grupo antiga. Que comando vai buscar a política mais recente?",
+    "options": [
+      "sfc /scannow",
+      "ipconfig /renew",
+      "chkdsk /f",
+      "gpupdate /force"
+    ],
+    "correct": 3,
+    "explanation": "O gpupdate /force volta a aplicar de imediato as Group Policies de computador e utilizador a partir do Active Directory. O ipconfig /renew é para DHCP, o chkdsk para discos e o sfc para ficheiros do sistema.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Qual é a diferença entre um grupo de segurança e um grupo de distribuição no Active Directory?",
+    "options": [
+      "Os de segurança dão permissões; os de distribuição servem para listas de email",
+      "Os de segurança são só para impressoras; os de distribuição para PCs",
+      "Os de distribuição podem iniciar sessão em servidores; os de segurança não",
+      "São o mesmo objeto com dois nomes diferentes na consola"
+    ],
+    "correct": 0,
+    "explanation": "Os grupos de segurança podem receber permissões sobre recursos (e também email). Os grupos de distribuição servem só para distribuição de email e não dão acesso.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Um novo colaborador precisa de acesso à partilha das finanças. Qual é a boa prática?",
+    "options": [
+      "Dar ao utilizador Controlo Total diretamente na pasta",
+      "Partilhar o seu próprio login com o colaborador durante uma semana",
+      "Copiar todos os ficheiros das finanças para o ambiente de trabalho do colaborador",
+      "Juntar o utilizador ao grupo de segurança das finanças que tem a permissão"
+    ],
+    "correct": 3,
+    "explanation": "Dar permissões a grupos (acesso por função) e depois juntar os utilizadores ao grupo é mais fácil de gerir e auditar do que permissões por utilizador.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Que serviço fornece a identidade na cloud para o Microsoft 365, antes chamado Azure AD?",
+    "options": [
+      "Microsoft Entra ID",
+      "Google Workspace",
+      "Active Directory Domain Services",
+      "AWS IAM"
+    ],
+    "correct": 0,
+    "explanation": "O Microsoft Entra ID (antes Azure AD) é o serviço de identidade na cloud da Microsoft. O AD DS é o diretório local e o AWS IAM controla o acesso na Amazon Web Services.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Liga um utilizador que se esqueceu da password. O que tem de fazer antes de a repor?",
+    "options": [
+      "Enviar a password nova para qualquer email que ele indique",
+      "Repor de imediato para a chamada ser curta",
+      "Verificar a identidade com o procedimento aprovado",
+      "Pedir-lhe que diga a password antiga"
+    ],
+    "correct": 2,
+    "explanation": "A verificação de identidade (por exemplo ligar de volta, número de colaborador ou aprovação da chefia) impede que engenheiros sociais tomem contas através do help desk.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Um utilizador tem de aceder à partilha \\\\fs01\\vendas como unidade S: em cada início de sessão. O que faz?",
+    "options": [
+      "Criar um atalho no ambiente de trabalho para o IP do servidor",
+      "Copiar a partilha para o OneDrive à mão todos os dias",
+      "Mapear uma unidade de rede com 'Restabelecer ligação ao iniciar sessão'",
+      "Instalar a partilha como se fosse uma impressora no PC"
+    ],
+    "correct": 2,
+    "explanation": "Mapear a partilha SMB como unidade de rede com restabelecimento ativo (ou por Group Policy ou net use /persistent:yes) dá ao utilizador a unidade S: em cada início de sessão.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Um utilizador consegue abrir um ficheiro numa partilha, mas recebe 'Acesso negado' ao guardar alterações. Qual é a causa provável?",
+    "options": [
+      "O cabo de rede do PC está desligado",
+      "O servidor DNS da empresa está em baixo",
+      "A resolução do monitor está demasiado baixa",
+      "Tem Leitura mas não Modificação"
+    ],
+    "correct": 3,
+    "explanation": "Conseguir abrir mas não guardar aponta para permissões: o utilizador (ou o seu grupo) tem Leitura na partilha ou na pasta NTFS, mas falta-lhe Escrita/Modificação.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Uma impressora laser encrava várias vezes por dia, sempre no mesmo tabuleiro. Que verificação faz sentido?",
+    "options": [
+      "A escala de ecrã do Windows nos PCs dos utilizadores",
+      "O endereço IP, a máscara de rede e o gateway configurados na impressora",
+      "Tipo de papel, humidade e rolos de alimentação gastos nesse tabuleiro",
+      "A definição de assinatura SMB no servidor de impressão"
+    ],
+    "correct": 2,
+    "explanation": "Encravamentos repetidos num tabuleiro vêm normalmente de papel errado ou húmido, tabuleiro cheio demais ou rolos de alimentação/separação gastos. Definições de rede não encravam papel.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Os trabalhos acumulam-se na fila de impressão e nada sai, embora a impressora esteja online. Qual é uma correção rápida?",
+    "options": [
+      "Reinstalar o Windows de raiz no servidor de impressão",
+      "Reiniciar o serviço Spooler de Impressão e limpar a fila",
+      "Trocar primeiro o toner da impressora",
+      "Mudar a proteção de ecrã e o fundo do utilizador"
+    ],
+    "correct": 1,
+    "explanation": "Um spooler preso bloqueia muitas vezes a fila. Reiniciar o serviço Spooler de Impressão (e apagar os trabalhos presos) costuma resolver. O toner daria páginas claras ou em branco, não uma fila parada.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "As páginas de uma impressora laser saem esbatidas e com zonas irregulares. Qual é a causa mais provável?",
+    "options": [
+      "Um endereço IP errado na impressora",
+      "A fila de impressão foi pausada",
+      "Um encravamento de papel no tabuleiro de saída",
+      "Toner a acabar ou com defeito"
+    ],
+    "correct": 3,
+    "explanation": "Impressão esbatida ou às riscas é normalmente toner baixo ou tambor gasto. Problemas de rede ou de fila param a impressão por completo em vez de baixarem a qualidade.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Numa chamada Webex os outros não ouvem o utilizador, mas o headset funciona noutro PC. O que verifica primeiro?",
+    "options": [
+      "O microfone na app e a privacidade do SO",
+      "A ordem de arranque e o secure boot da BIOS",
+      "O driver da impressora por omissão no PC",
+      "O tempo de concessão DHCP no router do escritório"
+    ],
+    "correct": 0,
+    "explanation": "Muitas vezes a app usa outro dispositivo de entrada ou o sistema bloqueia o acesso da app ao microfone. Verifique o dispositivo de áudio no Webex e as permissões de privacidade/microfone.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Depois de um servidor de ficheiros mudar de IP, um PC continua a tentar o endereço antigo e os outros funcionam. O que corre nesse PC?",
+    "options": [
+      "netsh winsock reset",
+      "gpupdate /force",
+      "chkdsk C: /f",
+      "ipconfig /flushdns"
+    ],
+    "correct": 3,
+    "explanation": "O PC está a usar um registo DNS em cache. O ipconfig /flushdns limpa a cache local do resolvedor para que a próxima consulta traga o endereço novo (verifique também o ficheiro hosts).",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Uma aplicação liga ao servidor nos outros PCs, mas num PC dá timeout logo após uma atualização de segurança. Qual é um bom suspeito?",
+    "options": [
+      "Um fuso horário errado na máquina do café",
+      "A taxa de atualização do monitor do utilizador",
+      "Um aviso de toner expirado na impressora",
+      "Uma regra da firewall local a bloquear a app nesse PC"
+    ],
+    "correct": 3,
+    "explanation": "Quando um PC falha logo após uma alteração e os outros funcionam, verifique a firewall local (por exemplo Windows Defender Firewall) à procura de uma regra ou perfil novo que bloqueie a app.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Um portátil liga-se ao Wi-Fi mas fica na rede de convidados, sem acesso às aplicações internas. O que deve verificar?",
+    "options": [
+      "O brilho do ecrã do portátil",
+      "A que SSID o portátil se ligou",
+      "O relatório de saúde da bateria",
+      "O idioma do teclado"
+    ],
+    "correct": 1,
+    "explanation": "Os utilizadores ligam-se muitas vezes ao SSID errado (por exemplo Convidados em vez de Empresa). Verifique a rede ligada e remova ou baixe a prioridade do perfil errado.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Que comando Linux mostra os endereços IP de todas as interfaces nas distribuições modernas?",
+    "options": [
+      "ipconfig /all",
+      "ip addr",
+      "netsh show ip",
+      "route print"
+    ],
+    "correct": 1,
+    "explanation": "O comando iproute2 ip addr (ip a) mostra os endereços das interfaces em Linux. O ipconfig e o route print são do Windows; o ifconfig é a ferramenta antiga de Linux/macOS.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Num host Linux precisa de ver que portas estão à escuta e que processo as usa. Que comando serve?",
+    "options": [
+      "ping -c 4 localhost",
+      "ss -tulpn",
+      "traceroute6 ::1",
+      "nslookup localhost"
+    ],
+    "correct": 1,
+    "explanation": "O ss (do iproute2) substitui o netstat: -t TCP, -u UDP, -l à escuta, -p processo, -n numérico. No Windows o equivalente é netstat -ano.",
+    "difficulty": "Difícil",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Um portátil pede a chave de recuperação do BitLocker depois de uma atualização da BIOS. Onde a encontra normalmente o help desk?",
+    "options": [
+      "Impressa na etiqueta da bateria do portátil",
+      "Na entrada da tabela de concessões DHCP do router do escritório para o portátil",
+      "Dentro do registo Sistema do Visualizador de Eventos",
+      "No Entra ID/AD ou na conta Microsoft do utilizador para esse equipamento"
+    ],
+    "correct": 3,
+    "explanation": "As chaves de recuperação do BitLocker ficam guardadas no Active Directory, Entra ID, MDM ou na conta Microsoft do utilizador. Alterações de firmware ou do TPM costumam provocar o pedido de recuperação.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "O Windows bloqueia sempre depois de instalar um driver novo e não arranca normalmente. Qual é um bom passo seguinte?",
+    "options": [
+      "Trocar já a motherboard",
+      "Arrancar em Modo de Segurança e reverter o driver",
+      "Formatar já o disco sem fazer antes qualquer cópia de segurança",
+      "Desligar a firewall do Windows de vez"
+    ],
+    "correct": 1,
+    "explanation": "O Modo de Segurança carrega só os drivers essenciais, permitindo reverter o driver no Gestor de Dispositivos ou usar o Restauro do Sistema. Trocar hardware ou formatar são último recurso.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "O ícone do OneDrive de um utilizador mostra um X vermelho e os ficheiros não sincronizam. O que verifica primeiro?",
+    "options": [
+      "O erro de sincronização e o estado da sessão",
+      "A versão e o esquema do driver do teclado",
+      "O nível de toner da impressora por omissão",
+      "O cabo HDMI do segundo monitor do utilizador"
+    ],
+    "correct": 0,
+    "explanation": "Ao clicar no ícone do OneDrive aparece o erro: sessão terminada, armazenamento cheio, nome de ficheiro bloqueado ou caminho demasiado longo. Corrija essa causa e a sincronização retoma.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "Um utilizador com um segundo monitor diz que a imagem está 'esticada' e desfocada. O que ajusta?",
+    "options": [
+      "As horas ativas do Windows Update nesse PC",
+      "O plano de energia para Alto desempenho",
+      "A resolução, no valor nativo do monitor",
+      "O navegador web por omissão"
+    ],
+    "correct": 2,
+    "explanation": "Os painéis LCD só ficam nítidos na resolução nativa. Nas Definições de ecrã escolha a resolução recomendada e a escala correta para cada monitor.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "Uma aplicação web mostra conteúdo antigo e entra em ciclo no login só num navegador. Qual é uma correção rápida?",
+    "options": [
+      "Trocar a placa de rede do PC",
+      "Reinstalar o sistema operativo",
+      "Limpar a cache e os cookies desse navegador",
+      "Passar o endereço IP do PC para estático"
+    ],
+    "correct": 2,
+    "explanation": "Ficheiros em cache desatualizados ou cookies corrompidos causam muitas vezes erros de visualização e ciclos de login limitados a um navegador. Limpá-los (ou testar numa janela privada) confirma.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "Um portátil entra em suspensão ao fim de dois minutos e corta chamadas Teams. Onde altera isto?",
+    "options": [
+      "Gestor de Dispositivos, Adaptadores de rede",
+      "Definições de energia e suspensão",
+      "Opções da Limpeza do Disco e do armazenamento",
+      "Gestor de Credenciais no Painel de Controlo"
+    ],
+    "correct": 1,
+    "explanation": "Os tempos de ecrã e suspensão estão em Definições > Sistema > Energia (ou no plano de energia do Painel de Controlo). As políticas da empresa também os podem fixar por Group Policy ou MDM.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "Um utilizador com baixa visão precisa de texto maior e de um leitor de ecrã no Windows. Onde procura?",
+    "options": [
+      "Ecrã de configuração da BIOS/UEFI",
+      "Definições de Acessibilidade",
+      "Biblioteca do Agendador de Tarefas",
+      "Regras da Firewall do Windows Defender"
+    ],
+    "correct": 1,
+    "explanation": "As definições de Acessibilidade do Windows incluem o Narrador (leitor de ecrã), a Lupa, o tamanho do texto, temas de contraste e mais. No macOS há o VoiceOver e o Zoom em Acessibilidade.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "Uma atualização do Windows falha sempre com o mesmo código de erro. Qual é um passo sensato?",
+    "options": [
+      "Desligar as atualizações para sempre nesse PC",
+      "Apagar a pasta System32 para forçar uma reinstalação limpa",
+      "Correr o resolvedor de atualizações e ver o espaço em disco",
+      "Desligar o PC da corrente na próxima atualização"
+    ],
+    "correct": 2,
+    "explanation": "Pouco espaço em disco e caches de atualização corrompidas são causas comuns. O resolvedor integrado, libertar espaço e pesquisar o código de erro na KB do fabricante são bons primeiros passos.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "Um utilizador de Mac não consegue partilhar o ecrã numa reunião Webex. Que definição resolve normalmente?",
+    "options": [
+      "Mudar os itens que aparecem na barra lateral do Finder",
+      "Desligar o Bluetooth do Mac",
+      "Permitir Gravação de Ecrã ao Webex",
+      "Fazer reset à NVRAM do Mac todos os dias"
+    ],
+    "correct": 2,
+    "explanation": "O macOS exige permissão explícita por app para gravação de ecrã, câmara e microfone em Definições do Sistema > Privacidade e Segurança. Pode ser preciso reiniciar a app depois de ativar.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "Um disco externo formatado no Windows em NTFS só dá para ler num Mac. Porquê?",
+    "options": [
+      "O macOS lê NTFS de origem, mas não escreve",
+      "O cabo USB é curto demais",
+      "O disco está infetado com malware que bloqueia a escrita",
+      "O Time Machine bloqueou o disco"
+    ],
+    "correct": 0,
+    "explanation": "O macOS lê NTFS, mas não escreve sem software adicional. Para partilhar entre Mac e Windows a escolha habitual é exFAT.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "Que funcionalidade do macOS faz cópias de segurança automáticas para um disco externo?",
+    "options": [
+      "AirDrop",
+      "Spotlight",
+      "Mission Control",
+      "Time Machine"
+    ],
+    "correct": 3,
+    "explanation": "O Time Machine guarda cópias horárias, diárias e semanais num disco externo ou de rede. O AirDrop partilha ficheiros por perto e o Spotlight é a pesquisa.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "Um utilizador não consegue enviar um ficheiro por AirDrop para o iPhone de um colega ao lado. O que deve verificar?",
+    "options": [
+      "O Bluetooth, o Wi-Fi e a visibilidade AirDrop",
+      "O servidor DNS da rede do escritório",
+      "A chave de ativação do Windows no PC",
+      "A lista de impressoras adicionadas no Mac"
+    ],
+    "correct": 0,
+    "explanation": "O AirDrop usa Bluetooth para descobrir e Wi-Fi para transferir. Ambos têm de estar ligados e o recetor tem de aceitar de Só Contactos ou Todos (durante 10 minutos nos iOS mais recentes).",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "Um telemóvel da empresa deixa de receber o email de trabalho depois de o utilizador mudar a password de rede. O que é mais provável ser preciso?",
+    "options": [
+      "Repor já as definições de fábrica",
+      "Trocar o cartão SIM do telemóvel",
+      "Atualizar a password na conta de email",
+      "Ligar o modo de avião durante uma hora"
+    ],
+    "correct": 2,
+    "explanation": "As apps de email móveis guardam as credenciais antigas e falham (às vezes bloqueando a conta). Atualizar a password na conta, ou voltar a autenticar com autenticação moderna, resolve.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "O que permite uma plataforma MDM (Mobile Device Management) à IT fazer com telemóveis da empresa?",
+    "options": [
+      "Aumentar a capacidade da bateria do telemóvel",
+      "Aplicar políticas e apps e bloquear ou apagar à distância",
+      "Pôr o telemóvel a funcionar sem qualquer rede móvel ou Wi-Fi",
+      "Ler por omissão as mensagens pessoais dos utilizadores"
+    ],
+    "correct": 1,
+    "explanation": "O MDM (por exemplo o Intune) regista equipamentos, impõe códigos e cifra, instala apps e perfis Wi-Fi/VPN e pode bloquear ou apagar à distância equipamentos perdidos.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "Um telemóvel carrega muito devagar ou não carrega com nenhum cabo. Que verificação simples resolve muitas vezes?",
+    "options": [
+      "Reinstalar todas as apps do telemóvel",
+      "Mudar o fundo de ecrã e o tema do telemóvel",
+      "Desligar o fuso horário automático",
+      "Limpar o cotão da porta de carregamento"
+    ],
+    "correct": 3,
+    "explanation": "O cotão do bolso acumulado na porta USB-C ou Lightning impede a ficha de entrar bem. Limpar com cuidado com uma ferramenta não metálica costuma devolver o carregamento.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "Que modelo de serviço cloud dá aos utilizadores uma aplicação pronta, como o Microsoft 365, sem nada para gerir por baixo?",
+    "options": [
+      "IaaS",
+      "PaaS",
+      "Alojamento local (on-premises)",
+      "SaaS"
+    ],
+    "correct": 3,
+    "explanation": "O SaaS entrega aplicações completas. O PaaS dá uma plataforma para instalar o seu próprio código e o IaaS dá máquinas virtuais, armazenamento e redes que o cliente gere.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "O que é um hypervisor de tipo 2?",
+    "options": [
+      "Um tipo de SSD para máquinas virtuais",
+      "Um hypervisor instalado diretamente no hardware do servidor",
+      "Uma firewall na cloud entre duas VM",
+      "Software de virtualização que corre sobre um SO normal"
+    ],
+    "correct": 3,
+    "explanation": "Os hypervisors de tipo 2 (alojados), como o VirtualBox ou o VMware Workstation, correm dentro de um SO. Os de tipo 1 (bare-metal), como o ESXi ou o Hyper-V Server, correm diretamente no hardware.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "Um utilizador quer instalar uma ferramenta PDF gratuita de um site de downloads qualquer. Qual é a resposta certa?",
+    "options": [
+      "Indicar a loja de apps aprovada da empresa ou o processo de pedido",
+      "Deixar, porque ferramentas gratuitas são sempre seguras",
+      "Instalá-la você mesmo, já, com a sua conta de administrador de domínio",
+      "Desligar o antivírus para o instalador correr"
+    ],
+    "correct": 0,
+    "explanation": "Fontes não aprovadas trazem muitas vezes adware ou malware. Os utilizadores devem instalar a partir do portal da empresa (Portal da Empresa do Intune, Self Service) ou pedir a app à IT.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "Um utilizador reencaminha um email 'da IT' a pedir que confirme a password num link. O que lhe diz?",
+    "options": [
+      "Responder com a password para a IT verificar",
+      "Clicar no link mas escrever uma password falsa para testar",
+      "Reencaminhá-lo a todos os colegas como aviso",
+      "É phishing; não clicar e reportar com o botão de reportar"
+    ],
+    "correct": 3,
+    "explanation": "A IT nunca pede passwords por email. Reporte a mensagem (por exemplo com o botão Reportar Phishing) para a segurança a bloquear para todos; se já clicou, reponha a password.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "Alguém liga para o help desk dizendo ser um vice-presidente em viagem que precisa com urgência de repor a password para um telemóvel novo. O que é provável ser?",
+    "options": [
+      "Engenharia social a usar urgência e autoridade",
+      "Uma avaria de hardware no portátil do VP",
+      "Uma falha de DNS no hotel",
+      "Um pedido normal que deve concluir já para ajudar o VP"
+    ],
+    "correct": 0,
+    "explanation": "Usar um pretexto com urgência e autoridade é uma forma clássica de levar o help desk a saltar a verificação. Siga à risca o procedimento de identidade, seja quem for que diz ser.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "O navegador de um utilizador ganhou de repente uma barra de ferramentas nova e a página inicial mudou para um site de pesquisa desconhecido. O que faz primeiro?",
+    "options": [
+      "Mudar o endereço IP do PC",
+      "Encomendar um portátil novo para o utilizador",
+      "Ignorar, porque as barras de ferramentas são extras inofensivos",
+      "Correr uma análise de malware e remover a extensão indesejada"
+    ],
+    "correct": 3,
+    "explanation": "Os sequestradores de navegador são adware/programas potencialmente indesejados. Analise com a proteção de endpoint, remova a extensão e reponha as definições do navegador.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "Qual destes é PII (informação de identificação pessoal)?",
+    "options": [
+      "O nome de um colaborador com o seu n.º de identificação",
+      "A cotação pública das ações da empresa",
+      "O SSID da rede Wi-Fi de convidados do escritório",
+      "O número de modelo de uma impressora partilhada"
+    ],
+    "correct": 0,
+    "explanation": "A PII identifica uma pessoa, como números de identificação, moradas ou registos médicos com nomes. Tem de ser protegida e partilhada só com quem precisa de a conhecer.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "Qual é a password mais forte?",
+    "options": [
+      "Password123!Secure",
+      "Horse-battery-staple-91",
+      "Lisboa2026!Lisboa",
+      "qwerty12345678"
+    ],
+    "correct": 1,
+    "explanation": "O comprimento é o que mais conta. Uma frase-passe longa com palavras, maiúsculas, símbolos e dígitos é muito mais difícil de adivinhar do que padrões curtos comuns ou palavras com o ano.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "Um utilizador repara que alguém que não conhece entra atrás dele pela porta de cartão. Como se chama isto?",
+    "options": [
+      "Phishing",
+      "Tailgating",
+      "Spoofing",
+      "Shoulder surfing"
+    ],
+    "correct": 1,
+    "explanation": "Tailgating (ou piggybacking) é entrar numa zona segura logo atrás de uma pessoa autorizada. Shoulder surfing é espreitar alguém a escrever e spoofing é falsificar uma identidade ou endereço.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "Um email mostra o remetente 'Equipa Financeira', mas o endereço é financas@c0mpanhia-pag.com. O que é isto?",
+    "options": [
+      "Spoofing de um remetente de confiança",
+      "Um email normal da equipa financeira",
+      "Um teste do filtro de spam enviado pela IT a todos",
+      "Um problema de DNS no servidor de email"
+    ],
+    "correct": 0,
+    "explanation": "Falsificar o nome mostrado e usar domínios parecidos (0 em vez de o) serve para imitar remetentes de confiança. Verifique o endereço real e reporte.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "A conta de um utilizador mostra inícios de sessão noutro país durante a noite. O que deve o help desk fazer primeiro?",
+    "options": [
+      "Repor password, revogar sessões, ver MFA",
+      "Esperar uma semana para ver se volta a acontecer",
+      "Pedir ao utilizador que deixe de usar o email",
+      "Apagar a caixa de correio do utilizador"
+    ],
+    "correct": 0,
+    "explanation": "Sinais de compromisso exigem contenção: repor a password, terminar todas as sessões, rever métodos MFA e regras da caixa de correio e depois escalar para a segurança.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "Porque é que os utilizadores devem bloquear o ecrã (Win+L) quando saem da secretária?",
+    "options": [
+      "Para poupar toner e papel na impressora",
+      "Para impedir outros de usar a sessão",
+      "Para acelerar o Windows Update",
+      "Para renovar a concessão DHCP do PC"
+    ],
+    "correct": 1,
+    "explanation": "Um PC desbloqueado deixa qualquer pessoa que passe ler dados ou agir como o utilizador. Bloquear é rápido e as políticas muitas vezes bloqueiam após alguns minutos parado.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "Em que classe de dados fica o desenho de um produto ainda não lançado?",
+    "options": [
+      "Público (marketing)",
+      "PII (pessoal)",
+      "Proprietário",
+      "Código aberto livre"
+    ],
+    "correct": 2,
+    "explanation": "Desenhos ainda não lançados são segredos comerciais proprietários. Têm de ser classificados e partilhados só com pessoal autorizado, ao contrário dos dados públicos de marketing.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "Um utilizador recebeu muitos anúncios iguais não pedidos por email. Qual é a ação certa?",
+    "options": [
+      "Marcá-los como spam/lixo para o filtro aprender",
+      "Responder a pedir para ser retirado da lista",
+      "Clicar em 'anular subscrição' em todas as mensagens",
+      "Reencaminhá-los para todo o departamento"
+    ],
+    "correct": 0,
+    "explanation": "Responder ou clicar em anular subscrição em spam desconhecido confirma que o endereço está ativo. Marcar como lixo/spam treina os filtros e afasta mensagens futuras.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "Que ferramenta permite a um técnico ver e controlar o PC Windows de um utilizador por convite e com o seu consentimento?",
+    "options": [
+      "Consola Gestão de Discos",
+      "Consola Gestão de Impressão",
+      "Visualizador de Eventos",
+      "Assistência Rápida"
+    ],
+    "correct": 3,
+    "explanation": "A Assistência Rápida (e a antiga Assistência Remota) deixa o utilizador partilhar um código para o técnico ver ou controlar a sessão. O RDP abre outra sessão, normalmente sem o utilizador presente.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "6"
+  },
+  {
+    "question": "Comparando RDP e VNC no suporte remoto, que afirmação é verdadeira?",
+    "options": [
+      "RDP é da Microsoft; VNC é multiplataforma",
+      "O VNC cifra sempre o tráfego e o RDP nunca",
+      "O RDP só funciona em Linux e o VNC só em Windows",
+      "São protocolos idênticos com logótipos diferentes"
+    ],
+    "correct": 0,
+    "explanation": "O RDP (TCP 3389) é o protocolo de ambiente de trabalho remoto da Microsoft e costuma abrir uma sessão separada. O VNC (RFB, TCP 5900) espelha o ecrã da consola e funciona em muitos SO.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "6"
+  },
+  {
+    "question": "Cola o registo de erros de um utilizador num chatbot de IA generativa público para obter ajuda. Qual é o risco principal?",
+    "options": [
+      "O chatbot vai bloquear o PC do utilizador",
+      "Divulgar dados confidenciais ou PII a terceiros",
+      "As ferramentas de IA nunca aceitam texto com mais de uma linha",
+      "O registo vai ser impresso na impressora do escritório"
+    ],
+    "correct": 1,
+    "explanation": "As ferramentas de IA públicas podem guardar ou treinar com o que cola. Retire nomes, IP, credenciais e dados de clientes, ou use a ferramenta de IA aprovada pela empresa, e verifique sempre a resposta.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "6"
+  },
+  {
+    "question": "Um assistente de IA dá com toda a confiança um comando PowerShell para corrigir o perfil de um utilizador. O que deve fazer antes de o correr?",
+    "options": [
+      "Pedir ao utilizador que o corra com direitos de admin por si",
+      "Corrê-lo já em todos os PC para poupar tempo",
+      "Confiar, porque as respostas de IA são sempre verificadas",
+      "Confirmar o que faz em documentação fiável e testar com segurança"
+    ],
+    "correct": 3,
+    "explanation": "A IA generativa pode 'alucinar' comandos errados ou perigosos. Verifique cada comando na documentação oficial e teste numa máquina fora de produção antes de o usar.",
+    "difficulty": "Difícil",
+    "exam": "ccst-it",
+    "domain": "6"
+  },
+  {
+    "question": "Qual é a diferença entre IA preditiva e IA generativa no suporte de IT?",
+    "options": [
+      "A preditiva escreve texto novo; a generativa só ordena tickets",
+      "A preditiva prevê; a generativa cria conteúdo",
+      "São dois nomes comerciais para exatamente a mesma tecnologia",
+      "A generativa só funciona offline no PC"
+    ],
+    "correct": 1,
+    "explanation": "A IA preditiva estima resultados a partir de padrões (por exemplo que disco vai falhar ou para onde encaminhar um ticket). A generativa produz texto, código ou imagens novos, como o rascunho de uma resposta.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "6"
+  },
+  {
+    "question": "Onde deve um técnico do help desk procurar primeiro uma correção conhecida para um problema recorrente?",
+    "options": [
+      "Uma publicação qualquer nas redes sociais",
+      "As notas pessoais do utilizador",
+      "A base de conhecimento (KB) da empresa",
+      "O painel frontal da impressora"
+    ],
+    "correct": 2,
+    "explanation": "Os artigos da KB interna documentam correções aprovadas e testadas para problemas recorrentes. As KB dos fabricantes e os fóruns vêm a seguir, verificando sempre se a fonte é fiável.",
+    "difficulty": "Fácil",
+    "exam": "ccst-it",
+    "domain": "6"
+  },
+  {
+    "question": "O PC de um utilizador remoto está atrás do NAT de casa. Que abordagem de suporte remoto costuma funcionar sem reencaminhar portas?",
+    "options": [
+      "RDP direto do help desk para o IP de casa do utilizador",
+      "Telnet ao router de casa do utilizador na porta 23",
+      "Fazer ping ao PC até ele finalmente responder",
+      "Uma ferramenta via cloud, com ligações de saída"
+    ],
+    "correct": 3,
+    "explanation": "Ferramentas como a Assistência Rápida, o Webex ou o TeamViewer fazem o técnico e o utilizador ligar para fora, para um relay na cloud, por isso não é preciso porta de entrada nem VPN.",
+    "difficulty": "Difícil",
+    "exam": "ccst-it",
+    "domain": "6"
+  },
+  {
+    "question": "Um PC Windows recebe um endereço IPv6 começado por fe80::, mas nenhum IPv6 global, e o IPv4 funciona. O que isto mostra?",
+    "options": [
+      "O PC tem um IPv6 público do operador",
+      "Só link-local; não chegou RA nem DHCPv6",
+      "A placa de rede está avariada e tem de ser trocada",
+      "O DNS está a traduzir nomes IPv6 em IPv4"
+    ],
+    "correct": 1,
+    "explanation": "Todas as interfaces IPv6 criam sozinhas um endereço link-local fe80::. Um endereço global precisa de SLAAC por router advertisements ou de DHCPv6; se nenhum chegar, fica só o link-local.",
+    "difficulty": "Difícil",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Um utilizador navega na web mas não chega à aplicação interna em 10.20.5.15. O tracert para no próprio gateway do utilizador. Qual é o problema provável?",
+    "options": [
+      "O driver do monitor do utilizador está desatualizado",
+      "A cache do navegador web está corrompida",
+      "O DNS não resolve nenhum nome público da Internet",
+      "Um problema de routing ou de firewall depois do gateway"
+    ],
+    "correct": 3,
+    "explanation": "O PC chega ao gateway e o tráfego para a Internet funciona, por isso a configuração local está bem. O tráfego para a sub-rede interna é descartado depois do gateway: falta uma rota ou há um bloqueio de firewall/ACL.",
+    "difficulty": "Difícil",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Um PC de secretária apita num padrão ao ligar e não dá imagem. O que costuma indicar?",
+    "options": [
+      "Uma fila de impressão cheia na rede",
+      "Um erro do POST, muitas vezes RAM ou gráfica",
+      "Uma licença do Windows expirada",
+      "Um fuso horário mal configurado no Windows"
+    ],
+    "correct": 1,
+    "explanation": "Os códigos de apitos vêm do autoteste de arranque (POST) do firmware antes de o SO carregar. O manual da motherboard indica cada padrão, muitas vezes falhas de RAM, gráfica ou CPU.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "A bateria do portátil de um utilizador inchou e está a empurrar o touchpad para cima. Qual é a ação correta?",
+    "options": [
+      "Continuar a usar ligado à corrente até piorar",
+      "Parar de usar e substituir a bateria",
+      "Furar a bateria para libertar o gás",
+      "Pôr o portátil no congelador durante a noite para encolher"
+    ],
+    "correct": 1,
+    "explanation": "Uma bateria de iões de lítio inchada pode incendiar-se. Pare de a usar e carregar, mantenha-a longe do calor e substitua-a, entregando-a como resíduo perigoso.",
+    "difficulty": "Difícil",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Que comando do Windows mostra as ligações TCP ativas com o ID do processo dono?",
+    "options": [
+      "netstat -ano",
+      "ipconfig /displaydns",
+      "nslookup -type=mx",
+      "pathping -n"
+    ],
+    "correct": 0,
+    "explanation": "O netstat -ano lista todas as ligações e portas à escuta (-a), endereços numéricos (-n) e o PID (-o), que pode cruzar com o Gestor de Tarefas.",
+    "difficulty": "Médio",
+    "exam": "ccst-it",
+    "domain": "3"
+  }
+];
