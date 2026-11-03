@@ -8,7 +8,8 @@
   - Temas: Ameaças e ataques · Criptografia e PKI · Firewalls/IPS/VPN · Endpoints · Identidade e acesso · Logs/IR · Rede e cloud · Risco/conformidade
 - Banco Cyber: **137 → 303** por língua (+166 pares PT/EN originais). Total do site: **1668 → 2000**.
 - Contagens por exame (por língua): CCST Cyber 93 · CBROPS 111 · SCOR 99.
-- Validação: schema/parity PT-EN, lint `question-bank-length` e unittest OK. PR sem merge; `app-version.json` na main não foi alterado.
+- Validação: schema/parity PT-EN, lint `question-bank-length` e unittest OK.
+- `app-version.json`: bankTotal 2000 · bankClassic 1394 · bankCyber 606. Catálogo para a app em `data/quiz-catalog.json`.
 - Blueprints consultados em `/workspace/quiz-cyber-split-2026-11-03/blueprints.md`.
 
 ## v3.9.0 — 2026-11-03
