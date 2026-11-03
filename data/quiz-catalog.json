@@ -1,5 +1,5 @@
 {
-  "version": "4.0.0",
+  "version": "4.1.0",
   "tracks": [
     {
       "id": "ccst",
@@ -22,6 +22,27 @@
       "parent": null,
       "labelPt": "Cyber (todas)",
       "labelEn": "Cyber (all)"
+    },
+    {
+      "id": "ccstit",
+      "kind": "track",
+      "parent": null,
+      "labelPt": "CCST IT Support (100-140)",
+      "labelEn": "CCST IT Support (100-140)"
+    },
+    {
+      "id": "iiot",
+      "kind": "track",
+      "parent": null,
+      "labelPt": "IIoT e redes industriais",
+      "labelEn": "IIoT and industrial networks"
+    },
+    {
+      "id": "field",
+      "kind": "track",
+      "parent": null,
+      "labelPt": "Field Support (cenários de terreno)",
+      "labelEn": "Field Support (on-site scenarios)"
     }
   ],
   "quizzes": [
@@ -74,6 +95,40 @@
       "counts": {
         "pt": 99,
         "en": 99
+      }
+    },
+    {
+      "id": "ccst-net",
+      "kind": "exam",
+      "parent": "ccst",
+      "filter": {
+        "exam": "ccst-net"
+      },
+      "labelPt": "CCST Networking (100-150)",
+      "labelEn": "CCST Networking (100-150)",
+      "badgePt": "CCST NET",
+      "badgeEn": "CCST NET",
+      "color": "emerald",
+      "counts": {
+        "pt": 245,
+        "en": 245
+      }
+    },
+    {
+      "id": "encor",
+      "kind": "exam",
+      "parent": "ccnp",
+      "filter": {
+        "exam": "encor"
+      },
+      "labelPt": "CCNP Enterprise ENCOR (350-401)",
+      "labelEn": "CCNP Enterprise ENCOR (350-401)",
+      "badgePt": "ENCOR",
+      "badgeEn": "ENCOR",
+      "color": "violet",
+      "counts": {
+        "pt": 173,
+        "en": 173
       }
     },
     {
@@ -215,20 +270,32 @@
   ],
   "trackCounts": {
     "ccst": {
-      "pt": 227,
-      "en": 227
+      "pt": 267,
+      "en": 267
     },
     "ccna": {
       "pt": 238,
       "en": 238
     },
     "ccnp": {
-      "pt": 232,
-      "en": 232
+      "pt": 273,
+      "en": 273
     },
     "cyber": {
       "pt": 303,
       "en": 303
+    },
+    "iiot": {
+      "pt": 82,
+      "en": 82
+    },
+    "ccstit": {
+      "pt": 81,
+      "en": 81
+    },
+    "field": {
+      "pt": 77,
+      "en": 77
     }
   }
 }

@@ -9,7 +9,9 @@
     ],
     "correct": 1,
     "explanation": "Switches operate at Layer 2 (Data Link) of the OSI model and use MAC addresses to forward frames within the same LAN.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "What does the acronym OSI stand for?",
@@ -21,7 +23,9 @@
     ],
     "correct": 0,
     "explanation": "The OSI (Open Systems Interconnection) model is a conceptual 7-layer model used to describe how network devices communicate.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "Which layer of the OSI model is responsible for logical addressing and routing?",
@@ -33,7 +37,9 @@
     ],
     "correct": 1,
     "explanation": "The Network Layer (Layer 3) is responsible for logical addressing (IP) and routing packets between different networks.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "What is the difference between a hub and a switch?",
@@ -45,7 +51,9 @@
     ],
     "correct": 1,
     "explanation": "Hubs are Layer 1 devices that replicate the signal to all ports. Switches are intelligent and use a MAC table.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "What is a private IP address?",
@@ -57,7 +65,9 @@
     ],
     "correct": 1,
     "explanation": "Private IP addresses (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) are not routable on the internet and are used in internal networks.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "2.1"
   },
   {
     "question": "Which Cisco IOS command shows the learned MAC address table?",
@@ -69,7 +79,9 @@
     ],
     "correct": 1,
     "explanation": "The 'show mac address-table' command displays the MAC address table learned by the switch.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "What is a VLAN?",
@@ -81,7 +93,9 @@
     ],
     "correct": 1,
     "explanation": "VLANs (Virtual LANs) allow logical segmentation of a physical network into multiple isolated networks on the same switch.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "What is the standard speed of a Gigabit Ethernet port?",
@@ -93,7 +107,9 @@
     ],
     "correct": 2,
     "explanation": "Gigabit Ethernet over copper (1000BASE-T) runs at 1000 Mbps (1 Gbps) on Cat5e/Cat6. It is not Fast Ethernet (100 Mbps) and not 10 Gbps.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.2"
   },
   {
     "question": "What does the 'ping' command do?",
@@ -105,7 +121,9 @@
     ],
     "correct": 1,
     "explanation": "The ping command uses the ICMP protocol to test connectivity between two devices.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "What is the default subnet mask for a Class C network?",
@@ -117,7 +135,9 @@
     ],
     "correct": 2,
     "explanation": "IPv4 Class C defaults to mask 255.255.255.0 (/24): 24 network bits and 8 host bits. Class A is /8 and Class B is /16.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "What is PoE (Power over Ethernet)?",
@@ -129,7 +149,9 @@
     ],
     "correct": 1,
     "explanation": "PoE allows devices like IP cameras and VoIP phones to receive power through the same Ethernet cable used for data.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "Which protocol is used for automatic IP address assignment?",
@@ -141,7 +163,9 @@
     ],
     "correct": 1,
     "explanation": "DHCP (Dynamic Host Configuration Protocol) automatically assigns IP addresses and other network configurations.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "What is the function of the ARP protocol?",
@@ -153,7 +177,9 @@
     ],
     "correct": 1,
     "explanation": "ARP (Address Resolution Protocol) maps IP addresses to MAC addresses on the local network.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "What is a default gateway?",
@@ -165,7 +191,9 @@
     ],
     "correct": 1,
     "explanation": "The default gateway is the device (usually a router) that forwards packets destined for external networks.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "4.4"
   },
   {
     "question": "What is a collision in an Ethernet network?",
@@ -177,7 +205,9 @@
     ],
     "correct": 0,
     "explanation": "Collisions occur in half-duplex networks when two devices transmit simultaneously.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "What is the primary function of a firewall?",
@@ -189,7 +219,9 @@
     ],
     "correct": 1,
     "explanation": "Firewalls inspect and control network traffic based on predefined security rules.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "6.1"
   },
   {
     "question": "What is SSID in a wireless network?",
@@ -201,7 +233,9 @@
     ],
     "correct": 1,
     "explanation": "SSID (Service Set Identifier) is the name of the wireless network that clients see when scanning for available networks.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.4"
   },
   {
     "question": "Which protocol is used for secure remote management of Cisco devices?",
@@ -213,7 +247,9 @@
     ],
     "correct": 1,
     "explanation": "SSH (Secure Shell) provides encrypted and secure remote access, unlike insecure Telnet.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.4"
   },
   {
     "question": "What is a 'crossover cable' used for?",
@@ -225,7 +261,9 @@
     ],
     "correct": 0,
     "explanation": "Crossover cable is used to connect similar devices (switch to switch or PC to PC) directly.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "What is the default port for the HTTP protocol?",
@@ -237,7 +275,9 @@
     ],
     "correct": 2,
     "explanation": "HTTP uses TCP port 80 by default; HTTPS (HTTP over TLS) uses TCP 443. Do not confuse with DNS (53), SSH (22), or Telnet (23).",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "What is a loopback interface?",
@@ -261,7 +301,9 @@
     ],
     "correct": 1,
     "explanation": "This command saves the running configuration (RAM) to the startup configuration (NVRAM).",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "What is NAT (Network Address Translation)?",
@@ -273,7 +315,9 @@
     ],
     "correct": 1,
     "explanation": "NAT allows multiple devices on a private network to share a single public IP address.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "2.1"
   },
   {
     "question": "What is the difference between TCP and UDP?",
@@ -285,7 +329,9 @@
     ],
     "correct": 1,
     "explanation": "TCP provides reliable delivery with flow control and retransmission. UDP is faster but does not guarantee delivery.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "What is a trunk port on a switch?",
@@ -297,7 +343,9 @@
     ],
     "correct": 1,
     "explanation": "Trunk ports carry traffic from multiple VLANs between switches using 802.1Q tags.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "Which command displays the routing table on a Cisco router?",
@@ -309,7 +357,9 @@
     ],
     "correct": 0,
     "explanation": "show ip route lists the IP routing table: connected, static, and dynamic routes with codes, next hops, and metrics. It is not the ARP or MAC table.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "What is a MAC address?",
@@ -321,7 +371,9 @@
     ],
     "correct": 1,
     "explanation": "A MAC address is a unique 48-bit physical identifier assigned by the manufacturer to the network interface.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "What is the function of the STP (Spanning Tree Protocol)?",
@@ -345,7 +397,9 @@
     ],
     "correct": 2,
     "explanation": "'up/up' means the interface is physically active (Layer 1) and logically operational (Layer 2).",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "What is the default port for the SSH protocol?",
@@ -357,7 +411,9 @@
     ],
     "correct": 1,
     "explanation": "SSH listens on TCP port 22 by default and encrypts management sessions. Telnet uses 23 in cleartext; HTTPS is 443.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "What is a broadcast domain?",
@@ -369,7 +425,9 @@
     ],
     "correct": 1,
     "explanation": "A broadcast domain is the set of devices that receive broadcast messages sent by any of them.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "Which command is used to configure an interface with an IP address?",
@@ -393,7 +451,9 @@
     ],
     "correct": 1,
     "explanation": "WPA3 is the latest wireless security standard, offering better protection against attacks.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "6.3"
   },
   {
     "question": "What is the function of the 'show version' command?",
@@ -405,7 +465,9 @@
     ],
     "correct": 0,
     "explanation": "The 'show version' command displays the IOS software version, hardware model, and uptime.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "What is a patch panel?",
@@ -417,7 +479,9 @@
     ],
     "correct": 0,
     "explanation": "A patch panel is a passive device that organizes and facilitates cable connections in a network rack.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "4.2"
   },
   {
     "question": "What does the command 'show interfaces status' do?",
@@ -429,7 +493,9 @@
     ],
     "correct": 0,
     "explanation": "The 'show interfaces status' command displays the operational status of all switch ports.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "What is the difference between half-duplex and full-duplex?",
@@ -441,7 +507,9 @@
     ],
     "correct": 2,
     "explanation": "Half-duplex allows communication in only one direction at a time (with collisions). Full-duplex allows both directions simultaneously.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "What is a console cable?",
@@ -453,7 +521,9 @@
     ],
     "correct": 1,
     "explanation": "Console cable (usually RJ45 to DB9) is used for direct serial connection to the device for initial CLI configuration.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "Which protocol is used for time synchronization in networks?",
@@ -465,7 +535,9 @@
     ],
     "correct": 1,
     "explanation": "NTP (Network Time Protocol) is used to synchronize device clocks on a network with high precision.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "What is 'err-disabled' on a Cisco interface?",
@@ -477,7 +549,9 @@
     ],
     "correct": 1,
     "explanation": "Err-disabled is a protective state where the interface is automatically disabled due to errors like loops or port-security violations.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "What is the primary function of a wireless Access Point?",
@@ -489,7 +563,9 @@
     ],
     "correct": 1,
     "explanation": "Access Points (APs) allow wireless devices to connect to the wired network, acting as a bridge.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "What is CDP (Cisco Discovery Protocol)?",
@@ -501,7 +577,9 @@
     ],
     "correct": 1,
     "explanation": "CDP allows Cisco devices to discover information about directly connected neighboring devices.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "What happens when you use the 'no shutdown' command on an interface?",
@@ -537,7 +615,9 @@
     ],
     "correct": 1,
     "explanation": "Management VLAN is used for management traffic (SSH, SNMP, etc.) and should be isolated for security.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "What is the main advantage of using manageable switches?",
@@ -549,7 +629,9 @@
     ],
     "correct": 1,
     "explanation": "Manageable switches offer advanced features like VLANs, QoS, SNMP, port-security and CLI.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "What is 'port-security' on Cisco switches?",
@@ -561,7 +643,9 @@
     ],
     "correct": 0,
     "explanation": "Port-security allows restricting access to a port based on authorized MAC addresses.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "What is the function of the 'show cdp neighbors' command?",
@@ -573,7 +657,9 @@
     ],
     "correct": 0,
     "explanation": "The 'show cdp neighbors' command displays neighboring Cisco devices discovered by CDP.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "What is an 'SFP' in Cisco equipment?",
@@ -585,7 +671,9 @@
     ],
     "correct": 1,
     "explanation": "SFP (Small Form-factor Pluggable) is a compact hot-swappable module for fiber or copper ports.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "Which Ethernet cable uses an RJ-45 connector?",
@@ -597,7 +685,9 @@
     ],
     "correct": 1,
     "explanation": "Copper Ethernet typically uses twisted-pair cabling terminated on RJ-45. Fiber uses optical connectors (e.g. LC/SC), not RJ-45 for the optical path.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Which device forwards based on destination IP?",
@@ -609,7 +699,9 @@
     ],
     "correct": 2,
     "explanation": "Routers forward between different IP networks using the destination IP in the routing table. Switches forward within a LAN using MAC addresses.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "4.4"
   },
   {
     "question": "Which protocol maps hostnames to IPs?",
@@ -621,7 +713,9 @@
     ],
     "correct": 1,
     "explanation": "DNS resolves human-readable names to IP addresses (and reverse lookups). It is not DHCP (address assignment) and not NAT (address translation).",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "Can an unmanaged switch create VLANs?",
@@ -633,7 +727,9 @@
     ],
     "correct": 1,
     "explanation": "Unmanaged switches are plug-and-play: no CLI/GUI config, no VLANs or STP tuning. Managed switches support VLANs, security, and monitoring.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "What is phishing?",
@@ -645,7 +741,9 @@
     ],
     "correct": 1,
     "explanation": "Phishing tricks users (social engineering) into revealing credentials or clicking malicious links. It is not a buffer overflow exploit by itself.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "Which cable transmits data with light?",
@@ -657,7 +755,9 @@
     ],
     "correct": 1,
     "explanation": "Optical fiber carries data as light pulses and is immune to electromagnetic interference (EMI). Copper can pick up EMI; wireless can suffer RF noise.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Why is SSH preferred over Telnet?",
@@ -669,7 +769,9 @@
     ],
     "correct": 1,
     "explanation": "SSH (TCP 22) encrypts remote CLI sessions; Telnet (TCP 23) sends credentials and traffic in cleartext and should be avoided on production gear.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.4"
   },
   {
     "question": "Which OSI layer handles TCP/UDP segments?",
@@ -681,7 +783,9 @@
     ],
     "correct": 1,
     "explanation": "OSI Layer 4 (Transport) provides end-to-end segments via TCP (reliable) and UDP (connectionless). Layer 3 is IP routing; Layer 2 is frames/MAC.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "Which is a good password habit?",
@@ -693,7 +797,9 @@
     ],
     "correct": 1,
     "explanation": "Unique strong passwords plus MFA reduce the blast radius of credential theft. Sharing one password or disabling updates increases risk.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "Which Windows command shows the machine IP?",
@@ -705,7 +811,9 @@
     ],
     "correct": 1,
     "explanation": "On Windows, ipconfig (or ipconfig /all) shows IP, mask, gateway, and DNS. On Linux/macOS you typically use ip addr or ifconfig.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.4"
   },
   {
     "question": "Which security incident should you report?",
@@ -717,7 +825,9 @@
     ],
     "correct": 1,
     "explanation": "Unexpected credential requests in email/chat are classic phishing: verify independently and report to IT/SOC. Do not reply with passwords.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "What do Cat5e/Cat6 describe?",
@@ -729,7 +839,9 @@
     ],
     "correct": 1,
     "explanation": "UTP category (Cat5e, Cat6, etc.) defines cable performance limits (speed/frequency). Connector type alone does not set the category rating.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "What is the recommended maximum length of a copper twisted-pair (UTP) Ethernet cable?",
@@ -741,7 +853,9 @@
     ],
     "correct": 1,
     "explanation": "Ethernet standards limit a copper channel to 100 m (typically 90 m horizontal plus 10 m of patch cords) so attenuation and round-trip timing stay within spec. Longer runs need fiber or an intermediate switch.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "What is the practical difference between T568A and T568B pinouts?",
@@ -753,7 +867,9 @@
     ],
     "correct": 1,
     "explanation": "Both standards use the same four pairs; only the orange and green pairs are swapped. A cable terminated T568A on one end and T568B on the other is a crossover. T568B is the more common commercial choice in the US.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "When should single-mode fiber be preferred over multimode?",
@@ -765,7 +881,9 @@
     ],
     "correct": 1,
     "explanation": "Single-mode has a ~9 µm core and is driven by lasers, so chromatic dispersion stays low over tens of kilometers. Multimode (50/62.5 µm) is cheaper for short runs of a few hundred meters but is not the right choice for long-haul links.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "What does Auto-MDIX do on an Ethernet port?",
@@ -777,7 +895,9 @@
     ],
     "correct": 1,
     "explanation": "Auto-MDIX electronically crosses TX/RX pairs when needed, so a straight-through cable works for switch-to-switch, PC-to-PC, or switch-to-PC. On modern gear it is typically enabled together with speed/duplex autonegotiation.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "A PC without DHCP shows the address 169.254.23.10. What does that indicate?",
@@ -789,7 +909,9 @@
     ],
     "correct": 1,
     "explanation": "169.254.0.0/16 is the APIPA (Automatic Private IP Addressing) range. The OS picks an address there when DHCP fails, which allows limited local communication but no forwarding to other networks.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "How many usable host addresses are in an IPv4 /26 subnet?",
@@ -801,7 +923,9 @@
     ],
     "correct": 1,
     "explanation": "A /26 mask leaves 6 host bits: 2^6 = 64 total addresses. Subtract the network and broadcast addresses and 62 usable hosts remain.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "Which prefix identifies an IPv6 link-local address?",
@@ -813,7 +937,9 @@
     ],
     "correct": 1,
     "explanation": "Link-local addresses start with FE80::/10 and are required on every IPv6 interface. They are used for NDP and same-link communication; routers do not forward them to other links.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "What is the IPv6 loopback address?",
@@ -825,7 +951,9 @@
     ],
     "correct": 1,
     "explanation": "::1/128 is the IPv6 loopback, equivalent to 127.0.0.1 in IPv4. Packets to ::1 never leave the host and are used to test the local IPv6 stack.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "What is the primary function of ICMP?",
@@ -837,7 +965,9 @@
     ],
     "correct": 1,
     "explanation": "ICMP (and ICMPv6) carries Layer 3 signaling: echo request/reply (ping), destination unreachable, time exceeded (used by traceroute), redirects, and more. It does not assign addresses or encrypt application data.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "How does traceroute discover each hop to the destination?",
@@ -849,7 +979,9 @@
     ],
     "correct": 1,
     "explanation": "Each probe starts with TTL 1, 2, 3, and so on. When TTL hits zero the router drops the packet and returns ICMP Time Exceeded; that source address identifies the hop. The destination typically answers with port unreachable or echo reply.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "What is the default port used by DNS?",
@@ -861,7 +993,9 @@
     ],
     "correct": 1,
     "explanation": "DNS uses port 53/UDP for typical queries and 53/TCP for zone transfers and large responses. Mixing it up with 67 (DHCP server), 22 (SSH), or 80 (HTTP) is a common troubleshooting mistake.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "What defines a collision domain in Ethernet?",
@@ -873,7 +1007,9 @@
     ],
     "correct": 1,
     "explanation": "On a hub, all ports share one collision domain. A switch creates a collision domain per port, and full duplex removes collisions altogether. That is different from a broadcast domain, which typically matches a VLAN.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "What is CSMA/CD?",
@@ -885,7 +1021,9 @@
     ],
     "correct": 1,
     "explanation": "Carrier Sense Multiple Access with Collision Detection was used on shared Ethernet (hubs, half duplex). Switched full-duplex networks no longer need CSMA/CD because each side transmits on separate pairs or channels.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "What are the three RFC 1918 private IPv4 address ranges?",
@@ -897,7 +1035,9 @@
     ],
     "correct": 1,
     "explanation": "RFC 1918 reserves 10.0.0.0/8, 172.16.0.0/12 (172.16–172.31), and 192.168.0.0/16 for internal use. Those prefixes are not forwarded on the public Internet; outbound access uses NAT or a proxy.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "2.1"
   },
   {
     "question": "What does CIDR stand for?",
@@ -909,7 +1049,9 @@
     ],
     "correct": 1,
     "explanation": "CIDR dropped fixed classes (/8, /16, /24) and allows prefixes such as /22 or /13. That makes addressing and route summarization on the Internet and in LANs far more efficient.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "What is IPv4 address 127.0.0.1 used for?",
@@ -921,7 +1063,9 @@
     ],
     "correct": 1,
     "explanation": "The entire 127.0.0.0/8 range is loopback; 127.0.0.1 is the address people actually use. Pinging it confirms the host IP stack works, regardless of cabling or the NIC.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "Which statement correctly describes unicast, broadcast, and multicast?",
@@ -933,7 +1077,9 @@
     ],
     "correct": 1,
     "explanation": "Unicast delivers to a single address. Broadcast (255.255.255.255 or the subnet broadcast) reaches every node in the broadcast domain. Multicast (224.0.0.0/4 or FF00::/8) is received only by hosts that joined the group.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "What is the advantage of STP (Shielded Twisted Pair) over UTP?",
@@ -945,7 +1091,9 @@
     ],
     "correct": 1,
     "explanation": "STP adds shielding that rejects EMI in industrial spaces, near motors, or next to elevators. It must be grounded correctly or the shield can make noise worse. UTP is sufficient in most offices.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Approximately how much power does PoE+ (IEEE 802.3at) deliver at the PD?",
@@ -957,7 +1105,9 @@
     ],
     "correct": 1,
     "explanation": "802.3af (PoE) supplies up to 15.4 W at the PSE (~12.95 W at the PD). 802.3at (PoE+) raises that to 30 W at the PSE (~25.5 W at the PD), enough for many APs and PTZ cameras. 802.3bt (PoE++) goes higher still.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "Which Cisco command gives a quick summary of the IP status of every interface?",
@@ -969,7 +1119,9 @@
     ],
     "correct": 1,
     "explanation": "show ip interface brief lists each interface with its IP, line status (up/down), and protocol status (up/down). It is the first Layer 3 troubleshooting command on a Cisco box.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "An Ethernet link is up but shows many CRC errors and poor performance. What is the most likely cause?",
@@ -981,7 +1133,9 @@
     ],
     "correct": 1,
     "explanation": "A duplex mismatch causes late collisions, CRCs, and terrible throughput because one side transmits while the other is not expecting it. Bad cable, dirty SFPs, or EMI also produce CRCs. DNS or ACLs do not increment CRC counters.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Which OSI layer deals with bits, voltages, connectors, and physical media?",
@@ -993,7 +1147,9 @@
     ],
     "correct": 1,
     "explanation": "The Physical layer defines the medium (copper, fiber, radio), connectors, electrical or optical signaling, and bit timing. Cable, SFP, and PoE power problems are almost always Layer 1.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "What is the correct TCP three-way handshake sequence?",
@@ -1005,7 +1161,9 @@
     ],
     "correct": 1,
     "explanation": "The client sends SYN, the server replies SYN-ACK, and the client completes the handshake with ACK. Data transfer starts only after that. FIN begins teardown; RST aborts the session.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "Why is 'enable secret' preferred over 'enable password' in IOS?",
@@ -1017,7 +1175,9 @@
     ],
     "correct": 1,
     "explanation": "enable password is legacy and may appear in clear text or type 7 (reversible). enable secret stores a one-way hash. Current IOS can use type 8/9 (scrypt/PBKDF2) with 'enable algorithm-type'.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "What is the default VLAN on access ports of an unconfigured Cisco switch?",
@@ -1029,7 +1189,9 @@
     ],
     "correct": 1,
     "explanation": "By default every port belongs to VLAN 1, which is also the native VLAN on 802.1Q trunks. Best practice moves user and management traffic off VLAN 1 to reduce hopping risk and mixed control traffic.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "What characterizes an access port on a switch?",
@@ -1041,7 +1203,9 @@
     ],
     "correct": 1,
     "explanation": "An access port maps to one VLAN (switchport access vlan X). Frames toward the PC are untagged. Trunks, by contrast, tag VLANs for the neighbor (except the native VLAN).",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "What is LLDP?",
@@ -1053,7 +1217,9 @@
     ],
     "correct": 1,
     "explanation": "LLDP is the open equivalent of CDP. It advertises chassis ID, port ID, hostname, and capabilities (including LLDP-MED for phones). It is the right choice in mixed-vendor plants where CDP is absent.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "What is the classic Ethernet MTU (payload) in bytes?",
@@ -1065,7 +1231,9 @@
     ],
     "correct": 1,
     "explanation": "The standard Ethernet MTU is 1500 bytes of IP payload. Frames under 64 bytes are runts; jumbo frames (~9000) need end-to-end support. 576 is the IPv4 minimum reassembly MTU, not Ethernet.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "Why do copper cables routed next to electric motors fail more often?",
@@ -1077,7 +1245,9 @@
     ],
     "correct": 1,
     "explanation": "Electromagnetic fields induce voltage on the pairs. That corrupts bits, increases CRC/input errors, and can drop the link. Mitigation is separation, shielded cable, fiber (immune to EMI), and proper grounding.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "How many bits are in an IEEE MAC address and how is it usually written?",
@@ -1089,7 +1259,9 @@
     ],
     "correct": 1,
     "explanation": "The classic MAC is 48 bits: a 24-bit OUI (vendor) plus a 24-bit serial. It is written in hex. 64-bit MACs exist in some IEEE contexts, but Ethernet uses 48 bits.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "What is the size of an IPv4 address and an IPv6 address?",
@@ -1101,7 +1273,9 @@
     ],
     "correct": 1,
     "explanation": "IPv4 uses 32 bits (dotted decimal). IPv6 uses 128 bits (eight hexadecimal groups). That space is what enables SLAAC, multiple addresses per interface, and a practical end to public IPv4 exhaustion.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "What is the default subnet mask of a Class A network?",
@@ -1113,7 +1287,9 @@
     ],
     "correct": 1,
     "explanation": "Class A (1.0.0.0–126.0.0.0) uses /8, or 255.0.0.0. Class B is /16 and Class C is /24. Modern networks think in CIDR, but classful masks still show up on exams and legacy gear.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "2.1"
   },
   {
     "question": "Which TCP port does classic SMTP use for mail transfer between servers?",
@@ -1125,7 +1301,9 @@
     ],
     "correct": 1,
     "explanation": "SMTP uses port 25 between MTAs. Authenticated client submission is usually 587 (submission) or 465 (SMTPS). 110 is POP3, 143 is IMAP, and 443 is HTTPS.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "What is the correct order of the DHCP DORA process?",
@@ -1137,7 +1315,9 @@
     ],
     "correct": 1,
     "explanation": "The client broadcasts DHCPDISCOVER; the server answers with DHCPOFFER; the client commits with DHCPREQUEST; the server confirms with DHCPACK and the lease becomes active. Without that exchange the host falls back to APIPA.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "Why does Wi-Fi use CSMA/CA instead of CSMA/CD?",
@@ -1149,7 +1329,9 @@
     ],
     "correct": 1,
     "explanation": "On a shared half-duplex medium the sender's own radio is saturated, so it cannot 'hear a collision' the way shared copper can. 802.11 uses collision avoidance: carrier sense, IFS gaps, random backoff, and optionally RTS/CTS.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "What is a typical difference between 2.4 GHz and 5 GHz Wi-Fi?",
@@ -1161,7 +1343,9 @@
     ],
     "correct": 1,
     "explanation": "Lower frequencies penetrate better and reach farther; 2.4 GHz has only three non-overlapping channels (1, 6, 11) and suffers Bluetooth/microwave noise. 5 GHz (and 6 GHz) offers more spectrum and throughput at shorter range.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "IEEE 802.11ax is commercially known as which Wi-Fi generation?",
@@ -1173,7 +1357,9 @@
     ],
     "correct": 1,
     "explanation": "802.11ax is Wi-Fi 6 (and 6E in the 6 GHz band). It adds OFDMA, TWT, and 1024-QAM for better efficiency in dense environments. Wi-Fi 5 is 802.11ac; Wi-Fi 4 is 802.11n.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "When connectivity fails, what should you check first in a layered approach?",
@@ -1185,7 +1371,9 @@
     ],
     "correct": 1,
     "explanation": "Without a physical signal (dark LED, broken cable, missing SFP, administratively down interface) nothing above it works. Confirming Layer 1 avoids hours of pointless OSPF or DNS debugging.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.1"
   },
   {
     "question": "In which scenario is optical fiber clearly preferable to copper UTP?",
@@ -1197,7 +1385,9 @@
     ],
     "correct": 1,
     "explanation": "Fiber ignores EMI, does not conduct electricity (avoiding building-to-building ground loops), and spans kilometers. Copper remains right for PoE and short runs up to 100 m. The console uses serial/USB, not Ethernet.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Which command displays the currently active configuration in RAM on a Cisco device?",
@@ -1209,7 +1399,9 @@
     ],
     "correct": 1,
     "explanation": "running-config is the RAM copy the device is actually using. startup-config lives in NVRAM and is read at boot. Changes to running-config are lost on reload unless you save them with copy run start.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "How do you tell User EXEC from Privilege EXEC in IOS?",
@@ -1221,7 +1413,9 @@
     ],
     "correct": 1,
     "explanation": "The '>' prompt is User EXEC (ping, some shows). The enable command (with the secret) raises you to '#' Privilege EXEC, from which you enter configuration terminal. Splitting these levels is the basis of CLI access control.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "What is the default HTTPS port and how does it differ from HTTP?",
@@ -1233,7 +1427,9 @@
     ],
     "correct": 1,
     "explanation": "HTTPS wraps HTTP in TLS on port 443, protecting confidentiality and integrity. HTTP on 80 is unencrypted — credentials and cookies travel in the clear. Device management should prefer HTTPS/SSH over HTTP/Telnet.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "In subnet 192.168.10.0/24, what is the broadcast address?",
@@ -1245,7 +1441,9 @@
     ],
     "correct": 1,
     "explanation": "With /24, all 8 host bits set to 1 yield .255. .0 is the network address; .1–.254 are hosts. Traffic to 192.168.10.255 is delivered to every node in that broadcast domain.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "Compared with Cat5e, Cat6 cabling is mainly intended for what?",
@@ -1257,7 +1455,9 @@
     ],
     "correct": 1,
     "explanation": "Cat6 has tighter crosstalk specs through 250 MHz and supports 10GBASE-T on short channels. Cat5e is fine for 1 Gb/s at 100 m. Cat6A extends 10 Gb/s to a full 100 m.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Which optical connector is most common on modern SFP/SFP+ transceivers?",
@@ -1269,7 +1469,9 @@
     ],
     "correct": 1,
     "explanation": "SFPs almost always use duplex LC. SC is older and larger (still seen on GBICs and some panels). ST is a legacy bayonet. BNC is coaxial; DB-9 is a serial console; RJ-11 is analog phone.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "A user can ping the server by IP but the browser cannot open the site by name. What is the most likely cause?",
@@ -1281,7 +1483,9 @@
     ],
     "correct": 1,
     "explanation": "A successful IP ping proves Layers 1–3 to the server. Using the name requires DNS (port 53). Checking ipconfig/ifconfig, the configured DNS server, and nslookup/dig isolates the issue in seconds.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "A straight-through Ethernet cable typically connects which devices?",
@@ -1293,7 +1497,9 @@
     ],
     "correct": 1,
     "explanation": "A straight-through cable keeps the same pinout on both ends and connects MDI (NIC/router) to MDI-X (switch/hub). Classic PC-PC or switch-switch links used crossovers; modern Auto-MDIX makes the cable type almost irrelevant.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "How many collision domains does a 24-port Ethernet switch create in full duplex?",
@@ -1305,7 +1511,9 @@
     ],
     "correct": 3,
     "explanation": "Each switch port is its own collision domain. Full duplex eliminates actual collisions, but the per-port isolation remains: 24 ports = 24 domains. A 24-port hub would be a single collision domain.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "What bounds an IPv4 broadcast domain on a classic LAN?",
@@ -1317,7 +1525,9 @@
     ],
     "correct": 1,
     "explanation": "Layer-2 broadcasts (ff:ff:ff:ff:ff:ff) stay inside a VLAN. A router (or SVI/L3) does not forward them between networks, so each VLAN/subnet is one broadcast domain.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.4"
   },
   {
     "question": "In the OSI model, what are the PDUs of the Transport, Network, Data Link, and Physical layers called?",
@@ -1329,7 +1539,9 @@
     ],
     "correct": 1,
     "explanation": "Common convention: L4 segment (TCP) or datagram (UDP), L3 packet, L2 frame, L1 bits. Encapsulation adds headers as data moves down the stack.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "Which OSI layer is responsible for HTTP, DNS, and SMTP?",
@@ -1341,7 +1553,9 @@
     ],
     "correct": 1,
     "explanation": "HTTP, DNS, and SMTP are application protocols. In TCP/IP the Application layer also covers OSI session and presentation functions.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "The Internet layer of the TCP/IP model maps mainly to which OSI layer?",
@@ -1353,7 +1567,9 @@
     ],
     "correct": 2,
     "explanation": "The Internet layer handles IP, ICMP, and routing — OSI Network (L3) functions. Data Link plus Physical map to Network Access/Link.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "How many usable IPv4 host addresses are in a /30 subnet?",
@@ -1365,7 +1581,9 @@
     ],
     "correct": 1,
     "explanation": "A /30 has 2 host bits: 4 addresses total. Subtract network and broadcast and 2 hosts remain — typical on router-to-router point-to-point links.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "Why is an IPv4 /31 sometimes used on point-to-point links?",
@@ -1389,7 +1607,9 @@
     ],
     "correct": 2,
     "explanation": "Current GUAs sit in 2000::/3 (often starting with 2 or 3). FE80::/10 is link-local, FF00::/8 multicast, FC00::/7 unique-local (practically fd00::/8).",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "Which prefix identifies IPv6 multicast?",
@@ -1401,7 +1621,9 @@
     ],
     "correct": 2,
     "explanation": "All IPv6 multicast starts with FF. Examples: FF02::1 all-nodes link-local, FF02::2 all-routers. IPv6 has no broadcast; multicast is used instead.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "What does the IPv6 address :: (two colons only) represent?",
@@ -1413,7 +1635,9 @@
     ],
     "correct": 2,
     "explanation": ":: is the unspecified address (::/128), used as a source before a host has an address. Loopback is ::1. Do not assign :: to an interface.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "Wi-Fi 5 corresponds to which IEEE standard?",
@@ -1425,7 +1649,9 @@
     ],
     "correct": 1,
     "explanation": "Wi-Fi 4 = 802.11n, Wi-Fi 5 = 802.11ac (mainly 5 GHz), Wi-Fi 6 = 802.11ax, Wi-Fi 7 = 802.11be.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Which 20 MHz channels in 2.4 GHz are the classic non-overlapping set?",
@@ -1437,7 +1663,9 @@
     ],
     "correct": 1,
     "explanation": "On 2.4 GHz, channels 1, 6, and 11 (25 MHz apart) are the classic choice to minimize overlap. Adjacent channels interfere with each other.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "A kitchen microwave usually degrades which Wi-Fi band the most?",
@@ -1449,7 +1677,9 @@
     ],
     "correct": 2,
     "explanation": "Many microwave ovens radiate noise around 2.4 GHz. The 5/6 GHz bands sit elsewhere and suffer less from this interference (but have shorter range).",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "What is the main risk of an open (no password) Wi-Fi network?",
@@ -1461,7 +1691,9 @@
     ],
     "correct": 1,
     "explanation": "With no Layer-2 encryption, anyone associated (and sometimes even a passive listener) can read frames. Use WPA2/WPA3 and, on public Wi-Fi, a VPN.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "6.3"
   },
   {
     "question": "What characterizes a ransomware attack?",
@@ -1473,7 +1705,9 @@
     ],
     "correct": 1,
     "explanation": "Ransomware is malware that encrypts data and demands payment. Mitigation: offline backups, patching, mail filtering, and not opening untrusted attachments. Paying is not the recommended fix.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "An unknown 'technician' calls the help desk asking for the administrator password. This is mainly:",
@@ -1485,7 +1719,9 @@
     ],
     "correct": 1,
     "explanation": "Social engineering targets people, not protocol bugs. Never give credentials over the phone without a verification procedure. Report the incident.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "Leaving the factory password on a home router is dangerous because:",
@@ -1497,7 +1733,9 @@
     ],
     "correct": 1,
     "explanation": "Vendors publish defaults (admin/admin, and similar). Any Wi-Fi client or exposed WAN can use them. Change them at install time and disable weak WPS.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "6.3"
   },
   {
     "question": "Look at this ping output. What does the result indicate?",
@@ -1510,6 +1748,8 @@
     "correct": 1,
     "explanation": "Four successful ICMP echoes, 0% loss, and ~12 ms RTT show IP reachability to the destination. It does not prove HTTP or DNS; it only tests ICMP echo.",
     "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.3",
     "cli": "PC> ping 8.8.8.8\nPinging 8.8.8.8 with 32 bytes of data:\nReply from 8.8.8.8: bytes=32 time=12ms TTL=117\nReply from 8.8.8.8: bytes=32 time=11ms TTL=117\nReply from 8.8.8.8: bytes=32 time=13ms TTL=117\nReply from 8.8.8.8: bytes=32 time=12ms TTL=117\n\nPing statistics for 8.8.8.8:\n    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),\nApproximate round trip times in milli-seconds:\n    Minimum = 11ms, Maximum = 13ms, Average = 12ms"
   },
   {
@@ -1523,6 +1763,8 @@
     "correct": 1,
     "explanation": "Each hop is probed with an increasing TTL. If the router does not send Time Exceeded (ICMP policy, firewall, or loss), you see * * *. Later hops may still reach the destination.",
     "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.3",
     "cli": "PC> tracert 203.0.113.10\nTracing route to 203.0.113.10 over a maximum of 30 hops\n\n  1    <1 ms    <1 ms    <1 ms  192.168.1.1\n  2     4 ms     4 ms     5 ms  10.20.0.1\n  3    12 ms    11 ms    12 ms  198.51.100.1\n  4     *        *        *\n  5    28 ms    27 ms    29 ms  203.0.113.10\n\nTrace complete."
   },
   {
@@ -1535,7 +1777,9 @@
     ],
     "correct": 1,
     "explanation": "A ping to the gateway proves local L2/L3. Failure to a public IP points to WAN, NAT, an edge firewall, or a missing default route — not DNS (an IP was used).",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "Two PCs in the same VLAN share the same IPv4 address. What symptom is typical?",
@@ -1547,7 +1791,9 @@
     ],
     "correct": 1,
     "explanation": "Duplicate IPs cause ARP conflicts: traffic flaps between the two MACs. Windows reports an IP address conflict. Each host in the VLAN needs a unique IPv4 address.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "A switch-port link LED is dark. What should the help desk check first?",
@@ -1559,7 +1805,9 @@
     ],
     "correct": 1,
     "explanation": "No link light means Layer 1 is down. Confirm cable, port, and only then speed/duplex. Layer-3 issues (IP/DNS) come after a link exists.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "4.1"
   },
   {
     "question": "When a switch receives a unicast frame whose destination MAC is not yet in the CAM table, what does it do?",
@@ -1571,7 +1819,9 @@
     ],
     "correct": 1,
     "explanation": "Unknown unicast flooding: the switch treats an unknown destination as needing to reach the whole VLAN. Once it sees the source MAC on a reply, it records the port in the CAM.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "Which DNS record maps a hostname to an IPv6 address?",
@@ -1583,7 +1833,9 @@
     ],
     "correct": 1,
     "explanation": "A maps name→IPv4; AAAA (quad-A) maps name→IPv6; MX is mail; PTR is reverse (IP→name).",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "What is nslookup (or dig) used for in troubleshooting?",
@@ -1595,7 +1847,9 @@
     ],
     "correct": 1,
     "explanation": "nslookup/dig query a DNS resolver. If ping to an IP works but the name fails, the problem is DNS, not the WAN.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "A PC can reach others in the same VLAN but not the Internet, and the default gateway field is empty. What is missing?",
@@ -1607,7 +1861,9 @@
     ],
     "correct": 1,
     "explanation": "Intra-VLAN traffic needs no gateway. For other networks the host sends to the default gateway (the VLAN's router/SVI). With no gateway, only the local subnet is reachable.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.4"
   },
   {
     "question": "What is the essential difference between running-config and startup-config on a Cisco device?",
@@ -1619,7 +1875,9 @@
     ],
     "correct": 1,
     "explanation": "RAM changes are lost on reload unless you copy running-config startup-config. show running-config is the live config; show startup-config is the saved one.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "Compared with Cat6, Cat6A cabling is mainly intended for what?",
@@ -1631,7 +1889,9 @@
     ],
     "correct": 1,
     "explanation": "Cat6 often limits 10 Gb/s to short channels (~55 m in some cases). Cat6A is designed for 10GBASE-T at 100 m. Cat5e typically tops out at 1 Gb/s over 100 m.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "IPv4 address 255.255.255.255 is:",
@@ -1643,7 +1903,9 @@
     ],
     "correct": 1,
     "explanation": "255.255.255.255 is not forwarded by routers. It is the local limited broadcast. A /24 directed broadcast would be, for example, 192.168.1.255.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "IPv4 address 224.0.0.1 is used as:",
@@ -1655,7 +1917,9 @@
     ],
     "correct": 1,
     "explanation": "224.0.0.0/24 are link-local multicasts (not forwarded). 224.0.0.1 = all hosts; 224.0.0.2 = all routers; 224.0.0.5/6 = OSPF; 224.0.0.10 = EIGRP.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "2.2"
   },
   {
     "question": "Which metric describes delay variation between packets and is critical for voice?",
@@ -1667,7 +1931,9 @@
     ],
     "correct": 1,
     "explanation": "Jitter is latency variation. Voice is sensitive to jitter and loss; use a jitter buffer and QoS (EF). Bandwidth is capacity; latency is average delay.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.2"
   },
   {
     "question": "What do the first 24 bits of an IEEE MAC address identify?",
@@ -1679,7 +1945,9 @@
     ],
     "correct": 1,
     "explanation": "A 48-bit MAC splits into a 24-bit OUI (vendor) and a 24-bit device identifier. The U/L and I/G bits in the first octet have special meaning.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "What is a denial-of-service (DoS) attack on a network?",
@@ -1691,7 +1959,9 @@
     ],
     "correct": 1,
     "explanation": "DoS (and distributed DDoS) makes a service unavailable by overload. Mitigation: ACLs, rate-limit, edge anti-DDoS, CoPP on routers. It is not ransomware.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "Least privilege for help-desk access means:",
@@ -1703,7 +1973,9 @@
     ],
     "correct": 1,
     "explanation": "Least privilege reduces the blast radius of a compromised account. On Cisco devices use AAA (RADIUS/TACACS+) with per-user privileges, not a shared enable password.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "On Windows, ipconfig /all shows the DHCP server. Why is that useful?",
@@ -1715,7 +1987,9 @@
     ],
     "correct": 1,
     "explanation": "DHCP Server plus lease obtained/expires distinguish a dynamic IP from a static one. An unexpected server can indicate rogue DHCP.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.4"
   },
   {
     "question": "About how many watts does classic IEEE 802.3af PoE deliver at the PD?",
@@ -1727,7 +2001,9 @@
     ],
     "correct": 1,
     "explanation": "802.3af (PoE): 15.4 W at the PSE, about 12.95 W at the PD after cable loss. 802.3at (PoE+) ~30/25.5 W. 802.3bt (Type 3/4) rises to 60/90 W.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "When do you prefer traceroute over a simple ping?",
@@ -1739,7 +2015,9 @@
     ],
     "correct": 1,
     "explanation": "Ping tests one destination. Traceroute lists the path (expired TTL) and shows whether the failure is LAN, ISP WAN, or the remote server.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "Is hiding the SSID (not broadcasting the network name) a strong defense?",
@@ -1751,7 +2029,9 @@
     ],
     "correct": 1,
     "explanation": "SSID-less beacons do not hide the network from anyone capturing probes or data. Use WPA2/WPA3 and 802.1X for real control. A hidden SSID still annoys legitimate clients.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "6.3"
   },
   {
     "question": "A DHCP Discover is sent as:",
@@ -1763,7 +2043,9 @@
     ],
     "correct": 1,
     "explanation": "In DORA, Discover and Request are broadcasts. The client uses 0.0.0.0 as the source. Offer and Ack come from the server (sometimes also as broadcasts).",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "Why do DHCP, DNS queries, and NTP use UDP instead of TCP?",
@@ -1775,7 +2057,9 @@
     ],
     "correct": 1,
     "explanation": "UDP is connectionless with low overhead. The application handles retries (DHCP re-sends Discover; DNS can retry or query another server). DNS zone transfers may use TCP.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "Which statement best describes encapsulation going down the OSI model?",
@@ -1787,7 +2071,9 @@
     ],
     "correct": 1,
     "explanation": "The application hands data to L4, which adds TCP/UDP, L3 adds IP, L2 adds the Ethernet header and FCS, L1 serializes bits. On the way up, headers are removed.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "On a 10.0.0.0/8, 172.16.0.0/12, or 192.168.0.0/16 network, traffic to the public Internet normally requires:",
@@ -1799,7 +2085,9 @@
     ],
     "correct": 1,
     "explanation": "RFC 1918 is not routable on the Internet. The CPE/router performs PAT to a public IP, or you use IPv6 GUA. Without a gateway and without translation, private addresses do not leave.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "2.1"
   },
   {
     "question": "Wi-Fi 4 corresponds to which IEEE standard?",
@@ -1811,7 +2099,9 @@
     ],
     "correct": 2,
     "explanation": "802.11n (Wi-Fi 4) introduced MIMO and 40 MHz and operates on 2.4 and 5 GHz. 802.11g is 2.4 GHz-only at 54 Mb/s; 802.11ac is Wi-Fi 5.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "A toner/cable tester at the help desk is mainly used to:",
@@ -1823,7 +2113,9 @@
     ],
     "correct": 1,
     "explanation": "Layer-1 tools: a toner/probe finds the cable in the panel; a tester checks continuity and wire map. It does not replace ping/DNS, but it avoids hours chasing the wrong pair.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "On public networks (cafe, airport), which habit reduces interception risk?",
@@ -1835,7 +2127,9 @@
     ],
     "correct": 1,
     "explanation": "Public Wi-Fi may be open or shared. VPNs encrypt to the concentrator; HTTPS protects the site. Avoid banking on captive portals without visible TLS.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "A ping to an IPv6 fe80:: address on Windows fails without a zone. What is missing?",
@@ -1847,7 +2141,9 @@
     ],
     "correct": 1,
     "explanation": "Link-local exists on every interface. Without %zone the OS does not know which NIC to use. ping fe80::1%Ethernet or -6 with a zone id.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "On a UTP cable wiremap, pairs 1-2 are open and pairs 3-6 are fine. Which Ethernet speed is most likely, and why?",
@@ -1859,7 +2155,9 @@
     ],
     "correct": 1,
     "explanation": "10/100BASE-TX mainly uses pairs 1-2 and 3-6. 1000BASE-T requires all four pairs. A tester showing only two good pairs typically points to Fast Ethernet, not Gigabit.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "An AP advertises Wi-Fi 6E. Which extra band does it add compared with classic Wi-Fi 6?",
@@ -1871,7 +2169,9 @@
     ],
     "correct": 1,
     "explanation": "Wi-Fi 6E is 802.11ax in the 6 GHz band. It adds cleaner spectrum and wide channels with less legacy 2.4/5 GHz interference, but range is often shorter and clients must be 6E-capable.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "In CCST troubleshooting, the PC has correct IP, gateway, and DNS; ping to the gateway works; HTTPS and HTTP to a site fail; ping to 8.8.8.8 fails. Which hypothesis is strongest?",
@@ -1883,7 +2183,9 @@
     ],
     "correct": 1,
     "explanation": "Local L3 is fine (IP/gateway/LAN ping). Failure to public IPs points to WAN path, NAT, or perimeter firewall — not DNS (an IP was used) and not TLS alone.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "Which statement about IEEE 802.3bt PoE (Type 3/4) is most accurate for support techs?",
@@ -1895,7 +2197,9 @@
     ],
     "correct": 1,
     "explanation": "802.3bt (PoE++) raises power versus af/at. PSE-PD classification/negotiation still applies; a mismatched PD or bad cable may not get enough power.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "A switch port goes err-disabled after someone cascades a cheap hub. Which CCST cause is plausible?",
@@ -1907,7 +2211,9 @@
     ],
     "correct": 1,
     "explanation": "Err-disabled is a protective state. Hubs and loops can trigger unexpected BPDUs, collisions, or flaps; with BPDU Guard or storm control the port may err-disable. Fix the cause, then shutdown / no shutdown.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "In IPv6, a host has only FE80::/10, can ping on-link neighbors, but cannot open Internet sites. What is typically missing?",
@@ -1919,7 +2225,9 @@
     ],
     "correct": 0,
     "explanation": "Link-local works on the link. Off-link traffic needs a GUA (2000::/3) or a translation mechanism, plus a default router learned from Router Advertisement or DHCPv6.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "What distinguishes Wi-Fi 6E from Wi-Fi 6 (802.11ax) in terms of spectrum?",
@@ -1931,7 +2239,9 @@
     ],
     "correct": 1,
     "explanation": "Wi-Fi 6 and 6E share 802.11ax PHY features; the “E” (Extension) means the 6 GHz band, with more wide channels and less legacy noise.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Can a legacy 802.11ac (Wi-Fi 5) client join a 6 GHz-only SSID on a Wi-Fi 6E AP?",
@@ -1943,7 +2253,9 @@
     ],
     "correct": 1,
     "explanation": "The 6 GHz band requires 6E client hardware. Wi-Fi 5/6 devices without a 6 GHz radio stay on the AP’s 2.4/5 GHz radios, if present.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "What is a typical advantage of the 6 GHz band in dense offices?",
@@ -1955,7 +2267,9 @@
     ],
     "correct": 1,
     "explanation": "6 GHz offers new, less crowded channels; wall penetration is usually worse than 2.4 GHz. Plan denser APs for coverage, not only peak rate.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "Access switch port Gi1/0/12 is err-disabled and syslog shows %PM-4-ERR_DISABLE: bpduguard. What is the most likely cause?",
@@ -1979,7 +2293,9 @@
     ],
     "correct": 1,
     "explanation": "Wi-Fi Alliance requires WPA3 on 6 GHz. WPA2-only clients cannot join that SSID (they may still use 2.4/5 GHz SSIDs if the AP offers them).",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "ccst-net",
+    "domain": "6.3"
   },
   {
     "question": "Cable tester: wire map OK, but certification fails with high NEXT between pairs. What is the best CCST interpretation?",
@@ -1991,7 +2307,9 @@
     ],
     "correct": 1,
     "explanation": "High NEXT means pair-to-pair interference — bad termination, untwist, or damaged cable. Re-terminate or replace; it is not a VLAN/DNS symptom.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "PC gets DHCP IP, ping to the gateway fails, and `arp -a` shows no gateway MAC. What is the most useful next troubleshooting step?",
@@ -2003,7 +2321,9 @@
     ],
     "correct": 1,
     "explanation": "No gateway ARP means no L2 path to the default gateway. Verify cable, correct VLAN, port status, and same broadcast domain — DNS/HTTP come later.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "PoE: a Class 4 (802.3at) AP will not power on a switch that is 802.3af-only. What is the best explanation?",
@@ -2015,7 +2335,9 @@
     ],
     "correct": 1,
     "explanation": "PoE type/class caps available power. at/bt PDs on af-only ports may not get enough power. Cat5e/Cat6 carry PoE fine — the PSE is the limit.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "User joins the right Wi-Fi, gets an IP, but the captive portal never opens and Internet browsing fails. Ping to 8.8.8.8 works. Which CCST hypothesis is most plausible?",
@@ -2027,7 +2349,9 @@
     ],
     "correct": 1,
     "explanation": "Successful ping to a public IP means basic forwarding works. Captive portals need DNS/HTTP redirect — bad DNS, strict HTTPS, or a blocked portal domain are common causes.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "ccst-net",
+    "domain": "3.4"
   },
   {
     "question": "Troubleshooting: `ipconfig` shows APIPA 169.254.x.x. What does this typically mean on a corporate Ethernet PC?",
@@ -2039,7 +2363,9 @@
     ],
     "correct": 1,
     "explanation": "169.254.0.0/16 is APIPA: the host gave up on DHCP. Check cable, access VLAN, interface up, DHCP server, and ip helper-address on the VLAN gateway.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "A PoE IP phone powers up and has voice, but the PC daisy-chained behind the phone has no network. Which check is most relevant?",
@@ -2051,7 +2377,9 @@
     ],
     "correct": 1,
     "explanation": "Phone+PC on one cable uses voice VLAN + data VLAN (or phone multi-VLAN). Voice OK / data dead points to data VLAN, PC cable, or phone config — not Wi-Fi.",
-    "difficulty": "Hard"
+    "difficulty": "Hard",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "How does an IPv6 host typically learn its network prefix with SLAAC?",
@@ -2063,7 +2391,9 @@
     ],
     "correct": 1,
     "explanation": "With SLAAC, the host learns the prefix and parameters from the local router's Router Advertisement (ICMPv6); it may combine that with EUI-64/privacy addressing.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "2.3"
   },
   {
     "question": "Which practice best reduces phishing risk on corporate email?",
@@ -2075,7 +2405,9 @@
     ],
     "correct": 1,
     "explanation": "Phishing targets human trust: verify sender and links, use MFA, and report to IT/SOC are practical first-line controls.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "Why enable STP PortFast on an access port facing a PC or printer?",
@@ -2099,7 +2431,9 @@
     ],
     "correct": 2,
     "explanation": "Hard-setting speed/duplex on one end while the other auto-negotiates often yields duplex mismatch: CRCs, runts, and late collisions under load.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "What does switchport port-security primarily protect against on an access port?",
@@ -2111,7 +2445,9 @@
     ],
     "correct": 2,
     "explanation": "Port security limits which MAC addresses may use an access port (static, dynamic, or sticky). On violation it can protect, restrict, or shut down the port — a basic Layer-2 access control for end hosts.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "DHCP snooping on an access switch is mainly used to:",
@@ -2159,7 +2495,9 @@
     ],
     "correct": 3,
     "explanation": "TFTP (Trivial File Transfer Protocol) uses UDP 69 and is widely used to copy IOS images and running/startup configs to or from a server. It is lightweight but has no authentication or encryption; use it only on trusted management networks. FTP adds login and TCP reliability; SCP/SFTP are safer when available.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "What does configuring ip helper-address on a router interface typically enable?",
@@ -2183,7 +2521,9 @@
     ],
     "correct": 2,
     "explanation": "A rogue AP is an unauthorized wireless access point—often plugged into a corporate switch by a user, or an attacker’s evil twin. It can bypass NAC/802.1X, expose traffic, and interfere with the RF plan. Controllers and WIDS/WIPS help detect and contain rogues; hiding the SSID does not stop them.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "In 802.1X wireless (WPA2/WPA3-Enterprise), how does EAP-TLS typically authenticate the client compared with PEAP?",
@@ -2195,7 +2535,9 @@
     ],
     "correct": 0,
     "explanation": "EAP-TLS is certificate-based: the client presents a cert (and validates the server). PEAP builds a TLS tunnel to the authentication server and usually runs an inner password method such as MSCHAPv2, so clients need credentials more often than certificates. Both still use 802.1X with a RADIUS backend (e.g. ISE); neither is a shared PSK.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "6.3"
   },
   {
     "question": "What does Cisco CleanAir primarily help a wireless network do?",
@@ -2255,7 +2597,9 @@
     ],
     "correct": 1,
     "explanation": "CDP (Cisco Discovery Protocol) is proprietary and commonly on by default on Cisco gear. LLDP (IEEE 802.1AB) is vendor-neutral and preferred in mixed environments. Both advertise identity and capabilities over the link; neither elects OSPF/STP roles nor encrypts the neighbor database with IPsec by default.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "A technician builds a copper Ethernet straight-through patch cord using TIA-568 standards. Which statement is correct?",
@@ -2267,7 +2611,9 @@
     ],
     "correct": 3,
     "explanation": "A straight-through cable terminates both ends with the same TIA-568 wiring (A-A or B-B). Mixing 568A on one end and 568B on the other produces a crossover (TX/RX pairs swapped). Random reverse pin mapping is not the definition of straight-through, and fiber jumpers do not use the copper 568A/B color scheme.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "What is 802.1Q tunneling (Q-in-Q / double tagging) typically used for?",
@@ -2315,7 +2661,9 @@
     ],
     "correct": 3,
     "explanation": "UPC (Ultra Physical Contact) has a flat polished end-face; APC (Angled Physical Contact) is typically ~8° angled so reflected light goes into the cladding instead of back toward the laser—critical for analog/PON and many single-mode links. APC and UPC must not be mated: geometry mismatch causes high loss and possible damage. Boot color often hints (green APC, blue UPC) but color alone is not the definition, and polish style is not “multimode-only vs single-mode-only.”",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Compared with older PoE (IEEE 802.3af/at), what does IEEE 802.3bt (Type 3/Type 4, often called PoE++) mainly enable on a compatible switch port?",
@@ -2327,7 +2675,9 @@
     ],
     "correct": 2,
     "explanation": "IEEE 802.3bt extends Power over Ethernet beyond 802.3af (~15 W) and 802.3at/PoE+ (~30 W) by using additional pairs and higher budgets (commonly cited ~60 W Type 3 and ~90 W Type 4 at the power-sourcing equipment). It still runs over copper Ethernet cabling with data and power sharing pairs after negotiation—not fiber SFPs, not “DC-only conductors instead of data,” and not a routing protocol.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "In Wi-Fi 6 (802.11ax), what is the main purpose of OFDMA (Orthogonal Frequency-Division Multiple Access)?",
@@ -2351,7 +2701,9 @@
     ],
     "correct": 1,
     "explanation": "Port security binds an access port to a limited set of allowed source MAC addresses (static, sticky, or dynamic learning up to a maximum) and applies a violation action (protect, restrict, or shutdown). It is about controlling which endpoints may use the port—not MACsec encryption of every frame, not disabling STP/VLANs on uplinks, and not converting the port into a routed /30.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "In vulnerability management, what do CVE and CVSS represent?",
@@ -2363,7 +2715,9 @@
     ],
     "correct": 2,
     "explanation": "CVE (Common Vulnerabilities and Exposures) assigns a public ID (e.g., CVE-2024-12345) to a known vulnerability so vendors and defenders can talk about the same issue. CVSS (Common Vulnerability Scoring System) produces a 0–10 severity score from exploitability and impact metrics to help prioritize patching. Neither is Cisco-private ACL/VLAN syntax, malware hashing, or firewall PPS capacity.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "In cybersecurity, what is the difference between a vulnerability and an exploit?",
@@ -2375,7 +2729,9 @@
     ],
     "correct": 1,
     "explanation": "A vulnerability is a flaw or weakness (software bug, misconfiguration, weak process) that an attacker might abuse. An exploit is the specific technique or code that uses that weakness to achieve an effect (privilege gain, crash, data theft). Malware, AV signatures, MTU size, firewall rules, and VPN tunnels are different concepts.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "How does an evil twin wireless attack mainly differ from a simple rogue access point?",
@@ -2387,7 +2743,9 @@
     ],
     "correct": 2,
     "explanation": "A rogue AP is any unauthorized wireless access point on or near the network. An evil twin is a hostile AP that deliberately impersonates a legitimate SSID (and often captive portal) so clients connect and credentials or traffic can be abused. Not every rogue AP is an evil twin; WLC portals, PoE budget, Bluetooth, and DHCP DNS are different topics.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "6.2"
   },
   {
     "question": "In physical access control, how do RFID badges mainly differ from NFC phones/cards used at a door reader?",
@@ -2411,7 +2769,9 @@
     ],
     "correct": 1,
     "explanation": "A DMZ is a segmented perimeter zone for Internet-facing services, isolating them from the trusted LAN while still allowing controlled external access. It is not a Layer-2 hub substitute, does not disable DHCP/DNS campus-wide, and does not flatten addressing into one ISP /8.",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "6.1"
   },
   {
     "question": "How does cut-through switching mainly differ from store-and-forward on a typical Ethernet switch?",
@@ -2435,7 +2795,9 @@
     ],
     "correct": 1,
     "explanation": "The ARP cache (ARP table) maps IPv4 addresses to MAC addresses for on-link delivery. Entries usually expire so a host re-resolves if a peer’s MAC or addressing changes. It is not a DNS cache, not a copy of the switch CAM via CDP, and ARP still applies to IPv4 (IPv6 uses Neighbor Discovery).",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.1"
   },
   {
     "question": "On a Cisco switch interface counter, what do oversized “giants” and undersized “runts” mainly indicate?",
@@ -2447,7 +2809,9 @@
     ],
     "correct": 2,
     "explanation": "Giants exceed the maximum Ethernet/MTU frame size and runts fall below the minimum (~64 bytes). Elevated counts often indicate duplex mismatch, bad cabling, or faulty NICs. They are not explained by STP blocking alone, “normal OSPF/keepalive” traffic, or DHCP snooping bindings.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.5"
   },
   {
     "question": "What is an OTDR (Optical Time Domain Reflectometer) mainly used for on fiber-optic links?",
@@ -2459,7 +2823,9 @@
     ],
     "correct": 1,
     "explanation": "An OTDR injects optical pulses and uses backscatter/reflections to map events (breaks, splices, connectors) and estimate loss along the fiber. It is not an ICMP/copper duplex tool, not limited to Cat6A PoE planning, and does not polish connectors.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "How do LC, SC, and ST fiber connectors mainly differ in common campus cabling practice?",
@@ -2471,7 +2837,9 @@
     ],
     "correct": 0,
     "explanation": "LC is a small latching connector widely used on modern SFP/SFP+ optics; SC is a larger square push-pull style; ST uses a bayonet twist-lock and is common on older multimode installs. They are optical connectors (not RJ-45), are not limited by copper PoE rules, and duplex is about two fibers/ports—not a CWDM-only SC property.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Physically, how do single-mode fiber (SMF) and multimode fiber (MMF) mainly differ in common campus/WAN plant?",
@@ -2483,7 +2851,9 @@
     ],
     "correct": 1,
     "explanation": "SMF has a small ~9 µm core and is driven by lasers for long campus/WAN distances. MMF has a larger 50/62.5 µm core and commonly uses LED/VCSEL sources for shorter in-building runs. Neither is copper/PoE, and duplex is about two fibers—not a CWDM-only SMF property.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "A Wi-Fi client shows RSSI -65 dBm and the noise floor is -90 dBm. What is the signal-to-noise ratio (SNR), and why does it matter?",
@@ -2495,7 +2865,9 @@
     ],
     "correct": 3,
     "explanation": "SNR = RSSI − noise floor = -65 − (-90) = 25 dB. The bigger the gap above the noise, the higher the modulation/data rate the client can sustain with fewer retries. It is not a sum, nor just one of the two values.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.2"
   },
   {
     "question": "A technician is making a new patch cable and has the UTP wires arranged in T568B order. Which tool permanently attaches the RJ-45 connector to the cable?",
@@ -2507,7 +2879,9 @@
     ],
     "correct": 1,
     "explanation": "A crimper pushes the connector's gold pins through each conductor's insulation and locks the strain relief onto the jacket. A punch-down tool terminates wires on patch panels and keystone jacks (110/Krone blocks), a toner and probe traces cables, and a certifier only tests the link.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "A Windows PC got an address from the wrong DHCP scope. The scope has been fixed. Which commands make the PC drop its current lease and request a new one right away?",
@@ -2519,7 +2893,9 @@
     ],
     "correct": 0,
     "explanation": "ipconfig /release sends a DHCPRELEASE and removes the address, and ipconfig /renew starts a new DHCP request (DORA). /flushdns and /registerdns deal with DNS only, arp -d clears MAC-to-IP mappings, and netstat -r and route print only show routes.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "You are cabling above a false ceiling used as an air return (plenum space). Which jacket type is required, and why?",
@@ -2531,7 +2907,9 @@
     ],
     "correct": 1,
     "explanation": "Plenum spaces carry environmental air. CMP (plenum) jackets use low-smoke, low-halogen materials so a fire does not pump toxic smoke through the HVAC. PVC CM/CMR is for non-plenum runs; gel-filled is for outdoor wet locations; foil shielding addresses EMI, not fire/smoke code.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "Before mating two fiber patch cords in a campus closet, what is the best practice to avoid high loss or dirty-connector faults?",
@@ -2543,7 +2921,9 @@
     ],
     "correct": 1,
     "explanation": "Contamination on fiber end-faces is a leading cause of high insertion loss and intermittent links. Inspect with a microscope and clean with an approved cassette/wipe before mating. Tight bends risk damage, RJ45 crimps are for copper UTP, and PoE does not clean optical ferrules.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "What is an RJ-45 Ethernet loopback plug mainly used for when troubleshooting a PC or switch port?",
@@ -2555,7 +2935,9 @@
     ],
     "correct": 1,
     "explanation": "A loopback plug shorts or maps TX to RX on the same connector so link/activity LEDs and local diagnostics can prove the interface hardware path without a remote peer. It is not a fiber converter, not an STP/Auto-MDIX replacement, and not an 802.1X authenticator.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "What is a copper Time Domain Reflectometer (TDR) mainly used for when troubleshooting twisted-pair Ethernet cabling?",
@@ -2567,7 +2949,9 @@
     ],
     "correct": 2,
     "explanation": "A copper TDR injects a pulse and times reflections to locate opens, shorts, and major impedance faults on twisted pair. An OTDR is the fiber counterpart; a TDR does not certify alien crosstalk by itself, replace wiremap/length entirely, or negotiate PoE/Auto-MDIX.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "In duplex fiber patching, what does maintaining A-to-B (Method A / crossed) polarity mainly ensure?",
@@ -2579,7 +2963,9 @@
     ],
     "correct": 1,
     "explanation": "Duplex fiber needs TX on one end to meet RX on the other. A-to-B (Method A) polarity flips strand positions so each transmitter lands on the peer receiver. It does not force identical wavelengths, mix OM3 with OS2 casually, or deliver PoE over fiber.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "What does a cable certifier mainly verify that a basic toner/probe pair typically cannot?",
@@ -2591,7 +2977,9 @@
     ],
     "correct": 2,
     "explanation": "A certifier measures electrical performance against TIA/ISO category limits (length, loss, NEXT, etc.). A toner/probe mainly finds and identifies cables; it does not certify category performance, prove PoE on every pin, or depend on STP/Auto-MDIX state.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "On a Cisco switch with default settings, what happens to a dynamically learned MAC after about 300 seconds with no frames from that source?",
@@ -2603,7 +2991,9 @@
     ],
     "correct": 1,
     "explanation": "Dynamic MAC entries age out (300 s by default on Cisco). When gone, unknown-unicast frames to that MAC flood until relearned. Aging does not create sticky entries, use CDP, or block ports via STP.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "4.5"
   },
   {
     "question": "A PoE switch already supplies power to many phones and access points. A new camera is plugged in but gets no power, while data works on other ports. What is the most likely reason?",
@@ -2615,7 +3005,9 @@
     ],
     "correct": 3,
     "explanation": "A PoE switch has a total power budget shared by all ports. When the budget is used up, new powered devices are denied power even though the port itself works. Crossover cables, trunk mode, and speed settings do not control PoE delivery.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "A closet has only copper Ethernet to the desk, but the uplink to the core is single-mode fiber. Which device lets you join those media without replacing the whole path?",
@@ -2627,7 +3019,9 @@
     ],
     "correct": 1,
     "explanation": "A media converter (or a multi-media switch) bridges copper Ethernet and fiber optics so frames cross the media change. A patch cable alone cannot join electrical and optical PHYs; punch-down and toner tools are for copper termination and tracing, not media conversion.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "4.3"
   },
   {
     "question": "A technician needs a powered-off desktop on the LAN to boot so remote management tools can reach it. Which mechanism typically sends a specially crafted Ethernet frame that the NIC treats as a wake signal?",
@@ -2639,7 +3033,9 @@
     ],
     "correct": 2,
     "explanation": "Wake-on-LAN uses a magic packet whose payload repeats the target MAC; a capable NIC asserts a wake signal to the board. DHCP, OSPF Hellos, and CDP Power TLVs do not boot a powered-off PC over standard Ethernet.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.3"
   },
   {
     "question": "A technician needs to measure how much optical power is lost across a fibre patch cord and a short run of installed fibre. Which pair of tools is the usual choice for that insertion-loss test?",
@@ -2651,7 +3047,9 @@
     ],
     "correct": 2,
     "explanation": "Insertion loss is measured by launching a known optical level with a light source and reading what arrives with a power meter; the difference in dB is the loss. An OTDR is better for locating breaks, splices and reflections along the span, not for a simple end-to-end loss figure. Copper TDR and fusion-splicer estimates do not replace a source/meter pair for certification of optical loss.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "A new Cat6 run passes a simple continuity/wire-map tester (pins 1-8 all connect end to end), yet the link is unstable at 1 Gbps. A cable certifier reports a split pair. What does that mean?",
@@ -2663,7 +3061,9 @@
     ],
     "correct": 1,
     "explanation": "A split pair is a wiring error where each pin reaches the right pin at the far end, so a basic wire-map or continuity check passes, but the wires carrying one signal come from two different twisted pairs. Without the twist working on that signal, near-end crosstalk (NEXT) rises and the link fails or flaps at higher speeds. Only a tester that measures crosstalk, such as a certifier, catches it. It is not a broken conductor, a length fault, or a T568A/B mismatch (that one shows as crossed pairs on a wire map).",
-    "difficulty": "Medium"
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.1"
   },
   {
     "question": "A small office plugs its switch and NAS into a surge-protected power strip. During a short power cut both devices still switch off and the NAS has to rebuild its array. Which device would have kept them running?",
@@ -2675,7 +3075,9 @@
     ],
     "correct": 2,
     "explanation": "A surge protector only diverts voltage spikes; it has no stored energy, so when the mains drops the devices lose power at once, whatever its joule rating. A UPS has a battery that carries the load through short cuts, and many models tell a NAS or server over USB or the network to shut down safely before the battery runs out. A power conditioner smooths noise and small sags but does not bridge an outage, and a PoE injector still draws its power from the mains.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "4.2"
   },
   {
     "question": "IT moved the intranet site to a new server and updated its DNS record an hour ago. Every PC reaches the new server except one Windows laptop, which still opens the old address. Which command on that laptop is the quickest fix?",
@@ -2687,7 +3089,9 @@
     ],
     "correct": 1,
     "explanation": "Windows caches DNS answers for the record's TTL, so a laptop that looked the name up before the change can keep using the old address for a while. ipconfig /flushdns empties that cache and the next lookup goes to the DNS server (ipconfig /displaydns shows what is cached). Renewing the DHCP lease does not refresh DNS records, Winsock reset repairs the socket layer, and the ARP table maps IP addresses to MAC addresses, not names to IPs.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "A user can't reach a web server. You run tracert to it: hops 1 to 3 answer with times, and from hop 4 onwards every line shows '* * * Request timed out' until the 30-hop limit. What does this tell you first?",
@@ -2699,7 +3103,9 @@
     ],
     "correct": 2,
     "explanation": "tracert lists each router that sends back an ICMP Time Exceeded message. Hops 1 to 3 answering means the PC, its gateway and the first routers work, so the gateway is fine. Asterisks from hop 4 on mean the next device is not replying or is dropping the traffic (it could also just filter ICMP, so confirm). Name resolution happens once at the start, and the web server is not involved in the middle hops.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.3"
   },
   {
     "question": "An office network printer gets its IP address from DHCP. Every few weeks users can no longer print, and the printer is found working at a different address. What is the simplest lasting fix?",
@@ -2711,7 +3117,9 @@
     ],
     "correct": 2,
     "explanation": "A DHCP reservation ties one IP address to the printer's MAC address, so the server hands it the same address every time and the PCs keep finding it. A shorter lease makes changes more likely, not less, turning off DHCP for everyone breaks the other devices, and the switch port has nothing to do with the IP address the printer gets.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.5"
   },
   {
     "question": "A user sets a static IP address on a new PC. Soon Windows warns about an IP address conflict, and another PC on the same network starts losing its connection at random. What is the most likely cause?",
@@ -2723,6 +3131,568 @@
     ],
     "correct": 1,
     "explanation": "Windows shows an IP conflict when another device answers ARP for the same address. A static address must be unique and should sit outside the DHCP pool, or be reserved, so the server never gives it to someone else. A bad cable, a DNS name or a wrong gateway don't make two hosts claim the same IP address.",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.3"
+  },
+  {
+    "question": "A link is rated at 1 Gb/s, but a file copy only reaches 380 Mb/s. Which term describes the 380 Mb/s?",
+    "options": [
+      "Latency, measured in megabits",
+      "Bandwidth, which is always the measured value",
+      "Throughput",
+      "Jitter, the variation in packet size"
+    ],
+    "correct": 2,
+    "explanation": "Bandwidth is the link's capacity (1 Gb/s); throughput is the data rate actually achieved, reduced by overhead, congestion and the endpoints.",
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.2"
+  },
+  {
+    "question": "You want to measure throughput between two hosts inside the LAN, without using the internet. Which tool fits?",
+    "options": [
+      "iPerf between the two hosts",
+      "A public web speed test site",
+      "nslookup against the internal DNS server",
+      "tracert to the default gateway with timing enabled"
+    ],
+    "correct": 0,
+    "explanation": "iPerf generates traffic between a server and a client you control, so it measures the LAN path. Web speed tests measure the path to an internet test server.",
+    "difficulty": "Hard",
+    "exam": "ccst-net",
+    "domain": "1.2"
+  },
+  {
+    "question": "A video call is choppy although the speed test shows 200 Mb/s. Which measurements matter most for real-time voice and video?",
+    "options": [
+      "Latency, jitter and packet loss",
+      "The DNS server response code",
+      "Only the download speed in Mb/s",
+      "The DHCP lease duration"
+    ],
+    "correct": 0,
+    "explanation": "Real-time traffic needs low and stable delay. High jitter or loss breaks audio and video even when bandwidth is plentiful.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.2"
+  },
+  {
+    "question": "A university connects buildings across one campus with its own fiber. What type of network is this usually called?",
+    "options": [
+      "CAN (campus area network)",
+      "WAN spanning several countries",
+      "MAN covering a whole city region",
+      "PAN (personal area network)"
+    ],
+    "correct": 0,
+    "explanation": "A CAN links several LANs in buildings on a single campus. A MAN spans a city, a WAN spans large distances, and a PAN covers a few metres around a person.",
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.3"
+  },
+  {
+    "question": "A smartwatch, a phone and wireless earbuds talk over Bluetooth. Which network type is this?",
+    "options": [
+      "SAN for storage",
+      "MAN",
+      "WAN",
+      "PAN"
+    ],
+    "correct": 3,
+    "explanation": "A personal area network covers devices within a few metres of one person, typically using Bluetooth.",
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "1.3"
+  },
+  {
+    "question": "In a star topology, what happens when one cable to a single PC is cut?",
+    "options": [
+      "Only that PC loses connectivity",
+      "The whole network goes down",
+      "All PCs on the same switch reboot",
+      "Traffic reroutes through the next PC"
+    ],
+    "correct": 0,
+    "explanation": "Each device has its own link to the central switch, so a single cable failure affects only that device; the central device is the single point of failure.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.3"
+  },
+  {
+    "question": "Which topology gives every site a direct link to every other site, with the highest redundancy and cost?",
+    "options": [
+      "Bus with a shared cable",
+      "Hub-and-spoke with one central site",
+      "Point-to-point between two sites only",
+      "Full mesh"
+    ],
+    "correct": 3,
+    "explanation": "A full mesh connects every node to every other node: n(n-1)/2 links. It survives many failures but is expensive; partial mesh and hub-and-spoke cost less.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.3"
+  },
+  {
+    "question": "A company rents virtual machines in the cloud and manages their OS and applications itself. Which cloud model is this?",
+    "options": [
+      "SaaS",
+      "PaaS",
+      "IaaS",
+      "A private on-premises cluster"
+    ],
+    "correct": 2,
+    "explanation": "In IaaS the provider runs the hardware and virtualization, while the customer manages the OS, middleware and apps. PaaS also manages the OS and runtime; SaaS delivers the whole application.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.4"
+  },
+  {
+    "question": "Developers upload code and the provider handles servers, OS patching and runtime scaling. Which model is this?",
+    "options": [
+      "IaaS",
+      "PaaS",
+      "Colocation in a data center",
+      "A type 2 hypervisor"
+    ],
+    "correct": 1,
+    "explanation": "PaaS provides a managed platform (runtime, OS, scaling) where developers deploy code without managing servers.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.4"
+  },
+  {
+    "question": "Why is SFTP preferred over FTP for sending configuration backups to a server?",
+    "options": [
+      "SFTP encrypts credentials and data over SSH",
+      "SFTP uses UDP so it is faster",
+      "FTP cannot transfer text files",
+      "SFTP needs no username at all"
+    ],
+    "correct": 0,
+    "explanation": "FTP (TCP 20/21) sends usernames, passwords and data in clear text. SFTP runs over SSH (TCP 22) and encrypts the session.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "1.5"
+  },
+  {
+    "question": "A technician finds a small 6-position connector carrying an analog phone line. Which connector is it?",
+    "options": [
+      "RJ-45",
+      "LC duplex",
+      "RJ-11",
+      "F-type coax"
+    ],
+    "correct": 2,
+    "explanation": "RJ-11 is the narrower connector used for analog telephone lines and DSL; RJ-45 (8P8C) is used for Ethernet.",
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
+  },
+  {
+    "question": "A cable modem connects to the provider's network through which cable and connector?",
+    "options": [
+      "Single-mode fiber with an LC connector",
+      "Cat6 with an RJ-45 connector",
+      "Coaxial cable with an F-type connector",
+      "Twinax with an SFP+ end"
+    ],
+    "correct": 2,
+    "explanation": "Cable (DOCSIS) internet uses coaxial cable with screw-on F-type connectors to the modem; the modem then offers Ethernet to the LAN.",
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.1"
+  },
+  {
+    "question": "A branch uses a 4G/5G router as backup internet. What is a typical limitation compared with a fiber line?",
+    "options": [
+      "It always needs a static public IPv4",
+      "It cannot carry any IP traffic at all",
+      "Speed and latency vary with signal and cell load",
+      "It only works with PoE switches"
+    ],
+    "correct": 2,
+    "explanation": "Cellular links depend on signal strength, interference and the number of users in the cell, and often use carrier-grade NAT and data caps.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.2"
+  },
+  {
+    "question": "Where should a 5G backup router's external antenna be placed for the best signal?",
+    "options": [
+      "Inside a metal cabinet in the basement",
+      "Behind the server rack to share cooling",
+      "Near a window or outside, facing the cell tower",
+      "Taped to the switch for a short cable"
+    ],
+    "correct": 2,
+    "explanation": "Cellular signal is weakened by walls, metal and depth underground. Place the antenna high, near a window or outdoors, and check RSRP/SINR readings.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.2"
+  },
+  {
+    "question": "Which command on Linux shows the IP addresses of the network interfaces?",
+    "options": [
+      "ipconfig /all",
+      "show ip interface brief",
+      "netsh interface show",
+      "ip addr (or ip a)"
+    ],
+    "correct": 3,
+    "explanation": "On modern Linux, ip addr shows interfaces and addresses (ifconfig is older). ipconfig and netsh are Windows commands; show ip interface brief is Cisco IOS.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.4"
+  },
+  {
+    "question": "On a Mac, which command shows the IP address of the Wi-Fi interface (usually en0)?",
+    "options": [
+      "ipconfig /release en0",
+      "ipconfig getifaddr en0",
+      "nslookup en0",
+      "show interfaces en0 status detail"
+    ],
+    "correct": 1,
+    "explanation": "macOS has its own ipconfig utility: ipconfig getifaddr en0 prints the IPv4 address. ifconfig en0 also shows it.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.4"
+  },
+  {
+    "question": "On an Android phone, where do you normally check the IP address and gateway of the current Wi-Fi network?",
+    "options": [
+      "In the app store's update page",
+      "In the phone dialer, by typing the IP",
+      "In the battery usage screen under Device care",
+      "In the connected Wi-Fi network's details"
+    ],
+    "correct": 3,
+    "explanation": "Opening the connected network in Settings > Wi-Fi shows the IP, gateway, DNS and signal (menus vary by vendor). iOS shows the same under the network's (i) button.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.4"
+  },
+  {
+    "question": "On Linux, which tool checks which process is listening on TCP port 22?",
+    "options": [
+      "ping -t localhost",
+      "ss -tlnp",
+      "dig +short port 22",
+      "route print -4"
+    ],
+    "correct": 1,
+    "explanation": "ss -tlnp lists listening TCP sockets with the owning process (root may be needed for the process name).",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "3.4"
+  },
+  {
+    "question": "On a Cisco switch, a port LED is solid green. What does it normally mean?",
+    "options": [
+      "The port is err-disabled",
+      "A link is up on that port",
+      "The port is in PoE fault",
+      "The port is administratively down"
+    ],
+    "correct": 1,
+    "explanation": "Solid green means link present; blinking green means activity; amber can mean blocked by STP, a fault or POST. Meanings depend on the LED mode selected.",
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "4.1"
+  },
+  {
+    "question": "A switch's SYST LED is amber after boot. What should you check?",
+    "options": [
+      "The DHCP scope on the router",
+      "The VLAN name configured on access port 1",
+      "The system: POST, fans, power or logs",
+      "The DNS suffix of the PCs"
+    ],
+    "correct": 2,
+    "explanation": "An amber SYST LED indicates the system powered up but has a fault, such as a failed POST, fan or power problem. Check show environment and the logs.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.1"
+  },
+  {
+    "question": "A rack diagram (elevation) is out of date. Why does it matter during an outage?",
+    "options": [
+      "It changes the switch's MAC address",
+      "It slows down DHCP leases",
+      "It makes VLANs stop working on the uplinks",
+      "Someone may unplug the wrong device"
+    ],
+    "correct": 3,
+    "explanation": "Rack elevations show what sits in each U, with names and connections. Wrong diagrams lead to mistakes under pressure; keep them updated with every change.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.2"
+  },
+  {
+    "question": "Which diagram shows IP subnets, VLANs and routing between devices rather than cable paths?",
+    "options": [
+      "A physical diagram",
+      "A floor plan with outlets",
+      "A rack elevation",
+      "A logical network diagram"
+    ],
+    "correct": 3,
+    "explanation": "Logical diagrams show addressing, VLANs and how traffic flows. Physical diagrams show cables, ports, racks and locations.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.2"
+  },
+  {
+    "question": "A new switch has a USB-C/mini-USB console port and an RJ-45 console port. What is true?",
+    "options": [
+      "Both are active at the same time with two sessions",
+      "Usually only one is active, USB first",
+      "Only the RJ-45 port works for setup",
+      "The USB port only charges the switch"
+    ],
+    "correct": 1,
+    "explanation": "On many Catalyst models, when a USB console cable is connected, it becomes the active console and the RJ-45 console is disabled. A USB driver may be needed on the PC.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.3"
+  },
+  {
+    "question": "In PuTTY, which settings are normally used for a Cisco serial console?",
+    "options": [
+      "1200 baud, 7 data bits, even parity",
+      "115200 baud, 7 data bits, 2 stop bits",
+      "Telnet on port 23 to 192.168.1.1",
+      "9600 baud, 8 data bits, no parity, 1 stop bit"
+    ],
+    "correct": 3,
+    "explanation": "The Cisco default console is 9600 8N1 with no flow control. Choose the right COM port in the PC's Device Manager.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.3"
+  },
+  {
+    "question": "A Layer 3 switch can do something a pure Layer 2 switch cannot. What is it?",
+    "options": [
+      "A Layer 3 switch can also route between VLANs",
+      "A Layer 2 switch uses IP addresses to forward",
+      "A Layer 3 switch has no MAC address table",
+      "Layer 2 switches cannot have VLANs"
+    ],
+    "correct": 0,
+    "explanation": "Both forward frames by MAC address within a VLAN; a Layer 3 switch also routes packets between VLANs/subnets using SVIs or routed ports.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "4.4"
+  },
+  {
+    "question": "Several tickets arrive at once. Which should normally be handled first?",
+    "options": [
+      "The oldest ticket, regardless of impact",
+      "The outage affecting a whole department",
+      "A request for a new mouse",
+      "A question about a printer driver update"
+    ],
+    "correct": 1,
+    "explanation": "Priority combines impact and urgency: an outage affecting many users or a critical service comes before single-user requests.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.1"
+  },
+  {
+    "question": "When escalating a network ticket to tier 2, what should the ticket already contain?",
+    "options": [
+      "Only 'not working, please fix'",
+      "The user's personal phone contacts and calendar entries",
+      "Symptoms, tests done and their results",
+      "A copy of the user's browser history"
+    ],
+    "correct": 2,
+    "explanation": "Good notes let the next tier continue without repeating work: the problem, scope, tests done and their results, timestamps and device identifiers.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.1"
+  },
+  {
+    "question": "You captured traffic with Wireshark and only want to see DNS packets. Which display filter works?",
+    "options": [
+      "dns",
+      "show dns",
+      "filter udp 53 deny",
+      "port == 53 only"
+    ],
+    "correct": 0,
+    "explanation": "Wireshark display filters use protocol names such as dns, http or dhcp (and expressions like ip.addr == x). Captures can be saved as .pcap/.pcapng for later analysis.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.2"
+  },
+  {
+    "question": "A tier-2 engineer asks you for a packet capture. What file do you send?",
+    "options": [
+      "A .pcap/.pcapng file saved from Wireshark",
+      "A screenshot of the Wireshark start screen",
+      "The PC's Windows event log only",
+      "A text copy of ipconfig output"
+    ],
+    "correct": 0,
+    "explanation": "A .pcap or .pcapng contains the captured packets so the engineer can open and filter them in their own analyzer. Mind privacy: captures can contain sensitive data.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.2"
+  },
+  {
+    "question": "Which tool is a terminal emulator used to open SSH sessions to network devices?",
+    "options": [
+      "PuTTY (or Tera Term)",
+      "Wireshark",
+      "Disk Management",
+      "Windows Task Manager"
+    ],
+    "correct": 0,
+    "explanation": "PuTTY, Tera Term and SecureCRT are terminal emulators supporting SSH, Telnet and serial console sessions.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.4"
+  },
+  {
+    "question": "A small business manages its switches, APs and firewall from a web dashboard in the cloud. Which Cisco platform fits?",
+    "options": [
+      "A serial console server",
+      "Cisco Meraki Dashboard",
+      "A Type 2 hypervisor",
+      "A TFTP server on the LAN"
+    ],
+    "correct": 1,
+    "explanation": "Meraki devices are managed from the cloud-hosted Dashboard, which offers configuration, monitoring and alerts from any browser.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.4"
+  },
+  {
+    "question": "What does a network monitoring system (NMS) typically do?",
+    "options": [
+      "Assigns IP addresses to clients",
+      "Encrypts traffic between sites",
+      "Replaces the need for a firewall at the internet edge",
+      "Polls devices and raises alerts"
+    ],
+    "correct": 3,
+    "explanation": "An NMS collects status and metrics (SNMP, syslog, NetFlow) from devices, graphs them and raises alerts when thresholds are crossed.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.4"
+  },
+  {
+    "question": "At the IOS prompt, what does typing a partial command followed by '?' do?",
+    "options": [
+      "Saves the running configuration",
+      "Deletes the command from history",
+      "Lists possible completions",
+      "Reboots the device straight into ROMMON mode"
+    ],
+    "correct": 2,
+    "explanation": "Context-sensitive help: 'sh?' lists commands starting with sh, and 'show ?' lists what can follow. Tab completes a unique partial keyword.",
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "5.5"
+  },
+  {
+    "question": "Which command shows the serial numbers and part IDs of a switch's chassis and modules?",
+    "options": [
+      "show clock",
+      "show inventory",
+      "show history all",
+      "show users"
+    ],
+    "correct": 1,
+    "explanation": "show inventory lists the PID, VID and serial number of the chassis, power supplies, modules and transceivers.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.5"
+  },
+  {
+    "question": "The prompt is 'Switch>'. What does it mean and how do you reach privileged mode?",
+    "options": [
+      "Global configuration mode; type exit",
+      "User EXEC; type enable",
+      "ROMMON mode; type boot",
+      "Interface configuration mode; type end"
+    ],
+    "correct": 1,
+    "explanation": "'>' is user EXEC with limited commands; 'enable' moves to privileged EXEC ('#', level 15), from which configure terminal enters global configuration.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.5"
+  },
+  {
+    "question": "In a Catalyst switch stack, which command shows the members, their roles and priorities?",
+    "options": [
+      "show vlan brief",
+      "show ip route",
+      "show interfaces trunk",
+      "show switch"
+    ],
+    "correct": 3,
+    "explanation": "show switch lists stack members with their number, role (active, standby, member), priority, MAC and state.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "5.5"
+  },
+  {
+    "question": "A firewall has these rules in order: 1) deny all from 10.1.1.0/24, 2) permit 10.1.1.5 to the web server. Can 10.1.1.5 reach the server?",
+    "options": [
+      "Only on weekends",
+      "Yes, specific rules always win",
+      "Yes, because permit beats deny",
+      "No, rule 1 matches first"
+    ],
+    "correct": 3,
+    "explanation": "Rules are processed top-down and the first match applies. Put specific permits above broader denies.",
+    "difficulty": "Hard",
+    "exam": "ccst-net",
+    "domain": "6.1"
+  },
+  {
+    "question": "In AAA, what does 'accounting' provide?",
+    "options": [
+      "A record of what users did and when",
+      "Proof of who you are",
+      "The list of commands a user may run",
+      "Encryption of the login password"
+    ],
+    "correct": 0,
+    "explanation": "Authentication checks identity, authorization decides what is allowed and accounting logs actions and sessions, for example via RADIUS or TACACS+.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "6.2"
+  },
+  {
+    "question": "A browser shows a certificate warning when opening the switch's HTTPS page. What is the most common cause on new devices?",
+    "options": [
+      "The switch has no IP address",
+      "The device uses a self-signed certificate",
+      "The browser is out of date",
+      "HTTPS is blocked by the VLAN"
+    ],
+    "correct": 1,
+    "explanation": "New devices often create a self-signed certificate that browsers do not trust. Install a certificate from the company CA rather than training users to click through warnings.",
+    "difficulty": "Hard",
+    "exam": "ccst-net",
+    "domain": "6.2"
+  },
+  {
+    "question": "A company wants each employee to join Wi-Fi with their own domain account, not a shared password. Which mode fits?",
+    "options": [
+      "WPA2/WPA3-Personal with a long PSK",
+      "Open network with a captive portal",
+      "WPA2/WPA3-Enterprise with 802.1X",
+      "WEP with a 128-bit key"
+    ],
+    "correct": 2,
+    "explanation": "Enterprise mode authenticates each user via 802.1X and a RADIUS server (e.g. tied to Active Directory). Personal mode uses one pre-shared key for everyone.",
+    "difficulty": "Medium",
+    "exam": "ccst-net",
+    "domain": "6.3"
   }
 ]

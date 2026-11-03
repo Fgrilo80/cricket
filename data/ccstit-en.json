@@ -1,0 +1,1136 @@
+[
+  {
+    "question": "A user calls the help desk. What should you do before starting to troubleshoot?",
+    "options": [
+      "Open or find the ticket and record the user's contact and issue",
+      "Remote into the PC at once without telling the user anything",
+      "Escalate straight to the network team so you can save your own time",
+      "Ask the user to reinstall the operating system first"
+    ],
+    "correct": 0,
+    "explanation": "Every interaction starts with a ticket: identify the user, record contact details, symptoms and impact. This keeps history and lets others pick up the case.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "1"
+  },
+  {
+    "question": "Two tickets arrive at once: the CEO's wallpaper is wrong, and the whole sales floor cannot print invoices. Which comes first?",
+    "options": [
+      "The CEO's ticket, because of seniority",
+      "Whichever ticket has the longer and more detailed description",
+      "The sales floor, because more users and business are affected",
+      "The one that arrived a few seconds earlier, always"
+    ],
+    "correct": 2,
+    "explanation": "Priority follows impact and urgency, often defined in the SLA. A problem stopping many users from doing business beats a cosmetic issue, whoever reports it.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "1"
+  },
+  {
+    "question": "What does an SLA define for a help desk?",
+    "options": [
+      "The brand of laptops the company buys",
+      "The passwords that technicians may share with each other on the team",
+      "The color scheme and logo of the ticketing system portal",
+      "Agreed service targets such as response and resolution times"
+    ],
+    "correct": 3,
+    "explanation": "A Service Level Agreement sets measurable commitments, for example first response within 1 hour for high-priority tickets and resolution within 8 hours.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "1"
+  },
+  {
+    "question": "In the CompTIA/Cisco troubleshooting method, what comes right after identifying the problem?",
+    "options": [
+      "Implement the solution on all PCs",
+      "Establish a theory of probable cause",
+      "Escalate to the vendor immediately",
+      "Document findings and close the ticket"
+    ],
+    "correct": 1,
+    "explanation": "The order is: identify the problem, establish a theory, test it, plan and implement the fix, verify full functionality and document.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "1"
+  },
+  {
+    "question": "Your theory of probable cause was tested and proven wrong. What is the next step?",
+    "options": [
+      "Apply the original fix anyway",
+      "Close the ticket as 'cannot reproduce'",
+      "Establish a new theory or escalate",
+      "Replace the user's PC with a new one"
+    ],
+    "correct": 2,
+    "explanation": "If the test fails, form a new theory (gathering more information if needed) or escalate to the next support level. You do not apply a fix that the test disproved.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "1"
+  },
+  {
+    "question": "Why should the ticket notes describe each step you tried, even the ones that failed?",
+    "options": [
+      "Tickets are only valid if they are long",
+      "Auditors require at least ten written steps in every ticket you close",
+      "It helps others avoid repeating steps and builds the knowledge base",
+      "Failed steps are billed to the user's department at month end"
+    ],
+    "correct": 2,
+    "explanation": "Clear notes on what was tried, what worked and what did not save time for the next technician and feed knowledge base articles for recurring issues.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "1"
+  },
+  {
+    "question": "A frustrated user is shouting on the phone. What is the most professional response?",
+    "options": [
+      "Put the call on hold until they calm down",
+      "Tell them firmly that the problem is their own fault and move on",
+      "Stay calm, listen actively and restate the issue to confirm",
+      "Hang up and send them a long email instead"
+    ],
+    "correct": 2,
+    "explanation": "Active listening, staying calm and paraphrasing the problem shows empathy and checks understanding. Arguing or hanging up escalates the situation.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "1"
+  },
+  {
+    "question": "When should a Tier 1 technician escalate a ticket?",
+    "options": [
+      "When it exceeds their access, skill or SLA time",
+      "Only when the user asks to speak to a manager",
+      "Never, because Tier 1 must solve every ticket alone",
+      "As soon as any ticket is opened"
+    ],
+    "correct": 0,
+    "explanation": "Escalation is correct when the fix needs higher permissions or expertise, or when the ticket risks breaching the SLA. The escalation should include all notes collected so far.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "1"
+  },
+  {
+    "question": "Before opening a desktop PC to replace RAM, what should you do first?",
+    "options": [
+      "Unplug the power and use an ESD strap",
+      "Keep it running so you can watch the change",
+      "Spray compressed air into the power supply",
+      "Remove the CMOS battery and leave it out"
+    ],
+    "correct": 0,
+    "explanation": "Disconnect power (and press the power button to drain residual charge), then ground yourself with an ESD wrist strap or mat to avoid damaging components.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Which fire extinguisher class is suitable for a burning server or other energised electrical equipment?",
+    "options": [
+      "Class A (water)",
+      "Class C (CO2 or clean agent)",
+      "Class K (kitchen oils)",
+      "Class D (combustible metals)"
+    ],
+    "correct": 1,
+    "explanation": "In the US scheme, Class C covers energised electrical fires; CO2 or clean-agent extinguishers do not conduct electricity. In Europe the equivalent is CO2 marked for electrical risk.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Which Windows tool shows running processes and their CPU and memory use?",
+    "options": [
+      "Event Viewer",
+      "Task Manager",
+      "Disk Management",
+      "Registry Editor"
+    ],
+    "correct": 1,
+    "explanation": "Task Manager (Ctrl+Shift+Esc) lists processes, performance graphs and startup apps. Event Viewer shows logs, and Disk Management handles partitions.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "On a Mac, which app is the equivalent of Windows Task Manager?",
+    "options": [
+      "Finder (file browser)",
+      "Disk Utility (drives)",
+      "Activity Monitor",
+      "Console (system logs)"
+    ],
+    "correct": 2,
+    "explanation": "Activity Monitor shows CPU, memory, energy, disk and network use per process. Console shows system logs and Disk Utility manages drives.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "A PC restarted unexpectedly overnight. Where do you look for the cause on Windows?",
+    "options": [
+      "Control Panel, Fonts",
+      "Device Manager, Ports section",
+      "Event Viewer, System log",
+      "File Explorer, Downloads folder"
+    ],
+    "correct": 2,
+    "explanation": "Event Viewer's System log records shutdowns, crashes (for example Kernel-Power or BugCheck events) and Windows Update restarts, with timestamps.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Which connector carries both digital video and audio and is common on TVs and projectors?",
+    "options": [
+      "HDMI",
+      "VGA",
+      "DVI-A",
+      "PS/2"
+    ],
+    "correct": 0,
+    "explanation": "HDMI carries digital video and audio in one cable. VGA and DVI-A are analog video only, and PS/2 is an old keyboard/mouse port.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "A user's laptop has a single USB-C port with a lightning-bolt icon. What does that icon usually mean?",
+    "options": [
+      "The port is for charging only and has no data",
+      "The port can only connect to Apple devices",
+      "The port carries mains voltage and is dangerous to touch",
+      "Thunderbolt support for displays, docks and fast storage"
+    ],
+    "correct": 3,
+    "explanation": "The lightning-bolt logo next to a USB-C port marks Thunderbolt 3/4, which supports high-speed data, DisplayPort video, docks and power delivery over one cable.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "A new monitor only has DisplayPort, but the old PC only has VGA. What is needed?",
+    "options": [
+      "A plain DisplayPort-to-VGA cable with no electronics inside",
+      "An active digital-to-analog video converter",
+      "An HDMI splitter with two outputs",
+      "A USB-A to USB-B printer cable"
+    ],
+    "correct": 1,
+    "explanation": "VGA is analog and DisplayPort is digital, so you need an active adapter that converts the signal (here VGA to DisplayPort). A passive cable cannot convert between them.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "A laptop feels slow and the drive LED is always lit. Task Manager shows the disk at 100%. Which upgrade helps most?",
+    "options": [
+      "Replacing the HDD with an SSD",
+      "Adding a second keyboard",
+      "Changing the desktop wallpaper",
+      "Installing another web browser"
+    ],
+    "correct": 0,
+    "explanation": "A hard disk at constant 100% is a classic bottleneck. An SSD (SATA or NVMe) has far lower latency and greatly speeds up boot and application loading.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Which storage interface gives the highest speed in an M.2 slot?",
+    "options": [
+      "SATA III",
+      "IDE/PATA ribbon",
+      "USB 2.0 Hi-Speed",
+      "NVMe over PCIe"
+    ],
+    "correct": 3,
+    "explanation": "An M.2 slot can carry SATA or PCIe. NVMe over PCIe lanes is several times faster than SATA III's 6 Gb/s limit. Check the slot type before buying.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "A device shows a yellow exclamation mark in Device Manager. What does it usually indicate?",
+    "options": [
+      "There is a driver or resource problem with the device",
+      "The device was disabled on purpose by the user or by a policy",
+      "The device is the fastest in the system",
+      "The device is a new, verified and signed peripheral"
+    ],
+    "correct": 0,
+    "explanation": "A yellow warning icon means Windows found the device but its driver is missing, wrong or failing. A down arrow means disabled.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Old laptops are being replaced. What should happen to the old drives and devices?",
+    "options": [
+      "Throw them in the normal office bin to save time and money",
+      "Sell them online with the data still on them",
+      "Wipe or destroy data, then use certified e-waste recycling",
+      "Give them away to staff without checking the data first"
+    ],
+    "correct": 2,
+    "explanation": "Data must be securely erased or the drives destroyed, and electronics recycled through certified e-waste channels, because they contain hazardous materials and company data.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "A PC gives no picture, no fans and no lights when the button is pressed. What do you check first?",
+    "options": [
+      "The Windows activation status and product key",
+      "The installed graphics driver version",
+      "The power cable, outlet and PSU switch",
+      "The user's email and VPN password"
+    ],
+    "correct": 2,
+    "explanation": "With no signs of life at all, start at the power chain: wall outlet, power strip, cable, PSU switch and connections to the motherboard. Software cannot be the cause yet.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "A user installed CAD software that crashes at launch on an older PC. What should you check early?",
+    "options": [
+      "The app's minimum hardware requirements",
+      "The color and model of the PC case",
+      "The number of browser bookmarks",
+      "The keyboard layout and language setting"
+    ],
+    "correct": 0,
+    "explanation": "Compare the PC's CPU, RAM, GPU and OS version with the vendor's minimum requirements. Demanding apps often fail on hardware below spec.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "A vendor's firmware update fixes a known bug in your laptops' docking stations. What is best practice?",
+    "options": [
+      "Install it on every dock at once during work hours",
+      "Never update firmware once a device is deployed",
+      "Test on a few units, then roll out in a planned window",
+      "Ask users to download it themselves from any website they find"
+    ],
+    "correct": 2,
+    "explanation": "Firmware updates can brick devices if interrupted. Test on a pilot group, keep power stable and deploy in a maintenance window, using the vendor's official source.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "What does the 'About This Mac' window show?",
+    "options": [
+      "Running processes and their energy use",
+      "Saved Wi-Fi passwords for each known network and hotspot",
+      "macOS version, chip or CPU, memory and serial number",
+      "Network routes and the default gateway"
+    ],
+    "correct": 2,
+    "explanation": "About This Mac gives a quick summary of the macOS version, processor, memory and serial number, with a link to the full System Report.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "A user changed their password but their PC still shows an old group policy. Which command pulls the latest policy?",
+    "options": [
+      "sfc /scannow",
+      "ipconfig /renew",
+      "chkdsk /f",
+      "gpupdate /force"
+    ],
+    "correct": 3,
+    "explanation": "gpupdate /force reapplies computer and user Group Policy from Active Directory immediately. ipconfig /renew is for DHCP, chkdsk for disks and sfc for system files.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "What is the difference between a security group and a distribution group in Active Directory?",
+    "options": [
+      "Security groups grant permissions; distribution groups are for email lists",
+      "Security groups are only for printers; distribution groups for PCs",
+      "Distribution groups can log on to servers and run tasks; security groups cannot",
+      "They are the same object with two different names in the console"
+    ],
+    "correct": 0,
+    "explanation": "Security groups can be assigned permissions to resources (and can also receive mail). Distribution groups are used only for email distribution and cannot grant access.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "A new employee needs access to the finance share. What is the best practice?",
+    "options": [
+      "Give the user Full Control directly on the folder and all subfolders",
+      "Share your own login with the employee for a week",
+      "Copy all the finance files to the employee's desktop",
+      "Add the user to the finance security group that has the permission"
+    ],
+    "correct": 3,
+    "explanation": "Assigning permissions to groups (role-based access) and then adding users to the group is easier to manage and audit than per-user permissions.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Which service provides cloud identity for Microsoft 365, formerly called Azure AD?",
+    "options": [
+      "Microsoft Entra ID",
+      "Google Workspace",
+      "Active Directory Domain Services",
+      "AWS IAM"
+    ],
+    "correct": 0,
+    "explanation": "Microsoft Entra ID (formerly Azure AD) is Microsoft's cloud identity service. AD DS is the on-premises directory and AWS IAM controls access in Amazon Web Services.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "A user who forgot their password calls in. What must you do before resetting it?",
+    "options": [
+      "Email the new password to any address they give",
+      "Reset it immediately so the call stays short and the user is happy",
+      "Verify their identity using the approved procedure",
+      "Ask them to tell you their old password"
+    ],
+    "correct": 2,
+    "explanation": "Identity verification (for example a callback, employee ID or manager approval) stops social engineers from taking over accounts through the help desk.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "A user must reach the departmental share \\\\fs01\\sales as drive S: at every logon. What do you do?",
+    "options": [
+      "Create a desktop shortcut to the server's IP address",
+      "Copy the share into OneDrive manually each day",
+      "Map a network drive with 'Reconnect at sign-in'",
+      "Install the share as a printer on the PC"
+    ],
+    "correct": 2,
+    "explanation": "Mapping the SMB share as a network drive with reconnect enabled (or via Group Policy or net use /persistent:yes) gives the user S: at each logon.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "A user can open a file on a share but gets 'Access denied' when saving changes. What is the likely cause?",
+    "options": [
+      "The network cable on the PC is unplugged",
+      "The DNS server for the whole company is offline",
+      "The monitor resolution is set too low",
+      "The user has Read but not Modify permission"
+    ],
+    "correct": 3,
+    "explanation": "Being able to open but not save points to permissions: the user (or their group) has Read on the share or NTFS folder but lacks Write/Modify.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "A laser printer jams several times a day, always on the same tray. What is a sensible check?",
+    "options": [
+      "The Windows display scaling of the users' PCs",
+      "The IP address, subnet mask and gateway of the printer",
+      "Paper type, humidity and worn pickup rollers on that tray",
+      "The SMB signing setting on the print server"
+    ],
+    "correct": 2,
+    "explanation": "Repeated jams from one tray usually come from wrong or damp paper, an overfilled tray or worn pickup/separation rollers. Network settings do not cause paper jams.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Jobs pile up in the print queue and nothing prints, although the printer is online. What is a quick fix?",
+    "options": [
+      "Reinstall Windows on the print server from scratch tonight",
+      "Restart the Print Spooler service and clear the queue",
+      "Replace the printer's toner cartridge first",
+      "Change the user's screen saver"
+    ],
+    "correct": 1,
+    "explanation": "A stuck spooler often blocks the queue. Restarting the Print Spooler service (and deleting stuck jobs) usually releases it. Toner would produce faint or blank pages, not a stuck queue.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Printed pages from a laser printer come out with faded, uneven areas. What is the most likely cause?",
+    "options": [
+      "A wrong IP address on the printer",
+      "The print queue was paused",
+      "A paper jam in the output tray",
+      "Low or failing toner cartridge"
+    ],
+    "correct": 3,
+    "explanation": "Faded or streaky output is usually low toner or a worn drum. Network or queue issues stop printing altogether rather than degrading quality.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "In a Webex call, others cannot hear the user, but the headset works on another PC. What do you check first?",
+    "options": [
+      "The app's microphone and OS privacy settings",
+      "The BIOS boot order and secure boot state of the laptop",
+      "The default printer driver on the PC",
+      "The DHCP lease time on the office router"
+    ],
+    "correct": 0,
+    "explanation": "Often the app is using a different input device or the OS blocks microphone access for the app. Check the audio device in Webex and the privacy/microphone permissions.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "After a file server moved to a new IP, one PC still tries the old address while others work. What do you run on that PC?",
+    "options": [
+      "netsh winsock reset",
+      "gpupdate /force",
+      "chkdsk C: /f",
+      "ipconfig /flushdns"
+    ],
+    "correct": 3,
+    "explanation": "The PC is using a cached DNS record. ipconfig /flushdns clears the local resolver cache so the next lookup gets the new address (also check the hosts file).",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "A desktop app connects to its server on other PCs, but on one PC it times out right after a security update. What is a good suspect?",
+    "options": [
+      "A wrong time zone on the coffee machine",
+      "The refresh rate setting on the user's second monitor",
+      "An expired toner warning on the printer",
+      "A host firewall rule blocking the app on that PC"
+    ],
+    "correct": 3,
+    "explanation": "When one PC fails right after a change and others work, check the local firewall (for example Windows Defender Firewall) for a new rule or profile that blocks the app.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "A laptop connects to Wi-Fi but lands on the guest network with no access to internal apps. What should you check?",
+    "options": [
+      "The laptop's screen brightness",
+      "Which SSID the laptop joined",
+      "The battery health report",
+      "The keyboard language"
+    ],
+    "correct": 1,
+    "explanation": "Users often join the wrong SSID (for example Guest instead of Corp). Check the connected network and remove or deprioritise the wrong saved profile.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "Which Linux command shows the IP addresses of all interfaces in modern distributions?",
+    "options": [
+      "ipconfig /all",
+      "ip addr",
+      "netsh show ip",
+      "route print"
+    ],
+    "correct": 1,
+    "explanation": "The iproute2 command ip addr (ip a) shows interface addresses on Linux. ipconfig and route print are Windows commands; ifconfig is the older Linux/macOS tool.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "On a Linux host you need to see which ports are listening and which process owns them. Which command fits?",
+    "options": [
+      "ping -c 4 localhost",
+      "ss -tulpn",
+      "traceroute6 ::1",
+      "nslookup localhost"
+    ],
+    "correct": 1,
+    "explanation": "ss (from iproute2) replaces netstat: -t TCP, -u UDP, -l listening, -p process, -n numeric. On Windows the equivalent is netstat -ano.",
+    "difficulty": "Hard",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "A laptop asks for a BitLocker recovery key after a BIOS update. Where can the help desk usually find it?",
+    "options": [
+      "Printed on the laptop's battery label",
+      "In the office router's DHCP lease table entry for that laptop",
+      "Inside the Windows Event Viewer System log",
+      "In Entra ID/AD or the user's Microsoft account for that device"
+    ],
+    "correct": 3,
+    "explanation": "BitLocker recovery keys are escrowed in Active Directory, Entra ID, MDM or the user's Microsoft account. Firmware or TPM changes often trigger the recovery prompt.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "Windows keeps crashing after a new driver was installed, and it will not boot normally. What is a good next step?",
+    "options": [
+      "Replace the motherboard straight away",
+      "Boot to Safe Mode and roll back the driver",
+      "Format the disk at once without taking any backup first",
+      "Disable the Windows firewall permanently"
+    ],
+    "correct": 1,
+    "explanation": "Safe Mode loads only essential drivers, so you can roll back the driver in Device Manager or use System Restore. Hardware swaps or formatting are last resorts.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "A user's OneDrive icon shows a red X and files are not syncing. What do you check first?",
+    "options": [
+      "The sync error and the user's sign-in state",
+      "The keyboard driver version and layout",
+      "The toner level of the default printer",
+      "The HDMI cable of the user's second monitor"
+    ],
+    "correct": 0,
+    "explanation": "Clicking the OneDrive icon shows the error: signed out, storage full, a blocked file name or a path too long. Fix that cause and sync resumes.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "A user with a second monitor says the screen is 'stretched' and blurry. What do you adjust?",
+    "options": [
+      "The Windows Update active hours for that PC",
+      "The power plan to High performance",
+      "Resolution, set to the native value",
+      "The default web browser"
+    ],
+    "correct": 2,
+    "explanation": "LCD panels look sharp only at their native resolution. In Display settings choose the recommended resolution and correct scaling for each monitor.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "A web app shows old content and login loops only in one browser. What is a quick fix?",
+    "options": [
+      "Replace the network card in the PC",
+      "Reinstall the operating system",
+      "Clear that browser's cache and cookies",
+      "Change the PC's IP address to a static one"
+    ],
+    "correct": 2,
+    "explanation": "Stale cached files or corrupted cookies often cause display issues and login loops limited to one browser. Clearing them (or testing a private window) confirms it.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "A laptop goes to sleep after two minutes and drops Teams calls. Where do you change this?",
+    "options": [
+      "Device Manager, Network adapters",
+      "Power and sleep settings",
+      "Disk Cleanup and storage options",
+      "Credential Manager in Control Panel"
+    ],
+    "correct": 1,
+    "explanation": "Screen and sleep timeouts are in Settings > System > Power (or the Control Panel power plan). Company policies may also set them through Group Policy or MDM.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "A visually impaired user needs larger text and a screen reader on Windows. Where do you look?",
+    "options": [
+      "BIOS/UEFI setup screen",
+      "Accessibility settings",
+      "Task Scheduler library",
+      "Windows Defender Firewall rules"
+    ],
+    "correct": 1,
+    "explanation": "Windows Accessibility settings include Narrator (screen reader), Magnifier, text size, contrast themes and more. macOS has VoiceOver and Zoom in Accessibility.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "A Windows Update keeps failing with the same error code. What is a sensible step?",
+    "options": [
+      "Disable updates forever on that PC",
+      "Delete the System32 folder to force a clean reinstall",
+      "Run the update troubleshooter and check disk space",
+      "Unplug the PC during the next update"
+    ],
+    "correct": 2,
+    "explanation": "Low disk space and corrupted update caches are common causes. The built-in troubleshooter, freeing space and searching the error code in the vendor KB are good first steps.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "A Mac user cannot share their screen in a Webex meeting. What setting usually fixes it?",
+    "options": [
+      "Change the items shown in the Finder sidebar",
+      "Turn off the Mac's Bluetooth",
+      "Allow Screen Recording for Webex",
+      "Reset the Mac's NVRAM every day"
+    ],
+    "correct": 2,
+    "explanation": "macOS requires explicit permission per app for screen recording, camera and microphone under System Settings > Privacy & Security. The app may need restarting after enabling it.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "An external drive formatted on Windows as NTFS is read-only on a Mac. Why?",
+    "options": [
+      "macOS natively reads NTFS but does not write it",
+      "The USB cable is too short",
+      "The drive is infected with malware that blocks writing",
+      "Time Machine has locked the drive"
+    ],
+    "correct": 0,
+    "explanation": "macOS can read NTFS but not write to it without extra software. For sharing between Mac and Windows, exFAT is the usual choice.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "Which macOS feature makes automatic backups to an external disk?",
+    "options": [
+      "AirDrop",
+      "Spotlight",
+      "Mission Control",
+      "Time Machine"
+    ],
+    "correct": 3,
+    "explanation": "Time Machine keeps hourly, daily and weekly backups on an external or network drive. AirDrop shares files nearby and Spotlight is search.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "A user cannot AirDrop a file to a colleague's iPhone next to them. What should you check?",
+    "options": [
+      "Bluetooth, Wi-Fi and AirDrop visibility",
+      "The DNS server of the office network",
+      "The Windows activation key on the PC",
+      "The list of printers added on the Mac"
+    ],
+    "correct": 0,
+    "explanation": "AirDrop uses Bluetooth to discover and Wi-Fi to transfer. Both must be on and the receiver must accept from Contacts Only or Everyone (for 10 minutes on newer iOS).",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "A company phone stops getting work email after the user changed their network password. What is most likely needed?",
+    "options": [
+      "Factory reset the phone right away",
+      "Replace the phone's SIM card",
+      "Update the password in the phone's mail account",
+      "Turn on airplane mode for an hour, then turn it off again"
+    ],
+    "correct": 2,
+    "explanation": "Mobile mail apps keep the old credentials and fail (sometimes locking the account). Updating the password in the account, or re-authenticating with modern auth, fixes it.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "What does an MDM (Mobile Device Management) platform let IT do with company phones?",
+    "options": [
+      "Increase the phone's battery capacity",
+      "Push policies and apps, and remotely lock or wipe",
+      "Make the phone work fully without any mobile network or Wi-Fi",
+      "Read users' personal messages by default"
+    ],
+    "correct": 1,
+    "explanation": "MDM (for example Intune) enrolls devices, enforces passcodes and encryption, deploys apps and Wi-Fi/VPN profiles and can remotely lock or wipe lost devices.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "A phone charges very slowly or not at all with any cable. What simple check often solves it?",
+    "options": [
+      "Reinstall all the apps on the phone",
+      "Change the phone's wallpaper and theme",
+      "Turn off automatic time zone",
+      "Clean lint from the charging port"
+    ],
+    "correct": 3,
+    "explanation": "Pocket lint packed in the USB-C or Lightning port stops the plug from seating fully. Gently cleaning it with a non-metallic tool often restores charging.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "Which cloud service model gives users a finished application, such as Microsoft 365, with nothing to manage underneath?",
+    "options": [
+      "IaaS",
+      "PaaS",
+      "On-premises hosting",
+      "SaaS"
+    ],
+    "correct": 3,
+    "explanation": "SaaS delivers complete applications. PaaS gives a platform to deploy your own code, and IaaS gives virtual machines, storage and networks that you manage.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "What is a Type 2 hypervisor?",
+    "options": [
+      "A type of SSD built for virtual machines",
+      "A hypervisor installed directly on server hardware",
+      "A cloud firewall placed between two VMs",
+      "Virtualization software running on a host OS"
+    ],
+    "correct": 3,
+    "explanation": "Type 2 (hosted) hypervisors such as VirtualBox or VMware Workstation run inside an OS. Type 1 (bare-metal) such as ESXi or Hyper-V Server run directly on hardware.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "A user wants to install a free PDF tool from a random download site. What is the right response?",
+    "options": [
+      "Point them to the approved company app store or request process",
+      "Let them, since free tools are always safe",
+      "Install it yourself with your own domain admin account right away",
+      "Disable antivirus so the installer runs"
+    ],
+    "correct": 0,
+    "explanation": "Unapproved sources often bundle adware or malware. Users should install from the company portal (Intune Company Portal, Self Service) or request the app through IT.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "4"
+  },
+  {
+    "question": "A user forwards an email 'from IT' asking them to confirm their password at a link. What do you tell them?",
+    "options": [
+      "Reply with the password so IT can check it",
+      "Click the link but type a fake password to test it",
+      "Forward it to all colleagues as a warning",
+      "It is phishing: don't click, report it"
+    ],
+    "correct": 3,
+    "explanation": "IT never asks for passwords by email. Report the message (for example with the Report Phishing button) so security can block it for everyone; if they already clicked, reset the password.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "Someone calls the help desk claiming to be a VP who is travelling and needs an urgent password reset to a new phone. What is this likely to be?",
+    "options": [
+      "Social engineering using urgency and authority",
+      "A hardware fault on the VP's laptop",
+      "A DNS outage at the hotel",
+      "A normal request you should complete at once to help the VP"
+    ],
+    "correct": 0,
+    "explanation": "Pretexting with urgency and authority is a classic way to push the help desk past verification. Follow the identity procedure strictly, whoever the caller claims to be.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "A user's browser suddenly has a new toolbar and the home page changed to an unknown search site. What do you do first?",
+    "options": [
+      "Change the PC's IP address",
+      "Order a new laptop for the user straight away",
+      "Ignore it, because toolbars are harmless add-ons",
+      "Scan for malware and remove the extension"
+    ],
+    "correct": 3,
+    "explanation": "Browser hijackers are adware/potentially unwanted programs. Scan with the endpoint protection tool, remove the extension and reset browser settings.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "Which of these is PII (personally identifiable information)?",
+    "options": [
+      "An employee's name with their national ID",
+      "The company's public stock price",
+      "The SSID of the office guest Wi-Fi",
+      "The model number of a shared printer"
+    ],
+    "correct": 0,
+    "explanation": "PII identifies a person, such as national ID numbers, home addresses or medical records with names. It must be protected and shared only on a need-to-know basis.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "Which password is the strongest?",
+    "options": [
+      "Password123!Secure",
+      "Horse-battery-staple-91",
+      "Lisboa2026!Lisboa",
+      "qwerty12345678"
+    ],
+    "correct": 1,
+    "explanation": "Length matters most. A long passphrase with mixed words, case, symbols and digits is much harder to guess than short common patterns or dictionary words with a year.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "A user notices someone they don't know following them through the badge door. What is this called?",
+    "options": [
+      "Phishing",
+      "Tailgating",
+      "Spoofing",
+      "Shoulder surfing"
+    ],
+    "correct": 1,
+    "explanation": "Tailgating (piggybacking) is entering a secure area right behind an authorised person. Shoulder surfing is watching someone type, and spoofing is faking an identity or address.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "An email shows the sender name 'Finance Team' but the address is finance@c0mpany-pay.com. What is this?",
+    "options": [
+      "Spoofing of a trusted sender",
+      "A normal email from the finance team",
+      "A spam filter test sent by IT to every user",
+      "A DNS problem on the company's outgoing mail server"
+    ],
+    "correct": 0,
+    "explanation": "Display-name spoofing and look-alike domains (0 for o) are used to impersonate trusted senders. Check the real address and report it.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "A user's account shows sign-ins from another country at night. What should the help desk do first?",
+    "options": [
+      "Reset password, revoke sessions, check MFA",
+      "Wait for a week to see if it happens again",
+      "Ask the user to stop using email for a month",
+      "Delete the user's mailbox and archive"
+    ],
+    "correct": 0,
+    "explanation": "Signs of compromise call for containment: reset the password, sign out all sessions, review MFA methods and mailbox rules, then escalate to security.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "Why should users lock their screen (Win+L) when leaving their desk?",
+    "options": [
+      "To save printer toner and paper",
+      "To stop others using the open session",
+      "To speed up Windows Update",
+      "To refresh the PC's DHCP lease"
+    ],
+    "correct": 1,
+    "explanation": "An unlocked PC lets anyone walking by read data or act as the user. Locking is quick, and policies often auto-lock after a few minutes idle.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "Which data class is a company's unreleased product design?",
+    "options": [
+      "Public marketing",
+      "PII (personal)",
+      "Proprietary",
+      "Open source code"
+    ],
+    "correct": 2,
+    "explanation": "Unreleased designs are proprietary trade secrets. They must be labelled and shared only with authorised staff, unlike public marketing data.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "A user received many identical unsolicited ads by email. What is the right action?",
+    "options": [
+      "Mark them as spam/junk so the filter learns",
+      "Reply asking to be removed from the list",
+      "Click 'unsubscribe' in every message",
+      "Forward them to the whole department"
+    ],
+    "correct": 0,
+    "explanation": "Replying or clicking unsubscribe in unknown spam confirms the address is active. Marking as junk/spam trains filters and moves future messages away.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "5"
+  },
+  {
+    "question": "Which tool lets a technician view and control a user's Windows PC with the user's invitation and consent?",
+    "options": [
+      "Disk Management console",
+      "Print Management console",
+      "Event Viewer",
+      "Quick Assist"
+    ],
+    "correct": 3,
+    "explanation": "Quick Assist (and the older Remote Assistance) lets the user share a code so a technician can view or control the session. RDP instead opens a separate session, usually without the user present.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "6"
+  },
+  {
+    "question": "Comparing RDP and VNC for remote support, which statement holds?",
+    "options": [
+      "RDP is Microsoft's; VNC is cross-platform",
+      "VNC always encrypts traffic, RDP never does",
+      "RDP only works on Linux, VNC only on Windows",
+      "They are identical protocols with different logos"
+    ],
+    "correct": 0,
+    "explanation": "RDP (TCP 3389) is Microsoft's remote desktop protocol, typically opening a separate session. VNC (RFB, TCP 5900) mirrors the console screen and works across many OSes.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "6"
+  },
+  {
+    "question": "You paste a user's error log into a public generative AI chatbot to get help. What is the main risk?",
+    "options": [
+      "The chatbot will crash the user's PC",
+      "Leaking confidential data or PII",
+      "AI tools never accept text longer than one line",
+      "The log will be printed on the office printer"
+    ],
+    "correct": 1,
+    "explanation": "Public AI tools may store or train on what you paste. Remove names, IPs, credentials and customer data, or use the company-approved AI tool, and still verify the answer.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "6"
+  },
+  {
+    "question": "An AI assistant gives a confident PowerShell command to fix a user's profile. What should you do before running it?",
+    "options": [
+      "Ask the user to run it with admin rights for you",
+      "Run it immediately on all PCs to save time",
+      "Trust it, because AI answers are always verified",
+      "Verify it in trusted docs and test it"
+    ],
+    "correct": 3,
+    "explanation": "Generative AI can 'hallucinate' wrong or harmful commands. Verify each command against official documentation and test on a non-production machine before using it.",
+    "difficulty": "Hard",
+    "exam": "ccst-it",
+    "domain": "6"
+  },
+  {
+    "question": "What is the difference between predictive AI and generative AI in IT support?",
+    "options": [
+      "Predictive AI writes new text; generative AI only sorts tickets",
+      "Predictive forecasts; generative creates content",
+      "They are two marketing names for exactly the same technology",
+      "Generative AI only works offline on the PC"
+    ],
+    "correct": 1,
+    "explanation": "Predictive AI estimates outcomes from patterns (for example which disk will fail or ticket routing). Generative AI produces new text, code or images, such as drafting a reply.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "6"
+  },
+  {
+    "question": "Where should a help desk technician look first for a known fix to a recurring issue?",
+    "options": [
+      "A random social media post",
+      "The user's personal notes and sticky notes",
+      "The company knowledge base",
+      "The printer's front panel"
+    ],
+    "correct": 2,
+    "explanation": "Internal KB articles document approved, tested fixes for recurring issues. Vendor KBs and forums come next, always checking that the source is trustworthy.",
+    "difficulty": "Easy",
+    "exam": "ccst-it",
+    "domain": "6"
+  },
+  {
+    "question": "A remote user's PC is behind home NAT. Which remote support approach typically works without port forwarding?",
+    "options": [
+      "Direct RDP from the help desk to the user's home IP",
+      "Telnet to the user's router on port 23",
+      "Pinging the PC until it answers",
+      "A cloud-brokered tool where both sides connect out"
+    ],
+    "correct": 3,
+    "explanation": "Tools like Quick Assist, Webex or TeamViewer have both technician and user connect outbound to a cloud relay, so no inbound port or VPN is needed.",
+    "difficulty": "Hard",
+    "exam": "ccst-it",
+    "domain": "6"
+  },
+  {
+    "question": "A Windows PC gets an IPv6 address starting with fe80:: but no global IPv6 address, while IPv4 works. What does this show?",
+    "options": [
+      "The PC has a public IPv6 address from the ISP",
+      "Only link-local; no RA or DHCPv6 arrived",
+      "The network adapter is broken and must be replaced",
+      "DNS is translating IPv6 names into IPv4"
+    ],
+    "correct": 1,
+    "explanation": "Every IPv6 interface creates a link-local fe80:: address by itself. A global address needs SLAAC from router advertisements or DHCPv6; if neither arrives, only link-local remains.",
+    "difficulty": "Hard",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "A user can browse the web but cannot reach the intranet app at 10.20.5.15. tracert stops at the user's own default gateway. What is the likely issue?",
+    "options": [
+      "The user's monitor driver is outdated",
+      "The web browser cache is corrupted",
+      "DNS cannot resolve any public internet names",
+      "A routing or firewall block past the gateway"
+    ],
+    "correct": 3,
+    "explanation": "The PC reaches the gateway, and internet traffic works, so the local setup is fine. Traffic to the internal subnet is dropped after the gateway: a missing route or a firewall/ACL block.",
+    "difficulty": "Hard",
+    "exam": "ccst-it",
+    "domain": "3"
+  },
+  {
+    "question": "A desktop beeps in a pattern at power-on and shows no image. What does this usually indicate?",
+    "options": [
+      "A full print queue on the network",
+      "A POST error, often RAM or GPU",
+      "An expired Windows licence",
+      "A wrong time zone setting in Windows"
+    ],
+    "correct": 1,
+    "explanation": "Beep codes come from the firmware's power-on self test before the OS loads. The motherboard manual maps each pattern, commonly to RAM, graphics or CPU faults.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "A user's laptop battery swells and the touchpad is pushed up. What is the correct action?",
+    "options": [
+      "Keep using it on AC power until it gets worse",
+      "Stop using it and have the battery replaced",
+      "Puncture the battery to release the gas",
+      "Put the laptop in a freezer overnight to shrink it"
+    ],
+    "correct": 1,
+    "explanation": "A swollen lithium-ion battery can catch fire. Stop using and charging it, keep it away from heat and have it replaced and disposed of as hazardous waste.",
+    "difficulty": "Hard",
+    "exam": "ccst-it",
+    "domain": "2"
+  },
+  {
+    "question": "Which Windows command shows active TCP connections together with the owning process ID?",
+    "options": [
+      "netstat -ano",
+      "ipconfig /displaydns",
+      "nslookup -type=mx",
+      "pathping -n"
+    ],
+    "correct": 0,
+    "explanation": "netstat -ano lists all connections and listening ports (-a), numeric addresses (-n) and the PID (-o), which you can match in Task Manager.",
+    "difficulty": "Medium",
+    "exam": "ccst-it",
+    "domain": "3"
+  }
+]

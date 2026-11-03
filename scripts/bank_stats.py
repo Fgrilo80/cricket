@@ -47,7 +47,7 @@ def main() -> int:
             questions = bank[cert][lang]
             print(row(cert, lang, questions))
             everything.extend(questions)
-            if cert != "cyber":
+            if cert in ("ccst", "ccna", "ccnp"):
                 classic.extend(questions)
         pooled = bank[cert]["pt"] + bank[cert]["en"]
         print(row(cert, "all", pooled))
