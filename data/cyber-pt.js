@@ -4543,5 +4543,50 @@ window.QUIZ_BANK = [
     "exam": "scor",
     "topic": "ameacas",
     "domain": "6.5"
+  },
+  {
+    "question": "O Sysmon num posto regista o evento 13: um novo valor 'Updater' em HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run a apontar para C:\\Users\\ana\\AppData\\Roaming\\upd.exe, que não está assinado. O que mostra mais provavelmente?",
+    "options": [
+      "Persistência: o programa vai arrancar sempre que o utilizador entra, um truque comum de malware posto no AppData",
+      "Uma tarefa normal do Windows Update, já que o Windows Update guarda sempre o atualizador no AppData Roaming de cada um",
+      "Escalada de privilégios para SYSTEM, porque escrever na chave Run dá ao programa direitos de admin no próximo arranque",
+      "Uma instalação falhada que o Windows desfez, já que o evento 13 do Sysmon só aparece quando uma alteração é revertida"
+    ],
+    "correct": 0,
+    "explanation": "O evento 13 do Sysmon regista a escrita de um valor no registo. A chave Run do HKCU lança as entradas no login do utilizador, por isso um exe sem assinatura no AppData lá posto é persistência clássica (MITRE T1547.001). O Windows Update não vive no AppData, uma entrada Run do HKCU corre com os direitos do utilizador e não como SYSTEM, e o evento 13 regista uma alteração feita, não revertida.",
+    "difficulty": "Médio",
+    "exam": "cbrops",
+    "domain": "3.5",
+    "topic": "logs-ir"
+  },
+  {
+    "question": "Um servidor de ficheiros regista o evento 4624 com logon type 10 para a conta 'backup_svc' às 03:12, a partir de um IP público no estrangeiro. Essa conta só costuma ser usada por uma tarefa agendada no servidor de backups. O que quer dizer mais provavelmente?",
+    "options": [
+      "A tarefa de backup agendada correu mais cedo, porque o type 10 é o tipo que o Windows usa para todas as tarefas agendadas",
+      "Um utilizador desbloqueou o ecrã na consola, já que o type 10 marca um desbloqueio feito com credenciais em cache",
+      "Alguém entrou de forma interativa por RDP com a conta de serviço, quase de certeza roubada, a partir de fora",
+      "Uma partilha de rede foi aberta por um cliente de backup, já que o type 10 serve para acesso SMB a pastas de servidores"
+    ],
+    "correct": 2,
+    "explanation": "O logon type 10 é RemoteInteractive, ou seja, Remote Desktop. Uma conta de serviço que só devia entrar como tarefa (type 4) ou pela rede (type 3) tem agora uma sessão RDP de um IP público estrangeiro de madrugada, um forte sinal de credenciais roubadas e RDP exposto. Desbloqueios são type 7, tarefas agendadas type 4 e acesso a partilhas SMB type 3.",
+    "difficulty": "Médio",
+    "exam": "cbrops",
+    "domain": "3.5",
+    "topic": "logs-ir"
+  },
+  {
+    "question": "Os registos DNS mostram um portátil a enviar milhares de consultas TXT por hora para subdomínios aleatórios de um único domínio novo, como 'a9f3k2...q7.cdn-sync.xyz', cada etiqueta com perto de 60 caracteres. Qual é a atividade mais provável?",
+    "options": [
+      "Uma rede de distribuição de conteúdos a balancear carga, já que as CDNs usam sempre subdomínios longos com TXT por ficheiro",
+      "Uma cache DNS estragada no portátil, que volta sempre a perguntar porque cada resposta expira logo depois de chegar",
+      "Verificações SPF e DKIM do cliente de email, porque as apps de correio consultam registos TXT por cada mensagem enviada",
+      "Túnel DNS para C2 ou roubo de dados, com os dados codificados nas etiquetas e as respostas em registos TXT"
+    ],
+    "correct": 3,
+    "explanation": "Etiquetas longas e de alta entropia sob um só domínio raro, muitas consultas TXT e um único posto são os sinais de túnel DNS (ferramentas como iodine ou dnscat2). Os dados saem nos nomes consultados e os comandos voltam nas respostas TXT, passando por firewalls que deixam passar DNS. As CDNs usam consultas A/AAAA normais, uma cache estragada não inventa nomes aleatórios e os clientes de email não fazem consultas SPF/DKIM ao enviar.",
+    "difficulty": "Difícil",
+    "exam": "cbrops",
+    "domain": "4.8",
+    "topic": "logs-ir"
   }
 ];

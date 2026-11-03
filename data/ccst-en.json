@@ -3694,5 +3694,19 @@
     "difficulty": "Medium",
     "exam": "ccst-net",
     "domain": "6.3"
+  },
+  {
+    "question": "A home access point on 2.4 GHz channel 3 shows full signal bars, but Wi-Fi is slow and drops often. A scan shows strong neighbour networks on channels 1 and 5. What is the best first fix?",
+    "options": [
+      "Raise the access point transmit power to the maximum so its signal is stronger than the neighbours on every channel",
+      "Switch the network from WPA2 to open security, because the encryption overhead is what slows down the 2.4 GHz band",
+      "Move the access point to channel 1, 6 or 11, or to 5 GHz, so it stops overlapping with the neighbour networks",
+      "Replace the laptop Wi-Fi adapter, because full bars with slow speed always means the client radio is failing now"
+    ],
+    "correct": 2,
+    "explanation": "In 2.4 GHz, channels 5 MHz apart overlap. Channel 3 collides with both 1 and 5, so frames suffer interference and retries even with a strong signal. Using a non-overlapping channel (1, 6, 11) or the 5 GHz band fixes it. More power adds more interference, open security doesn't speed up the radio and the adapter isn't the problem.",
+    "difficulty": "Easy",
+    "exam": "ccst-net",
+    "domain": "3.2"
   }
 ]

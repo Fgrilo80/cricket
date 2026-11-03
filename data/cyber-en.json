@@ -4543,5 +4543,50 @@
     "exam": "scor",
     "topic": "ameacas",
     "domain": "6.5"
+  },
+  {
+    "question": "Sysmon on a workstation logs event ID 13: a new value 'Updater' under HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run pointing to C:\\Users\\ana\\AppData\\Roaming\\upd.exe, which is unsigned. What does this most likely show?",
+    "options": [
+      "Persistence: the program will start each time the user signs in, a common trick for malware placed in AppData",
+      "A normal Windows Update task, since Windows Update always keeps its updater in each user's AppData Roaming folder",
+      "Privilege escalation to SYSTEM, because writing to the Run key gives the program full admin rights at the next boot",
+      "A failed install that Windows rolled back, since Sysmon event 13 only appears when a registry change is reverted"
+    ],
+    "correct": 0,
+    "explanation": "Sysmon event 13 records a registry value being set. The HKCU Run key launches its entries at user logon, so an unsigned exe in AppData added there is classic persistence (MITRE T1547.001). Windows Update doesn't live in AppData, an HKCU Run entry runs with the user's rights, not SYSTEM, and event 13 logs a change being made, not reverted.",
+    "difficulty": "Medium",
+    "exam": "cbrops",
+    "domain": "3.5",
+    "topic": "logs-ir"
+  },
+  {
+    "question": "A file server logs event 4624 with logon type 10 for the account 'backup_svc' at 03:12, from a public IP abroad. That account is normally used only by a scheduled job on the backup server. What does this most likely mean?",
+    "options": [
+      "The scheduled backup job ran early, because type 10 is the logon type Windows uses for every scheduled task it runs",
+      "A user unlocked a locked screen on the console, since type 10 marks a workstation unlock done with cached details",
+      "Someone signed in interactively over RDP with the service account, likely stolen, from an external address",
+      "A network share was opened by a backup client, since type 10 is used for SMB access to shared folders on servers"
+    ],
+    "correct": 2,
+    "explanation": "Logon type 10 is RemoteInteractive, meaning Remote Desktop. A service account that should only log on as a batch job (type 4) or over the network (type 3) now has an RDP session from a foreign public IP at night, a strong sign of stolen credentials and exposed RDP. Unlocks are type 7, scheduled tasks are type 4 and SMB share access is type 3.",
+    "difficulty": "Medium",
+    "exam": "cbrops",
+    "domain": "3.5",
+    "topic": "logs-ir"
+  },
+  {
+    "question": "DNS logs show one laptop sending thousands of TXT queries per hour to random-looking subdomains of a single new domain, such as 'a9f3k2...q7.cdn-sync.xyz', each label near 60 characters. What is the most likely activity?",
+    "options": [
+      "A content delivery network balancing load, since CDNs always use long random subdomains with TXT records for each file",
+      "A broken DNS cache on the laptop, which keeps asking again because every answer it gets expires right after it arrives",
+      "SPF and DKIM checks by the mail client, because email apps look up TXT records for each message they are sending",
+      "DNS tunnelling for C2 or data theft, with data encoded in the subdomain labels and replies carried in TXT records"
+    ],
+    "correct": 3,
+    "explanation": "Long, high-entropy labels under one rare domain, lots of TXT queries and a single host are the signs of DNS tunnelling (tools like iodine or dnscat2). Data rides out in the query names and commands come back in TXT answers, slipping past firewalls that allow DNS. CDNs use normal A/AAAA lookups, a bad cache doesn't make random names and mail clients don't do SPF/DKIM lookups for outgoing mail.",
+    "difficulty": "Hard",
+    "exam": "cbrops",
+    "domain": "4.8",
+    "topic": "logs-ir"
   }
 ]

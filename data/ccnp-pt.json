@@ -3664,5 +3664,17 @@
     "difficulty": "Médio",
     "exam": "encor",
     "domain": "6.7"
+  },
+  {
+    "question": "Um router de fronteira com duas ligações a ISPs recebe 'ip verify unicast source reachable-via rx' em ambas. Pouco depois alguns utilizadores perdem tráfego: as respostas da internet chegam pelo ISP-B, mas a rota de volta para essas origens sai pelo ISP-A. O que deve mudar?",
+    "options": [
+      "Subir a local preference BGP no ISP-B, porque o uRPF só verifica o caminho com o valor de local preference mais alto",
+      "Retirar a rota por defeito, porque o uRPF estrito falha sempre que existe uma rota por defeito na tabela de routing",
+      "Juntar 'allow-self-ping' ao comando, porque as perdas vêm de o router não conseguir chegar às próprias interfaces",
+      "Usar o modo loose ('reachable-via any'), já que o modo strict deita fora pacotes que chegam por outra ligação"
+    ],
+    "correct": 3,
+    "explanation": "O uRPF estrito só aceita um pacote se a melhor rota de volta para a origem usar a mesma interface por onde entrou. Com routing assimétrico por dois ISPs, pacotes válidos chegam pela ligação 'errada' e são descartados. O modo loose só verifica se existe rota para a origem. A local preference não muda o que o uRPF verifica, a rota por defeito é ignorada sem allow-default e o self-ping não tem nada a ver.",
+    "difficulty": "Difícil"
   }
 ]

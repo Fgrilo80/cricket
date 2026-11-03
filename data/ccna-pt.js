@@ -2885,5 +2885,17 @@ window.QUIZ_BANK = [
     "correct": 3,
     "explanation": "Uma SVI só sobe quando a VLAN existe no switch e há pelo menos uma porta dessa VLAN, access ou trunk, ativa e a encaminhar (STP). Cria a VLAN com 'vlan 20' e garante que uma porta a leva. O 'ip routing' afeta o routing entre SVIs, não o estado da linha, o IOS recusa um endereço sobreposto em vez de manter a interface em baixo e não é preciso trunk para o router.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Os clientes da VLAN 30 não recebem endereço por DHCP. O servidor DHCP está noutra sub-rede e o técnico pôs 'ip helper-address 10.1.1.10' na interface do router virada para o servidor, não na interface Vlan30. Qual é a correção?",
+    "options": [
+      "Passar o ip helper-address para a interface Vlan30, onde chegam os broadcasts dos clientes, para o router os reencaminhar",
+      "Juntar no servidor DHCP uma rota estática para a VLAN 30, porque sem ela o servidor não responde mesmo com o relay a funcionar",
+      "Ativar 'ip dhcp snooping' globalmente, porque o switch deita fora todos os broadcasts DHCP que entram numa porta access",
+      "Mudar o helper para o endereço de broadcast 10.1.1.255, para o pedido inundar a sub-rede do servidor e o encontrar"
+    ],
+    "correct": 0,
+    "explanation": "O relay DHCP funciona na interface que recebe o broadcast do cliente, aqui a SVI Vlan30 que serve de gateway. Aí o router transforma o DISCOVER num unicast para o servidor e preenche o giaddr para o servidor escolher a gama certa. Na interface do servidor nunca vê esses broadcasts. O snooping filtra servidores falsos, a rota no servidor só conta depois de o relay funcionar e o helper de broadcast não é preciso.",
+    "difficulty": "Médio"
   }
 ];

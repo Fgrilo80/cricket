@@ -2885,5 +2885,17 @@
     "correct": 3,
     "explanation": "An SVI comes up only when its VLAN exists on the switch and at least one port in that VLAN, access or trunk, is up and forwarding (STP). Create the VLAN with 'vlan 20' and make sure a port carries it. 'ip routing' affects routing between SVIs, not their line state, IOS refuses an overlapping address instead of holding the interface down, and no router trunk is needed.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "Clients in VLAN 30 get no DHCP address. The DHCP server is in another subnet, and the engineer put 'ip helper-address 10.1.1.10' on the router uplink toward the server, not on interface Vlan30. What is the fix?",
+    "options": [
+      "Move the ip helper-address to interface Vlan30, where the client broadcasts arrive, so the router relays them",
+      "Add a static route on the DHCP server to VLAN 30, because the server can't reply without one even when relay works",
+      "Turn on 'ip dhcp snooping' globally, because the switch drops every DHCP broadcast that comes in on an access port",
+      "Change the helper to the broadcast address 10.1.1.255, so the request floods the server subnet and finds the server"
+    ],
+    "correct": 0,
+    "explanation": "The DHCP relay works on the interface that receives the client broadcast, here the gateway SVI Vlan30. There the router turns the DISCOVER into a unicast to the server and sets giaddr so the server picks the right pool. On the uplink it never sees those broadcasts. Snooping filters rogue servers, a server route only matters after relay works and a broadcast helper isn't needed.",
+    "difficulty": "Medium"
   }
 ]
