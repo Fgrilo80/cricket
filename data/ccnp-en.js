@@ -3664,5 +3664,17 @@ window.QUIZ_BANK = [
     "difficulty": "Medium",
     "exam": "encor",
     "domain": "6.7"
+  },
+  {
+    "question": "An edge router with two ISP links gets 'ip verify unicast source reachable-via rx' on both. Soon some users lose traffic: replies from the internet arrive on ISP-B while the route back to those sources points out ISP-A. What should be changed?",
+    "options": [
+      "Raise the BGP local preference on ISP-B, because uRPF only checks the path with the highest local preference value",
+      "Remove the default route, because strict uRPF always fails when a default route exists in the routing table",
+      "Add 'allow-self-ping' to the command, because the drops come from the router failing to reach its own interfaces",
+      "Use loose mode ('reachable-via any'), as strict mode drops packets that arrive on a link off the best path"
+    ],
+    "correct": 3,
+    "explanation": "Strict uRPF accepts a packet only if the best route back to its source uses the same interface it came in on. With asymmetric routing over two ISPs, valid packets arrive on the 'wrong' link and are dropped. Loose mode only checks that a route to the source exists. Local preference doesn't change what uRPF checks, a default route is ignored unless allow-default is set, and self-ping is unrelated.",
+    "difficulty": "Hard"
   }
 ];

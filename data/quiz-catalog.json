@@ -1,5 +1,5 @@
 {
-  "version": "4.2.0",
+  "version": "4.3.0",
   "tracks": [
     {
       "id": "ccst",
@@ -111,8 +111,8 @@
       "badgeEn": "CBROPS",
       "color": "orange",
       "counts": {
-        "pt": 111,
-        "en": 111
+        "pt": 114,
+        "en": 114
       }
     },
     {
@@ -145,8 +145,8 @@
       "badgeEn": "CCST NET",
       "color": "emerald",
       "counts": {
-        "pt": 245,
-        "en": 245
+        "pt": 246,
+        "en": 246
       }
     },
     {
@@ -264,8 +264,8 @@
       "badgeEn": "TOPIC",
       "color": "slate",
       "counts": {
-        "pt": 66,
-        "en": 66
+        "pt": 69,
+        "en": 69
       }
     },
     {
@@ -461,20 +461,20 @@
   ],
   "trackCounts": {
     "ccst": {
-      "pt": 267,
-      "en": 267
+      "pt": 268,
+      "en": 268
     },
     "ccna": {
-      "pt": 238,
-      "en": 238
+      "pt": 239,
+      "en": 239
     },
     "ccnp": {
-      "pt": 273,
-      "en": 273
+      "pt": 274,
+      "en": 274
     },
     "cyber": {
-      "pt": 303,
-      "en": 303
+      "pt": 306,
+      "en": 306
     },
     "iiot": {
       "pt": 82,

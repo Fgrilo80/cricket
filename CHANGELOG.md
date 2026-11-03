@@ -1,5 +1,12 @@
 # Changelog — Cricket / Cisco Quiz (web)
 
+## v4.3.0 — 2026-11-03
+
+- **Rascunhos diários de 3 Nov publicados (6 pares PT/EN):** canal 3 nos 2,4 GHz sobreposto aos canais 1 e 5 (CCST, Fácil, `ccst-net` 3.2) · `ip helper-address` na interface errada em vez da Vlan30 (CCNA, Médio) · uRPF strict com encaminhamento assimétrico em dois ISPs → loose (CCNP, Difícil) · Sysmon 13 numa chave Run de HKCU com exe em AppData (Cyber, Médio, `cbrops` 3.5, `logs-ir`) · 4624 tipo 10 (RDP) com conta de serviço a partir de IP estrangeiro (Cyber, Médio, `cbrops` 3.5, `logs-ir`) · túnel DNS com consultas TXT a subdomínios aleatórios (Cyber, Difícil, `cbrops` 4.8, `logs-ir`).
+- Totais por língua: CCST 267 → 268 · CCNA 238 → 239 · CCNP 273 → 274 · Cyber 303 → 306 (restantes trilhos sem alterações). Quizzes: CCST Networking 245 → 246, CBROPS 111 → 114, tema Logs/IR 66 → 69. Total do site: **3752 → 3764**.
+- Validação: schema, paridade PT/EN (incl. índice correto), semelhança máx. 0.45 (< 0.8) + verificação manual de duplicados contra o banco v4.2.0 (sem duplicados; os itens próximos são conceptuais, os novos são cenários), lint `question-bank-length` PASSED, unittest OK, diff só com acrescentos nas perguntas.
+- Catálogo `4.3.0` (contagens recalculadas). `app-version.json`: bankTotal 3764 (classic 1562, cyber 612, outros trilhos 1590); a app continua em 1.2.11+13.
+
 ## v4.2.0 — 2026-11-03
 
 - **Fase 3 (novos quizzes):** 5 trilhos novos e 8 quizzes por exame. Todas as perguntas novas são pares PT/EN originais, com explicação, `exam` e `domain` do blueprint atual.

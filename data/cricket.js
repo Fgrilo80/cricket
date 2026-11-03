@@ -3696,6 +3696,20 @@ window.QUIZ_BANK = {
         "difficulty": "Médio",
         "exam": "ccst-net",
         "domain": "6.3"
+      },
+      {
+        "question": "Um access point doméstico no canal 3 dos 2,4 GHz mostra o sinal no máximo, mas o Wi-Fi está lento e cai muitas vezes. Uma pesquisa mostra redes vizinhas fortes nos canais 1 e 5. Qual é a melhor primeira correção?",
+        "options": [
+          "Subir a potência de emissão do access point ao máximo para o sinal ficar mais forte do que os vizinhos em todos os canais",
+          "Mudar a rede de WPA2 para aberta, porque o peso da cifragem é o que torna a banda dos 2,4 GHz mais lenta",
+          "Passar o access point para o canal 1, 6 ou 11, ou para 5 GHz, para deixar de se sobrepor às redes vizinhas",
+          "Trocar a placa Wi-Fi do portátil, porque sinal no máximo com velocidade baixa quer sempre dizer que o rádio está a falhar"
+        ],
+        "correct": 2,
+        "explanation": "Nos 2,4 GHz os canais estão a 5 MHz de distância e sobrepõem-se. O canal 3 choca com o 1 e com o 5, por isso as tramas sofrem interferência e retransmissões mesmo com sinal forte. Um canal sem sobreposição (1, 6, 11) ou a banda dos 5 GHz resolve. Mais potência traz mais interferência, uma rede aberta não acelera o rádio e a placa não é o problema.",
+        "difficulty": "Fácil",
+        "exam": "ccst-net",
+        "domain": "3.2"
       }
     ],
     "en": [
@@ -7394,6 +7408,20 @@ window.QUIZ_BANK = {
         "difficulty": "Medium",
         "exam": "ccst-net",
         "domain": "6.3"
+      },
+      {
+        "question": "A home access point on 2.4 GHz channel 3 shows full signal bars, but Wi-Fi is slow and drops often. A scan shows strong neighbour networks on channels 1 and 5. What is the best first fix?",
+        "options": [
+          "Raise the access point transmit power to the maximum so its signal is stronger than the neighbours on every channel",
+          "Switch the network from WPA2 to open security, because the encryption overhead is what slows down the 2.4 GHz band",
+          "Move the access point to channel 1, 6 or 11, or to 5 GHz, so it stops overlapping with the neighbour networks",
+          "Replace the laptop Wi-Fi adapter, because full bars with slow speed always means the client radio is failing now"
+        ],
+        "correct": 2,
+        "explanation": "In 2.4 GHz, channels 5 MHz apart overlap. Channel 3 collides with both 1 and 5, so frames suffer interference and retries even with a strong signal. Using a non-overlapping channel (1, 6, 11) or the 5 GHz band fixes it. More power adds more interference, open security doesn't speed up the radio and the adapter isn't the problem.",
+        "difficulty": "Easy",
+        "exam": "ccst-net",
+        "domain": "3.2"
       }
     ]
   },
@@ -10285,6 +10313,18 @@ window.QUIZ_BANK = {
         "correct": 3,
         "explanation": "Uma SVI só sobe quando a VLAN existe no switch e há pelo menos uma porta dessa VLAN, access ou trunk, ativa e a encaminhar (STP). Cria a VLAN com 'vlan 20' e garante que uma porta a leva. O 'ip routing' afeta o routing entre SVIs, não o estado da linha, o IOS recusa um endereço sobreposto em vez de manter a interface em baixo e não é preciso trunk para o router.",
         "difficulty": "Médio"
+      },
+      {
+        "question": "Os clientes da VLAN 30 não recebem endereço por DHCP. O servidor DHCP está noutra sub-rede e o técnico pôs 'ip helper-address 10.1.1.10' na interface do router virada para o servidor, não na interface Vlan30. Qual é a correção?",
+        "options": [
+          "Passar o ip helper-address para a interface Vlan30, onde chegam os broadcasts dos clientes, para o router os reencaminhar",
+          "Juntar no servidor DHCP uma rota estática para a VLAN 30, porque sem ela o servidor não responde mesmo com o relay a funcionar",
+          "Ativar 'ip dhcp snooping' globalmente, porque o switch deita fora todos os broadcasts DHCP que entram numa porta access",
+          "Mudar o helper para o endereço de broadcast 10.1.1.255, para o pedido inundar a sub-rede do servidor e o encontrar"
+        ],
+        "correct": 0,
+        "explanation": "O relay DHCP funciona na interface que recebe o broadcast do cliente, aqui a SVI Vlan30 que serve de gateway. Aí o router transforma o DISCOVER num unicast para o servidor e preenche o giaddr para o servidor escolher a gama certa. Na interface do servidor nunca vê esses broadcasts. O snooping filtra servidores falsos, a rota no servidor só conta depois de o relay funcionar e o helper de broadcast não é preciso.",
+        "difficulty": "Médio"
       }
     ],
     "en": [
@@ -13173,6 +13213,18 @@ window.QUIZ_BANK = {
         ],
         "correct": 3,
         "explanation": "An SVI comes up only when its VLAN exists on the switch and at least one port in that VLAN, access or trunk, is up and forwarding (STP). Create the VLAN with 'vlan 20' and make sure a port carries it. 'ip routing' affects routing between SVIs, not their line state, IOS refuses an overlapping address instead of holding the interface down, and no router trunk is needed.",
+        "difficulty": "Medium"
+      },
+      {
+        "question": "Clients in VLAN 30 get no DHCP address. The DHCP server is in another subnet, and the engineer put 'ip helper-address 10.1.1.10' on the router uplink toward the server, not on interface Vlan30. What is the fix?",
+        "options": [
+          "Move the ip helper-address to interface Vlan30, where the client broadcasts arrive, so the router relays them",
+          "Add a static route on the DHCP server to VLAN 30, because the server can't reply without one even when relay works",
+          "Turn on 'ip dhcp snooping' globally, because the switch drops every DHCP broadcast that comes in on an access port",
+          "Change the helper to the broadcast address 10.1.1.255, so the request floods the server subnet and finds the server"
+        ],
+        "correct": 0,
+        "explanation": "The DHCP relay works on the interface that receives the client broadcast, here the gateway SVI Vlan30. There the router turns the DISCOVER into a unicast to the server and sets giaddr so the server picks the right pool. On the uplink it never sees those broadcasts. Snooping filters rogue servers, a server route only matters after relay works and a broadcast helper isn't needed.",
         "difficulty": "Medium"
       }
     ]
@@ -16844,6 +16896,18 @@ window.QUIZ_BANK = {
         "difficulty": "Médio",
         "exam": "encor",
         "domain": "6.7"
+      },
+      {
+        "question": "Um router de fronteira com duas ligações a ISPs recebe 'ip verify unicast source reachable-via rx' em ambas. Pouco depois alguns utilizadores perdem tráfego: as respostas da internet chegam pelo ISP-B, mas a rota de volta para essas origens sai pelo ISP-A. O que deve mudar?",
+        "options": [
+          "Subir a local preference BGP no ISP-B, porque o uRPF só verifica o caminho com o valor de local preference mais alto",
+          "Retirar a rota por defeito, porque o uRPF estrito falha sempre que existe uma rota por defeito na tabela de routing",
+          "Juntar 'allow-self-ping' ao comando, porque as perdas vêm de o router não conseguir chegar às próprias interfaces",
+          "Usar o modo loose ('reachable-via any'), já que o modo strict deita fora pacotes que chegam por outra ligação"
+        ],
+        "correct": 3,
+        "explanation": "O uRPF estrito só aceita um pacote se a melhor rota de volta para a origem usar a mesma interface por onde entrou. Com routing assimétrico por dois ISPs, pacotes válidos chegam pela ligação 'errada' e são descartados. O modo loose só verifica se existe rota para a origem. A local preference não muda o que o uRPF verifica, a rota por defeito é ignorada sem allow-default e o self-ping não tem nada a ver.",
+        "difficulty": "Difícil"
       }
     ],
     "en": [
@@ -20512,6 +20576,18 @@ window.QUIZ_BANK = {
         "difficulty": "Medium",
         "exam": "encor",
         "domain": "6.7"
+      },
+      {
+        "question": "An edge router with two ISP links gets 'ip verify unicast source reachable-via rx' on both. Soon some users lose traffic: replies from the internet arrive on ISP-B while the route back to those sources points out ISP-A. What should be changed?",
+        "options": [
+          "Raise the BGP local preference on ISP-B, because uRPF only checks the path with the highest local preference value",
+          "Remove the default route, because strict uRPF always fails when a default route exists in the routing table",
+          "Add 'allow-self-ping' to the command, because the drops come from the router failing to reach its own interfaces",
+          "Use loose mode ('reachable-via any'), as strict mode drops packets that arrive on a link off the best path"
+        ],
+        "correct": 3,
+        "explanation": "Strict uRPF accepts a packet only if the best route back to its source uses the same interface it came in on. With asymmetric routing over two ISPs, valid packets arrive on the 'wrong' link and are dropped. Loose mode only checks that a route to the source exists. Local preference doesn't change what uRPF checks, a default route is ignored unless allow-default is set, and self-ping is unrelated.",
+        "difficulty": "Hard"
       }
     ]
   },
@@ -25061,6 +25137,51 @@ window.QUIZ_BANK = {
         "exam": "scor",
         "topic": "ameacas",
         "domain": "6.5"
+      },
+      {
+        "question": "O Sysmon num posto regista o evento 13: um novo valor 'Updater' em HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run a apontar para C:\\Users\\ana\\AppData\\Roaming\\upd.exe, que não está assinado. O que mostra mais provavelmente?",
+        "options": [
+          "Persistência: o programa vai arrancar sempre que o utilizador entra, um truque comum de malware posto no AppData",
+          "Uma tarefa normal do Windows Update, já que o Windows Update guarda sempre o atualizador no AppData Roaming de cada um",
+          "Escalada de privilégios para SYSTEM, porque escrever na chave Run dá ao programa direitos de admin no próximo arranque",
+          "Uma instalação falhada que o Windows desfez, já que o evento 13 do Sysmon só aparece quando uma alteração é revertida"
+        ],
+        "correct": 0,
+        "explanation": "O evento 13 do Sysmon regista a escrita de um valor no registo. A chave Run do HKCU lança as entradas no login do utilizador, por isso um exe sem assinatura no AppData lá posto é persistência clássica (MITRE T1547.001). O Windows Update não vive no AppData, uma entrada Run do HKCU corre com os direitos do utilizador e não como SYSTEM, e o evento 13 regista uma alteração feita, não revertida.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "domain": "3.5",
+        "topic": "logs-ir"
+      },
+      {
+        "question": "Um servidor de ficheiros regista o evento 4624 com logon type 10 para a conta 'backup_svc' às 03:12, a partir de um IP público no estrangeiro. Essa conta só costuma ser usada por uma tarefa agendada no servidor de backups. O que quer dizer mais provavelmente?",
+        "options": [
+          "A tarefa de backup agendada correu mais cedo, porque o type 10 é o tipo que o Windows usa para todas as tarefas agendadas",
+          "Um utilizador desbloqueou o ecrã na consola, já que o type 10 marca um desbloqueio feito com credenciais em cache",
+          "Alguém entrou de forma interativa por RDP com a conta de serviço, quase de certeza roubada, a partir de fora",
+          "Uma partilha de rede foi aberta por um cliente de backup, já que o type 10 serve para acesso SMB a pastas de servidores"
+        ],
+        "correct": 2,
+        "explanation": "O logon type 10 é RemoteInteractive, ou seja, Remote Desktop. Uma conta de serviço que só devia entrar como tarefa (type 4) ou pela rede (type 3) tem agora uma sessão RDP de um IP público estrangeiro de madrugada, um forte sinal de credenciais roubadas e RDP exposto. Desbloqueios são type 7, tarefas agendadas type 4 e acesso a partilhas SMB type 3.",
+        "difficulty": "Médio",
+        "exam": "cbrops",
+        "domain": "3.5",
+        "topic": "logs-ir"
+      },
+      {
+        "question": "Os registos DNS mostram um portátil a enviar milhares de consultas TXT por hora para subdomínios aleatórios de um único domínio novo, como 'a9f3k2...q7.cdn-sync.xyz', cada etiqueta com perto de 60 caracteres. Qual é a atividade mais provável?",
+        "options": [
+          "Uma rede de distribuição de conteúdos a balancear carga, já que as CDNs usam sempre subdomínios longos com TXT por ficheiro",
+          "Uma cache DNS estragada no portátil, que volta sempre a perguntar porque cada resposta expira logo depois de chegar",
+          "Verificações SPF e DKIM do cliente de email, porque as apps de correio consultam registos TXT por cada mensagem enviada",
+          "Túnel DNS para C2 ou roubo de dados, com os dados codificados nas etiquetas e as respostas em registos TXT"
+        ],
+        "correct": 3,
+        "explanation": "Etiquetas longas e de alta entropia sob um só domínio raro, muitas consultas TXT e um único posto são os sinais de túnel DNS (ferramentas como iodine ou dnscat2). Os dados saem nos nomes consultados e os comandos voltam nas respostas TXT, passando por firewalls que deixam passar DNS. As CDNs usam consultas A/AAAA normais, uma cache estragada não inventa nomes aleatórios e os clientes de email não fazem consultas SPF/DKIM ao enviar.",
+        "difficulty": "Difícil",
+        "exam": "cbrops",
+        "domain": "4.8",
+        "topic": "logs-ir"
       }
     ],
     "en": [
@@ -29608,6 +29729,51 @@ window.QUIZ_BANK = {
         "exam": "scor",
         "topic": "ameacas",
         "domain": "6.5"
+      },
+      {
+        "question": "Sysmon on a workstation logs event ID 13: a new value 'Updater' under HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run pointing to C:\\Users\\ana\\AppData\\Roaming\\upd.exe, which is unsigned. What does this most likely show?",
+        "options": [
+          "Persistence: the program will start each time the user signs in, a common trick for malware placed in AppData",
+          "A normal Windows Update task, since Windows Update always keeps its updater in each user's AppData Roaming folder",
+          "Privilege escalation to SYSTEM, because writing to the Run key gives the program full admin rights at the next boot",
+          "A failed install that Windows rolled back, since Sysmon event 13 only appears when a registry change is reverted"
+        ],
+        "correct": 0,
+        "explanation": "Sysmon event 13 records a registry value being set. The HKCU Run key launches its entries at user logon, so an unsigned exe in AppData added there is classic persistence (MITRE T1547.001). Windows Update doesn't live in AppData, an HKCU Run entry runs with the user's rights, not SYSTEM, and event 13 logs a change being made, not reverted.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "domain": "3.5",
+        "topic": "logs-ir"
+      },
+      {
+        "question": "A file server logs event 4624 with logon type 10 for the account 'backup_svc' at 03:12, from a public IP abroad. That account is normally used only by a scheduled job on the backup server. What does this most likely mean?",
+        "options": [
+          "The scheduled backup job ran early, because type 10 is the logon type Windows uses for every scheduled task it runs",
+          "A user unlocked a locked screen on the console, since type 10 marks a workstation unlock done with cached details",
+          "Someone signed in interactively over RDP with the service account, likely stolen, from an external address",
+          "A network share was opened by a backup client, since type 10 is used for SMB access to shared folders on servers"
+        ],
+        "correct": 2,
+        "explanation": "Logon type 10 is RemoteInteractive, meaning Remote Desktop. A service account that should only log on as a batch job (type 4) or over the network (type 3) now has an RDP session from a foreign public IP at night, a strong sign of stolen credentials and exposed RDP. Unlocks are type 7, scheduled tasks are type 4 and SMB share access is type 3.",
+        "difficulty": "Medium",
+        "exam": "cbrops",
+        "domain": "3.5",
+        "topic": "logs-ir"
+      },
+      {
+        "question": "DNS logs show one laptop sending thousands of TXT queries per hour to random-looking subdomains of a single new domain, such as 'a9f3k2...q7.cdn-sync.xyz', each label near 60 characters. What is the most likely activity?",
+        "options": [
+          "A content delivery network balancing load, since CDNs always use long random subdomains with TXT records for each file",
+          "A broken DNS cache on the laptop, which keeps asking again because every answer it gets expires right after it arrives",
+          "SPF and DKIM checks by the mail client, because email apps look up TXT records for each message they are sending",
+          "DNS tunnelling for C2 or data theft, with data encoded in the subdomain labels and replies carried in TXT records"
+        ],
+        "correct": 3,
+        "explanation": "Long, high-entropy labels under one rare domain, lots of TXT queries and a single host are the signs of DNS tunnelling (tools like iodine or dnscat2). Data rides out in the query names and commands come back in TXT answers, slipping past firewalls that allow DNS. CDNs use normal A/AAAA lookups, a bad cache doesn't make random names and mail clients don't do SPF/DKIM lookups for outgoing mail.",
+        "difficulty": "Hard",
+        "exam": "cbrops",
+        "domain": "4.8",
+        "topic": "logs-ir"
       }
     ]
   },

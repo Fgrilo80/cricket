@@ -3694,5 +3694,19 @@ window.QUIZ_BANK = [
     "difficulty": "Médio",
     "exam": "ccst-net",
     "domain": "6.3"
+  },
+  {
+    "question": "Um access point doméstico no canal 3 dos 2,4 GHz mostra o sinal no máximo, mas o Wi-Fi está lento e cai muitas vezes. Uma pesquisa mostra redes vizinhas fortes nos canais 1 e 5. Qual é a melhor primeira correção?",
+    "options": [
+      "Subir a potência de emissão do access point ao máximo para o sinal ficar mais forte do que os vizinhos em todos os canais",
+      "Mudar a rede de WPA2 para aberta, porque o peso da cifragem é o que torna a banda dos 2,4 GHz mais lenta",
+      "Passar o access point para o canal 1, 6 ou 11, ou para 5 GHz, para deixar de se sobrepor às redes vizinhas",
+      "Trocar a placa Wi-Fi do portátil, porque sinal no máximo com velocidade baixa quer sempre dizer que o rádio está a falhar"
+    ],
+    "correct": 2,
+    "explanation": "Nos 2,4 GHz os canais estão a 5 MHz de distância e sobrepõem-se. O canal 3 choca com o 1 e com o 5, por isso as tramas sofrem interferência e retransmissões mesmo com sinal forte. Um canal sem sobreposição (1, 6, 11) ou a banda dos 5 GHz resolve. Mais potência traz mais interferência, uma rede aberta não acelera o rádio e a placa não é o problema.",
+    "difficulty": "Fácil",
+    "exam": "ccst-net",
+    "domain": "3.2"
   }
 ];
