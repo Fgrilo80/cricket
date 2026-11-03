@@ -12,7 +12,7 @@ window.QUIZ_COUNTS = {
     "en": 232
   },
   "cyber": {
-    "pt": 137,
-    "en": 137
+    "pt": 303,
+    "en": 303
   }
 };
