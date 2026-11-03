@@ -2855,5 +2855,17 @@
     "correct": 0,
     "explanation": "'switchport trunk allowed vlan <list>' sets the whole allowed list, so typing only 30 removes 10 and 20 from the trunk. The safe way is 'switchport trunk allowed vlan add 30', and the fix now is to put 10 and 20 back. The command does not change the native VLAN or the trunk mode, and a trunk can carry far more than two VLANs.",
     "difficulty": "Medium"
+  },
+  {
+    "question": "On a Layer 3 switch an engineer configures 'interface vlan 20' with an IP address and 'no shutdown', but 'show ip interface brief' keeps showing Vlan20 as down/down. What should be checked first?",
+    "options": [
+      "The SVI needs 'ip routing' enabled before it can come up, because without routing every SVI stays in down/down state",
+      "The IP address of the SVI overlaps another subnet on the switch, so IOS keeps the interface down to avoid a conflict",
+      "SVIs only come up after a trunk to the router is configured, because the switch needs a next hop for the VLAN first",
+      "Whether VLAN 20 exists in the VLAN database and has at least one up access or trunk port that forwards it"
+    ],
+    "correct": 3,
+    "explanation": "An SVI comes up only when its VLAN exists on the switch and at least one port in that VLAN, access or trunk, is up and forwarding (STP). Create the VLAN with 'vlan 20' and make sure a port carries it. 'ip routing' affects routing between SVIs, not their line state, IOS refuses an overlapping address instead of holding the interface down, and no router trunk is needed.",
+    "difficulty": "Medium"
   }
 ]

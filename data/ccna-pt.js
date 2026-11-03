@@ -2855,5 +2855,17 @@ window.QUIZ_BANK = [
     "correct": 0,
     "explanation": "O 'switchport trunk allowed vlan <lista>' define a lista inteira, por isso escrever só 30 tira a 10 e a 20 do trunk. A forma segura é 'switchport trunk allowed vlan add 30' e a correção agora é voltar a pôr a 10 e a 20. O comando não muda a VLAN nativa nem o modo do trunk, e um trunk leva muito mais do que duas VLANs.",
     "difficulty": "Médio"
+  },
+  {
+    "question": "Num switch de camada 3 um técnico configura 'interface vlan 20' com endereço IP e 'no shutdown', mas o 'show ip interface brief' continua a mostrar a Vlan20 como down/down. O que deve verificar primeiro?",
+    "options": [
+      "A SVI precisa de 'ip routing' ativo para subir, porque sem routing todas as SVIs ficam no estado down/down",
+      "O endereço IP da SVI sobrepõe-se a outra sub-rede do switch, por isso o IOS mantém a interface em baixo para evitar conflitos",
+      "As SVIs só sobem depois de configurado um trunk até ao router, porque o switch precisa primeiro de um next hop para a VLAN",
+      "Se a VLAN 20 existe na base de dados de VLANs e tem pelo menos uma porta access ou trunk ativa que a encaminhe"
+    ],
+    "correct": 3,
+    "explanation": "Uma SVI só sobe quando a VLAN existe no switch e há pelo menos uma porta dessa VLAN, access ou trunk, ativa e a encaminhar (STP). Cria a VLAN com 'vlan 20' e garante que uma porta a leva. O 'ip routing' afeta o routing entre SVIs, não o estado da linha, o IOS recusa um endereço sobreposto em vez de manter a interface em baixo e não é preciso trunk para o router.",
+    "difficulty": "Médio"
   }
 ];

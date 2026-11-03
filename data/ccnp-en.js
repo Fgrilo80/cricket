@@ -2778,5 +2778,17 @@ window.QUIZ_BANK = [
     "correct": 3,
     "explanation": "A BGP network statement is injected only when the routing table has that exact prefix and mask. The /24s don't match a /16, so nothing is sent. A static route to Null0 for 10.20.0.0/16 creates the exact entry (and drops traffic for unused parts of the range), or 'aggregate-address' can build the summary from the /24s. The mask keyword allows classless prefixes, OSPF routes can be advertised by a network statement when they match exactly, and the ISP never saw the prefix at all.",
     "difficulty": "Hard"
+  },
+  {
+    "question": "To lower the local preference of one prefix from an ISP, an engineer applies an inbound route-map with a single clause: 'route-map ISP-IN permit 10', 'match ip address prefix-list ONE', 'set local-preference 50'. After a soft reset, only that prefix is left from the ISP. Why?",
+    "options": [
+      "A route-map ends with an implicit deny, so every prefix that doesn't match clause 10 is dropped; add an empty 'permit 20'",
+      "Setting local preference on one prefix makes BGP remove the others from the same neighbor, so the best path stays stable",
+      "The soft reset clears the whole BGP table, and the other prefixes will only come back after the next keepalive is received",
+      "Local preference 50 is below the default for that neighbor, so BGP marks the whole session as less preferred and filters it"
+    ],
+    "correct": 0,
+    "explanation": "Like an ACL, a route-map denies anything that matches no clause. Applied inbound, it keeps only the prefixes in list ONE and drops the rest. A final 'route-map ISP-IN permit 20' with no match statement lets all other routes through unchanged. Local preference is set per path and never removes other prefixes, a soft reset doesn't wait for a keepalive, and the session itself is not filtered.",
+    "difficulty": "Hard"
   }
 ];

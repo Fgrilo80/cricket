@@ -2778,5 +2778,17 @@ window.QUIZ_BANK = [
     "correct": 3,
     "explanation": "Um network statement do BGP só é injetado quando a tabela de routing tem exatamente esse prefixo e essa máscara. As /24 não correspondem a uma /16, por isso nada é enviado. Uma rota estática para Null0 de 10.20.0.0/16 cria a entrada exata (e descarta o tráfego para partes do intervalo não usadas), ou o 'aggregate-address' pode construir o resumo a partir das /24. A palavra mask permite prefixos classless, as rotas OSPF podem ser anunciadas por network statement quando coincidem exatamente e o ISP nunca chegou a ver o prefixo.",
     "difficulty": "Difícil"
+  },
+  {
+    "question": "Para baixar a local preference de um prefixo vindo de um ISP, um técnico aplica uma route-map de entrada com uma só cláusula: 'route-map ISP-IN permit 10', 'match ip address prefix-list ONE', 'set local-preference 50'. Depois de um soft reset, só esse prefixo fica do ISP. Porquê?",
+    "options": [
+      "A route-map acaba num deny implícito e tudo o que falha a cláusula 10 cai; junta um 'permit 20' vazio",
+      "Definir a local preference num prefixo faz o BGP retirar os outros do mesmo vizinho, para o melhor caminho ficar estável",
+      "O soft reset limpa a tabela BGP inteira, e os outros prefixos só voltam depois de chegar o próximo keepalive do vizinho",
+      "A local preference 50 fica abaixo do valor padrão desse vizinho, por isso o BGP marca a sessão toda como pior e filtra-a"
+    ],
+    "correct": 0,
+    "explanation": "Tal como uma ACL, uma route-map nega tudo o que não coincide com nenhuma cláusula. Aplicada à entrada, só mantém os prefixos da lista ONE e descarta o resto. Uma última 'route-map ISP-IN permit 20' sem match deixa passar as outras rotas sem alterações. A local preference é definida por caminho e nunca retira outros prefixos, o soft reset não espera por um keepalive e a sessão em si não é filtrada.",
+    "difficulty": "Difícil"
   }
 ];
