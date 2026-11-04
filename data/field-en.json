@@ -275,8 +275,8 @@
   {
     "question": "A 10GBASE-SR SFP+ is connected through OS2 single-mode fiber to a 10GBASE-LR at the far end. What happens?",
     "options": [
-      "It works, because both ends run 10 Gb/s Ethernet",
-      "The link negotiates down and runs at 1 Gb/s instead",
+      "It works, because both ends run 10 Gb/s",
+      "The link negotiates down to 1 Gb/s instead",
       "The link fails: 850 nm MMF vs 1310 nm SMF optics",
       "Only PoE is lost on the link"
     ],
@@ -340,7 +340,7 @@
   {
     "question": "A 1 m twinax cable with SFP+ ends links two switches in the same rack. What is it called?",
     "options": [
-      "A fiber-to-copper media converter",
+      "A media converter",
       "A Direct Attach Copper (DAC)",
       "An OTDR launch cable",
       "A rollover console cable"
@@ -367,7 +367,7 @@
     "question": "show power inline shows: Available 370 W, Used 362 W. A new 25 W camera gets no power. What is the cause?",
     "options": [
       "The port is in the wrong VLAN",
-      "The camera needs a crossover cable",
+      "A crossover cable is needed",
       "The PoE budget is nearly exhausted",
       "The camera only works with fiber"
     ],
@@ -938,7 +938,7 @@
   {
     "question": "A camera works through a PoE injector. Where must the injector's 'data in' and 'PoE out' ports go?",
     "options": [
-      "Data in to the camera, PoE out to the switch",
+      "Data in to camera, PoE out to switch",
       "Both ports to the switch for redundancy",
       "Data in to the switch, PoE out to the camera",
       "Either way, since the injector is symmetric"

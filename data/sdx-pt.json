@@ -17,7 +17,7 @@
     "question": "Porque deve o Validator ter normalmente um IP público (ou NAT estático 1:1)?",
     "options": [
       "Funciona como gateway por omissão de cada LAN",
-      "Encaminha todo o tráfego de dados dos utilizadores entre locais",
+      "Encaminha o tráfego dos utilizadores entre locais",
       "Guarda as licenças de todos os routers edge",
       "Todos os edges e controladores têm de o alcançar primeiro"
     ],
@@ -87,7 +87,7 @@
     "question": "O que é uma rota OMP (vRoute)?",
     "options": [
       "Uma sessão BFD entre dois edges",
-      "Uma rota estática para o Validator no transporte",
+      "Uma rota estática para o Validator",
       "Um prefixo da LAN com o TLOC como próximo salto",
       "Uma rota usada só pela interface do Manager"
     ],
@@ -173,7 +173,7 @@
       "Gateways de cloud que ligam a fabric às VPC/VNet",
       "A compra de créditos de cloud pública",
       "A migração de servidores para a AWS",
-      "Os registos DNS de todas as aplicações SaaS das filiais"
+      "Os registos DNS das aplicações SaaS"
     ],
     "correct": 0,
     "explanation": "Implementa e liga routers de cloud (p. ex. Catalyst 8000V ou transit gateways) para as cargas na cloud entrarem nos segmentos SD-WAN.",
@@ -215,7 +215,7 @@
       "No painel Meraki",
       "Em cada um dos routers de filial",
       "Dentro dos nós ISE do cliente",
-      "Na cloud, alojados pela Cisco"
+      "Na cloud, alojados e geridos pela Cisco"
     ],
     "correct": 3,
     "explanation": "A Cisco (ou um parceiro) aloja Manager, Validator e Controllers na cloud, o que dá arranque rápido e operação gerida; também é possível no local.",
@@ -270,7 +270,7 @@
     "options": [
       "Um, sem opção de mudar",
       "Dois (max-control-connections)",
-      "Todos os Controllers do overlay",
+      "Todos os Controllers",
       "Nenhum, só usa o Validator"
     ],
     "correct": 1,
@@ -340,7 +340,7 @@
     "options": [
       "O mapa de QoS no túnel",
       "A área OSPF do lado da LAN",
-      "O DNS e as rotas na VPN 0",
+      "O DNS e a tabela de rotas da VPN 0",
       "A política de firewall na VPN 10"
     ],
     "correct": 2,
@@ -353,7 +353,7 @@
     "question": "Como encontra os seus controladores, com zero-touch, um WAN Edge novo numa ligação internet com DHCP?",
     "options": [
       "Procura na internet portas SD-WAN abertas",
-      "Espera que um engenheiro escreva a config na consola",
+      "Espera que alguém escreva a config na consola",
       "Pergunta ao PnP Connect, que lhe indica o Validator",
       "Copia a config do edge mais próximo por Bluetooth"
     ],
@@ -395,9 +395,9 @@
     "question": "Uma filial tem dois edges, cada um só com um dos dois circuitos WAN. Como podem os dois edges usar ambos os circuitos?",
     "options": [
       "TLOC extension entre os dois edges",
-      "Graceful restart do OMP nos circuitos",
+      "Graceful restart do OMP",
       "Um segundo Validator na filial",
-      "Cloud OnRamp for SaaS num dos edges"
+      "Cloud OnRamp for SaaS num edge"
     ],
     "correct": 0,
     "explanation": "A TLOC extension liga os routers para cada um construir túneis sobre o circuito terminado no par.",
@@ -411,7 +411,7 @@
       "Túneis entre spokes criados quando é preciso",
       "Túneis que mudam de cor a cada hora",
       "Túneis só entre controladores",
-      "Túneis de reserva que usam só a ligação 4G/LTE"
+      "Túneis de reserva só na ligação 4G/LTE"
     ],
     "correct": 0,
     "explanation": "Com túneis on-demand, os spokes usam o hub por omissão e criam túneis diretos quando há tráfego, poupando recursos em equipamentos pequenos.",
@@ -422,9 +422,9 @@
   {
     "question": "Dois edges usam cores 'privadas' (mpls) de um lado e 'públicas' (biz-internet) do outro. Quando usam os túneis IP públicos?",
     "options": [
-      "Nunca, os túneis usam sempre IP privados",
+      "Nunca; usam sempre IP privados",
       "Quando há uma cor pública envolvida",
-      "Só quando há restrict nas duas cores",
+      "Só com restrict nas duas cores",
       "Só para tráfego na VPN 0"
     ],
     "correct": 1,
@@ -450,10 +450,10 @@
   {
     "question": "Como escolhe o OMP a melhor rota quando vários edges anunciam o mesmo prefixo?",
     "options": [
-      "Ganha o edge com o número de série mais alto",
+      "Ganha o edge com série mais alta",
       "Preferência, preferência do TLOC, origem",
-      "A primeira rota aprendida fica para sempre",
-      "O OMP escolhe uma ao acaso a cada minuto"
+      "A primeira rota aprendida fica sempre",
+      "O OMP escolhe uma ao acaso"
     ],
     "correct": 1,
     "explanation": "O melhor caminho OMP compara preferência, preferência do TLOC, tipo de origem e métrica, entre outros; a política de controlo pode mudar estes atributos.",
@@ -480,7 +480,7 @@
     "options": [
       "Cifra o túnel MPLS duas vezes",
       "Os locais remotos preferem esse TLOC",
-      "Dá mais largura de banda à ligação MPLS",
+      "Dá mais banda à ligação MPLS",
       "Desliga o TLOC de internet"
     ],
     "correct": 1,
@@ -661,7 +661,7 @@
     "question": "O que é uma VPN no Catalyst SD-WAN?",
     "options": [
       "Um único túnel entre dois edges",
-      "Um cliente IPsec de acesso remoto para portáteis em viagem",
+      "Um cliente IPsec de acesso remoto para portáteis",
       "Um segmento como uma VRF, etiquetado no plano de dados",
       "Um grupo de utilizadores do Manager com o mesmo papel"
     ],
@@ -1444,8 +1444,8 @@
   {
     "question": "Que cuidado de MTU se aplica ao underlay SD-Access?",
     "options": [
-      "Manter 1500 em todo o lado; o VXLAN não acrescenta nada",
-      "Baixar o MTU para 1400 em todas as portas de clientes",
+      "Manter 1500; o VXLAN não acrescenta nada",
+      "Baixar o MTU para 1400 nos clientes",
       "Subir o MTU (cerca de 9100) pelo overhead VXLAN",
       "Usar um MTU diferente por rede virtual"
     ],
@@ -1559,7 +1559,7 @@
       "Uma definição extra de MTU",
       "Uma VN separada para cada utilizador",
       "Um novo fabric site para prestadores",
-      "SGT diferentes com uma SGACL"
+      "SGT diferentes aplicados com uma SGACL"
     ],
     "correct": 3,
     "explanation": "Dentro de uma VN, a micro-segmentação por SGT e política por grupos é mais simples do que criar mais VN; as VN servem para isolamento total.",
@@ -1571,7 +1571,7 @@
     "question": "Porque se deve manter pequeno o número de redes virtuais?",
     "options": [
       "Cada VN acrescenta VRF, handoffs e fuga de rotas",
-      "As VN não podem levar mais de um SGT em nenhuma versão",
+      "As VN não podem levar mais de um SGT",
       "Cada VN exige um Catalyst Center separado",
       "As VN desligam a rede sem fios"
     ],
@@ -1600,7 +1600,7 @@
     "options": [
       "Limites das tabelas de anfitriões",
       "O número de SSID em cada AP",
-      "O MTU configurado nas portas de clientes",
+      "O MTU das portas de clientes",
       "O comprimento dos nomes das VLAN"
     ],
     "correct": 0,
@@ -1710,7 +1710,7 @@
   {
     "question": "Porque se recomenda uma ligação routed dedicada entre border nodes?",
     "options": [
-      "É precisa para o ISE funcionar com os borders",
+      "O ISE precisa dela para os borders",
       "Leva o tráfego DHCP dos clientes",
       "Dá caminho se um border perder uplinks",
       "Substitui o nó de plano de controlo"
@@ -1739,8 +1739,8 @@
     "question": "Onde se deve colocar o servidor DHCP e o que tem o edge de fazer pelos clientes da fabric?",
     "options": [
       "Fora; o edge faz relay com opção 82",
-      "Em cada edge node como servidor DHCP local",
-      "Dentro de cada ponto de acesso do piso",
+      "Um DHCP local em cada edge node",
+      "Dentro de cada AP do piso",
       "Só no nó de plano de controlo"
     ],
     "correct": 0,
@@ -1838,7 +1838,7 @@
     "options": [
       "Security (scalable) Group Tag",
       "Switch Gateway Table entry",
-      "Segment Group Tunnel identifier",
+      "Segment Group Tunnel",
       "Static Gateway Translation"
     ],
     "correct": 0,
@@ -1893,7 +1893,7 @@
     "question": "Que fluxo do Catalyst Center associa pools IP às VN num site?",
     "options": [
       "Painel de saúde da Assurance",
-      "Gestão de imagens de software dos switches",
+      "Gestão de imagens de software",
       "Host onboarding / associação VN-pool",
       "Backup and restore"
     ],
@@ -1935,9 +1935,9 @@
     "question": "Qual é um local comum para uma firewall num desenho SD-Access para tráfego entre VN?",
     "options": [
       "Entre o edge e o cliente",
-      "Dentro de cada rádio dos pontos de acesso",
+      "Dentro do rádio de cada AP",
       "Só no nó de plano de controlo",
-      "Para lá do border, como fusão"
+      "Para lá do border, como fusion device"
     ],
     "correct": 3,
     "explanation": "Uma firewall a fazer de fusão (ou atrás do border) inspeciona o tráfego entre VN e para serviços partilhados ou para a internet.",
@@ -1949,8 +1949,8 @@
     "question": "Porque se configuram VLAN/pools críticas nas portas dos edges?",
     "options": [
       "Para desligar o 802.1X de vez",
-      "Para dar Wi-Fi mais rápido aos convidados",
-      "Para permitir spanning tree nas portas edge",
+      "Wi-Fi mais rápido para convidados",
+      "Para permitir STP nas portas edge",
       "O acesso continua com o ISE em baixo"
     ],
     "correct": 3,

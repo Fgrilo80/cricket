@@ -17,7 +17,7 @@ window.QUIZ_BANK = [
     "question": "Why must the Validator normally have a public (or 1:1 static NAT) IP address?",
     "options": [
       "It acts as the default gateway for each LAN",
-      "It forwards all user data traffic between the sites",
+      "It forwards all user traffic between sites",
       "It stores the licences for every edge router",
       "All edges and controllers must reach it first"
     ],
@@ -87,7 +87,7 @@ window.QUIZ_BANK = [
     "question": "What is an OMP route (vRoute)?",
     "options": [
       "A BFD session between two edges",
-      "A static route to the Validator on the transport VPN",
+      "A static route to the Validator",
       "A LAN prefix with its TLOC as next hop",
       "A route used only by the Manager GUI"
     ],
@@ -173,7 +173,7 @@ window.QUIZ_BANK = [
       "Cloud gateways linking the fabric to VPCs/VNets",
       "The purchase of public cloud credits",
       "The migration of servers into AWS",
-      "DNS records for every SaaS app used by the branches"
+      "DNS records for every SaaS app"
     ],
     "correct": 0,
     "explanation": "It deploys and attaches cloud routers (e.g. Catalyst 8000V or cloud transit gateways) so cloud workloads join the SD-WAN segments.",
@@ -214,7 +214,7 @@ window.QUIZ_BANK = [
     "options": [
       "On the Meraki dashboard",
       "On every branch router",
-      "Inside the customer's ISE nodes",
+      "Inside the customer's ISE",
       "Cisco-hosted cloud controllers"
     ],
     "correct": 3,
@@ -268,10 +268,10 @@ window.QUIZ_BANK = [
   {
     "question": "How many Controllers does each WAN Edge connect to by default?",
     "options": [
-      "One, with no option to change",
+      "One, with no option",
       "Two (max-control-connections)",
-      "Every Controller in the overlay",
-      "None, it only uses the Validator"
+      "All the overlay Controllers",
+      "None, only the Validator"
     ],
     "correct": 1,
     "explanation": "By default edges keep two control connections per transport to different Controllers for redundancy; this is tunable.",
@@ -340,7 +340,7 @@ window.QUIZ_BANK = [
     "options": [
       "The QoS map on the tunnel",
       "The OSPF area on the LAN side",
-      "DNS and VPN 0 routing",
+      "DNS and the VPN 0 routing table",
       "The firewall policy in VPN 10"
     ],
     "correct": 2,
@@ -353,9 +353,9 @@ window.QUIZ_BANK = [
     "question": "How does a new WAN Edge on a DHCP internet link find its controllers with zero-touch?",
     "options": [
       "It scans the internet for open SD-WAN ports",
-      "It waits for an engineer to type the config on the console",
+      "It waits for an engineer to type the config",
       "It asks PnP Connect, which points it to the Validator",
-      "It copies the config from the nearest edge by Bluetooth"
+      "It copies the config from a nearby edge"
     ],
     "correct": 2,
     "explanation": "ZTP/PnP: the device gets an address, reaches devicehelper/PnP cloud, learns its Validator and organisation and then downloads its config.",
@@ -395,7 +395,7 @@ window.QUIZ_BANK = [
     "question": "A branch has two edges, each with only one of the two WAN circuits. How can both edges use both circuits?",
     "options": [
       "TLOC extension between the two edges",
-      "OMP graceful restart on the circuits",
+      "OMP graceful restart on circuits",
       "A second Validator at the branch",
       "Cloud OnRamp for SaaS on one edge"
     ],
@@ -411,7 +411,7 @@ window.QUIZ_BANK = [
       "Spoke-to-spoke tunnels built when needed",
       "Tunnels that change colour every hour",
       "Tunnels between controllers only",
-      "Backup tunnels that use only the 4G/LTE link"
+      "Backup tunnels on the 4G/LTE link only"
     ],
     "correct": 0,
     "explanation": "With on-demand tunnels, spokes use the hub by default and bring up direct tunnels when traffic flows, saving resources on small devices.",
@@ -422,9 +422,9 @@ window.QUIZ_BANK = [
   {
     "question": "Two edges use 'private' colours (mpls) on one side and 'public' (biz-internet) on the other. When do tunnels use public IPs?",
     "options": [
-      "Never, tunnels always use private IPs",
-      "When a public colour is involved",
-      "Only when restrict is set on both colours",
+      "Never; tunnels use private IPs",
+      "When a public colour is at either end",
+      "Only with restrict on both colours",
       "Only for traffic in VPN 0"
     ],
     "correct": 1,
@@ -451,8 +451,8 @@ window.QUIZ_BANK = [
     "question": "How does OMP choose the best route when several edges advertise the same prefix?",
     "options": [
       "The edge with the highest serial number wins",
-      "Preference, TLOC preference, origin",
-      "The route learned first is always kept forever",
+      "Route preference, TLOC preference, then origin",
+      "The first route learned is kept forever",
       "OMP picks one at random each minute"
     ],
     "correct": 1,
@@ -479,7 +479,7 @@ window.QUIZ_BANK = [
     "question": "Why set a higher TLOC preference on the MPLS colour at a hub?",
     "options": [
       "It encrypts the MPLS tunnel twice",
-      "Remote sites prefer that TLOC",
+      "Remote sites prefer the hub's MPLS TLOC",
       "It gives the MPLS link more bandwidth",
       "It disables the internet TLOC"
     ],
@@ -661,7 +661,7 @@ window.QUIZ_BANK = [
     "question": "What is a VPN in Catalyst SD-WAN?",
     "options": [
       "A single tunnel between two edges",
-      "An IPsec remote-access client for laptops on the road",
+      "An IPsec remote-access client for laptops",
       "A segment like a VRF, tagged in the data plane",
       "A group of Manager users with the same role"
     ],
@@ -814,7 +814,7 @@ window.QUIZ_BANK = [
   {
     "question": "What does AMP do on an SD-WAN edge?",
     "options": [
-      "Encrypts management traffic between the edge and Manager",
+      "Encrypts management traffic to the Manager",
       "Measures latency for AAR on every tunnel",
       "Checks file reputation and blocks known malware",
       "Assigns QoS classes"
@@ -985,7 +985,7 @@ window.QUIZ_BANK = [
       "Sends references instead of repeated data",
       "Drops duplicate users from the network",
       "Removes BFD packets from the tunnels",
-      "Turns off encryption to shrink the headers"
+      "Turns off encryption to shrink headers"
     ],
     "correct": 0,
     "explanation": "Data Redundancy Elimination caches byte patterns at both ends and replaces repeated chunks with short signatures.",
@@ -1010,10 +1010,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does FEC do on a lossy tunnel?",
     "options": [
-      "Compresses the packet headers on the tunnel",
-      "Encrypts packets a second time with a new key",
-      "Moves the traffic to another TLOC colour",
-      "Adds parity to rebuild lost packets"
+      "Compresses the tunnel packet headers",
+      "Re-encrypts packets with a new key",
+      "Moves traffic to another TLOC colour",
+      "Adds parity so lost packets can be rebuilt"
     ],
     "correct": 3,
     "explanation": "Forward Error Correction sends a parity packet for each group so the receiver can recover a lost packet without retransmission.",
@@ -1445,7 +1445,7 @@ window.QUIZ_BANK = [
     "question": "Which MTU consideration applies to the SD-Access underlay?",
     "options": [
       "Keep 1500 everywhere; VXLAN adds nothing",
-      "Lower the MTU to 1400 on all client ports",
+      "Lower the MTU to 1400 on client ports",
       "Raise MTU (about 9100) for VXLAN overhead",
       "Use a different MTU per virtual network"
     ],
@@ -1559,7 +1559,7 @@ window.QUIZ_BANK = [
       "An extra MTU setting",
       "A separate VN for every single user",
       "A new fabric site for contractors",
-      "Different SGTs with an SGACL"
+      "Different SGTs enforced with an SGACL"
     ],
     "correct": 3,
     "explanation": "Within a VN, micro-segmentation via SGTs and group-based policy is simpler than creating more VNs; VNs are for full isolation.",
@@ -1571,7 +1571,7 @@ window.QUIZ_BANK = [
     "question": "Why should the number of virtual networks be kept small?",
     "options": [
       "Each VN adds VRFs, handoffs and route leaking",
-      "VNs cannot carry more than one SGT in any release",
+      "VNs cannot carry more than one SGT",
       "Each VN requires a separate Catalyst Center",
       "VNs disable wireless"
     ],
@@ -1599,9 +1599,9 @@ window.QUIZ_BANK = [
     "question": "A site needs 40,000 endpoints. Which factor most limits the design?",
     "options": [
       "Node host-table scale limits",
-      "The number of SSIDs on each AP",
+      "The SSID count on each AP",
       "The MTU of client ports",
-      "The length of the VLAN names used"
+      "The length of VLAN names"
     ],
     "correct": 0,
     "explanation": "Scale depends on platform limits for host entries in the control plane, edge node host tables, VNs and SGACLs; large sites may need multiple sites or dedicated control plane nodes.",
@@ -1682,7 +1682,7 @@ window.QUIZ_BANK = [
   {
     "question": "Which underlay feature is needed when native multicast or Layer 2 flooding is used?",
     "options": [
-      "Spanning tree on every routed link",
+      "Spanning tree on routed links",
       "PIM and multicast in the underlay",
       "An SSID for each virtual network",
       "802.1X on all routed uplinks"
@@ -1710,7 +1710,7 @@ window.QUIZ_BANK = [
   {
     "question": "Why is a dedicated, routed link between border nodes recommended?",
     "options": [
-      "It is needed for ISE to work with the borders",
+      "ISE needs it to work with borders",
       "It carries the client DHCP traffic",
       "Gives a path if one border loses uplinks",
       "It replaces the control plane node"
@@ -1739,7 +1739,7 @@ window.QUIZ_BANK = [
     "question": "Where should the DHCP server be placed and what must the edge do for clients in the fabric?",
     "options": [
       "Outside; the edge relays with option 82",
-      "On every edge node as a local DHCP server",
+      "A local DHCP server on every edge",
       "Inside each access point on the floor",
       "On the control plane node only"
     ],
@@ -1782,8 +1782,8 @@ window.QUIZ_BANK = [
     "options": [
       "The compatibility matrix per role",
       "Only the number of access ports",
-      "The colour of the chassis and its bezel",
-      "Whether the switch has a console port"
+      "The colour of the chassis",
+      "Whether it has a console port"
     ],
     "correct": 0,
     "explanation": "Each release lists supported platforms and scale per role (edge, border, control plane, extended node) and supported WLC/AP models.",
@@ -1838,7 +1838,7 @@ window.QUIZ_BANK = [
     "options": [
       "Security (scalable) Group Tag",
       "Switch Gateway Table entry",
-      "Segment Group Tunnel identifier",
+      "Segment Group Tunnel",
       "Static Gateway Translation"
     ],
     "correct": 0,
@@ -1893,7 +1893,7 @@ window.QUIZ_BANK = [
     "question": "Which Catalyst Center workflow assigns IP pools to VNs at a site?",
     "options": [
       "Assurance health dashboard",
-      "Software image management for switches",
+      "Software image management",
       "Host onboarding / VN-to-pool mapping",
       "Backup and restore"
     ],
@@ -1907,7 +1907,7 @@ window.QUIZ_BANK = [
     "question": "Why is pxGrid integration between Catalyst Center and ISE important?",
     "options": [
       "Shares groups, policy and context",
-      "It is the transport for VXLAN data",
+      "It is the VXLAN data transport",
       "It runs the LISP map server",
       "It assigns IP addresses"
     ],
@@ -1950,7 +1950,7 @@ window.QUIZ_BANK = [
     "options": [
       "To disable 802.1X permanently",
       "To give guests faster Wi-Fi",
-      "To allow spanning tree on edge ports",
+      "To allow STP on edge ports",
       "Access continues if ISE is down"
     ],
     "correct": 3,
@@ -1992,8 +1992,8 @@ window.QUIZ_BANK = [
     "options": [
       "Traffic keeps flowing; changes stop",
       "All VXLAN tunnels go down at once",
-      "Clients lose their SGTs and their VN",
-      "The underlay stops routing between nodes"
+      "Clients lose their SGTs and VN",
+      "The underlay stops routing"
     ],
     "correct": 0,
     "explanation": "Catalyst Center is the management plane; the control, data and policy planes keep running on the nodes and ISE.",

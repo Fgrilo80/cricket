@@ -131,7 +131,7 @@ window.QUIZ_BANK = [
       "Classe A (água)",
       "Classe C (CO2 ou agente limpo)",
       "Classe K (óleos de cozinha)",
-      "Classe D (metais combustíveis)"
+      "Classe D (metais em chamas)"
     ],
     "correct": 1,
     "explanation": "No esquema dos EUA, a classe C cobre incêndios elétricos sob tensão; extintores de CO2 ou agente limpo não conduzem eletricidade. Na Europa usa-se o CO2 marcado para risco elétrico.",
@@ -437,7 +437,7 @@ window.QUIZ_BANK = [
     "question": "Uma impressora laser encrava várias vezes por dia, sempre no mesmo tabuleiro. Que verificação faz sentido?",
     "options": [
       "A escala de ecrã do Windows nos PCs dos utilizadores",
-      "O endereço IP, a máscara de rede e o gateway configurados na impressora",
+      "O endereço IP, a máscara e o gateway da impressora",
       "Tipo de papel, humidade e rolos de alimentação gastos nesse tabuleiro",
       "A definição de assinatura SMB no servidor de impressão"
     ],
@@ -522,7 +522,7 @@ window.QUIZ_BANK = [
     "options": [
       "O brilho do ecrã do portátil",
       "A que SSID o portátil se ligou",
-      "O relatório de saúde da bateria",
+      "O relatório da bateria do PC",
       "O idioma do teclado"
     ],
     "correct": 1,
@@ -593,7 +593,7 @@ window.QUIZ_BANK = [
       "O erro de sincronização e o estado da sessão",
       "A versão e o esquema do driver do teclado",
       "O nível de toner da impressora por omissão",
-      "O cabo HDMI do segundo monitor do utilizador"
+      "O cabo HDMI do segundo monitor"
     ],
     "correct": 0,
     "explanation": "Ao clicar no ícone do OneDrive aparece o erro: sessão terminada, armazenamento cheio, nome de ficheiro bloqueado ou caminho demasiado longo. Corrija essa causa e a sincronização retoma.",
@@ -926,7 +926,7 @@ window.QUIZ_BANK = [
   {
     "question": "Porque é que os utilizadores devem bloquear o ecrã (Win+L) quando saem da secretária?",
     "options": [
-      "Para poupar toner e papel na impressora",
+      "Para poupar toner e papel",
       "Para impedir outros de usar a sessão",
       "Para acelerar o Windows Update",
       "Para renovar a concessão DHCP do PC"

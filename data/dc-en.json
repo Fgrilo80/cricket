@@ -31,7 +31,7 @@
     "question": "Which PIM mode is commonly used in a VXLAN flood-and-learn or EVPN underlay for BUM traffic?",
     "options": [
       "No multicast; BUM is always dropped",
-      "PIM dense mode flooding to every interface",
+      "PIM dense mode on every interface",
       "PIM sparse mode with anycast RP on spines",
       "PIM on access ports toward servers"
     ],
@@ -86,7 +86,7 @@
   {
     "question": "What does Rapid PVST+ provide compared with classic PVST+?",
     "options": [
-      "A single tree for all VLANs in the fabric",
+      "One tree for all VLANs",
       "Faster convergence using RSTP per VLAN",
       "Layer 3 routing between VLANs",
       "Automatic LACP negotiation"
@@ -548,7 +548,7 @@
   {
     "question": "What does enhanced zoning add over basic zoning?",
     "options": [
-      "A fabric-wide change lock",
+      "A fabric-wide lock during changes",
       "Zones that span several VSANs",
       "Encryption of zone members",
       "Automatic LUN masking on arrays"
@@ -578,7 +578,7 @@
     "options": [
       "Replacing zones with VSANs",
       "Faster FC frame forwarding",
-      "Extra buffer credits on each ISL",
+      "More buffer credits per ISL",
       "Names for WWPNs, shared by CFS"
     ],
     "correct": 3,
@@ -705,7 +705,7 @@
       "Balances traffic over ISLs",
       "Upgrades software every week",
       "Runs actions on defined events",
-      "Syncs the vPC config to the peer"
+      "Syncs vPC config to the peer"
     ],
     "correct": 2,
     "explanation": "EEM applets match events (syslog, counters, CLI) and run actions such as CLI commands or scripts.",
@@ -744,9 +744,9 @@
   {
     "question": "What does NX-API CLI let a script do?",
     "options": [
-      "Read SNMP traps from the switch",
+      "Read SNMP traps from it",
       "Replace NX-OS with Linux",
-      "Configure only the BIOS settings",
+      "Configure only BIOS settings",
       "Send CLI over HTTPS, get JSON"
     ],
     "correct": 3,
@@ -857,9 +857,9 @@
     "question": "In ACI, what must exist for two EPGs to communicate?",
     "options": [
       "A contract between them",
-      "A shared VLAN ID on both",
+      "A shared VLAN ID",
       "The same IP subnet",
-      "A static route on the leaf"
+      "A static leaf route"
     ],
     "correct": 0,
     "explanation": "ACI is whitelist by default: one EPG provides and another consumes a contract whose subjects and filters allow traffic.",
@@ -871,7 +871,7 @@
     "question": "What does microsegmentation (uSeg EPG) in ACI allow?",
     "options": [
       "Encrypting the whole fabric",
-      "Splitting a leaf into two switches",
+      "Splitting a leaf in two",
       "Grouping endpoints by attributes",
       "Creating VSANs for the VMs"
     ],
@@ -901,7 +901,7 @@
       "To speed up convergence",
       "To encrypt user data",
       "To store local passwords",
-      "To rotate auth keys"
+      "To rotate authentication keys"
     ],
     "correct": 3,
     "explanation": "Keychains hold multiple keys with send/accept lifetimes, allowing hitless rollover for OSPF, EIGRP, BGP or HSRP authentication.",
