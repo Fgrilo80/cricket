@@ -1,5 +1,5 @@
 window.QUIZ_CATALOG = {
-  "version": "4.3.0",
+  "version": "4.4.0",
   "tracks": [
     {
       "id": "ccst",
@@ -385,6 +385,23 @@ window.QUIZ_CATALOG = {
       ]
     },
     {
+      "id": "wlcor",
+      "kind": "exam",
+      "parent": "wireless",
+      "filter": {
+        "exam": "wlcor"
+      },
+      "labelPt": "CCNP Wireless WLCOR — Core (350-101)",
+      "labelEn": "CCNP Wireless WLCOR — Core (350-101)",
+      "badgePt": "WLCOR",
+      "badgeEn": "WLCOR",
+      "color": "purple",
+      "counts": {
+        "pt": 70,
+        "en": 70
+      }
+    },
+    {
       "id": "ensdwi",
       "kind": "exam",
       "parent": "sdx",
@@ -493,8 +510,8 @@ window.QUIZ_CATALOG = {
       "en": 138
     },
     "wireless": {
-      "pt": 125,
-      "en": 125
+      "pt": 195,
+      "en": 195
     },
     "sdx": {
       "pt": 148,
