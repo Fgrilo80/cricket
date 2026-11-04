@@ -131,7 +131,7 @@ window.QUIZ_BANK = [
       "Class A (water)",
       "Class C (CO2 or clean agent)",
       "Class K (kitchen oils)",
-      "Class D (combustible metals)"
+      "Class D (burning metals)"
     ],
     "correct": 1,
     "explanation": "In the US scheme, Class C covers energised electrical fires; CO2 or clean-agent extinguishers do not conduct electricity. In Europe the equivalent is CO2 marked for electrical risk.",
@@ -200,7 +200,7 @@ window.QUIZ_BANK = [
     "options": [
       "The port is for charging only and has no data",
       "The port can only connect to Apple devices",
-      "The port carries mains voltage and is dangerous to touch",
+      "The port carries mains voltage and is dangerous",
       "Thunderbolt support for displays, docks and fast storage"
     ],
     "correct": 3,
@@ -299,7 +299,7 @@ window.QUIZ_BANK = [
       "The app's minimum hardware requirements",
       "The color and model of the PC case",
       "The number of browser bookmarks",
-      "The keyboard layout and language setting"
+      "The keyboard layout and language"
     ],
     "correct": 0,
     "explanation": "Compare the PC's CPU, RAM, GPU and OS version with the vendor's minimum requirements. Demanding apps often fail on hardware below spec.",
@@ -354,7 +354,7 @@ window.QUIZ_BANK = [
     "options": [
       "Security groups grant permissions; distribution groups are for email lists",
       "Security groups are only for printers; distribution groups for PCs",
-      "Distribution groups can log on to servers and run tasks; security groups cannot",
+      "Distribution groups can log on to servers; security groups cannot",
       "They are the same object with two different names in the console"
     ],
     "correct": 0,
@@ -408,7 +408,7 @@ window.QUIZ_BANK = [
   {
     "question": "A user must reach the departmental share \\\\fs01\\sales as drive S: at every logon. What do you do?",
     "options": [
-      "Create a desktop shortcut to the server's IP address",
+      "Create a desktop shortcut to the server IP",
       "Copy the share into OneDrive manually each day",
       "Map a network drive with 'Reconnect at sign-in'",
       "Install the share as a printer on the PC"
@@ -450,7 +450,7 @@ window.QUIZ_BANK = [
   {
     "question": "Jobs pile up in the print queue and nothing prints, although the printer is online. What is a quick fix?",
     "options": [
-      "Reinstall Windows on the print server from scratch tonight",
+      "Reinstall Windows on the print server",
       "Restart the Print Spooler service and clear the queue",
       "Replace the printer's toner cartridge first",
       "Change the user's screen saver"
@@ -520,7 +520,7 @@ window.QUIZ_BANK = [
   {
     "question": "A laptop connects to Wi-Fi but lands on the guest network with no access to internal apps. What should you check?",
     "options": [
-      "The laptop's screen brightness",
+      "The screen brightness",
       "Which SSID the laptop joined",
       "The battery health report",
       "The keyboard language"
@@ -593,7 +593,7 @@ window.QUIZ_BANK = [
       "The sync error and the user's sign-in state",
       "The keyboard driver version and layout",
       "The toner level of the default printer",
-      "The HDMI cable of the user's second monitor"
+      "The HDMI cable of the second monitor"
     ],
     "correct": 0,
     "explanation": "Clicking the OneDrive icon shows the error: signed out, storage full, a blocked file name or a path too long. Fix that cause and sync resumes.",
@@ -621,7 +621,7 @@ window.QUIZ_BANK = [
       "Replace the network card in the PC",
       "Reinstall the operating system",
       "Clear that browser's cache and cookies",
-      "Change the PC's IP address to a static one"
+      "Set a static IP on the PC"
     ],
     "correct": 2,
     "explanation": "Stale cached files or corrupted cookies often cause display issues and login loops limited to one browser. Clearing them (or testing a private window) confirms it.",
@@ -661,7 +661,7 @@ window.QUIZ_BANK = [
     "question": "A Windows Update keeps failing with the same error code. What is a sensible step?",
     "options": [
       "Disable updates forever on that PC",
-      "Delete the System32 folder to force a clean reinstall",
+      "Delete System32 to force a clean reinstall",
       "Run the update troubleshooter and check disk space",
       "Unplug the PC during the next update"
     ],
@@ -1082,7 +1082,7 @@ window.QUIZ_BANK = [
     "options": [
       "The user's monitor driver is outdated",
       "The web browser cache is corrupted",
-      "DNS cannot resolve any public internet names",
+      "DNS cannot resolve public internet names",
       "A routing or firewall block past the gateway"
     ],
     "correct": 3,

@@ -31,9 +31,9 @@ window.QUIZ_BANK = [
     "question": "Que modo PIM se usa normalmente no underlay VXLAN flood-and-learn ou EVPN para tráfego BUM?",
     "options": [
       "Sem multicast; o BUM é sempre descartado",
-      "PIM dense mode a inundar todas as interfaces",
+      "PIM dense mode em todas as interfaces",
       "PIM sparse mode com anycast RP nos spines",
-      "PIM nas portas de acesso para os servidores"
+      "PIM nas portas dos servidores"
     ],
     "correct": 2,
     "explanation": "A replicação multicast do BUM usa PIM-SM (ou bidir) no underlay, com anycast RP nos spines; a replicação na entrada é a alternativa.",
@@ -86,7 +86,7 @@ window.QUIZ_BANK = [
   {
     "question": "O que dá o Rapid PVST+ em relação ao PVST+ clássico?",
     "options": [
-      "Uma única árvore para todas as VLAN da fabric",
+      "Uma só árvore para todas as VLAN",
       "Convergência mais rápida com RSTP por VLAN",
       "Encaminhamento camada 3 entre VLAN",
       "Negociação LACP automática"
@@ -577,7 +577,7 @@ window.QUIZ_BANK = [
     "question": "Porque usar device aliases numa fabric MDS?",
     "options": [
       "Substituir as zonas por VSAN",
-      "Encaminhamento mais rápido das tramas FC",
+      "Encaminhamento FC mais rápido",
       "Mais buffer credits em cada ISL",
       "Nomes para WWPN, partilhados por CFS"
     ],
@@ -632,7 +632,7 @@ window.QUIZ_BANK = [
   {
     "question": "O que faz o CFS nos switches MDS e Nexus?",
     "options": [
-      "Comprime as tramas FC em ligações longas",
+      "Comprime as tramas FC",
       "Partilha configuração entre switches",
       "Cria VSAN automaticamente",
       "Monitoriza as ventoinhas do chassis"
@@ -674,7 +674,7 @@ window.QUIZ_BANK = [
   {
     "question": "O que se deve verificar antes de uma atualização de software sem interrupção num MDS?",
     "options": [
-      "Que todas as zonas estão desativadas",
+      "Que as zonas estão desativadas",
       "A saída do 'show install all impact'",
       "Que todos os ISL estão desligados",
       "Que a base de dados FCNS foi limpa"
@@ -703,9 +703,9 @@ window.QUIZ_BANK = [
     "question": "O que faz o Embedded Event Manager (EEM) no NX-OS?",
     "options": [
       "Balanceia tráfego pelos ISL",
-      "Atualiza o software todas as semanas",
+      "Atualiza o software semanalmente",
       "Executa ações em eventos definidos",
-      "Sincroniza a configuração vPC com o par"
+      "Sincroniza a config vPC com o par"
     ],
     "correct": 2,
     "explanation": "Os applets EEM identificam eventos (syslog, contadores, CLI) e executam ações como comandos CLI ou scripts.",
@@ -746,7 +746,7 @@ window.QUIZ_BANK = [
     "options": [
       "Ler traps SNMP do switch",
       "Substituir o NX-OS por Linux",
-      "Configurar só as definições da BIOS",
+      "Configurar só a BIOS",
       "Enviar CLI por HTTPS e receber JSON"
     ],
     "correct": 3,
@@ -857,7 +857,7 @@ window.QUIZ_BANK = [
     "question": "No ACI, o que tem de existir para duas EPG comunicarem?",
     "options": [
       "Um contrato entre elas",
-      "Um ID de VLAN partilhado",
+      "Um VLAN ID partilhado",
       "A mesma sub-rede IP",
       "Uma rota estática"
     ],
@@ -871,7 +871,7 @@ window.QUIZ_BANK = [
     "question": "O que permite a microssegmentação (uSeg EPG) no ACI?",
     "options": [
       "Cifrar toda a fabric",
-      "Dividir um leaf em dois switches",
+      "Dividir um leaf em dois",
       "Agrupar endpoints por atributos",
       "Criar VSAN para as VM"
     ],
@@ -899,7 +899,7 @@ window.QUIZ_BANK = [
     "question": "Porque configurar uma keychain nos protocolos de encaminhamento do NX-OS?",
     "options": [
       "Para acelerar a convergência",
-      "Para cifrar dados dos utilizadores",
+      "Para cifrar dados",
       "Para guardar passwords locais",
       "Para rodar chaves de autenticação"
     ],

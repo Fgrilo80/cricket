@@ -1,5 +1,12 @@
 # Changelog — Cricket / Cisco Quiz (web)
 
+## Pendente (PR) — 2026-11-04 · Reequilibrar o comprimento das opções nas perguntas novas (fases 2/3)
+
+- Nas perguntas novas das fases 2 e 3, a resposta certa era quase nunca a mais longa (0–18%), o que também é uma pista ("escolhe a que não é a mais longa"). Agora é a opção mais longa (única) em **21,6–25%** dos casos por quiz, nas duas línguas.
+- Como: em ~120 pares, os distratores mais longos foram encurtados (ou, em poucos casos, a certa ganhou uma precisão curta), sem mudar o significado nem qual é a certa. Só muda texto de `options`; perguntas, explicações, índices e contagens ficam iguais.
+- Quizzes tratados: ccst-net (novas), encor (novas), iiot, ccstit, field, ccnaauto, autocor, wlsd, wlsi, ensdwi, sda, dccor, clcor.
+- Validação: schema, paridade PT/EN, rácio ≤ 1.5 em todas as perguntas editadas, lint `question-bank-length` PASSED (máx. 26,1% por trilho), unittest OK. Total 3764 sem alterações.
+
 ## v4.3.0 — 2026-11-03
 
 - **Rascunhos diários de 3 Nov publicados (6 pares PT/EN):** canal 3 nos 2,4 GHz sobreposto aos canais 1 e 5 (CCST, Fácil, `ccst-net` 3.2) · `ip helper-address` na interface errada em vez da Vlan30 (CCNA, Médio) · uRPF strict com encaminhamento assimétrico em dois ISPs → loose (CCNP, Difícil) · Sysmon 13 numa chave Run de HKCU com exe em AppData (Cyber, Médio, `cbrops` 3.5, `logs-ir`) · 4624 tipo 10 (RDP) com conta de serviço a partir de IP estrangeiro (Cyber, Médio, `cbrops` 3.5, `logs-ir`) · túnel DNS com consultas TXT a subdomínios aleatórios (Cyber, Difícil, `cbrops` 4.8, `logs-ir`).

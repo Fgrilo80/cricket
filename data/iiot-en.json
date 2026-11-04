@@ -263,7 +263,7 @@
     "question": "Which PROFINET variant is needed for tightly synchronized motion control with jitter below 1 µs?",
     "options": [
       "PROFINET IRT (Conformance Class C)",
-      "PROFINET RT over a standard Wi-Fi link",
+      "PROFINET RT over Wi-Fi",
       "PROFINET over Modbus TCP",
       "PROFINET NRT over routed UDP"
     ],
@@ -447,7 +447,7 @@
       "Becomes grandmaster when GPS fails",
       "Terminates PTP and starts a new domain",
       "Adds its residence time to a correction field",
-      "Blocks Sync messages arriving on access ports"
+      "Blocks Sync messages on access ports"
     ],
     "correct": 2,
     "explanation": "A transparent clock measures how long each PTP event message stayed inside the switch and writes it into the correctionField, so queuing delay does not spoil accuracy. A boundary clock instead terminates and regenerates PTP.",
@@ -966,7 +966,7 @@
     "options": [
       "No data loss, but redundancy is gone until B is fixed",
       "Every frame is now delivered twice",
-      "The IED stops sending on both LANs until LAN B returns",
+      "The IED stops sending on both LANs until B is back",
       "PRP automatically converts to HSR mode"
     ],
     "correct": 0,
@@ -1006,7 +1006,7 @@
       "It uses fiber only and cannot run on copper",
       "It needs a Wi-Fi controller for every segment",
       "Slaves process the frame on the fly as it passes through",
-      "It relies on TCP retransmissions to keep its cycle timing"
+      "It relies on TCP retransmissions for timing"
     ],
     "correct": 2,
     "explanation": "In EtherCAT one frame travels through all slaves, each reading and inserting its data on the fly in hardware before forwarding it. Ordinary switches would break this processing chain.",

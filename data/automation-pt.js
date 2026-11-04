@@ -16,9 +16,9 @@ window.QUIZ_BANK = [
   {
     "question": "Em Python, o que devolve json.loads() para o texto '{\"vlan\": 10, \"name\": \"users\"}'?",
     "options": [
-      "Uma lista com duas strings separadas",
+      "Uma lista com duas strings",
       "Um dict com as chaves vlan e name",
-      "O elemento raiz de uma ElementTree XML",
+      "A raiz de uma ElementTree XML",
       "Uma só string sem as aspas"
     ],
     "correct": 1,
@@ -130,7 +130,7 @@ window.QUIZ_BANK = [
     "options": [
       "Histórico completo, para repor qualquer versão anterior",
       "Código automaticamente livre de erros",
-      "Servidores que deixam de precisar de cópias de segurança",
+      "Servidores que já não precisam de backups",
       "Execução mais rápida do programa compilado"
     ],
     "correct": 0,
@@ -212,9 +212,9 @@ window.QUIZ_BANK = [
   {
     "question": "O que mostra o git diff sem argumentos?",
     "options": [
-      "O autor de cada linha de um ficheiro",
+      "O autor de cada linha",
       "A lista de todos os ramos remotos",
-      "Os commits que só existem no remoto",
+      "Os commits que só estão no remoto",
       "As alterações ainda fora de staging"
     ],
     "correct": 3,
@@ -354,7 +354,7 @@ window.QUIZ_BANK = [
     "options": [
       "Mudar o método para GET e reenviar",
       "Enviar vlanId como número: {\"vlanId\": 20}",
-      "Acrescentar um segundo cabeçalho Authorization",
+      "Pôr um segundo cabeçalho Authorization",
       "Esperar o Retry-After e voltar a enviar"
     ],
     "correct": 1,
@@ -437,7 +437,7 @@ window.QUIZ_BANK = [
     "question": "Em que difere uma API em estilo RPC de uma API REST?",
     "options": [
       "O RPC chama ações com nome; o REST atua sobre recursos com verbos HTTP",
-      "O RPC só consegue transportar XML e o REST só consegue transportar JSON",
+      "O RPC só transporta XML e o REST só transporta JSON",
       "O RPC é sempre sem estado; o REST mantém sempre sessões",
       "O RPC não precisa de protocolo de transporte"
     ],
@@ -663,7 +663,7 @@ window.QUIZ_BANK = [
       "Um gestor aprova cada linha por e-mail",
       "O código é compilado e correm testes automáticos",
       "Os servidores de produção são reiniciados",
-      "O histórico do repositório é reduzido a um só commit"
+      "O histórico é reduzido a um só commit"
     ],
     "correct": 1,
     "explanation": "A integração contínua compila e testa cada alteração automaticamente; a entrega/implementação contínua promove depois os artefactos que passam.",
@@ -676,7 +676,7 @@ window.QUIZ_BANK = [
     "options": [
       "print(resultado == esperado)",
       "self.assertEqual(resultado, esperado)",
-      "self.assert_called_once_with(esperado)",
+      "mock.assert_called_with(esperado)",
       "self.skipTest(esperado)"
     ],
     "correct": 1,
@@ -717,7 +717,7 @@ window.QUIZ_BANK = [
     "question": "Que comando arranca um contentor a partir da imagem nginx e liga a porta 8080 do anfitrião à porta 80 do contentor?",
     "options": [
       "docker pull nginx:8080",
-      "docker build -p 80:8080 nginx",
+      "docker build -t 8080 nginx",
       "docker run -p 8080:80 nginx",
       "docker exec 8080 nginx"
     ],
@@ -745,7 +745,7 @@ window.QUIZ_BANK = [
     "question": "O que faz um reverse proxy à frente de uma aplicação web?",
     "options": [
       "Guarda as tabelas da base de dados da aplicação",
-      "Traduz IP privados só para a navegação de saída dos utilizadores internos",
+      "Traduz IP privados na navegação de saída dos utilizadores",
       "Resolve nomes de anfitrião em endereços IP para os clientes",
       "Recebe os pedidos dos clientes e encaminha-os para os servidores internos"
     ],
@@ -941,8 +941,8 @@ window.QUIZ_BANK = [
     "question": "O que faz o terraform plan?",
     "options": [
       "Apaga o ficheiro de estado e reconstrói-o do zero",
-      "Aplica todas as alterações pendentes nos equipamentos sem perguntar",
-      "Descarrega todos os plugins de provider de que a configuração precisa",
+      "Aplica as alterações pendentes sem perguntar",
+      "Descarrega os plugins de provider necessários",
       "Compara a configuração com o estado e mostra as mudanças que faria"
     ],
     "correct": 3,
@@ -1066,7 +1066,7 @@ window.QUIZ_BANK = [
   {
     "question": "Um script Python de inventário tem de ler os números de série de 300 switches depressa. Que alteração ajuda mais?",
     "options": [
-      "Acrescentar time.sleep(1) entre cada tentativa de ligação",
+      "Pôr time.sleep(1) entre cada ligação",
       "Correr as sessões em paralelo com uma pool de threads",
       "Imprimir saída de debug para cada byte recebido",
       "Aumentar a chave SSH de 2048 para 4096 bits"
@@ -1094,10 +1094,10 @@ window.QUIZ_BANK = [
   {
     "question": "O negócio quer que cada mudança seja revista, repetível e auditável em 2000 equipamentos. Que abordagem cumpre melhor isto?",
     "options": [
-      "Uma folha de cálculo partilhada com excertos de CLI para colar",
+      "Uma folha de cálculo com excertos de CLI para colar",
       "Scripts Python avulsos guardados no portátil de um engenheiro",
       "Infraestrutura como código com revisão em Git e pipeline CI/CD",
-      "Operações SNMP SET disparadas de uma ferramenta de monitorização"
+      "Operações SNMP SET lançadas pela monitorização"
     ],
     "correct": 2,
     "explanation": "A IaC coloca a intenção no controlo de versões com merge requests, histórico e testes automáticos, o que dá revisão, repetibilidade e auditoria.",
@@ -1208,7 +1208,7 @@ window.QUIZ_BANK = [
     "options": [
       "git cherry-pick a1b2c3 no release-2",
       "git merge develop para o release-2",
-      "git rebase release-2 sobre o develop",
+      "git rebase release-2 sobre develop",
       "git revert a1b2c3 no develop"
     ],
     "correct": 0,
@@ -1417,7 +1417,7 @@ window.QUIZ_BANK = [
     "question": "Num docker-compose.yml, o que faz 'volumes: - ./db:/var/lib/postgresql/data' num serviço?",
     "options": [
       "Monta a pasta do anfitrião ./db no caminho do contentor",
-      "Copia os dados do contentor para ./db só durante o build",
+      "Copia os dados do contentor para ./db só no build",
       "Limita a base de dados ao tamanho de ./db",
       "Cria uma nova rede Docker chamada db"
     ],
@@ -1472,10 +1472,10 @@ window.QUIZ_BANK = [
   {
     "question": "Numa lista YANG com chave \"name\", como se representa uma entrada em JSON (RFC 7951)?",
     "options": [
-      "Uma string JSON que junta todas as folhas com vírgulas",
+      "Uma string JSON com todas as folhas e vírgulas",
       "Um objeto dentro de um array JSON que inclui \"name\"",
       "Um elemento XML dentro de um campo string JSON",
-      "Um par chave-valor em que a chave é só o nome da lista"
+      "Um par chave-valor com só o nome da lista"
     ],
     "correct": 1,
     "explanation": "Uma lista YANG passa a um array JSON de objetos; cada objeto tem a folha chave e as restantes folhas. Os nomes de módulo prefixam os membros de topo.",
@@ -1517,7 +1517,7 @@ window.QUIZ_BANK = [
       "O dial-in usa traps SNMP e o dial-out usa syslog sobre UDP",
       "Dial-in: o coletor abre a sessão; dial-out: é o equipamento",
       "O dial-in é só para IOS XR e o dial-out é só para NX-OS",
-      "O dial-out não precisa de qualquer subscrição no equipamento"
+      "O dial-out não precisa de subscrição no equipamento"
     ],
     "correct": 1,
     "explanation": "No dial-in (p. ex. gNMI Subscribe, NETCONF) o recetor liga-se e subscreve; no dial-out o equipamento tem a subscrição e o recetor configurados e liga para fora.",
@@ -1530,7 +1530,7 @@ window.QUIZ_BANK = [
     "options": [
       "Telegraf, InfluxDB e Grafana",
       "Ansible, Jinja2 e NetBox",
-      "Git, GitLab e Docker Compose",
+      "Git, GitLab e Compose",
       "pyATS, Genie e Unicon"
     ],
     "correct": 0,
@@ -1586,7 +1586,7 @@ window.QUIZ_BANK = [
     "options": [
       "Os campos podem ser pesquisados e lidos de forma fiável",
       "Os logs JSON são sempre mais pequenos em disco",
-      "Os servidores syslog recusam mensagens em texto simples",
+      "Os servidores syslog recusam texto simples",
       "Dispensa as marcas temporais nos logs"
     ],
     "correct": 0,
@@ -1684,7 +1684,7 @@ window.QUIZ_BANK = [
     "options": [
       "Copiar a chave privada da raiz da CA para o controlador",
       "Pedir à CA uma chave privada e depois criar um CSR a partir dela",
-      "Instalar um certificado autoassinado e renomeá-lo como assinado por CA",
+      "Instalar um certificado autoassinado e renomeá-lo",
       "Gerar chaves e CSR, enviá-lo à CA e instalar o certificado assinado"
     ],
     "correct": 3,
