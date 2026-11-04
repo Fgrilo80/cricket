@@ -1,5 +1,11 @@
 # Changelog — Cricket / Cisco Quiz (web)
 
+## Pendente (PR) — 2026-11-04 · SD-Access: descrição baseada no ENSLD 300-420
+
+- O quiz `sda` ganha `descriptionPt`/`descriptionEn` no catálogo (`4.3.1`, campos opcionais): "Baseado nos tópicos SD-Access do exame ENSLD (300-420, tópicos 2.4–2.5). Não existe um exame SD-Access próprio da Cisco." / "Based on the SD-Access topics of the ENSLD exam (300-420, topics 2.4–2.5). Cisco has no standalone SD-Access exam."
+- `index.html`: o cartão SD-Access mostra a nota e o ecrã do quiz mostra a descrição do catálogo (na língua do quiz) por baixo do título.
+- Perguntas e contagens sem alterações (total 3764).
+
 ## v4.3.0 — 2026-11-03
 
 - **Rascunhos diários de 3 Nov publicados (6 pares PT/EN):** canal 3 nos 2,4 GHz sobreposto aos canais 1 e 5 (CCST, Fácil, `ccst-net` 3.2) · `ip helper-address` na interface errada em vez da Vlan30 (CCNA, Médio) · uRPF strict com encaminhamento assimétrico em dois ISPs → loose (CCNP, Difícil) · Sysmon 13 numa chave Run de HKCU com exe em AppData (Cyber, Médio, `cbrops` 3.5, `logs-ir`) · 4624 tipo 10 (RDP) com conta de serviço a partir de IP estrangeiro (Cyber, Médio, `cbrops` 3.5, `logs-ir`) · túnel DNS com consultas TXT a subdomínios aleatórios (Cyber, Difícil, `cbrops` 4.8, `logs-ir`).

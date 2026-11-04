@@ -1,5 +1,5 @@
 window.QUIZ_CATALOG = {
-  "version": "4.3.0",
+  "version": "4.3.1",
   "tracks": [
     {
       "id": "ccst",
@@ -410,6 +410,8 @@ window.QUIZ_CATALOG = {
       },
       "labelPt": "SD-Access (ENSLD 300-420, tópicos 2.4–2.5)",
       "labelEn": "SD-Access (ENSLD 300-420, topics 2.4–2.5)",
+      "descriptionPt": "Baseado nos tópicos SD-Access do exame ENSLD (300-420, tópicos 2.4–2.5). Não existe um exame SD-Access próprio da Cisco.",
+      "descriptionEn": "Based on the SD-Access topics of the ENSLD exam (300-420, topics 2.4–2.5). Cisco has no standalone SD-Access exam.",
       "badgePt": "SD-ACCESS",
       "badgeEn": "SD-ACCESS",
       "color": "emerald",
