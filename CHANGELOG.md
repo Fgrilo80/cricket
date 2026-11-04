@@ -1,5 +1,13 @@
 # Changelog — Cricket / Cisco Quiz (web)
 
+## v4.4.0 (PR pendente) — 2026-11-04 · Quiz WLCOR 350-101
+
+- **Novo quiz `wlcor`:** CCNP Wireless WLCOR — Core (350-101 v1.0), o novo core wireless (CCNP/CCIE Wireless). São 70 pares PT/EN originais com explicação, `exam: wlcor` e `domain` do blueprint oficial (https://learningnetwork.cisco.com/s/wlcor-exam-topics · PDF 350-101-WLCOR-v1.0).
+- Distribuição pelo peso do blueprint: 1.0 RF 11 · 2.0 802.11 7 · 3.0 Implementação 7 · 4.0 Operação 14 · 5.0 Conectividade de clientes 14 · 6.0 Monitorização 10 · 7.0 Automação e IA 7. Dificuldade: 12 Fácil · 48 Médio · 10 Difícil.
+- Resposta certa equilibrada (18/18/17/17 por posição). A certa é a opção mais longa em 22,9% (EN) e 21,4% (PT) dos casos, e nenhuma passa 1,5× a mediana.
+- Trilho `wireless` 125 → 195 por língua. Total do site **3764 → 3904**. Catálogo `4.4.0`, novo cartão no index.
+- Validação: schema, paridade PT/EN, semelhança máx. 0,76 (< 0,8) contra todo o banco, lint `question-bank-length` PASSED, unittest OK. `app-version.json` **não** foi alterado (bankTotal fica para o sync aprovado).
+
 ## v4.3.0 — 2026-11-03
 
 - **Rascunhos diários de 3 Nov publicados (6 pares PT/EN):** canal 3 nos 2,4 GHz sobreposto aos canais 1 e 5 (CCST, Fácil, `ccst-net` 3.2) · `ip helper-address` na interface errada em vez da Vlan30 (CCNA, Médio) · uRPF strict com encaminhamento assimétrico em dois ISPs → loose (CCNP, Difícil) · Sysmon 13 numa chave Run de HKCU com exe em AppData (Cyber, Médio, `cbrops` 3.5, `logs-ir`) · 4624 tipo 10 (RDP) com conta de serviço a partir de IP estrangeiro (Cyber, Médio, `cbrops` 3.5, `logs-ir`) · túnel DNS com consultas TXT a subdomínios aleatórios (Cyber, Difícil, `cbrops` 4.8, `logs-ir`).

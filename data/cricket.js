@@ -41818,6 +41818,986 @@ window.QUIZ_BANK = {
         "difficulty": "Difícil",
         "exam": "wlsi",
         "domain": "8.3"
+      },
+      {
+        "question": "Um sinal Wi-Fi atravessa uma parede grossa de betão e sai muito mais fraco. Que efeito é este?",
+        "options": [
+          "Absorção",
+          "Reflexão",
+          "Difração",
+          "Dispersão"
+        ],
+        "correct": 0,
+        "explanation": "Materiais densos como o betão ou a água absorvem energia RF e transformam-na em calor, por isso o sinal atrás da parede é mais fraco.",
+        "difficulty": "Fácil",
+        "exam": "wlcor",
+        "domain": "1.1"
+      },
+      {
+        "question": "Num pavilhão cheio de estantes metálicas, um cliente recebe várias cópias atrasadas da mesma transmissão. O que se passa?",
+        "options": [
+          "Interferência cocanal de vizinhos",
+          "Perda em espaço livre com a distância",
+          "Multipercurso por reflexões no metal",
+          "Absorção pelas pessoas na sala"
+        ],
+        "correct": 2,
+        "explanation": "O metal reflete RF, por isso chegam cópias por caminhos e tempos diferentes (multipercurso). Os recetores MIMO tiram partido disso; rádios antigos sofrem com isso.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "1.1"
+      },
+      {
+        "question": "O que acontece à perda em espaço livre quando a distância entre o AP e o cliente duplica?",
+        "options": [
+          "Fica exatamente igual",
+          "Aumenta cerca de 3 dB",
+          "Aumenta cerca de 6 dB",
+          "Aumenta cerca de 10 dB"
+        ],
+        "correct": 2,
+        "explanation": "A perda em espaço livre cresce com 20·log10(distância), por isso duplicar a distância soma cerca de 6 dB de perda.",
+        "difficulty": "Fácil",
+        "exam": "wlcor",
+        "domain": "1.1"
+      },
+      {
+        "question": "Uma ficha técnica indica uma sensibilidade de receção de -92 dBm em MCS0. O que significa esse valor?",
+        "options": [
+          "O sinal mais forte antes de o rádio ficar saturado",
+          "O sinal mais fraco que descodifica a essa taxa",
+          "A potência de transmissão usada nos beacons",
+          "O ruído de fundo do canal atual"
+        ],
+        "correct": 1,
+        "explanation": "A sensibilidade de receção é o nível de sinal mais baixo a que o rádio ainda descodifica tramas a uma dada taxa; taxas mais altas exigem sinal mais forte.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "1.2.a"
+      },
+      {
+        "question": "Um cliente ouve o seu AP a -65 dBm e o ruído de fundo é de -92 dBm. Qual é a SNR?",
+        "options": [
+          "157 dB",
+          "27 dB",
+          "-27 dB",
+          "65 dB"
+        ],
+        "correct": 1,
+        "explanation": "A SNR é o sinal menos o ruído de fundo em dB: -65 - (-92) = 27 dB.",
+        "difficulty": "Fácil",
+        "exam": "wlcor",
+        "domain": "1.2.d"
+      },
+      {
+        "question": "Do ponto de vista do WLC, o que faz de um ponto de acesso um rogue?",
+        "options": [
+          "Usa um canal com mais de 40 MHz",
+          "É ouvido no ar mas não é gerido pelo WLC",
+          "Corre uma imagem mais recente que os outros",
+          "Tem mais clientes do que os outros AP"
+        ],
+        "correct": 1,
+        "explanation": "Um rogue é qualquer AP detetado no ar (ou na rede cablada) que não faz parte do sistema gerido; as regras classificam-no depois como amigável, malicioso ou não classificado.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "1.2.b"
+      },
+      {
+        "question": "Porque deve uma verificação de cobertura de voz usar como referência o cliente mais fraco?",
+        "options": [
+          "As ferramentas só suportam chips de telefone",
+          "Os portáteis ignoram os beacons dos AP",
+          "Os telefones fazem roaming sempre mais rápido",
+          "Equipamentos pequenos têm rádios mais fracos"
+        ],
+        "correct": 3,
+        "explanation": "Telefones e crachás costumam ter antenas mais pequenas e menos potência do que os portáteis, por isso a cobertura que os serve serve também os restantes.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "1.2.c"
+      },
+      {
+        "question": "Um rádio de AP transmite a 20 dBm, o cabo perde 3 dB e a antena tem 6 dBi de ganho. Qual é o EIRP?",
+        "options": [
+          "23 dBm",
+          "29 dBm",
+          "17 dBm",
+          "26 dBm"
+        ],
+        "correct": 0,
+        "explanation": "EIRP = potência de transmissão - perda no cabo + ganho da antena = 20 - 3 + 6 = 23 dBm.",
+        "difficulty": "Difícil",
+        "exam": "wlcor",
+        "domain": "1.3"
+      },
+      {
+        "question": "A potência de transmissão baixa de 100 mW para 25 mW. Qual é o tamanho desta mudança em dB?",
+        "options": [
+          "-75 dB",
+          "-3 dB",
+          "-6 dB",
+          "-4 dB"
+        ],
+        "correct": 2,
+        "explanation": "Cada redução para metade é cerca de -3 dB; 100 → 50 → 25 mW são duas reduções, logo cerca de -6 dB.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "1.3"
+      },
+      {
+        "question": "O que indica um ganho mais alto em dBi sobre uma antena?",
+        "options": [
+          "Concentra a energia em certas direções",
+          "Soma potência de transmissão ao rádio",
+          "Espalha a energia por igual em todas as direções",
+          "Baixa o ruído de fundo do canal"
+        ],
+        "correct": 0,
+        "explanation": "As antenas são passivas: o ganho vem de moldar o diagrama, por isso mais ganho significa um feixe mais estreito e concentrado, não mais potência.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "1.4"
+      },
+      {
+        "question": "Que antena serve para cobrir um corredor longo e estreito a partir de uma ponta?",
+        "options": [
+          "Uma Yagi ou patch direcional",
+          "Uma antena dipolo omnidirecional",
+          "Uma antena isotrópica",
+          "Uma antena omni de teto"
+        ],
+        "correct": 0,
+        "explanation": "As antenas direcionais enviam a maior parte da energia num eixo, o que serve um corredor longo; as omni desperdiçam energia para os lados.",
+        "difficulty": "Fácil",
+        "exam": "wlcor",
+        "domain": "1.4"
+      },
+      {
+        "question": "Que organização certifica a interoperabilidade dos produtos Wi-Fi e definiu o WPA3?",
+        "options": [
+          "A Wi-Fi Alliance",
+          "O grupo de trabalho IEEE 802.11",
+          "O setor de rádio da ITU (ITU-R)",
+          "A FCC nos Estados Unidos"
+        ],
+        "correct": 0,
+        "explanation": "O IEEE escreve a norma 802.11, mas é a Wi-Fi Alliance que certifica a interoperabilidade e define programas como o WPA3 e o Wi-Fi 6/7.",
+        "difficulty": "Fácil",
+        "exam": "wlcor",
+        "domain": "2.1.c"
+      },
+      {
+        "question": "Quem define os canais permitidos e o EIRP máximo para Wi-Fi num dado país?",
+        "options": [
+          "A Wi-Fi Alliance, através da certificação",
+          "O IEEE, através de cada emenda 802.11",
+          "O regulador regional, como a FCC ou o ETSI",
+          "O fabricante do AP, nos country codes"
+        ],
+        "correct": 2,
+        "explanation": "Os reguladores (FCC, ETSI/reguladores nacionais e outros) definem os canais e potências legais; os fabricantes só os aplicam nos country codes.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "2.1.a"
+      },
+      {
+        "question": "Que banda oferece mais canais de 20 MHz sem sobreposição para Wi-Fi?",
+        "options": [
+          "900 MHz",
+          "5 GHz",
+          "2,4 GHz",
+          "6 GHz"
+        ],
+        "correct": 3,
+        "explanation": "Onde é permitida, a banda de 6 GHz acrescenta até 1200 MHz de espetro (59 canais de 20 MHz), muito mais do que 5 GHz ou os 3 canais limpos de 2,4 GHz.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "2.2.b"
+      },
+      {
+        "question": "O que faz a parte DCA do RRM da Cisco?",
+        "options": [
+          "Atribui canais aos AP para cortar interferência",
+          "Define a potência de transmissão de cada AP",
+          "Encontra buracos de cobertura com dados dos clientes",
+          "Distribui os clientes pelos vários AP"
+        ],
+        "correct": 0,
+        "explanation": "O Dynamic Channel Assignment escolhe canais para cada AP para reduzir interferência cocanal e outra; o TPC trata da potência e o CHD dos buracos de cobertura.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "2.2.c"
+      },
+      {
+        "question": "Porque é que os clientes longe do AP acabam por usar taxas de dados mais baixas?",
+        "options": [
+          "O AP limita os clientes distantes para poupar tempo de antena",
+          "Uma SNR mais baixa só aguenta modulação e codificação mais simples",
+          "Taxas mais altas pedem sempre um canal mais largo",
+          "Os clientes distantes passam de OFDM para FHSS"
+        ],
+        "correct": 1,
+        "explanation": "Modulações densas como 1024-QAM precisam de SNR alta; à medida que a SNR cai com a distância, a adaptação de taxa passa a modulação mais simples e codificação mais forte.",
+        "difficulty": "Difícil",
+        "exam": "wlcor",
+        "domain": "2.3.a"
+      },
+      {
+        "question": "Qual é uma característica-chave do Multi-Link Operation (MLO) no Wi-Fi 7?",
+        "options": [
+          "Usar ligações em várias bandas ao mesmo tempo",
+          "Os AP partilham um canal com todos os vizinhos",
+          "Substitui o OFDMA por uma nova modulação",
+          "Agrega os uplinks Ethernet do AP"
+        ],
+        "correct": 0,
+        "explanation": "Com MLO um equipamento multi-link envia e recebe por ligações em bandas diferentes (por exemplo 5 e 6 GHz) em simultâneo ou alterna depressa entre elas.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "2.3.c"
+      },
+      {
+        "question": "Um ACK 802.11 ou uma troca RTS/CTS pertence a que tipo de trama?",
+        "options": [
+          "Tramas de controlo",
+          "Tramas de gestão",
+          "Tramas de dados",
+          "Tramas de extensão"
+        ],
+        "correct": 0,
+        "explanation": "ACK, RTS, CTS e Block Ack são tramas de controlo; beacons e probes são tramas de gestão.",
+        "difficulty": "Fácil",
+        "exam": "wlcor",
+        "domain": "2.3.e"
+      },
+      {
+        "question": "Numa fabric wireless SD-Access, como saem os dados dos clientes do AP de fabric?",
+        "options": [
+          "Num túnel GRE para o border",
+          "Num túnel CAPWAP para o WLC",
+          "Em VXLAN para o edge da fabric",
+          "Num trunk de camada 2 para o core"
+        ],
+        "correct": 2,
+        "explanation": "Os AP de fabric mantêm o CAPWAP com o WLC para controlo, mas os dados dos clientes seguem em VXLAN para o edge node, como o tráfego cablado.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "3.1.a"
+      },
+      {
+        "question": "Numa rede mesh Cisco, o que é um Root AP (RAP)?",
+        "options": [
+          "Um AP mesh com ligação cablada à rede",
+          "Um AP mesh ligado só pelo ar",
+          "Um AP que só serve clientes interiores",
+          "Um WLC usado só para AP mesh"
+        ],
+        "correct": 0,
+        "explanation": "O RAP tem o uplink cablado e é a raiz da árvore mesh; os Mesh AP (MAP) chegam a ele por backhaul sem fios.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "3.1.b"
+      },
+      {
+        "question": "Com AP em modo local e comutação central, onde são comutadas as tramas de dados dos clientes?",
+        "options": [
+          "No AP, para a sua própria VLAN",
+          "No WLC, depois de um túnel CAPWAP",
+          "No switch de acesso mais próximo via VXLAN",
+          "No dashboard na cloud"
+        ],
+        "correct": 1,
+        "explanation": "Em modo local o AP envia os dados dos clientes num túnel CAPWAP até ao WLC, que os coloca na VLAN do cliente.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "3.1.c"
+      },
+      {
+        "question": "Numa rede wireless Meraki gerida pela cloud, o que trata o dashboard na cloud?",
+        "options": [
+          "Só as verificações RADIUS dos utilizadores",
+          "Todo o tráfego de dados dos clientes da WLAN",
+          "Gestão e monitorização, não dados dos clientes",
+          "Só os downloads de firmware dos AP"
+        ],
+        "correct": 2,
+        "explanation": "O Meraki usa gestão na cloud fora de banda: a configuração e a monitorização vão para a cloud e o tráfego dos utilizadores fica na rede local.",
+        "difficulty": "Fácil",
+        "exam": "wlcor",
+        "domain": "3.1.d"
+      },
+      {
+        "question": "Um AP precisa de PoE 802.3bt para ligar todos os rádios. O que pode acontecer numa porta 802.3af?",
+        "options": [
+          "Puxa mais potência pelos pares de dados do cabo",
+          "Funciona sempre na potência máxima",
+          "Recusa arrancar e nunca se junta",
+          "Pode funcionar com alguns rádios desligados"
+        ],
+        "correct": 3,
+        "explanation": "Com PoE insuficiente muitos AP arrancam em modo reduzido (rádios, USB ou fluxos espaciais desligados), por isso verifica o orçamento e a classe do switch.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "3.2"
+      },
+      {
+        "question": "Um AP FlexConnect comuta localmente várias WLAN numa filial. Como costuma estar a porta do switch?",
+        "options": [
+          "Em trunk com as VLAN das WLAN",
+          "Em acesso numa VLAN de clientes",
+          "Como porta routed sem VLAN",
+          "Num port-channel para o WLC"
+        ],
+        "correct": 0,
+        "explanation": "Com comutação local o AP marca cada WLAN na sua VLAN, por isso a porta do switch é trunk, muitas vezes com a VLAN de gestão do AP como nativa.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "3.2"
+      },
+      {
+        "question": "Que porta tem de ser permitida dos AP para o WLC para o tráfego de controlo CAPWAP?",
+        "options": [
+          "UDP 1812",
+          "UDP 5247",
+          "TCP 443",
+          "UDP 5246"
+        ],
+        "correct": 3,
+        "explanation": "O CAPWAP usa UDP 5246 para controlo e UDP 5247 para dados; as firewalls entre os AP e o WLC têm de permitir ambas.",
+        "difficulty": "Difícil",
+        "exam": "wlcor",
+        "domain": "3.3"
+      },
+      {
+        "question": "Durante a configuração Day-0 de um Catalyst 9800, o que tem de existir antes de os AP se poderem juntar?",
+        "options": [
+          "Uma licença Meraki registada no dashboard",
+          "Uma âncora de convidados na DMZ para todas as WLAN",
+          "Uma interface de gestão wireless",
+          "Um site no Catalyst Center para cada AP"
+        ],
+        "correct": 2,
+        "explanation": "Os AP criam o CAPWAP para a wireless management interface (WMI), por isso tem de ter um IP alcançável pelos AP; o resto é opcional no Day 0.",
+        "difficulty": "Fácil",
+        "exam": "wlcor",
+        "domain": "4.1"
+      },
+      {
+        "question": "Um AP está numa sub-rede diferente da do WLC e o DHCP não tem a opção 43. Que método ainda o pode ajudar a encontrar o WLC?",
+        "options": [
+          "A resolução DNS de CISCO-CAPWAP-CONTROLLER",
+          "Um broadcast CAPWAP de camada 2",
+          "Uma mensagem LLDP do WLC",
+          "Um pedido ARP pelo MAC do WLC"
+        ],
+        "correct": 0,
+        "explanation": "Se o AP recebe um servidor DNS e domínio por DHCP, resolve CISCO-CAPWAP-CONTROLLER.<domínio>; o broadcast de camada 2 só funciona na mesma sub-rede.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "4.2"
+      },
+      {
+        "question": "O que dá a opção 43 do DHCP a um AP durante o processo de adesão?",
+        "options": [
+          "O country code do AP",
+          "Os IP de gestão dos WLC",
+          "Os SSID que o AP deve emitir",
+          "O gateway por omissão do AP"
+        ],
+        "correct": 1,
+        "explanation": "A opção 43 transporta dados do fabricante; nos AP Cisco indica os IP de gestão dos WLC para onde enviar os pedidos de descoberta CAPWAP.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "4.2"
+      },
+      {
+        "question": "Depois de a sessão DTLS estar ativa, a imagem do AP é diferente da do WLC. O que acontece a seguir?",
+        "options": [
+          "O WLC atualiza-se para igualar o AP",
+          "O AP descarrega a imagem do WLC e reinicia",
+          "O AP junta-se e mantém a sua imagem",
+          "O AP passa para modo sniffer"
+        ],
+        "correct": 1,
+        "explanation": "Os AP têm de correr a imagem que corresponde ao controlador, por isso depois do join request o AP descarrega-a, reinicia e volta a juntar-se.",
+        "difficulty": "Difícil",
+        "exam": "wlcor",
+        "domain": "4.2"
+      },
+      {
+        "question": "Que modo de AP usa os rádios só para procurar rogues e ataques, sem servir clientes?",
+        "options": [
+          "Modo bridge",
+          "Modo local",
+          "Modo FlexConnect",
+          "Modo monitor"
+        ],
+        "correct": 3,
+        "explanation": "Em modo monitor o AP não serve clientes e percorre todos os canais à procura de rogues, assinaturas wIPS e localização.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "4.3"
+      },
+      {
+        "question": "Um AP de filial tem de continuar a comutar localmente o tráfego se a WAN para o WLC falhar. Que modo serve?",
+        "options": [
+          "Modo local com comutação central",
+          "FlexConnect com comutação local",
+          "Modo sniffer",
+          "Modo monitor com wIPS"
+        ],
+        "correct": 1,
+        "explanation": "O FlexConnect com comutação local mantém os clientes existentes (e, com autenticação local, os novos) a funcionar em modo standalone quando o WLC não responde.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "4.3"
+      },
+      {
+        "question": "Para que serve um AP em modo sniffer?",
+        "options": [
+          "Servir clientes em todos os canais ao mesmo tempo",
+          "Capturar tramas num canal para análise",
+          "Ligar dois edifícios pelo ar",
+          "Fazer análise de espetro só em 6 GHz"
+        ],
+        "correct": 1,
+        "explanation": "Um AP em modo sniffer captura tramas 802.11 num canal escolhido e envia-as para um anfitrião com uma ferramenta como o Wireshark.",
+        "difficulty": "Fácil",
+        "exam": "wlcor",
+        "domain": "4.3"
+      },
+      {
+        "question": "Num Catalyst 9800, que objeto associa um perfil de WLAN a um perfil de política?",
+        "options": [
+          "A site tag",
+          "A policy tag",
+          "A RF tag",
+          "O AP join profile"
+        ],
+        "correct": 1,
+        "explanation": "A policy tag junta perfis de WLAN com perfis de política; a site tag e a RF tag definem as opções de join/flex e de rádio.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "4.4"
+      },
+      {
+        "question": "Num Catalyst 9800, o que define a site tag para um AP?",
+        "options": [
+          "O seu endereço IP de gestão",
+          "As WLAN que o AP vai emitir",
+          "Os perfis RF de cada uma das bandas",
+          "O AP join profile e o Flex profile"
+        ],
+        "correct": 3,
+        "explanation": "A site tag contém o AP join profile e, em sites remotos, o Flex profile; as WLAN vêm da policy tag e as opções de rádio da RF tag.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "4.4"
+      },
+      {
+        "question": "Uma WLAN é configurada para esconder o SSID nos beacons. Qual é o efeito real na segurança?",
+        "options": [
+          "Todo o tráfego passa a ser cifrado",
+          "Os clientes deixam de ser capturados",
+          "Pouco; os probes revelam-no",
+          "A WLAN passa a ser só WPA3"
+        ],
+        "correct": 2,
+        "explanation": "Os clientes continuam a enviar o SSID nos probe requests e nas tramas de associação, por isso um sniffer descobre-o depressa; usa antes autenticação forte.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "4.4"
+      },
+      {
+        "question": "O ISE devolve uma VLAN e o nome de uma ACL após 802.1X. O que tem de estar ativo no perfil de política do 9800 para as aplicar?",
+        "options": [
+          "AAA override",
+          "Bloqueio peer-to-peer",
+          "Aironet IE",
+          "Exclusão de clientes"
+        ],
+        "correct": 0,
+        "explanation": "O AAA override deixa os atributos RADIUS (VLAN, ACL, QoS, session timeout) substituírem os valores definidos no perfil de política.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "4.5"
+      },
+      {
+        "question": "Um MDM está integrado com o ISE para BYOD. O que pode o ISE fazer com o estado MDM de um equipamento?",
+        "options": [
+          "Cifrar o túnel de dados CAPWAP desse equipamento",
+          "Mudar o plano de canais dos AP no piso",
+          "Limitar equipamentos não conformes até serem corrigidos",
+          "Dar ao equipamento um IP estático do MDM"
+        ],
+        "correct": 2,
+        "explanation": "O ISE consulta o MDM sobre a conformidade (por exemplo PIN ou cifra) e pode dar aos equipamentos não conformes uma política restrita ou de correção.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "4.5"
+      },
+      {
+        "question": "O que faz a exclusão de clientes num WLC depois de falhas 802.1X repetidas?",
+        "options": [
+          "Bloqueia o cliente durante um tempo",
+          "Passa o cliente para o SSID de convidados",
+          "Repõe a password do cliente no AD",
+          "Desliga a WLAN para todos os utilizadores"
+        ],
+        "correct": 0,
+        "explanation": "A exclusão de clientes (blocklist) põe o MAC do cliente numa lista temporária de bloqueio após falhas repetidas, protegendo o WLC e o RADIUS.",
+        "difficulty": "Difícil",
+        "exam": "wlcor",
+        "domain": "4.5"
+      },
+      {
+        "question": "É preciso limitar o débito por cliente numa WLAN de convidados. Onde se define isto num Catalyst 9800?",
+        "options": [
+          "No AP join profile",
+          "No perfil RF de cada uma das bandas do AP",
+          "Nas opções QoS do perfil de política",
+          "Só no switch de acesso a montante"
+        ],
+        "correct": 2,
+        "explanation": "As políticas QoS por cliente e por SSID, incluindo limites de débito, aplicam-se na secção QoS do perfil de política.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "4.5"
+      },
+      {
+        "question": "No 802.1X numa WLAN, que papel tem o WLC?",
+        "options": [
+          "Fonte de identidades",
+          "Suplicante",
+          "Servidor de autenticação",
+          "Autenticador"
+        ],
+        "correct": 3,
+        "explanation": "O cliente é o suplicante, o WLC é o autenticador que passa o EAP em RADIUS e o ISE é o servidor de autenticação.",
+        "difficulty": "Fácil",
+        "exam": "wlcor",
+        "domain": "5.1"
+      },
+      {
+        "question": "O ISE é o servidor RADIUS de uma WLAN. Que portas se usam normalmente para autenticação e accounting?",
+        "options": [
+          "Só UDP 1645",
+          "UDP 1812 e 1813",
+          "TCP 49 e 443",
+          "UDP 5246 e 5247"
+        ],
+        "correct": 1,
+        "explanation": "O RADIUS normal usa UDP 1812 para autenticação e 1813 para accounting (1645/1646 são antigas). TCP 49 é TACACS+.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "5.1"
+      },
+      {
+        "question": "Que método EAP exige certificados no cliente e no servidor?",
+        "options": [
+          "PEAP-MSCHAPv2",
+          "EAP-TLS",
+          "EAP-FAST",
+          "LEAP"
+        ],
+        "correct": 1,
+        "explanation": "O EAP-TLS usa autenticação mútua por certificados; o PEAP e o EAP-FAST só precisam de certificado do servidor ou PAC e uma password dentro do túnel.",
+        "difficulty": "Difícil",
+        "exam": "wlcor",
+        "domain": "5.1"
+      },
+      {
+        "question": "O que dá o Enhanced Open (OWE) a um SSID aberto de convidados?",
+        "options": [
+          "Filtragem MAC de todos os clientes",
+          "Um portal cativo por utilizador",
+          "802.1X com certificados de convidado",
+          "Cifra sem password"
+        ],
+        "correct": 3,
+        "explanation": "O Opportunistic Wireless Encryption faz uma troca Diffie-Hellman na associação, por isso cada cliente tem tráfego cifrado sem password.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "5.2"
+      },
+      {
+        "question": "Uma WLAN no 9800 está configurada com Local EAP. Onde são verificadas as credenciais?",
+        "options": [
+          "No diretório Meraki na cloud",
+          "No AP, com uma chave RADIUS em cache",
+          "No próprio WLC, sem RADIUS externo",
+          "No porta-chaves do próprio cliente"
+        ],
+        "correct": 2,
+        "explanation": "O Local EAP faz do controlador o servidor EAP, com utilizadores locais ou LDAP, o que ajuda em sites pequenos ou como reserva do RADIUS.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "5.2"
+      },
+      {
+        "question": "Um portátil Windows é configurado para uma WLAN PEAP. O que deve o perfil validar?",
+        "options": [
+          "A community SNMP do WLC",
+          "O endereço MAC do AP",
+          "O certificado do servidor RADIUS",
+          "O tempo de concessão do DHCP"
+        ],
+        "correct": 2,
+        "explanation": "Validar o certificado do servidor (e a sua CA e nome) impede os utilizadores de enviar credenciais para um AP falso com RADIUS próprio.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "5.3"
+      },
+      {
+        "question": "Muitos telefones usam agora um MAC aleatório por SSID. O que é que isto estraga?",
+        "options": [
+          "802.1X com certificados EAP-TLS",
+          "Políticas baseadas no MAC",
+          "Roaming rápido com 802.11r",
+          "DHCP em redes IPv6 dual-stack"
+        ],
+        "correct": 1,
+        "explanation": "A aleatorização do MAC estraga o MAB, o profiling por MAC e o registo de equipamentos de convidados, por isso prefere métodos baseados na identidade.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "5.3"
+      },
+      {
+        "question": "O que acelera o 802.11r (Fast Transition) quando um cliente faz roaming?",
+        "options": [
+          "A troca de chaves, com chaves derivadas antes",
+          "A renovação DHCP no novo AP",
+          "A procura de canais antes do roaming",
+          "A atualização ARP para o gateway"
+        ],
+        "correct": 0,
+        "explanation": "O FT deixa o cliente e o AP de destino derivar as chaves antes, por isso o roaming não precisa de 802.1X completo nem de um 4-way handshake à parte.",
+        "difficulty": "Difícil",
+        "exam": "wlcor",
+        "domain": "5.4"
+      },
+      {
+        "question": "Em que ajuda o 802.11k um cliente?",
+        "options": [
+          "Mudar sozinho para outro SSID",
+          "Cifrar as suas tramas de gestão",
+          "Passar para uma banda menos cheia",
+          "Receber a lista de AP vizinhos"
+        ],
+        "correct": 3,
+        "explanation": "Os neighbour reports do 802.11k dizem ao cliente que AP e canais próximos procurar, por isso encontra mais depressa o destino do roaming.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "5.4"
+      },
+      {
+        "question": "Num roaming de camada 3 entre dois WLC, o que mantém o WLC original (âncora)?",
+        "options": [
+          "O ponto de presença IP do cliente",
+          "O AP que o cliente acabou de deixar",
+          "A nova concessão DHCP do cliente",
+          "A emissão do SSID do cliente"
+        ],
+        "correct": 0,
+        "explanation": "O WLC âncora mantém o IP e o ponto de presença de política do cliente; o WLC foreign envia-lhe o tráfego do cliente por túnel, por isso o IP não muda.",
+        "difficulty": "Difícil",
+        "exam": "wlcor",
+        "domain": "5.4"
+      },
+      {
+        "question": "O que faz um controlador âncora de convidados na DMZ?",
+        "options": [
+          "Termina o tráfego de convidados na DMZ",
+          "Guarda a base de dados dos funcionários",
+          "Corre o RRM de todos os AP",
+          "Assina os certificados dos AP"
+        ],
+        "correct": 0,
+        "explanation": "O tráfego de convidados segue por túnel dos WLC foreign até à âncora na DMZ, ficando fora da rede interna.",
+        "difficulty": "Fácil",
+        "exam": "wlcor",
+        "domain": "5.5"
+      },
+      {
+        "question": "Numa WLAN de convidados com central web authentication do ISE, o que faz o WLC primeiro?",
+        "options": [
+          "Envia o cliente para o DHCP da âncora",
+          "Pede ao cliente um certificado EAP-TLS válido",
+          "Dá logo acesso total à internet",
+          "Redireciona o cliente para o portal do ISE"
+        ],
+        "correct": 3,
+        "explanation": "Depois do MAB o ISE devolve um URL de redirecionamento e uma ACL; o WLC redireciona o tráfego web para o portal do ISE até o convidado entrar e seguir-se um CoA.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "5.5"
+      },
+      {
+        "question": "Porque é que as WLAN de convidados com CWA costumam ativar filtragem MAC (MAB) para o ISE?",
+        "options": [
+          "Para o AP saltar o DHCP",
+          "Para os convidados não precisarem de endereço IP",
+          "Para o tráfego ser cifrado com WPA3",
+          "Para o ISE devolver o URL de redirecionamento"
+        ],
+        "correct": 3,
+        "explanation": "O pedido MAB é a forma de o ISE ver o convidado e devolver o URL de redirecionamento e a ACL usados na central web auth.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "5.5"
+      },
+      {
+        "question": "Que funcionalidade deixa cada equipamento numa WLAN PSK ter a sua própria chave, com o ISE?",
+        "options": [
+          "Opportunistic key caching",
+          "WPA2 com cifras TKIP e AES",
+          "Identity PSK (iPSK)",
+          "Proteção de tramas 802.11w"
+        ],
+        "correct": 2,
+        "explanation": "Com iPSK o ISE devolve uma PSK por equipamento ou por grupo em RADIUS após a autenticação MAC, por isso um SSID pode usar muitas chaves.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "5.2"
+      },
+      {
+        "question": "Que método atualiza um par SSO de Catalyst 9800 com menos tempo de paragem dos clientes?",
+        "options": [
+          "Reposição de fábrica e restauro da config",
+          "Reinício a frio das duas unidades juntas",
+          "Envio por TFTP da imagem de cada AP à mão",
+          "ISSU (atualização em serviço)"
+        ],
+        "correct": 3,
+        "explanation": "O ISSU atualiza o standby, faz switchover e atualiza os AP em grupos rotativos, por isso o serviço continua durante a atualização.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "6.1"
+      },
+      {
+        "question": "Porque se faz o predownload da imagem dos AP antes de atualizar o WLC?",
+        "options": [
+          "Também atualiza os drivers dos clientes",
+          "Permite aos AP manter as configurações antigas depois",
+          "Elimina a necessidade de reiniciar os AP",
+          "Os AP trazem a imagem antes da janela de reinício"
+        ],
+        "correct": 3,
+        "explanation": "Com o predownload os AP já têm a nova imagem quando o WLC reinicia, por isso voltam a juntar-se depressa em vez de a descarregar um a um.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "6.1"
+      },
+      {
+        "question": "Na GUI do 9800, onde vês o RSSI, a SNR e a taxa de dados de um cliente?",
+        "options": [
+          "No log de arranque do controlador",
+          "No AP join profile do AP do cliente",
+          "Na RF tag do AP do cliente",
+          "Em Monitoring, nos detalhes do cliente"
+        ],
+        "correct": 3,
+        "explanation": "Em Monitoring > Wireless > Clients, nos detalhes do cliente, vês o RSSI, a SNR, a taxa de dados, o AP e o estado de segurança.",
+        "difficulty": "Fácil",
+        "exam": "wlcor",
+        "domain": "6.2"
+      },
+      {
+        "question": "O que oferece o Intelligent Capture no Catalyst Center?",
+        "options": [
+          "Cópia automática da configuração do WLC",
+          "Dados detalhados de pacotes e RF de um cliente",
+          "Relatórios de uso de licenças por site",
+          "Novas imagens de AP enviadas de noite"
+        ],
+        "correct": 1,
+        "explanation": "O Intelligent Capture envia do AP para o Catalyst Center eventos de entrada, pacotes e estatísticas RF dos clientes, para troubleshooting a fundo.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "6.2"
+      },
+      {
+        "question": "Um cliente associa-se mas recebe um endereço 169.254.x.x. O que deves verificar primeiro?",
+        "options": [
+          "A largura de canal em 5 GHz",
+          "O DHCP na VLAN do cliente ou o relay",
+          "As opções 802.11r da WLAN",
+          "O segredo partilhado do RADIUS"
+        ],
+        "correct": 1,
+        "explanation": "Um endereço APIPA indica que a associação funcionou mas o DHCP falhou, por isso verifica o mapeamento de VLAN, o servidor DHCP e o relay (ip helper).",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "6.3"
+      },
+      {
+        "question": "Os clientes 802.1X falham e o WLC regista 'no response from RADIUS server'. Qual é uma causa comum?",
+        "options": [
+          "O tempo de concessão DHCP é curto",
+          "O SSID é emitido nos beacons",
+          "Um segredo RADIUS errado no WLC",
+          "O cliente usa um rádio de 5 GHz"
+        ],
+        "correct": 2,
+        "explanation": "O ISE descarta sem resposta pedidos com segredo partilhado errado ou de um IP de equipamento desconhecido, por isso o WLC não recebe resposta.",
+        "difficulty": "Difícil",
+        "exam": "wlcor",
+        "domain": "6.3"
+      },
+      {
+        "question": "Que funcionalidade do 9800 recolhe logs de debug condicionais para o MAC de um cliente?",
+        "options": [
+          "RadioActive tracing",
+          "Análise de espetro",
+          "Embedded packet capture",
+          "Amostragem NetFlow"
+        ],
+        "correct": 0,
+        "explanation": "O RadioActive (RA) tracing ativa logs detalhados ao nível de debug só para o MAC ou IP escolhido, em todos os processos do controlador.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "6.3"
+      },
+      {
+        "question": "O que acrescenta principalmente o Cisco Spaces a uma rede wireless?",
+        "options": [
+          "Encaminhamento entre WLC e core",
+          "Autenticação RADIUS para 802.1X",
+          "Gestão do orçamento PoE",
+          "Análise de localização e presença"
+        ],
+        "correct": 3,
+        "explanation": "O Cisco Spaces usa dados Wi-Fi (e BLE/IoT) dos controladores para dar localização, presença, ocupação e aplicações de negócio.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "6.4"
+      },
+      {
+        "question": "Como é que o ISE recebe do WLC o contexto dos clientes para profiling?",
+        "options": [
+          "Só por traps SNMP dos rádios dos AP",
+          "Por accounting RADIUS e probes DHCP/HTTP",
+          "Por syslog do sistema do cliente",
+          "Por CDP de cada cliente wireless"
+        ],
+        "correct": 1,
+        "explanation": "Com o device sensor e o accounting o WLC envia ao ISE atributos como opções DHCP e o user agent HTTP para profiling.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "6.4"
+      },
+      {
+        "question": "Qual é uma vantagem da redundância N+1 de WLC face ao SSO?",
+        "options": [
+          "Menor custo, um WLC de reserva para vários",
+          "Os clientes nunca se reautenticam na falha",
+          "Os AP nunca precisam de se voltar a juntar",
+          "Não precisa de WLC primário configurado"
+        ],
+        "correct": 0,
+        "explanation": "O N+1 partilha um WLC de reserva entre vários primários, mas os AP têm de se voltar a juntar e os clientes de se reautenticar na falha; o SSO mantém o estado.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "6.1"
+      },
+      {
+        "question": "Num script Python, o que devolve response.json() depois de um GET REST com a biblioteca requests?",
+        "options": [
+          "Uma lista dos cabeçalhos da resposta",
+          "O código de estado HTTP como int",
+          "Os bytes brutos de todo o fluxo TCP",
+          "O corpo convertido em objetos Python"
+        ],
+        "correct": 3,
+        "explanation": "O response.json() converte o corpo JSON em dicts e listas; status_code e headers são atributos à parte.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "7.1"
+      },
+      {
+        "question": "Que transporte e porta por omissão usa o NETCONF?",
+        "options": [
+          "SNMP na UDP 161",
+          "HTTPS na TCP 443",
+          "SSH na TCP 830",
+          "Telnet na TCP 23"
+        ],
+        "correct": 2,
+        "explanation": "O NETCONF corre sobre SSH na porta TCP 830; o RESTCONF é a alternativa baseada em HTTPS.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "7.2"
+      },
+      {
+        "question": "O que descreve um modelo YANG num Catalyst 9800?",
+        "options": [
+          "A ordem das tramas 802.11",
+          "A disposição física das antenas de cada AP",
+          "A cifra usada nos túneis CAPWAP",
+          "A estrutura dos dados de config e estado"
+        ],
+        "correct": 3,
+        "explanation": "O YANG define o modelo de dados (containers, listas, folhas) que o NETCONF e o RESTCONF usam para ler e mudar a configuração e o estado operacional.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "7.2"
+      },
+      {
+        "question": "Um script envia um GET para um URL RESTCONF do 9800 e recebe HTTP 401. O que está mal?",
+        "options": [
+          "O caminho do URL do recurso não existe",
+          "As credenciais faltam ou estão erradas",
+          "O WLC está sobrecarregado",
+          "O corpo JSON está mal formado"
+        ],
+        "correct": 1,
+        "explanation": "401 Unauthorized significa que a autenticação falhou; um caminho errado dá 404 e um corpo inválido dá 400.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "7.3"
+      },
+      {
+        "question": "O que usa o AI Network Analytics no Catalyst Center para levantar problemas wireless?",
+        "options": [
+          "Só traps SNMP dos switches",
+          "Limites fixos escritos por um admin",
+          "Referências aprendidas para cada rede",
+          "Amostragem ao acaso de um AP"
+        ],
+        "correct": 2,
+        "explanation": "O AI Network Analytics aprende o que é normal nessa rede (referências dinâmicas) e assinala desvios, em vez de usar só limites estáticos.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "7.4"
+      },
+      {
+        "question": "No Catalyst Center, em que ajudam os insights de problemas com IA um operador?",
+        "options": [
+          "Dispensar o WLC na rede",
+          "Encontrar causas e correções mais depressa",
+          "Escrever à mão a configuração de cada AP",
+          "Desligar a banda de 2,4 GHz em todo o lado"
+        ],
+        "correct": 1,
+        "explanation": "A assurance com IA agrupa sintomas, aponta a causa provável e sugere próximos passos, o que reduz o tempo de troubleshooting.",
+        "difficulty": "Médio",
+        "exam": "wlcor",
+        "domain": "7.5"
+      },
+      {
+        "question": "Em que difere o AI-RRM do RRM tradicional no controlador?",
+        "options": [
+          "Desliga por completo o DCA e o TPC",
+          "Corre só em cada AP, sem qualquer WLC",
+          "Usa análise na cloud de dados RF de longo prazo",
+          "Põe todos os AP no mesmo canal"
+        ],
+        "correct": 2,
+        "explanation": "O AI-RRM envia telemetria RF para análise de IA na cloud, que olha para janelas de tempo maiores e devolve ao controlador decisões RRM otimizadas.",
+        "difficulty": "Difícil",
+        "exam": "wlcor",
+        "domain": "7.6"
       }
     ],
     "en": [
@@ -43570,6 +44550,986 @@ window.QUIZ_BANK = {
         "difficulty": "Hard",
         "exam": "wlsi",
         "domain": "8.3"
+      },
+      {
+        "question": "A Wi-Fi signal passes through a thick concrete wall and comes out much weaker. Which effect is this?",
+        "options": [
+          "Absorption",
+          "Reflection",
+          "Diffraction",
+          "Scattering"
+        ],
+        "correct": 0,
+        "explanation": "Dense materials such as concrete or water absorb RF energy and turn it into heat, so the signal behind the wall is weaker.",
+        "difficulty": "Easy",
+        "exam": "wlcor",
+        "domain": "1.1"
+      },
+      {
+        "question": "In a hall full of metal shelving, a client receives several delayed copies of the same transmission. What is happening?",
+        "options": [
+          "Co-channel interference from neighbours",
+          "Free space path loss over distance",
+          "Multipath from reflections off metal surfaces",
+          "Absorption by the people in the room"
+        ],
+        "correct": 2,
+        "explanation": "Metal reflects RF, so copies arrive by different paths and at different times (multipath). MIMO receivers can use it, but older radios suffer from it.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "1.1"
+      },
+      {
+        "question": "What happens to free space path loss when the distance between AP and client doubles?",
+        "options": [
+          "It stays exactly the same",
+          "It increases by about 3 dB",
+          "It increases by about 6 dB",
+          "It increases by about 10 dB"
+        ],
+        "correct": 2,
+        "explanation": "Free space path loss grows with 20·log10(distance), so doubling the distance adds about 6 dB of loss.",
+        "difficulty": "Easy",
+        "exam": "wlcor",
+        "domain": "1.1"
+      },
+      {
+        "question": "A data sheet lists a receive sensitivity of -92 dBm at MCS0. What does that value mean?",
+        "options": [
+          "The strongest signal before the radio saturates",
+          "The weakest signal it can decode at that rate",
+          "The transmit power it uses for beacons",
+          "The noise floor of the current channel"
+        ],
+        "correct": 1,
+        "explanation": "Receive sensitivity is the lowest signal level at which the radio still decodes frames at a given data rate; higher rates need stronger signals.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "1.2.a"
+      },
+      {
+        "question": "A client hears its AP at -65 dBm and the noise floor is -92 dBm. What is the SNR?",
+        "options": [
+          "157 dB",
+          "27 dB",
+          "-27 dB",
+          "65 dB"
+        ],
+        "correct": 1,
+        "explanation": "SNR is the signal minus the noise floor in dB: -65 - (-92) = 27 dB.",
+        "difficulty": "Easy",
+        "exam": "wlcor",
+        "domain": "1.2.d"
+      },
+      {
+        "question": "From the WLC's point of view, what makes an access point a rogue?",
+        "options": [
+          "It uses a channel wider than 40 MHz",
+          "It is heard over the air but is unmanaged",
+          "It runs a newer software image than others",
+          "It has more clients than the other APs"
+        ],
+        "correct": 1,
+        "explanation": "A rogue is any AP detected over the air (or on the wire) that is not part of the managed system; rules then classify it as friendly, malicious or unclassified.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "1.2.b"
+      },
+      {
+        "question": "Why should a voice coverage check use the weakest client device as its reference?",
+        "options": [
+          "Survey tools only support phone chipsets",
+          "Laptops ignore the beacons sent by APs",
+          "Phones always roam faster than laptops",
+          "Small devices often have weaker radios"
+        ],
+        "correct": 3,
+        "explanation": "Phones and badges usually have smaller antennas and lower transmit power than laptops, so coverage that suits them also suits the rest.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "1.2.c"
+      },
+      {
+        "question": "An AP radio transmits at 20 dBm, the cable loses 3 dB and the antenna has 6 dBi of gain. What is the EIRP?",
+        "options": [
+          "23 dBm",
+          "29 dBm",
+          "17 dBm",
+          "26 dBm"
+        ],
+        "correct": 0,
+        "explanation": "EIRP = transmit power - cable loss + antenna gain = 20 - 3 + 6 = 23 dBm.",
+        "difficulty": "Hard",
+        "exam": "wlcor",
+        "domain": "1.3"
+      },
+      {
+        "question": "Transmit power is lowered from 100 mW to 25 mW. How big is this change in dB?",
+        "options": [
+          "-75 dB",
+          "-3 dB",
+          "-6 dB",
+          "-4 dB"
+        ],
+        "correct": 2,
+        "explanation": "Each halving of power is about -3 dB; 100 → 50 → 25 mW is two halvings, so about -6 dB.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "1.3"
+      },
+      {
+        "question": "What does a higher gain in dBi tell you about an antenna?",
+        "options": [
+          "It focuses energy in some directions, adding no power",
+          "It adds transmit power to the radio",
+          "It spreads energy evenly in all directions",
+          "It lowers the noise floor of the channel"
+        ],
+        "correct": 0,
+        "explanation": "Antennas are passive: gain comes from shaping the pattern, so more gain means a narrower, more focused beam, not extra power.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "1.4"
+      },
+      {
+        "question": "Which antenna suits covering a long, narrow corridor from one end?",
+        "options": [
+          "A directional Yagi or patch",
+          "An omnidirectional dipole antenna",
+          "An isotropic antenna",
+          "A ceiling-mount omni antenna"
+        ],
+        "correct": 0,
+        "explanation": "Directional antennas send most of their energy along one axis, which matches a long corridor; omni antennas waste energy to the sides.",
+        "difficulty": "Easy",
+        "exam": "wlcor",
+        "domain": "1.4"
+      },
+      {
+        "question": "Which organization certifies Wi-Fi products for interoperability and defined WPA3?",
+        "options": [
+          "The Wi-Fi Alliance",
+          "The IEEE 802.11 working group",
+          "The ITU radio sector (ITU-R)",
+          "The FCC in the United States"
+        ],
+        "correct": 0,
+        "explanation": "The IEEE writes the 802.11 standard, but the Wi-Fi Alliance certifies interoperability and defines programmes such as WPA3 and Wi-Fi 6/7.",
+        "difficulty": "Easy",
+        "exam": "wlcor",
+        "domain": "2.1.c"
+      },
+      {
+        "question": "Who sets the allowed channels and maximum EIRP for Wi-Fi in a given country?",
+        "options": [
+          "The Wi-Fi Alliance, through certification",
+          "The IEEE, through each 802.11 amendment",
+          "The regional regulator, such as the FCC or ETSI",
+          "The AP vendor, through its country codes"
+        ],
+        "correct": 2,
+        "explanation": "Regulatory bodies (FCC, ETSI/national regulators and others) set the legal channels and power; vendors only implement them in country codes.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "2.1.a"
+      },
+      {
+        "question": "Which band offers the most non-overlapping 20 MHz channels for Wi-Fi?",
+        "options": [
+          "900 MHz",
+          "5 GHz",
+          "2.4 GHz",
+          "6 GHz"
+        ],
+        "correct": 3,
+        "explanation": "Where it is allowed, 6 GHz adds up to 1200 MHz of spectrum (59 x 20 MHz channels), far more than 5 GHz or the 3 clean channels of 2.4 GHz.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "2.2.b"
+      },
+      {
+        "question": "What does the DCA part of Cisco RRM do?",
+        "options": [
+          "It assigns AP channels to cut interference",
+          "It sets the transmit power of each AP",
+          "It finds coverage holes using client reports",
+          "It load-balances clients across the APs"
+        ],
+        "correct": 0,
+        "explanation": "Dynamic Channel Assignment picks channels for each AP to reduce co-channel and other interference; TPC handles power and CHD handles coverage holes.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "2.2.c"
+      },
+      {
+        "question": "Why do clients far from the AP end up using lower data rates?",
+        "options": [
+          "The AP limits far clients to save airtime",
+          "Lower SNR only supports simpler modulation and coding",
+          "Higher rates need a wider channel each time",
+          "Far clients switch from OFDM to FHSS"
+        ],
+        "correct": 1,
+        "explanation": "Dense modulations such as 1024-QAM need a high SNR; as SNR drops with distance, rate adaptation moves to simpler modulation and stronger coding.",
+        "difficulty": "Hard",
+        "exam": "wlcor",
+        "domain": "2.3.a"
+      },
+      {
+        "question": "What is a key feature of Multi-Link Operation (MLO) in Wi-Fi 7?",
+        "options": [
+          "Use links in several bands at once",
+          "APs share one channel with all neighbours",
+          "It replaces OFDMA with a new modulation",
+          "It bonds the AP's Ethernet uplinks together"
+        ],
+        "correct": 0,
+        "explanation": "With MLO a multi-link device can send and receive over links in different bands (for example 5 and 6 GHz) at the same time or switch quickly between them.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "2.3.c"
+      },
+      {
+        "question": "An 802.11 ACK or an RTS/CTS exchange belongs to which frame type?",
+        "options": [
+          "Control frames",
+          "Management frames",
+          "Data frames",
+          "Extension frames"
+        ],
+        "correct": 0,
+        "explanation": "ACK, RTS, CTS and Block Ack are control frames; beacons and probes are management frames.",
+        "difficulty": "Easy",
+        "exam": "wlcor",
+        "domain": "2.3.e"
+      },
+      {
+        "question": "In an SD-Access wireless fabric, how does client data leave the fabric AP?",
+        "options": [
+          "Over a GRE tunnel to the border",
+          "In a CAPWAP tunnel to the WLC",
+          "In VXLAN to the fabric edge",
+          "In a Layer 2 trunk to the core"
+        ],
+        "correct": 2,
+        "explanation": "Fabric APs keep CAPWAP to the WLC for control, but client data is sent in VXLAN to the fabric edge node, like wired traffic.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "3.1.a"
+      },
+      {
+        "question": "In a Cisco mesh network, what is a Root AP (RAP)?",
+        "options": [
+          "A mesh AP with a wired link to the network",
+          "A mesh AP linked only over the air",
+          "An AP that only serves indoor clients",
+          "A WLC used only for mesh APs"
+        ],
+        "correct": 0,
+        "explanation": "The RAP has the wired uplink and is the root of the mesh tree; Mesh APs (MAPs) reach it over wireless backhaul.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "3.1.b"
+      },
+      {
+        "question": "With local mode APs and central switching, where are client data frames switched?",
+        "options": [
+          "At the AP onto its own VLAN",
+          "At the WLC, after a CAPWAP tunnel",
+          "At the nearest access switch via VXLAN",
+          "At the cloud dashboard"
+        ],
+        "correct": 1,
+        "explanation": "In local mode the AP tunnels client data in CAPWAP to the WLC, which bridges it onto the client VLAN.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "3.1.c"
+      },
+      {
+        "question": "In a cloud-managed Meraki wireless network, what does the cloud dashboard handle?",
+        "options": [
+          "Only the RADIUS checks of the users",
+          "All client data traffic of the WLAN",
+          "Management and monitoring, not client data",
+          "Only the firmware downloads of APs"
+        ],
+        "correct": 2,
+        "explanation": "Meraki uses out-of-band cloud management: config and monitoring go to the cloud, while user traffic stays on the local network.",
+        "difficulty": "Easy",
+        "exam": "wlcor",
+        "domain": "3.1.d"
+      },
+      {
+        "question": "An AP needs 802.3bt PoE to run all its radios. What can happen on an 802.3af port?",
+        "options": [
+          "It draws extra power over data pairs",
+          "It always runs at full power anyway",
+          "It refuses to boot and never joins",
+          "It may run with some radios disabled"
+        ],
+        "correct": 3,
+        "explanation": "With too little PoE many APs boot in a reduced mode (radios, USB or spatial streams disabled), so check the switch power budget and class.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "3.2"
+      },
+      {
+        "question": "A FlexConnect AP switches several WLANs locally at a branch. How is its switch port usually set?",
+        "options": [
+          "As a trunk carrying the WLAN VLANs",
+          "As an access port in one client VLAN",
+          "As a routed port with no VLANs",
+          "As a port-channel to the WLC"
+        ],
+        "correct": 0,
+        "explanation": "With local switching the AP tags each WLAN onto its VLAN, so the switch port is a trunk, often with the AP management VLAN as native.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "3.2"
+      },
+      {
+        "question": "Which port must be allowed from the APs to the WLC for CAPWAP control traffic?",
+        "options": [
+          "UDP 1812",
+          "UDP 5247",
+          "TCP 443",
+          "UDP 5246"
+        ],
+        "correct": 3,
+        "explanation": "CAPWAP uses UDP 5246 for control and UDP 5247 for data; firewalls between APs and the WLC must allow both.",
+        "difficulty": "Hard",
+        "exam": "wlcor",
+        "domain": "3.3"
+      },
+      {
+        "question": "During the Day-0 setup of a Catalyst 9800, what must exist before APs can join it?",
+        "options": [
+          "A Meraki licence claimed in the dashboard",
+          "A guest anchor in the DMZ for all WLANs",
+          "A wireless management interface",
+          "A Catalyst Center site for each AP"
+        ],
+        "correct": 2,
+        "explanation": "APs build CAPWAP to the wireless management interface (WMI), so it must have an IP that APs can reach; the rest is optional at Day 0.",
+        "difficulty": "Easy",
+        "exam": "wlcor",
+        "domain": "4.1"
+      },
+      {
+        "question": "An AP sits in a different subnet from the WLC and DHCP has no option 43. Which method can still help it find the WLC?",
+        "options": [
+          "DNS lookup of CISCO-CAPWAP-CONTROLLER",
+          "A Layer 2 CAPWAP broadcast",
+          "An LLDP message from the WLC",
+          "An ARP request for the WLC MAC"
+        ],
+        "correct": 0,
+        "explanation": "If the AP gets a DNS server and domain from DHCP, it resolves CISCO-CAPWAP-CONTROLLER.<domain>; Layer 2 broadcast only works in the same subnet.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "4.2"
+      },
+      {
+        "question": "What does DHCP option 43 give an AP during the join process?",
+        "options": [
+          "The AP's country code setting",
+          "The management IPs of the WLCs",
+          "The SSIDs the AP must broadcast",
+          "The AP's default gateway"
+        ],
+        "correct": 1,
+        "explanation": "Option 43 carries vendor data; for Cisco APs it lists WLC management IP addresses to send CAPWAP discovery requests to.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "4.2"
+      },
+      {
+        "question": "After the DTLS session is up, the AP image differs from the WLC's. What happens next?",
+        "options": [
+          "The WLC upgrades itself to match the AP",
+          "The AP downloads the WLC's image and reboots",
+          "The AP joins and keeps its own image",
+          "The AP is put into sniffer mode"
+        ],
+        "correct": 1,
+        "explanation": "APs must run the image that matches the controller, so after join request the AP downloads it, reboots and then joins again.",
+        "difficulty": "Hard",
+        "exam": "wlcor",
+        "domain": "4.2"
+      },
+      {
+        "question": "Which AP mode uses the radios only to scan for rogues and attacks, without serving clients?",
+        "options": [
+          "Bridge mode",
+          "Local mode",
+          "FlexConnect mode",
+          "Monitor mode"
+        ],
+        "correct": 3,
+        "explanation": "In monitor mode the AP serves no clients and scans all channels for rogues, wIPS signatures and location.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "4.3"
+      },
+      {
+        "question": "A branch AP must keep switching client traffic locally if the WAN to the WLC fails. Which mode fits?",
+        "options": [
+          "Local mode with central switching",
+          "FlexConnect with local switching",
+          "Sniffer mode",
+          "Monitor mode with wIPS"
+        ],
+        "correct": 1,
+        "explanation": "FlexConnect with local switching keeps existing clients (and, with local auth, new ones) working in standalone mode when the WLC is unreachable.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "4.3"
+      },
+      {
+        "question": "What is an AP in sniffer mode used for?",
+        "options": [
+          "Serving clients on all of its channels at once",
+          "Capturing frames on one channel for analysis",
+          "Bridging two buildings over the air",
+          "Running spectrum analysis only on 6 GHz"
+        ],
+        "correct": 1,
+        "explanation": "A sniffer-mode AP captures 802.11 frames on a chosen channel and sends them to a host running a tool such as Wireshark.",
+        "difficulty": "Easy",
+        "exam": "wlcor",
+        "domain": "4.3"
+      },
+      {
+        "question": "On a Catalyst 9800, which object maps a WLAN profile to a policy profile?",
+        "options": [
+          "The site tag",
+          "The policy tag",
+          "The RF tag",
+          "The AP join profile"
+        ],
+        "correct": 1,
+        "explanation": "The policy tag pairs WLAN profiles with policy profiles; the site tag and RF tag set join/flex and radio settings.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "4.4"
+      },
+      {
+        "question": "On a Catalyst 9800, what does the site tag set for an AP?",
+        "options": [
+          "Its management IP address",
+          "Which WLANs it broadcasts",
+          "Its RF profiles per band",
+          "Its AP join profile and Flex profile"
+        ],
+        "correct": 3,
+        "explanation": "The site tag holds the AP join profile and, for remote sites, the Flex profile; WLANs come from the policy tag and radio settings from the RF tag.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "4.4"
+      },
+      {
+        "question": "A WLAN is set to hide its SSID from beacons. What is the real security effect?",
+        "options": [
+          "All traffic becomes encrypted",
+          "Clients can no longer be captured",
+          "Little; probes still reveal it",
+          "The WLAN becomes WPA3 only"
+        ],
+        "correct": 2,
+        "explanation": "Clients still send the SSID in probe requests and association frames, so a sniffer learns it quickly; use strong authentication instead.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "4.4"
+      },
+      {
+        "question": "ISE returns a VLAN and an ACL name after 802.1X. What must be enabled in the 9800 policy profile to apply them?",
+        "options": [
+          "AAA override",
+          "Peer-to-peer blocking",
+          "Aironet IE",
+          "Client exclusion"
+        ],
+        "correct": 0,
+        "explanation": "AAA override lets RADIUS attributes (VLAN, ACL, QoS, session timeout) replace the values set in the policy profile.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "4.5"
+      },
+      {
+        "question": "An MDM is integrated with ISE for BYOD. What can ISE do with a device's MDM status?",
+        "options": [
+          "Encrypt the CAPWAP data tunnel for that device",
+          "Change the channel plan of the APs on the floor",
+          "Limit non-compliant devices until they are fixed",
+          "Assign the device a static IP from the MDM"
+        ],
+        "correct": 2,
+        "explanation": "ISE queries the MDM for compliance (for example PIN lock or encryption) and can give non-compliant devices a restricted or remediation policy.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "4.5"
+      },
+      {
+        "question": "What does client exclusion do on a WLC after repeated 802.1X failures?",
+        "options": [
+          "It blocks the client for a set time",
+          "It moves the client to the guest SSID",
+          "It resets the client's password in AD",
+          "It disables the WLAN for all users"
+        ],
+        "correct": 0,
+        "explanation": "Client exclusion (blocklisting) puts the client MAC on a temporary deny list after repeated failures, protecting the WLC and RADIUS.",
+        "difficulty": "Hard",
+        "exam": "wlcor",
+        "domain": "4.5"
+      },
+      {
+        "question": "Per-client rate limiting is needed on a guest WLAN. Where is it set on a Catalyst 9800?",
+        "options": [
+          "In the AP join profile",
+          "In the RF profile of each band",
+          "In the policy profile QoS settings",
+          "On the upstream access switch only"
+        ],
+        "correct": 2,
+        "explanation": "Per-client and per-SSID QoS policies, including rate limits, are attached in the QoS section of the policy profile.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "4.5"
+      },
+      {
+        "question": "In 802.1X on a WLAN, which role does the WLC play?",
+        "options": [
+          "Identity source",
+          "Supplicant",
+          "Authentication server",
+          "Authenticator"
+        ],
+        "correct": 3,
+        "explanation": "The client is the supplicant, the WLC is the authenticator that relays EAP in RADIUS, and ISE is the authentication server.",
+        "difficulty": "Easy",
+        "exam": "wlcor",
+        "domain": "5.1"
+      },
+      {
+        "question": "ISE is the RADIUS server for a WLAN. Which ports are normally used for authentication and accounting?",
+        "options": [
+          "UDP 1645 only",
+          "UDP 1812 and 1813",
+          "TCP 49 and 443",
+          "UDP 5246 and 5247"
+        ],
+        "correct": 1,
+        "explanation": "Standard RADIUS uses UDP 1812 for authentication and 1813 for accounting (1645/1646 are legacy). TCP 49 is TACACS+.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "5.1"
+      },
+      {
+        "question": "Which EAP method requires certificates on both the client and the server?",
+        "options": [
+          "PEAP-MSCHAPv2",
+          "EAP-TLS",
+          "EAP-FAST",
+          "LEAP"
+        ],
+        "correct": 1,
+        "explanation": "EAP-TLS uses mutual certificate authentication; PEAP and EAP-FAST only need a server certificate or PAC and a password inside the tunnel.",
+        "difficulty": "Hard",
+        "exam": "wlcor",
+        "domain": "5.1"
+      },
+      {
+        "question": "What does Enhanced Open (OWE) give an open guest SSID?",
+        "options": [
+          "MAC filtering of all clients",
+          "A captive portal for each user",
+          "802.1X with guest certificates",
+          "Encryption without a password"
+        ],
+        "correct": 3,
+        "explanation": "Opportunistic Wireless Encryption runs a Diffie-Hellman exchange at association, so each client gets encrypted traffic with no password.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "5.2"
+      },
+      {
+        "question": "A 9800 WLAN is set for Local EAP. Where are the user credentials checked?",
+        "options": [
+          "In the Meraki cloud directory",
+          "On the AP, using a cached RADIUS key",
+          "On the WLC itself, without external RADIUS",
+          "On the client's own keychain"
+        ],
+        "correct": 2,
+        "explanation": "Local EAP makes the controller act as the EAP server, using local users or LDAP, which helps small sites or as a RADIUS backup.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "5.2"
+      },
+      {
+        "question": "A Windows laptop is set up for a PEAP WLAN. What should its profile be told to validate?",
+        "options": [
+          "The WLC's SNMP community",
+          "The AP's MAC address",
+          "The RADIUS server certificate",
+          "The DHCP server's lease time"
+        ],
+        "correct": 2,
+        "explanation": "Validating the server certificate (and its CA and name) stops users from sending credentials to a fake AP with its own RADIUS.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "5.3"
+      },
+      {
+        "question": "Many phones now use a random MAC address per SSID. What does this break?",
+        "options": [
+          "802.1X with EAP-TLS certificates",
+          "Policies that identify devices by MAC",
+          "Fast roaming with 802.11r",
+          "DHCP on dual-stack IPv6 networks"
+        ],
+        "correct": 1,
+        "explanation": "MAC randomisation breaks MAB, MAC-based profiling and guest device registration, so prefer identity-based methods.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "5.3"
+      },
+      {
+        "question": "What does 802.11r (Fast Transition) speed up when a client roams?",
+        "options": [
+          "The key exchange, using keys derived ahead",
+          "The DHCP renewal on the new AP",
+          "The channel scan before the roam",
+          "The ARP refresh to the default gateway"
+        ],
+        "correct": 0,
+        "explanation": "FT lets the client and the target AP derive keys in advance, so the roam needs no full 802.1X and no separate 4-way handshake.",
+        "difficulty": "Hard",
+        "exam": "wlcor",
+        "domain": "5.4"
+      },
+      {
+        "question": "What does 802.11k help a client do?",
+        "options": [
+          "Steer itself to a new SSID",
+          "Encrypt its management frames",
+          "Move to a less busy band",
+          "Get a neighbour AP list"
+        ],
+        "correct": 3,
+        "explanation": "802.11k neighbour reports tell the client which nearby APs and channels to scan, so it finds a roam target faster.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "5.4"
+      },
+      {
+        "question": "In a Layer 3 roam between two WLCs, what does the original (anchor) WLC keep?",
+        "options": [
+          "The client's IP point of presence",
+          "The AP the client just left",
+          "The new DHCP lease of the client",
+          "The client's SSID broadcast"
+        ],
+        "correct": 0,
+        "explanation": "The anchor WLC keeps the client's IP and policy point of presence; the foreign WLC tunnels the client traffic back to it, so the IP does not change.",
+        "difficulty": "Hard",
+        "exam": "wlcor",
+        "domain": "5.4"
+      },
+      {
+        "question": "What does a guest anchor controller in the DMZ do?",
+        "options": [
+          "Ends guest traffic in the DMZ",
+          "Stores the employee user database",
+          "Runs RRM for all the APs",
+          "Signs the AP certificates"
+        ],
+        "correct": 0,
+        "explanation": "Guest traffic is tunnelled from the foreign WLCs to the anchor in the DMZ, keeping it off the internal network.",
+        "difficulty": "Easy",
+        "exam": "wlcor",
+        "domain": "5.5"
+      },
+      {
+        "question": "On a guest WLAN with ISE central web authentication, what does the WLC do first?",
+        "options": [
+          "Sends the client to the anchor's DHCP",
+          "Asks the client for an EAP-TLS cert",
+          "Gives the client full internet access first",
+          "Redirects the client to the ISE portal"
+        ],
+        "correct": 3,
+        "explanation": "After MAB, ISE returns a redirect URL and ACL; the WLC redirects web traffic to the ISE portal until the guest logs in and a CoA follows.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "5.5"
+      },
+      {
+        "question": "Why do CWA guest WLANs usually enable MAC filtering (MAB) towards ISE?",
+        "options": [
+          "So the AP can skip DHCP",
+          "So guests do not need an IP address",
+          "So traffic is encrypted with WPA3",
+          "So ISE can return the redirect URL"
+        ],
+        "correct": 3,
+        "explanation": "The MAB request is how ISE first sees the guest and returns the redirect URL and ACL used for central web auth.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "5.5"
+      },
+      {
+        "question": "Which feature lets each device on a PSK WLAN have its own key, with ISE?",
+        "options": [
+          "Opportunistic key caching",
+          "WPA2 with TKIP and AES ciphers",
+          "Identity PSK (iPSK)",
+          "802.11w frame protection"
+        ],
+        "correct": 2,
+        "explanation": "With iPSK, ISE returns a per-device or per-group PSK in RADIUS after MAC authentication, so one SSID can use many keys.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "5.2"
+      },
+      {
+        "question": "Which method upgrades a Catalyst 9800 SSO pair with the least client downtime?",
+        "options": [
+          "Factory reset and restore of the config",
+          "A cold reboot of both units together",
+          "TFTP upload of each AP image by hand",
+          "ISSU (in-service software upgrade)"
+        ],
+        "correct": 3,
+        "explanation": "ISSU upgrades the standby, switches over and upgrades APs in rolling groups, so service continues during the upgrade.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "6.1"
+      },
+      {
+        "question": "Why predownload the AP image before a WLC upgrade?",
+        "options": [
+          "It upgrades the client drivers too",
+          "It lets APs keep their old configs afterwards",
+          "It removes the need to reboot any AP",
+          "APs fetch the image before the reboot window"
+        ],
+        "correct": 3,
+        "explanation": "With predownload the APs already hold the new image when the WLC reboots, so they rejoin quickly instead of downloading it one by one.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "6.1"
+      },
+      {
+        "question": "In the 9800 GUI, where do you see one client's RSSI, SNR and data rate?",
+        "options": [
+          "In the controller's boot loader log",
+          "In the AP join profile of the client's AP",
+          "In the RF tag of the client's AP",
+          "In Monitoring, in the client's details"
+        ],
+        "correct": 3,
+        "explanation": "Monitoring > Wireless > Clients, then the client's details, shows its RSSI, SNR, data rate, AP and security state.",
+        "difficulty": "Easy",
+        "exam": "wlcor",
+        "domain": "6.2"
+      },
+      {
+        "question": "What does Intelligent Capture in Catalyst Center provide?",
+        "options": [
+          "Automatic config backup of the WLC",
+          "Detailed packet and RF data for a client",
+          "Licence usage reports for each site",
+          "New AP images pushed overnight"
+        ],
+        "correct": 1,
+        "explanation": "Intelligent Capture streams client onboarding events, packets and RF stats from the AP to Catalyst Center for deep troubleshooting.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "6.2"
+      },
+      {
+        "question": "A client associates but gets a 169.254.x.x address. What should you check first?",
+        "options": [
+          "The channel width on 5 GHz",
+          "DHCP on the client VLAN or relay",
+          "The 802.11r settings of the WLAN",
+          "The RADIUS shared secret"
+        ],
+        "correct": 1,
+        "explanation": "An APIPA address means association worked but DHCP failed, so check the VLAN mapping, the DHCP server and the relay (ip helper).",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "6.3"
+      },
+      {
+        "question": "802.1X clients fail and the WLC logs 'no response from RADIUS server'. What is a common cause?",
+        "options": [
+          "The DHCP lease time is too short",
+          "The SSID is broadcast in beacons",
+          "A wrong RADIUS secret on the WLC",
+          "The client uses a 5 GHz radio"
+        ],
+        "correct": 2,
+        "explanation": "ISE silently drops requests with a wrong shared secret or from an unknown network device IP, so the WLC sees no response.",
+        "difficulty": "Hard",
+        "exam": "wlcor",
+        "domain": "6.3"
+      },
+      {
+        "question": "Which 9800 feature collects conditional debug logs for one client MAC address?",
+        "options": [
+          "RadioActive tracing",
+          "Spectrum analysis",
+          "Embedded packet capture",
+          "NetFlow sampling"
+        ],
+        "correct": 0,
+        "explanation": "RadioActive (RA) tracing turns on detailed debug-level logs only for the chosen MAC or IP, across all processes on the controller.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "6.3"
+      },
+      {
+        "question": "What does Cisco Spaces mainly add to a wireless network?",
+        "options": [
+          "Routing between the WLC and core",
+          "RADIUS authentication for 802.1X",
+          "Power over Ethernet budgeting",
+          "Location and presence analytics"
+        ],
+        "correct": 3,
+        "explanation": "Cisco Spaces uses Wi-Fi (and BLE/IoT) data from the controllers to deliver location, presence, occupancy and business apps.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "6.4"
+      },
+      {
+        "question": "How does ISE learn client context from the WLC for profiling?",
+        "options": [
+          "SNMP traps from the AP radios only",
+          "RADIUS accounting and DHCP/HTTP probes",
+          "Syslog from the client's operating system",
+          "CDP from every wireless client"
+        ],
+        "correct": 1,
+        "explanation": "With device sensor and accounting the WLC sends attributes such as DHCP options and HTTP user agent to ISE for profiling.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "6.4"
+      },
+      {
+        "question": "What is a benefit of N+1 WLC redundancy compared with SSO?",
+        "options": [
+          "Lower cost, one backup WLC for many",
+          "Clients never re-authenticate on failover",
+          "No AP rejoin is ever needed",
+          "It needs no primary WLC configured"
+        ],
+        "correct": 0,
+        "explanation": "N+1 shares one backup WLC among several primaries, but APs must rejoin and clients re-authenticate on failover; SSO is stateful.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "6.1"
+      },
+      {
+        "question": "In a Python script, what does response.json() return after a REST GET with the requests library?",
+        "options": [
+          "A list of the response headers",
+          "The HTTP status code as an int",
+          "The raw bytes of the whole TCP stream",
+          "The body parsed into Python objects"
+        ],
+        "correct": 3,
+        "explanation": "response.json() decodes the JSON body into dicts and lists; status_code and headers are separate attributes.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "7.1"
+      },
+      {
+        "question": "Which transport and default port does NETCONF use?",
+        "options": [
+          "SNMP on UDP 161",
+          "HTTPS on TCP 443",
+          "SSH on TCP 830",
+          "Telnet on TCP 23"
+        ],
+        "correct": 2,
+        "explanation": "NETCONF runs over SSH on TCP port 830; RESTCONF is the HTTPS-based alternative.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "7.2"
+      },
+      {
+        "question": "What does a YANG model describe on a Catalyst 9800?",
+        "options": [
+          "The order of the 802.11 frames",
+          "The physical layout of the AP antennas",
+          "The encryption used for CAPWAP",
+          "The structure of config and state data"
+        ],
+        "correct": 3,
+        "explanation": "YANG defines the data model (containers, lists, leaves) that NETCONF and RESTCONF use to read and change config and operational state.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "7.2"
+      },
+      {
+        "question": "A script sends GET to a 9800 RESTCONF URL and gets HTTP 401. What is wrong?",
+        "options": [
+          "The resource URL path does not exist",
+          "The credentials are missing or wrong",
+          "The WLC is overloaded",
+          "The JSON body is malformed"
+        ],
+        "correct": 1,
+        "explanation": "401 Unauthorized means authentication failed; a wrong path gives 404 and a bad request body gives 400.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "7.3"
+      },
+      {
+        "question": "What does AI Network Analytics in Catalyst Center use to raise wireless issues?",
+        "options": [
+          "Only SNMP traps from switches",
+          "Fixed thresholds typed by an admin",
+          "Learned baselines for each network",
+          "Random sampling of one AP"
+        ],
+        "correct": 2,
+        "explanation": "AI Network Analytics learns what is normal for that network (dynamic baselines) and flags deviations, instead of only static thresholds.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "7.4"
+      },
+      {
+        "question": "In Catalyst Center, what do AI-driven issue insights help an operator do?",
+        "options": [
+          "Remove the need for a WLC in the network",
+          "Find root causes and fixes faster",
+          "Write each AP configuration by hand",
+          "Turn off the 2.4 GHz band everywhere"
+        ],
+        "correct": 1,
+        "explanation": "AI-driven assurance groups symptoms, points to the likely root cause and suggests next steps, which cuts troubleshooting time.",
+        "difficulty": "Medium",
+        "exam": "wlcor",
+        "domain": "7.5"
+      },
+      {
+        "question": "How does AI-RRM differ from traditional on-box RRM?",
+        "options": [
+          "It disables DCA and TPC completely",
+          "It runs only on each AP, with no WLC at all",
+          "It uses cloud analysis of long-term RF data",
+          "It sets all APs to the same channel"
+        ],
+        "correct": 2,
+        "explanation": "AI-RRM sends RF telemetry to cloud AI analytics, which look at longer time windows and push optimised RRM decisions back to the controller.",
+        "difficulty": "Hard",
+        "exam": "wlcor",
+        "domain": "7.6"
       }
     ]
   },

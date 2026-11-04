@@ -13,6 +13,7 @@ Contexto (mudanças da Cisco em 2026):
 | `autocor` | `automation` | 350-901 AUTOCOR v2.0 | https://learningnetwork.cisco.com/s/autocor-exam-topics | 76 (74 + 2) |
 | `wlsd` | `wireless` | 300-110 WLSD v1.2 | https://learningnetwork.cisco.com/s/wlsd-exam-topics | 65 (60 + 5) |
 | `wlsi` | `wireless` | 300-120 WLSI v1.2 | https://learningnetwork.cisco.com/s/wlsi-exam-topics | 67 (65 + 2) |
+| `wlcor` | `wireless` | 350-101 WLCOR v1.0 | https://learningnetwork.cisco.com/s/wlcor-exam-topics · https://learningcontent.cisco.com/documents/marketing/exam-topics/350-101-WLCOR-v1.0.pdf | 70 (70 + 0) — v4.4.0 |
 | `ensdwi` | `sdx` | 300-415 ENSDWI v1.2 | https://learningnetwork.cisco.com/s/ensdwi-exam-topics | 78 (78 + 0) |
 | `sda` | `sdx` | 300-420 ENSLD v1.1, tópicos 2.4–2.5 | https://learningnetwork.cisco.com/s/ensld-exam-topics | 70 (70 + 0) |
 | `dccor` | `dc` | 350-601 DCCOR v1.2 | https://learningcontent.cisco.com/documents/marketing/exam-topics/350-601-DCCOR-v1.2.pdf · https://learningnetwork.cisco.com/s/dccor-exam-topics | 77 (68 + 9) |
