@@ -1,5 +1,11 @@
 # Changelog — Cricket / Cisco Quiz (web)
 
+## Pendente (PR) — 2026-11-04 · Reordenar opções das perguntas antigas CCST/CCNP
+
+- **Posição da resposta certa equilibrada** nas perguntas antigas (anteriores à fase 2) de CCST (227 pares, índices 0–226) e CCNP (232 pares, índices 0–231). Antes, a certa estava na 2.ª opção em ~73–75% dos casos; agora fica ~25% em cada posição (CCST 57/57/57/56, CCNP 58/58/58/58).
+- Só muda a ordem das opções e o índice `correct`. Os textos ficam iguais e a mesma permutação é aplicada em PT e EN. Nenhuma opção depende da posição ("todas as anteriores", letras), por isso a troca é segura.
+- Contagens sem alterações (total 3764). Validação: schema, paridade PT/EN (mesma ordem), diff só de reordenação, lint `question-bank-length` PASSED, unittest OK.
+
 ## v4.3.0 — 2026-11-03
 
 - **Rascunhos diários de 3 Nov publicados (6 pares PT/EN):** canal 3 nos 2,4 GHz sobreposto aos canais 1 e 5 (CCST, Fácil, `ccst-net` 3.2) · `ip helper-address` na interface errada em vez da Vlan30 (CCNA, Médio) · uRPF strict com encaminhamento assimétrico em dois ISPs → loose (CCNP, Difícil) · Sysmon 13 numa chave Run de HKCU com exe em AppData (Cyber, Médio, `cbrops` 3.5, `logs-ir`) · 4624 tipo 10 (RDP) com conta de serviço a partir de IP estrangeiro (Cyber, Médio, `cbrops` 3.5, `logs-ir`) · túnel DNS com consultas TXT a subdomínios aleatórios (Cyber, Difícil, `cbrops` 4.8, `logs-ir`).
