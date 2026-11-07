@@ -1,13 +1,13 @@
 {
-  "version": "1.2.11",
-  "build": 13,
-  "apkUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/download/v1.2.11/CiscoQuiz-1.2.11-arm64.apk",
-  "windowsUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/download/v1.2.11/CiscoQuiz-1.2.11-Windows.zip",
-  "releasesUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/tag/v1.2.11",
+  "version": "1.3.0",
+  "build": 14,
+  "apkUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/download/v1.3.0/CiscoQuiz-1.3.0-arm64.apk",
+  "windowsUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/download/v1.3.0/CiscoQuiz-1.3.0-Windows.zip",
+  "releasesUrl": "https://github.com/Fgrilo80/cisco-quiz-app/releases/tag/v1.3.0",
   "bankTotal": 3764,
   "bankClassic": 1562,
   "bankCyber": 612,
   "bankOther": 1590,
-  "windowsNote": "Windows: https://github.com/Fgrilo80/cisco-quiz-app/releases/download/v1.2.11/CiscoQuiz-1.2.11-Windows.zip (ou flutter build windows --release na branch app, 1.2.11+13). O banco de perguntas atualiza-se na app sem reinstalar.",
-  "notes": "App 1.2.11+13. Bank v4.3.0: 3764 questions (classic 1562, cyber 612, other tracks 1590: IIoT, CCST IT, Field, Automation, Wireless, SD-WAN/SD-Access, Data Center, Collaboration; catalog in data/quiz-catalog.json). App 1.2.11 reads ccst/ccna/ccnp/cyber and ignores the other tracks. Bank refresh is SHA-256 of the remote body. Android uses apkUrl; Windows uses windowsUrl. APK is release-signed (stable key)."
+  "windowsNote": "Windows: https://github.com/Fgrilo80/cisco-quiz-app/releases/download/v1.3.0/CiscoQuiz-1.3.0-Windows.zip (ou flutter build windows --release na branch app, 1.3.0+14). O banco de perguntas atualiza-se na app sem reinstalar.",
+  "notes": "App 1.3.0+14: quizzes by exam and theme for all 12 tracks (catalog in data/quiz-catalog.json, including alsoFrom). Bank v4.3.0: 3764 questions (classic 1562, cyber 612, other tracks 1590: IIoT, CCST IT, Field, Automation, Wireless, SD-WAN/SD-Access, Data Center, Collaboration). Bank and catalog refresh by SHA-256 of the remote body. Android uses apkUrl; Windows uses windowsUrl. APK is release-signed with the same stable key as 1.2.11 and installs over it."
 }
