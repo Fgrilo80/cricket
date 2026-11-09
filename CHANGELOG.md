@@ -1,5 +1,11 @@
 # Changelog — Cricket / Cisco Quiz (web)
 
+## Pendente (PR) — 2026-11-04 · SD-Access: descrição baseada no ENSLD 300-420
+
+- O quiz `sda` ganha `descriptionPt`/`descriptionEn` no catálogo (`4.3.1`, campos opcionais): "Baseado nos tópicos SD-Access do exame ENSLD (300-420, tópicos 2.4–2.5). Não existe um exame SD-Access próprio da Cisco." / "Based on the SD-Access topics of the ENSLD exam (300-420, topics 2.4–2.5). Cisco has no standalone SD-Access exam."
+- `index.html`: o cartão SD-Access mostra a nota e o ecrã do quiz mostra a descrição do catálogo (na língua do quiz) por baixo do título.
+- Perguntas e contagens sem alterações (total 3764).
+
 ## Pendente (PR) — 2026-11-04 · Reequilibrar o comprimento das opções nas perguntas novas (fases 2/3)
 
 - Nas perguntas novas das fases 2 e 3, a resposta certa era quase nunca a mais longa (0–18%), o que também é uma pista ("escolhe a que não é a mais longa"). Agora é a opção mais longa (única) em **21,6–25%** dos casos por quiz, nas duas línguas.
