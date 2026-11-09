@@ -9012,13 +9012,13 @@ window.QUIZ_BANK = {
       {
         "question": "Numa arquitetura Cisco lightweight, o que é o split MAC do CAPWAP?",
         "options": [
-          "O AP e o WLC partilham funções MAC: o AP trata tempo-real (beacon/ACK) e o WLC gestão/associação/802.1X",
-          "O MAC do cliente é dividido ao meio",
-          "Substitui o 802.11 por Ethernet puro",
-          "É um tipo de EtherChannel"
+          "O AP faz as tarefas em tempo real (beacons, ACK); o WLC faz a associação e o 802.1X",
+          "O MAC do cliente é dividido em duas metades, uma aprendida pelo AP e outra pelo WLC",
+          "O CAPWAP substitui as tramas 802.11 por Ethernet simples entre o cliente e o AP",
+          "Uma forma de EtherChannel que agrega os uplinks do AP até ao WLC numa só ligação lógica"
         ],
-        "correct": 1,
-        "explanation": "CAPWAP (UDP 5246 controlo, 5247 dados) tunela entre AP e WLC. Split MAC deixa o AP com funções time-sensitive e centraliza policy no WLC. FlexConnect pode comutar dados localmente.",
+        "correct": 0,
+        "explanation": "No split MAC, o AP fica com as funções 802.11 de tempo real (beacons, probe responses, ACK/troca de tramas, buffer de power-save, cifra) e o WLC trata a autenticação 802.11, a associação/reassociação, o 802.1X/EAP/RADIUS e o bridging. O CAPWAP usa UDP 5246 (controlo) e 5247 (dados). O FlexConnect pode comutar os dados localmente.",
         "difficulty": "Médio"
       },
       {
@@ -11913,13 +11913,13 @@ window.QUIZ_BANK = {
       {
         "question": "In a Cisco lightweight architecture, what is CAPWAP split MAC?",
         "options": [
-          "The AP and WLC share MAC functions: the AP handles real-time (beacon/ACK) and the WLC handles management/association/802.1X",
-          "The client MAC is split in half",
-          "It replaces 802.11 with pure Ethernet",
-          "It is a type of EtherChannel"
+          "The AP does real-time tasks (beacons, ACKs); the WLC does association and 802.1X",
+          "The client MAC address is split in two halves, one learned by the AP and one by the WLC",
+          "CAPWAP replaces 802.11 framing with plain Ethernet frames between the client and the AP",
+          "A form of EtherChannel that bundles the AP uplinks toward the WLC into one logical link"
         ],
-        "correct": 1,
-        "explanation": "CAPWAP (UDP 5246 control, 5247 data) tunnels between AP and WLC. Split MAC leaves time-sensitive functions on the AP and centralizes policy on the WLC. FlexConnect can switch data locally.",
+        "correct": 0,
+        "explanation": "In split MAC, the AP keeps the real-time 802.11 functions (beacons, probe responses, ACK/frame exchange, power-save buffering, encryption) and the WLC handles 802.11 authentication, association/reassociation, 802.1X/EAP/RADIUS and bridging. CAPWAP uses UDP 5246 (control) and 5247 (data). FlexConnect can switch data locally.",
         "difficulty": "Medium"
       },
       {
