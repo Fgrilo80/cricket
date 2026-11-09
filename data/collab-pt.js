@@ -114,9 +114,9 @@ window.QUIZ_BANK = [
   {
     "question": "Para que se usa normalmente o CUBE?",
     "options": [
-      "Um controlador sem fios para telefones IP",
+      "Um controlador Wi-Fi para telefones",
       "Um elemento de fronteira SIP para trunks",
-      "Um servidor de presença para chat e estado",
+      "Um servidor de presença",
       "Um diretório LDAP de utilizadores"
     ],
     "correct": 1,
@@ -158,7 +158,7 @@ window.QUIZ_BANK = [
     "options": [
       "Permite aos telefones saltar o TFTP",
       "Os clientes de fora têm de confiar nele",
-      "As CA públicas dão chaves mais compridas",
+      "As CA públicas dão chaves maiores",
       "O Expressway-C exige-o para o LDAP"
     ],
     "correct": 1,
@@ -282,7 +282,7 @@ window.QUIZ_BANK = [
   {
     "question": "Que ferramenta do UCM acrescenta centenas de telefones e utilizadores a partir de ficheiros CSV?",
     "options": [
-      "Bulk Administration Tool",
+      "Bulk Administration Tool (BAT)",
       "Dialed Number Analyzer",
       "Real-Time Monitoring Tool",
       "Disaster Recovery System"
@@ -297,7 +297,7 @@ window.QUIZ_BANK = [
     "question": "Como se pode integrar um telefone com um código de ativação?",
     "options": [
       "O código é enviado na opção 150 de DHCP",
-      "O administrador escreve o MAC no Expressway",
+      "O MAC é escrito no Expressway",
       "O telefone procura o UCM na rede",
       "O utilizador escreve o código no telefone"
     ],
@@ -338,7 +338,7 @@ window.QUIZ_BANK = [
   {
     "question": "O que descreve a linha 'm=' do SDP?",
     "options": [
-      "O nome apresentado do chamador",
+      "O nome do chamador",
       "Tipo de media, porta e codecs",
       "O endereço do servidor SIP",
       "A duração da chamada"
@@ -437,7 +437,7 @@ window.QUIZ_BANK = [
     "question": "Que definição do UCM ajuda a evitar fraude telefónica por reencaminhamento para números internacionais?",
     "options": [
       "Uma CSS de forward restrita",
-      "Mais largura de banda na região",
+      "Mais banda na região",
       "Ativar o auto-registo",
       "Usar só G.711 nos trunks"
     ],
@@ -506,7 +506,7 @@ window.QUIZ_BANK = [
   {
     "question": "O que é um forced authorization code (FAC)?",
     "options": [
-      "Um código para certas chamadas",
+      "Um código exigido em certas chamadas",
       "Um PIN da caixa de voicemail",
       "Uma chave de licença do trunk",
       "Uma regra de negociação de codecs"
@@ -537,7 +537,7 @@ window.QUIZ_BANK = [
       "Cisco Unified Reporting",
       "Bulk Administration Tool",
       "Disaster Recovery System",
-      "Dialed Number Analyzer"
+      "Dialed Number Analyzer (DNA)"
     ],
     "correct": 3,
     "explanation": "O DNA simula a análise de dígitos com a CSS do equipamento chamador e mostra os padrões coincidentes, transformações e o caminho escolhido.",
@@ -632,9 +632,9 @@ window.QUIZ_BANK = [
   {
     "question": "Uma voice translation rule é rule 1 /^0\\(.*\\)/ /+351\\1/. O que faz a 0211234567?",
     "options": [
-      "Muda-o para +3510211234567",
+      "Dá +3510211234567",
       "Muda-o para +351211234567",
-      "Deixa-o igual",
+      "Deixa-o como está",
       "Apaga todos os dígitos"
     ],
     "correct": 1,
@@ -676,7 +676,7 @@ window.QUIZ_BANK = [
     "options": [
       "Os POTS são só para chamadas de fax",
       "POTS: portas de voz; VoIP: destinos IP",
-      "Os VoIP são só para telefones analógicos",
+      "Os VoIP são só para analógicos",
       "Não há diferença prática"
     ],
     "correct": 1,
@@ -745,7 +745,7 @@ window.QUIZ_BANK = [
     "question": "Porque usar voice class tenants num CUBE com vários trunks?",
     "options": [
       "Para isolar DSP por cliente",
-      "Definições SIP por operador",
+      "Definições SIP por operador/trunk",
       "Para faturar cada departamento",
       "Para licenciar cada dial peer"
     ],
@@ -772,7 +772,7 @@ window.QUIZ_BANK = [
   {
     "question": "Que aplicações compõem o Webex Suite para os utilizadores finais?",
     "options": [
-      "Só provisionamento de telefones IP",
+      "Só telefones IP",
       "Só salas de videoconferência",
       "Chamadas, reuniões, mensagens",
       "Só agentes de contact centre"
@@ -802,7 +802,7 @@ window.QUIZ_BANK = [
     "options": [
       "Políticas de gravação",
       "Mascaramento de números",
-      "Permissões de chamada",
+      "Permissões de chamadas de saída",
       "Definições de Caller ID"
     ],
     "correct": 2,
@@ -815,9 +815,9 @@ window.QUIZ_BANK = [
     "question": "No Webex Calling, o que é um local (location)?",
     "options": [
       "Um site com números e PSTN",
-      "Um equipamento de sala de reuniões",
-      "A morada de casa de um utilizador",
-      "Uma função de admin do Control Hub"
+      "Um equipamento de sala",
+      "A morada de um utilizador",
+      "Uma função de admin"
     ],
     "correct": 0,
     "explanation": "Os locais definem a morada de emergência, fuso horário, números, ligação PSTN e definições de marcação interna para utilizadores e equipamentos.",
@@ -843,7 +843,7 @@ window.QUIZ_BANK = [
     "question": "Para que se usa um dial plan do Webex Calling?",
     "options": [
       "Enviar padrões para trunks PBX",
-      "Atribuir números a utilizadores",
+      "Atribuir números",
       "Gravar as chamadas externas",
       "Mudar os toques de cada local"
     ],
@@ -872,7 +872,7 @@ window.QUIZ_BANK = [
     "options": [
       "Permissões de chamadas",
       "Definições de mensagens",
-      "Bloqueio do site de reuniões",
+      "Bloqueio do site",
       "Directory Connector"
     ],
     "correct": 1,
@@ -996,7 +996,7 @@ window.QUIZ_BANK = [
   {
     "question": "Os utilizadores falam de áudio entrecortado nas horas de ponta na WAN. Qual é a causa provável?",
     "options": [
-      "Os telefones usam o nome de VLAN errado",
+      "Os telefones usam a VLAN errada",
       "Faltam registos DNS SRV",
       "Perdas e jitter por congestionamento",
       "A sincronização LDAP está atrasada"

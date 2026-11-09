@@ -143,7 +143,7 @@ window.QUIZ_BANK = [
     "question": "Why use the same AP model and antenna in a pre-deployment survey as in the final design?",
     "options": [
       "Coverage depends on the radio and antenna pattern",
-      "Survey tools only work with Cisco AP models and antennas",
+      "Survey tools only work with Cisco APs",
       "It makes the survey software free of charge",
       "Different models cannot be powered by PoE"
     ],
@@ -157,7 +157,7 @@ window.QUIZ_BANK = [
     "question": "What is the main purpose of a post-deployment survey?",
     "options": [
       "Count how many people use the building each day",
-      "Choose the AP mounting points before any of the cabling is run",
+      "Choose AP mounting points before cabling is run",
       "Verify that the live network meets the design requirements",
       "Configure the controller's management interface"
     ],
@@ -198,7 +198,7 @@ window.QUIZ_BANK = [
   {
     "question": "A predictive design looks perfect, but the floor plan was never scaled. What happens?",
     "options": [
-      "The tool adjusts the scale automatically from Wi-Fi",
+      "The tool rescales itself from Wi-Fi data",
       "Only the channel numbers are affected",
       "All distances and coverage results are wrong",
       "Nothing, because walls set the scale"
@@ -310,10 +310,10 @@ window.QUIZ_BANK = [
   {
     "question": "What does AI-Enhanced RRM in Catalyst Center add to classic RRM?",
     "options": [
-      "A new radio band reserved for Cisco devices",
+      "A new band reserved for Cisco",
       "Cloud analytics of RF history to tune RRM",
-      "Manual channel planning with no automation",
-      "Removal of DCA and TPC from the controller"
+      "Manual channel planning only",
+      "Removing DCA and TPC from the WLC"
     ],
     "correct": 1,
     "explanation": "AI-Enhanced RRM uses historical data and AI to recommend or apply better RRM parameters (DCA, TPC, DBS) while the WLC still runs RRM.",
@@ -327,7 +327,7 @@ window.QUIZ_BANK = [
       "To bypass 802.1X only in the auditorium",
       "To give the auditorium its own SSID name",
       "To set its own data rates and power limits",
-      "To use a different controller software release"
+      "To run other controller software"
     ],
     "correct": 2,
     "explanation": "RF profiles group APs with tailored settings (data rates, TPC min/max, DCA channels, RxSOP) for high-density or special areas.",
@@ -355,7 +355,7 @@ window.QUIZ_BANK = [
       "About -70 dBm with around 20 dB SNR",
       "-90 dBm with 5 dB SNR",
       "-40 dBm everywhere in the building",
-      "No signal target, only a channel plan"
+      "No signal target, only channels"
     ],
     "correct": 0,
     "explanation": "Data networks often target around -70 dBm and 20 dB SNR; voice and location need tighter targets.",
@@ -408,7 +408,7 @@ window.QUIZ_BANK = [
   {
     "question": "Which channel width is usually best in a very high-density 5 GHz deployment?",
     "options": [
-      "160 MHz, for the highest per-client speed",
+      "160 MHz, for top per-client speed",
       "20 MHz, for more non-overlapping channels",
       "80 MHz on every AP to fill the band",
       "40 MHz in 2.4 GHz for extra capacity"
@@ -422,9 +422,9 @@ window.QUIZ_BANK = [
   {
     "question": "In a Cisco mesh, what is the difference between a RAP and a MAP?",
     "options": [
-      "They are the same role with different antennas",
-      "A RAP is indoor only; a MAP is outdoor only",
-      "A MAP is the controller; a RAP is the switch",
+      "The same role with different antennas",
+      "A RAP is indoor; a MAP is outdoor",
+      "A MAP is the WLC; a RAP is the switch",
       "A RAP is wired; a MAP connects over the air"
     ],
     "correct": 3,
@@ -437,7 +437,7 @@ window.QUIZ_BANK = [
     "question": "Why limit the number of mesh hops in a design?",
     "options": [
       "Controllers reject MAPs beyond the first hop",
-      "More hops force the whole mesh to use the 2.4 GHz band only",
+      "More hops force the mesh onto 2.4 GHz only",
       "Each wireless hop reduces throughput and adds latency",
       "Hops increase the PoE budget needed by the RAP"
     ],
@@ -689,7 +689,7 @@ window.QUIZ_BANK = [
     "question": "What does LAG on a Catalyst 9800 appliance provide?",
     "options": [
       "Separate VLANs for each AP model",
-      "A second controller that takes over on failure",
+      "A second controller that takes over",
       "Automatic channel planning across all APs",
       "Bundled ports for bandwidth and redundancy"
     ],
@@ -732,7 +732,7 @@ window.QUIZ_BANK = [
     "options": [
       "One shared backup WLC for several primaries",
       "Each WLC has exactly one AP as a spare",
-      "A WLC with N radios and one spare radio module",
+      "A WLC with N radios and a spare radio",
       "Two WLCs in SSO for every site"
     ],
     "correct": 0,
@@ -899,9 +899,9 @@ window.QUIZ_BANK = [
     "question": "What lets FlexConnect clients keep authenticating while the WLC is unreachable?",
     "options": [
       "Increasing the AP's CAPWAP heartbeat timer to one hour",
-      "An anchor controller placed in the DMZ of the head office",
+      "An anchor controller in the head-office DMZ",
       "Local authentication with a backup RADIUS at the branch",
-      "Setting the WLAN to WPA3-Personal with SAE only at night"
+      "WPA3-Personal with SAE only at night"
     ],
     "correct": 2,
     "explanation": "Fault tolerance features let APs authenticate via a local RADIUS server or the AP's internal server (local EAP) in standalone mode.",
@@ -914,8 +914,8 @@ window.QUIZ_BANK = [
     "options": [
       "The client traffic is switched centrally at the WLC",
       "The client is blocked and must reauthenticate",
-      "The AP creates the VLAN on the branch switch itself",
-      "The client stays on the native VLAN of the AP's trunk port"
+      "The AP creates the VLAN on the branch switch",
+      "The client stays on the AP trunk's native VLAN"
     ],
     "correct": 0,
     "explanation": "VLAN-based central switching keeps local switching for known VLANs and tunnels clients to the WLC when the returned VLAN is missing locally.",
@@ -926,8 +926,8 @@ window.QUIZ_BANK = [
   {
     "question": "What does FlexConnect Smart AP image upgrade save?",
     "options": [
-      "Flash space, because the image is stored on the switch instead",
-      "Controller licences, by upgrading only APs with the old image",
+      "Flash space, as the image is kept on the switch",
+      "Controller licences, by upgrading only old APs",
       "AP power, since each AP reboots at a separate random time",
       "WAN bandwidth: one master AP per model downloads, then shares"
     ],
@@ -940,9 +940,9 @@ window.QUIZ_BANK = [
   {
     "question": "What does an OfficeExtend AP give a home worker?",
     "options": [
-      "A public hotspot that neighbours can also join with a code",
+      "A public hotspot that neighbours can join with a code",
       "The corporate SSID at home over a secure tunnel to the WLC",
-      "A faster home broadband connection to the internet provider",
+      "A faster home broadband connection to the provider",
       "A local controller that manages the user's home router"
     ],
     "correct": 1,
@@ -1081,7 +1081,7 @@ window.QUIZ_BANK = [
     "question": "Multicast is enabled globally on the 9800 but a WLAN's clients do not get the stream. What else is often needed?",
     "options": [
       "A static route to 224.0.0.0/4 on the AP",
-      "An anchor controller for the multicast source",
+      "An anchor WLC for the multicast source",
       "The WLAN set to 2.4 GHz only",
       "IGMP snooping and the right VLAN on the WLAN"
     ],
@@ -1136,10 +1136,10 @@ window.QUIZ_BANK = [
   {
     "question": "How does a Catalyst 9800 usually send location data to Cisco Spaces today?",
     "options": [
-      "Over SNMP traps sent from every AP to the cloud directly",
-      "By e-mailing a CSV export from the WLC to Spaces every night",
+      "Over SNMP traps sent from every AP to the cloud",
+      "By e-mailing a nightly CSV export to Spaces",
       "Through a Cisco Spaces Connector, or direct cloud link",
-      "By copying the WLC running configuration to Spaces by TFTP"
+      "By copying the WLC config to Spaces via TFTP"
     ],
     "correct": 2,
     "explanation": "Spaces gets data via the Spaces Connector (on-prem VM or docker) or a direct WLC connection; CMX on-prem used NMSP from the WLC.",
@@ -1207,9 +1207,9 @@ window.QUIZ_BANK = [
     "question": "Why is locating a rogue AP more useful than just detecting it?",
     "options": [
       "It stops the rogue from using any channel",
-      "It lets the WLC adopt the rogue as a managed AP",
+      "It lets the WLC adopt the rogue",
       "Staff can find and remove the device physically",
-      "It automatically blocks the rogue's DHCP server"
+      "It blocks the rogue's DHCP server"
     ],
     "correct": 2,
     "explanation": "Detection says a rogue exists; location narrows where it is so it can be traced and removed or reclassified.",
@@ -1235,9 +1235,9 @@ window.QUIZ_BANK = [
     "question": "What is the 'detect and locate' function in Cisco Spaces?",
     "options": [
       "A tool that measures AP cable lengths",
-      "A firewall that blocks unknown wireless clients",
+      "A firewall for unknown wireless clients",
       "A map view of devices and clients on floors",
-      "A feature that changes AP channels by location"
+      "A feature that sets AP channels by place"
     ],
     "correct": 2,
     "explanation": "Detect and Locate shows clients, interferers, rogues and tags on maps imported from the WLC or Catalyst Center.",
@@ -1277,9 +1277,9 @@ window.QUIZ_BANK = [
     "question": "A shop wants a branded splash page with terms of use on its guest Wi-Fi via Spaces. What must the WLAN redirect to?",
     "options": [
       "The Spaces captive portal URL, with a pre-auth ACL",
-      "The WLC's internal web server, with WPA3-Enterprise",
+      "The WLC's internal web server with WPA3",
       "The ISE posture portal for corporate laptops",
-      "No redirect, since Spaces injects the page in beacons"
+      "No redirect; Spaces injects the page in beacons"
     ],
     "correct": 0,
     "explanation": "The WLAN uses web auth redirecting to the Spaces portal; a pre-auth ACL or URL filter allows access to Spaces before login.",
@@ -1445,7 +1445,7 @@ window.QUIZ_BANK = [
     "question": "How does Local Web Authentication differ from CWA?",
     "options": [
       "LWA needs no web page at all",
-      "LWA uses 802.1X with client certificates only",
+      "LWA uses only 802.1X with certificates",
       "In LWA the WLC runs the web login itself",
       "LWA works only on FlexConnect APs"
     ],
@@ -1682,7 +1682,7 @@ window.QUIZ_BANK = [
   {
     "question": "What should exist in case the TACACS+ servers are unreachable?",
     "options": [
-      "No account, so nobody can log in",
+      "No account, so no one logs in",
       "A local fallback admin account",
       "An open guest SSID for admins",
       "SNMP v1 write access"

@@ -16,10 +16,10 @@ window.QUIZ_BANK = [
   {
     "question": "In Python, what does json.loads() return for the text '{\"vlan\": 10, \"name\": \"users\"}'?",
     "options": [
-      "A list holding two separate strings",
+      "A list of two strings",
       "A dict with the keys vlan and name",
       "An XML ElementTree root element",
-      "A single string with the quotes removed"
+      "One string without the quotes"
     ],
     "correct": 1,
     "explanation": "json.loads() parses a JSON string into native Python objects: a JSON object becomes a dict and numbers become int or float.",
@@ -86,10 +86,10 @@ window.QUIZ_BANK = [
   {
     "question": "Why organise a script's repeated logic into functions?",
     "options": [
-      "To make the script run on any CPU without Python",
+      "To run the script on any CPU without Python",
       "To reuse the code and test each piece separately",
       "To stop the code from ever needing comments",
-      "Because Python refuses scripts with over 100 lines"
+      "Python refuses scripts over 100 lines"
     ],
     "correct": 1,
     "explanation": "Functions avoid copy-paste, give each task a name and make unit testing easier. Modules and classes extend the same idea to larger code bases.",
@@ -131,7 +131,7 @@ window.QUIZ_BANK = [
       "Full history, so any earlier version can be restored",
       "Code that is automatically free of bugs",
       "Servers that no longer need any backups",
-      "Faster execution of the compiled program on every server"
+      "Faster execution of the compiled program"
     ],
     "correct": 0,
     "explanation": "Version control records who changed what and when, allows branching and merging, and lets you roll back to any earlier commit.",
@@ -212,9 +212,9 @@ window.QUIZ_BANK = [
   {
     "question": "What does git diff show with no arguments?",
     "options": [
-      "The author of each line of a file",
+      "The author of each line",
       "The list of all remote branches",
-      "Commits that exist only on the remote",
+      "Commits that exist only remotely",
       "Changes not yet staged for commit"
     ],
     "correct": 3,
@@ -229,7 +229,7 @@ window.QUIZ_BANK = [
       "DELETE to /api/v1/devices/switch with no headers",
       "POST to /api/v1/devices with type=switch in a JSON body",
       "GET to /api/v1/devices?type=switch with the token header set",
-      "PUT to /api/v1/devices?type=switch with the token in the URL"
+      "PUT to /api/v1/devices?type=switch, token in URL"
     ],
     "correct": 2,
     "explanation": "Follow the documented method, path, query string and header. Query parameters filter the GET, and the token goes in the named header.",
@@ -394,7 +394,7 @@ window.QUIZ_BANK = [
   {
     "question": "How is HTTP Basic authentication sent?",
     "options": [
-      "An API key written into the JSON body of every request",
+      "An API key in the JSON body of every request",
       "A signed JWT inside the URL path",
       "A client certificate in the TLS handshake",
       "An Authorization header with base64 of user:password"
@@ -437,7 +437,7 @@ window.QUIZ_BANK = [
     "question": "How does an RPC-style API differ from a REST API?",
     "options": [
       "RPC calls named actions; REST acts on resources with HTTP verbs",
-      "RPC can only ever carry XML, while REST can only ever carry JSON",
+      "RPC can only carry XML, while REST only carries JSON",
       "RPC is always stateless; REST always keeps sessions",
       "RPC needs no transport protocol at all"
     ],
@@ -663,7 +663,7 @@ window.QUIZ_BANK = [
       "A manager approves every line by e-mail",
       "The code is built and automated tests run on it",
       "The production servers are rebooted",
-      "The repository history is squashed into one commit"
+      "The repo history is squashed into one commit"
     ],
     "correct": 1,
     "explanation": "Continuous integration builds and tests every change automatically; continuous delivery/deployment then promotes artefacts that pass.",
@@ -676,7 +676,7 @@ window.QUIZ_BANK = [
     "options": [
       "print(result == expected)",
       "self.assertEqual(result, expected)",
-      "self.assert_called_once_with(expected)",
+      "mock.assert_called_with(expected)",
       "self.skipTest(expected)"
     ],
     "correct": 1,
@@ -717,7 +717,7 @@ window.QUIZ_BANK = [
     "question": "Which command starts a container from the image nginx and maps host port 8080 to container port 80?",
     "options": [
       "docker pull nginx:8080",
-      "docker build -p 80:8080 nginx",
+      "docker build -t 8080 nginx",
       "docker run -p 8080:80 nginx",
       "docker exec 8080 nginx"
     ],
@@ -745,7 +745,7 @@ window.QUIZ_BANK = [
     "question": "What does a reverse proxy do in front of a web application?",
     "options": [
       "Stores the application's database tables",
-      "Translates private IPs for the outbound browsing of internal users only",
+      "Translates private IPs for internal users' outbound browsing",
       "Resolves host names to IP addresses for clients",
       "Receives client requests and forwards them to back-end servers"
     ],
@@ -915,7 +915,7 @@ window.QUIZ_BANK = [
       "The desired values differ from how the device renders them",
       "Check mode always reports changed on every network module",
       "The inventory has too many hosts in the same group",
-      "--diff forces Ansible to push the full configuration again"
+      "--diff forces Ansible to push the full config again"
     ],
     "correct": 0,
     "explanation": "Idempotence breaks when the task's values (for example case, abbreviations or defaults) never match the parsed running state. Align the data with the device output.",
@@ -1066,10 +1066,10 @@ window.QUIZ_BANK = [
   {
     "question": "A Python asset script must read serial numbers from 300 switches quickly. Which change helps most?",
     "options": [
-      "Add time.sleep(1) between each connection attempt",
+      "Add time.sleep(1) between connections",
       "Run the sessions concurrently with a thread pool",
       "Print debug output for every received byte",
-      "Increase the SSH key size from 2048 to 4096 bits"
+      "Use 4096-bit SSH keys instead of 2048"
     ],
     "correct": 1,
     "explanation": "The work is I/O bound, so concurrent.futures threads (or asyncio) overlap waiting on many devices. Limit concurrency to protect AAA servers.",
@@ -1193,7 +1193,7 @@ window.QUIZ_BANK = [
     "question": "After a merge conflict in vlans.yml, git status shows 'both modified'. What finishes the merge?",
     "options": [
       "Run git stash so the conflict disappears for good",
-      "Run git merge again with the same branch name and --force",
+      "Run git merge again on that branch with --force",
       "Delete .git/MERGE_HEAD and push",
       "Fix the markers, git add vlans.yml, then git commit"
     ],
@@ -1291,7 +1291,7 @@ window.QUIZ_BANK = [
     "question": "A test stage job shows 'pytest: 3 failed' and the deploy stage never runs. Is this correct behaviour?",
     "options": [
       "No, GitLab ignores test failures unless asked",
-      "No, deploy should always run in parallel with tests",
+      "No, deploy should run in parallel with tests",
       "Yes, a failed stage stops later stages by default",
       "Yes, but only because the runner is shared"
     ],
@@ -1374,7 +1374,7 @@ window.QUIZ_BANK = [
   {
     "question": "What should a post-validation stage check after an OSPF change?",
     "options": [
-      "That the Git commit message has fewer than 50 characters",
+      "That the commit message is under 50 characters",
       "That neighbours and routes match the expected state",
       "That the YAML file uses two-space indentation",
       "That the deploy job ran on the fastest runner"
@@ -1417,7 +1417,7 @@ window.QUIZ_BANK = [
     "question": "In a docker-compose.yml, what does 'volumes: - ./db:/var/lib/postgresql/data' under a service do?",
     "options": [
       "Mounts the host folder ./db into the container path",
-      "Copies the container data to ./db only at build time",
+      "Copies container data to ./db only at build time",
       "Limits the database to the size of ./db",
       "Creates a new Docker network called db"
     ],
@@ -1475,7 +1475,7 @@ window.QUIZ_BANK = [
       "A JSON string that joins all leaves with commas",
       "An object inside a JSON array that includes \"name\"",
       "An XML element inside a JSON string field",
-      "A key-value pair where the key is the list name only"
+      "A key-value pair keyed by the list name only"
     ],
     "correct": 1,
     "explanation": "A YANG list becomes a JSON array of objects; each object holds the key leaf and other leaves. Module names prefix top-level members.",
@@ -1514,7 +1514,7 @@ window.QUIZ_BANK = [
   {
     "question": "In model-driven telemetry, what is the difference between dial-in and dial-out?",
     "options": [
-      "Dial-in uses SNMP traps, while dial-out sends syslog messages over UDP",
+      "Dial-in uses SNMP traps, while dial-out sends syslog",
       "Dial-in: the collector opens the session; dial-out: the device does",
       "Dial-in is only for IOS XR, and dial-out is only for NX-OS",
       "Dial-out needs no subscription at all on the device"
@@ -1530,7 +1530,7 @@ window.QUIZ_BANK = [
     "options": [
       "Telegraf, InfluxDB and Grafana",
       "Ansible, Jinja2 and NetBox",
-      "Git, GitLab and Docker Compose",
+      "Git, GitLab and Compose",
       "pyATS, Genie and Unicon"
     ],
     "correct": 0,
@@ -1587,7 +1587,7 @@ window.QUIZ_BANK = [
       "Fields can be searched and parsed reliably",
       "JSON logs are always smaller on disk",
       "Syslog servers refuse plain text messages",
-      "It removes the need for timestamps in logs"
+      "It removes the need for timestamps"
     ],
     "correct": 0,
     "explanation": "Structured logs carry named fields (device, task, status) that log platforms can index and filter.",
@@ -1754,7 +1754,7 @@ window.QUIZ_BANK = [
     "options": [
       "The chatbot will reboot the devices",
       "Sensitive network data may leave the company",
-      "The configs will become invalid on the devices",
+      "The configs become invalid on devices",
       "AI tools cannot read Cisco CLI at all"
     ],
     "correct": 1,

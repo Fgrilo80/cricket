@@ -145,7 +145,7 @@ window.QUIZ_BANK = [
       "A cobertura depende do rádio e do padrão da antena",
       "Os surveys só funcionam com modelos de AP Cisco",
       "Torna o software de survey gratuito",
-      "Modelos diferentes não podem ser alimentados por PoE"
+      "Outros modelos não aceitam PoE"
     ],
     "correct": 0,
     "explanation": "O ganho, o padrão e a sensibilidade do recetor diferem entre modelos, pelo que as medições só valem para o hardware usado.",
@@ -157,7 +157,7 @@ window.QUIZ_BANK = [
     "question": "Qual é o objetivo principal de um survey pós-implementação?",
     "options": [
       "Contar quantas pessoas usam o edifício por dia",
-      "Escolher pontos de montagem dos AP antes de passar cabos",
+      "Escolher onde montar os AP antes dos cabos",
       "Verificar se a rede real cumpre os requisitos do desenho",
       "Configurar a interface de gestão do controlador"
     ],
@@ -310,9 +310,9 @@ window.QUIZ_BANK = [
   {
     "question": "O que acrescenta o AI-Enhanced RRM do Catalyst Center ao RRM clássico?",
     "options": [
-      "Uma nova banda de rádio reservada para equipamentos Cisco",
+      "Uma banda nova reservada à Cisco",
       "Análise na cloud do histórico RF para afinar o RRM",
-      "Planeamento manual de canais sem qualquer automação",
+      "Planeamento manual de canais, sem automação",
       "A remoção do DCA e do TPC do controlador"
     ],
     "correct": 1,
@@ -355,7 +355,7 @@ window.QUIZ_BANK = [
       "Cerca de -70 dBm com cerca de 20 dB de SNR",
       "-90 dBm com apenas 5 dB de SNR",
       "-40 dBm em todo o edifício",
-      "Nenhum objetivo de sinal, só um plano de canais"
+      "Nenhum objetivo de sinal, só canais"
     ],
     "correct": 0,
     "explanation": "As redes de dados visam muitas vezes cerca de -70 dBm e 20 dB de SNR; a voz e a localização precisam de objetivos mais exigentes.",
@@ -369,7 +369,7 @@ window.QUIZ_BANK = [
       "Preferir 5/6 GHz com WMM e QoS de ponta a ponta",
       "Usar só 2,4 GHz com canais de 40 MHz",
       "Desligar o WMM para reduzir sobrecarga",
-      "Permitir débitos de 1 e 2 Mb/s para mais alcance"
+      "Permitir 1 e 2 Mb/s para mais alcance"
     ],
     "correct": 0,
     "explanation": "O vídeo precisa de capacidade e pouco atraso: canais limpos em 5/6 GHz, filas WMM e mapeamento DSCP/UP coerente. Débitos antigos baixos gastam tempo de antena.",
@@ -408,7 +408,7 @@ window.QUIZ_BANK = [
   {
     "question": "Que largura de canal é geralmente melhor numa implementação de 5 GHz com densidade muito alta?",
     "options": [
-      "160 MHz, para a maior velocidade possível por cliente",
+      "160 MHz, para a velocidade máxima",
       "20 MHz, para ter mais canais sem sobreposição",
       "80 MHz em todos os AP para encher a banda",
       "40 MHz em 2,4 GHz para mais capacidade"
@@ -436,7 +436,7 @@ window.QUIZ_BANK = [
   {
     "question": "Porque limitar o número de saltos mesh num desenho?",
     "options": [
-      "Os controladores rejeitam MAP para lá do primeiro salto",
+      "Os controladores rejeitam MAP além do 1.º salto",
       "Mais saltos fazem a mesh usar só 2,4 GHz",
       "Cada salto sem fios reduz o débito e aumenta a latência",
       "Os saltos aumentam a energia PoE necessária no RAP"
@@ -732,7 +732,7 @@ window.QUIZ_BANK = [
     "options": [
       "Um WLC de reserva partilhado por vários primários",
       "Cada WLC tem exatamente um AP de reserva",
-      "Um WLC com N rádios e um módulo de rádio de reserva",
+      "Um WLC com N rádios e um rádio de reserva",
       "Dois WLC em SSO para cada local"
     ],
     "correct": 0,
@@ -773,7 +773,7 @@ window.QUIZ_BANK = [
     "question": "Onde se definem os controladores primário, secundário e terciário dos AP num 9800?",
     "options": [
       "No RF profile de 5 GHz",
-      "Nas definições de segurança de camada 2 da WLAN",
+      "Na segurança de camada 2 da WLAN",
       "No AP join profile ou na HA de cada AP",
       "Na opção DHCP 43 de cada cliente"
     ],
@@ -859,7 +859,7 @@ window.QUIZ_BANK = [
       "Na RF tag do rádio de 5 GHz dos AP da filial",
       "No policy profile, desativando a comutação central",
       "No AP join profile, nos temporizadores CAPWAP",
-      "No WLAN profile, no separador de segurança de camada 2"
+      "No WLAN profile, na segurança de camada 2"
     ],
     "correct": 1,
     "explanation": "O policy profile controla a comutação central ou local, o DHCP e a autenticação; a site tag tem de levar um flex profile com as VLAN.",
@@ -913,7 +913,7 @@ window.QUIZ_BANK = [
     "question": "Com VLAN-based central switching, o que acontece quando o ISE devolve uma VLAN não definida no AP FlexConnect?",
     "options": [
       "O tráfego do cliente é comutado centralmente no WLC",
-      "O cliente é bloqueado e tem de voltar a autenticar-se",
+      "O cliente é bloqueado e tem de reautenticar",
       "O AP cria a VLAN no próprio switch da filial",
       "O cliente fica na VLAN nativa da porta trunk do AP"
     ],
@@ -929,7 +929,7 @@ window.QUIZ_BANK = [
       "Espaço em flash, porque a imagem fica guardada no switch",
       "Licenças do controlador, atualizando só AP com imagem antiga",
       "Energia dos AP, porque cada AP reinicia numa hora aleatória",
-      "Largura de banda WAN: um AP mestre por modelo descarrega"
+      "Largura de banda WAN: um AP mestre por modelo descarrega e partilha"
     ],
     "correct": 3,
     "explanation": "Um AP por modelo no grupo descarrega a imagem pela WAN; os outros recebem-na localmente desse AP mestre.",
@@ -940,10 +940,10 @@ window.QUIZ_BANK = [
   {
     "question": "O que dá um AP OfficeExtend a quem trabalha em casa?",
     "options": [
-      "Um hotspot público a que os vizinhos se juntam com um código",
+      "Um hotspot público para os vizinhos",
       "O SSID da empresa em casa, por um túnel seguro até ao WLC",
       "Uma ligação de banda larga mais rápida ao fornecedor",
-      "Um controlador local que gere o router de casa do utilizador"
+      "Um controlador local que gere o router de casa"
     ],
     "correct": 1,
     "explanation": "O OEAP é um AP para teletrabalho que se junta ao WLC por CAPWAP protegido com DTLS pela internet e pode oferecer também um SSID pessoal.",
@@ -1083,7 +1083,7 @@ window.QUIZ_BANK = [
       "Uma rota estática para 224.0.0.0/4 no AP",
       "Um controlador anchor para a fonte multicast",
       "A WLAN configurada só para 2,4 GHz",
-      "IGMP snooping e a VLAN certa na WLAN"
+      "IGMP snooping e a VLAN certa definida na WLAN"
     ],
     "correct": 3,
     "explanation": "Verifique o modo multicast global, o IGMP/MLD snooping, o mapeamento da VLAN do cliente e se a rede com fios entrega o grupo ao WLC.",
@@ -1137,9 +1137,9 @@ window.QUIZ_BANK = [
     "question": "Como envia hoje normalmente um Catalyst 9800 dados de localização para o Cisco Spaces?",
     "options": [
       "Por traps SNMP enviados por cada AP diretamente para a cloud",
-      "Enviando por e-mail, todas as noites, uma exportação CSV do WLC",
+      "Enviando todas as noites uma exportação CSV do WLC",
       "Através de um Cisco Spaces Connector, ou ligação direta à cloud",
-      "Copiando a configuração em execução do WLC para o Spaces por TFTP"
+      "Copiando a configuração do WLC para o Spaces por TFTP"
     ],
     "correct": 2,
     "explanation": "O Spaces recebe dados através do Spaces Connector (VM ou docker local) ou de ligação direta do WLC; o CMX local usava NMSP a partir do WLC.",
@@ -1234,8 +1234,8 @@ window.QUIZ_BANK = [
   {
     "question": "O que é a função 'detect and locate' no Cisco Spaces?",
     "options": [
-      "Uma ferramenta que mede o comprimento dos cabos dos AP",
-      "Uma firewall que bloqueia clientes sem fios desconhecidos",
+      "Uma ferramenta que mede os cabos dos AP",
+      "Uma firewall para clientes sem fios desconhecidos",
       "Uma vista em mapa de equipamentos e clientes nos pisos",
       "Uma função que muda os canais dos AP por localização"
     ],
@@ -1279,7 +1279,7 @@ window.QUIZ_BANK = [
       "Para o captive portal do Spaces, com ACL de pré-autenticação",
       "Para o servidor web interno do WLC, com WPA3-Enterprise",
       "Para o portal de postura do ISE para portáteis da empresa",
-      "Para nenhum lado, porque o Spaces injeta a página nos beacons"
+      "Para nenhum lado; o Spaces injeta a página nos beacons"
     ],
     "correct": 0,
     "explanation": "A WLAN usa web auth com redirecionamento para o portal do Spaces; uma ACL de pré-autenticação ou filtro de URL permite chegar ao Spaces antes do login.",
@@ -1445,7 +1445,7 @@ window.QUIZ_BANK = [
     "question": "Em que difere a Local Web Authentication da CWA?",
     "options": [
       "A LWA não precisa de página web",
-      "A LWA usa só 802.1X com certificados de cliente",
+      "A LWA usa só 802.1X com certificados",
       "Na LWA é o próprio WLC que trata do login web",
       "A LWA só funciona em AP FlexConnect"
     ],
@@ -1544,7 +1544,7 @@ window.QUIZ_BANK = [
     "options": [
       "Ignorado, porque não está no WLC",
       "Amigável, porque usa o mesmo SSID",
-      "Não classificado, porque o SSID não importa",
+      "Não classificado, SSID irrelevante",
       "Malicioso, considerando a contenção"
     ],
     "correct": 3,
@@ -1684,7 +1684,7 @@ window.QUIZ_BANK = [
     "options": [
       "Nenhuma conta, para ninguém entrar",
       "Uma conta de admin local de recurso",
-      "Um SSID aberto de convidados para admins",
+      "Um SSID aberto para admins",
       "Acesso de escrita SNMP v1"
     ],
     "correct": 1,

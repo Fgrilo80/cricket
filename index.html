@@ -793,6 +793,7 @@
                         <div class="cert-badge bg-emerald-500/10 text-emerald-400 mb-3">SD-ACCESS</div>
                         <h3 class="text-xl sm:text-2xl font-display font-bold tracking-tighter leading-tight">SD-Access (ENSLD 300-420, tópicos 2.4–2.5)</h3>
                         <p class="text-slate-400 text-xs mt-2">Fabric · LISP/VXLAN · SGT · Catalyst Center</p>
+                        <p class="text-amber-300/80 text-xs mt-1" data-quiz-desc="sda" title="Based on the ENSLD (300-420) SD-Access topics; there is no standalone SD-Access exam.">Baseado nos tópicos SD-Access do ENSLD (300-420) — não há exame SD-Access próprio.</p>
                     </div>
                     <i class="fa-solid fa-sitemap text-3xl text-emerald-400/70"></i>
                 </div>
@@ -1586,6 +1587,9 @@
             if (currentQuizId && window.QUIZ_CATALOG) {
                 const qz = (window.QUIZ_CATALOG.quizzes || []).find(q => q.id === currentQuizId);
                 if (qz) quizTitle = (lang === 'en' ? qz.labelEn : qz.labelPt);
+                // v4.3.1: optional catalog description (e.g. SD-Access is based on ENSLD 300-420 topics)
+                const qzDesc = qz ? (lang === 'en' ? qz.descriptionEn : qz.descriptionPt) : '';
+                if (qzDesc) quizTitle += `<span class="block text-xs font-normal text-amber-300/80 mt-1">${qzDesc}</span>`;
             }
             
             const langNames = { 'pt': 'Português', 'en': 'English' };
