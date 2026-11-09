@@ -114,10 +114,10 @@ window.QUIZ_BANK = [
   {
     "question": "What is CUBE typically used for?",
     "options": [
-      "A wireless controller for IP phones",
+      "A WLC for IP phones",
       "A SIP border element for trunks",
-      "A presence server for chat and status",
-      "An LDAP directory for all users"
+      "A presence server for chat",
+      "An LDAP user directory"
     ],
     "correct": 1,
     "explanation": "Cisco Unified Border Element on IOS XE routers demarcates SIP trunks: interworking, security, normalisation and media handling.",
@@ -157,7 +157,7 @@ window.QUIZ_BANK = [
     "question": "Why should the Expressway-E certificate be signed by a public CA?",
     "options": [
       "It lets phones skip TFTP download",
-      "Outside clients must trust it",
+      "Clients outside the network must trust it",
       "Public CAs give longer key lengths",
       "Expressway-C requires it for LDAP"
     ],
@@ -282,7 +282,7 @@ window.QUIZ_BANK = [
   {
     "question": "Which UCM tool adds hundreds of phones and users from CSV files?",
     "options": [
-      "Bulk Administration Tool",
+      "Bulk Administration Tool (BAT)",
       "Dialed Number Analyzer",
       "Real-Time Monitoring Tool",
       "Disaster Recovery System"
@@ -297,7 +297,7 @@ window.QUIZ_BANK = [
     "question": "How can a phone be onboarded with an activation code?",
     "options": [
       "The code is sent in DHCP option 150",
-      "The admin types the MAC into Expressway",
+      "The MAC is typed into Expressway",
       "The phone scans the network for UCM",
       "The user types the code on the phone"
     ],
@@ -338,7 +338,7 @@ window.QUIZ_BANK = [
   {
     "question": "What does the SDP 'm=' line describe?",
     "options": [
-      "The caller's display name",
+      "The caller's name",
       "Media type, port, codecs",
       "The SIP server address",
       "The total call duration"
@@ -436,7 +436,7 @@ window.QUIZ_BANK = [
   {
     "question": "Which UCM setting helps prevent toll fraud through call forward to international numbers?",
     "options": [
-      "A restricted forward CSS",
+      "A restricted call-forward CSS",
       "A larger region bandwidth",
       "Enabling auto-registration",
       "Using G.711 only on trunks"
@@ -506,7 +506,7 @@ window.QUIZ_BANK = [
   {
     "question": "What is a forced authorization code (FAC)?",
     "options": [
-      "A code for some call types",
+      "A code required for some call types",
       "A PIN for the voicemail box",
       "A licence key for the trunk",
       "A codec negotiation rule"
@@ -537,7 +537,7 @@ window.QUIZ_BANK = [
       "Cisco Unified Reporting",
       "Bulk Administration Tool",
       "Disaster Recovery System",
-      "Dialed Number Analyzer"
+      "Dialed Number Analyzer (DNA)"
     ],
     "correct": 3,
     "explanation": "DNA simulates digit analysis using the calling device's CSS and shows matched patterns, transformations and the route chosen.",
@@ -632,7 +632,7 @@ window.QUIZ_BANK = [
   {
     "question": "A voice translation rule is written as rule 1 /^0\\(.*\\)/ /+351\\1/. What does it do to 0211234567?",
     "options": [
-      "Changes it to +3510211234567",
+      "Gives +3510211234567",
       "Changes it to +351211234567",
       "Leaves it unchanged",
       "Deletes all digits"
@@ -676,7 +676,7 @@ window.QUIZ_BANK = [
     "options": [
       "POTS peers are only for fax calls",
       "POTS: voice ports; VoIP: IP targets",
-      "VoIP peers are only for analog phones",
+      "VoIP peers are only for analog",
       "There is no practical difference"
     ],
     "correct": 1,
@@ -704,7 +704,7 @@ window.QUIZ_BANK = [
     "options": [
       "Load balancing of DSPs",
       "A cluster of CUBE routers",
-      "Many targets per peer",
+      "Many SIP targets per dial peer",
       "A list of LDAP servers"
     ],
     "correct": 2,
@@ -744,8 +744,8 @@ window.QUIZ_BANK = [
   {
     "question": "Why use voice class tenants on a multi-trunk CUBE?",
     "options": [
-      "To isolate DSPs per customer",
-      "Per-provider SIP settings",
+      "To isolate DSPs per client",
+      "SIP settings per provider trunk",
       "To bill each department",
       "To license each dial peer"
     ],
@@ -773,7 +773,7 @@ window.QUIZ_BANK = [
     "question": "Which apps make up the Webex Suite for end users?",
     "options": [
       "Only IP phone provisioning",
-      "Only video conferencing rooms",
+      "Only video meeting rooms",
       "Calling, meetings, messaging",
       "Only contact centre agents"
     ],
@@ -802,7 +802,7 @@ window.QUIZ_BANK = [
     "options": [
       "Call recording policies",
       "Number masking per user",
-      "Calling permissions",
+      "Outgoing calling permissions",
       "Caller ID settings"
     ],
     "correct": 2,
@@ -845,7 +845,7 @@ window.QUIZ_BANK = [
       "Sending patterns to PBX trunks",
       "Assigning numbers to users",
       "Recording all external calls",
-      "Changing ringtones per location"
+      "Changing ringtones per site"
     ],
     "correct": 0,
     "explanation": "Dial plans contain patterns (enterprise numbers) routed to a trunk/route group, letting Webex users reach on-prem UCM or PBX numbers.",

@@ -18,7 +18,7 @@
       "O cabo tem mais de 100 m",
       "Os dois fios desse par foram trocados numa ponta",
       "O cabo é blindado mas a ficha não",
-      "O par está bem; o testador precisa de calibração"
+      "O par está bem; falta calibrar o testador"
     ],
     "correct": 1,
     "explanation": "Um par invertido significa que os dois fios de um par estão trocados numa ponta (1 vai ao 2 e 2 ao 1). Volte a terminar essa ponta na ordem T568 correta.",
@@ -67,7 +67,7 @@
   {
     "question": "O link de um utilizador cai sempre que a secretária é mexida. Com tudo parado o cabo testa bem. O que suspeita primeiro?",
     "options": [
-      "Um âmbito DHCP demasiado pequeno",
+      "Um âmbito DHCP pequeno demais",
       "Um SSID duplicado ali perto",
       "Um sufixo DNS errado no PC",
       "Um conector solto ou mal cravado"
@@ -135,7 +135,7 @@
       "Trocar a polaridade Tx/Rx do cabo de patch duplex",
       "Atualizar primeiro o IOS dos dois switches",
       "Mudar a VLAN do uplink",
-      "Desligar o spanning tree nas duas portas de uplink"
+      "Desligar o spanning tree nos dois uplinks"
     ],
     "correct": 0,
     "explanation": "Há luz a ser enviada mas não recebida em nenhum dos lados, sinal típico de Tx ligado a Tx. Inverter o conector duplex (ou a polaridade do patch) numa ponta costuma repor o link.",
@@ -186,7 +186,7 @@
     "options": [
       "Um par de conectores acoplados",
       "A ponta aberta da fibra",
-      "Um fantasma causado pela bobina de lançamento",
+      "Um fantasma da bobina de lançamento",
       "Uma curva apertada (macrocurvatura) no cabo"
     ],
     "correct": 3,
@@ -367,7 +367,7 @@
     "question": "O show power inline mostra: Disponível 370 W, Usado 362 W. Uma câmara nova de 25 W não recebe energia. Qual é a causa?",
     "options": [
       "A porta está na VLAN errada",
-      "A câmara precisa de um cabo cruzado",
+      "A câmara precisa de cabo cruzado",
       "O orçamento PoE está quase esgotado",
       "A câmara só funciona com fibra"
     ],
@@ -938,8 +938,8 @@
   {
     "question": "Uma câmara funciona através de um injetor PoE. Onde devem ir as portas 'data in' e 'PoE out' do injetor?",
     "options": [
-      "Data in para a câmara e PoE out para o switch",
-      "As duas portas para o switch, por redundância",
+      "Data in na câmara e PoE out no switch",
+      "As duas portas no switch, por redundância",
       "Data in para o switch e PoE out para a câmara",
       "Tanto faz, porque o injetor é simétrico"
     ],

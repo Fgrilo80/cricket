@@ -186,7 +186,7 @@
     "options": [
       "As explícitas são vídeo multicast; as implícitas voz",
       "As explícitas usam UDP; as implícitas usam sempre TCP",
-      "As explícitas exigem PROFINET; as implícitas exigem Modbus RTU",
+      "As explícitas exigem PROFINET; as implícitas Modbus",
       "As explícitas são pedido/resposta; as implícitas I/O cíclico"
     ],
     "correct": 3,
@@ -200,7 +200,7 @@
       "Cada consumidor interroga o produtor à vez",
       "Só um consumidor pode ler cada tag",
       "Um produtor envia dados que muitos equipamentos consomem",
-      "Cada consumidor tem de confirmar todos os pacotes que recebe"
+      "Cada consumidor confirma todos os pacotes que recebe"
     ],
     "correct": 2,
     "explanation": "Com produtor/consumidor, um equipamento produz os dados uma vez (por exemplo em multicast) e qualquer número de consumidores os usa, em vez de cada um interrogar separadamente.",
@@ -211,7 +211,7 @@
     "question": "O I/O multicast EtherNet/IP inunda todas as portas de uma célula Layer 2 plana e torna lentos os variadores antigos. Qual é a correção padrão?",
     "options": [
       "IGMP snooping com um IGMP querier ativo na VLAN",
-      "Desligar o spanning tree em todos os switches IE",
+      "Desligar o spanning tree nos switches IE",
       "Subir o MTU para 9000 bytes em todo o lado",
       "Ativar port security com um MAC por porta"
     ],
@@ -276,7 +276,7 @@
     "question": "O que é o PROFIsafe?",
     "options": [
       "Uma camada de segurança funcional sobre 'canal negro'",
-      "Uma firewall feita só para tráfego PROFINET em células",
+      "Uma firewall só para tráfego PROFINET",
       "Um túnel VPN cifrado entre dois PLC remotos",
       "Um cabo PROFINET verde com blindagem dupla extra"
     ],
@@ -303,7 +303,7 @@
     "options": [
       "Duplica cada trama em duas LAN separadas",
       "Bloqueia uma porta por segmento e desbloqueia-a na falha",
-      "Substitui todas as VLAN por um único segmento encaminhado",
+      "Troca as VLAN por um único segmento encaminhado",
       "Cifra as tramas entre vizinhos do anel"
     ],
     "correct": 1,
@@ -447,7 +447,7 @@
       "Passa a grandmaster quando o GPS falha",
       "Termina o PTP e começa um domínio novo",
       "Junta o seu tempo de residência num campo de correção",
-      "Bloqueia as mensagens Sync que chegam às portas de acesso"
+      "Bloqueia as mensagens Sync nas portas de acesso"
     ],
     "correct": 2,
     "explanation": "Um transparent clock mede quanto tempo cada mensagem de evento PTP ficou dentro do switch e escreve-o no correctionField, para que o atraso de fila não estrague a precisão. Um boundary clock, pelo contrário, termina e regenera o PTP.",
@@ -473,7 +473,7 @@
       "Uma calha para cabos OT blindados",
       "Um caminho de comunicação controlado entre zonas",
       "Uma cópia de segurança dos programas do PLC",
-      "Uma alimentação redundante de um armário de controlo"
+      "Uma alimentação redundante de um armário"
     ],
     "correct": 1,
     "explanation": "A IEC 62443 junta em zonas os ativos com necessidades de segurança parecidas; as condutas são os canais de comunicação entre zonas, onde se aplicam controlos como firewalls.",
@@ -834,7 +834,7 @@
   {
     "question": "Que abordagem de QoS aplicam normalmente os desenhos industriais ao I/O crítico e ao PTP?",
     "options": [
-      "Marcar o I/O como scavenger para nunca atrasar o tráfego do escritório",
+      "Marcar o I/O como scavenger para não atrasar o escritório",
       "Pôr todo o tráfego numa fila best-effort por justiça",
       "Limitar o PTP a 64 kb/s em todas as portas para proteger os uplinks",
       "Confiar e dar prioridade às marcas DSCP/CoS sobre o tráfego em massa"
