@@ -32,8 +32,8 @@ window.QUIZ_COUNTS = {
     "en": 138
   },
   "wireless": {
-    "pt": 125,
-    "en": 125
+    "pt": 195,
+    "en": 195
   },
   "sdx": {
     "pt": 148,

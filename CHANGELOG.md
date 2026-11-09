@@ -1,5 +1,13 @@
 # Changelog — Cricket / Cisco Quiz (web)
 
+## v4.4.0 (PR pendente) — 2026-11-04 · Quiz WLCOR 350-101
+
+- **Novo quiz `wlcor`:** CCNP Wireless WLCOR — Core (350-101 v1.0), o novo core wireless (CCNP/CCIE Wireless). São 70 pares PT/EN originais com explicação, `exam: wlcor` e `domain` do blueprint oficial (https://learningnetwork.cisco.com/s/wlcor-exam-topics · PDF 350-101-WLCOR-v1.0).
+- Distribuição pelo peso do blueprint: 1.0 RF 11 · 2.0 802.11 7 · 3.0 Implementação 7 · 4.0 Operação 14 · 5.0 Conectividade de clientes 14 · 6.0 Monitorização 10 · 7.0 Automação e IA 7. Dificuldade: 12 Fácil · 48 Médio · 10 Difícil.
+- Resposta certa equilibrada (18/18/17/17 por posição). A certa é a opção mais longa em 22,9% (EN) e 21,4% (PT) dos casos, e nenhuma passa 1,5× a mediana.
+- Trilho `wireless` 125 → 195 por língua. Total do site **3764 → 3904**. Catálogo `4.4.0`, novo cartão no index.
+- Validação: schema, paridade PT/EN, semelhança máx. 0,76 (< 0,8) contra todo o banco, lint `question-bank-length` PASSED, unittest OK. `app-version.json` **não** foi alterado (bankTotal fica para o sync aprovado).
+
 ## Pendente (PR) — 2026-11-04 · SD-Access: descrição baseada no ENSLD 300-420
 
 - O quiz `sda` ganha `descriptionPt`/`descriptionEn` no catálogo (`4.3.1`, campos opcionais): "Baseado nos tópicos SD-Access do exame ENSLD (300-420, tópicos 2.4–2.5). Não existe um exame SD-Access próprio da Cisco." / "Based on the SD-Access topics of the ENSLD exam (300-420, topics 2.4–2.5). Cisco has no standalone SD-Access exam."

@@ -305,7 +305,7 @@
             <div class="flex items-center gap-x-2 text-sm">
                 <div class="px-3 py-1.5 bg-slate-900 rounded-2xl flex items-center gap-x-2 border border-slate-700">
                     <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                    <span class="text-emerald-400 text-xs font-medium">BASE ATUALIZADA • 3764 PERGUNTAS</span>
+                    <span class="text-emerald-400 text-xs font-medium">BASE ATUALIZADA • 3904 PERGUNTAS</span>
                 </div>
                 <button onclick="showDatabaseInfo()" 
                         class="px-4 py-2 text-xs font-medium flex items-center gap-x-2 hover:bg-slate-800 transition-colors rounded-2xl border border-slate-700">
@@ -320,10 +320,10 @@
     <div id="home-screen" class="max-w-screen-xl mx-auto px-6 py-10">
         <div class="max-w-2xl mx-auto text-center mb-12">
             <div class="inline-flex items-center gap-x-2 bg-slate-900 px-4 py-1.5 rounded-3xl border border-slate-700 mb-4">
-                <span class="text-xs font-bold tracking-[2px] text-blue-400">VERSÃO 4.3.0 • 2026</span>
+                <span class="text-xs font-bold tracking-[2px] text-blue-400">VERSÃO 4.4.0 • 2026</span>
             </div>
             <h1 class="text-5xl sm:text-6xl font-display font-bold tracking-tighter mb-3">Domine as<br>Certificações Cisco</h1>
-            <p class="text-lg sm:text-xl text-slate-400 max-w-md mx-auto">Pratique com 3764 perguntas: 1562 CCST/CCNA/CCNP, 612 Cybersegurança, 480 IIoT/IT Support/Field e 1110 Automação/Wireless/SD-WAN/Data Center/Colaboração.<br>CCST • CCNA • CCNP • ENCOR • Cyber • IIoT • Field • Automation • Wireless • SD-WAN • DC • Collab • PT &amp; EN</p>
+            <p class="text-lg sm:text-xl text-slate-400 max-w-md mx-auto">Pratique com 3904 perguntas: 1562 CCST/CCNA/CCNP, 612 Cybersegurança, 480 IIoT/IT Support/Field e 1250 Automação/Wireless/SD-WAN/Data Center/Colaboração.<br>CCST • CCNA • CCNP • ENCOR • Cyber • IIoT • Field • Automation • Wireless • SD-WAN • DC • Collab • PT &amp; EN</p>
         </div>
 
         <!-- Exam vs Practice (compact, above cert cards) -->
@@ -732,6 +732,31 @@
                         <i class="fa-solid fa-globe"></i><span>Português</span>
                     </button>
                     <button onclick="startQuiz('wireless', 'en', 'wlsi')"
+                            class="flex-1 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm border border-slate-700">
+                        <i class="fa-solid fa-globe"></i><span>English</span>
+                    </button>
+                </div>
+            </div>
+            <div class="quiz-card bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-7 modern-shadow">
+                <div class="flex items-start justify-between mb-5">
+                    <div>
+                        <div class="cert-badge bg-purple-500/10 text-purple-400 mb-3">WLCOR</div>
+                        <h3 class="text-xl sm:text-2xl font-display font-bold tracking-tighter leading-tight">CCNP Wireless WLCOR — Core (350-101)</h3>
+                        <p class="text-slate-400 text-xs mt-2">RF · 802.11 · arquiteturas · cliente · monitorização · IA</p>
+                    </div>
+                    <i class="fa-solid fa-signal text-3xl text-purple-400/70"></i>
+                </div>
+                <div class="flex items-center text-xs mb-5">
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                    <span class="px-3 text-slate-500" data-quiz-count="wlcor">70 PT • 70 EN</span>
+                    <div class="flex-1 h-px bg-slate-700"></div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="startQuiz('wireless', 'pt', 'wlcor')"
+                            class="flex-1 bg-purple-600 hover:bg-purple-700 active:bg-purple-800 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm">
+                        <i class="fa-solid fa-globe"></i><span>Português</span>
+                    </button>
+                    <button onclick="startQuiz('wireless', 'en', 'wlcor')"
                             class="flex-1 bg-slate-800 hover:bg-slate-700 active:bg-slate-600 transition-all text-white font-semibold py-3 rounded-2xl flex items-center justify-center gap-x-2 text-sm border border-slate-700">
                         <i class="fa-solid fa-globe"></i><span>English</span>
                     </button>
@@ -1222,8 +1247,8 @@
             document.documentElement.style.setProperty('--accent', '#0a66c2');
         }
 
-        // Contagens alinhadas com data/*.js / quiz-catalog (ccst 268, ccna 239, ccnp 274, cyber 306, iiot 82, ccstit 81, field 77, automation 138, wireless 125, sdx 148, dc 68, collab 76 por língua)
-        // Estrutura idêntica entre PT e EN. v4.1.0: + iiot/ccstit/field tracks; ccst-net and encor exam views. v4.2.0: + automation/wireless/sdx/dc/collab tracks (catalog alsoFrom pulls tagged ccna/ccnp items). v4.3.0: + daily drafts 3 Nov (6 pairs). Total = 3764.
+        // Contagens alinhadas com data/*.js / quiz-catalog (ccst 268, ccna 239, ccnp 274, cyber 306, iiot 82, ccstit 81, field 77, automation 138, wireless 195, sdx 148, dc 68, collab 76 por língua)
+        // Estrutura idêntica entre PT e EN. v4.1.0: + iiot/ccstit/field tracks; ccst-net and encor exam views. v4.2.0: + automation/wireless/sdx/dc/collab tracks (catalog alsoFrom pulls tagged ccna/ccnp items). v4.3.0: + daily drafts 3 Nov (6 pairs). v4.4.0: + WLCOR 350-101 quiz (70 pairs, wireless track). Total = 3904.
         
         const databases = {
             ccst: { pt: [], en: [] },
@@ -1257,7 +1282,7 @@
             quizAlsoFrom(quizId).forEach(t => { pool = pool.concat(filterBank(databases[t][lang] || [], quizId)); });
             return pool;
         }
-        const QUIZ_COUNTS = {"ccst": {"pt": 268, "en": 268}, "ccna": {"pt": 239, "en": 239}, "ccnp": {"pt": 274, "en": 274}, "cyber": {"pt": 306, "en": 306}, "iiot": {"pt": 82, "en": 82}, "ccstit": {"pt": 81, "en": 81}, "field": {"pt": 77, "en": 77}, "automation": {"pt": 138, "en": 138}, "wireless": {"pt": 125, "en": 125}, "sdx": {"pt": 148, "en": 148}, "dc": {"pt": 68, "en": 68}, "collab": {"pt": 76, "en": 76}};
+        const QUIZ_COUNTS = {"ccst": {"pt": 268, "en": 268}, "ccna": {"pt": 239, "en": 239}, "ccnp": {"pt": 274, "en": 274}, "cyber": {"pt": 306, "en": 306}, "iiot": {"pt": 82, "en": 82}, "ccstit": {"pt": 81, "en": 81}, "field": {"pt": 77, "en": 77}, "automation": {"pt": 138, "en": 138}, "wireless": {"pt": 195, "en": 195}, "sdx": {"pt": 148, "en": 148}, "dc": {"pt": 68, "en": 68}, "collab": {"pt": 76, "en": 76}};
         const I18N = {
             pt: {
                 prev: 'Anterior', pause: 'Pausar', next: 'Responder e Avançar', finish: 'Finalizar Quiz',
