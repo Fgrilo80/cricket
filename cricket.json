@@ -3169,8 +3169,8 @@
         "question": "Uma videochamada está aos solavancos, embora o teste de velocidade mostre 200 Mb/s. Que medidas importam mais para voz e vídeo em tempo real?",
         "options": [
           "Latência, jitter e perda de pacotes",
-          "O código de resposta do servidor DNS",
-          "Só a velocidade de download em Mb/s",
+          "O código de resposta do DNS",
+          "Só a velocidade de download",
           "A duração da concessão DHCP"
         ],
         "correct": 0,
@@ -3268,7 +3268,7 @@
         "options": [
           "O SFTP cifra as credenciais e os dados via SSH",
           "O SFTP usa UDP e por isso é mais rápido",
-          "O FTP não consegue transferir ficheiros de texto",
+          "O FTP não transfere ficheiros de texto",
           "O SFTP não precisa de nome de utilizador"
         ],
         "correct": 0,
@@ -3477,7 +3477,7 @@
         "question": "Um switch de camada 3 faz algo que um switch só de camada 2 não faz. O quê?",
         "options": [
           "Um switch de camada 3 também encaminha entre VLAN",
-          "Um switch de camada 2 usa endereços IP para encaminhar",
+          "Um switch de camada 2 encaminha por IP",
           "Um switch de camada 3 não tem tabela de MAC",
           "Os switches de camada 2 não podem ter VLAN"
         ],
@@ -3533,7 +3533,7 @@
         "question": "Um engenheiro de nível 2 pede-lhe uma captura de pacotes. Que ficheiro envia?",
         "options": [
           "Um ficheiro .pcap/.pcapng guardado no Wireshark",
-          "Uma captura de ecrã do ecrã inicial do Wireshark",
+          "Uma captura do ecrã inicial do Wireshark",
           "Só o registo de eventos do Windows do PC",
           "Uma cópia em texto do ipconfig"
         ],
@@ -3561,7 +3561,7 @@
         "question": "Uma pequena empresa gere os switches, AP e firewall a partir de um painel web na cloud. Que plataforma Cisco se ajusta?",
         "options": [
           "Um servidor de consolas série",
-          "Cisco Meraki Dashboard",
+          "O Cisco Meraki Dashboard (cloud)",
           "Um hipervisor tipo 2",
           "Um servidor TFTP na LAN"
         ],
@@ -3688,7 +3688,7 @@
         "options": [
           "WPA2/WPA3-Personal com uma PSK longa",
           "Rede aberta com portal cativo",
-          "WPA2/WPA3-Enterprise com 802.1X",
+          "WPA2/WPA3-Enterprise com 802.1X/RADIUS",
           "WEP com chave de 128 bits"
         ],
         "correct": 2,
@@ -6882,7 +6882,7 @@
         "options": [
           "Latency, jitter and packet loss",
           "The DNS server response code",
-          "Only the download speed in Mb/s",
+          "Only the download speed",
           "The DHCP lease duration"
         ],
         "correct": 0,
@@ -7189,7 +7189,7 @@
         "question": "A Layer 3 switch can do something a pure Layer 2 switch cannot. What is it?",
         "options": [
           "A Layer 3 switch can also route between VLANs",
-          "A Layer 2 switch uses IP addresses to forward",
+          "A Layer 2 switch forwards using IP addresses",
           "A Layer 3 switch has no MAC address table",
           "Layer 2 switches cannot have VLANs"
         ],
@@ -7245,7 +7245,7 @@
         "question": "A tier-2 engineer asks you for a packet capture. What file do you send?",
         "options": [
           "A .pcap/.pcapng file saved from Wireshark",
-          "A screenshot of the Wireshark start screen",
+          "A screenshot of Wireshark's start screen",
           "The PC's Windows event log only",
           "A text copy of ipconfig output"
         ],
@@ -7273,7 +7273,7 @@
         "question": "A small business manages its switches, APs and firewall from a web dashboard in the cloud. Which Cisco platform fits?",
         "options": [
           "A serial console server",
-          "Cisco Meraki Dashboard",
+          "The Cisco Meraki Dashboard",
           "A Type 2 hypervisor",
           "A TFTP server on the LAN"
         ],
@@ -7400,7 +7400,7 @@
         "options": [
           "WPA2/WPA3-Personal with a long PSK",
           "Open network with a captive portal",
-          "WPA2/WPA3-Enterprise with 802.1X",
+          "WPA2/WPA3-Enterprise with 802.1X/RADIUS",
           "WEP with a 128-bit key"
         ],
         "correct": 2,
@@ -16439,9 +16439,9 @@
         "question": "Que par de modos LACP forma um EtherChannel?",
         "options": [
           "active e passive",
-          "passive e passive",
+          "ambos passive",
           "on e active",
-          "auto e desirable"
+          "auto/desirable"
         ],
         "correct": 0,
         "explanation": "O LACP precisa de pelo menos um lado active; passive-passive nunca arranca. O 'on' não negoceia, por isso não se deve misturar com LACP. auto/desirable são modos PAgP.",
@@ -16536,7 +16536,7 @@
       {
         "question": "Porque devem os equipamentos de rede sincronizar com NTP?",
         "options": [
-          "É preciso para que as adjacências OSPF se formem",
+          "É preciso para formar adjacências OSPF",
           "Acelera o plano de encaminhamento",
           "Dispensa os servidores de syslog",
           "Datas corretas nos registos e nos certificados"
@@ -16580,7 +16580,7 @@
         "options": [
           "ip nat inside source static 10.1.1.10 203.0.113.10",
           "ip nat pool com uma gama de endereços",
-          "ip nat inside source list 1 interface Gi0/0 overload",
+          "ip nat inside source list 1 int Gi0/0 overload",
           "ip nat outside source list 2 pool WAN"
         ],
         "correct": 0,
@@ -16705,7 +16705,7 @@
         "question": "Que configuração de linha permite só SSH, com utilizadores locais, nas linhas VTY?",
         "options": [
           "password cisco e login",
-          "transport input telnet ssh com login",
+          "transport input all com login",
           "exec-timeout 0 0",
           "login local e transport input ssh"
         ],
@@ -20022,7 +20022,7 @@
         "options": [
           "A single path through one spine chosen by STP",
           "A predictable two-hop path through any spine, using ECMP",
-          "A direct cable between every pair of leaves in the fabric",
+          "A direct cable between every pair of leaves",
           "Traffic always crossing the WAN edge router first"
         ],
         "correct": 1,
@@ -20119,9 +20119,9 @@
         "question": "Which pair of LACP modes will form an EtherChannel?",
         "options": [
           "active and passive",
-          "passive and passive",
+          "both passive",
           "on and active",
-          "auto and desirable"
+          "auto/desirable"
         ],
         "correct": 0,
         "explanation": "LACP needs at least one active side; passive-passive never starts. 'on' does not negotiate, so it should not be mixed with LACP. auto/desirable are PAgP modes.",
@@ -20260,7 +20260,7 @@
         "options": [
           "ip nat inside source static 10.1.1.10 203.0.113.10",
           "ip nat pool with a range of addresses",
-          "ip nat inside source list 1 interface Gi0/0 overload",
+          "ip nat inside source list 1 int Gi0/0 overload",
           "ip nat outside source list 2 pool WAN"
         ],
         "correct": 0,
@@ -20385,7 +20385,7 @@
         "question": "Which line configuration allows only SSH, using local users, on the VTY lines?",
         "options": [
           "password cisco and login",
-          "transport input telnet ssh with login",
+          "transport input all with login",
           "exec-timeout 0 0",
           "login local and transport input ssh"
         ],
@@ -29966,7 +29966,7 @@
         "options": [
           "As explícitas são vídeo multicast; as implícitas voz",
           "As explícitas usam UDP; as implícitas usam sempre TCP",
-          "As explícitas exigem PROFINET; as implícitas exigem Modbus RTU",
+          "As explícitas exigem PROFINET; as implícitas Modbus",
           "As explícitas são pedido/resposta; as implícitas I/O cíclico"
         ],
         "correct": 3,
@@ -29980,7 +29980,7 @@
           "Cada consumidor interroga o produtor à vez",
           "Só um consumidor pode ler cada tag",
           "Um produtor envia dados que muitos equipamentos consomem",
-          "Cada consumidor tem de confirmar todos os pacotes que recebe"
+          "Cada consumidor confirma todos os pacotes que recebe"
         ],
         "correct": 2,
         "explanation": "Com produtor/consumidor, um equipamento produz os dados uma vez (por exemplo em multicast) e qualquer número de consumidores os usa, em vez de cada um interrogar separadamente.",
@@ -29991,7 +29991,7 @@
         "question": "O I/O multicast EtherNet/IP inunda todas as portas de uma célula Layer 2 plana e torna lentos os variadores antigos. Qual é a correção padrão?",
         "options": [
           "IGMP snooping com um IGMP querier ativo na VLAN",
-          "Desligar o spanning tree em todos os switches IE",
+          "Desligar o spanning tree nos switches IE",
           "Subir o MTU para 9000 bytes em todo o lado",
           "Ativar port security com um MAC por porta"
         ],
@@ -30056,7 +30056,7 @@
         "question": "O que é o PROFIsafe?",
         "options": [
           "Uma camada de segurança funcional sobre 'canal negro'",
-          "Uma firewall feita só para tráfego PROFINET em células",
+          "Uma firewall só para tráfego PROFINET",
           "Um túnel VPN cifrado entre dois PLC remotos",
           "Um cabo PROFINET verde com blindagem dupla extra"
         ],
@@ -30083,7 +30083,7 @@
         "options": [
           "Duplica cada trama em duas LAN separadas",
           "Bloqueia uma porta por segmento e desbloqueia-a na falha",
-          "Substitui todas as VLAN por um único segmento encaminhado",
+          "Troca as VLAN por um único segmento encaminhado",
           "Cifra as tramas entre vizinhos do anel"
         ],
         "correct": 1,
@@ -30227,7 +30227,7 @@
           "Passa a grandmaster quando o GPS falha",
           "Termina o PTP e começa um domínio novo",
           "Junta o seu tempo de residência num campo de correção",
-          "Bloqueia as mensagens Sync que chegam às portas de acesso"
+          "Bloqueia as mensagens Sync nas portas de acesso"
         ],
         "correct": 2,
         "explanation": "Um transparent clock mede quanto tempo cada mensagem de evento PTP ficou dentro do switch e escreve-o no correctionField, para que o atraso de fila não estrague a precisão. Um boundary clock, pelo contrário, termina e regenera o PTP.",
@@ -30253,7 +30253,7 @@
           "Uma calha para cabos OT blindados",
           "Um caminho de comunicação controlado entre zonas",
           "Uma cópia de segurança dos programas do PLC",
-          "Uma alimentação redundante de um armário de controlo"
+          "Uma alimentação redundante de um armário"
         ],
         "correct": 1,
         "explanation": "A IEC 62443 junta em zonas os ativos com necessidades de segurança parecidas; as condutas são os canais de comunicação entre zonas, onde se aplicam controlos como firewalls.",
@@ -30614,7 +30614,7 @@
       {
         "question": "Que abordagem de QoS aplicam normalmente os desenhos industriais ao I/O crítico e ao PTP?",
         "options": [
-          "Marcar o I/O como scavenger para nunca atrasar o tráfego do escritório",
+          "Marcar o I/O como scavenger para não atrasar o escritório",
           "Pôr todo o tráfego numa fila best-effort por justiça",
           "Limitar o PTP a 64 kb/s em todas as portas para proteger os uplinks",
           "Confiar e dar prioridade às marcas DSCP/CoS sobre o tráfego em massa"
@@ -31111,7 +31111,7 @@
         "question": "Which PROFINET variant is needed for tightly synchronized motion control with jitter below 1 µs?",
         "options": [
           "PROFINET IRT (Conformance Class C)",
-          "PROFINET RT over a standard Wi-Fi link",
+          "PROFINET RT over Wi-Fi",
           "PROFINET over Modbus TCP",
           "PROFINET NRT over routed UDP"
         ],
@@ -31295,7 +31295,7 @@
           "Becomes grandmaster when GPS fails",
           "Terminates PTP and starts a new domain",
           "Adds its residence time to a correction field",
-          "Blocks Sync messages arriving on access ports"
+          "Blocks Sync messages on access ports"
         ],
         "correct": 2,
         "explanation": "A transparent clock measures how long each PTP event message stayed inside the switch and writes it into the correctionField, so queuing delay does not spoil accuracy. A boundary clock instead terminates and regenerates PTP.",
@@ -31814,7 +31814,7 @@
         "options": [
           "No data loss, but redundancy is gone until B is fixed",
           "Every frame is now delivered twice",
-          "The IED stops sending on both LANs until LAN B returns",
+          "The IED stops sending on both LANs until B is back",
           "PRP automatically converts to HSR mode"
         ],
         "correct": 0,
@@ -31854,7 +31854,7 @@
           "It uses fiber only and cannot run on copper",
           "It needs a Wi-Fi controller for every segment",
           "Slaves process the frame on the fly as it passes through",
-          "It relies on TCP retransmissions to keep its cycle timing"
+          "It relies on TCP retransmissions for timing"
         ],
         "correct": 2,
         "explanation": "In EtherCAT one frame travels through all slaves, each reading and inserting its data on the fly in hardware before forwarding it. Ordinary switches would break this processing chain.",
@@ -32049,7 +32049,7 @@
           "Classe A (água)",
           "Classe C (CO2 ou agente limpo)",
           "Classe K (óleos de cozinha)",
-          "Classe D (metais combustíveis)"
+          "Classe D (metais em chamas)"
         ],
         "correct": 1,
         "explanation": "No esquema dos EUA, a classe C cobre incêndios elétricos sob tensão; extintores de CO2 ou agente limpo não conduzem eletricidade. Na Europa usa-se o CO2 marcado para risco elétrico.",
@@ -32355,7 +32355,7 @@
         "question": "Uma impressora laser encrava várias vezes por dia, sempre no mesmo tabuleiro. Que verificação faz sentido?",
         "options": [
           "A escala de ecrã do Windows nos PCs dos utilizadores",
-          "O endereço IP, a máscara de rede e o gateway configurados na impressora",
+          "O endereço IP, a máscara e o gateway da impressora",
           "Tipo de papel, humidade e rolos de alimentação gastos nesse tabuleiro",
           "A definição de assinatura SMB no servidor de impressão"
         ],
@@ -32440,7 +32440,7 @@
         "options": [
           "O brilho do ecrã do portátil",
           "A que SSID o portátil se ligou",
-          "O relatório de saúde da bateria",
+          "O relatório da bateria do PC",
           "O idioma do teclado"
         ],
         "correct": 1,
@@ -32511,7 +32511,7 @@
           "O erro de sincronização e o estado da sessão",
           "A versão e o esquema do driver do teclado",
           "O nível de toner da impressora por omissão",
-          "O cabo HDMI do segundo monitor do utilizador"
+          "O cabo HDMI do segundo monitor"
         ],
         "correct": 0,
         "explanation": "Ao clicar no ícone do OneDrive aparece o erro: sessão terminada, armazenamento cheio, nome de ficheiro bloqueado ou caminho demasiado longo. Corrija essa causa e a sincronização retoma.",
@@ -32844,7 +32844,7 @@
       {
         "question": "Porque é que os utilizadores devem bloquear o ecrã (Win+L) quando saem da secretária?",
         "options": [
-          "Para poupar toner e papel na impressora",
+          "Para poupar toner e papel",
           "Para impedir outros de usar a sessão",
           "Para acelerar o Windows Update",
           "Para renovar a concessão DHCP do PC"
@@ -33185,7 +33185,7 @@
           "Class A (water)",
           "Class C (CO2 or clean agent)",
           "Class K (kitchen oils)",
-          "Class D (combustible metals)"
+          "Class D (burning metals)"
         ],
         "correct": 1,
         "explanation": "In the US scheme, Class C covers energised electrical fires; CO2 or clean-agent extinguishers do not conduct electricity. In Europe the equivalent is CO2 marked for electrical risk.",
@@ -33254,7 +33254,7 @@
         "options": [
           "The port is for charging only and has no data",
           "The port can only connect to Apple devices",
-          "The port carries mains voltage and is dangerous to touch",
+          "The port carries mains voltage and is dangerous",
           "Thunderbolt support for displays, docks and fast storage"
         ],
         "correct": 3,
@@ -33353,7 +33353,7 @@
           "The app's minimum hardware requirements",
           "The color and model of the PC case",
           "The number of browser bookmarks",
-          "The keyboard layout and language setting"
+          "The keyboard layout and language"
         ],
         "correct": 0,
         "explanation": "Compare the PC's CPU, RAM, GPU and OS version with the vendor's minimum requirements. Demanding apps often fail on hardware below spec.",
@@ -33408,7 +33408,7 @@
         "options": [
           "Security groups grant permissions; distribution groups are for email lists",
           "Security groups are only for printers; distribution groups for PCs",
-          "Distribution groups can log on to servers and run tasks; security groups cannot",
+          "Distribution groups can log on to servers; security groups cannot",
           "They are the same object with two different names in the console"
         ],
         "correct": 0,
@@ -33462,7 +33462,7 @@
       {
         "question": "A user must reach the departmental share \\\\fs01\\sales as drive S: at every logon. What do you do?",
         "options": [
-          "Create a desktop shortcut to the server's IP address",
+          "Create a desktop shortcut to the server IP",
           "Copy the share into OneDrive manually each day",
           "Map a network drive with 'Reconnect at sign-in'",
           "Install the share as a printer on the PC"
@@ -33504,7 +33504,7 @@
       {
         "question": "Jobs pile up in the print queue and nothing prints, although the printer is online. What is a quick fix?",
         "options": [
-          "Reinstall Windows on the print server from scratch tonight",
+          "Reinstall Windows on the print server",
           "Restart the Print Spooler service and clear the queue",
           "Replace the printer's toner cartridge first",
           "Change the user's screen saver"
@@ -33574,7 +33574,7 @@
       {
         "question": "A laptop connects to Wi-Fi but lands on the guest network with no access to internal apps. What should you check?",
         "options": [
-          "The laptop's screen brightness",
+          "The screen brightness",
           "Which SSID the laptop joined",
           "The battery health report",
           "The keyboard language"
@@ -33647,7 +33647,7 @@
           "The sync error and the user's sign-in state",
           "The keyboard driver version and layout",
           "The toner level of the default printer",
-          "The HDMI cable of the user's second monitor"
+          "The HDMI cable of the second monitor"
         ],
         "correct": 0,
         "explanation": "Clicking the OneDrive icon shows the error: signed out, storage full, a blocked file name or a path too long. Fix that cause and sync resumes.",
@@ -33675,7 +33675,7 @@
           "Replace the network card in the PC",
           "Reinstall the operating system",
           "Clear that browser's cache and cookies",
-          "Change the PC's IP address to a static one"
+          "Set a static IP on the PC"
         ],
         "correct": 2,
         "explanation": "Stale cached files or corrupted cookies often cause display issues and login loops limited to one browser. Clearing them (or testing a private window) confirms it.",
@@ -33715,7 +33715,7 @@
         "question": "A Windows Update keeps failing with the same error code. What is a sensible step?",
         "options": [
           "Disable updates forever on that PC",
-          "Delete the System32 folder to force a clean reinstall",
+          "Delete System32 to force a clean reinstall",
           "Run the update troubleshooter and check disk space",
           "Unplug the PC during the next update"
         ],
@@ -34136,7 +34136,7 @@
         "options": [
           "The user's monitor driver is outdated",
           "The web browser cache is corrupted",
-          "DNS cannot resolve any public internet names",
+          "DNS cannot resolve public internet names",
           "A routing or firewall block past the gateway"
         ],
         "correct": 3,
@@ -34210,7 +34210,7 @@
           "O cabo tem mais de 100 m",
           "Os dois fios desse par foram trocados numa ponta",
           "O cabo é blindado mas a ficha não",
-          "O par está bem; o testador precisa de calibração"
+          "O par está bem; falta calibrar o testador"
         ],
         "correct": 1,
         "explanation": "Um par invertido significa que os dois fios de um par estão trocados numa ponta (1 vai ao 2 e 2 ao 1). Volte a terminar essa ponta na ordem T568 correta.",
@@ -34259,7 +34259,7 @@
       {
         "question": "O link de um utilizador cai sempre que a secretária é mexida. Com tudo parado o cabo testa bem. O que suspeita primeiro?",
         "options": [
-          "Um âmbito DHCP demasiado pequeno",
+          "Um âmbito DHCP pequeno demais",
           "Um SSID duplicado ali perto",
           "Um sufixo DNS errado no PC",
           "Um conector solto ou mal cravado"
@@ -34327,7 +34327,7 @@
           "Trocar a polaridade Tx/Rx do cabo de patch duplex",
           "Atualizar primeiro o IOS dos dois switches",
           "Mudar a VLAN do uplink",
-          "Desligar o spanning tree nas duas portas de uplink"
+          "Desligar o spanning tree nos dois uplinks"
         ],
         "correct": 0,
         "explanation": "Há luz a ser enviada mas não recebida em nenhum dos lados, sinal típico de Tx ligado a Tx. Inverter o conector duplex (ou a polaridade do patch) numa ponta costuma repor o link.",
@@ -34378,7 +34378,7 @@
         "options": [
           "Um par de conectores acoplados",
           "A ponta aberta da fibra",
-          "Um fantasma causado pela bobina de lançamento",
+          "Um fantasma da bobina de lançamento",
           "Uma curva apertada (macrocurvatura) no cabo"
         ],
         "correct": 3,
@@ -34559,7 +34559,7 @@
         "question": "O show power inline mostra: Disponível 370 W, Usado 362 W. Uma câmara nova de 25 W não recebe energia. Qual é a causa?",
         "options": [
           "A porta está na VLAN errada",
-          "A câmara precisa de um cabo cruzado",
+          "A câmara precisa de cabo cruzado",
           "O orçamento PoE está quase esgotado",
           "A câmara só funciona com fibra"
         ],
@@ -35130,8 +35130,8 @@
       {
         "question": "Uma câmara funciona através de um injetor PoE. Onde devem ir as portas 'data in' e 'PoE out' do injetor?",
         "options": [
-          "Data in para a câmara e PoE out para o switch",
-          "As duas portas para o switch, por redundância",
+          "Data in na câmara e PoE out no switch",
+          "As duas portas no switch, por redundância",
           "Data in para o switch e PoE out para a câmara",
           "Tanto faz, porque o injetor é simétrico"
         ],
@@ -35470,8 +35470,8 @@
       {
         "question": "A 10GBASE-SR SFP+ is connected through OS2 single-mode fiber to a 10GBASE-LR at the far end. What happens?",
         "options": [
-          "It works, because both ends run 10 Gb/s Ethernet",
-          "The link negotiates down and runs at 1 Gb/s instead",
+          "It works, because both ends run 10 Gb/s",
+          "The link negotiates down to 1 Gb/s instead",
           "The link fails: 850 nm MMF vs 1310 nm SMF optics",
           "Only PoE is lost on the link"
         ],
@@ -35535,7 +35535,7 @@
       {
         "question": "A 1 m twinax cable with SFP+ ends links two switches in the same rack. What is it called?",
         "options": [
-          "A fiber-to-copper media converter",
+          "A media converter",
           "A Direct Attach Copper (DAC)",
           "An OTDR launch cable",
           "A rollover console cable"
@@ -35562,7 +35562,7 @@
         "question": "show power inline shows: Available 370 W, Used 362 W. A new 25 W camera gets no power. What is the cause?",
         "options": [
           "The port is in the wrong VLAN",
-          "The camera needs a crossover cable",
+          "A crossover cable is needed",
           "The PoE budget is nearly exhausted",
           "The camera only works with fiber"
         ],
@@ -36133,7 +36133,7 @@
       {
         "question": "A camera works through a PoE injector. Where must the injector's 'data in' and 'PoE out' ports go?",
         "options": [
-          "Data in to the camera, PoE out to the switch",
+          "Data in to camera, PoE out to switch",
           "Both ports to the switch for redundancy",
           "Data in to the switch, PoE out to the camera",
           "Either way, since the injector is symmetric"
@@ -36216,9 +36216,9 @@
       {
         "question": "Em Python, o que devolve json.loads() para o texto '{\"vlan\": 10, \"name\": \"users\"}'?",
         "options": [
-          "Uma lista com duas strings separadas",
+          "Uma lista com duas strings",
           "Um dict com as chaves vlan e name",
-          "O elemento raiz de uma ElementTree XML",
+          "A raiz de uma ElementTree XML",
           "Uma só string sem as aspas"
         ],
         "correct": 1,
@@ -36330,7 +36330,7 @@
         "options": [
           "Histórico completo, para repor qualquer versão anterior",
           "Código automaticamente livre de erros",
-          "Servidores que deixam de precisar de cópias de segurança",
+          "Servidores que já não precisam de backups",
           "Execução mais rápida do programa compilado"
         ],
         "correct": 0,
@@ -36412,9 +36412,9 @@
       {
         "question": "O que mostra o git diff sem argumentos?",
         "options": [
-          "O autor de cada linha de um ficheiro",
+          "O autor de cada linha",
           "A lista de todos os ramos remotos",
-          "Os commits que só existem no remoto",
+          "Os commits que só estão no remoto",
           "As alterações ainda fora de staging"
         ],
         "correct": 3,
@@ -36554,7 +36554,7 @@
         "options": [
           "Mudar o método para GET e reenviar",
           "Enviar vlanId como número: {\"vlanId\": 20}",
-          "Acrescentar um segundo cabeçalho Authorization",
+          "Pôr um segundo cabeçalho Authorization",
           "Esperar o Retry-After e voltar a enviar"
         ],
         "correct": 1,
@@ -36637,7 +36637,7 @@
         "question": "Em que difere uma API em estilo RPC de uma API REST?",
         "options": [
           "O RPC chama ações com nome; o REST atua sobre recursos com verbos HTTP",
-          "O RPC só consegue transportar XML e o REST só consegue transportar JSON",
+          "O RPC só transporta XML e o REST só transporta JSON",
           "O RPC é sempre sem estado; o REST mantém sempre sessões",
           "O RPC não precisa de protocolo de transporte"
         ],
@@ -36863,7 +36863,7 @@
           "Um gestor aprova cada linha por e-mail",
           "O código é compilado e correm testes automáticos",
           "Os servidores de produção são reiniciados",
-          "O histórico do repositório é reduzido a um só commit"
+          "O histórico é reduzido a um só commit"
         ],
         "correct": 1,
         "explanation": "A integração contínua compila e testa cada alteração automaticamente; a entrega/implementação contínua promove depois os artefactos que passam.",
@@ -36876,7 +36876,7 @@
         "options": [
           "print(resultado == esperado)",
           "self.assertEqual(resultado, esperado)",
-          "self.assert_called_once_with(esperado)",
+          "mock.assert_called_with(esperado)",
           "self.skipTest(esperado)"
         ],
         "correct": 1,
@@ -36917,7 +36917,7 @@
         "question": "Que comando arranca um contentor a partir da imagem nginx e liga a porta 8080 do anfitrião à porta 80 do contentor?",
         "options": [
           "docker pull nginx:8080",
-          "docker build -p 80:8080 nginx",
+          "docker build -t 8080 nginx",
           "docker run -p 8080:80 nginx",
           "docker exec 8080 nginx"
         ],
@@ -36945,7 +36945,7 @@
         "question": "O que faz um reverse proxy à frente de uma aplicação web?",
         "options": [
           "Guarda as tabelas da base de dados da aplicação",
-          "Traduz IP privados só para a navegação de saída dos utilizadores internos",
+          "Traduz IP privados na navegação de saída dos utilizadores",
           "Resolve nomes de anfitrião em endereços IP para os clientes",
           "Recebe os pedidos dos clientes e encaminha-os para os servidores internos"
         ],
@@ -37141,8 +37141,8 @@
         "question": "O que faz o terraform plan?",
         "options": [
           "Apaga o ficheiro de estado e reconstrói-o do zero",
-          "Aplica todas as alterações pendentes nos equipamentos sem perguntar",
-          "Descarrega todos os plugins de provider de que a configuração precisa",
+          "Aplica as alterações pendentes sem perguntar",
+          "Descarrega os plugins de provider necessários",
           "Compara a configuração com o estado e mostra as mudanças que faria"
         ],
         "correct": 3,
@@ -37266,7 +37266,7 @@
       {
         "question": "Um script Python de inventário tem de ler os números de série de 300 switches depressa. Que alteração ajuda mais?",
         "options": [
-          "Acrescentar time.sleep(1) entre cada tentativa de ligação",
+          "Pôr time.sleep(1) entre cada ligação",
           "Correr as sessões em paralelo com uma pool de threads",
           "Imprimir saída de debug para cada byte recebido",
           "Aumentar a chave SSH de 2048 para 4096 bits"
@@ -37294,10 +37294,10 @@
       {
         "question": "O negócio quer que cada mudança seja revista, repetível e auditável em 2000 equipamentos. Que abordagem cumpre melhor isto?",
         "options": [
-          "Uma folha de cálculo partilhada com excertos de CLI para colar",
+          "Uma folha de cálculo com excertos de CLI para colar",
           "Scripts Python avulsos guardados no portátil de um engenheiro",
           "Infraestrutura como código com revisão em Git e pipeline CI/CD",
-          "Operações SNMP SET disparadas de uma ferramenta de monitorização"
+          "Operações SNMP SET lançadas pela monitorização"
         ],
         "correct": 2,
         "explanation": "A IaC coloca a intenção no controlo de versões com merge requests, histórico e testes automáticos, o que dá revisão, repetibilidade e auditoria.",
@@ -37408,7 +37408,7 @@
         "options": [
           "git cherry-pick a1b2c3 no release-2",
           "git merge develop para o release-2",
-          "git rebase release-2 sobre o develop",
+          "git rebase release-2 sobre develop",
           "git revert a1b2c3 no develop"
         ],
         "correct": 0,
@@ -37617,7 +37617,7 @@
         "question": "Num docker-compose.yml, o que faz 'volumes: - ./db:/var/lib/postgresql/data' num serviço?",
         "options": [
           "Monta a pasta do anfitrião ./db no caminho do contentor",
-          "Copia os dados do contentor para ./db só durante o build",
+          "Copia os dados do contentor para ./db só no build",
           "Limita a base de dados ao tamanho de ./db",
           "Cria uma nova rede Docker chamada db"
         ],
@@ -37672,10 +37672,10 @@
       {
         "question": "Numa lista YANG com chave \"name\", como se representa uma entrada em JSON (RFC 7951)?",
         "options": [
-          "Uma string JSON que junta todas as folhas com vírgulas",
+          "Uma string JSON com todas as folhas e vírgulas",
           "Um objeto dentro de um array JSON que inclui \"name\"",
           "Um elemento XML dentro de um campo string JSON",
-          "Um par chave-valor em que a chave é só o nome da lista"
+          "Um par chave-valor com só o nome da lista"
         ],
         "correct": 1,
         "explanation": "Uma lista YANG passa a um array JSON de objetos; cada objeto tem a folha chave e as restantes folhas. Os nomes de módulo prefixam os membros de topo.",
@@ -37717,7 +37717,7 @@
           "O dial-in usa traps SNMP e o dial-out usa syslog sobre UDP",
           "Dial-in: o coletor abre a sessão; dial-out: é o equipamento",
           "O dial-in é só para IOS XR e o dial-out é só para NX-OS",
-          "O dial-out não precisa de qualquer subscrição no equipamento"
+          "O dial-out não precisa de subscrição no equipamento"
         ],
         "correct": 1,
         "explanation": "No dial-in (p. ex. gNMI Subscribe, NETCONF) o recetor liga-se e subscreve; no dial-out o equipamento tem a subscrição e o recetor configurados e liga para fora.",
@@ -37730,7 +37730,7 @@
         "options": [
           "Telegraf, InfluxDB e Grafana",
           "Ansible, Jinja2 e NetBox",
-          "Git, GitLab e Docker Compose",
+          "Git, GitLab e Compose",
           "pyATS, Genie e Unicon"
         ],
         "correct": 0,
@@ -37786,7 +37786,7 @@
         "options": [
           "Os campos podem ser pesquisados e lidos de forma fiável",
           "Os logs JSON são sempre mais pequenos em disco",
-          "Os servidores syslog recusam mensagens em texto simples",
+          "Os servidores syslog recusam texto simples",
           "Dispensa as marcas temporais nos logs"
         ],
         "correct": 0,
@@ -37884,7 +37884,7 @@
         "options": [
           "Copiar a chave privada da raiz da CA para o controlador",
           "Pedir à CA uma chave privada e depois criar um CSR a partir dela",
-          "Instalar um certificado autoassinado e renomeá-lo como assinado por CA",
+          "Instalar um certificado autoassinado e renomeá-lo",
           "Gerar chaves e CSR, enviá-lo à CA e instalar o certificado assinado"
         ],
         "correct": 3,
@@ -38150,10 +38150,10 @@
       {
         "question": "In Python, what does json.loads() return for the text '{\"vlan\": 10, \"name\": \"users\"}'?",
         "options": [
-          "A list holding two separate strings",
+          "A list of two strings",
           "A dict with the keys vlan and name",
           "An XML ElementTree root element",
-          "A single string with the quotes removed"
+          "One string without the quotes"
         ],
         "correct": 1,
         "explanation": "json.loads() parses a JSON string into native Python objects: a JSON object becomes a dict and numbers become int or float.",
@@ -38220,10 +38220,10 @@
       {
         "question": "Why organise a script's repeated logic into functions?",
         "options": [
-          "To make the script run on any CPU without Python",
+          "To run the script on any CPU without Python",
           "To reuse the code and test each piece separately",
           "To stop the code from ever needing comments",
-          "Because Python refuses scripts with over 100 lines"
+          "Python refuses scripts over 100 lines"
         ],
         "correct": 1,
         "explanation": "Functions avoid copy-paste, give each task a name and make unit testing easier. Modules and classes extend the same idea to larger code bases.",
@@ -38265,7 +38265,7 @@
           "Full history, so any earlier version can be restored",
           "Code that is automatically free of bugs",
           "Servers that no longer need any backups",
-          "Faster execution of the compiled program on every server"
+          "Faster execution of the compiled program"
         ],
         "correct": 0,
         "explanation": "Version control records who changed what and when, allows branching and merging, and lets you roll back to any earlier commit.",
@@ -38346,9 +38346,9 @@
       {
         "question": "What does git diff show with no arguments?",
         "options": [
-          "The author of each line of a file",
+          "The author of each line",
           "The list of all remote branches",
-          "Commits that exist only on the remote",
+          "Commits that exist only remotely",
           "Changes not yet staged for commit"
         ],
         "correct": 3,
@@ -38363,7 +38363,7 @@
           "DELETE to /api/v1/devices/switch with no headers",
           "POST to /api/v1/devices with type=switch in a JSON body",
           "GET to /api/v1/devices?type=switch with the token header set",
-          "PUT to /api/v1/devices?type=switch with the token in the URL"
+          "PUT to /api/v1/devices?type=switch, token in URL"
         ],
         "correct": 2,
         "explanation": "Follow the documented method, path, query string and header. Query parameters filter the GET, and the token goes in the named header.",
@@ -38528,7 +38528,7 @@
       {
         "question": "How is HTTP Basic authentication sent?",
         "options": [
-          "An API key written into the JSON body of every request",
+          "An API key in the JSON body of every request",
           "A signed JWT inside the URL path",
           "A client certificate in the TLS handshake",
           "An Authorization header with base64 of user:password"
@@ -38571,7 +38571,7 @@
         "question": "How does an RPC-style API differ from a REST API?",
         "options": [
           "RPC calls named actions; REST acts on resources with HTTP verbs",
-          "RPC can only ever carry XML, while REST can only ever carry JSON",
+          "RPC can only carry XML, while REST only carries JSON",
           "RPC is always stateless; REST always keeps sessions",
           "RPC needs no transport protocol at all"
         ],
@@ -38797,7 +38797,7 @@
           "A manager approves every line by e-mail",
           "The code is built and automated tests run on it",
           "The production servers are rebooted",
-          "The repository history is squashed into one commit"
+          "The repo history is squashed into one commit"
         ],
         "correct": 1,
         "explanation": "Continuous integration builds and tests every change automatically; continuous delivery/deployment then promotes artefacts that pass.",
@@ -38810,7 +38810,7 @@
         "options": [
           "print(result == expected)",
           "self.assertEqual(result, expected)",
-          "self.assert_called_once_with(expected)",
+          "mock.assert_called_with(expected)",
           "self.skipTest(expected)"
         ],
         "correct": 1,
@@ -38851,7 +38851,7 @@
         "question": "Which command starts a container from the image nginx and maps host port 8080 to container port 80?",
         "options": [
           "docker pull nginx:8080",
-          "docker build -p 80:8080 nginx",
+          "docker build -t 8080 nginx",
           "docker run -p 8080:80 nginx",
           "docker exec 8080 nginx"
         ],
@@ -38879,7 +38879,7 @@
         "question": "What does a reverse proxy do in front of a web application?",
         "options": [
           "Stores the application's database tables",
-          "Translates private IPs for the outbound browsing of internal users only",
+          "Translates private IPs for internal users' outbound browsing",
           "Resolves host names to IP addresses for clients",
           "Receives client requests and forwards them to back-end servers"
         ],
@@ -39049,7 +39049,7 @@
           "The desired values differ from how the device renders them",
           "Check mode always reports changed on every network module",
           "The inventory has too many hosts in the same group",
-          "--diff forces Ansible to push the full configuration again"
+          "--diff forces Ansible to push the full config again"
         ],
         "correct": 0,
         "explanation": "Idempotence breaks when the task's values (for example case, abbreviations or defaults) never match the parsed running state. Align the data with the device output.",
@@ -39200,10 +39200,10 @@
       {
         "question": "A Python asset script must read serial numbers from 300 switches quickly. Which change helps most?",
         "options": [
-          "Add time.sleep(1) between each connection attempt",
+          "Add time.sleep(1) between connections",
           "Run the sessions concurrently with a thread pool",
           "Print debug output for every received byte",
-          "Increase the SSH key size from 2048 to 4096 bits"
+          "Use 4096-bit SSH keys instead of 2048"
         ],
         "correct": 1,
         "explanation": "The work is I/O bound, so concurrent.futures threads (or asyncio) overlap waiting on many devices. Limit concurrency to protect AAA servers.",
@@ -39327,7 +39327,7 @@
         "question": "After a merge conflict in vlans.yml, git status shows 'both modified'. What finishes the merge?",
         "options": [
           "Run git stash so the conflict disappears for good",
-          "Run git merge again with the same branch name and --force",
+          "Run git merge again on that branch with --force",
           "Delete .git/MERGE_HEAD and push",
           "Fix the markers, git add vlans.yml, then git commit"
         ],
@@ -39425,7 +39425,7 @@
         "question": "A test stage job shows 'pytest: 3 failed' and the deploy stage never runs. Is this correct behaviour?",
         "options": [
           "No, GitLab ignores test failures unless asked",
-          "No, deploy should always run in parallel with tests",
+          "No, deploy should run in parallel with tests",
           "Yes, a failed stage stops later stages by default",
           "Yes, but only because the runner is shared"
         ],
@@ -39508,7 +39508,7 @@
       {
         "question": "What should a post-validation stage check after an OSPF change?",
         "options": [
-          "That the Git commit message has fewer than 50 characters",
+          "That the commit message is under 50 characters",
           "That neighbours and routes match the expected state",
           "That the YAML file uses two-space indentation",
           "That the deploy job ran on the fastest runner"
@@ -39551,7 +39551,7 @@
         "question": "In a docker-compose.yml, what does 'volumes: - ./db:/var/lib/postgresql/data' under a service do?",
         "options": [
           "Mounts the host folder ./db into the container path",
-          "Copies the container data to ./db only at build time",
+          "Copies container data to ./db only at build time",
           "Limits the database to the size of ./db",
           "Creates a new Docker network called db"
         ],
@@ -39609,7 +39609,7 @@
           "A JSON string that joins all leaves with commas",
           "An object inside a JSON array that includes \"name\"",
           "An XML element inside a JSON string field",
-          "A key-value pair where the key is the list name only"
+          "A key-value pair keyed by the list name only"
         ],
         "correct": 1,
         "explanation": "A YANG list becomes a JSON array of objects; each object holds the key leaf and other leaves. Module names prefix top-level members.",
@@ -39648,7 +39648,7 @@
       {
         "question": "In model-driven telemetry, what is the difference between dial-in and dial-out?",
         "options": [
-          "Dial-in uses SNMP traps, while dial-out sends syslog messages over UDP",
+          "Dial-in uses SNMP traps, while dial-out sends syslog",
           "Dial-in: the collector opens the session; dial-out: the device does",
           "Dial-in is only for IOS XR, and dial-out is only for NX-OS",
           "Dial-out needs no subscription at all on the device"
@@ -39664,7 +39664,7 @@
         "options": [
           "Telegraf, InfluxDB and Grafana",
           "Ansible, Jinja2 and NetBox",
-          "Git, GitLab and Docker Compose",
+          "Git, GitLab and Compose",
           "pyATS, Genie and Unicon"
         ],
         "correct": 0,
@@ -39721,7 +39721,7 @@
           "Fields can be searched and parsed reliably",
           "JSON logs are always smaller on disk",
           "Syslog servers refuse plain text messages",
-          "It removes the need for timestamps in logs"
+          "It removes the need for timestamps"
         ],
         "correct": 0,
         "explanation": "Structured logs carry named fields (device, task, status) that log platforms can index and filter.",
@@ -39888,7 +39888,7 @@
         "options": [
           "The chatbot will reboot the devices",
           "Sensitive network data may leave the company",
-          "The configs will become invalid on the devices",
+          "The configs become invalid on devices",
           "AI tools cannot read Cisco CLI at all"
         ],
         "correct": 1,
@@ -40215,7 +40215,7 @@
           "A cobertura depende do rádio e do padrão da antena",
           "Os surveys só funcionam com modelos de AP Cisco",
           "Torna o software de survey gratuito",
-          "Modelos diferentes não podem ser alimentados por PoE"
+          "Outros modelos não aceitam PoE"
         ],
         "correct": 0,
         "explanation": "O ganho, o padrão e a sensibilidade do recetor diferem entre modelos, pelo que as medições só valem para o hardware usado.",
@@ -40227,7 +40227,7 @@
         "question": "Qual é o objetivo principal de um survey pós-implementação?",
         "options": [
           "Contar quantas pessoas usam o edifício por dia",
-          "Escolher pontos de montagem dos AP antes de passar cabos",
+          "Escolher onde montar os AP antes dos cabos",
           "Verificar se a rede real cumpre os requisitos do desenho",
           "Configurar a interface de gestão do controlador"
         ],
@@ -40380,9 +40380,9 @@
       {
         "question": "O que acrescenta o AI-Enhanced RRM do Catalyst Center ao RRM clássico?",
         "options": [
-          "Uma nova banda de rádio reservada para equipamentos Cisco",
+          "Uma banda nova reservada à Cisco",
           "Análise na cloud do histórico RF para afinar o RRM",
-          "Planeamento manual de canais sem qualquer automação",
+          "Planeamento manual de canais, sem automação",
           "A remoção do DCA e do TPC do controlador"
         ],
         "correct": 1,
@@ -40425,7 +40425,7 @@
           "Cerca de -70 dBm com cerca de 20 dB de SNR",
           "-90 dBm com apenas 5 dB de SNR",
           "-40 dBm em todo o edifício",
-          "Nenhum objetivo de sinal, só um plano de canais"
+          "Nenhum objetivo de sinal, só canais"
         ],
         "correct": 0,
         "explanation": "As redes de dados visam muitas vezes cerca de -70 dBm e 20 dB de SNR; a voz e a localização precisam de objetivos mais exigentes.",
@@ -40439,7 +40439,7 @@
           "Preferir 5/6 GHz com WMM e QoS de ponta a ponta",
           "Usar só 2,4 GHz com canais de 40 MHz",
           "Desligar o WMM para reduzir sobrecarga",
-          "Permitir débitos de 1 e 2 Mb/s para mais alcance"
+          "Permitir 1 e 2 Mb/s para mais alcance"
         ],
         "correct": 0,
         "explanation": "O vídeo precisa de capacidade e pouco atraso: canais limpos em 5/6 GHz, filas WMM e mapeamento DSCP/UP coerente. Débitos antigos baixos gastam tempo de antena.",
@@ -40478,7 +40478,7 @@
       {
         "question": "Que largura de canal é geralmente melhor numa implementação de 5 GHz com densidade muito alta?",
         "options": [
-          "160 MHz, para a maior velocidade possível por cliente",
+          "160 MHz, para a velocidade máxima",
           "20 MHz, para ter mais canais sem sobreposição",
           "80 MHz em todos os AP para encher a banda",
           "40 MHz em 2,4 GHz para mais capacidade"
@@ -40506,7 +40506,7 @@
       {
         "question": "Porque limitar o número de saltos mesh num desenho?",
         "options": [
-          "Os controladores rejeitam MAP para lá do primeiro salto",
+          "Os controladores rejeitam MAP além do 1.º salto",
           "Mais saltos fazem a mesh usar só 2,4 GHz",
           "Cada salto sem fios reduz o débito e aumenta a latência",
           "Os saltos aumentam a energia PoE necessária no RAP"
@@ -40802,7 +40802,7 @@
         "options": [
           "Um WLC de reserva partilhado por vários primários",
           "Cada WLC tem exatamente um AP de reserva",
-          "Um WLC com N rádios e um módulo de rádio de reserva",
+          "Um WLC com N rádios e um rádio de reserva",
           "Dois WLC em SSO para cada local"
         ],
         "correct": 0,
@@ -40843,7 +40843,7 @@
         "question": "Onde se definem os controladores primário, secundário e terciário dos AP num 9800?",
         "options": [
           "No RF profile de 5 GHz",
-          "Nas definições de segurança de camada 2 da WLAN",
+          "Na segurança de camada 2 da WLAN",
           "No AP join profile ou na HA de cada AP",
           "Na opção DHCP 43 de cada cliente"
         ],
@@ -40929,7 +40929,7 @@
           "Na RF tag do rádio de 5 GHz dos AP da filial",
           "No policy profile, desativando a comutação central",
           "No AP join profile, nos temporizadores CAPWAP",
-          "No WLAN profile, no separador de segurança de camada 2"
+          "No WLAN profile, na segurança de camada 2"
         ],
         "correct": 1,
         "explanation": "O policy profile controla a comutação central ou local, o DHCP e a autenticação; a site tag tem de levar um flex profile com as VLAN.",
@@ -40983,7 +40983,7 @@
         "question": "Com VLAN-based central switching, o que acontece quando o ISE devolve uma VLAN não definida no AP FlexConnect?",
         "options": [
           "O tráfego do cliente é comutado centralmente no WLC",
-          "O cliente é bloqueado e tem de voltar a autenticar-se",
+          "O cliente é bloqueado e tem de reautenticar",
           "O AP cria a VLAN no próprio switch da filial",
           "O cliente fica na VLAN nativa da porta trunk do AP"
         ],
@@ -40999,7 +40999,7 @@
           "Espaço em flash, porque a imagem fica guardada no switch",
           "Licenças do controlador, atualizando só AP com imagem antiga",
           "Energia dos AP, porque cada AP reinicia numa hora aleatória",
-          "Largura de banda WAN: um AP mestre por modelo descarrega"
+          "Largura de banda WAN: um AP mestre por modelo descarrega e partilha"
         ],
         "correct": 3,
         "explanation": "Um AP por modelo no grupo descarrega a imagem pela WAN; os outros recebem-na localmente desse AP mestre.",
@@ -41010,10 +41010,10 @@
       {
         "question": "O que dá um AP OfficeExtend a quem trabalha em casa?",
         "options": [
-          "Um hotspot público a que os vizinhos se juntam com um código",
+          "Um hotspot público para os vizinhos",
           "O SSID da empresa em casa, por um túnel seguro até ao WLC",
           "Uma ligação de banda larga mais rápida ao fornecedor",
-          "Um controlador local que gere o router de casa do utilizador"
+          "Um controlador local que gere o router de casa"
         ],
         "correct": 1,
         "explanation": "O OEAP é um AP para teletrabalho que se junta ao WLC por CAPWAP protegido com DTLS pela internet e pode oferecer também um SSID pessoal.",
@@ -41153,7 +41153,7 @@
           "Uma rota estática para 224.0.0.0/4 no AP",
           "Um controlador anchor para a fonte multicast",
           "A WLAN configurada só para 2,4 GHz",
-          "IGMP snooping e a VLAN certa na WLAN"
+          "IGMP snooping e a VLAN certa definida na WLAN"
         ],
         "correct": 3,
         "explanation": "Verifique o modo multicast global, o IGMP/MLD snooping, o mapeamento da VLAN do cliente e se a rede com fios entrega o grupo ao WLC.",
@@ -41207,9 +41207,9 @@
         "question": "Como envia hoje normalmente um Catalyst 9800 dados de localização para o Cisco Spaces?",
         "options": [
           "Por traps SNMP enviados por cada AP diretamente para a cloud",
-          "Enviando por e-mail, todas as noites, uma exportação CSV do WLC",
+          "Enviando todas as noites uma exportação CSV do WLC",
           "Através de um Cisco Spaces Connector, ou ligação direta à cloud",
-          "Copiando a configuração em execução do WLC para o Spaces por TFTP"
+          "Copiando a configuração do WLC para o Spaces por TFTP"
         ],
         "correct": 2,
         "explanation": "O Spaces recebe dados através do Spaces Connector (VM ou docker local) ou de ligação direta do WLC; o CMX local usava NMSP a partir do WLC.",
@@ -41304,8 +41304,8 @@
       {
         "question": "O que é a função 'detect and locate' no Cisco Spaces?",
         "options": [
-          "Uma ferramenta que mede o comprimento dos cabos dos AP",
-          "Uma firewall que bloqueia clientes sem fios desconhecidos",
+          "Uma ferramenta que mede os cabos dos AP",
+          "Uma firewall para clientes sem fios desconhecidos",
           "Uma vista em mapa de equipamentos e clientes nos pisos",
           "Uma função que muda os canais dos AP por localização"
         ],
@@ -41349,7 +41349,7 @@
           "Para o captive portal do Spaces, com ACL de pré-autenticação",
           "Para o servidor web interno do WLC, com WPA3-Enterprise",
           "Para o portal de postura do ISE para portáteis da empresa",
-          "Para nenhum lado, porque o Spaces injeta a página nos beacons"
+          "Para nenhum lado; o Spaces injeta a página nos beacons"
         ],
         "correct": 0,
         "explanation": "A WLAN usa web auth com redirecionamento para o portal do Spaces; uma ACL de pré-autenticação ou filtro de URL permite chegar ao Spaces antes do login.",
@@ -41515,7 +41515,7 @@
         "question": "Em que difere a Local Web Authentication da CWA?",
         "options": [
           "A LWA não precisa de página web",
-          "A LWA usa só 802.1X com certificados de cliente",
+          "A LWA usa só 802.1X com certificados",
           "Na LWA é o próprio WLC que trata do login web",
           "A LWA só funciona em AP FlexConnect"
         ],
@@ -41614,7 +41614,7 @@
         "options": [
           "Ignorado, porque não está no WLC",
           "Amigável, porque usa o mesmo SSID",
-          "Não classificado, porque o SSID não importa",
+          "Não classificado, SSID irrelevante",
           "Malicioso, considerando a contenção"
         ],
         "correct": 3,
@@ -41754,7 +41754,7 @@
         "options": [
           "Nenhuma conta, para ninguém entrar",
           "Uma conta de admin local de recurso",
-          "Um SSID aberto de convidados para admins",
+          "Um SSID aberto para admins",
           "Acesso de escrita SNMP v1"
         ],
         "correct": 1,
@@ -41965,7 +41965,7 @@
         "question": "Why use the same AP model and antenna in a pre-deployment survey as in the final design?",
         "options": [
           "Coverage depends on the radio and antenna pattern",
-          "Survey tools only work with Cisco AP models and antennas",
+          "Survey tools only work with Cisco APs",
           "It makes the survey software free of charge",
           "Different models cannot be powered by PoE"
         ],
@@ -41979,7 +41979,7 @@
         "question": "What is the main purpose of a post-deployment survey?",
         "options": [
           "Count how many people use the building each day",
-          "Choose the AP mounting points before any of the cabling is run",
+          "Choose AP mounting points before cabling is run",
           "Verify that the live network meets the design requirements",
           "Configure the controller's management interface"
         ],
@@ -42020,7 +42020,7 @@
       {
         "question": "A predictive design looks perfect, but the floor plan was never scaled. What happens?",
         "options": [
-          "The tool adjusts the scale automatically from Wi-Fi",
+          "The tool rescales itself from Wi-Fi data",
           "Only the channel numbers are affected",
           "All distances and coverage results are wrong",
           "Nothing, because walls set the scale"
@@ -42132,10 +42132,10 @@
       {
         "question": "What does AI-Enhanced RRM in Catalyst Center add to classic RRM?",
         "options": [
-          "A new radio band reserved for Cisco devices",
+          "A new band reserved for Cisco",
           "Cloud analytics of RF history to tune RRM",
-          "Manual channel planning with no automation",
-          "Removal of DCA and TPC from the controller"
+          "Manual channel planning only",
+          "Removing DCA and TPC from the WLC"
         ],
         "correct": 1,
         "explanation": "AI-Enhanced RRM uses historical data and AI to recommend or apply better RRM parameters (DCA, TPC, DBS) while the WLC still runs RRM.",
@@ -42149,7 +42149,7 @@
           "To bypass 802.1X only in the auditorium",
           "To give the auditorium its own SSID name",
           "To set its own data rates and power limits",
-          "To use a different controller software release"
+          "To run other controller software"
         ],
         "correct": 2,
         "explanation": "RF profiles group APs with tailored settings (data rates, TPC min/max, DCA channels, RxSOP) for high-density or special areas.",
@@ -42177,7 +42177,7 @@
           "About -70 dBm with around 20 dB SNR",
           "-90 dBm with 5 dB SNR",
           "-40 dBm everywhere in the building",
-          "No signal target, only a channel plan"
+          "No signal target, only channels"
         ],
         "correct": 0,
         "explanation": "Data networks often target around -70 dBm and 20 dB SNR; voice and location need tighter targets.",
@@ -42230,7 +42230,7 @@
       {
         "question": "Which channel width is usually best in a very high-density 5 GHz deployment?",
         "options": [
-          "160 MHz, for the highest per-client speed",
+          "160 MHz, for top per-client speed",
           "20 MHz, for more non-overlapping channels",
           "80 MHz on every AP to fill the band",
           "40 MHz in 2.4 GHz for extra capacity"
@@ -42244,9 +42244,9 @@
       {
         "question": "In a Cisco mesh, what is the difference between a RAP and a MAP?",
         "options": [
-          "They are the same role with different antennas",
-          "A RAP is indoor only; a MAP is outdoor only",
-          "A MAP is the controller; a RAP is the switch",
+          "The same role with different antennas",
+          "A RAP is indoor; a MAP is outdoor",
+          "A MAP is the WLC; a RAP is the switch",
           "A RAP is wired; a MAP connects over the air"
         ],
         "correct": 3,
@@ -42259,7 +42259,7 @@
         "question": "Why limit the number of mesh hops in a design?",
         "options": [
           "Controllers reject MAPs beyond the first hop",
-          "More hops force the whole mesh to use the 2.4 GHz band only",
+          "More hops force the mesh onto 2.4 GHz only",
           "Each wireless hop reduces throughput and adds latency",
           "Hops increase the PoE budget needed by the RAP"
         ],
@@ -42511,7 +42511,7 @@
         "question": "What does LAG on a Catalyst 9800 appliance provide?",
         "options": [
           "Separate VLANs for each AP model",
-          "A second controller that takes over on failure",
+          "A second controller that takes over",
           "Automatic channel planning across all APs",
           "Bundled ports for bandwidth and redundancy"
         ],
@@ -42554,7 +42554,7 @@
         "options": [
           "One shared backup WLC for several primaries",
           "Each WLC has exactly one AP as a spare",
-          "A WLC with N radios and one spare radio module",
+          "A WLC with N radios and a spare radio",
           "Two WLCs in SSO for every site"
         ],
         "correct": 0,
@@ -42721,9 +42721,9 @@
         "question": "What lets FlexConnect clients keep authenticating while the WLC is unreachable?",
         "options": [
           "Increasing the AP's CAPWAP heartbeat timer to one hour",
-          "An anchor controller placed in the DMZ of the head office",
+          "An anchor controller in the head-office DMZ",
           "Local authentication with a backup RADIUS at the branch",
-          "Setting the WLAN to WPA3-Personal with SAE only at night"
+          "WPA3-Personal with SAE only at night"
         ],
         "correct": 2,
         "explanation": "Fault tolerance features let APs authenticate via a local RADIUS server or the AP's internal server (local EAP) in standalone mode.",
@@ -42736,8 +42736,8 @@
         "options": [
           "The client traffic is switched centrally at the WLC",
           "The client is blocked and must reauthenticate",
-          "The AP creates the VLAN on the branch switch itself",
-          "The client stays on the native VLAN of the AP's trunk port"
+          "The AP creates the VLAN on the branch switch",
+          "The client stays on the AP trunk's native VLAN"
         ],
         "correct": 0,
         "explanation": "VLAN-based central switching keeps local switching for known VLANs and tunnels clients to the WLC when the returned VLAN is missing locally.",
@@ -42748,8 +42748,8 @@
       {
         "question": "What does FlexConnect Smart AP image upgrade save?",
         "options": [
-          "Flash space, because the image is stored on the switch instead",
-          "Controller licences, by upgrading only APs with the old image",
+          "Flash space, as the image is kept on the switch",
+          "Controller licences, by upgrading only old APs",
           "AP power, since each AP reboots at a separate random time",
           "WAN bandwidth: one master AP per model downloads, then shares"
         ],
@@ -42762,9 +42762,9 @@
       {
         "question": "What does an OfficeExtend AP give a home worker?",
         "options": [
-          "A public hotspot that neighbours can also join with a code",
+          "A public hotspot that neighbours can join with a code",
           "The corporate SSID at home over a secure tunnel to the WLC",
-          "A faster home broadband connection to the internet provider",
+          "A faster home broadband connection to the provider",
           "A local controller that manages the user's home router"
         ],
         "correct": 1,
@@ -42903,7 +42903,7 @@
         "question": "Multicast is enabled globally on the 9800 but a WLAN's clients do not get the stream. What else is often needed?",
         "options": [
           "A static route to 224.0.0.0/4 on the AP",
-          "An anchor controller for the multicast source",
+          "An anchor WLC for the multicast source",
           "The WLAN set to 2.4 GHz only",
           "IGMP snooping and the right VLAN on the WLAN"
         ],
@@ -42958,10 +42958,10 @@
       {
         "question": "How does a Catalyst 9800 usually send location data to Cisco Spaces today?",
         "options": [
-          "Over SNMP traps sent from every AP to the cloud directly",
-          "By e-mailing a CSV export from the WLC to Spaces every night",
+          "Over SNMP traps sent from every AP to the cloud",
+          "By e-mailing a nightly CSV export to Spaces",
           "Through a Cisco Spaces Connector, or direct cloud link",
-          "By copying the WLC running configuration to Spaces by TFTP"
+          "By copying the WLC config to Spaces via TFTP"
         ],
         "correct": 2,
         "explanation": "Spaces gets data via the Spaces Connector (on-prem VM or docker) or a direct WLC connection; CMX on-prem used NMSP from the WLC.",
@@ -43029,9 +43029,9 @@
         "question": "Why is locating a rogue AP more useful than just detecting it?",
         "options": [
           "It stops the rogue from using any channel",
-          "It lets the WLC adopt the rogue as a managed AP",
+          "It lets the WLC adopt the rogue",
           "Staff can find and remove the device physically",
-          "It automatically blocks the rogue's DHCP server"
+          "It blocks the rogue's DHCP server"
         ],
         "correct": 2,
         "explanation": "Detection says a rogue exists; location narrows where it is so it can be traced and removed or reclassified.",
@@ -43057,9 +43057,9 @@
         "question": "What is the 'detect and locate' function in Cisco Spaces?",
         "options": [
           "A tool that measures AP cable lengths",
-          "A firewall that blocks unknown wireless clients",
+          "A firewall for unknown wireless clients",
           "A map view of devices and clients on floors",
-          "A feature that changes AP channels by location"
+          "A feature that sets AP channels by place"
         ],
         "correct": 2,
         "explanation": "Detect and Locate shows clients, interferers, rogues and tags on maps imported from the WLC or Catalyst Center.",
@@ -43099,9 +43099,9 @@
         "question": "A shop wants a branded splash page with terms of use on its guest Wi-Fi via Spaces. What must the WLAN redirect to?",
         "options": [
           "The Spaces captive portal URL, with a pre-auth ACL",
-          "The WLC's internal web server, with WPA3-Enterprise",
+          "The WLC's internal web server with WPA3",
           "The ISE posture portal for corporate laptops",
-          "No redirect, since Spaces injects the page in beacons"
+          "No redirect; Spaces injects the page in beacons"
         ],
         "correct": 0,
         "explanation": "The WLAN uses web auth redirecting to the Spaces portal; a pre-auth ACL or URL filter allows access to Spaces before login.",
@@ -43267,7 +43267,7 @@
         "question": "How does Local Web Authentication differ from CWA?",
         "options": [
           "LWA needs no web page at all",
-          "LWA uses 802.1X with client certificates only",
+          "LWA uses only 802.1X with certificates",
           "In LWA the WLC runs the web login itself",
           "LWA works only on FlexConnect APs"
         ],
@@ -43504,7 +43504,7 @@
       {
         "question": "What should exist in case the TACACS+ servers are unreachable?",
         "options": [
-          "No account, so nobody can log in",
+          "No account, so no one logs in",
           "A local fallback admin account",
           "An open guest SSID for admins",
           "SNMP v1 write access"
@@ -43593,7 +43593,7 @@
         "question": "Porque deve o Validator ter normalmente um IP público (ou NAT estático 1:1)?",
         "options": [
           "Funciona como gateway por omissão de cada LAN",
-          "Encaminha todo o tráfego de dados dos utilizadores entre locais",
+          "Encaminha o tráfego dos utilizadores entre locais",
           "Guarda as licenças de todos os routers edge",
           "Todos os edges e controladores têm de o alcançar primeiro"
         ],
@@ -43663,7 +43663,7 @@
         "question": "O que é uma rota OMP (vRoute)?",
         "options": [
           "Uma sessão BFD entre dois edges",
-          "Uma rota estática para o Validator no transporte",
+          "Uma rota estática para o Validator",
           "Um prefixo da LAN com o TLOC como próximo salto",
           "Uma rota usada só pela interface do Manager"
         ],
@@ -43749,7 +43749,7 @@
           "Gateways de cloud que ligam a fabric às VPC/VNet",
           "A compra de créditos de cloud pública",
           "A migração de servidores para a AWS",
-          "Os registos DNS de todas as aplicações SaaS das filiais"
+          "Os registos DNS das aplicações SaaS"
         ],
         "correct": 0,
         "explanation": "Implementa e liga routers de cloud (p. ex. Catalyst 8000V ou transit gateways) para as cargas na cloud entrarem nos segmentos SD-WAN.",
@@ -43791,7 +43791,7 @@
           "No painel Meraki",
           "Em cada um dos routers de filial",
           "Dentro dos nós ISE do cliente",
-          "Na cloud, alojados pela Cisco"
+          "Na cloud, alojados e geridos pela Cisco"
         ],
         "correct": 3,
         "explanation": "A Cisco (ou um parceiro) aloja Manager, Validator e Controllers na cloud, o que dá arranque rápido e operação gerida; também é possível no local.",
@@ -43846,7 +43846,7 @@
         "options": [
           "Um, sem opção de mudar",
           "Dois (max-control-connections)",
-          "Todos os Controllers do overlay",
+          "Todos os Controllers",
           "Nenhum, só usa o Validator"
         ],
         "correct": 1,
@@ -43916,7 +43916,7 @@
         "options": [
           "O mapa de QoS no túnel",
           "A área OSPF do lado da LAN",
-          "O DNS e as rotas na VPN 0",
+          "O DNS e a tabela de rotas da VPN 0",
           "A política de firewall na VPN 10"
         ],
         "correct": 2,
@@ -43929,7 +43929,7 @@
         "question": "Como encontra os seus controladores, com zero-touch, um WAN Edge novo numa ligação internet com DHCP?",
         "options": [
           "Procura na internet portas SD-WAN abertas",
-          "Espera que um engenheiro escreva a config na consola",
+          "Espera que alguém escreva a config na consola",
           "Pergunta ao PnP Connect, que lhe indica o Validator",
           "Copia a config do edge mais próximo por Bluetooth"
         ],
@@ -43971,9 +43971,9 @@
         "question": "Uma filial tem dois edges, cada um só com um dos dois circuitos WAN. Como podem os dois edges usar ambos os circuitos?",
         "options": [
           "TLOC extension entre os dois edges",
-          "Graceful restart do OMP nos circuitos",
+          "Graceful restart do OMP",
           "Um segundo Validator na filial",
-          "Cloud OnRamp for SaaS num dos edges"
+          "Cloud OnRamp for SaaS num edge"
         ],
         "correct": 0,
         "explanation": "A TLOC extension liga os routers para cada um construir túneis sobre o circuito terminado no par.",
@@ -43987,7 +43987,7 @@
           "Túneis entre spokes criados quando é preciso",
           "Túneis que mudam de cor a cada hora",
           "Túneis só entre controladores",
-          "Túneis de reserva que usam só a ligação 4G/LTE"
+          "Túneis de reserva só na ligação 4G/LTE"
         ],
         "correct": 0,
         "explanation": "Com túneis on-demand, os spokes usam o hub por omissão e criam túneis diretos quando há tráfego, poupando recursos em equipamentos pequenos.",
@@ -43998,9 +43998,9 @@
       {
         "question": "Dois edges usam cores 'privadas' (mpls) de um lado e 'públicas' (biz-internet) do outro. Quando usam os túneis IP públicos?",
         "options": [
-          "Nunca, os túneis usam sempre IP privados",
+          "Nunca; usam sempre IP privados",
           "Quando há uma cor pública envolvida",
-          "Só quando há restrict nas duas cores",
+          "Só com restrict nas duas cores",
           "Só para tráfego na VPN 0"
         ],
         "correct": 1,
@@ -44026,10 +44026,10 @@
       {
         "question": "Como escolhe o OMP a melhor rota quando vários edges anunciam o mesmo prefixo?",
         "options": [
-          "Ganha o edge com o número de série mais alto",
+          "Ganha o edge com série mais alta",
           "Preferência, preferência do TLOC, origem",
-          "A primeira rota aprendida fica para sempre",
-          "O OMP escolhe uma ao acaso a cada minuto"
+          "A primeira rota aprendida fica sempre",
+          "O OMP escolhe uma ao acaso"
         ],
         "correct": 1,
         "explanation": "O melhor caminho OMP compara preferência, preferência do TLOC, tipo de origem e métrica, entre outros; a política de controlo pode mudar estes atributos.",
@@ -44056,7 +44056,7 @@
         "options": [
           "Cifra o túnel MPLS duas vezes",
           "Os locais remotos preferem esse TLOC",
-          "Dá mais largura de banda à ligação MPLS",
+          "Dá mais banda à ligação MPLS",
           "Desliga o TLOC de internet"
         ],
         "correct": 1,
@@ -44237,7 +44237,7 @@
         "question": "O que é uma VPN no Catalyst SD-WAN?",
         "options": [
           "Um único túnel entre dois edges",
-          "Um cliente IPsec de acesso remoto para portáteis em viagem",
+          "Um cliente IPsec de acesso remoto para portáteis",
           "Um segmento como uma VRF, etiquetado no plano de dados",
           "Um grupo de utilizadores do Manager com o mesmo papel"
         ],
@@ -45020,8 +45020,8 @@
       {
         "question": "Que cuidado de MTU se aplica ao underlay SD-Access?",
         "options": [
-          "Manter 1500 em todo o lado; o VXLAN não acrescenta nada",
-          "Baixar o MTU para 1400 em todas as portas de clientes",
+          "Manter 1500; o VXLAN não acrescenta nada",
+          "Baixar o MTU para 1400 nos clientes",
           "Subir o MTU (cerca de 9100) pelo overhead VXLAN",
           "Usar um MTU diferente por rede virtual"
         ],
@@ -45135,7 +45135,7 @@
           "Uma definição extra de MTU",
           "Uma VN separada para cada utilizador",
           "Um novo fabric site para prestadores",
-          "SGT diferentes com uma SGACL"
+          "SGT diferentes aplicados com uma SGACL"
         ],
         "correct": 3,
         "explanation": "Dentro de uma VN, a micro-segmentação por SGT e política por grupos é mais simples do que criar mais VN; as VN servem para isolamento total.",
@@ -45147,7 +45147,7 @@
         "question": "Porque se deve manter pequeno o número de redes virtuais?",
         "options": [
           "Cada VN acrescenta VRF, handoffs e fuga de rotas",
-          "As VN não podem levar mais de um SGT em nenhuma versão",
+          "As VN não podem levar mais de um SGT",
           "Cada VN exige um Catalyst Center separado",
           "As VN desligam a rede sem fios"
         ],
@@ -45176,7 +45176,7 @@
         "options": [
           "Limites das tabelas de anfitriões",
           "O número de SSID em cada AP",
-          "O MTU configurado nas portas de clientes",
+          "O MTU das portas de clientes",
           "O comprimento dos nomes das VLAN"
         ],
         "correct": 0,
@@ -45286,7 +45286,7 @@
       {
         "question": "Porque se recomenda uma ligação routed dedicada entre border nodes?",
         "options": [
-          "É precisa para o ISE funcionar com os borders",
+          "O ISE precisa dela para os borders",
           "Leva o tráfego DHCP dos clientes",
           "Dá caminho se um border perder uplinks",
           "Substitui o nó de plano de controlo"
@@ -45315,8 +45315,8 @@
         "question": "Onde se deve colocar o servidor DHCP e o que tem o edge de fazer pelos clientes da fabric?",
         "options": [
           "Fora; o edge faz relay com opção 82",
-          "Em cada edge node como servidor DHCP local",
-          "Dentro de cada ponto de acesso do piso",
+          "Um DHCP local em cada edge node",
+          "Dentro de cada AP do piso",
           "Só no nó de plano de controlo"
         ],
         "correct": 0,
@@ -45414,7 +45414,7 @@
         "options": [
           "Security (scalable) Group Tag",
           "Switch Gateway Table entry",
-          "Segment Group Tunnel identifier",
+          "Segment Group Tunnel",
           "Static Gateway Translation"
         ],
         "correct": 0,
@@ -45469,7 +45469,7 @@
         "question": "Que fluxo do Catalyst Center associa pools IP às VN num site?",
         "options": [
           "Painel de saúde da Assurance",
-          "Gestão de imagens de software dos switches",
+          "Gestão de imagens de software",
           "Host onboarding / associação VN-pool",
           "Backup and restore"
         ],
@@ -45511,9 +45511,9 @@
         "question": "Qual é um local comum para uma firewall num desenho SD-Access para tráfego entre VN?",
         "options": [
           "Entre o edge e o cliente",
-          "Dentro de cada rádio dos pontos de acesso",
+          "Dentro do rádio de cada AP",
           "Só no nó de plano de controlo",
-          "Para lá do border, como fusão"
+          "Para lá do border, como fusion device"
         ],
         "correct": 3,
         "explanation": "Uma firewall a fazer de fusão (ou atrás do border) inspeciona o tráfego entre VN e para serviços partilhados ou para a internet.",
@@ -45525,8 +45525,8 @@
         "question": "Porque se configuram VLAN/pools críticas nas portas dos edges?",
         "options": [
           "Para desligar o 802.1X de vez",
-          "Para dar Wi-Fi mais rápido aos convidados",
-          "Para permitir spanning tree nas portas edge",
+          "Wi-Fi mais rápido para convidados",
+          "Para permitir STP nas portas edge",
           "O acesso continua com o ISE em baixo"
         ],
         "correct": 3,
@@ -45667,7 +45667,7 @@
         "question": "Why must the Validator normally have a public (or 1:1 static NAT) IP address?",
         "options": [
           "It acts as the default gateway for each LAN",
-          "It forwards all user data traffic between the sites",
+          "It forwards all user traffic between sites",
           "It stores the licences for every edge router",
           "All edges and controllers must reach it first"
         ],
@@ -45737,7 +45737,7 @@
         "question": "What is an OMP route (vRoute)?",
         "options": [
           "A BFD session between two edges",
-          "A static route to the Validator on the transport VPN",
+          "A static route to the Validator",
           "A LAN prefix with its TLOC as next hop",
           "A route used only by the Manager GUI"
         ],
@@ -45823,7 +45823,7 @@
           "Cloud gateways linking the fabric to VPCs/VNets",
           "The purchase of public cloud credits",
           "The migration of servers into AWS",
-          "DNS records for every SaaS app used by the branches"
+          "DNS records for every SaaS app"
         ],
         "correct": 0,
         "explanation": "It deploys and attaches cloud routers (e.g. Catalyst 8000V or cloud transit gateways) so cloud workloads join the SD-WAN segments.",
@@ -45864,7 +45864,7 @@
         "options": [
           "On the Meraki dashboard",
           "On every branch router",
-          "Inside the customer's ISE nodes",
+          "Inside the customer's ISE",
           "Cisco-hosted cloud controllers"
         ],
         "correct": 3,
@@ -45918,10 +45918,10 @@
       {
         "question": "How many Controllers does each WAN Edge connect to by default?",
         "options": [
-          "One, with no option to change",
+          "One, with no option",
           "Two (max-control-connections)",
-          "Every Controller in the overlay",
-          "None, it only uses the Validator"
+          "All the overlay Controllers",
+          "None, only the Validator"
         ],
         "correct": 1,
         "explanation": "By default edges keep two control connections per transport to different Controllers for redundancy; this is tunable.",
@@ -45990,7 +45990,7 @@
         "options": [
           "The QoS map on the tunnel",
           "The OSPF area on the LAN side",
-          "DNS and VPN 0 routing",
+          "DNS and the VPN 0 routing table",
           "The firewall policy in VPN 10"
         ],
         "correct": 2,
@@ -46003,9 +46003,9 @@
         "question": "How does a new WAN Edge on a DHCP internet link find its controllers with zero-touch?",
         "options": [
           "It scans the internet for open SD-WAN ports",
-          "It waits for an engineer to type the config on the console",
+          "It waits for an engineer to type the config",
           "It asks PnP Connect, which points it to the Validator",
-          "It copies the config from the nearest edge by Bluetooth"
+          "It copies the config from a nearby edge"
         ],
         "correct": 2,
         "explanation": "ZTP/PnP: the device gets an address, reaches devicehelper/PnP cloud, learns its Validator and organisation and then downloads its config.",
@@ -46045,7 +46045,7 @@
         "question": "A branch has two edges, each with only one of the two WAN circuits. How can both edges use both circuits?",
         "options": [
           "TLOC extension between the two edges",
-          "OMP graceful restart on the circuits",
+          "OMP graceful restart on circuits",
           "A second Validator at the branch",
           "Cloud OnRamp for SaaS on one edge"
         ],
@@ -46061,7 +46061,7 @@
           "Spoke-to-spoke tunnels built when needed",
           "Tunnels that change colour every hour",
           "Tunnels between controllers only",
-          "Backup tunnels that use only the 4G/LTE link"
+          "Backup tunnels on the 4G/LTE link only"
         ],
         "correct": 0,
         "explanation": "With on-demand tunnels, spokes use the hub by default and bring up direct tunnels when traffic flows, saving resources on small devices.",
@@ -46072,9 +46072,9 @@
       {
         "question": "Two edges use 'private' colours (mpls) on one side and 'public' (biz-internet) on the other. When do tunnels use public IPs?",
         "options": [
-          "Never, tunnels always use private IPs",
-          "When a public colour is involved",
-          "Only when restrict is set on both colours",
+          "Never; tunnels use private IPs",
+          "When a public colour is at either end",
+          "Only with restrict on both colours",
           "Only for traffic in VPN 0"
         ],
         "correct": 1,
@@ -46101,8 +46101,8 @@
         "question": "How does OMP choose the best route when several edges advertise the same prefix?",
         "options": [
           "The edge with the highest serial number wins",
-          "Preference, TLOC preference, origin",
-          "The route learned first is always kept forever",
+          "Route preference, TLOC preference, then origin",
+          "The first route learned is kept forever",
           "OMP picks one at random each minute"
         ],
         "correct": 1,
@@ -46129,7 +46129,7 @@
         "question": "Why set a higher TLOC preference on the MPLS colour at a hub?",
         "options": [
           "It encrypts the MPLS tunnel twice",
-          "Remote sites prefer that TLOC",
+          "Remote sites prefer the hub's MPLS TLOC",
           "It gives the MPLS link more bandwidth",
           "It disables the internet TLOC"
         ],
@@ -46311,7 +46311,7 @@
         "question": "What is a VPN in Catalyst SD-WAN?",
         "options": [
           "A single tunnel between two edges",
-          "An IPsec remote-access client for laptops on the road",
+          "An IPsec remote-access client for laptops",
           "A segment like a VRF, tagged in the data plane",
           "A group of Manager users with the same role"
         ],
@@ -46464,7 +46464,7 @@
       {
         "question": "What does AMP do on an SD-WAN edge?",
         "options": [
-          "Encrypts management traffic between the edge and Manager",
+          "Encrypts management traffic to the Manager",
           "Measures latency for AAR on every tunnel",
           "Checks file reputation and blocks known malware",
           "Assigns QoS classes"
@@ -46635,7 +46635,7 @@
           "Sends references instead of repeated data",
           "Drops duplicate users from the network",
           "Removes BFD packets from the tunnels",
-          "Turns off encryption to shrink the headers"
+          "Turns off encryption to shrink headers"
         ],
         "correct": 0,
         "explanation": "Data Redundancy Elimination caches byte patterns at both ends and replaces repeated chunks with short signatures.",
@@ -46660,10 +46660,10 @@
       {
         "question": "What does FEC do on a lossy tunnel?",
         "options": [
-          "Compresses the packet headers on the tunnel",
-          "Encrypts packets a second time with a new key",
-          "Moves the traffic to another TLOC colour",
-          "Adds parity to rebuild lost packets"
+          "Compresses the tunnel packet headers",
+          "Re-encrypts packets with a new key",
+          "Moves traffic to another TLOC colour",
+          "Adds parity so lost packets can be rebuilt"
         ],
         "correct": 3,
         "explanation": "Forward Error Correction sends a parity packet for each group so the receiver can recover a lost packet without retransmission.",
@@ -47095,7 +47095,7 @@
         "question": "Which MTU consideration applies to the SD-Access underlay?",
         "options": [
           "Keep 1500 everywhere; VXLAN adds nothing",
-          "Lower the MTU to 1400 on all client ports",
+          "Lower the MTU to 1400 on client ports",
           "Raise MTU (about 9100) for VXLAN overhead",
           "Use a different MTU per virtual network"
         ],
@@ -47209,7 +47209,7 @@
           "An extra MTU setting",
           "A separate VN for every single user",
           "A new fabric site for contractors",
-          "Different SGTs with an SGACL"
+          "Different SGTs enforced with an SGACL"
         ],
         "correct": 3,
         "explanation": "Within a VN, micro-segmentation via SGTs and group-based policy is simpler than creating more VNs; VNs are for full isolation.",
@@ -47221,7 +47221,7 @@
         "question": "Why should the number of virtual networks be kept small?",
         "options": [
           "Each VN adds VRFs, handoffs and route leaking",
-          "VNs cannot carry more than one SGT in any release",
+          "VNs cannot carry more than one SGT",
           "Each VN requires a separate Catalyst Center",
           "VNs disable wireless"
         ],
@@ -47249,9 +47249,9 @@
         "question": "A site needs 40,000 endpoints. Which factor most limits the design?",
         "options": [
           "Node host-table scale limits",
-          "The number of SSIDs on each AP",
+          "The SSID count on each AP",
           "The MTU of client ports",
-          "The length of the VLAN names used"
+          "The length of VLAN names"
         ],
         "correct": 0,
         "explanation": "Scale depends on platform limits for host entries in the control plane, edge node host tables, VNs and SGACLs; large sites may need multiple sites or dedicated control plane nodes.",
@@ -47332,7 +47332,7 @@
       {
         "question": "Which underlay feature is needed when native multicast or Layer 2 flooding is used?",
         "options": [
-          "Spanning tree on every routed link",
+          "Spanning tree on routed links",
           "PIM and multicast in the underlay",
           "An SSID for each virtual network",
           "802.1X on all routed uplinks"
@@ -47360,7 +47360,7 @@
       {
         "question": "Why is a dedicated, routed link between border nodes recommended?",
         "options": [
-          "It is needed for ISE to work with the borders",
+          "ISE needs it to work with borders",
           "It carries the client DHCP traffic",
           "Gives a path if one border loses uplinks",
           "It replaces the control plane node"
@@ -47389,7 +47389,7 @@
         "question": "Where should the DHCP server be placed and what must the edge do for clients in the fabric?",
         "options": [
           "Outside; the edge relays with option 82",
-          "On every edge node as a local DHCP server",
+          "A local DHCP server on every edge",
           "Inside each access point on the floor",
           "On the control plane node only"
         ],
@@ -47432,8 +47432,8 @@
         "options": [
           "The compatibility matrix per role",
           "Only the number of access ports",
-          "The colour of the chassis and its bezel",
-          "Whether the switch has a console port"
+          "The colour of the chassis",
+          "Whether it has a console port"
         ],
         "correct": 0,
         "explanation": "Each release lists supported platforms and scale per role (edge, border, control plane, extended node) and supported WLC/AP models.",
@@ -47488,7 +47488,7 @@
         "options": [
           "Security (scalable) Group Tag",
           "Switch Gateway Table entry",
-          "Segment Group Tunnel identifier",
+          "Segment Group Tunnel",
           "Static Gateway Translation"
         ],
         "correct": 0,
@@ -47543,7 +47543,7 @@
         "question": "Which Catalyst Center workflow assigns IP pools to VNs at a site?",
         "options": [
           "Assurance health dashboard",
-          "Software image management for switches",
+          "Software image management",
           "Host onboarding / VN-to-pool mapping",
           "Backup and restore"
         ],
@@ -47557,7 +47557,7 @@
         "question": "Why is pxGrid integration between Catalyst Center and ISE important?",
         "options": [
           "Shares groups, policy and context",
-          "It is the transport for VXLAN data",
+          "It is the VXLAN data transport",
           "It runs the LISP map server",
           "It assigns IP addresses"
         ],
@@ -47600,7 +47600,7 @@
         "options": [
           "To disable 802.1X permanently",
           "To give guests faster Wi-Fi",
-          "To allow spanning tree on edge ports",
+          "To allow STP on edge ports",
           "Access continues if ISE is down"
         ],
         "correct": 3,
@@ -47642,8 +47642,8 @@
         "options": [
           "Traffic keeps flowing; changes stop",
           "All VXLAN tunnels go down at once",
-          "Clients lose their SGTs and their VN",
-          "The underlay stops routing between nodes"
+          "Clients lose their SGTs and VN",
+          "The underlay stops routing"
         ],
         "correct": 0,
         "explanation": "Catalyst Center is the management plane; the control, data and policy planes keep running on the nodes and ISE.",
@@ -47757,9 +47757,9 @@
         "question": "Que modo PIM se usa normalmente no underlay VXLAN flood-and-learn ou EVPN para tráfego BUM?",
         "options": [
           "Sem multicast; o BUM é sempre descartado",
-          "PIM dense mode a inundar todas as interfaces",
+          "PIM dense mode em todas as interfaces",
           "PIM sparse mode com anycast RP nos spines",
-          "PIM nas portas de acesso para os servidores"
+          "PIM nas portas dos servidores"
         ],
         "correct": 2,
         "explanation": "A replicação multicast do BUM usa PIM-SM (ou bidir) no underlay, com anycast RP nos spines; a replicação na entrada é a alternativa.",
@@ -47812,7 +47812,7 @@
       {
         "question": "O que dá o Rapid PVST+ em relação ao PVST+ clássico?",
         "options": [
-          "Uma única árvore para todas as VLAN da fabric",
+          "Uma só árvore para todas as VLAN",
           "Convergência mais rápida com RSTP por VLAN",
           "Encaminhamento camada 3 entre VLAN",
           "Negociação LACP automática"
@@ -48303,7 +48303,7 @@
         "question": "Porque usar device aliases numa fabric MDS?",
         "options": [
           "Substituir as zonas por VSAN",
-          "Encaminhamento mais rápido das tramas FC",
+          "Encaminhamento FC mais rápido",
           "Mais buffer credits em cada ISL",
           "Nomes para WWPN, partilhados por CFS"
         ],
@@ -48358,7 +48358,7 @@
       {
         "question": "O que faz o CFS nos switches MDS e Nexus?",
         "options": [
-          "Comprime as tramas FC em ligações longas",
+          "Comprime as tramas FC",
           "Partilha configuração entre switches",
           "Cria VSAN automaticamente",
           "Monitoriza as ventoinhas do chassis"
@@ -48400,7 +48400,7 @@
       {
         "question": "O que se deve verificar antes de uma atualização de software sem interrupção num MDS?",
         "options": [
-          "Que todas as zonas estão desativadas",
+          "Que as zonas estão desativadas",
           "A saída do 'show install all impact'",
           "Que todos os ISL estão desligados",
           "Que a base de dados FCNS foi limpa"
@@ -48429,9 +48429,9 @@
         "question": "O que faz o Embedded Event Manager (EEM) no NX-OS?",
         "options": [
           "Balanceia tráfego pelos ISL",
-          "Atualiza o software todas as semanas",
+          "Atualiza o software semanalmente",
           "Executa ações em eventos definidos",
-          "Sincroniza a configuração vPC com o par"
+          "Sincroniza a config vPC com o par"
         ],
         "correct": 2,
         "explanation": "Os applets EEM identificam eventos (syslog, contadores, CLI) e executam ações como comandos CLI ou scripts.",
@@ -48472,7 +48472,7 @@
         "options": [
           "Ler traps SNMP do switch",
           "Substituir o NX-OS por Linux",
-          "Configurar só as definições da BIOS",
+          "Configurar só a BIOS",
           "Enviar CLI por HTTPS e receber JSON"
         ],
         "correct": 3,
@@ -48583,7 +48583,7 @@
         "question": "No ACI, o que tem de existir para duas EPG comunicarem?",
         "options": [
           "Um contrato entre elas",
-          "Um ID de VLAN partilhado",
+          "Um VLAN ID partilhado",
           "A mesma sub-rede IP",
           "Uma rota estática"
         ],
@@ -48597,7 +48597,7 @@
         "question": "O que permite a microssegmentação (uSeg EPG) no ACI?",
         "options": [
           "Cifrar toda a fabric",
-          "Dividir um leaf em dois switches",
+          "Dividir um leaf em dois",
           "Agrupar endpoints por atributos",
           "Criar VSAN para as VM"
         ],
@@ -48625,7 +48625,7 @@
         "question": "Porque configurar uma keychain nos protocolos de encaminhamento do NX-OS?",
         "options": [
           "Para acelerar a convergência",
-          "Para cifrar dados dos utilizadores",
+          "Para cifrar dados",
           "Para guardar passwords locais",
           "Para rodar chaves de autenticação"
         ],
@@ -48711,7 +48711,7 @@
         "question": "Which PIM mode is commonly used in a VXLAN flood-and-learn or EVPN underlay for BUM traffic?",
         "options": [
           "No multicast; BUM is always dropped",
-          "PIM dense mode flooding to every interface",
+          "PIM dense mode on every interface",
           "PIM sparse mode with anycast RP on spines",
           "PIM on access ports toward servers"
         ],
@@ -48766,7 +48766,7 @@
       {
         "question": "What does Rapid PVST+ provide compared with classic PVST+?",
         "options": [
-          "A single tree for all VLANs in the fabric",
+          "One tree for all VLANs",
           "Faster convergence using RSTP per VLAN",
           "Layer 3 routing between VLANs",
           "Automatic LACP negotiation"
@@ -49228,7 +49228,7 @@
       {
         "question": "What does enhanced zoning add over basic zoning?",
         "options": [
-          "A fabric-wide change lock",
+          "A fabric-wide lock during changes",
           "Zones that span several VSANs",
           "Encryption of zone members",
           "Automatic LUN masking on arrays"
@@ -49258,7 +49258,7 @@
         "options": [
           "Replacing zones with VSANs",
           "Faster FC frame forwarding",
-          "Extra buffer credits on each ISL",
+          "More buffer credits per ISL",
           "Names for WWPNs, shared by CFS"
         ],
         "correct": 3,
@@ -49385,7 +49385,7 @@
           "Balances traffic over ISLs",
           "Upgrades software every week",
           "Runs actions on defined events",
-          "Syncs the vPC config to the peer"
+          "Syncs vPC config to the peer"
         ],
         "correct": 2,
         "explanation": "EEM applets match events (syslog, counters, CLI) and run actions such as CLI commands or scripts.",
@@ -49424,9 +49424,9 @@
       {
         "question": "What does NX-API CLI let a script do?",
         "options": [
-          "Read SNMP traps from the switch",
+          "Read SNMP traps from it",
           "Replace NX-OS with Linux",
-          "Configure only the BIOS settings",
+          "Configure only BIOS settings",
           "Send CLI over HTTPS, get JSON"
         ],
         "correct": 3,
@@ -49537,9 +49537,9 @@
         "question": "In ACI, what must exist for two EPGs to communicate?",
         "options": [
           "A contract between them",
-          "A shared VLAN ID on both",
+          "A shared VLAN ID",
           "The same IP subnet",
-          "A static route on the leaf"
+          "A static leaf route"
         ],
         "correct": 0,
         "explanation": "ACI is whitelist by default: one EPG provides and another consumes a contract whose subjects and filters allow traffic.",
@@ -49551,7 +49551,7 @@
         "question": "What does microsegmentation (uSeg EPG) in ACI allow?",
         "options": [
           "Encrypting the whole fabric",
-          "Splitting a leaf into two switches",
+          "Splitting a leaf in two",
           "Grouping endpoints by attributes",
           "Creating VSANs for the VMs"
         ],
@@ -49581,7 +49581,7 @@
           "To speed up convergence",
           "To encrypt user data",
           "To store local passwords",
-          "To rotate auth keys"
+          "To rotate authentication keys"
         ],
         "correct": 3,
         "explanation": "Keychains hold multiple keys with send/accept lifetimes, allowing hitless rollover for OSPF, EIGRP, BGP or HSRP authentication.",
@@ -49750,9 +49750,9 @@
       {
         "question": "Para que se usa normalmente o CUBE?",
         "options": [
-          "Um controlador sem fios para telefones IP",
+          "Um controlador Wi-Fi para telefones",
           "Um elemento de fronteira SIP para trunks",
-          "Um servidor de presença para chat e estado",
+          "Um servidor de presença",
           "Um diretório LDAP de utilizadores"
         ],
         "correct": 1,
@@ -49794,7 +49794,7 @@
         "options": [
           "Permite aos telefones saltar o TFTP",
           "Os clientes de fora têm de confiar nele",
-          "As CA públicas dão chaves mais compridas",
+          "As CA públicas dão chaves maiores",
           "O Expressway-C exige-o para o LDAP"
         ],
         "correct": 1,
@@ -49918,7 +49918,7 @@
       {
         "question": "Que ferramenta do UCM acrescenta centenas de telefones e utilizadores a partir de ficheiros CSV?",
         "options": [
-          "Bulk Administration Tool",
+          "Bulk Administration Tool (BAT)",
           "Dialed Number Analyzer",
           "Real-Time Monitoring Tool",
           "Disaster Recovery System"
@@ -49933,7 +49933,7 @@
         "question": "Como se pode integrar um telefone com um código de ativação?",
         "options": [
           "O código é enviado na opção 150 de DHCP",
-          "O administrador escreve o MAC no Expressway",
+          "O MAC é escrito no Expressway",
           "O telefone procura o UCM na rede",
           "O utilizador escreve o código no telefone"
         ],
@@ -49974,7 +49974,7 @@
       {
         "question": "O que descreve a linha 'm=' do SDP?",
         "options": [
-          "O nome apresentado do chamador",
+          "O nome do chamador",
           "Tipo de media, porta e codecs",
           "O endereço do servidor SIP",
           "A duração da chamada"
@@ -50073,7 +50073,7 @@
         "question": "Que definição do UCM ajuda a evitar fraude telefónica por reencaminhamento para números internacionais?",
         "options": [
           "Uma CSS de forward restrita",
-          "Mais largura de banda na região",
+          "Mais banda na região",
           "Ativar o auto-registo",
           "Usar só G.711 nos trunks"
         ],
@@ -50142,7 +50142,7 @@
       {
         "question": "O que é um forced authorization code (FAC)?",
         "options": [
-          "Um código para certas chamadas",
+          "Um código exigido em certas chamadas",
           "Um PIN da caixa de voicemail",
           "Uma chave de licença do trunk",
           "Uma regra de negociação de codecs"
@@ -50173,7 +50173,7 @@
           "Cisco Unified Reporting",
           "Bulk Administration Tool",
           "Disaster Recovery System",
-          "Dialed Number Analyzer"
+          "Dialed Number Analyzer (DNA)"
         ],
         "correct": 3,
         "explanation": "O DNA simula a análise de dígitos com a CSS do equipamento chamador e mostra os padrões coincidentes, transformações e o caminho escolhido.",
@@ -50268,9 +50268,9 @@
       {
         "question": "Uma voice translation rule é rule 1 /^0\\(.*\\)/ /+351\\1/. O que faz a 0211234567?",
         "options": [
-          "Muda-o para +3510211234567",
+          "Dá +3510211234567",
           "Muda-o para +351211234567",
-          "Deixa-o igual",
+          "Deixa-o como está",
           "Apaga todos os dígitos"
         ],
         "correct": 1,
@@ -50312,7 +50312,7 @@
         "options": [
           "Os POTS são só para chamadas de fax",
           "POTS: portas de voz; VoIP: destinos IP",
-          "Os VoIP são só para telefones analógicos",
+          "Os VoIP são só para analógicos",
           "Não há diferença prática"
         ],
         "correct": 1,
@@ -50381,7 +50381,7 @@
         "question": "Porque usar voice class tenants num CUBE com vários trunks?",
         "options": [
           "Para isolar DSP por cliente",
-          "Definições SIP por operador",
+          "Definições SIP por operador/trunk",
           "Para faturar cada departamento",
           "Para licenciar cada dial peer"
         ],
@@ -50408,7 +50408,7 @@
       {
         "question": "Que aplicações compõem o Webex Suite para os utilizadores finais?",
         "options": [
-          "Só provisionamento de telefones IP",
+          "Só telefones IP",
           "Só salas de videoconferência",
           "Chamadas, reuniões, mensagens",
           "Só agentes de contact centre"
@@ -50438,7 +50438,7 @@
         "options": [
           "Políticas de gravação",
           "Mascaramento de números",
-          "Permissões de chamada",
+          "Permissões de chamadas de saída",
           "Definições de Caller ID"
         ],
         "correct": 2,
@@ -50451,9 +50451,9 @@
         "question": "No Webex Calling, o que é um local (location)?",
         "options": [
           "Um site com números e PSTN",
-          "Um equipamento de sala de reuniões",
-          "A morada de casa de um utilizador",
-          "Uma função de admin do Control Hub"
+          "Um equipamento de sala",
+          "A morada de um utilizador",
+          "Uma função de admin"
         ],
         "correct": 0,
         "explanation": "Os locais definem a morada de emergência, fuso horário, números, ligação PSTN e definições de marcação interna para utilizadores e equipamentos.",
@@ -50479,7 +50479,7 @@
         "question": "Para que se usa um dial plan do Webex Calling?",
         "options": [
           "Enviar padrões para trunks PBX",
-          "Atribuir números a utilizadores",
+          "Atribuir números",
           "Gravar as chamadas externas",
           "Mudar os toques de cada local"
         ],
@@ -50508,7 +50508,7 @@
         "options": [
           "Permissões de chamadas",
           "Definições de mensagens",
-          "Bloqueio do site de reuniões",
+          "Bloqueio do site",
           "Directory Connector"
         ],
         "correct": 1,
@@ -50632,7 +50632,7 @@
       {
         "question": "Os utilizadores falam de áudio entrecortado nas horas de ponta na WAN. Qual é a causa provável?",
         "options": [
-          "Os telefones usam o nome de VLAN errado",
+          "Os telefones usam a VLAN errada",
           "Faltam registos DNS SRV",
           "Perdas e jitter por congestionamento",
           "A sincronização LDAP está atrasada"
@@ -50816,10 +50816,10 @@
       {
         "question": "What is CUBE typically used for?",
         "options": [
-          "A wireless controller for IP phones",
+          "A WLC for IP phones",
           "A SIP border element for trunks",
-          "A presence server for chat and status",
-          "An LDAP directory for all users"
+          "A presence server for chat",
+          "An LDAP user directory"
         ],
         "correct": 1,
         "explanation": "Cisco Unified Border Element on IOS XE routers demarcates SIP trunks: interworking, security, normalisation and media handling.",
@@ -50859,7 +50859,7 @@
         "question": "Why should the Expressway-E certificate be signed by a public CA?",
         "options": [
           "It lets phones skip TFTP download",
-          "Outside clients must trust it",
+          "Clients outside the network must trust it",
           "Public CAs give longer key lengths",
           "Expressway-C requires it for LDAP"
         ],
@@ -50984,7 +50984,7 @@
       {
         "question": "Which UCM tool adds hundreds of phones and users from CSV files?",
         "options": [
-          "Bulk Administration Tool",
+          "Bulk Administration Tool (BAT)",
           "Dialed Number Analyzer",
           "Real-Time Monitoring Tool",
           "Disaster Recovery System"
@@ -50999,7 +50999,7 @@
         "question": "How can a phone be onboarded with an activation code?",
         "options": [
           "The code is sent in DHCP option 150",
-          "The admin types the MAC into Expressway",
+          "The MAC is typed into Expressway",
           "The phone scans the network for UCM",
           "The user types the code on the phone"
         ],
@@ -51040,7 +51040,7 @@
       {
         "question": "What does the SDP 'm=' line describe?",
         "options": [
-          "The caller's display name",
+          "The caller's name",
           "Media type, port, codecs",
           "The SIP server address",
           "The total call duration"
@@ -51138,7 +51138,7 @@
       {
         "question": "Which UCM setting helps prevent toll fraud through call forward to international numbers?",
         "options": [
-          "A restricted forward CSS",
+          "A restricted call-forward CSS",
           "A larger region bandwidth",
           "Enabling auto-registration",
           "Using G.711 only on trunks"
@@ -51208,7 +51208,7 @@
       {
         "question": "What is a forced authorization code (FAC)?",
         "options": [
-          "A code for some call types",
+          "A code required for some call types",
           "A PIN for the voicemail box",
           "A licence key for the trunk",
           "A codec negotiation rule"
@@ -51239,7 +51239,7 @@
           "Cisco Unified Reporting",
           "Bulk Administration Tool",
           "Disaster Recovery System",
-          "Dialed Number Analyzer"
+          "Dialed Number Analyzer (DNA)"
         ],
         "correct": 3,
         "explanation": "DNA simulates digit analysis using the calling device's CSS and shows matched patterns, transformations and the route chosen.",
@@ -51334,7 +51334,7 @@
       {
         "question": "A voice translation rule is written as rule 1 /^0\\(.*\\)/ /+351\\1/. What does it do to 0211234567?",
         "options": [
-          "Changes it to +3510211234567",
+          "Gives +3510211234567",
           "Changes it to +351211234567",
           "Leaves it unchanged",
           "Deletes all digits"
@@ -51378,7 +51378,7 @@
         "options": [
           "POTS peers are only for fax calls",
           "POTS: voice ports; VoIP: IP targets",
-          "VoIP peers are only for analog phones",
+          "VoIP peers are only for analog",
           "There is no practical difference"
         ],
         "correct": 1,
@@ -51406,7 +51406,7 @@
         "options": [
           "Load balancing of DSPs",
           "A cluster of CUBE routers",
-          "Many targets per peer",
+          "Many SIP targets per dial peer",
           "A list of LDAP servers"
         ],
         "correct": 2,
@@ -51446,8 +51446,8 @@
       {
         "question": "Why use voice class tenants on a multi-trunk CUBE?",
         "options": [
-          "To isolate DSPs per customer",
-          "Per-provider SIP settings",
+          "To isolate DSPs per client",
+          "SIP settings per provider trunk",
           "To bill each department",
           "To license each dial peer"
         ],
@@ -51475,7 +51475,7 @@
         "question": "Which apps make up the Webex Suite for end users?",
         "options": [
           "Only IP phone provisioning",
-          "Only video conferencing rooms",
+          "Only video meeting rooms",
           "Calling, meetings, messaging",
           "Only contact centre agents"
         ],
@@ -51504,7 +51504,7 @@
         "options": [
           "Call recording policies",
           "Number masking per user",
-          "Calling permissions",
+          "Outgoing calling permissions",
           "Caller ID settings"
         ],
         "correct": 2,
@@ -51547,7 +51547,7 @@
           "Sending patterns to PBX trunks",
           "Assigning numbers to users",
           "Recording all external calls",
-          "Changing ringtones per location"
+          "Changing ringtones per site"
         ],
         "correct": 0,
         "explanation": "Dial plans contain patterns (enterprise numbers) routed to a trunk/route group, letting Webex users reach on-prem UCM or PBX numbers.",

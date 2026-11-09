@@ -3167,8 +3167,8 @@
     "question": "Uma videochamada está aos solavancos, embora o teste de velocidade mostre 200 Mb/s. Que medidas importam mais para voz e vídeo em tempo real?",
     "options": [
       "Latência, jitter e perda de pacotes",
-      "O código de resposta do servidor DNS",
-      "Só a velocidade de download em Mb/s",
+      "O código de resposta do DNS",
+      "Só a velocidade de download",
       "A duração da concessão DHCP"
     ],
     "correct": 0,
@@ -3266,7 +3266,7 @@
     "options": [
       "O SFTP cifra as credenciais e os dados via SSH",
       "O SFTP usa UDP e por isso é mais rápido",
-      "O FTP não consegue transferir ficheiros de texto",
+      "O FTP não transfere ficheiros de texto",
       "O SFTP não precisa de nome de utilizador"
     ],
     "correct": 0,
@@ -3475,7 +3475,7 @@
     "question": "Um switch de camada 3 faz algo que um switch só de camada 2 não faz. O quê?",
     "options": [
       "Um switch de camada 3 também encaminha entre VLAN",
-      "Um switch de camada 2 usa endereços IP para encaminhar",
+      "Um switch de camada 2 encaminha por IP",
       "Um switch de camada 3 não tem tabela de MAC",
       "Os switches de camada 2 não podem ter VLAN"
     ],
@@ -3531,7 +3531,7 @@
     "question": "Um engenheiro de nível 2 pede-lhe uma captura de pacotes. Que ficheiro envia?",
     "options": [
       "Um ficheiro .pcap/.pcapng guardado no Wireshark",
-      "Uma captura de ecrã do ecrã inicial do Wireshark",
+      "Uma captura do ecrã inicial do Wireshark",
       "Só o registo de eventos do Windows do PC",
       "Uma cópia em texto do ipconfig"
     ],
@@ -3559,7 +3559,7 @@
     "question": "Uma pequena empresa gere os switches, AP e firewall a partir de um painel web na cloud. Que plataforma Cisco se ajusta?",
     "options": [
       "Um servidor de consolas série",
-      "Cisco Meraki Dashboard",
+      "O Cisco Meraki Dashboard (cloud)",
       "Um hipervisor tipo 2",
       "Um servidor TFTP na LAN"
     ],
@@ -3686,7 +3686,7 @@
     "options": [
       "WPA2/WPA3-Personal com uma PSK longa",
       "Rede aberta com portal cativo",
-      "WPA2/WPA3-Enterprise com 802.1X",
+      "WPA2/WPA3-Enterprise com 802.1X/RADIUS",
       "WEP com chave de 128 bits"
     ],
     "correct": 2,

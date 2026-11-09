@@ -3110,7 +3110,7 @@
     "options": [
       "A single path through one spine chosen by STP",
       "A predictable two-hop path through any spine, using ECMP",
-      "A direct cable between every pair of leaves in the fabric",
+      "A direct cable between every pair of leaves",
       "Traffic always crossing the WAN edge router first"
     ],
     "correct": 1,
@@ -3207,9 +3207,9 @@
     "question": "Which pair of LACP modes will form an EtherChannel?",
     "options": [
       "active and passive",
-      "passive and passive",
+      "both passive",
       "on and active",
-      "auto and desirable"
+      "auto/desirable"
     ],
     "correct": 0,
     "explanation": "LACP needs at least one active side; passive-passive never starts. 'on' does not negotiate, so it should not be mixed with LACP. auto/desirable are PAgP modes.",
@@ -3348,7 +3348,7 @@
     "options": [
       "ip nat inside source static 10.1.1.10 203.0.113.10",
       "ip nat pool with a range of addresses",
-      "ip nat inside source list 1 interface Gi0/0 overload",
+      "ip nat inside source list 1 int Gi0/0 overload",
       "ip nat outside source list 2 pool WAN"
     ],
     "correct": 0,
@@ -3473,7 +3473,7 @@
     "question": "Which line configuration allows only SSH, using local users, on the VTY lines?",
     "options": [
       "password cisco and login",
-      "transport input telnet ssh with login",
+      "transport input all with login",
       "exec-timeout 0 0",
       "login local and transport input ssh"
     ],

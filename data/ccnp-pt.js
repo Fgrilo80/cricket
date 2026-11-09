@@ -3207,9 +3207,9 @@ window.QUIZ_BANK = [
     "question": "Que par de modos LACP forma um EtherChannel?",
     "options": [
       "active e passive",
-      "passive e passive",
+      "ambos passive",
       "on e active",
-      "auto e desirable"
+      "auto/desirable"
     ],
     "correct": 0,
     "explanation": "O LACP precisa de pelo menos um lado active; passive-passive nunca arranca. O 'on' não negoceia, por isso não se deve misturar com LACP. auto/desirable são modos PAgP.",
@@ -3304,7 +3304,7 @@ window.QUIZ_BANK = [
   {
     "question": "Porque devem os equipamentos de rede sincronizar com NTP?",
     "options": [
-      "É preciso para que as adjacências OSPF se formem",
+      "É preciso para formar adjacências OSPF",
       "Acelera o plano de encaminhamento",
       "Dispensa os servidores de syslog",
       "Datas corretas nos registos e nos certificados"
@@ -3348,7 +3348,7 @@ window.QUIZ_BANK = [
     "options": [
       "ip nat inside source static 10.1.1.10 203.0.113.10",
       "ip nat pool com uma gama de endereços",
-      "ip nat inside source list 1 interface Gi0/0 overload",
+      "ip nat inside source list 1 int Gi0/0 overload",
       "ip nat outside source list 2 pool WAN"
     ],
     "correct": 0,
@@ -3473,7 +3473,7 @@ window.QUIZ_BANK = [
     "question": "Que configuração de linha permite só SSH, com utilizadores locais, nas linhas VTY?",
     "options": [
       "password cisco e login",
-      "transport input telnet ssh com login",
+      "transport input all com login",
       "exec-timeout 0 0",
       "login local e transport input ssh"
     ],

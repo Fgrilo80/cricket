@@ -1,5 +1,12 @@
 # Changelog — Cricket / Cisco Quiz (web)
 
+## Pendente (PR) — 2026-11-04 · Reequilibrar o comprimento das opções nas perguntas novas (fases 2/3)
+
+- Nas perguntas novas das fases 2 e 3, a resposta certa era quase nunca a mais longa (0–18%), o que também é uma pista ("escolhe a que não é a mais longa"). Agora é a opção mais longa (única) em **21,6–25%** dos casos por quiz, nas duas línguas.
+- Como: em ~120 pares, os distratores mais longos foram encurtados (ou, em poucos casos, a certa ganhou uma precisão curta), sem mudar o significado nem qual é a certa. Só muda texto de `options`; perguntas, explicações, índices e contagens ficam iguais.
+- Quizzes tratados: ccst-net (novas), encor (novas), iiot, ccstit, field, ccnaauto, autocor, wlsd, wlsi, ensdwi, sda, dccor, clcor.
+- Validação: schema, paridade PT/EN, rácio ≤ 1.5 em todas as perguntas editadas, lint `question-bank-length` PASSED (máx. 26,1% por trilho), unittest OK. Total 3764 sem alterações.
+
 ## Pendente (PR) — 2026-11-04 · Reordenar opções das perguntas antigas CCST/CCNP
 
 - **Posição da resposta certa equilibrada** nas perguntas antigas (anteriores à fase 2) de CCST (227 pares, índices 0–226) e CCNP (232 pares, índices 0–231). Antes, a certa estava na 2.ª opção em ~73–75% dos casos; agora fica ~25% em cada posição (CCST 57/57/57/56, CCNP 58/58/58/58).

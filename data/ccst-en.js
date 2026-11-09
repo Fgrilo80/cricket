@@ -3168,7 +3168,7 @@ window.QUIZ_BANK = [
     "options": [
       "Latency, jitter and packet loss",
       "The DNS server response code",
-      "Only the download speed in Mb/s",
+      "Only the download speed",
       "The DHCP lease duration"
     ],
     "correct": 0,
@@ -3475,7 +3475,7 @@ window.QUIZ_BANK = [
     "question": "A Layer 3 switch can do something a pure Layer 2 switch cannot. What is it?",
     "options": [
       "A Layer 3 switch can also route between VLANs",
-      "A Layer 2 switch uses IP addresses to forward",
+      "A Layer 2 switch forwards using IP addresses",
       "A Layer 3 switch has no MAC address table",
       "Layer 2 switches cannot have VLANs"
     ],
@@ -3531,7 +3531,7 @@ window.QUIZ_BANK = [
     "question": "A tier-2 engineer asks you for a packet capture. What file do you send?",
     "options": [
       "A .pcap/.pcapng file saved from Wireshark",
-      "A screenshot of the Wireshark start screen",
+      "A screenshot of Wireshark's start screen",
       "The PC's Windows event log only",
       "A text copy of ipconfig output"
     ],
@@ -3559,7 +3559,7 @@ window.QUIZ_BANK = [
     "question": "A small business manages its switches, APs and firewall from a web dashboard in the cloud. Which Cisco platform fits?",
     "options": [
       "A serial console server",
-      "Cisco Meraki Dashboard",
+      "The Cisco Meraki Dashboard",
       "A Type 2 hypervisor",
       "A TFTP server on the LAN"
     ],
@@ -3686,7 +3686,7 @@ window.QUIZ_BANK = [
     "options": [
       "WPA2/WPA3-Personal with a long PSK",
       "Open network with a captive portal",
-      "WPA2/WPA3-Enterprise with 802.1X",
+      "WPA2/WPA3-Enterprise with 802.1X/RADIUS",
       "WEP with a 128-bit key"
     ],
     "correct": 2,
