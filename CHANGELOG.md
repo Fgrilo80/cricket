@@ -7,6 +7,18 @@
 - Quizzes tratados: ccst-net (novas), encor (novas), iiot, ccstit, field, ccnaauto, autocor, wlsd, wlsi, ensdwi, sda, dccor, clcor.
 - Validação: schema, paridade PT/EN, rácio ≤ 1.5 em todas as perguntas editadas, lint `question-bank-length` PASSED (máx. 26,1% por trilho), unittest OK. Total 3764 sem alterações.
 
+## Pendente (PR) — 2026-11-04 · Reordenar opções das perguntas antigas CCST/CCNP
+
+- **Posição da resposta certa equilibrada** nas perguntas antigas (anteriores à fase 2) de CCST (227 pares, índices 0–226) e CCNP (232 pares, índices 0–231). Antes, a certa estava na 2.ª opção em ~73–75% dos casos; agora fica ~25% em cada posição (CCST 57/57/57/56, CCNP 58/58/58/58).
+- Só muda a ordem das opções e o índice `correct`. Os textos ficam iguais e a mesma permutação é aplicada em PT e EN. Nenhuma opção depende da posição ("todas as anteriores", letras), por isso a troca é segura.
+- Contagens sem alterações (total 3764). Validação: schema, paridade PT/EN (mesma ordem), diff só de reordenação, lint `question-bank-length` PASSED, unittest OK.
+
+## Pendente (PR) — 2026-11-04 · Corrigir CCNA #131 (CAPWAP split MAC)
+
+- **CCNA #131 (PT/EN):** a chave estava errada (`correct: 1`, "o MAC do cliente é dividido ao meio"). A certa passa a ser a opção 0: o AP faz as funções 802.11 de tempo real (beacons, probe responses, ACK, buffer de power-save, cifra) e o WLC faz a autenticação/associação 802.11 e o 802.1X/EAP/RADIUS. As opções foram reescritas para tamanhos parecidos (rácio ≤ 1.5) e a explicação foi corrigida.
+- Fonte: Cisco Enterprise Mobility 8.5 Design Guide, "Split MAC Architecture": https://www.cisco.com/c/dam/en/us/td/docs/wireless/controller/technotes/8-5/cisco-enterprise-mobility-design-guide-8-5.pdf (ver também https://www.cisco.com/c/en/us/products/collateral/wireless/unified-wireless-network-sg.pdf).
+- Contagens sem alterações (total 3764). Validação: schema, paridade, lint PASSED, unittest OK; diff só nesta pergunta.
+
 ## v4.3.0 — 2026-11-03
 
 - **Rascunhos diários de 3 Nov publicados (6 pares PT/EN):** canal 3 nos 2,4 GHz sobreposto aos canais 1 e 5 (CCST, Fácil, `ccst-net` 3.2) · `ip helper-address` na interface errada em vez da Vlan30 (CCNA, Médio) · uRPF strict com encaminhamento assimétrico em dois ISPs → loose (CCNP, Difícil) · Sysmon 13 numa chave Run de HKCU com exe em AppData (Cyber, Médio, `cbrops` 3.5, `logs-ir`) · 4624 tipo 10 (RDP) com conta de serviço a partir de IP estrangeiro (Cyber, Médio, `cbrops` 3.5, `logs-ir`) · túnel DNS com consultas TXT a subdomínios aleatórios (Cyber, Difícil, `cbrops` 4.8, `logs-ir`).
